@@ -7,14 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99733C41CF7F4FF50A7A2C54 /* Pods_Connections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599FF97567B39B949FCABD9E /* Pods_Connections.framework */; };
 		A00748561F912189004AF885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00748551F912189004AF885 /* AppDelegate.swift */; };
 		A00748581F912189004AF885 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00748571F912189004AF885 /* ViewController.swift */; };
 		A007485B1F912189004AF885 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00748591F912189004AF885 /* Main.storyboard */; };
 		A007485D1F912189004AF885 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A007485C1F912189004AF885 /* Assets.xcassets */; };
 		A00748601F912189004AF885 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A007485E1F912189004AF885 /* LaunchScreen.storyboard */; };
+		A00748721F912AA7004AF885 /* SwipeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00748711F912AA7004AF885 /* SwipeView.xib */; };
+		A00748741F912B0C004AF885 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00748731F912B0C004AF885 /* SwipeView.swift */; };
+		A00748761F912E3F004AF885 /* LikeDislikeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00748751F912E3F004AF885 /* LikeDislikeInfo.swift */; };
+		A07226631F9148FB006C60BA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07226611F914641006C60BA /* SWRevealViewController.m */; };
+		A07226651F91657F006C60BA /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07226641F91657F006C60BA /* TabsViewController.swift */; };
+		A07226671F916EC9006C60BA /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07226661F916EC9006C60BA /* LogInViewController.swift */; };
+		A07226691F916FB4006C60BA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07226681F916FB4006C60BA /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		419B1DC5AA939905FD333D7A /* Pods-Connections.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connections.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Connections/Pods-Connections.debug.xcconfig"; sourceTree = "<group>"; };
+		599FF97567B39B949FCABD9E /* Pods_Connections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Connections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84574314C222C8CEEC27E2AC /* Pods-Connections.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connections.release.xcconfig"; path = "Pods/Target Support Files/Pods-Connections/Pods-Connections.release.xcconfig"; sourceTree = "<group>"; };
 		A00748521F912189004AF885 /* Connections.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Connections.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A00748551F912189004AF885 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A00748571F912189004AF885 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +33,15 @@
 		A007485C1F912189004AF885 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A007485F1F912189004AF885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A00748611F912189004AF885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A00748711F912AA7004AF885 /* SwipeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipeView.xib; sourceTree = "<group>"; };
+		A00748731F912B0C004AF885 /* SwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
+		A00748751F912E3F004AF885 /* LikeDislikeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeDislikeInfo.swift; sourceTree = "<group>"; };
+		A072265F1F91463F006C60BA /* Connections-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Connections-Bridging-Header.h"; sourceTree = "<group>"; };
+		A07226601F914640006C60BA /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		A07226611F914641006C60BA /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		A07226641F91657F006C60BA /* TabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
+		A07226661F916EC9006C60BA /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		A07226681F916FB4006C60BA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +49,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99733C41CF7F4FF50A7A2C54 /* Pods_Connections.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		247BC915B78C6F54ABF2DF0F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				419B1DC5AA939905FD333D7A /* Pods-Connections.debug.xcconfig */,
+				84574314C222C8CEEC27E2AC /* Pods-Connections.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8420B25B5A212FEAFFC61471 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				599FF97567B39B949FCABD9E /* Pods_Connections.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A00748491F912188004AF885 = {
 			isa = PBXGroup;
 			children = (
 				A00748541F912189004AF885 /* Connections */,
+				A00748671F9124F3004AF885 /* Extension */,
 				A00748531F912189004AF885 /* Products */,
+				247BC915B78C6F54ABF2DF0F /* Pods */,
+				8420B25B5A212FEAFFC61471 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +95,10 @@
 		A00748541F912189004AF885 /* Connections */ = {
 			isa = PBXGroup;
 			children = (
+				A007486A1F91258F004AF885 /* Login */,
+				A00748691F912586004AF885 /* Register */,
+				A00748681F912570004AF885 /* SideMenu */,
+				A007486B1F91259A004AF885 /* Swipe */,
 				A00748551F912189004AF885 /* AppDelegate.swift */,
 				A00748571F912189004AF885 /* ViewController.swift */,
 				A00748591F912189004AF885 /* Main.storyboard */,
@@ -64,6 +109,50 @@
 			path = Connections;
 			sourceTree = "<group>";
 		};
+		A00748671F9124F3004AF885 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A07226601F914640006C60BA /* SWRevealViewController.h */,
+				A07226611F914641006C60BA /* SWRevealViewController.m */,
+				A072265F1F91463F006C60BA /* Connections-Bridging-Header.h */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A00748681F912570004AF885 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		A00748691F912586004AF885 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				A07226681F916FB4006C60BA /* RegisterViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		A007486A1F91258F004AF885 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A07226641F91657F006C60BA /* TabsViewController.swift */,
+				A07226661F916EC9006C60BA /* LogInViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A007486B1F91259A004AF885 /* Swipe */ = {
+			isa = PBXGroup;
+			children = (
+				A00748711F912AA7004AF885 /* SwipeView.xib */,
+				A00748731F912B0C004AF885 /* SwipeView.swift */,
+				A00748751F912E3F004AF885 /* LikeDislikeInfo.swift */,
+			);
+			path = Swipe;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +160,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A00748641F912189004AF885 /* Build configuration list for PBXNativeTarget "Connections" */;
 			buildPhases = (
+				37A3F3BB7465F9FEFAD328B1 /* [CP] Check Pods Manifest.lock */,
 				A007484E1F912189004AF885 /* Sources */,
 				A007484F1F912189004AF885 /* Frameworks */,
 				A00748501F912189004AF885 /* Resources */,
+				A6A58A46B5170F815FF1C736 /* [CP] Embed Pods Frameworks */,
+				116FDD1D4A7082C5D54934C6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,6 +188,7 @@
 				TargetAttributes = {
 					A00748511F912189004AF885 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -124,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A00748601F912189004AF885 /* LaunchScreen.storyboard in Resources */,
+				A00748721F912AA7004AF885 /* SwipeView.xib in Resources */,
 				A007485D1F912189004AF885 /* Assets.xcassets in Resources */,
 				A007485B1F912189004AF885 /* Main.storyboard in Resources */,
 			);
@@ -131,12 +225,76 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		116FDD1D4A7082C5D54934C6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Connections/Pods-Connections-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37A3F3BB7465F9FEFAD328B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Connections-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6A58A46B5170F815FF1C736 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Connections/Pods-Connections-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Koloda/Koloda.framework",
+				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Koloda.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Connections/Pods-Connections-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A007484E1F912189004AF885 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A07226631F9148FB006C60BA /* SWRevealViewController.m in Sources */,
+				A00748741F912B0C004AF885 /* SwipeView.swift in Sources */,
+				A07226651F91657F006C60BA /* TabsViewController.swift in Sources */,
+				A07226691F916FB4006C60BA /* RegisterViewController.swift in Sources */,
+				A07226671F916EC9006C60BA /* LogInViewController.swift in Sources */,
 				A00748581F912189004AF885 /* ViewController.swift in Sources */,
+				A00748761F912E3F004AF885 /* LikeDislikeInfo.swift in Sources */,
 				A00748561F912189004AF885 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,14 +430,18 @@
 		};
 		A00748651F912189004AF885 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 419B1DC5AA939905FD333D7A /* Pods-Connections.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PB5S47GH58;
 				INFOPLIST_FILE = Connections/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hallam.Connections;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Connections-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -287,14 +449,17 @@
 		};
 		A00748661F912189004AF885 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84574314C222C8CEEC27E2AC /* Pods-Connections.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PB5S47GH58;
 				INFOPLIST_FILE = Connections/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hallam.Connections;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Extension/Connections-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
