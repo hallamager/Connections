@@ -1,18 +1,21 @@
 PODS:
+  - Hero (1.0.0)
   - Koloda (4.3.1):
     - pop (~> 1.0)
   - pop (1.0.10)
   - XLPagerTabStrip (8.0.0)
 
 DEPENDENCIES:
+  - Hero
   - Koloda
   - XLPagerTabStrip
 
 SPEC CHECKSUMS:
+  Hero: 18e7cf8af41c04c8532d1430ac174004a9365c87
   Koloda: 0d39b2aa188ccd1fac48d752acaf9802e683c625
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   XLPagerTabStrip: d1ab378af0923320ec0b5eab11d7b2f803d31261
 
-PODFILE CHECKSUM: 39e0808f4a96429b1b1dadacd4bfa65d6ae1200f
+PODFILE CHECKSUM: 3aa4888e86f9d17c188d76055eafae9a43c6d762
 
 COCOAPODS: 1.4.0.beta.1

@@ -46,6 +46,8 @@ extension ViewController: KolodaViewDelegate {
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
         print("card tapped")
         
+        performSegue(withIdentifier: "MoreInfo", sender: nil)
+        
     }
     
     // point at wich card disappears
@@ -54,9 +56,10 @@ extension ViewController: KolodaViewDelegate {
     }
     
     
-    //    func koloda(_ koloda: KolodaView, shouldDragCardAt index: Int) -> Bool {
-    //        // If you return false the card will not move.
-    //    }
+    func koloda(_ koloda: KolodaView, shouldDragCardAt index: Int) -> Bool {
+        // If you return false the card will not move.
+        return true
+    }
     
     
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {

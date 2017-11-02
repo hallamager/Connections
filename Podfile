@@ -8,5 +8,6 @@ target 'Connections' do
   # Pods for Connections
     pod 'Koloda'
     pod ‘XLPagerTabStrip’
+    pod 'Hero'
 
 end
