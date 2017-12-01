@@ -26,6 +26,7 @@
 		A0F529E81FD1B18100B5B93C /* HorizontalGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F529E71FD1B18100B5B93C /* HorizontalGradient.swift */; };
 		A0F529EA1FD1BA3100B5B93C /* VerticalGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F529E91FD1BA3100B5B93C /* VerticalGradient.swift */; };
 		A0F529EB1FD1CD6400B5B93C /* Gotham Rounded Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0F529E11FD1AFC000B5B93C /* Gotham Rounded Book.ttf */; };
+		A0F529ED1FD1E6F600B5B93C /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F529EC1FD1E6F600B5B93C /* SideMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		A0F529E51FD1B10E00B5B93C /* UIButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonStyles.swift; sourceTree = "<group>"; };
 		A0F529E71FD1B18100B5B93C /* HorizontalGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalGradient.swift; sourceTree = "<group>"; };
 		A0F529E91FD1BA3100B5B93C /* VerticalGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalGradient.swift; sourceTree = "<group>"; };
+		A0F529EC1FD1E6F600B5B93C /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 		A00748681F912570004AF885 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				A0F529EC1FD1E6F600B5B93C /* SideMenuViewController.swift */,
 			);
 			path = SideMenu;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				A07226631F9148FB006C60BA /* SWRevealViewController.m in Sources */,
 				A00748741F912B0C004AF885 /* BusinessSwipeView.swift in Sources */,
 				A07226651F91657F006C60BA /* TabsViewController.swift in Sources */,
+				A0F529ED1FD1E6F600B5B93C /* SideMenuViewController.swift in Sources */,
 				A07226691F916FB4006C60BA /* RegisterViewController.swift in Sources */,
 				A07226671F916EC9006C60BA /* LogInViewController.swift in Sources */,
 				A0F529E81FD1B18100B5B93C /* HorizontalGradient.swift in Sources */,

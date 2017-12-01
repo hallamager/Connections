@@ -74,15 +74,15 @@ extension BusinessSwipeViewController: KolodaViewDelegate {
     func koloda(_ koloda: KolodaView, draggedCardWithPercentage finishPercentage: CGFloat, in direction: SwipeResultDirection) {
         //        print("being swiped \(direction)")
         
-        if direction == SwipeResultDirection.right {
-            // implement your functions or whatever here
-            print("user swiping right")
-            
-            
-        } else if direction == .left {
-            // implement your functions or whatever here
-            print("user swiping left")
-        }
+//        if direction == SwipeResultDirection.right {
+//            // implement your functions or whatever here
+//            print("user swiping right")
+//            
+//            
+//        } else if direction == .left {
+//            // implement your functions or whatever here
+//            print("user swiping left")
+//        }
         
     }
     
