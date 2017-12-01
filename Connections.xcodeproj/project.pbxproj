@@ -9,17 +9,23 @@
 /* Begin PBXBuildFile section */
 		99733C41CF7F4FF50A7A2C54 /* Pods_Connections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599FF97567B39B949FCABD9E /* Pods_Connections.framework */; };
 		A00748561F912189004AF885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00748551F912189004AF885 /* AppDelegate.swift */; };
-		A00748581F912189004AF885 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00748571F912189004AF885 /* ViewController.swift */; };
+		A00748581F912189004AF885 /* BusinessSwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00748571F912189004AF885 /* BusinessSwipeViewController.swift */; };
 		A007485B1F912189004AF885 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00748591F912189004AF885 /* Main.storyboard */; };
 		A007485D1F912189004AF885 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A007485C1F912189004AF885 /* Assets.xcassets */; };
 		A00748601F912189004AF885 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A007485E1F912189004AF885 /* LaunchScreen.storyboard */; };
-		A00748721F912AA7004AF885 /* SwipeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00748711F912AA7004AF885 /* SwipeView.xib */; };
-		A00748741F912B0C004AF885 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00748731F912B0C004AF885 /* SwipeView.swift */; };
+		A00748721F912AA7004AF885 /* BusinessSwipeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00748711F912AA7004AF885 /* BusinessSwipeView.xib */; };
+		A00748741F912B0C004AF885 /* BusinessSwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00748731F912B0C004AF885 /* BusinessSwipeView.swift */; };
 		A00748761F912E3F004AF885 /* LikeDislikeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00748751F912E3F004AF885 /* LikeDislikeInfo.swift */; };
 		A07226631F9148FB006C60BA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07226611F914641006C60BA /* SWRevealViewController.m */; };
 		A07226651F91657F006C60BA /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07226641F91657F006C60BA /* TabsViewController.swift */; };
 		A07226671F916EC9006C60BA /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07226661F916EC9006C60BA /* LogInViewController.swift */; };
 		A07226691F916FB4006C60BA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07226681F916FB4006C60BA /* RegisterViewController.swift */; };
+		A0F529E01FD1A1A600B5B93C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0F529DF1FD1A1A500B5B93C /* GoogleService-Info.plist */; };
+		A0F529E41FD1B0CF00B5B93C /* UIViewStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F529E31FD1B0CF00B5B93C /* UIViewStyles.swift */; };
+		A0F529E61FD1B10E00B5B93C /* UIButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F529E51FD1B10E00B5B93C /* UIButtonStyles.swift */; };
+		A0F529E81FD1B18100B5B93C /* HorizontalGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F529E71FD1B18100B5B93C /* HorizontalGradient.swift */; };
+		A0F529EA1FD1BA3100B5B93C /* VerticalGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F529E91FD1BA3100B5B93C /* VerticalGradient.swift */; };
+		A0F529EB1FD1CD6400B5B93C /* Gotham Rounded Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0F529E11FD1AFC000B5B93C /* Gotham Rounded Book.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,13 +34,13 @@
 		84574314C222C8CEEC27E2AC /* Pods-Connections.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connections.release.xcconfig"; path = "Pods/Target Support Files/Pods-Connections/Pods-Connections.release.xcconfig"; sourceTree = "<group>"; };
 		A00748521F912189004AF885 /* Connections.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Connections.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A00748551F912189004AF885 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A00748571F912189004AF885 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A00748571F912189004AF885 /* BusinessSwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSwipeViewController.swift; sourceTree = "<group>"; };
 		A007485A1F912189004AF885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A007485C1F912189004AF885 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A007485F1F912189004AF885 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A00748611F912189004AF885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A00748711F912AA7004AF885 /* SwipeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipeView.xib; sourceTree = "<group>"; };
-		A00748731F912B0C004AF885 /* SwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
+		A00748711F912AA7004AF885 /* BusinessSwipeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusinessSwipeView.xib; sourceTree = "<group>"; };
+		A00748731F912B0C004AF885 /* BusinessSwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSwipeView.swift; sourceTree = "<group>"; };
 		A00748751F912E3F004AF885 /* LikeDislikeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeDislikeInfo.swift; sourceTree = "<group>"; };
 		A072265F1F91463F006C60BA /* Connections-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Connections-Bridging-Header.h"; sourceTree = "<group>"; };
 		A07226601F914640006C60BA /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -42,6 +48,12 @@
 		A07226641F91657F006C60BA /* TabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
 		A07226661F916EC9006C60BA /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		A07226681F916FB4006C60BA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A0F529DF1FD1A1A500B5B93C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A0F529E11FD1AFC000B5B93C /* Gotham Rounded Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham Rounded Book.ttf"; sourceTree = "<group>"; };
+		A0F529E31FD1B0CF00B5B93C /* UIViewStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewStyles.swift; sourceTree = "<group>"; };
+		A0F529E51FD1B10E00B5B93C /* UIButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonStyles.swift; sourceTree = "<group>"; };
+		A0F529E71FD1B18100B5B93C /* HorizontalGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalGradient.swift; sourceTree = "<group>"; };
+		A0F529E91FD1BA3100B5B93C /* VerticalGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalGradient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				A00748541F912189004AF885 /* Connections */,
+				A0F529E21FD1B07D00B5B93C /* IBDesignables */,
 				A00748671F9124F3004AF885 /* Extension */,
 				A00748531F912189004AF885 /* Products */,
 				247BC915B78C6F54ABF2DF0F /* Pods */,
@@ -98,9 +111,8 @@
 				A007486A1F91258F004AF885 /* Login */,
 				A00748691F912586004AF885 /* Register */,
 				A00748681F912570004AF885 /* SideMenu */,
-				A007486B1F91259A004AF885 /* Swipe */,
+				A007486B1F91259A004AF885 /* BusinessSwipe */,
 				A00748551F912189004AF885 /* AppDelegate.swift */,
-				A00748571F912189004AF885 /* ViewController.swift */,
 				A00748591F912189004AF885 /* Main.storyboard */,
 				A007485C1F912189004AF885 /* Assets.xcassets */,
 				A007485E1F912189004AF885 /* LaunchScreen.storyboard */,
@@ -115,6 +127,8 @@
 				A07226601F914640006C60BA /* SWRevealViewController.h */,
 				A07226611F914641006C60BA /* SWRevealViewController.m */,
 				A072265F1F91463F006C60BA /* Connections-Bridging-Header.h */,
+				A0F529DF1FD1A1A500B5B93C /* GoogleService-Info.plist */,
+				A0F529E11FD1AFC000B5B93C /* Gotham Rounded Book.ttf */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -143,14 +157,26 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		A007486B1F91259A004AF885 /* Swipe */ = {
+		A007486B1F91259A004AF885 /* BusinessSwipe */ = {
 			isa = PBXGroup;
 			children = (
-				A00748711F912AA7004AF885 /* SwipeView.xib */,
-				A00748731F912B0C004AF885 /* SwipeView.swift */,
+				A00748711F912AA7004AF885 /* BusinessSwipeView.xib */,
+				A00748731F912B0C004AF885 /* BusinessSwipeView.swift */,
 				A00748751F912E3F004AF885 /* LikeDislikeInfo.swift */,
+				A00748571F912189004AF885 /* BusinessSwipeViewController.swift */,
 			);
-			path = Swipe;
+			path = BusinessSwipe;
+			sourceTree = "<group>";
+		};
+		A0F529E21FD1B07D00B5B93C /* IBDesignables */ = {
+			isa = PBXGroup;
+			children = (
+				A0F529E31FD1B0CF00B5B93C /* UIViewStyles.swift */,
+				A0F529E51FD1B10E00B5B93C /* UIButtonStyles.swift */,
+				A0F529E71FD1B18100B5B93C /* HorizontalGradient.swift */,
+				A0F529E91FD1BA3100B5B93C /* VerticalGradient.swift */,
+			);
+			path = IBDesignables;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,7 +243,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A00748601F912189004AF885 /* LaunchScreen.storyboard in Resources */,
-				A00748721F912AA7004AF885 /* SwipeView.xib in Resources */,
+				A0F529EB1FD1CD6400B5B93C /* Gotham Rounded Book.ttf in Resources */,
+				A00748721F912AA7004AF885 /* BusinessSwipeView.xib in Resources */,
+				A0F529E01FD1A1A600B5B93C /* GoogleService-Info.plist in Resources */,
 				A007485D1F912189004AF885 /* Assets.xcassets in Resources */,
 				A007485B1F912189004AF885 /* Main.storyboard in Resources */,
 			);
@@ -266,16 +294,24 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Connections/Pods-Connections-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/Koloda/Koloda.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Koloda.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,13 +327,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A07226631F9148FB006C60BA /* SWRevealViewController.m in Sources */,
-				A00748741F912B0C004AF885 /* SwipeView.swift in Sources */,
+				A00748741F912B0C004AF885 /* BusinessSwipeView.swift in Sources */,
 				A07226651F91657F006C60BA /* TabsViewController.swift in Sources */,
 				A07226691F916FB4006C60BA /* RegisterViewController.swift in Sources */,
 				A07226671F916EC9006C60BA /* LogInViewController.swift in Sources */,
-				A00748581F912189004AF885 /* ViewController.swift in Sources */,
+				A0F529E81FD1B18100B5B93C /* HorizontalGradient.swift in Sources */,
+				A00748581F912189004AF885 /* BusinessSwipeViewController.swift in Sources */,
 				A00748761F912E3F004AF885 /* LikeDislikeInfo.swift in Sources */,
+				A0F529E41FD1B0CF00B5B93C /* UIViewStyles.swift in Sources */,
+				A0F529EA1FD1BA3100B5B93C /* VerticalGradient.swift in Sources */,
 				A00748561F912189004AF885 /* AppDelegate.swift in Sources */,
+				A0F529E61FD1B10E00B5B93C /* UIButtonStyles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

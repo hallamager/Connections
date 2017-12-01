@@ -9,5 +9,8 @@ target 'Connections' do
     pod 'Koloda'
     pod ‘XLPagerTabStrip’
     pod 'Hero'
+    pod 'Firebase/Core'
+    pod 'Firebase/Auth’
+    pod 'Firebase/Database'
 
 end
