@@ -12,4 +12,6 @@ import Koloda
 
 class BusinessSwipeView: UIView {
 
+    @IBOutlet weak var businessCard: UIViewStyles!
+    
 }

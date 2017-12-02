@@ -22,11 +22,27 @@ class VerticalGradient: UIView {
         
     }
     
-    
-    
-    
-    
     @IBInspectable var SecondColor: UIColor = UIColor.clear {
+        
+        didSet {
+            
+            updateView()
+            
+        }
+        
+    }
+    
+    @IBInspectable var ThirdColor: UIColor = UIColor.clear {
+        
+        didSet {
+            
+            updateView()
+            
+        }
+        
+    }
+    
+    @IBInspectable var FourthColor: UIColor = UIColor.clear {
         
         didSet {
             
@@ -53,13 +69,13 @@ class VerticalGradient: UIView {
         
         let layer = self.layer as! CAGradientLayer
         
-        layer.colors = [ FirstColor.cgColor, SecondColor.cgColor ]
+        layer.colors = [ FirstColor.cgColor, SecondColor.cgColor, ThirdColor.cgColor, FourthColor.cgColor ]
         
         layer.startPoint = CGPoint(x: 0, y: 0) // Upper left corner
         
         
         
-        layer.endPoint = CGPoint(x: 0, y: 1) // Upper right corner
+        layer.endPoint = CGPoint(x: 0, y: 0.9) // Upper right corner
         
     }
 

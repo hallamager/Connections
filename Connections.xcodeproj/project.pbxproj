@@ -16,6 +16,8 @@
 		A00748721F912AA7004AF885 /* BusinessSwipeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00748711F912AA7004AF885 /* BusinessSwipeView.xib */; };
 		A00748741F912B0C004AF885 /* BusinessSwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00748731F912B0C004AF885 /* BusinessSwipeView.swift */; };
 		A00748761F912E3F004AF885 /* LikeDislikeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00748751F912E3F004AF885 /* LikeDislikeInfo.swift */; };
+		A03D991F1FD305160034AE24 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03D991E1FD305160034AE24 /* SideMenuTableViewCell.swift */; };
+		A03D99221FD313380034AE24 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03D99211FD313380034AE24 /* Student.swift */; };
 		A07226631F9148FB006C60BA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07226611F914641006C60BA /* SWRevealViewController.m */; };
 		A07226651F91657F006C60BA /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07226641F91657F006C60BA /* TabsViewController.swift */; };
 		A07226671F916EC9006C60BA /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07226661F916EC9006C60BA /* LogInViewController.swift */; };
@@ -43,6 +45,8 @@
 		A00748711F912AA7004AF885 /* BusinessSwipeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusinessSwipeView.xib; sourceTree = "<group>"; };
 		A00748731F912B0C004AF885 /* BusinessSwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSwipeView.swift; sourceTree = "<group>"; };
 		A00748751F912E3F004AF885 /* LikeDislikeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeDislikeInfo.swift; sourceTree = "<group>"; };
+		A03D991E1FD305160034AE24 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		A03D99211FD313380034AE24 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		A072265F1F91463F006C60BA /* Connections-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Connections-Bridging-Header.h"; sourceTree = "<group>"; };
 		A07226601F914640006C60BA /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		A07226611F914641006C60BA /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -110,8 +114,9 @@
 		A00748541F912189004AF885 /* Connections */ = {
 			isa = PBXGroup;
 			children = (
-				A007486A1F91258F004AF885 /* Login */,
-				A00748691F912586004AF885 /* Register */,
+				A03D99201FD313050034AE24 /* StudentClass */,
+				A007486A1F91258F004AF885 /* StudentLogin */,
+				A00748691F912586004AF885 /* StudentRegister */,
 				A00748681F912570004AF885 /* SideMenu */,
 				A007486B1F91259A004AF885 /* BusinessSwipe */,
 				A00748551F912189004AF885 /* AppDelegate.swift */,
@@ -139,25 +144,26 @@
 			isa = PBXGroup;
 			children = (
 				A0F529EC1FD1E6F600B5B93C /* SideMenuViewController.swift */,
+				A03D991E1FD305160034AE24 /* SideMenuTableViewCell.swift */,
 			);
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
-		A00748691F912586004AF885 /* Register */ = {
+		A00748691F912586004AF885 /* StudentRegister */ = {
 			isa = PBXGroup;
 			children = (
 				A07226681F916FB4006C60BA /* RegisterViewController.swift */,
 			);
-			path = Register;
+			path = StudentRegister;
 			sourceTree = "<group>";
 		};
-		A007486A1F91258F004AF885 /* Login */ = {
+		A007486A1F91258F004AF885 /* StudentLogin */ = {
 			isa = PBXGroup;
 			children = (
 				A07226641F91657F006C60BA /* TabsViewController.swift */,
 				A07226661F916EC9006C60BA /* LogInViewController.swift */,
 			);
-			path = Login;
+			path = StudentLogin;
 			sourceTree = "<group>";
 		};
 		A007486B1F91259A004AF885 /* BusinessSwipe */ = {
@@ -169,6 +175,14 @@
 				A00748571F912189004AF885 /* BusinessSwipeViewController.swift */,
 			);
 			path = BusinessSwipe;
+			sourceTree = "<group>";
+		};
+		A03D99201FD313050034AE24 /* StudentClass */ = {
+			isa = PBXGroup;
+			children = (
+				A03D99211FD313380034AE24 /* Student.swift */,
+			);
+			path = StudentClass;
 			sourceTree = "<group>";
 		};
 		A0F529E21FD1B07D00B5B93C /* IBDesignables */ = {
@@ -340,7 +354,9 @@
 				A00748761F912E3F004AF885 /* LikeDislikeInfo.swift in Sources */,
 				A0F529E41FD1B0CF00B5B93C /* UIViewStyles.swift in Sources */,
 				A0F529EA1FD1BA3100B5B93C /* VerticalGradient.swift in Sources */,
+				A03D991F1FD305160034AE24 /* SideMenuTableViewCell.swift in Sources */,
 				A00748561F912189004AF885 /* AppDelegate.swift in Sources */,
+				A03D99221FD313380034AE24 /* Student.swift in Sources */,
 				A0F529E61FD1B10E00B5B93C /* UIButtonStyles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

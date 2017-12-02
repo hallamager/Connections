@@ -18,8 +18,5 @@ extension BusinessSwipeViewController {
     @IBAction func dislikeButton() {
         kolodaView?.swipe(.left)
     }
-    @IBAction func undoButton() {
-        kolodaView?.revertAction()
-    }
     
 }

@@ -48,8 +48,6 @@ extension BusinessSwipeViewController: KolodaViewDelegate {
         
         performSegue(withIdentifier: "MoreInfo", sender: nil)
         
-        dismiss(animated: true, completion: nil)
-        
     }
     
     // point at wich card disappears
