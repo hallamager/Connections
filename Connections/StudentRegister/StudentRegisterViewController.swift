@@ -1,17 +1,17 @@
 //
-//  RegisterViewController.swift
+//  StudentRegisterViewController.swift
 //  Connections
 //
-//  Created by Hallam John Ager on 13/10/2017.
-//  Copyright © 2017 Hallam John Ager. All rights reserved.
+//  Created by Hallam John Ager on 30/01/2018.
+//  Copyright © 2018 Hallam John Ager. All rights reserved.
 //
 
 import Foundation
-import XLPagerTabStrip
+import UIKit
 import Firebase
 
-class RegisterViewController: UIViewController, IndicatorInfoProvider, UITextFieldDelegate {
-
+class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
+    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -53,21 +53,16 @@ class RegisterViewController: UIViewController, IndicatorInfoProvider, UITextFie
                 
             })
             
-            self.presentSwipeViewController()
+            self.presentStudentProfileCreationViewController()
             
         }
         
     }
     
-    func presentSwipeViewController() {
+    func presentStudentProfileCreationViewController() {
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
-        self.present(SWRevealViewController, animated: true, completion: nil)
+        let StudentCreateProfileLandingViewController:StudentCreateProfileLandingViewController = storyboard.instantiateViewController(withIdentifier: "StudentCreateProfileLandingViewController") as! StudentCreateProfileLandingViewController
+        self.present(StudentCreateProfileLandingViewController, animated: true, completion: nil)
     }
-    
-    // MARK: - IndicatorInfoProvider
-    
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "Register")
-    }
+
 }

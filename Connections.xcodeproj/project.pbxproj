@@ -22,6 +22,9 @@
 		A07226651F91657F006C60BA /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07226641F91657F006C60BA /* TabsViewController.swift */; };
 		A07226671F916EC9006C60BA /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07226661F916EC9006C60BA /* LogInViewController.swift */; };
 		A07226691F916FB4006C60BA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07226681F916FB4006C60BA /* RegisterViewController.swift */; };
+		A09739E32020A4850087F7CE /* BusinessMoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09739E22020A4850087F7CE /* BusinessMoreInfoViewController.swift */; };
+		A09739E72020E6A10087F7CE /* StudentRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09739E62020E6A10087F7CE /* StudentRegisterViewController.swift */; };
+		A09739EA20210BDB0087F7CE /* StudentCreateProfileLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09739E920210BDB0087F7CE /* StudentCreateProfileLandingViewController.swift */; };
 		A0F529E01FD1A1A600B5B93C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0F529DF1FD1A1A500B5B93C /* GoogleService-Info.plist */; };
 		A0F529E41FD1B0CF00B5B93C /* UIViewStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F529E31FD1B0CF00B5B93C /* UIViewStyles.swift */; };
 		A0F529E61FD1B10E00B5B93C /* UIButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F529E51FD1B10E00B5B93C /* UIButtonStyles.swift */; };
@@ -53,6 +56,9 @@
 		A07226641F91657F006C60BA /* TabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
 		A07226661F916EC9006C60BA /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		A07226681F916FB4006C60BA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A09739E22020A4850087F7CE /* BusinessMoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessMoreInfoViewController.swift; sourceTree = "<group>"; };
+		A09739E62020E6A10087F7CE /* StudentRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRegisterViewController.swift; sourceTree = "<group>"; };
+		A09739E920210BDB0087F7CE /* StudentCreateProfileLandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCreateProfileLandingViewController.swift; sourceTree = "<group>"; };
 		A0F529DF1FD1A1A500B5B93C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0F529E11FD1AFC000B5B93C /* Gotham Rounded Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham Rounded Book.ttf"; sourceTree = "<group>"; };
 		A0F529E31FD1B0CF00B5B93C /* UIViewStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewStyles.swift; sourceTree = "<group>"; };
@@ -114,8 +120,10 @@
 		A00748541F912189004AF885 /* Connections */ = {
 			isa = PBXGroup;
 			children = (
+				A09739E820210B9B0087F7CE /* StudentProfileCreation */,
+				A09739E42020E64A0087F7CE /* Login */,
+				A09739E52020E6510087F7CE /* Register */,
 				A03D99201FD313050034AE24 /* StudentClass */,
-				A007486A1F91258F004AF885 /* StudentLogin */,
 				A00748691F912586004AF885 /* StudentRegister */,
 				A00748681F912570004AF885 /* SideMenu */,
 				A007486B1F91259A004AF885 /* BusinessSwipe */,
@@ -152,18 +160,9 @@
 		A00748691F912586004AF885 /* StudentRegister */ = {
 			isa = PBXGroup;
 			children = (
-				A07226681F916FB4006C60BA /* RegisterViewController.swift */,
+				A09739E62020E6A10087F7CE /* StudentRegisterViewController.swift */,
 			);
 			path = StudentRegister;
-			sourceTree = "<group>";
-		};
-		A007486A1F91258F004AF885 /* StudentLogin */ = {
-			isa = PBXGroup;
-			children = (
-				A07226641F91657F006C60BA /* TabsViewController.swift */,
-				A07226661F916EC9006C60BA /* LogInViewController.swift */,
-			);
-			path = StudentLogin;
 			sourceTree = "<group>";
 		};
 		A007486B1F91259A004AF885 /* BusinessSwipe */ = {
@@ -173,6 +172,7 @@
 				A00748731F912B0C004AF885 /* BusinessSwipeView.swift */,
 				A00748751F912E3F004AF885 /* LikeDislikeInfo.swift */,
 				A00748571F912189004AF885 /* BusinessSwipeViewController.swift */,
+				A09739E22020A4850087F7CE /* BusinessMoreInfoViewController.swift */,
 			);
 			path = BusinessSwipe;
 			sourceTree = "<group>";
@@ -183,6 +183,31 @@
 				A03D99211FD313380034AE24 /* Student.swift */,
 			);
 			path = StudentClass;
+			sourceTree = "<group>";
+		};
+		A09739E42020E64A0087F7CE /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A07226641F91657F006C60BA /* TabsViewController.swift */,
+				A07226661F916EC9006C60BA /* LogInViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A09739E52020E6510087F7CE /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				A07226681F916FB4006C60BA /* RegisterViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		A09739E820210B9B0087F7CE /* StudentProfileCreation */ = {
+			isa = PBXGroup;
+			children = (
+				A09739E920210BDB0087F7CE /* StudentCreateProfileLandingViewController.swift */,
+			);
+			path = StudentProfileCreation;
 			sourceTree = "<group>";
 		};
 		A0F529E21FD1B07D00B5B93C /* IBDesignables */ = {
@@ -344,14 +369,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A07226631F9148FB006C60BA /* SWRevealViewController.m in Sources */,
+				A09739E72020E6A10087F7CE /* StudentRegisterViewController.swift in Sources */,
 				A00748741F912B0C004AF885 /* BusinessSwipeView.swift in Sources */,
 				A07226651F91657F006C60BA /* TabsViewController.swift in Sources */,
+				A09739EA20210BDB0087F7CE /* StudentCreateProfileLandingViewController.swift in Sources */,
 				A0F529ED1FD1E6F600B5B93C /* SideMenuViewController.swift in Sources */,
 				A07226691F916FB4006C60BA /* RegisterViewController.swift in Sources */,
 				A07226671F916EC9006C60BA /* LogInViewController.swift in Sources */,
 				A0F529E81FD1B18100B5B93C /* HorizontalGradient.swift in Sources */,
 				A00748581F912189004AF885 /* BusinessSwipeViewController.swift in Sources */,
 				A00748761F912E3F004AF885 /* LikeDislikeInfo.swift in Sources */,
+				A09739E32020A4850087F7CE /* BusinessMoreInfoViewController.swift in Sources */,
 				A0F529E41FD1B0CF00B5B93C /* UIViewStyles.swift in Sources */,
 				A0F529EA1FD1BA3100B5B93C /* VerticalGradient.swift in Sources */,
 				A03D991F1FD305160034AE24 /* SideMenuTableViewCell.swift in Sources */,
