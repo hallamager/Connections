@@ -123,6 +123,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="businessCard" destination="890-db-LLu" id="cvB-C1-4ta"/>
+                <outlet property="businessName" destination="UdE-0P-skT" id="hzd-TG-6d2"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="124.5"/>
         </view>

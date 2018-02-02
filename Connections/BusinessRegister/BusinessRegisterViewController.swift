@@ -1,8 +1,8 @@
 //
-//  StudentRegisterViewController.swift
+//  BusinessRegisterViewController.swift
 //  Connections
 //
-//  Created by Hallam John Ager on 30/01/2018.
+//  Created by Hallam John Ager on 31/01/2018.
 //  Copyright © 2018 Hallam John Ager. All rights reserved.
 //
 
@@ -10,29 +10,29 @@ import Foundation
 import UIKit
 import Firebase
 
-class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
+class BusinessRegisterViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var companyNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        usernameTextField.delegate = self
+        companyNameTextField.delegate = self
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        UIApplication.shared.statusBarStyle = .lightContent
-//    }
-//
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
-//    }
+    //    override func viewWillAppear(_ animated: Bool) {
+    //        UIApplication.shared.statusBarStyle = .lightContent
+    //    }
+    //
+    //    override func viewWillDisappear(_ animated: Bool) {
+    //        super.viewWillDisappear(animated)
+    //        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
+    //    }
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -60,13 +60,13 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
                 } else {
                     
                     // following method is a add user's  more details
-                    ref.child("student").child(user!.uid).setValue(["Username": self.usernameTextField.text!])
+                    ref.child("business").child(user!.uid).setValue(["Company Name": self.companyNameTextField.text!])
                     
                 }
                 
             })
             
-            self.presentStudentProfileCreationViewController()
+            self.presentBusinessProfileCreationViewController()
             
         }
         
@@ -76,10 +76,10 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
         dismiss(animated: true, completion: nil)
     }
     
-    func presentStudentProfileCreationViewController() {
+    func presentBusinessProfileCreationViewController() {
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let StudentCreateProfileLandingViewController:StudentCreateProfileLandingViewController = storyboard.instantiateViewController(withIdentifier: "BusinessSwipeViewController") as! StudentCreateProfileLandingViewController
-        self.present(StudentCreateProfileLandingViewController, animated: true, completion: nil)
+        let BusinessCreateProfileLandingViewController:BusinessCreateProfileLandingViewController = storyboard.instantiateViewController(withIdentifier: "BusinessSwipeViewController") as! BusinessCreateProfileLandingViewController
+        self.present(BusinessCreateProfileLandingViewController, animated: true, completion: nil)
     }
-
+    
 }

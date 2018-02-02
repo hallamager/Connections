@@ -8,6 +8,9 @@
 
 import UIKit
 import Koloda
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class BusinessSwipeViewController: UIViewController {
     
@@ -15,13 +18,33 @@ class BusinessSwipeViewController: UIViewController {
     @IBOutlet weak var OpenMenuLeft: UIBarButtonItem!
     
     
-    var data = ["One", "Two", "Three", "Four"]
+    let refLikes = Database.database().reference()
+    let ref = Database.database().reference().child("business")
+    var businesses = [Business]()
+    var students = [Student]()
+    
+    var counter = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         kolodaView.dataSource = self
         kolodaView.delegate = self
+
+        ref.observeSingleEvent(of: .value, with: { snapshot in
+            for business in snapshot.children {
+                if let data = business as? DataSnapshot {
+                    if let business = Business(snapshot: data) {
+                        self.businesses.append(business)
+                    }
+                }
+            }
+            
+            self.kolodaView.reloadData()
+            
+            print("is\(self.businesses.count)")
+            
+        })
         
         //open menu with tab bar button
         OpenMenuLeft.target = self.revealViewController()
@@ -30,6 +53,33 @@ class BusinessSwipeViewController: UIViewController {
         
         //open menu with swipe gesture
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+    }
+    
+    func addLiked(_ business: Business) {
+        
+        
+        let newLike = refLikes.child("businessesLiked/").child(business.uuid)
+        let dict = [
+            Auth.auth().currentUser!.uid: true,
+            ]
+        
+        newLike.updateChildValues(dict)
+        
+        self.counter += 1
+        
+    }
+    
+    func addDisliked(_ business: Business) {
+        
+        let newDislike = refLikes.child("businessesDisliked/").child(business.uuid)
+        let dict = [
+            Auth.auth().currentUser!.uid: true,
+            ]
+        
+        newDislike.updateChildValues(dict)
+        
+        self.counter += 1
+        
     }
 
 
@@ -64,8 +114,19 @@ extension BusinessSwipeViewController: KolodaViewDelegate {
     
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
         
-//        let x = data[index]
-//        print("did swipe \(x) in direction: \(direction)")
+        let business = businesses[index]
+        
+        if direction == SwipeResultDirection.right {
+            
+            addLiked(self.businesses[counter])
+            
+        } else if direction == .left {
+            
+            addDisliked(self.businesses[counter])
+            
+        }
+        
+        print("did swipe \(business) in direction: \(direction)")
         
     }
     
@@ -89,18 +150,18 @@ extension BusinessSwipeViewController: KolodaViewDelegate {
 extension BusinessSwipeViewController: KolodaViewDataSource {
     
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
-        print(data.count)
-                
-        return data.count
+        return businesses.count
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
         
         let BusinessSwipeView = Bundle.main.loadNibNamed("BusinessSwipeView", owner: self, options: nil)![0] as! BusinessSwipeView
         
-        //        let x = data[index]
+        let business = businesses[index]
         
-        //        swipeView.setupView(job: x)
+        BusinessSwipeView.businessName.text = business.username
+        
+        print(business.username)
         
         return BusinessSwipeView
         
