@@ -60,7 +60,9 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
                 } else {
                     
                     // following method is a add user's  more details
-                    ref.child("student").child(user!.uid).setValue(["Username": self.usernameTextField.text!])
+                    ref.child("student").child(user!.uid).setValue(["Username": self.usernameTextField.text!, "type": "student"])
+                    
+                    ref.child("users").child(user!.uid).setValue(["type": "student"])
                     
                 }
                 
@@ -78,8 +80,8 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
     
     func presentStudentProfileCreationViewController() {
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let StudentCreateProfileLandingViewController:StudentCreateProfileLandingViewController = storyboard.instantiateViewController(withIdentifier: "BusinessSwipeViewController") as! StudentCreateProfileLandingViewController
-        self.present(StudentCreateProfileLandingViewController, animated: true, completion: nil)
+        let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
+        self.present(SWRevealViewController, animated: true, completion: nil)
     }
 
 }

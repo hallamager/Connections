@@ -18,6 +18,7 @@
 		A00748761F912E3F004AF885 /* LikeDislikeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00748751F912E3F004AF885 /* LikeDislikeInfo.swift */; };
 		A03D991F1FD305160034AE24 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03D991E1FD305160034AE24 /* SideMenuTableViewCell.swift */; };
 		A03D99221FD313380034AE24 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03D99211FD313380034AE24 /* Student.swift */; };
+		A049B0D320261EDF00EBD07B /* StudentSwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A049B0D220261EDF00EBD07B /* StudentSwipeViewController.swift */; };
 		A07226631F9148FB006C60BA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07226611F914641006C60BA /* SWRevealViewController.m */; };
 		A07226651F91657F006C60BA /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07226641F91657F006C60BA /* TabsViewController.swift */; };
 		A07226671F916EC9006C60BA /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07226661F916EC9006C60BA /* LogInViewController.swift */; };
@@ -53,6 +54,7 @@
 		A00748751F912E3F004AF885 /* LikeDislikeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeDislikeInfo.swift; sourceTree = "<group>"; };
 		A03D991E1FD305160034AE24 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		A03D99211FD313380034AE24 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		A049B0D220261EDF00EBD07B /* StudentSwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSwipeViewController.swift; sourceTree = "<group>"; };
 		A072265F1F91463F006C60BA /* Connections-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Connections-Bridging-Header.h"; sourceTree = "<group>"; };
 		A07226601F914640006C60BA /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		A07226611F914641006C60BA /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -126,11 +128,12 @@
 		A00748541F912189004AF885 /* Connections */ = {
 			isa = PBXGroup;
 			children = (
-				A09739E820210B9B0087F7CE /* StudentProfileCreation */,
 				A09739E42020E64A0087F7CE /* Login */,
 				A09739E52020E6510087F7CE /* Register */,
-				A03D99201FD313050034AE24 /* StudentClass */,
+				A09739E820210B9B0087F7CE /* StudentProfileCreation */,
 				A00748691F912586004AF885 /* StudentRegister */,
+				A049B0D120261E8200EBD07B /* StudentSideMenu */,
+				A049B0D020261E5000EBD07B /* StudentSwipe */,
 				A0973A112024B4FD0087F7CE /* BusinessProfileCreation */,
 				A09739EB2021D1AB0087F7CE /* BusinessRegister */,
 				A00748681F912570004AF885 /* BusinessSideMenu */,
@@ -186,12 +189,20 @@
 			path = BusinessSwipe;
 			sourceTree = "<group>";
 		};
-		A03D99201FD313050034AE24 /* StudentClass */ = {
+		A049B0D020261E5000EBD07B /* StudentSwipe */ = {
 			isa = PBXGroup;
 			children = (
 				A03D99211FD313380034AE24 /* Student.swift */,
+				A049B0D220261EDF00EBD07B /* StudentSwipeViewController.swift */,
 			);
-			path = StudentClass;
+			path = StudentSwipe;
+			sourceTree = "<group>";
+		};
+		A049B0D120261E8200EBD07B /* StudentSideMenu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StudentSideMenu;
 			sourceTree = "<group>";
 		};
 		A09739E42020E64A0087F7CE /* Login */ = {
@@ -407,6 +418,7 @@
 				A09739E32020A4850087F7CE /* BusinessMoreInfoViewController.swift in Sources */,
 				A0F529E41FD1B0CF00B5B93C /* UIViewStyles.swift in Sources */,
 				A0F529EA1FD1BA3100B5B93C /* VerticalGradient.swift in Sources */,
+				A049B0D320261EDF00EBD07B /* StudentSwipeViewController.swift in Sources */,
 				A03D991F1FD305160034AE24 /* SideMenuTableViewCell.swift in Sources */,
 				A0973A15202503F50087F7CE /* Business.swift in Sources */,
 				A00748561F912189004AF885 /* AppDelegate.swift in Sources */,

@@ -46,9 +46,34 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
             
             Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
                 
-                if let firebaseError = error {
-                    print(firebaseError.localizedDescription)
-                    return
+//                if let firebaseError = error {
+//                    print(firebaseError.localizedDescription)
+//                    return
+//                }
+                
+                if error == nil {
+                    // Get the type from the database. It's path is users/<userId>/type.
+                    // Notice "observeSingleEvent", so we don't register for getting an update every time it changes.
+                    Database.database().reference().child("users/\(user!.uid)/type").observeSingleEvent(of: .value, with: {
+                        (snapshot) in
+                        
+                        switch snapshot.value as! String {
+                        // If our user is admin...
+                        case "business":
+                            // ...redirect to the admin page
+                            let vc = self.storyboard?.instantiateViewController(withIdentifier: "StudentSwipeViewController")
+                            self.present(vc!, animated: true, completion: nil)
+                        // If out user is a regular user...
+                        case "student":
+                            // ...redirect to the user page
+                            let vc = self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController")
+                            self.present(vc!, animated: true, completion: nil)
+                        // If the type wasn't found...
+                        default:
+                            // ...print an error
+                            print("Error: Couldn't find type for user \(user!.uid)")
+                        }
+                    })
                 }
                 
                 self.presentSwipeViewController()
@@ -60,9 +85,18 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
     }
     
     func presentSwipeViewController() {
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
-        self.present(SWRevealViewController, animated: true, completion: nil)
+//        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
+//        self.present(SWRevealViewController, animated: true, completion: nil)
+        
+//        func loggedIn() {
+//            if() {
+//                performSegue(withIdentifier: "showbusiness", sender: self)
+//            } else {
+//                performSegue(withIdentifier: "showstudents", sender: self)
+//            }
+//        }
+        
     }
     
     // MARK: - IndicatorInfoProvider
