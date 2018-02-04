@@ -39,7 +39,7 @@ class UIButtonStyles: UIButton {
     
     func addShadow(shadowColor: CGColor = UIColor.lightGray.cgColor,
                    shadowOffset: CGSize = CGSize(width: 0, height: 0),
-                   shadowOpacity: Float = 0.5,
+                   shadowOpacity: Float = 0.4,
                    shadowRadius: CGFloat = 4.0) {
         layer.shadowColor = shadowColor
         layer.shadowOffset = shadowOffset
