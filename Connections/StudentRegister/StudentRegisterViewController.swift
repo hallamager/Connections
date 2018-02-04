@@ -80,8 +80,9 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
     
     func presentStudentProfileCreationViewController() {
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
-        self.present(SWRevealViewController, animated: true, completion: nil)
+        let StudentCreateProfileLandingViewController:StudentCreateProfileLandingViewController = storyboard.instantiateViewController(withIdentifier: "StudentCreateProfileLandingViewController") as! StudentCreateProfileLandingViewController
+        self.present(StudentCreateProfileLandingViewController, animated: true, completion: nil)
     }
+    
 
 }

@@ -59,16 +59,16 @@ class BusinessRegisterViewController: UIViewController, UITextFieldDelegate {
                     
                 } else {
                     
-                    // following method is a add user's  more details
+                    // following method is a add user's more details
                     ref.child("business").child(user!.uid).setValue(["Company Name": self.companyNameTextField.text!, "type": "business"])
                     
                     ref.child("users").child(user!.uid).setValue(["type": "business"])
 
+                    self.presentBusinessProfileCreationViewController()
+
                 }
                 
             })
-            
-            self.presentBusinessProfileCreationViewController()
             
         }
         
@@ -80,8 +80,8 @@ class BusinessRegisterViewController: UIViewController, UITextFieldDelegate {
     
     func presentBusinessProfileCreationViewController() {
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let StudentSwipeViewController:StudentSwipeViewController = storyboard.instantiateViewController(withIdentifier: "StudentSwipeViewController") as! StudentSwipeViewController
-        self.present(StudentSwipeViewController, animated: true, completion: nil)
+        let BusinessCreateProfileLandingViewController:BusinessCreateProfileLandingViewController = storyboard.instantiateViewController(withIdentifier: "BusinessCreateProfileLandingViewController") as! BusinessCreateProfileLandingViewController
+        self.present(BusinessCreateProfileLandingViewController, animated: true, completion: nil)
     }
     
 }
