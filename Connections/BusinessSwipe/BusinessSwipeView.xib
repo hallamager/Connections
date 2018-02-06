@@ -115,12 +115,15 @@
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                             <real key="value" value="7"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="fade"/>
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="businessCard" destination="890-db-LLu" id="cvB-C1-4ta"/>
                 <outlet property="businessName" destination="UdE-0P-skT" id="hzd-TG-6d2"/>

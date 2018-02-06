@@ -1075,7 +1075,6 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="scale(0.5) translate(200, 0) fade useGlobalCoordinateSpace"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="moreInfo"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="d7y-Cf-Gr3" kind="presentation" identifier="MoreInfo" id="TfW-ho-0Vp"/>
@@ -1122,7 +1121,7 @@
         <!--MoreInfoViewController-->
         <scene sceneID="1fu-DU-Lsy">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="d7y-Cf-Gr3" userLabel="MoreInfoViewController" customClass="BusinessMoreInfoViewController" customModule="Connections" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BusinessMoreInfoViewController" automaticallyAdjustsScrollViewInsets="NO" id="d7y-Cf-Gr3" userLabel="MoreInfoViewController" customClass="BusinessMoreInfoViewController" customModule="Connections" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3dq-1K-ZSh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="945"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1303,7 +1302,9 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="companyDescription" destination="4Im-2Q-sMd" id="MqH-4a-T1J"/>
                         <outlet property="companyIndustry" destination="Drp-Dy-wSW" id="CfB-Xd-3uZ"/>
+                        <outlet property="companyName" destination="3vy-Or-aMS" id="csH-fN-h0f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bdR-Ix-rXq" userLabel="First Responder" sceneMemberID="firstResponder"/>

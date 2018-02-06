@@ -15,12 +15,16 @@ class BusinessMoreInfoViewController: UIViewController {
     
     var business: Business!
         
+    @IBOutlet var companyName: UILabel!
     @IBOutlet var companyIndustry: UILabel!
+    @IBOutlet var companyDescription: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         companyIndustry.text = business.industry
+        companyName.text = business.username
+        companyDescription.text = business.description
         
     }
     

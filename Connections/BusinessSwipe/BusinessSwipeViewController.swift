@@ -83,11 +83,12 @@ class BusinessSwipeViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let business = sender as? Business else { return }
+        let business = businesses[counter]
         let vc = segue.destination as! BusinessMoreInfoViewController
         vc.business = business
     }
-
+    
+    
 }
 
 extension BusinessSwipeViewController: KolodaViewDelegate {
@@ -99,8 +100,7 @@ extension BusinessSwipeViewController: KolodaViewDelegate {
     
     //what happens when card is pressed
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-        let business = businesses[index]
-        performSegue(withIdentifier: "MoreInfo", sender: business)
+        performSegue(withIdentifier: "MoreInfo", sender: nil)
     }
     
     // point at wich card disappears

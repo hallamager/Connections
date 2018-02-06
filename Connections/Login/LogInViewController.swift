@@ -75,9 +75,7 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
                         }
                     })
                 }
-                
-                self.presentSwipeViewController()
-                
+                                
             })
             
         }
@@ -85,18 +83,9 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
     }
     
     func presentSwipeViewController() {
-//        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
-//        self.present(SWRevealViewController, animated: true, completion: nil)
-        
-//        func loggedIn() {
-//            if() {
-//                performSegue(withIdentifier: "showbusiness", sender: self)
-//            } else {
-//                performSegue(withIdentifier: "showstudents", sender: self)
-//            }
-//        }
-        
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
+        self.present(SWRevealViewController, animated: true, completion: nil)
     }
     
     // MARK: - IndicatorInfoProvider
