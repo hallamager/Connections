@@ -25,7 +25,6 @@ class Business {
         } else {
             return nil
         }
-        
     }
     
     

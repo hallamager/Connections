@@ -8,11 +8,19 @@
 
 import Foundation
 import UIKit
+import Firebase
+import Koloda
 
 class BusinessMoreInfoViewController: UIViewController {
     
+    var business: Business!
+        
+    @IBOutlet var companyIndustry: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        companyIndustry.text = business.industry
         
     }
     

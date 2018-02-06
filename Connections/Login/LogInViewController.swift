@@ -60,12 +60,12 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
                         switch snapshot.value as! String {
                         // If our user is admin...
                         case "business":
-                            // ...redirect to the admin page
+                            // ...redirect to the student page
                             let vc = self.storyboard?.instantiateViewController(withIdentifier: "StudentSwipeViewController")
                             self.present(vc!, animated: true, completion: nil)
                         // If out user is a regular user...
                         case "student":
-                            // ...redirect to the user page
+                            // ...redirect to the business page
                             let vc = self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController")
                             self.present(vc!, animated: true, completion: nil)
                         // If the type wasn't found...
