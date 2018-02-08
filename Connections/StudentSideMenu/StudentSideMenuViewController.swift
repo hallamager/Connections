@@ -2,15 +2,16 @@
 //  SideMenuViewController.swift
 //  Connections
 //
-//  Created by Hallam John Ager on 01/12/2017.
-//  Copyright © 2017 Hallam John Ager. All rights reserved.
+//  Created by Hallam John Ager on 08/02/2018.
+//  Copyright © 2018 Hallam John Ager. All rights reserved.
 //
 
 import Foundation
 import UIKit
 import Firebase
 
-class SideMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class StudentSideMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
     
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var SideMenuTableView: UITableView!
@@ -18,7 +19,7 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
     var menuNameArray:Array = [String]()
     var iconImage:Array = [UIImage]()
     var coverView: UIView?
-    var students = [Student]()
+    var students = [Business]()
     
     override func viewDidLoad() {
         
@@ -30,11 +31,11 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         menuNameArray = ["Home", "Liked", "Chats", "News Feed", "Profile"]
         iconImage = [UIImage(named: "Home-icon")!, UIImage(named: "Liked-icon")!, UIImage(named: "Chats-icon")!, UIImage(named: "News-Feed-icon")!, UIImage(named: "Profile-icon")! ]
         
-        let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)")
+        let ref = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)")
         ref.observeSingleEvent(of: .value, with: { snapshot in
-            if let student = Student(snapshot: snapshot) {
-                self.usernameLabel.text = student.username
-                self.students.append(student)
+            if let business = Business(snapshot: snapshot) {
+                self.usernameLabel.text = business.username
+                self.students.append(business)
             }
         })
         
@@ -48,7 +49,7 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SideMenuTableViewCell") as! SideMenuTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StudentSideMenuTableViewCell") as! StudentSideMenuTableViewCell
         
         cell.imgMenuIcon.image = iconImage[indexPath.row]
         cell.lblMenuName.text! = menuNameArray[indexPath.row]
@@ -64,28 +65,28 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let revealViewController:SWRevealViewController = self.revealViewController()
         
-        let cell:SideMenuTableViewCell = tableView.cellForRow(at: indexPath) as! SideMenuTableViewCell
+        let cell:StudentSideMenuTableViewCell = tableView.cellForRow(at: indexPath) as! StudentSideMenuTableViewCell
         
         if cell.lblMenuName.text! == "Home"
         {
             
             let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let desController = mainStoryboard.instantiateViewController(withIdentifier: "BusinessSwipeViewController") as! BusinessSwipeViewController
+            let desController = mainStoryboard.instantiateViewController(withIdentifier: "StudentSwipeViewController") as! StudentSwipeViewController
             let newFrontViewController = UINavigationController.init(rootViewController:desController)
             
             revealViewController.pushFrontViewController(newFrontViewController, animated: true)
             
         }
-//        if cell.lblMenuName.text! == "Liked"
-//        {
-//
-//            let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//            let desController = mainStoryboard.instantiateViewController(withIdentifier: "LikedViewController") as! LikedViewController
-//            let newFrontViewController = UINavigationController.init(rootViewController:desController)
-//
-//            revealViewController.pushFrontViewController(newFrontViewController, animated: true)
-//
-//        }
+        //        if cell.lblMenuName.text! == "Liked"
+        //        {
+        //
+        //            let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        //            let desController = mainStoryboard.instantiateViewController(withIdentifier: "LikedViewController") as! LikedViewController
+        //            let newFrontViewController = UINavigationController.init(rootViewController:desController)
+        //
+        //            revealViewController.pushFrontViewController(newFrontViewController, animated: true)
+        //
+        //        }
         
     }
     
@@ -128,5 +129,8 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
             print("There was a problem loggin out")
         }
     }
+    
+    
+    
     
 }

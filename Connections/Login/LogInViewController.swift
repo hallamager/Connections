@@ -26,13 +26,13 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
     }
     
     // check if user has logged in thus not showing logging in page
-    override func viewDidAppear(_ animated: Bool) {
-        
-        if Auth.auth().currentUser != nil {
-            self.presentSwipeViewController()
-        }
-        
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        
+//        if Auth.auth().currentUser != nil {
+//            self.presentSwipeViewController()
+//        }
+//        
+//    }
     
     //text field goes away when done is pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -61,7 +61,7 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
                         // If our user is admin...
                         case "business":
                             // ...redirect to the student page
-                            let vc = self.storyboard?.instantiateViewController(withIdentifier: "StudentSwipeViewController")
+                            let vc = self.storyboard?.instantiateViewController(withIdentifier: "StudentSWRevealViewController")
                             self.present(vc!, animated: true, completion: nil)
                         // If out user is a regular user...
                         case "student":
@@ -82,11 +82,12 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
         
     }
     
-    func presentSwipeViewController() {
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
-        self.present(SWRevealViewController, animated: true, completion: nil)
-    }
+    // if already logged take user to swipe view controller
+//    func presentSwipeViewController() {
+//        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
+//        self.present(SWRevealViewController, animated: true, completion: nil)
+//    }
     
     // MARK: - IndicatorInfoProvider
     

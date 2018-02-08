@@ -12,11 +12,15 @@ class Student {
     
     let uuid: String
     let username: String
+    let industry: String
+    let description: String
     
     init?(snapshot: DataSnapshot) {
         if let snapshotData = snapshot.value as? [String: Any] {
             uuid = snapshot.key
             username = snapshotData["Username"] as! String
+            industry = snapshotData["Industry"] as! String
+            description = snapshotData["Description"] as! String
         } else {
             return nil
         }
