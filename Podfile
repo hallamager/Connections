@@ -12,5 +12,6 @@ target 'Connections' do
     pod 'Firebase/Core'
     pod 'Firebase/Auth’
     pod 'Firebase/Database'
+    pod 'FoldingCell'
 
 end

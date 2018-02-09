@@ -37,6 +37,8 @@
 		A0AD0714202CC66F00B77C61 /* StudentSwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD0713202CC66F00B77C61 /* StudentSwipeView.swift */; };
 		A0AD0716202CC6A200B77C61 /* LikeDislikeButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD0715202CC6A200B77C61 /* LikeDislikeButtons.swift */; };
 		A0AD0718202CC6BA00B77C61 /* StudentSwipeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AD0717202CC6BA00B77C61 /* StudentSwipeView.xib */; };
+		A0AD071C202DCF8C00B77C61 /* BusinessLikedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD071B202DCF8C00B77C61 /* BusinessLikedViewController.swift */; };
+		A0AD0722202E043000B77C61 /* BusinessLikedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD0721202E043000B77C61 /* BusinessLikedCell.swift */; };
 		A0F529E01FD1A1A600B5B93C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0F529DF1FD1A1A500B5B93C /* GoogleService-Info.plist */; };
 		A0F529E41FD1B0CF00B5B93C /* UIViewStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F529E31FD1B0CF00B5B93C /* UIViewStyles.swift */; };
 		A0F529E61FD1B10E00B5B93C /* UIButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F529E51FD1B10E00B5B93C /* UIButtonStyles.swift */; };
@@ -83,6 +85,9 @@
 		A0AD0713202CC66F00B77C61 /* StudentSwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSwipeView.swift; sourceTree = "<group>"; };
 		A0AD0715202CC6A200B77C61 /* LikeDislikeButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeDislikeButtons.swift; sourceTree = "<group>"; };
 		A0AD0717202CC6BA00B77C61 /* StudentSwipeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentSwipeView.xib; sourceTree = "<group>"; };
+		A0AD0719202DC49100B77C61 /* Connections.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Connections.entitlements; sourceTree = "<group>"; };
+		A0AD071B202DCF8C00B77C61 /* BusinessLikedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessLikedViewController.swift; sourceTree = "<group>"; };
+		A0AD0721202E043000B77C61 /* BusinessLikedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessLikedCell.swift; sourceTree = "<group>"; };
 		A0F529DF1FD1A1A500B5B93C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0F529E11FD1AFC000B5B93C /* Gotham Rounded Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham Rounded Book.ttf"; sourceTree = "<group>"; };
 		A0F529E31FD1B0CF00B5B93C /* UIViewStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewStyles.swift; sourceTree = "<group>"; };
@@ -144,6 +149,7 @@
 		A00748541F912189004AF885 /* Connections */ = {
 			isa = PBXGroup;
 			children = (
+				A0AD0719202DC49100B77C61 /* Connections.entitlements */,
 				A09739E42020E64A0087F7CE /* Login */,
 				A09739E52020E6510087F7CE /* Register */,
 				A09739E820210B9B0087F7CE /* StudentProfileCreation */,
@@ -153,6 +159,7 @@
 				A0973A112024B4FD0087F7CE /* BusinessProfileCreation */,
 				A09739EB2021D1AB0087F7CE /* BusinessRegister */,
 				A00748681F912570004AF885 /* BusinessSideMenu */,
+				A0AD071A202DCF6E00B77C61 /* BusinessLiked */,
 				A007486B1F91259A004AF885 /* BusinessSwipe */,
 				A00748551F912189004AF885 /* AppDelegate.swift */,
 				A00748591F912189004AF885 /* Main.storyboard */,
@@ -270,6 +277,15 @@
 			path = BusinessProfileCreation;
 			sourceTree = "<group>";
 		};
+		A0AD071A202DCF6E00B77C61 /* BusinessLiked */ = {
+			isa = PBXGroup;
+			children = (
+				A0AD071B202DCF8C00B77C61 /* BusinessLikedViewController.swift */,
+				A0AD0721202E043000B77C61 /* BusinessLikedCell.swift */,
+			);
+			path = BusinessLiked;
+			sourceTree = "<group>";
+		};
 		A0F529E21FD1B07D00B5B93C /* IBDesignables */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +334,14 @@
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -397,6 +421,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Connections/Pods-Connections-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FoldingCell/FoldingCell.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
@@ -408,6 +433,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoldingCell.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
@@ -443,6 +469,7 @@
 				A00748761F912E3F004AF885 /* LikeDislikeInfo.swift in Sources */,
 				A09739E32020A4850087F7CE /* BusinessMoreInfoViewController.swift in Sources */,
 				A0F529E41FD1B0CF00B5B93C /* UIViewStyles.swift in Sources */,
+				A0AD071C202DCF8C00B77C61 /* BusinessLikedViewController.swift in Sources */,
 				A0AD070E202CC1D400B77C61 /* StudentSideMenuViewController.swift in Sources */,
 				A0AD0712202CC66000B77C61 /* StudentMoreInfoViewController.swift in Sources */,
 				A0AD0714202CC66F00B77C61 /* StudentSwipeView.swift in Sources */,
@@ -455,6 +482,7 @@
 				A00748561F912189004AF885 /* AppDelegate.swift in Sources */,
 				A09739ED2021D2390087F7CE /* BusinessRegisterViewController.swift in Sources */,
 				A09F6BA02027512B00D98332 /* StudentPersonalViewController.swift in Sources */,
+				A0AD0722202E043000B77C61 /* BusinessLikedCell.swift in Sources */,
 				A0973A132024B52D0087F7CE /* BusinessProfileCreationLandingViewController.swift in Sources */,
 				A03D99221FD313380034AE24 /* Student.swift in Sources */,
 				A0F529E61FD1B10E00B5B93C /* UIButtonStyles.swift in Sources */,
