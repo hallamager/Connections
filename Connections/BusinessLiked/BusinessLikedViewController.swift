@@ -29,20 +29,25 @@ class BusinessLikedViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ref.observeSingleEvent(of: .value, with: { snapshot in
-            for business in snapshot.children {
-                if let data = business as? DataSnapshot {
-                    if let business = Business(snapshot: data) {
-                        self.businesses.append(business)
-                    }
-                }
-            }
-            
+//        ref.observeSingleEvent(of: .value, with: { snapshot in
+//            for business in snapshot.children {
+//                if let data = business as? DataSnapshot {
+//                    if let business = Business(snapshot: data) {
+//                        self.businesses.append(business)
+//                    }
+//                }
+//            }
+//
+//            self.tableView.reloadData()
+//
+//            print("is\(self.businesses.count)")
+//
+//        })
+        
+        loadRelatedBusinesses(for: Auth.auth().currentUser!.uid) { success, businesses in
+            self.businesses = businesses
             self.tableView.reloadData()
-            
-            print("is\(self.businesses.count)")
-            
-        })
+        }
         
         //open menu with tab bar button
         openMenuLeft.target = self.revealViewController()
@@ -54,6 +59,37 @@ class BusinessLikedViewController: UITableViewController {
         
         setup()
         
+    }
+    
+    func loadRelatedBusinesses(for studentUID: String, completion: @escaping (Bool, [Business]) -> ()) {
+        
+        let ref = Database.database().reference(withPath: "studentsLiked/" + Auth.auth().currentUser!.uid)
+        ref.observeSingleEvent(of: .value) { snapshot in
+            
+            var uids = [String]()
+            for child in snapshot.children {
+                let userData = child as! DataSnapshot
+                uids.append(userData.key)
+            }
+            
+            let userRef = Database.database().reference(withPath: "business")
+            var businesses = [Business]()
+            var count = 0
+            if uids.count != 0 {
+                uids.forEach { uid in
+                    userRef.child(uid).observeSingleEvent(of: .value) { snapshot in
+                        let business = Business(snapshot: snapshot)
+                        businesses.append(business!)
+                        count += 1
+                        if count == uids.count {
+                            completion(true, businesses)
+                        }
+                    }
+                }
+            } else {
+                completion(true, businesses)
+            }
+        }
     }
     
     private func setup() {
