@@ -13,16 +13,8 @@ import FoldingCell
 
 class BusinessLikedCell: FoldingCell {
     
-    
     @IBOutlet weak var foldingNameLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
-    
-    var number: Int = 0 {
-        didSet {
-            foldingNameLabel.text = String(number)
-            nameLabel.text = String(number)
-        }
-    }
     
     //Defines sides, shadows and colour of the cells for the viewcontroller.
     override func awakeFromNib() {

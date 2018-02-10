@@ -17,13 +17,32 @@ class BusinessLikedViewController: UITableViewController {
     
     let kCloseCellHeight: CGFloat = 180
     let kOpenCellHeight: CGFloat = 490
+    let ref = Database.database().reference().child("business")
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
+    var businesses = [Business]()
+    var businessContent = BusinessLikedCell()
+    
 
     @IBOutlet var openMenuLeft: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ref.observeSingleEvent(of: .value, with: { snapshot in
+            for business in snapshot.children {
+                if let data = business as? DataSnapshot {
+                    if let business = Business(snapshot: data) {
+                        self.businesses.append(business)
+                    }
+                }
+            }
+            
+            self.tableView.reloadData()
+            
+            print("is\(self.businesses.count)")
+            
+        })
         
         //open menu with tab bar button
         openMenuLeft.target = self.revealViewController()
@@ -48,13 +67,15 @@ class BusinessLikedViewController: UITableViewController {
 extension BusinessLikedViewController {
     
     override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return 10
+        return businesses.count
     }
     
     override func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard case let cell as BusinessLikedCell = cell else {
             return
         }
+        
+        let business = businesses[indexPath.row]
         
         cell.backgroundColor = .clear
         
@@ -64,14 +85,22 @@ extension BusinessLikedViewController {
             cell.unfold(true, animated: false, completion: nil)
         }
         
-        cell.number = indexPath.row
+        cell.nameLabel.text! = business.username        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! FoldingCell
+        let cellContent = tableView.dequeueReusableCell(withIdentifier: "FoldingCell") as! BusinessLikedCell
         let durations: [TimeInterval] = [0.26, 0.2, 0.2]
         cell.durationsForExpandedState = durations
         cell.durationsForCollapsedState = durations
+        
+        let business = businesses[indexPath.row]
+        
+        cellContent.nameLabel.text! = business.username
+        
+        print(business.username)
+        
         return cell
     }
     

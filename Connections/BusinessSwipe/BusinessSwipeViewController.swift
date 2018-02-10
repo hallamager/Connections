@@ -65,6 +65,7 @@ class BusinessSwipeViewController: UIViewController {
         
         newLike.updateChildValues(dict)
         
+        
         self.counter += 1
         
     }

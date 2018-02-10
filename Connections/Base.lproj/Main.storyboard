@@ -1003,8 +1003,8 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kgc-zr-1Os" userLabel="Foreground" customClass="RotatedView" customModule="FoldingCell">
                                             <rect key="frame" x="20" y="11" width="374" height="160"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhL-hM-xUh">
-                                                    <rect key="frame" x="165" y="69" width="43" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhL-hM-xUh">
+                                                    <rect key="frame" x="118" y="70" width="139" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1092,10 +1092,10 @@
                                 <connections>
                                     <outlet property="containerView" destination="Pt7-xA-BWq" id="DwX-9K-OnE"/>
                                     <outlet property="containerViewTop" destination="p6K-S7-b6F" id="1z8-ON-h98"/>
-                                    <outlet property="foldingNameLabel" destination="yvz-zu-ael" id="KfA-Yx-sKu"/>
+                                    <outlet property="foldingNameLabel" destination="yvz-zu-ael" id="H6M-cb-vAb"/>
                                     <outlet property="foregroundView" destination="Kgc-zr-1Os" id="9sq-QA-huV"/>
                                     <outlet property="foregroundViewTop" destination="fMs-Xk-pzn" id="qLn-tG-uFE"/>
-                                    <outlet property="nameLabel" destination="zhL-hM-xUh" id="8Kf-cB-KdH"/>
+                                    <outlet property="nameLabel" destination="zhL-hM-xUh" id="rvW-GN-eIF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

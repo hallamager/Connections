@@ -58,8 +58,6 @@ class StudentSwipeViewController: UIViewController {
         
         self.counter += 1
         
-        self.counter += 1
-        
     }
     
     func addDisliked(_ student: Student) {
