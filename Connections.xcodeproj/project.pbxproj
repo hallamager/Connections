@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		99733C41CF7F4FF50A7A2C54 /* Pods_Connections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599FF97567B39B949FCABD9E /* Pods_Connections.framework */; };
+		A000D43E203077BB0099892D /* StudentLikedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000D43D203077BB0099892D /* StudentLikedViewController.swift */; };
+		A000D440203077E10099892D /* StudentLikedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000D43F203077E10099892D /* StudentLikedCell.swift */; };
 		A00748561F912189004AF885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00748551F912189004AF885 /* AppDelegate.swift */; };
 		A00748581F912189004AF885 /* BusinessSwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00748571F912189004AF885 /* BusinessSwipeViewController.swift */; };
 		A007485B1F912189004AF885 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00748591F912189004AF885 /* Main.storyboard */; };
@@ -52,6 +54,8 @@
 		419B1DC5AA939905FD333D7A /* Pods-Connections.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connections.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Connections/Pods-Connections.debug.xcconfig"; sourceTree = "<group>"; };
 		599FF97567B39B949FCABD9E /* Pods_Connections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Connections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84574314C222C8CEEC27E2AC /* Pods-Connections.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connections.release.xcconfig"; path = "Pods/Target Support Files/Pods-Connections/Pods-Connections.release.xcconfig"; sourceTree = "<group>"; };
+		A000D43D203077BB0099892D /* StudentLikedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLikedViewController.swift; sourceTree = "<group>"; };
+		A000D43F203077E10099892D /* StudentLikedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLikedCell.swift; sourceTree = "<group>"; };
 		A00748521F912189004AF885 /* Connections.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Connections.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A00748551F912189004AF885 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A00748571F912189004AF885 /* BusinessSwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSwipeViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +130,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A000D43C2030778E0099892D /* StudentLiked */ = {
+			isa = PBXGroup;
+			children = (
+				A000D43D203077BB0099892D /* StudentLikedViewController.swift */,
+				A000D43F203077E10099892D /* StudentLikedCell.swift */,
+			);
+			path = StudentLiked;
+			sourceTree = "<group>";
+		};
 		A00748491F912188004AF885 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +168,7 @@
 				A09739E820210B9B0087F7CE /* StudentProfileCreation */,
 				A00748691F912586004AF885 /* StudentRegister */,
 				A049B0D120261E8200EBD07B /* StudentSideMenu */,
+				A000D43C2030778E0099892D /* StudentLiked */,
 				A049B0D020261E5000EBD07B /* StudentSwipe */,
 				A0973A112024B4FD0087F7CE /* BusinessProfileCreation */,
 				A09739EB2021D1AB0087F7CE /* BusinessRegister */,
@@ -463,6 +477,7 @@
 				A0F529ED1FD1E6F600B5B93C /* SideMenuViewController.swift in Sources */,
 				A07226691F916FB4006C60BA /* RegisterViewController.swift in Sources */,
 				A0AD0716202CC6A200B77C61 /* LikeDislikeButtons.swift in Sources */,
+				A000D440203077E10099892D /* StudentLikedCell.swift in Sources */,
 				A07226671F916EC9006C60BA /* LogInViewController.swift in Sources */,
 				A0F529E81FD1B18100B5B93C /* HorizontalGradient.swift in Sources */,
 				A00748581F912189004AF885 /* BusinessSwipeViewController.swift in Sources */,
@@ -475,6 +490,7 @@
 				A0AD0714202CC66F00B77C61 /* StudentSwipeView.swift in Sources */,
 				A0F529EA1FD1BA3100B5B93C /* VerticalGradient.swift in Sources */,
 				A09F6BA22027534F00D98332 /* BusinessAboutViewController.swift in Sources */,
+				A000D43E203077BB0099892D /* StudentLikedViewController.swift in Sources */,
 				A049B0D320261EDF00EBD07B /* StudentSwipeViewController.swift in Sources */,
 				A03D991F1FD305160034AE24 /* SideMenuTableViewCell.swift in Sources */,
 				A0973A15202503F50087F7CE /* Business.swift in Sources */,

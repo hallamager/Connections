@@ -1,8 +1,8 @@
 //
-//  BusinessLikedViewController.swift
+//  StudentLikedViewController.swift
 //  Connections
 //
-//  Created by Hallam John Ager on 09/02/2018.
+//  Created by Hallam John Ager on 11/02/2018.
 //  Copyright © 2018 Hallam John Ager. All rights reserved.
 //
 
@@ -13,23 +13,23 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-class BusinessLikedViewController: UITableViewController {
+class StudentLikedViewController: UITableViewController {
     
     let kCloseCellHeight: CGFloat = 180
     let kOpenCellHeight: CGFloat = 490
-    let ref = Database.database().reference().child("business")
+    let ref = Database.database().reference().child("student")
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
-    var businesses = [Business]()
+    var students = [Student]()
     
-
+    
     @IBOutlet var openMenuLeft: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadRelatedBusinesses(for: Auth.auth().currentUser!.uid) { success, businesses in
-            self.businesses = businesses
+        loadRelatedStudents(for: Auth.auth().currentUser!.uid) { success, students in
+            self.students = students
             self.tableView.reloadData()
         }
         
@@ -45,9 +45,9 @@ class BusinessLikedViewController: UITableViewController {
         
     }
     
-    func loadRelatedBusinesses(for studentUID: String, completion: @escaping (Bool, [Business]) -> ()) {
+    func loadRelatedStudents(for businessUID: String, completion: @escaping (Bool, [Student]) -> ()) {
         
-        let ref = Database.database().reference(withPath: "studentsLiked/" + Auth.auth().currentUser!.uid)
+        let ref = Database.database().reference(withPath: "matches/" + Auth.auth().currentUser!.uid)
         ref.observeSingleEvent(of: .value) { snapshot in
             
             var uids = [String]()
@@ -56,22 +56,22 @@ class BusinessLikedViewController: UITableViewController {
                 uids.append(userData.key)
             }
             
-            let userRef = Database.database().reference(withPath: "business")
-            var businesses = [Business]()
+            let userRef = Database.database().reference(withPath: "student")
+            var students = [Student]()
             var count = 0
             if uids.count != 0 {
                 uids.forEach { uid in
                     userRef.child(uid).observeSingleEvent(of: .value) { snapshot in
-                        let business = Business(snapshot: snapshot)
-                        businesses.append(business!)
+                        let student = Student(snapshot: snapshot)
+                        students.append(student!)
                         count += 1
                         if count == uids.count {
-                            completion(true, businesses)
+                            completion(true, students)
                         }
                     }
                 }
             } else {
-                completion(true, businesses)
+                completion(true, students)
             }
         }
     }
@@ -84,18 +84,18 @@ class BusinessLikedViewController: UITableViewController {
     
 }
 
-extension BusinessLikedViewController {
+extension StudentLikedViewController {
     
     override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return businesses.count
+        return students.count
     }
     
     override func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard case let cell as BusinessLikedCell = cell else {
+        guard case let cell as StudentLikedCell = cell else {
             return
         }
         
-        let business = businesses[indexPath.row]
+        let student = students[indexPath.row]
         
         cell.backgroundColor = .clear
         
@@ -105,21 +105,21 @@ extension BusinessLikedViewController {
             cell.unfold(true, animated: false, completion: nil)
         }
         
-        cell.nameLabel.text! = business.username        
+        cell.nameLabel.text! = student.username
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! FoldingCell
-//        let cellContent = tableView.dequeueReusableCell(withIdentifier: "FoldingCell") as! BusinessLikedCell
+//        let cellContent = tableView.dequeueReusableCell(withIdentifier: "FoldingCell") as! StudentLikedCell
         let durations: [TimeInterval] = [0.26, 0.2, 0.2]
         cell.durationsForExpandedState = durations
         cell.durationsForCollapsedState = durations
         
-        let business = businesses[indexPath.row]
+        let student = students[indexPath.row]
         
-//        cellContent.nameLabel.text! = business.username
+//        cellContent.nameLabel.text! = student.username
         
-        print(business.username)
+        print(student.username)
         
         return cell
     }
