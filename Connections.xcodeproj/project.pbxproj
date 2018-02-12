@@ -10,6 +10,9 @@
 		99733C41CF7F4FF50A7A2C54 /* Pods_Connections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599FF97567B39B949FCABD9E /* Pods_Connections.framework */; };
 		A000D43E203077BB0099892D /* StudentLikedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000D43D203077BB0099892D /* StudentLikedViewController.swift */; };
 		A000D440203077E10099892D /* StudentLikedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000D43F203077E10099892D /* StudentLikedCell.swift */; };
+		A000D4432030A34B0099892D /* BusinessChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000D4422030A34B0099892D /* BusinessChatViewController.swift */; };
+		A000D4452030FDCC0099892D /* BusinessChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000D4442030FDCC0099892D /* BusinessChatListViewController.swift */; };
+		A000D44720318FE10099892D /* BusinessSelectNewChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000D44620318FE10099892D /* BusinessSelectNewChatViewController.swift */; };
 		A00748561F912189004AF885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00748551F912189004AF885 /* AppDelegate.swift */; };
 		A00748581F912189004AF885 /* BusinessSwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00748571F912189004AF885 /* BusinessSwipeViewController.swift */; };
 		A007485B1F912189004AF885 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00748591F912189004AF885 /* Main.storyboard */; };
@@ -56,6 +59,9 @@
 		84574314C222C8CEEC27E2AC /* Pods-Connections.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connections.release.xcconfig"; path = "Pods/Target Support Files/Pods-Connections/Pods-Connections.release.xcconfig"; sourceTree = "<group>"; };
 		A000D43D203077BB0099892D /* StudentLikedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLikedViewController.swift; sourceTree = "<group>"; };
 		A000D43F203077E10099892D /* StudentLikedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLikedCell.swift; sourceTree = "<group>"; };
+		A000D4422030A34B0099892D /* BusinessChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessChatViewController.swift; sourceTree = "<group>"; };
+		A000D4442030FDCC0099892D /* BusinessChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessChatListViewController.swift; sourceTree = "<group>"; };
+		A000D44620318FE10099892D /* BusinessSelectNewChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSelectNewChatViewController.swift; sourceTree = "<group>"; };
 		A00748521F912189004AF885 /* Connections.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Connections.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A00748551F912189004AF885 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A00748571F912189004AF885 /* BusinessSwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSwipeViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +145,16 @@
 			path = StudentLiked;
 			sourceTree = "<group>";
 		};
+		A000D4412030A30D0099892D /* BusinessChat */ = {
+			isa = PBXGroup;
+			children = (
+				A000D4422030A34B0099892D /* BusinessChatViewController.swift */,
+				A000D4442030FDCC0099892D /* BusinessChatListViewController.swift */,
+				A000D44620318FE10099892D /* BusinessSelectNewChatViewController.swift */,
+			);
+			path = BusinessChat;
+			sourceTree = "<group>";
+		};
 		A00748491F912188004AF885 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +189,7 @@
 				A0973A112024B4FD0087F7CE /* BusinessProfileCreation */,
 				A09739EB2021D1AB0087F7CE /* BusinessRegister */,
 				A00748681F912570004AF885 /* BusinessSideMenu */,
+				A000D4412030A30D0099892D /* BusinessChat */,
 				A0AD071A202DCF6E00B77C61 /* BusinessLiked */,
 				A007486B1F91259A004AF885 /* BusinessSwipe */,
 				A00748551F912189004AF885 /* AppDelegate.swift */,
@@ -474,6 +491,7 @@
 				A00748741F912B0C004AF885 /* BusinessSwipeView.swift in Sources */,
 				A07226651F91657F006C60BA /* TabsViewController.swift in Sources */,
 				A09739EA20210BDB0087F7CE /* StudentCreateProfileLandingViewController.swift in Sources */,
+				A000D4452030FDCC0099892D /* BusinessChatListViewController.swift in Sources */,
 				A0F529ED1FD1E6F600B5B93C /* SideMenuViewController.swift in Sources */,
 				A07226691F916FB4006C60BA /* RegisterViewController.swift in Sources */,
 				A0AD0716202CC6A200B77C61 /* LikeDislikeButtons.swift in Sources */,
@@ -485,6 +503,7 @@
 				A09739E32020A4850087F7CE /* BusinessMoreInfoViewController.swift in Sources */,
 				A0F529E41FD1B0CF00B5B93C /* UIViewStyles.swift in Sources */,
 				A0AD071C202DCF8C00B77C61 /* BusinessLikedViewController.swift in Sources */,
+				A000D44720318FE10099892D /* BusinessSelectNewChatViewController.swift in Sources */,
 				A0AD070E202CC1D400B77C61 /* StudentSideMenuViewController.swift in Sources */,
 				A0AD0712202CC66000B77C61 /* StudentMoreInfoViewController.swift in Sources */,
 				A0AD0714202CC66F00B77C61 /* StudentSwipeView.swift in Sources */,
@@ -495,6 +514,7 @@
 				A03D991F1FD305160034AE24 /* SideMenuTableViewCell.swift in Sources */,
 				A0973A15202503F50087F7CE /* Business.swift in Sources */,
 				A0AD0710202CC1F700B77C61 /* StudentSideMenuTableViewCell.swift in Sources */,
+				A000D4432030A34B0099892D /* BusinessChatViewController.swift in Sources */,
 				A00748561F912189004AF885 /* AppDelegate.swift in Sources */,
 				A09739ED2021D2390087F7CE /* BusinessRegisterViewController.swift in Sources */,
 				A09F6BA02027512B00D98332 /* StudentPersonalViewController.swift in Sources */,

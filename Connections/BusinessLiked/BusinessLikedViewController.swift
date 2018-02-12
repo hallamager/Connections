@@ -21,7 +21,8 @@ class BusinessLikedViewController: UITableViewController {
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
     var businesses = [Business]()
-    
+    var counter = 0
+    var businessChatList: BusinessChatListViewController?
 
     @IBOutlet var openMenuLeft: UIBarButtonItem!
     
@@ -82,6 +83,24 @@ class BusinessLikedViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
+    @IBAction func launchChat(_ sender: Any) {
+        launchChat()
+    }
+    
+    func launchChat() {
+        
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let BusinessChatViewController:BusinessChatViewController = storyboard.instantiateViewController(withIdentifier: "BusinessChatViewController") as! BusinessChatViewController
+        self.present(BusinessChatViewController, animated: true, completion: nil)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let business = businesses[counter]
+        let vc = segue.destination as! BusinessChatViewController
+        vc.business = business
+    }
+    
 }
 
 extension BusinessLikedViewController {
@@ -110,15 +129,12 @@ extension BusinessLikedViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! FoldingCell
-//        let cellContent = tableView.dequeueReusableCell(withIdentifier: "FoldingCell") as! BusinessLikedCell
         let durations: [TimeInterval] = [0.26, 0.2, 0.2]
         cell.durationsForExpandedState = durations
         cell.durationsForCollapsedState = durations
         
         let business = businesses[indexPath.row]
-        
-//        cellContent.nameLabel.text! = business.username
-        
+                
         print(business.username)
         
         return cell
