@@ -106,6 +106,7 @@ class BusinessLikedViewController: UITableViewController {
 extension BusinessLikedViewController {
     
     override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
+        print(businesses.count)
         return businesses.count
     }
     

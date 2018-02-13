@@ -68,12 +68,22 @@ class BusinessSelectNewChatViewController: UITableViewController {
         let business = businesses[indexPath.row]
         
         cell.textLabel?.text = business.username
-        
         cell.detailTextLabel?.text = business.industry
         
         print(business.username)
+        print(business.industry)
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let Storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = Storyboard.instantiateViewController(withIdentifier: "BusinessChatViewController") as! BusinessChatViewController
+        
+        vc.business = businesses[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
 }

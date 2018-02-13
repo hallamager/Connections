@@ -175,6 +175,7 @@ extension StudentSwipeViewController: KolodaViewDelegate {
 extension StudentSwipeViewController: KolodaViewDataSource {
     
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
+        print(students.count)
         return students.count
     }
     

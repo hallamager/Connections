@@ -18,6 +18,9 @@ class BusinessChatListViewController: UITableViewController {
     @IBAction func newMessage(_ sender: Any) {
         handleNewMessage()
     }
+    @IBAction func showChatController(_ sender: Any) {
+//        showChatControllerForUser()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,16 +35,11 @@ class BusinessChatListViewController: UITableViewController {
         
     }
     
-    func showChatController() {
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let BusinessChatViewController:BusinessChatViewController = storyboard.instantiateViewController(withIdentifier: "BusinessChatViewController") as! BusinessChatViewController
-        self.present(BusinessChatViewController, animated: true, completion: nil)
-    }
-    
     func handleNewMessage() {
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let BusinessSelectNewChatViewController:BusinessSelectNewChatViewController = storyboard.instantiateViewController(withIdentifier: "BusinessSelectNewChatViewController") as! BusinessSelectNewChatViewController
-        self.present(BusinessSelectNewChatViewController, animated: true, completion: nil)
+        let businessSelectNewChatViewController:BusinessSelectNewChatViewController = storyboard.instantiateViewController(withIdentifier: "BusinessSelectNewChatViewController") as! BusinessSelectNewChatViewController
+//        self.present(businessSelectNewChatViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(businessSelectNewChatViewController, animated: true)
     }
 
     
