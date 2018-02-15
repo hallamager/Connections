@@ -22,7 +22,6 @@ class BusinessLikedViewController: UITableViewController {
     var cellHeights: [CGFloat] = []
     var businesses = [Business]()
     var counter = 0
-    var businessChatList: BusinessChatListViewController?
 
     @IBOutlet var openMenuLeft: UIBarButtonItem!
     
@@ -81,24 +80,6 @@ class BusinessLikedViewController: UITableViewController {
         cellHeights = Array(repeating: kCloseCellHeight, count: kRowsCount)
         tableView.estimatedRowHeight = kCloseCellHeight
         tableView.rowHeight = UITableViewAutomaticDimension
-    }
-    
-    @IBAction func launchChat(_ sender: Any) {
-        launchChat()
-    }
-    
-    func launchChat() {
-        
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let BusinessChatViewController:BusinessChatViewController = storyboard.instantiateViewController(withIdentifier: "BusinessChatViewController") as! BusinessChatViewController
-        self.present(BusinessChatViewController, animated: true, completion: nil)
-        
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let business = businesses[counter]
-        let vc = segue.destination as! BusinessChatViewController
-        vc.business = business
     }
     
 }

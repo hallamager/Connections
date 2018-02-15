@@ -1,8 +1,8 @@
 //
-//  BusinessAboutViewController.swift
+//  BusinessQuestionsViewController.swift
 //  Connections
 //
-//  Created by Hallam John Ager on 04/02/2018.
+//  Created by Hallam John Ager on 15/02/2018.
 //  Copyright © 2018 Hallam John Ager. All rights reserved.
 //
 
@@ -10,19 +10,20 @@ import Foundation
 import UIKit
 import Firebase
 
-class BusinessAboutViewController: UIViewController, UITextFieldDelegate {
+class BusinessQuestionsViewController: UIViewController, UITextFieldDelegate {
     
-    let ref = Database.database().reference().child("business").child(Auth.auth().currentUser!.uid)
-
-    @IBOutlet var companyIndustry: UITextField!
-    @IBOutlet var companyDescription: UITextField!
+    let ref = Database.database().reference().child("businessQuestions").child(Auth.auth().currentUser!.uid)
     
+    @IBOutlet var questionOne: UITextField!
+    @IBOutlet var questionTwo: UITextField!
+    @IBOutlet var questionThree: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        companyIndustry.delegate = self
-        companyDescription.delegate = self
+        questionOne.delegate = self
+        questionTwo.delegate = self
+        questionThree.delegate = self
         
     }
     
@@ -36,14 +37,13 @@ class BusinessAboutViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    @IBAction func confirmAbout(_ sender: Any) {
+    @IBAction func confirmButtom(_ sender: Any) {
         
-        ref.updateChildValues(["Industry": self.companyIndustry.text!, "Description": self.companyDescription.text!])
+        ref.updateChildValues(["Question One": self.questionOne.text!, "Question Two": self.questionTwo.text!, "Question Three": self.questionThree.text!])
         
         self.presentBusinessProfileCreationViewController()
-        
+
     }
-    
     
     func presentBusinessProfileCreationViewController() {
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

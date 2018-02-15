@@ -35,7 +35,10 @@ class BusinessChatViewController: UIViewController {
         let ref = Database.database().reference().child("messages")
         let childRef = ref.childByAutoId()
         
-        let values = ["text": chatTextField.text!]
+        let sentToUser = business?.uuid
+        let sentFromUser = Auth.auth().currentUser?.uid
+        let timeStamp = NSDate().timeIntervalSince1970
+        let values = ["text": chatTextField.text!, "sentToUser": sentToUser!, "sentFromUser": sentFromUser!, "timeStamp": timeStamp] as [String : Any]
         childRef.updateChildValues(values)
         
     }
