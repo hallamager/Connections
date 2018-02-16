@@ -28,7 +28,7 @@ class StudentSideMenuViewController: UIViewController, UITableViewDataSource, UI
         coverView?.backgroundColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 0.5)
         
         // sets menu title and image icon
-        menuNameArray = ["Home", "Liked", "Chats", "News Feed", "Profile"]
+        menuNameArray = ["Home", "Liked", "View Responses", "News Feed", "Profile"]
         iconImage = [UIImage(named: "Home-icon")!, UIImage(named: "Liked-icon")!, UIImage(named: "Chats-icon")!, UIImage(named: "News-Feed-icon")!, UIImage(named: "Profile-icon")! ]
         
         let ref = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)")
@@ -86,6 +86,17 @@ class StudentSideMenuViewController: UIViewController, UITableViewDataSource, UI
 
             revealViewController.pushFrontViewController(newFrontViewController, animated: true)
 
+        }
+        
+        if cell.lblMenuName.text! == "View Responses"
+        {
+            
+            let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let desController = mainStoryboard.instantiateViewController(withIdentifier: "SelectStudentViewController") as! SelectStudentViewController
+            let newFrontViewController = UINavigationController.init(rootViewController:desController)
+            
+            revealViewController.pushFrontViewController(newFrontViewController, animated: true)
+            
         }
         
     }

@@ -27,7 +27,7 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         coverView?.backgroundColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 0.5)
         
         // sets menu title and image icon
-        menuNameArray = ["Home", "Liked", "Chats", "News Feed", "Profile"]
+        menuNameArray = ["Home", "Liked", "Questions", "News Feed", "Profile"]
         iconImage = [UIImage(named: "Home-icon")!, UIImage(named: "Liked-icon")!, UIImage(named: "Chats-icon")!, UIImage(named: "News-Feed-icon")!, UIImage(named: "Profile-icon")! ]
         
         let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)")
@@ -86,7 +86,7 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
             revealViewController.pushFrontViewController(newFrontViewController, animated: true)
 
         }
-        if cell.lblMenuName.text! == "Chats"
+        if cell.lblMenuName.text! == "Questions"
         {
             
             let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
