@@ -35,6 +35,9 @@
 		A09F6BA02027512B00D98332 /* StudentPersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09F6B9F2027512B00D98332 /* StudentPersonalViewController.swift */; };
 		A09F6BA22027534F00D98332 /* BusinessAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09F6BA12027534F00D98332 /* BusinessAboutViewController.swift */; };
 		A0AA81482036165C00858063 /* BusinessQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AA81472036165C00858063 /* BusinessQuestionsViewController.swift */; };
+		A0AA814D2036205C00858063 /* BusinessSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AA814C2036205C00858063 /* BusinessSelectViewController.swift */; };
+		A0AA81512036D6DF00858063 /* BusinessQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AA81502036D6DF00858063 /* BusinessQuestions.swift */; };
+		A0AA81532036D85200858063 /* BusinessQuestionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AA81522036D85200858063 /* BusinessQuestionsListViewController.swift */; };
 		A0AD070E202CC1D400B77C61 /* StudentSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD070D202CC1D400B77C61 /* StudentSideMenuViewController.swift */; };
 		A0AD0710202CC1F700B77C61 /* StudentSideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD070F202CC1F700B77C61 /* StudentSideMenuTableViewCell.swift */; };
 		A0AD0712202CC66000B77C61 /* StudentMoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD0711202CC66000B77C61 /* StudentMoreInfoViewController.swift */; };
@@ -87,6 +90,9 @@
 		A09F6B9F2027512B00D98332 /* StudentPersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentPersonalViewController.swift; sourceTree = "<group>"; };
 		A09F6BA12027534F00D98332 /* BusinessAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessAboutViewController.swift; sourceTree = "<group>"; };
 		A0AA81472036165C00858063 /* BusinessQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessQuestionsViewController.swift; sourceTree = "<group>"; };
+		A0AA814C2036205C00858063 /* BusinessSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSelectViewController.swift; sourceTree = "<group>"; };
+		A0AA81502036D6DF00858063 /* BusinessQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessQuestions.swift; sourceTree = "<group>"; };
+		A0AA81522036D85200858063 /* BusinessQuestionsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessQuestionsListViewController.swift; sourceTree = "<group>"; };
 		A0AD070D202CC1D400B77C61 /* StudentSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSideMenuViewController.swift; sourceTree = "<group>"; };
 		A0AD070F202CC1F700B77C61 /* StudentSideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		A0AD0711202CC66000B77C61 /* StudentMoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentMoreInfoViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +184,7 @@
 				A0973A112024B4FD0087F7CE /* BusinessProfileCreation */,
 				A09739EB2021D1AB0087F7CE /* BusinessRegister */,
 				A00748681F912570004AF885 /* BusinessSideMenu */,
+				A0AA814B2036202B00858063 /* BusinessQuestions */,
 				A0AD071A202DCF6E00B77C61 /* BusinessLiked */,
 				A007486B1F91259A004AF885 /* BusinessSwipe */,
 				A00748551F912189004AF885 /* AppDelegate.swift */,
@@ -295,6 +302,16 @@
 				A0AA81472036165C00858063 /* BusinessQuestionsViewController.swift */,
 			);
 			path = BusinessProfileCreation;
+			sourceTree = "<group>";
+		};
+		A0AA814B2036202B00858063 /* BusinessQuestions */ = {
+			isa = PBXGroup;
+			children = (
+				A0AA814C2036205C00858063 /* BusinessSelectViewController.swift */,
+				A0AA81502036D6DF00858063 /* BusinessQuestions.swift */,
+				A0AA81522036D85200858063 /* BusinessQuestionsListViewController.swift */,
+			);
+			path = BusinessQuestions;
 			sourceTree = "<group>";
 		};
 		A0AD071A202DCF6E00B77C61 /* BusinessLiked */ = {
@@ -491,6 +508,7 @@
 				A09739E32020A4850087F7CE /* BusinessMoreInfoViewController.swift in Sources */,
 				A0F529E41FD1B0CF00B5B93C /* UIViewStyles.swift in Sources */,
 				A0AD071C202DCF8C00B77C61 /* BusinessLikedViewController.swift in Sources */,
+				A0AA814D2036205C00858063 /* BusinessSelectViewController.swift in Sources */,
 				A0AD070E202CC1D400B77C61 /* StudentSideMenuViewController.swift in Sources */,
 				A0AD0712202CC66000B77C61 /* StudentMoreInfoViewController.swift in Sources */,
 				A0AD0714202CC66F00B77C61 /* StudentSwipeView.swift in Sources */,
@@ -498,6 +516,7 @@
 				A09F6BA22027534F00D98332 /* BusinessAboutViewController.swift in Sources */,
 				A000D43E203077BB0099892D /* StudentLikedViewController.swift in Sources */,
 				A049B0D320261EDF00EBD07B /* StudentSwipeViewController.swift in Sources */,
+				A0AA81532036D85200858063 /* BusinessQuestionsListViewController.swift in Sources */,
 				A03D991F1FD305160034AE24 /* SideMenuTableViewCell.swift in Sources */,
 				A0973A15202503F50087F7CE /* Business.swift in Sources */,
 				A0AD0710202CC1F700B77C61 /* StudentSideMenuTableViewCell.swift in Sources */,
@@ -510,6 +529,7 @@
 				A0973A132024B52D0087F7CE /* BusinessProfileCreationLandingViewController.swift in Sources */,
 				A03D99221FD313380034AE24 /* Student.swift in Sources */,
 				A0F529E61FD1B10E00B5B93C /* UIButtonStyles.swift in Sources */,
+				A0AA81512036D6DF00858063 /* BusinessQuestions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

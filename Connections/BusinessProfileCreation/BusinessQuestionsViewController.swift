@@ -12,7 +12,7 @@ import Firebase
 
 class BusinessQuestionsViewController: UIViewController, UITextFieldDelegate {
     
-    let ref = Database.database().reference().child("businessQuestions").child(Auth.auth().currentUser!.uid)
+    let ref = Database.database().reference().child("business").child(Auth.auth().currentUser!.uid)
     
     @IBOutlet var questionOne: UITextField!
     @IBOutlet var questionTwo: UITextField!

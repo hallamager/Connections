@@ -86,16 +86,16 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
             revealViewController.pushFrontViewController(newFrontViewController, animated: true)
 
         }
-//        if cell.lblMenuName.text! == "Chats"
-//        {
-//            
-//            let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//            let desController = mainStoryboard.instantiateViewController(withIdentifier: "BusinessChatListViewController") as! BusinessChatListViewController
-//            let newFrontViewController = UINavigationController.init(rootViewController:desController)
-//            
-//            revealViewController.pushFrontViewController(newFrontViewController, animated: true)
-//            
-//        }
+        if cell.lblMenuName.text! == "Chats"
+        {
+            
+            let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let desController = mainStoryboard.instantiateViewController(withIdentifier: "BusinessSelectViewController") as! BusinessSelectViewController
+            let newFrontViewController = UINavigationController.init(rootViewController:desController)
+            
+            revealViewController.pushFrontViewController(newFrontViewController, animated: true)
+            
+        }
         
     }
     

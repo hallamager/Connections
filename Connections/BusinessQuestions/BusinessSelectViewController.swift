@@ -1,8 +1,8 @@
 //
-//  BusinessSelectNewChatViewController.swift
+//  BusinessSelectViewController.swift
 //  Connections
 //
-//  Created by Hallam John Ager on 12/02/2018.
+//  Created by Hallam John Ager on 15/02/2018.
 //  Copyright © 2018 Hallam John Ager. All rights reserved.
 //
 
@@ -10,19 +10,29 @@ import Foundation
 import UIKit
 import Firebase
 
-class BusinessSelectNewChatViewController: UITableViewController {
+class BusinessSelectViewController: UITableViewController {
+    
+    @IBOutlet var openMenu: UIBarButtonItem!
     
     let ref = Database.database().reference().child("business")
     var businesses = [Business]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         loadRelatedBusinesses(for: Auth.auth().currentUser!.uid) { success, businesses in
             self.businesses = businesses
             self.tableView.reloadData()
         }
-    
+                
+        //open menu with tab bar button
+        openMenu.target = self.revealViewController()
+        openMenu.action = #selector(SWRevealViewController.revealToggle(_:))
+        
+        
+        //open menu with swipe gesture
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
     }
     
     func loadRelatedBusinesses(for studentUID: String, completion: @escaping (Bool, [Business]) -> ()) {
@@ -63,27 +73,27 @@ class BusinessSelectNewChatViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BusinessSelectNewChat")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "businessSelect")!
         
         let business = businesses[indexPath.row]
         
         cell.textLabel?.text = business.username
+        
         cell.detailTextLabel?.text = business.industry
         
         print(business.username)
         print(business.industry)
         
         return cell
+        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let Storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = Storyboard.instantiateViewController(withIdentifier: "BusinessChatViewController") as! BusinessChatViewController
-        
+        let vc = Storyboard.instantiateViewController(withIdentifier: "BusinessQuestionsListViewController") as! BusinessQuestionsListViewController
         vc.business = businesses[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
     
 }
