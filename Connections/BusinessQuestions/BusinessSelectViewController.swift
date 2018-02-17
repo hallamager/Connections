@@ -58,6 +58,7 @@ class BusinessSelectViewController: UITableViewController {
                         if count == uids.count {
                             completion(true, businesses)
                         }
+                        print(business?.username)
                     }
                 }
             } else {

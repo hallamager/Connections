@@ -13,17 +13,19 @@ import Firebase
 class SelectStudentViewController: UITableViewController {
     
     var businesses = [Business]()
-    var student = [Student]()
+    var students = [Student]()
+    var student: Student!
+    var studentResponses = [StudentResponses]()
     
     @IBOutlet var openMenu: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadStudentsWhoResponsed()
-
-        
-        self.tableView.reloadData()
+        loadStudentsWhoResponsed(for: Auth.auth().currentUser!.uid) { success, students in
+            self.students = students
+            self.tableView.reloadData()
+        }
         
         //open menu with tab bar button
         openMenu.target = self.revealViewController()
@@ -35,7 +37,7 @@ class SelectStudentViewController: UITableViewController {
         
     }
     
-    func loadStudentsWhoResponsed() {
+    func loadStudentsWhoResponsed(for businessUID: String, completion: @escaping (Bool, [Student]) -> ()) {
         
         let ref = Database.database().reference().child("studentResponses/\(Auth.auth().currentUser!.uid)")
 
@@ -49,47 +51,53 @@ class SelectStudentViewController: UITableViewController {
             
             let userRef = Database.database().reference(withPath: "student")
             var students = [Student]()
-            uids.forEach { uid in
-                userRef.child(uid).observeSingleEvent(of: .value) { snapshot in
-                    let student = Student(snapshot: snapshot)
-                    students.append(student!)
-                    print(students.count)
+            var count = 0
+            if uids.count != 0 {
+                uids.forEach { uid in
+                    userRef.child(uid).observeSingleEvent(of: .value) { snapshot in
+                        let student = Student(snapshot: snapshot)
+                        students.append(student!)
+                        count += 1
+                        if count == uids.count {
+                            completion(true, students)
+                        }
+                    }
                 }
+            } else {
+                completion(true, students)
             }
             
         }
-            
-        
     }
     
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        print(businesses.count)
-//        return businesses.count
-//    }
-//
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "businessSelect")!
-//
-//        let business = businesses[indexPath.row]
-//
-//        cell.textLabel?.text = business.username
-//
-//        cell.detailTextLabel?.text = business.industry
-//
-//        print(business.username)
-//        print(business.industry)
-//
-//        return cell
-//
-//    }
-//
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//        let Storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = Storyboard.instantiateViewController(withIdentifier: "BusinessQuestionsListViewController") as! BusinessQuestionsListViewController
-//        vc.business = businesses[indexPath.row]
-//        self.navigationController?.pushViewController(vc, animated: true)
-//    }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        print(students.count)
+        return students.count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: "studentSelect")!
+
+        let student = students[indexPath.row]
+
+        cell.textLabel?.text = student.username
+
+        cell.detailTextLabel?.text = student.industry
+
+        print(student.username)
+        print(student.industry)
+
+        return cell
+
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        let Storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = Storyboard.instantiateViewController(withIdentifier: "ViewStudentResponses") as! ViewStudentResponses
+        vc.student = students[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
 }
