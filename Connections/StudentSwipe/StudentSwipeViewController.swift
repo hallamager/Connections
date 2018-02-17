@@ -49,12 +49,19 @@ class StudentSwipeViewController: UIViewController {
     func addLiked(_ student: Student) {
         
         
-        let newLike = refLikes.child("matches").child(Auth.auth().currentUser!.uid)
+        let newLike = refLikes.child("matches").child(student.uuid)
         let dict = [
-            student.uuid: true,
+            Auth.auth().currentUser!.uid: true,
             ]
         
         newLike.updateChildValues(dict)
+        
+        let newBusinessLike = refLikes.child("matchesBusiness/\(Auth.auth().currentUser!.uid)")
+        let dictBusiness = [
+            student.uuid: true,
+            ]
+        
+        newBusinessLike.updateChildValues(dictBusiness)
         
         self.counter += 1
         

@@ -47,7 +47,7 @@ class StudentLikedViewController: UITableViewController {
     
     func loadRelatedStudents(for businessUID: String, completion: @escaping (Bool, [Student]) -> ()) {
         
-        let ref = Database.database().reference(withPath: "matches/" + Auth.auth().currentUser!.uid)
+        let ref = Database.database().reference(withPath: "matchesBusiness/" + Auth.auth().currentUser!.uid)
         ref.observeSingleEvent(of: .value) { snapshot in
             
             var uids = [String]()

@@ -37,7 +37,7 @@ class BusinessSelectViewController: UITableViewController {
     
     func loadRelatedBusinesses(for studentUID: String, completion: @escaping (Bool, [Business]) -> ()) {
         
-        let ref = Database.database().reference(withPath: "studentsLiked/" + Auth.auth().currentUser!.uid)
+        let ref = Database.database().reference(withPath: "matches/" + Auth.auth().currentUser!.uid)
         ref.observeSingleEvent(of: .value) { snapshot in
             
             var uids = [String]()
