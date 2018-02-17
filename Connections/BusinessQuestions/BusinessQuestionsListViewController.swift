@@ -18,7 +18,7 @@ class BusinessQuestionsListViewController: UIViewController {
     @IBOutlet var questionOne: UILabel!
     @IBOutlet var textField: UITextField!
     @IBAction func nextQuestionButton(_ sender: Any) {
-        ref.child(business.uuid).child(Auth.auth().currentUser!.uid).updateChildValues([business.questionOne: self.textField.text!])
+        ref.child(business.uuid).child(Auth.auth().currentUser!.uid).updateChildValues(["Question One Answer": self.textField.text!])
     }
     
     override func viewDidLoad() {

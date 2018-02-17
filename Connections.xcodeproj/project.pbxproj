@@ -40,6 +40,7 @@
 		A0AA81532036D85200858063 /* BusinessQuestionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AA81522036D85200858063 /* BusinessQuestionsListViewController.swift */; };
 		A0AA81562036FA2300858063 /* SelectStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AA81552036FA2300858063 /* SelectStudentViewController.swift */; };
 		A0AA81582036FA3B00858063 /* ViewStudentResponsesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AA81572036FA3B00858063 /* ViewStudentResponsesViewController.swift */; };
+		A0AA815A20374B4100858063 /* StudentResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AA815920374B4100858063 /* StudentResponses.swift */; };
 		A0AD070E202CC1D400B77C61 /* StudentSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD070D202CC1D400B77C61 /* StudentSideMenuViewController.swift */; };
 		A0AD0710202CC1F700B77C61 /* StudentSideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD070F202CC1F700B77C61 /* StudentSideMenuTableViewCell.swift */; };
 		A0AD0712202CC66000B77C61 /* StudentMoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD0711202CC66000B77C61 /* StudentMoreInfoViewController.swift */; };
@@ -97,6 +98,7 @@
 		A0AA81522036D85200858063 /* BusinessQuestionsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessQuestionsListViewController.swift; sourceTree = "<group>"; };
 		A0AA81552036FA2300858063 /* SelectStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStudentViewController.swift; sourceTree = "<group>"; };
 		A0AA81572036FA3B00858063 /* ViewStudentResponsesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStudentResponsesViewController.swift; sourceTree = "<group>"; };
+		A0AA815920374B4100858063 /* StudentResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentResponses.swift; sourceTree = "<group>"; };
 		A0AD070D202CC1D400B77C61 /* StudentSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSideMenuViewController.swift; sourceTree = "<group>"; };
 		A0AD070F202CC1F700B77C61 /* StudentSideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		A0AD0711202CC66000B77C61 /* StudentMoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentMoreInfoViewController.swift; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 			children = (
 				A0AA81552036FA2300858063 /* SelectStudentViewController.swift */,
 				A0AA81572036FA3B00858063 /* ViewStudentResponsesViewController.swift */,
+				A0AA815920374B4100858063 /* StudentResponses.swift */,
 			);
 			path = StudentQuestionResponses;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				A0AA81482036165C00858063 /* BusinessQuestionsViewController.swift in Sources */,
 				A00748561F912189004AF885 /* AppDelegate.swift in Sources */,
 				A09739ED2021D2390087F7CE /* BusinessRegisterViewController.swift in Sources */,
+				A0AA815A20374B4100858063 /* StudentResponses.swift in Sources */,
 				A000D44B203344AB0099892D /* Demo.swift in Sources */,
 				A09F6BA02027512B00D98332 /* StudentPersonalViewController.swift in Sources */,
 				A0AD0722202E043000B77C61 /* BusinessLikedCell.swift in Sources */,
