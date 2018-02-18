@@ -14,6 +14,7 @@ class Student {
     let username: String
     let industry: String
     let description: String
+    let profileImageURL: String
     
     init?(snapshot: DataSnapshot) {
         if let snapshotData = snapshot.value as? [String: Any] {
@@ -21,6 +22,7 @@ class Student {
             username = snapshotData["Username"] as! String
             industry = snapshotData["Industry"] as! String
             description = snapshotData["Description"] as! String
+            profileImageURL = snapshotData["profileImageURL"] as! String
         } else {
             return nil
         }

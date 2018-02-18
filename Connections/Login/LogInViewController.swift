@@ -14,9 +14,7 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
-    let demo = Demo()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         

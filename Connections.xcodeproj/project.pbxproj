@@ -10,7 +10,6 @@
 		99733C41CF7F4FF50A7A2C54 /* Pods_Connections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599FF97567B39B949FCABD9E /* Pods_Connections.framework */; };
 		A000D43E203077BB0099892D /* StudentLikedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000D43D203077BB0099892D /* StudentLikedViewController.swift */; };
 		A000D440203077E10099892D /* StudentLikedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000D43F203077E10099892D /* StudentLikedCell.swift */; };
-		A000D44B203344AB0099892D /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000D44A203344AB0099892D /* Demo.swift */; };
 		A00748561F912189004AF885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00748551F912189004AF885 /* AppDelegate.swift */; };
 		A00748581F912189004AF885 /* BusinessSwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00748571F912189004AF885 /* BusinessSwipeViewController.swift */; };
 		A007485B1F912189004AF885 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00748591F912189004AF885 /* Main.storyboard */; };
@@ -56,6 +55,7 @@
 		A0F529EA1FD1BA3100B5B93C /* VerticalGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F529E91FD1BA3100B5B93C /* VerticalGradient.swift */; };
 		A0F529EB1FD1CD6400B5B93C /* Gotham Rounded Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0F529E11FD1AFC000B5B93C /* Gotham Rounded Book.ttf */; };
 		A0F529ED1FD1E6F600B5B93C /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F529EC1FD1E6F600B5B93C /* SideMenuViewController.swift */; };
+		A0F5A6752039AE5A004E4D3E /* StudentProfilePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F5A6742039AE5A004E4D3E /* StudentProfilePictureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,7 +64,6 @@
 		84574314C222C8CEEC27E2AC /* Pods-Connections.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connections.release.xcconfig"; path = "Pods/Target Support Files/Pods-Connections/Pods-Connections.release.xcconfig"; sourceTree = "<group>"; };
 		A000D43D203077BB0099892D /* StudentLikedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLikedViewController.swift; sourceTree = "<group>"; };
 		A000D43F203077E10099892D /* StudentLikedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLikedCell.swift; sourceTree = "<group>"; };
-		A000D44A203344AB0099892D /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
 		A00748521F912189004AF885 /* Connections.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Connections.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A00748551F912189004AF885 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A00748571F912189004AF885 /* BusinessSwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSwipeViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +114,7 @@
 		A0F529E71FD1B18100B5B93C /* HorizontalGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalGradient.swift; sourceTree = "<group>"; };
 		A0F529E91FD1BA3100B5B93C /* VerticalGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalGradient.swift; sourceTree = "<group>"; };
 		A0F529EC1FD1E6F600B5B93C /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		A0F5A6742039AE5A004E4D3E /* StudentProfilePictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfilePictureViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				A0AD0719202DC49100B77C61 /* Connections.entitlements */,
-				A000D44A203344AB0099892D /* Demo.swift */,
 				A09739E42020E64A0087F7CE /* Login */,
 				A09739E52020E6510087F7CE /* Register */,
 				A09739E820210B9B0087F7CE /* StudentProfileCreation */,
@@ -289,6 +288,7 @@
 			children = (
 				A09739E920210BDB0087F7CE /* StudentCreateProfileLandingViewController.swift */,
 				A09F6B9F2027512B00D98332 /* StudentPersonalViewController.swift */,
+				A0F5A6742039AE5A004E4D3E /* StudentProfilePictureViewController.swift */,
 			);
 			path = StudentProfileCreation;
 			sourceTree = "<group>";
@@ -543,11 +543,11 @@
 				A00748561F912189004AF885 /* AppDelegate.swift in Sources */,
 				A09739ED2021D2390087F7CE /* BusinessRegisterViewController.swift in Sources */,
 				A0AA815A20374B4100858063 /* StudentResponses.swift in Sources */,
-				A000D44B203344AB0099892D /* Demo.swift in Sources */,
 				A09F6BA02027512B00D98332 /* StudentPersonalViewController.swift in Sources */,
 				A0AD0722202E043000B77C61 /* BusinessLikedCell.swift in Sources */,
 				A0973A132024B52D0087F7CE /* BusinessProfileCreationLandingViewController.swift in Sources */,
 				A03D99221FD313380034AE24 /* Student.swift in Sources */,
+				A0F5A6752039AE5A004E4D3E /* StudentProfilePictureViewController.swift in Sources */,
 				A0F529E61FD1B10E00B5B93C /* UIButtonStyles.swift in Sources */,
 				A0AA81512036D6DF00858063 /* BusinessQuestions.swift in Sources */,
 			);

@@ -194,6 +194,15 @@ extension StudentSwipeViewController: KolodaViewDataSource {
         
         StudentSwipeView.studentName.text = student.username
         
+        // Create a storage reference from the URL
+        let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(student.uuid)
+        // Download the data, assuming a max size of 1MB (you can change this as necessary)
+        storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+            // Create a UIImage, add it to the array
+            let pic = UIImage(data: data!)
+            StudentSwipeView.studentProfileImg.image = pic
+        }
+        
         print(student.username)
         
         return StudentSwipeView

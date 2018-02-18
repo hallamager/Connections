@@ -24,6 +24,7 @@ class BusinessLikedCell: FoldingCell {
         foregroundView.layer.shadowOffset = CGSize(width: 0, height: 0)
         foregroundView.layer.shadowRadius = 4.0
         foregroundView.layer.shadowColor = UIColor.lightGray.cgColor
+        foregroundView.layer.cornerRadius = 10
         
         backgroundColor = .clear
         

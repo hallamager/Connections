@@ -126,6 +126,7 @@
             <connections>
                 <outlet property="studentCard" destination="ae5-c3-acK" id="yfX-Gh-gg9"/>
                 <outlet property="studentName" destination="u60-mR-v16" id="J6a-Wx-91I"/>
+                <outlet property="studentProfileImg" destination="MfI-wU-ehd" id="SAP-8R-3cu"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
