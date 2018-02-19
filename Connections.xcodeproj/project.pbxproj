@@ -48,6 +48,7 @@
 		A0AD0718202CC6BA00B77C61 /* StudentSwipeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0AD0717202CC6BA00B77C61 /* StudentSwipeView.xib */; };
 		A0AD071C202DCF8C00B77C61 /* BusinessLikedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD071B202DCF8C00B77C61 /* BusinessLikedViewController.swift */; };
 		A0AD0722202E043000B77C61 /* BusinessLikedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD0721202E043000B77C61 /* BusinessLikedCell.swift */; };
+		A0D8D370203ADEB200D68A5A /* StudentEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8D36F203ADEB200D68A5A /* StudentEditProfileViewController.swift */; };
 		A0F529E01FD1A1A600B5B93C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0F529DF1FD1A1A500B5B93C /* GoogleService-Info.plist */; };
 		A0F529E41FD1B0CF00B5B93C /* UIViewStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F529E31FD1B0CF00B5B93C /* UIViewStyles.swift */; };
 		A0F529E61FD1B10E00B5B93C /* UIButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F529E51FD1B10E00B5B93C /* UIButtonStyles.swift */; };
@@ -107,6 +108,7 @@
 		A0AD0719202DC49100B77C61 /* Connections.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Connections.entitlements; sourceTree = "<group>"; };
 		A0AD071B202DCF8C00B77C61 /* BusinessLikedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessLikedViewController.swift; sourceTree = "<group>"; };
 		A0AD0721202E043000B77C61 /* BusinessLikedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessLikedCell.swift; sourceTree = "<group>"; };
+		A0D8D36F203ADEB200D68A5A /* StudentEditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentEditProfileViewController.swift; sourceTree = "<group>"; };
 		A0F529DF1FD1A1A500B5B93C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0F529E11FD1AFC000B5B93C /* Gotham Rounded Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham Rounded Book.ttf"; sourceTree = "<group>"; };
 		A0F529E31FD1B0CF00B5B93C /* UIViewStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewStyles.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				A09739E820210B9B0087F7CE /* StudentProfileCreation */,
 				A00748691F912586004AF885 /* StudentRegister */,
 				A049B0D120261E8200EBD07B /* StudentSideMenu */,
+				A0D8D36E203ADD7D00D68A5A /* StudentEditProfile */,
 				A0AA81542036F94000858063 /* StudentQuestionResponses */,
 				A000D43C2030778E0099892D /* StudentLiked */,
 				A049B0D020261E5000EBD07B /* StudentSwipe */,
@@ -338,6 +341,14 @@
 				A0AD0721202E043000B77C61 /* BusinessLikedCell.swift */,
 			);
 			path = BusinessLiked;
+			sourceTree = "<group>";
+		};
+		A0D8D36E203ADD7D00D68A5A /* StudentEditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				A0D8D36F203ADEB200D68A5A /* StudentEditProfileViewController.swift */,
+			);
+			path = StudentEditProfile;
 			sourceTree = "<group>";
 		};
 		A0F529E21FD1B07D00B5B93C /* IBDesignables */ = {
@@ -543,6 +554,7 @@
 				A00748561F912189004AF885 /* AppDelegate.swift in Sources */,
 				A09739ED2021D2390087F7CE /* BusinessRegisterViewController.swift in Sources */,
 				A0AA815A20374B4100858063 /* StudentResponses.swift in Sources */,
+				A0D8D370203ADEB200D68A5A /* StudentEditProfileViewController.swift in Sources */,
 				A09F6BA02027512B00D98332 /* StudentPersonalViewController.swift in Sources */,
 				A0AD0722202E043000B77C61 /* BusinessLikedCell.swift in Sources */,
 				A0973A132024B52D0087F7CE /* BusinessProfileCreationLandingViewController.swift in Sources */,

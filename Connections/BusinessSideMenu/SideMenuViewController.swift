@@ -106,6 +106,16 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
             revealViewController.pushFrontViewController(newFrontViewController, animated: true)
             
         }
+        if cell.lblMenuName.text! == "Profile"
+        {
+            
+            let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let desController = mainStoryboard.instantiateViewController(withIdentifier: "StudentEditProfileViewController") as! StudentEditProfileViewController
+            let newFrontViewController = UINavigationController.init(rootViewController:desController)
+            
+            revealViewController.pushFrontViewController(newFrontViewController, animated: true)
+            
+        }
         
     }
     
