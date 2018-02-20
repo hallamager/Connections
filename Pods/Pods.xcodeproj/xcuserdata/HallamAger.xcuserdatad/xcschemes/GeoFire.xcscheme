@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C8DAA6790D8F0DC1AE84C6F7D409A676"
-               BuildableName = "XLPagerTabStrip.bundle"
-               BlueprintName = "XLPagerTabStrip-XLPagerTabStrip"
+               BlueprintIdentifier = "136CF81C8265062A354C93115C010C74"
+               BuildableName = "GeoFire.framework"
+               BlueprintName = "GeoFire"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,9 +47,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C8DAA6790D8F0DC1AE84C6F7D409A676"
-            BuildableName = "XLPagerTabStrip.bundle"
-            BlueprintName = "XLPagerTabStrip-XLPagerTabStrip"
+            BlueprintIdentifier = "136CF81C8265062A354C93115C010C74"
+            BuildableName = "GeoFire.framework"
+            BlueprintName = "GeoFire"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

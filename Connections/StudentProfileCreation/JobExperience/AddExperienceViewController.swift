@@ -43,12 +43,11 @@ class AddExperienceViewController: UIViewController, UITextFieldDelegate {
         
         let ex = Experience(data: ["Title": self.jobTitle.text!, "Company": self.jobCompany.text!, "Location": self.jobCity.text!, "From Date": self.jobFromDate.text!, "To Date": self.jobToDate.text!, "Description": self.jobDescription.text!])
         
-        ref.updateChildValues(ex.toDict()) { error, ref in
-            self.delegate?.didAddExperience(ex)
-            self.dismiss(animated: true, completion: nil)
-        }
+        ref.childByAutoId().setValue(ex.toDict())
         
-        
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let ShowExperienceAddedViewController:ShowExperienceAddedViewController = storyboard.instantiateViewController(withIdentifier: "ShowExperienceAddedViewController") as! ShowExperienceAddedViewController
+        self.present(ShowExperienceAddedViewController, animated: true, completion: nil)
         
     }
     

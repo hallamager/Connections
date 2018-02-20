@@ -11,6 +11,7 @@ import Firebase
 
 class Experience {
     
+    var uuid: String?
     let title: String
     let company: String
     let location: String
@@ -20,6 +21,7 @@ class Experience {
     
     init?(snapshot: DataSnapshot) {
         if let snapshotData = snapshot.value as? [String: Any] {
+            uuid = snapshot.key
             title = snapshotData["Title"] as! String
             company = snapshotData["Company"] as! String
             location = snapshotData["Location"] as! String

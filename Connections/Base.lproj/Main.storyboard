@@ -3173,7 +3173,7 @@
                                 <state key="normal" title="Add New Job"/>
                                 <connections>
                                     <action selector="addNewJob:" destination="l8U-eC-Jdc" eventType="touchUpInside" id="Jm7-Zv-Ix9"/>
-                                    <segue destination="rxO-wm-mAs" kind="show" identifier="AddNewJob" id="gmG-NJ-JxJ"/>
+                                    <segue destination="rxO-wm-mAs" kind="show" id="uhh-Ik-c3E"/>
                                 </connections>
                             </button>
                         </subviews>

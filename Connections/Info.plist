@@ -45,9 +45,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>To find users from a specific distance Connections requires access to your devices location.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>To find users from a specific distance Connections requires access to your devices location.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>To find users from a specific distance Connections requires access to your devices location.</string>
 </dict>
 </plist>

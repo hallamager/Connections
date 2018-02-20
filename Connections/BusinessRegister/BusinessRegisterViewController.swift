@@ -9,8 +9,14 @@
 import Foundation
 import UIKit
 import Firebase
+import Firebase
+import GeoFire
 
 class BusinessRegisterViewController: UIViewController, UITextFieldDelegate {
+    
+    let geoRef = GeoFire(firebaseRef: Database.database().reference().child("user_locations"))
+    let locationManager = CLLocationManager()
+    var userLocation: CLLocation?
     
     @IBOutlet weak var companyNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -18,6 +24,10 @@ class BusinessRegisterViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
         
         companyNameTextField.delegate = self
         emailTextField.delegate = self
@@ -60,11 +70,20 @@ class BusinessRegisterViewController: UIViewController, UITextFieldDelegate {
                 } else {
                     
                     // following method is a add user's more details
-                    ref.child("business").child(user!.uid).setValue(["Company Name": self.companyNameTextField.text!, "type": "business"])
+                    ref.child("business").child(user!.uid).updateChildValues(["Company Name": self.companyNameTextField.text!, "type": "business"])
                     
                     ref.child("users").child(user!.uid).setValue(["type": "business"])
 
                     self.presentBusinessProfileCreationViewController()
+                    
+                    guard let userLocation = self.userLocation else { return }
+                    
+                    let data: [String: Any] = [
+                        "lat": userLocation.coordinate.latitude,
+                        "lng": userLocation.coordinate.longitude
+                    ]
+                    
+                    ref.child("business").child(user!.uid).updateChildValues(data)
 
                 }
                 
@@ -82,6 +101,18 @@ class BusinessRegisterViewController: UIViewController, UITextFieldDelegate {
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let BusinessCreateProfileLandingViewController:BusinessCreateProfileLandingViewController = storyboard.instantiateViewController(withIdentifier: "BusinessCreateProfileLandingViewController") as! BusinessCreateProfileLandingViewController
         self.present(BusinessCreateProfileLandingViewController, animated: true, completion: nil)
+    }
+    
+}
+
+extension StudentRegisterViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        guard let location = locations.last else { return }
+        geoRef.setLocation(location, forKey: (Auth.auth().currentUser?.uid)!)
+        userLocation = location
+        
     }
     
 }

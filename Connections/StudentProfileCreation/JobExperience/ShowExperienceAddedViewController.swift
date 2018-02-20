@@ -12,6 +12,7 @@ import Firebase
 
 class ShowExperienceAddedViewController: UIViewController {
     
+    let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("experience")
     var experiences = [Experience]()
     
     @IBOutlet var tableView: UITableView!
@@ -19,25 +20,9 @@ class ShowExperienceAddedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! AddExperienceViewController
-        vc.delegate = self
     }
     
     @IBAction func addNewJob(_ sender: Any) {
-    }
-    
-}
-
-extension ShowExperienceAddedViewController: AddExperienceControllerDelegate {
-    
-    func didAddExperience(_ experience: Experience) {
-        
-        experiences.append(experience)
-        tableView.reloadData()
         
     }
     
