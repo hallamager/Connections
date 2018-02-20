@@ -105,7 +105,7 @@ class BusinessRegisterViewController: UIViewController, UITextFieldDelegate {
     
 }
 
-extension StudentRegisterViewController: CLLocationManagerDelegate {
+extension BusinessRegisterViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         

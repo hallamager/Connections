@@ -19,6 +19,21 @@ class ShowExperienceAddedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                
+        ref.observeSingleEvent(of: .value, with: { snapshot in
+            for experience in snapshot.children {
+                if let data = experience as? DataSnapshot {
+                    if let experience = Experience(snapshot: data) {
+                        self.experiences.append(experience)
+                    }
+                }
+            }
+            
+            self.tableView.reloadData()
+            
+            print("is\(self.experiences.count)")
+            
+        })
         
     }
     
