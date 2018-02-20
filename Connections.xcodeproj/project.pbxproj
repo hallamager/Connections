@@ -49,6 +49,9 @@
 		A0AD071C202DCF8C00B77C61 /* BusinessLikedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD071B202DCF8C00B77C61 /* BusinessLikedViewController.swift */; };
 		A0AD0722202E043000B77C61 /* BusinessLikedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AD0721202E043000B77C61 /* BusinessLikedCell.swift */; };
 		A0D8D370203ADEB200D68A5A /* StudentEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8D36F203ADEB200D68A5A /* StudentEditProfileViewController.swift */; };
+		A0D8D373203B38D000D68A5A /* ShowExperienceAddedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8D372203B38D000D68A5A /* ShowExperienceAddedViewController.swift */; };
+		A0D8D375203B38E400D68A5A /* AddExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8D374203B38E400D68A5A /* AddExperienceViewController.swift */; };
+		A0D8D377203B39CF00D68A5A /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8D376203B39CF00D68A5A /* Experience.swift */; };
 		A0F529E01FD1A1A600B5B93C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0F529DF1FD1A1A500B5B93C /* GoogleService-Info.plist */; };
 		A0F529E41FD1B0CF00B5B93C /* UIViewStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F529E31FD1B0CF00B5B93C /* UIViewStyles.swift */; };
 		A0F529E61FD1B10E00B5B93C /* UIButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F529E51FD1B10E00B5B93C /* UIButtonStyles.swift */; };
@@ -109,6 +112,9 @@
 		A0AD071B202DCF8C00B77C61 /* BusinessLikedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessLikedViewController.swift; sourceTree = "<group>"; };
 		A0AD0721202E043000B77C61 /* BusinessLikedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessLikedCell.swift; sourceTree = "<group>"; };
 		A0D8D36F203ADEB200D68A5A /* StudentEditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentEditProfileViewController.swift; sourceTree = "<group>"; };
+		A0D8D372203B38D000D68A5A /* ShowExperienceAddedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowExperienceAddedViewController.swift; sourceTree = "<group>"; };
+		A0D8D374203B38E400D68A5A /* AddExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExperienceViewController.swift; sourceTree = "<group>"; };
+		A0D8D376203B39CF00D68A5A /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
 		A0F529DF1FD1A1A500B5B93C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0F529E11FD1AFC000B5B93C /* Gotham Rounded Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham Rounded Book.ttf"; sourceTree = "<group>"; };
 		A0F529E31FD1B0CF00B5B93C /* UIViewStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewStyles.swift; sourceTree = "<group>"; };
@@ -289,6 +295,7 @@
 		A09739E820210B9B0087F7CE /* StudentProfileCreation */ = {
 			isa = PBXGroup;
 			children = (
+				A0D8D371203B389B00D68A5A /* JobExperience */,
 				A09739E920210BDB0087F7CE /* StudentCreateProfileLandingViewController.swift */,
 				A09F6B9F2027512B00D98332 /* StudentPersonalViewController.swift */,
 				A0F5A6742039AE5A004E4D3E /* StudentProfilePictureViewController.swift */,
@@ -349,6 +356,16 @@
 				A0D8D36F203ADEB200D68A5A /* StudentEditProfileViewController.swift */,
 			);
 			path = StudentEditProfile;
+			sourceTree = "<group>";
+		};
+		A0D8D371203B389B00D68A5A /* JobExperience */ = {
+			isa = PBXGroup;
+			children = (
+				A0D8D372203B38D000D68A5A /* ShowExperienceAddedViewController.swift */,
+				A0D8D374203B38E400D68A5A /* AddExperienceViewController.swift */,
+				A0D8D376203B39CF00D68A5A /* Experience.swift */,
+			);
+			path = JobExperience;
 			sourceTree = "<group>";
 		};
 		A0F529E21FD1B07D00B5B93C /* IBDesignables */ = {
@@ -523,7 +540,9 @@
 				A07226631F9148FB006C60BA /* SWRevealViewController.m in Sources */,
 				A09739E72020E6A10087F7CE /* StudentRegisterViewController.swift in Sources */,
 				A00748741F912B0C004AF885 /* BusinessSwipeView.swift in Sources */,
+				A0D8D377203B39CF00D68A5A /* Experience.swift in Sources */,
 				A07226651F91657F006C60BA /* TabsViewController.swift in Sources */,
+				A0D8D375203B38E400D68A5A /* AddExperienceViewController.swift in Sources */,
 				A0AA81562036FA2300858063 /* SelectStudentViewController.swift in Sources */,
 				A09739EA20210BDB0087F7CE /* StudentCreateProfileLandingViewController.swift in Sources */,
 				A0AA81582036FA3B00858063 /* ViewStudentResponsesViewController.swift in Sources */,
@@ -560,6 +579,7 @@
 				A0973A132024B52D0087F7CE /* BusinessProfileCreationLandingViewController.swift in Sources */,
 				A03D99221FD313380034AE24 /* Student.swift in Sources */,
 				A0F5A6752039AE5A004E4D3E /* StudentProfilePictureViewController.swift in Sources */,
+				A0D8D373203B38D000D68A5A /* ShowExperienceAddedViewController.swift in Sources */,
 				A0F529E61FD1B10E00B5B93C /* UIButtonStyles.swift in Sources */,
 				A0AA81512036D6DF00858063 /* BusinessQuestions.swift in Sources */,
 			);

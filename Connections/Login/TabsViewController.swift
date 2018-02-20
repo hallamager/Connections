@@ -48,6 +48,10 @@ class TabsViewController: ButtonBarPagerTabStripViewController {
         super.viewDidLoad()
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     // MARK: - PagerTabStripDataSource
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
