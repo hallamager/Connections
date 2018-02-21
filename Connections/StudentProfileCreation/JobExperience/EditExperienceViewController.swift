@@ -41,6 +41,16 @@ class EditExperienceViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    //text field goes away when done is pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     @IBAction func confirmBtn(_ sender: Any) {
         
         let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("experience").child(experience.uuid!)

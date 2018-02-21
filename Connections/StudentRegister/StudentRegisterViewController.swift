@@ -89,9 +89,8 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     func presentStudentProfileCreationViewController() {
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let StudentCreateProfileLandingViewController:StudentCreateProfileLandingViewController = storyboard.instantiateViewController(withIdentifier: "StudentCreateProfileLandingViewController") as! StudentCreateProfileLandingViewController
-        self.present(StudentCreateProfileLandingViewController, animated: true, completion: nil)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "profileCreationNavigation")
+        self.present(vc!, animated: true, completion: nil)
     }
     
 
@@ -102,7 +101,6 @@ extension StudentRegisterViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         guard let location = locations.last else { return }
-        geoRef.setLocation(location, forKey: (Auth.auth().currentUser?.uid)!)
         userLocation = location
         
     }

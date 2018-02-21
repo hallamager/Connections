@@ -40,6 +40,10 @@ class ShowExperienceAddedViewController: UIViewController {
         
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     @IBAction func addNewJob(_ sender: Any) {
         
     }
@@ -56,6 +60,10 @@ extension ShowExperienceAddedViewController: AddExperienceControllerDelegate {
 }
 
 extension ShowExperienceAddedViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -76,9 +84,11 @@ extension ShowExperienceAddedViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! ShowExperienceCell
         let experience = experiences[indexPath.row]
-        cell.textLabel?.text = experience.company
+        cell.jobTitle?.text = experience.title
+        cell.jobCompany?.text = experience.company
+        cell.jobDate?.text = experience.fromDate
         return cell
     }
     
