@@ -42,6 +42,15 @@ class EditExperienceViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func confirmBtn(_ sender: Any) {
+        
+        let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("experience").child(experience.uuid!)
+        
+        ref.updateChildValues(["Title": self.jobTitle.text!, "Company": self.jobCompany.text!, "Location": self.jobCity.text!, "From Date": self.jobFromDate.text!, "To Date": self.jobToDate.text!, "Description": self.jobDescription.text!])
+        
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let ShowExperienceAddedViewController:ShowExperienceAddedViewController = storyboard.instantiateViewController(withIdentifier: "ShowExperienceAddedViewController") as! ShowExperienceAddedViewController
+        self.present(ShowExperienceAddedViewController, animated: true, completion: nil)
+        
     }
     
 }
