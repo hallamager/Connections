@@ -53,6 +53,7 @@
 		A0D8D375203B38E400D68A5A /* AddExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8D374203B38E400D68A5A /* AddExperienceViewController.swift */; };
 		A0D8D377203B39CF00D68A5A /* Experience.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8D376203B39CF00D68A5A /* Experience.swift */; };
 		A0D8D381203CAE4500D68A5A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8D380203CAE4500D68A5A /* Location.swift */; };
+		A0D8D383203D7F8300D68A5A /* EditExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8D382203D7F8300D68A5A /* EditExperienceViewController.swift */; };
 		A0F529E01FD1A1A600B5B93C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0F529DF1FD1A1A500B5B93C /* GoogleService-Info.plist */; };
 		A0F529E41FD1B0CF00B5B93C /* UIViewStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F529E31FD1B0CF00B5B93C /* UIViewStyles.swift */; };
 		A0F529E61FD1B10E00B5B93C /* UIButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F529E51FD1B10E00B5B93C /* UIButtonStyles.swift */; };
@@ -117,6 +118,7 @@
 		A0D8D374203B38E400D68A5A /* AddExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExperienceViewController.swift; sourceTree = "<group>"; };
 		A0D8D376203B39CF00D68A5A /* Experience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experience.swift; sourceTree = "<group>"; };
 		A0D8D380203CAE4500D68A5A /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		A0D8D382203D7F8300D68A5A /* EditExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExperienceViewController.swift; sourceTree = "<group>"; };
 		A0F529DF1FD1A1A500B5B93C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0F529E11FD1AFC000B5B93C /* Gotham Rounded Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham Rounded Book.ttf"; sourceTree = "<group>"; };
 		A0F529E31FD1B0CF00B5B93C /* UIViewStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewStyles.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 			children = (
 				A0D8D372203B38D000D68A5A /* ShowExperienceAddedViewController.swift */,
 				A0D8D374203B38E400D68A5A /* AddExperienceViewController.swift */,
+				A0D8D382203D7F8300D68A5A /* EditExperienceViewController.swift */,
 				A0D8D376203B39CF00D68A5A /* Experience.swift */,
 			);
 			path = JobExperience;
@@ -568,6 +571,7 @@
 				A0F529E81FD1B18100B5B93C /* HorizontalGradient.swift in Sources */,
 				A00748581F912189004AF885 /* BusinessSwipeViewController.swift in Sources */,
 				A00748761F912E3F004AF885 /* LikeDislikeInfo.swift in Sources */,
+				A0D8D383203D7F8300D68A5A /* EditExperienceViewController.swift in Sources */,
 				A09739E32020A4850087F7CE /* BusinessMoreInfoViewController.swift in Sources */,
 				A0F529E41FD1B0CF00B5B93C /* UIViewStyles.swift in Sources */,
 				A0AD071C202DCF8C00B77C61 /* BusinessLikedViewController.swift in Sources */,

@@ -707,7 +707,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="nV8-Xo-l3E" kind="show" id="Apj-bE-Su5"/>
+                                    <segue destination="l8U-eC-Jdc" kind="show" id="QRN-Te-MhF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5b-O6-ZOK" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
@@ -3112,22 +3112,6 @@
             </objects>
             <point key="canvasLocation" x="5237.68115942029" y="959.51086956521749"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="svy-5V-VGp">
-            <objects>
-                <navigationController id="nV8-Xo-l3E" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fuM-W4-nOi">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="l8U-eC-Jdc" kind="relationship" relationship="rootViewController" id="lgX-Jq-OCd"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mtj-2f-g89" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5238" y="134"/>
-        </scene>
         <!--Show Experience Added View Controller-->
         <scene sceneID="b4U-O2-dd9">
             <objects>
@@ -3166,10 +3150,6 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="l8U-eC-Jdc" id="uUh-aM-AQM"/>
-                                    <outlet property="delegate" destination="l8U-eC-Jdc" id="GsO-BN-fsH"/>
-                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dse-OF-ev4">
                                 <rect key="frame" x="154" y="635" width="107" height="30"/>
@@ -3184,14 +3164,106 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="D3A-BX-Ijg"/>
                     </view>
-                    <navigationItem key="navigationItem" id="g3X-5L-Gw3"/>
+                    <navigationItem key="navigationItem" id="g3X-5L-Gw3">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="ibz-lL-1aM"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="0MW-9q-fMi" id="1ga-4r-T8Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P1A-Ei-lgK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6198.5507246376819" y="131.25"/>
+            <point key="canvasLocation" x="5238" y="134"/>
+        </scene>
+        <!--Edit Experience View Controller-->
+        <scene sceneID="5Kl-ax-tsc">
+            <objects>
+                <viewController storyboardIdentifier="EditExperienceViewController" id="2wS-32-1rJ" customClass="EditExperienceViewController" customModule="Connections" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aG6-Z1-hQN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8jX-M0-iH4">
+                                <rect key="frame" x="127" y="84" width="160" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2kk-fp-AN5">
+                                <rect key="frame" x="127" y="141" width="160" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="liD-Mb-a0C">
+                                <rect key="frame" x="127" y="208" width="160" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cYw-cj-ipQ">
+                                <rect key="frame" x="127" y="280" width="160" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="owV-ps-hWr">
+                                <rect key="frame" x="127" y="360" width="160" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aWv-JV-A4a">
+                                <rect key="frame" x="127" y="438" width="160" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ma-QR-2aJ" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
+                                <rect key="frame" x="47" y="579" width="320" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="17"/>
+                                <state key="normal" title="Confirm">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="23"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
+                                        <color key="value" red="0.46666666670000001" green="0.78823529410000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
+                                        <color key="value" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="confirmBtn:" destination="2wS-32-1rJ" eventType="touchUpInside" id="9Vz-RD-er3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="E2Z-TZ-1oZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="jobCity" destination="liD-Mb-a0C" id="JMX-C2-fLk"/>
+                        <outlet property="jobCompany" destination="2kk-fp-AN5" id="T6F-TB-fBW"/>
+                        <outlet property="jobDescription" destination="aWv-JV-A4a" id="4Ux-5Y-Udd"/>
+                        <outlet property="jobFromDate" destination="cYw-cj-ipQ" id="jxh-Le-dxq"/>
+                        <outlet property="jobTitle" destination="8jX-M0-iH4" id="UTm-G5-Mw0"/>
+                        <outlet property="jobToDate" destination="owV-ps-hWr" id="jx8-RO-8hJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hvl-DD-4pO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6370" y="-633"/>
         </scene>
         <!--Add Experience View Controller-->
         <scene sceneID="DjD-di-IkQ">
@@ -3281,7 +3353,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ofn-ej-37q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7131.884057971015" y="133.69565217391306"/>
+            <point key="canvasLocation" x="6370" y="132"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="flK-66-7MB">

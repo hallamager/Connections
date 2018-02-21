@@ -31,6 +31,9 @@ class ShowExperienceAddedViewController: UIViewController {
             
             self.tableView.reloadData()
             
+            self.tableView.dataSource = self
+            self.tableView.delegate = self
+            
             print("is\(self.experiences.count)")
             
         })
@@ -38,6 +41,28 @@ class ShowExperienceAddedViewController: UIViewController {
     }
     
     @IBAction func addNewJob(_ sender: Any) {
+        
+    }
+    
+}
+
+extension ShowExperienceAddedViewController: AddExperienceControllerDelegate {
+    
+    func didAddExperience(_ experience: Experience) {
+        experiences.append(experience)
+        tableView.reloadData()
+    }
+    
+}
+
+extension ShowExperienceAddedViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let EditExperienceViewController:EditExperienceViewController = storyboard.instantiateViewController(withIdentifier: "EditExperienceViewController") as! EditExperienceViewController
+        EditExperienceViewController.experience = experiences[indexPath.row]
+        self.present(EditExperienceViewController, animated: true, completion: nil)
         
     }
     

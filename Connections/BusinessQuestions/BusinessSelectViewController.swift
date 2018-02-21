@@ -94,6 +94,7 @@ class BusinessSelectViewController: UITableViewController {
         let vc = Storyboard.instantiateViewController(withIdentifier: "BusinessQuestionsListViewController") as! BusinessQuestionsListViewController
         vc.business = businesses[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
 }
