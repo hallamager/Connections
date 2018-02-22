@@ -48,6 +48,11 @@ class ShowExperienceAddedViewController: UIViewController {
         
     }
     
+    @IBAction func confirmBtn(_ sender: Any) {
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let StudentCreateProfileLandingViewController:StudentCreateProfileLandingViewController = storyboard.instantiateViewController(withIdentifier: "StudentCreateProfileLandingViewController") as! StudentCreateProfileLandingViewController
+        self.present(StudentCreateProfileLandingViewController, animated: true, completion: nil)
+    }
 }
 
 extension ShowExperienceAddedViewController: AddExperienceControllerDelegate {

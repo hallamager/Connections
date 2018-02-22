@@ -30,7 +30,7 @@ class BusinessSwipeViewController: UIViewController {
         
         kolodaView.dataSource = self
         kolodaView.delegate = self
-
+                          
         ref.observeSingleEvent(of: .value, with: { snapshot in
             for business in snapshot.children {
                 if let data = business as? DataSnapshot {

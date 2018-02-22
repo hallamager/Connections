@@ -14,9 +14,8 @@ import GeoFire
 
 class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
     
-    let geoRef = GeoFire(firebaseRef: Database.database().reference().child("user_locations"))
-    let locationManager = CLLocationManager()
-    var userLocation: CLLocation?
+//    let locationManager = CLLocationManager()
+//    var userLocation: CLLocation?
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -25,9 +24,9 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
-        locationManager.startUpdatingLocation()
+//        locationManager.delegate = self
+//        locationManager.requestAlwaysAuthorization()
+//        locationManager.startUpdatingLocation()
         
         usernameTextField.delegate = self
         emailTextField.delegate = self
@@ -65,14 +64,14 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
                     
                     ref.child("users").child(user!.uid).setValue(["type": "student"])
                     
-                    guard let userLocation = self.userLocation else { return }
+//                    guard let userLocation = self.userLocation else { return }
                     
-                    let data: [String: Any] = [
-                        "lat": userLocation.coordinate.latitude,
-                        "lng": userLocation.coordinate.longitude
-                    ]
-                    
-                    ref.child("student").child(user!.uid).updateChildValues(data)
+//                    let data: [String: Any] = [
+//                        "lat": userLocation.coordinate.latitude,
+//                        "lng": userLocation.coordinate.longitude
+//                    ]
+//                    
+//                    ref.child("student").child(user!.uid).updateChildValues(data)
                     
                 }
                 
@@ -96,13 +95,14 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
 
 }
 
-extension StudentRegisterViewController: CLLocationManagerDelegate {
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        guard let location = locations.last else { return }
-        userLocation = location
-        
-    }
-    
-}
+//extension StudentRegisterViewController: CLLocationManagerDelegate {
+//
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//
+//        guard let location = locations.last else { return }
+//        userLocation = location
+//
+//    }
+//
+//}
+

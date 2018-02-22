@@ -13,15 +13,12 @@ import GeoFire
 
 class StudentCreateProfileLandingViewController: UIViewController {
     
-    let geoRef = GeoFire(firebaseRef: Database.database().reference().child("user_locations"))
+    let geoRefStudent = GeoFire(firebaseRef: Database.database().reference().child("student_locations"))
+    let geoRefBusiness = GeoFire(firebaseRef: Database.database().reference().child("business"))
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
-        locationManager.startUpdatingLocation()
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -40,6 +37,12 @@ class StudentCreateProfileLandingViewController: UIViewController {
         self.present(SWRevealViewController, animated: true, completion: nil)
     }
     
+    @IBAction func createProfileBtn(_ sender: Any) {
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
 }
 
 
@@ -48,7 +51,12 @@ extension StudentCreateProfileLandingViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         guard let location = locations.last else { return }
-        geoRef.setLocation(location, forKey: (Auth.auth().currentUser?.uid)!)
+        let query = geoRefBusiness.query(at: location, withRadius: 1)
+        query.observe(.keyEntered) { string, location in
+            print(string)
+        }
+        
+        geoRefStudent.setLocation(location, forKey: (Auth.auth().currentUser?.uid)!)
         
     }
     

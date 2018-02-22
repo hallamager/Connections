@@ -12,16 +12,18 @@ class Student {
     
     let uuid: String
     let username: String
-    let industry: String
-    let description: String
+    let address: String
+    let summary: String
+    let headline: String
     let profileImageURL: String
     
     init?(snapshot: DataSnapshot) {
         if let snapshotData = snapshot.value as? [String: Any] {
             uuid = snapshot.key
             username = snapshotData["Username"] as! String
-            industry = snapshotData["Industry"] as! String
-            description = snapshotData["Description"] as! String
+            address = snapshotData["Address"] as! String
+            headline = snapshotData["Headline"] as! String
+            summary = snapshotData["Summary"] as! String
             profileImageURL = snapshotData["profileImageURL"] as! String
         } else {
             return nil

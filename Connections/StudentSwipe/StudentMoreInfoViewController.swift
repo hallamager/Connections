@@ -22,9 +22,9 @@ class StudentMoreInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        companyIndustry.text = student.industry
+        companyIndustry.text = student.address
         companyName.text = student.username
-        companyDescription.text = student.description
+        companyDescription.text = student.headline
         
     }
     

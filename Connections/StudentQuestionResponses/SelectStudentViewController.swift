@@ -83,10 +83,10 @@ class SelectStudentViewController: UITableViewController {
 
         cell.textLabel?.text = student.username
 
-        cell.detailTextLabel?.text = student.industry
+        cell.detailTextLabel?.text = student.headline
 
         print(student.username)
-        print(student.industry)
+        print(student.headline)
 
         return cell
 

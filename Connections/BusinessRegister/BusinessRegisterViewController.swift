@@ -9,14 +9,9 @@
 import Foundation
 import UIKit
 import Firebase
-import Firebase
 import GeoFire
 
 class BusinessRegisterViewController: UIViewController, UITextFieldDelegate {
-    
-    let geoRef = GeoFire(firebaseRef: Database.database().reference().child("user_locations"))
-    let locationManager = CLLocationManager()
-    var userLocation: CLLocation?
     
     @IBOutlet weak var companyNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -24,10 +19,6 @@ class BusinessRegisterViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
-        locationManager.startUpdatingLocation()
         
         companyNameTextField.delegate = self
         emailTextField.delegate = self
@@ -76,14 +67,14 @@ class BusinessRegisterViewController: UIViewController, UITextFieldDelegate {
 
                     self.presentBusinessProfileCreationViewController()
                     
-                    guard let userLocation = self.userLocation else { return }
-                    
-                    let data: [String: Any] = [
-                        "lat": userLocation.coordinate.latitude,
-                        "lng": userLocation.coordinate.longitude
-                    ]
-                    
-                    ref.child("business").child(user!.uid).updateChildValues(data)
+//                    guard let userLocation = self.userLocation else { return }
+//
+//                    let data: [String: Any] = [
+//                        "lat": userLocation.coordinate.latitude,
+//                        "lng": userLocation.coordinate.longitude
+//                    ]
+//
+//                    ref.child("business").child(user!.uid).updateChildValues(data)
 
                 }
                 
@@ -101,18 +92,6 @@ class BusinessRegisterViewController: UIViewController, UITextFieldDelegate {
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let BusinessCreateProfileLandingViewController:BusinessCreateProfileLandingViewController = storyboard.instantiateViewController(withIdentifier: "BusinessCreateProfileLandingViewController") as! BusinessCreateProfileLandingViewController
         self.present(BusinessCreateProfileLandingViewController, animated: true, completion: nil)
-    }
-    
-}
-
-extension BusinessRegisterViewController: CLLocationManagerDelegate {
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        guard let location = locations.last else { return }
-        geoRef.setLocation(location, forKey: (Auth.auth().currentUser?.uid)!)
-        userLocation = location
-        
     }
     
 }
