@@ -40,8 +40,8 @@ class ShowExperienceAddedViewController: UIViewController {
         
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return true
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     @IBAction func addNewJob(_ sender: Any) {

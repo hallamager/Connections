@@ -44,6 +44,10 @@ class StudentProfilePictureViewController: UIViewController, UIImagePickerContro
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func cameraRollBtn(_ sender: Any) {
+        handleSelectProfileImageView()
+    }
+    
     @IBAction func comfirmBtn(_ sender: Any) {
         
         if let profileImg = self.selectedImage, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
@@ -66,6 +70,10 @@ class StudentProfilePictureViewController: UIViewController, UIImagePickerContro
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let StudentCreateProfileLandingViewController:StudentCreateProfileLandingViewController = storyboard.instantiateViewController(withIdentifier: "StudentCreateProfileLandingViewController") as! StudentCreateProfileLandingViewController
         self.present(StudentCreateProfileLandingViewController, animated: true, completion: nil)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
 }

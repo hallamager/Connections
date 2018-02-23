@@ -23,7 +23,7 @@ class AddExperienceViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var jobCity: UITextField!
     @IBOutlet var jobFromDate: UITextField!
     @IBOutlet var jobToDate: UITextField!
-    @IBOutlet var jobDescription: UITextField!
+    @IBOutlet var jobDescription: UITextView!
     
     weak var delegate: AddExperienceControllerDelegate?
     
@@ -35,12 +35,11 @@ class AddExperienceViewController: UIViewController, UITextFieldDelegate {
         jobCity.delegate = self
         jobFromDate.delegate = self
         jobToDate.delegate = self
-        jobDescription.delegate = self
 
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return true
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     //text field goes away when done is pressed
