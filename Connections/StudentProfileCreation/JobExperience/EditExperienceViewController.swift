@@ -20,7 +20,7 @@ class EditExperienceViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var jobCity: UITextField!
     @IBOutlet var jobFromDate: UITextField!
     @IBOutlet var jobToDate: UITextField!
-    @IBOutlet var jobDescription: UITextField!
+    @IBOutlet var jobDescription: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,6 @@ class EditExperienceViewController: UIViewController, UITextFieldDelegate {
         jobCity.delegate = self
         jobFromDate.delegate = self
         jobToDate.delegate = self
-        jobDescription.delegate = self
         
         jobTitle.text = experience.title
         jobCompany.text = experience.company
