@@ -14,7 +14,7 @@ import GeoFire
 class StudentCreateProfileLandingViewController: UIViewController {
     
     let geoRefStudent = GeoFire(firebaseRef: Database.database().reference().child("student_locations"))
-    let geoRefBusiness = GeoFire(firebaseRef: Database.database().reference().child("business"))
+    let geoRefBusiness = GeoFire(firebaseRef: Database.database().reference().child("business_locations"))
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {

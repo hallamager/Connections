@@ -11,8 +11,9 @@ import Koloda
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import GeoFire
 
-class BusinessSwipeViewController: UIViewController {
+class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var kolodaView: KolodaView!
     @IBOutlet weak var OpenMenuLeft: UIBarButtonItem!
@@ -22,6 +23,8 @@ class BusinessSwipeViewController: UIViewController {
     let ref = Database.database().reference().child("business")
     var businesses = [Business]()
     var students = [Student]()
+    let geoRefBusiness = GeoFire(firebaseRef: Database.database().reference().child("business_locations"))
+    let locationManager = CLLocationManager()
     
     var counter = 0
     
@@ -30,20 +33,24 @@ class BusinessSwipeViewController: UIViewController {
         
         kolodaView.dataSource = self
         kolodaView.delegate = self
-                          
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+        
         ref.observeSingleEvent(of: .value, with: { snapshot in
             for business in snapshot.children {
                 if let data = business as? DataSnapshot {
                     if let business = Business(snapshot: data) {
                         self.businesses.append(business)
+                        print(business.description)
                     }
                 }
             }
             
             self.kolodaView.reloadData()
-            
+
             print("is\(self.businesses.count)")
-            
+
         })
         
         //open menu with tab bar button
@@ -54,6 +61,17 @@ class BusinessSwipeViewController: UIViewController {
         //open menu with swipe gesture
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        guard let location = locations.last else { return }
+        let query = geoRefBusiness.query(at: location, withRadius: 1)
+        query.observe(.keyEntered) { string, location in
+            print(string)
+        }
+        
+    }
+    
     
     func addLiked(_ business: Business) {
         
