@@ -16,8 +16,8 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var SideMenuTableView: UITableView!
     
-    var menuNameArray:Array = [String]()
-    var iconImage:Array = [UIImage]()
+    var menuNameArray: Array = [String]()
+    var iconImage: Array = [UIImage]()
     var coverView: UIView?
     var students = [Student]()
     

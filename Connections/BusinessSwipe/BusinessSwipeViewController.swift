@@ -42,7 +42,7 @@ class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate {
                 if let data = business as? DataSnapshot {
                     if let business = Business(snapshot: data) {
                         self.businesses.append(business)
-                        print(business.description)
+                        print(business.username)
                     }
                 }
             }
@@ -63,13 +63,19 @@ class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
+
         guard let location = locations.last else { return }
         let query = geoRefBusiness.query(at: location, withRadius: 1)
-        query.observe(.keyEntered) { string, location in
-            print(string)
-        }
+//        query.observe(.keyEntered) { string, location in
+//            print(string)
+//        }
         
+        query.observe(.keyEntered, with: { (key: String!, location: CLLocation!) in
+            
+            print(key)
+            
+        }) //End truckQuery
+
     }
     
     

@@ -11,7 +11,7 @@ import Firebase
 
 class Business {
     
-    let uuid: String
+    var uuid: String
     let username: String
     let industry: String
     let description: String

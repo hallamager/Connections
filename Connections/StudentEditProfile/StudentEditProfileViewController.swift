@@ -11,18 +11,17 @@ import UIKit
 import Firebase
 
 
-class StudentEditProfileViewController: UIViewController, UITextFieldDelegate {
+class StudentEditProfileViewController: UIViewController {
     
     var students = [Student]()
     let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)")
 
     @IBOutlet var openMenu: UIBarButtonItem!
-    @IBOutlet var userUsername: UITextField!
+    @IBOutlet var userUsername: UILabel!
+    @IBOutlet var profilePic: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        userUsername.delegate = self
         
         ref.observeSingleEvent(of: .value, with: { snapshot in
             if let student = Student(snapshot: snapshot) {
@@ -30,6 +29,15 @@ class StudentEditProfileViewController: UIViewController, UITextFieldDelegate {
                 self.students.append(student)
             }
         })
+        
+        // Create a storage reference from the URL
+        let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child((Auth.auth().currentUser?.uid)!)
+        // Download the data, assuming a max size of 1MB (you can change this as necessary)
+        storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+            // Create a UIImage, add it to the array
+            let pic = UIImage(data: data!)
+            self.profilePic.image = pic
+        }
         
         //open menu with tab bar button
         openMenu.target = self.revealViewController()
