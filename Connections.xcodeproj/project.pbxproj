@@ -53,6 +53,7 @@
 		A0D67A52204067300060AD70 /* AddEducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D67A51204067300060AD70 /* AddEducationViewController.swift */; };
 		A0D67A54204067400060AD70 /* EditEducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D67A53204067400060AD70 /* EditEducationViewController.swift */; };
 		A0D67A562040674C0060AD70 /* Education.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D67A552040674C0060AD70 /* Education.swift */; };
+		A0D67A58204331AD0060AD70 /* StudentInterestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D67A57204331AD0060AD70 /* StudentInterestsViewController.swift */; };
 		A0D8D370203ADEB200D68A5A /* StudentEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8D36F203ADEB200D68A5A /* StudentEditProfileViewController.swift */; };
 		A0D8D373203B38D000D68A5A /* ShowExperienceAddedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8D372203B38D000D68A5A /* ShowExperienceAddedViewController.swift */; };
 		A0D8D375203B38E400D68A5A /* AddExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8D374203B38E400D68A5A /* AddExperienceViewController.swift */; };
@@ -124,6 +125,7 @@
 		A0D67A51204067300060AD70 /* AddEducationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEducationViewController.swift; sourceTree = "<group>"; };
 		A0D67A53204067400060AD70 /* EditEducationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEducationViewController.swift; sourceTree = "<group>"; };
 		A0D67A552040674C0060AD70 /* Education.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Education.swift; sourceTree = "<group>"; };
+		A0D67A57204331AD0060AD70 /* StudentInterestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInterestsViewController.swift; sourceTree = "<group>"; };
 		A0D8D36F203ADEB200D68A5A /* StudentEditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentEditProfileViewController.swift; sourceTree = "<group>"; };
 		A0D8D372203B38D000D68A5A /* ShowExperienceAddedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowExperienceAddedViewController.swift; sourceTree = "<group>"; };
 		A0D8D374203B38E400D68A5A /* AddExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExperienceViewController.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				A09739E920210BDB0087F7CE /* StudentCreateProfileLandingViewController.swift */,
 				A09F6B9F2027512B00D98332 /* StudentPersonalViewController.swift */,
 				A0F5A6742039AE5A004E4D3E /* StudentProfilePictureViewController.swift */,
+				A0D67A57204331AD0060AD70 /* StudentInterestsViewController.swift */,
 			);
 			path = StudentProfileCreation;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 			files = (
 				A07226631F9148FB006C60BA /* SWRevealViewController.m in Sources */,
 				A09739E72020E6A10087F7CE /* StudentRegisterViewController.swift in Sources */,
+				A0D67A58204331AD0060AD70 /* StudentInterestsViewController.swift in Sources */,
 				A00748741F912B0C004AF885 /* BusinessSwipeView.swift in Sources */,
 				A0D8D377203B39CF00D68A5A /* Experience.swift in Sources */,
 				A07226651F91657F006C60BA /* TabsViewController.swift in Sources */,

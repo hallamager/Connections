@@ -16,6 +16,9 @@ class Student {
     let summary: String
     let headline: String
     let profileImageURL: String
+    let interestOne: String
+    let interestTwo: String
+    let interestThree: String
     
     init?(snapshot: DataSnapshot) {
         if let snapshotData = snapshot.value as? [String: Any] {
@@ -25,6 +28,9 @@ class Student {
             headline = snapshotData["Headline"] as! String
             summary = snapshotData["Summary"] as! String
             profileImageURL = snapshotData["profileImageURL"] as! String
+            interestOne = snapshotData["Interest One"] as! String
+            interestTwo = snapshotData["Interest Two"] as! String
+            interestThree = snapshotData["Interest Three"] as! String
         } else {
             return nil
         }
