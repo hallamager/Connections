@@ -10,11 +10,17 @@ import Foundation
 import UIKit
 import Firebase
 
+protocol StudentEditProfileViewControllerDelegate: class {
+    
+    func sliderChanged(text:String?)
+    
+}
 
 class StudentEditProfileViewController: UIViewController {
     
     var students = [Student]()
     let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)")
+    weak var delegate: StudentEditProfileViewControllerDelegate?
 
     @IBOutlet var openMenu: UIBarButtonItem!
     @IBOutlet var userUsername: UILabel!
@@ -51,16 +57,12 @@ class StudentEditProfileViewController: UIViewController {
         
     }
     
-    @IBAction func confirmBtn(_ sender: Any) {
-        
-        ref.updateChildValues(["Username": self.userUsername.text!])
-        
-    }
-    
     @IBAction func sliderDistance(_ sender: UISlider) {
         
         let currentValue = Int(slider.value)
         distanceSelected.text = "\(currentValue)Km"
+        delegate?.sliderChanged(text: distanceSelected.text)
+        print(currentValue)
         
     }
     

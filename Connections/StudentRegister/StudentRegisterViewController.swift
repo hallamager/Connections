@@ -14,23 +14,29 @@ import GeoFire
 
 class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
     
-//    let locationManager = CLLocationManager()
-//    var userLocation: CLLocation?
-    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet var confirmPasswordTextField: UITextField!
+    @IBOutlet var confirmPasswordImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        locationManager.delegate = self
-//        locationManager.requestAlwaysAuthorization()
-//        locationManager.startUpdatingLocation()
-        
         usernameTextField.delegate = self
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        confirmPasswordTextField.delegate = self
+        
+    }
+    
+    @IBAction func passwordDidChange(_ sender: Any) {
+        
+        if confirmPasswordTextField.text == passwordTextField.text {
+            confirmPasswordImage.image = #imageLiteral(resourceName: "Ok")
+        } else {
+            confirmPasswordImage.image = #imageLiteral(resourceName: "NotOk")
+        }
         
     }
     
@@ -45,6 +51,14 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func registerTapped(_ sender: Any) {
+        
+        guard passwordTextField.text! == confirmPasswordTextField.text! else {
+            
+            print("Passwords dont match")
+            
+            return
+            
+        }
         
         // checking if the fields are not nil
         if let email = emailTextField.text, let password = passwordTextField.text {
@@ -63,15 +77,6 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
                     ref.child("student").child(user!.uid).updateChildValues(["Username": self.usernameTextField.text!, "type": "student"])
                     
                     ref.child("users").child(user!.uid).setValue(["type": "student"])
-                    
-//                    guard let userLocation = self.userLocation else { return }
-                    
-//                    let data: [String: Any] = [
-//                        "lat": userLocation.coordinate.latitude,
-//                        "lng": userLocation.coordinate.longitude
-//                    ]
-//                    
-//                    ref.child("student").child(user!.uid).updateChildValues(data)
                     
                 }
                 
@@ -94,15 +99,4 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
     
 
 }
-
-//extension StudentRegisterViewController: CLLocationManagerDelegate {
-//
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//
-//        guard let location = locations.last else { return }
-//        userLocation = location
-//
-//    }
-//
-//}
 

@@ -13,7 +13,11 @@ import FirebaseAuth
 import FirebaseDatabase
 import GeoFire
 
-class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate {
+class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate, StudentEditProfileViewControllerDelegate {
+    
+    func sliderChanged(text: String?) {
+        print(text!)
+    }
     
     @IBOutlet weak var kolodaView: KolodaView!
     @IBOutlet weak var OpenMenuLeft: UIBarButtonItem!
@@ -22,7 +26,6 @@ class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate {
     let refLikes = Database.database().reference()
     let ref = Database.database().reference().child("business")
     var businesses = [Business]()
-    var students = [Student]()
     let geoRefBusiness = GeoFire(firebaseRef: Database.database().reference().child("business_locations"))
     let locationManager = CLLocationManager()
     
