@@ -19,6 +19,8 @@ class StudentEditProfileViewController: UIViewController {
     @IBOutlet var openMenu: UIBarButtonItem!
     @IBOutlet var userUsername: UILabel!
     @IBOutlet var profilePic: UIImageView!
+    @IBOutlet var distanceSelected: UILabel!
+    @IBOutlet var slider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +54,13 @@ class StudentEditProfileViewController: UIViewController {
     @IBAction func confirmBtn(_ sender: Any) {
         
         ref.updateChildValues(["Username": self.userUsername.text!])
+        
+    }
+    
+    @IBAction func sliderDistance(_ sender: UISlider) {
+        
+        let currentValue = Int(slider.value)
+        distanceSelected.text = "\(currentValue)Km"
         
     }
     

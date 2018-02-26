@@ -3306,6 +3306,9 @@
                                                         <rect key="frame" x="16" y="36" width="367" height="30"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="minimumTrackTintColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <action selector="sliderDistance:" destination="gxI-or-g2D" eventType="valueChanged" id="hT5-MK-l9C"/>
+                                                        </connections>
                                                     </slider>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3348,8 +3351,10 @@
                     </navigationItem>
                     <size key="freeformSize" width="414" height="1136"/>
                     <connections>
+                        <outlet property="distanceSelected" destination="KxC-ae-nY0" id="4Uk-E0-Qat"/>
                         <outlet property="openMenu" destination="dGt-Pl-5Tj" id="Vfr-rg-w9F"/>
                         <outlet property="profilePic" destination="bVL-p4-MCj" id="Nen-x9-9fN"/>
+                        <outlet property="slider" destination="w4S-ea-rNl" id="7PL-fU-cOr"/>
                         <outlet property="userUsername" destination="MpW-Li-aQR" id="5Xj-vm-XS8"/>
                     </connections>
                 </viewController>
@@ -5170,7 +5175,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Interests 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Adq-aW-W1W">
-                                <rect key="frame" x="47" y="495" width="109" height="21"/>
+                                <rect key="frame" x="47" y="494" width="109" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="19"/>
                                 <color key="textColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -5266,7 +5271,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GzW-30-csZ" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                <rect key="frame" x="47" y="527" width="320" height="45"/>
+                                <rect key="frame" x="47" y="526" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -5277,7 +5282,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NAM-oL-6WX" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                <rect key="frame" x="47" y="527" width="320" height="45"/>
+                                <rect key="frame" x="47" y="526" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Sports" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MYn-Dk-Wnh">
@@ -5292,7 +5297,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Add" translatesAutoresizingMaskIntoConstraints="NO" id="jAk-WK-hsN">
-                                                <rect key="frame" x="19" y="12" width="20" height="20"/>
+                                                <rect key="frame" x="17" y="12" width="20" height="20"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v59-0d-alq">
@@ -5319,15 +5324,15 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShowSkillCell" rowHeight="79" id="1Gn-Lv-0dF" customClass="ShowSkillCell" customModule="Connections" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="79"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShowSkillCell" rowHeight="80" id="1Gn-Lv-0dF" customClass="ShowSkillCell" customModule="Connections" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Gn-Lv-0dF" id="oKU-aK-1JC">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K6G-3o-XLM" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                                    <rect key="frame" x="47" y="17" width="320" height="45"/>
+                                                    <rect key="frame" x="47" y="18" width="320" height="45"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syu-tQ-xhv">
@@ -5353,6 +5358,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Xlk-nI-4om" id="3D9-Id-eAN"/>
+                                    <outlet property="delegate" destination="Xlk-nI-4om" id="2vN-FE-KaI"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
