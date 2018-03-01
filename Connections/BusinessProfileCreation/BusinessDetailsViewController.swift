@@ -1,8 +1,8 @@
 //
-//  BusinessAboutViewController.swift
+//  BusinessDetailsViewController.swift
 //  Connections
 //
-//  Created by Hallam John Ager on 04/02/2018.
+//  Created by Hallam John Ager on 01/03/2018.
 //  Copyright © 2018 Hallam John Ager. All rights reserved.
 //
 
@@ -10,23 +10,21 @@ import Foundation
 import UIKit
 import Firebase
 
-class BusinessAboutViewController: UIViewController, UITextFieldDelegate {
+class BusinessDetailsViewController: UIViewController, UITextFieldDelegate {
     
     let ref = Database.database().reference().child("business").child(Auth.auth().currentUser!.uid)
-
-    @IBOutlet var companyIndustry: UITextField!
-    @IBOutlet var companyDescription: UITextView!
     
+    @IBOutlet var companyWebsite: UITextField!
+    @IBOutlet var companySize: UITextField!
+    @IBOutlet var companyHeadquaters: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        companyIndustry.delegate = self
+        companyWebsite.delegate = self
+        companySize.delegate = self
+        companyHeadquaters.delegate = self
         
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
     
     //text field goes away when done is pressed
@@ -35,14 +33,17 @@ class BusinessAboutViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    @IBAction func confirmAbout(_ sender: Any) {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    @IBAction func confirmBtn(_ sender: Any) {
         
-        ref.updateChildValues(["Industry": self.companyIndustry.text!, "Description": self.companyDescription.text!])
+        ref.updateChildValues(["Website": self.companyWebsite.text!, "Company Size": self.companySize.text!, "Headquarters": self.companyHeadquaters.text!])
         
         self.presentBusinessProfileCreationViewController()
         
     }
-    
     
     func presentBusinessProfileCreationViewController() {
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

@@ -23,12 +23,13 @@ class ShowSkillsViewController: UIViewController, UITextFieldDelegate {
         
         skillInput.delegate = self
         
-        ref.observeSingleEvent(of: .value, with: { snapshot in
+        ref.observe(.value, with: { snapshot in
+            self.skills.removeAll()
             for skill in snapshot.children {
                 if let data = skill as? DataSnapshot {
                     if let skill = Skills(snapshot: data) {
+                        
                         self.skills.append(skill)
-                        self.tableView.reloadData()
                     }
                 }
             }
@@ -51,7 +52,6 @@ class ShowSkillsViewController: UIViewController, UITextFieldDelegate {
         
         let ex = Skills(data: ["Skill": self.skillInput.text!])
         ref.childByAutoId().setValue(ex.toDict())
-        tableView.reloadData()
         
     }
     

@@ -27,8 +27,8 @@ class BusinessQuestionsViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return true
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     //text field goes away when done is pressed
