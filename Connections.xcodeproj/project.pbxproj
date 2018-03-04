@@ -18,6 +18,7 @@
 		A00748721F912AA7004AF885 /* BusinessSwipeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A00748711F912AA7004AF885 /* BusinessSwipeView.xib */; };
 		A00748741F912B0C004AF885 /* BusinessSwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00748731F912B0C004AF885 /* BusinessSwipeView.swift */; };
 		A00748761F912E3F004AF885 /* LikeDislikeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00748751F912E3F004AF885 /* LikeDislikeInfo.swift */; };
+		A0076AB2204AA94500A52500 /* StudentEditAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0076AB1204AA94500A52500 /* StudentEditAboutViewController.swift */; };
 		A03D991F1FD305160034AE24 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03D991E1FD305160034AE24 /* SideMenuTableViewCell.swift */; };
 		A03D99221FD313380034AE24 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03D99211FD313380034AE24 /* Student.swift */; };
 		A049B0D320261EDF00EBD07B /* StudentSwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A049B0D220261EDF00EBD07B /* StudentSwipeViewController.swift */; };
@@ -100,6 +101,7 @@
 		A00748711F912AA7004AF885 /* BusinessSwipeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusinessSwipeView.xib; sourceTree = "<group>"; };
 		A00748731F912B0C004AF885 /* BusinessSwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSwipeView.swift; sourceTree = "<group>"; };
 		A00748751F912E3F004AF885 /* LikeDislikeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeDislikeInfo.swift; sourceTree = "<group>"; };
+		A0076AB1204AA94500A52500 /* StudentEditAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentEditAboutViewController.swift; sourceTree = "<group>"; };
 		A03D991E1FD305160034AE24 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		A03D99211FD313380034AE24 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		A049B0D220261EDF00EBD07B /* StudentSwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSwipeViewController.swift; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 			isa = PBXGroup;
 			children = (
 				A0D8D36F203ADEB200D68A5A /* StudentEditProfileViewController.swift */,
+				A0076AB1204AA94500A52500 /* StudentEditAboutViewController.swift */,
 			);
 			path = StudentEditProfile;
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 				A0AA81562036FA2300858063 /* SelectStudentViewController.swift in Sources */,
 				A09739EA20210BDB0087F7CE /* StudentCreateProfileLandingViewController.swift in Sources */,
 				A0AA81582036FA3B00858063 /* ViewStudentResponsesViewController.swift in Sources */,
+				A0076AB2204AA94500A52500 /* StudentEditAboutViewController.swift in Sources */,
 				A0F529ED1FD1E6F600B5B93C /* SideMenuViewController.swift in Sources */,
 				A07226691F916FB4006C60BA /* RegisterViewController.swift in Sources */,
 				A0D67A54204067400060AD70 /* EditEducationViewController.swift in Sources */,

@@ -55,7 +55,7 @@ class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate, 
             print("is\(self.businesses.count)")
 
         })
-        
+                
         //open menu with tab bar button
         OpenMenuLeft.target = self.revealViewController()
         OpenMenuLeft.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -65,13 +65,14 @@ class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate, 
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
     
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//    func loadNearbyBusinesses() {
 //
+//        let locations = [CLLocation]()
 //        guard let location = locations.last else { return }
 //        let query = geoRefBusiness.query(at: location, withRadius: 1)
-//        
+//
 //        query.observe(.keyEntered, with: { (key: String!, location: CLLocation!) in
-//            
+//
 //            self.ref.child(key).observeSingleEvent(of: .value, with: { snapshot in
 //
 //                let business = Business(snapshot: snapshot)
@@ -81,14 +82,13 @@ class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate, 
 //                self.kolodaView.reloadData()
 //
 //            })
-//            
+//
 //        })
 //
 //    }
     
-//    func loadNearbyBusinesses() {
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 //
-//        let locations = [CLLocation]()
 //        guard let location = locations.last else { return }
 //        let query = geoRefBusiness.query(at: location, withRadius: 1)
 //

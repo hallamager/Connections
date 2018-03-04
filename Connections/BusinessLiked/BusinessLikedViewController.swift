@@ -15,7 +15,7 @@ import FirebaseDatabase
 
 class BusinessLikedViewController: UITableViewController {
     
-    let kCloseCellHeight: CGFloat = 180
+    let kCloseCellHeight: CGFloat = 190
     let kOpenCellHeight: CGFloat = 490
     let ref = Database.database().reference().child("business")
     let kRowsCount = 10
@@ -106,7 +106,9 @@ extension BusinessLikedViewController {
             cell.unfold(true, animated: false, completion: nil)
         }
         
-        cell.nameLabel.text! = business.username        
+        cell.companyName.text! = business.username
+        cell.companyIndustry.text! = business.industry
+        cell.foldingNameLabel.text! = business.username
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
