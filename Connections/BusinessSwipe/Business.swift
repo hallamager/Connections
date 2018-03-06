@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-class Business: Equatable {
+class Business {
     
     var uuid: String
     let username: String
@@ -40,8 +40,8 @@ class Business: Equatable {
     
 }
 
-func == <T: Business>(lhs: T, rhs: T) -> Bool {
-    return lhs.uuid == rhs.uuid && lhs.username == rhs.username
-}
+//func == <T: Business>(lhs: T, rhs: T) -> Bool {
+//    return lhs.uuid == rhs.uuid && lhs.username == rhs.username
+//}
 
 
