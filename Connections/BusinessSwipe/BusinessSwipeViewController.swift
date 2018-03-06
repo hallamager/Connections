@@ -29,6 +29,8 @@ class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate, 
     let geoRefBusiness = GeoFire(firebaseRef: Database.database().reference().child("business_locations"))
     let locationManager = CLLocationManager()
     
+    var queryLocation = CLLocation(latitude: 0, longitude: 0)
+    
     var counter = 0
     
     override func viewDidLoad() {
@@ -40,22 +42,6 @@ class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate, 
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         
-        ref.observeSingleEvent(of: .value, with: { snapshot in
-            for business in snapshot.children {
-                if let data = business as? DataSnapshot {
-                    if let business = Business(snapshot: data) {
-                        self.businesses.append(business)
-                        print(business.industry)
-                    }
-                }
-            }
-
-            self.kolodaView.reloadData()
-
-            print("is\(self.businesses.count)")
-
-        })
-                
         //open menu with tab bar button
         OpenMenuLeft.target = self.revealViewController()
         OpenMenuLeft.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -65,48 +51,35 @@ class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate, 
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
     
-//    func loadNearbyBusinesses() {
-//
-//        let locations = [CLLocation]()
-//        guard let location = locations.last else { return }
-//        let query = geoRefBusiness.query(at: location, withRadius: 1)
-//
-//        query.observe(.keyEntered, with: { (key: String!, location: CLLocation!) in
-//
-//            self.ref.child(key).observeSingleEvent(of: .value, with: { snapshot in
-//
-//                let business = Business(snapshot: snapshot)
-//                business?.uuid = key
-//                self.businesses.append(business!)
-//                print(business!.username)
-//                self.kolodaView.reloadData()
-//
-//            })
-//
-//        })
-//
-//    }
+    func loadNearbyBusinesses(for location: CLLocation) {
+        
+        let query = geoRefBusiness.query(at: location, withRadius: 20)
+        
+        guard location.distance(from: queryLocation) > 5 else { return }
+        
+        queryLocation = location
+        query.observe(.keyEntered) { key, location in
+            
+            guard ["5w5tjm61ieMyT27ZeK3slp9U20U2"].contains(key) else { return }
+            
+            self.ref.child(key).observeSingleEvent(of: .value, with: { snapshot in
+
+                let business = Business(snapshot: snapshot)
+                business?.uuid = key
+                self.businesses.append(business!)
+                print(business!.username)
+                self.kolodaView.reloadData()
+
+            })
+
+        }
+
+    }
     
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//
-//        guard let location = locations.last else { return }
-//        let query = geoRefBusiness.query(at: location, withRadius: 1)
-//
-//        query.observe(.keyEntered, with: { (key: String!, location: CLLocation!) in
-//
-//            self.ref.child(key).observeSingleEvent(of: .value, with: { snapshot in
-//
-//                let business = Business(snapshot: snapshot)
-//                business?.uuid = key
-//                self.businesses.append(business!)
-//                print(business!.username)
-//                self.kolodaView.reloadData()
-//
-//            })
-//
-//        })
-//
-//    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return }
+        loadNearbyBusinesses(for: location)
+    }
     
     
     func addLiked(_ business: Business) {
@@ -137,6 +110,18 @@ class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate, 
         newDislike.updateChildValues(dict)
         
         self.counter += 1
+        
+    }
+    
+    func userViewed(_ business: Business) {
+        
+        let newView = refLikes.child("userViewed/\(Auth.auth().currentUser!.uid)")
+        
+        let business = [
+            business.uuid: true,
+        ]
+        
+        newView.updateChildValues(business)
         
     }
 
@@ -180,10 +165,12 @@ extension BusinessSwipeViewController: KolodaViewDelegate {
         if direction == SwipeResultDirection.right {
             
             addLiked(self.businesses[counter])
+            userViewed(self.businesses[counter])
             
         } else if direction == .left {
             
             addDisliked(self.businesses[counter])
+            userViewed(self.businesses[counter])
             
         }
         
