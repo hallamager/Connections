@@ -44,7 +44,7 @@ class AddJobsViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func confirmBtn(_ sender: Any) {
         
-        let ex = Experience(data: ["Title": self.jobTitle.text!, "Employment Type": self.employmentType.text!, "Description": self.jobDescription.text!])
+        let ex = Jobs(data: ["Title": self.jobTitle.text!, "Employment Type": self.employmentType.text!, "Description": self.jobDescription.text!])
         ref.childByAutoId().setValue(ex.toDict())
         let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let ShowJobsAddedViewController:ShowJobsAddedViewController = storyboard.instantiateViewController(withIdentifier: "ShowJobsAddedViewController") as! ShowJobsAddedViewController

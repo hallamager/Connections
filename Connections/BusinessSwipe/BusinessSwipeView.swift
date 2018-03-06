@@ -14,5 +14,8 @@ class BusinessSwipeView: UIView {
 
     @IBOutlet weak var businessCard: UIViewStyles!
     @IBOutlet var businessName: UILabel!
+    @IBOutlet var profilePic: UIImageView!
+    @IBOutlet var businessIndustry: UILabel!
+    @IBOutlet var businessHeadquarters: UILabel!
     
 }

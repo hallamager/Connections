@@ -126,7 +126,10 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="businessCard" destination="890-db-LLu" id="cvB-C1-4ta"/>
+                <outlet property="businessHeadquarters" destination="0X5-hv-e03" id="8Pa-jJ-Nk1"/>
+                <outlet property="businessIndustry" destination="M6o-EY-BLY" id="GYz-VG-zkw"/>
                 <outlet property="businessName" destination="UdE-0P-skT" id="hzd-TG-6d2"/>
+                <outlet property="profilePic" destination="vnD-XV-CtU" id="fnc-CR-ddx"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="124.5"/>
         </view>

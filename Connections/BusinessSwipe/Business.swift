@@ -18,6 +18,8 @@ class Business {
     let questionOne: String
     let questionTwo: String
     let questionThree: String
+    let profileImageURL: String
+    let businessHeadquarters: String
     
     init?(snapshot: DataSnapshot) {
         if let snapshotData = snapshot.value as? [String: Any] {
@@ -28,6 +30,8 @@ class Business {
             questionOne = snapshotData["Question One"] as! String
             questionTwo = snapshotData["Question Two"] as! String
             questionThree = snapshotData["Question Three"] as! String
+            profileImageURL = snapshotData["profileImageURL"] as! String
+            businessHeadquarters = snapshotData["Headquarters"] as! String
         } else {
             return nil
         }
