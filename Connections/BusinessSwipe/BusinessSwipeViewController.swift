@@ -57,37 +57,6 @@ class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate, 
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
     
-    func loadNearbyBusinesses(for location: CLLocation) {
-        
-        let query = geoRefBusiness.query(at: location, withRadius: 20)
-        
-        guard location.distance(from: queryLocation) > 5 else { return }
-        
-        queryLocation = location
-        query.observe(.keyEntered) { key, location in
-            
-//            guard ["5w5tjm61ieMyT27ZeK3slp9U20U2"].contains(key) else { return }
-            
-            self.ref.child(key).observeSingleEvent(of: .value, with: { snapshot in
-
-                let business = Business(snapshot: snapshot)
-                business?.uuid = key
-                self.businesses.append(business!)
-                print(business!.username)
-                self.kolodaView.reloadData()
-
-            })
-
-        }
-
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { return }
-        geoRefStudent.setLocation(location, forKey: (Auth.auth().currentUser?.uid)!)
-        loadNearbyBusinesses(for: location)
-    }
-    
     func addLiked(_ business: Business) {
         
         let moreLikes = refLikes.child("studentsLiked/\(Auth.auth().currentUser!.uid)")
