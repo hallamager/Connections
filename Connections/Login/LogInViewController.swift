@@ -57,6 +57,10 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
                     Database.database().reference().child("users/\(user!.uid)/type").observeSingleEvent(of: .value, with: {
                         (snapshot) in
                         
+                        ViewedManager.shared.configure(uuid: user!.uid)
+                        
+                        
+                        
                         switch snapshot.value as! String {
                         // If our user is admin...
                         case "business":

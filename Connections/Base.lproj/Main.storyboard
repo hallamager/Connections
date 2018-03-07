@@ -2443,7 +2443,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s6K-2D-fel" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8038" y="-4039"/>
+            <point key="canvasLocation" x="8038" y="-3948"/>
         </scene>
         <!--Business Questions View Controller-->
         <scene sceneID="RBn-5S-FdE">
@@ -6097,7 +6097,7 @@ We help brands create digital strategy, understand and engage their users with U
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QDg-sn-cer" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6370" y="-4039"/>
+            <point key="canvasLocation" x="6370" y="-3948"/>
         </scene>
         <!--Business Details View Controller-->
         <scene sceneID="vhk-oS-fP4">

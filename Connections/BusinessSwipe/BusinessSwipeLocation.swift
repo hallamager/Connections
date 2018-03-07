@@ -22,15 +22,17 @@ extension BusinessSwipeViewController {
         queryLocation = location
         query.observe(.keyEntered) { key, location in
             
-            //            guard ["5w5tjm61ieMyT27ZeK3slp9U20U2"].contains(key) else { return }
+            guard !ViewedManager.shared.uuids.contains(key) else { return }
             
-            self.userViewed.observeSingleEvent(of: .value, with: { snapshot in
-                
-                let business = Business(snapshot: snapshot)
-                business?.uuid = key
-                guard [key].contains(key) else { return }
-                
-            })
+//            self.userViewed.child(key).observeSingleEvent(of: .value, with: { snapshot in
+//                
+//                let business = Business(snapshot: snapshot)
+//                business?.uuid = key
+//                self.businesses.removeAll()
+//                self.kolodaView.reloadData()
+////              guard [key].contains(key) else { return }
+//                
+//            })
             
             self.businesses.removeAll()
             

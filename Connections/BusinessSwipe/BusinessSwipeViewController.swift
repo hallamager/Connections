@@ -27,7 +27,7 @@ class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate, 
     let ref = Database.database().reference().child("business")
     var businesses = [Business]()
     let geoRefBusiness = GeoFire(firebaseRef: Database.database().reference().child("business_locations"))
-    let userViewed = Database.database().reference().child("userViews/\(Auth.auth().currentUser!.uid)")
+    let userViewed = Database.database().reference().child("userViewed/\(Auth.auth().currentUser!.uid)")
     let geoRefStudent = GeoFire(firebaseRef: Database.database().reference().child("student_locations"))
     let locationManager = CLLocationManager()
     
@@ -56,6 +56,7 @@ class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate, 
         //open menu with swipe gesture
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
+    
     
     func addLiked(_ business: Business) {
         

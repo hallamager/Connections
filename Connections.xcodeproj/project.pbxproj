@@ -76,6 +76,7 @@
 		A0D8D383203D7F8300D68A5A /* EditExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8D382203D7F8300D68A5A /* EditExperienceViewController.swift */; };
 		A0D8D385203DF78800D68A5A /* ShowExperienceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8D384203DF78800D68A5A /* ShowExperienceCell.swift */; };
 		A0E4B049204FEAAF002D7534 /* BusinessSwipeLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E4B048204FEAAF002D7534 /* BusinessSwipeLocation.swift */; };
+		A0E4B04E20502AEB002D7534 /* ViewedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E4B04D20502AEB002D7534 /* ViewedManager.swift */; };
 		A0F529E01FD1A1A600B5B93C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0F529DF1FD1A1A500B5B93C /* GoogleService-Info.plist */; };
 		A0F529E41FD1B0CF00B5B93C /* UIViewStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F529E31FD1B0CF00B5B93C /* UIViewStyles.swift */; };
 		A0F529E61FD1B10E00B5B93C /* UIButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F529E51FD1B10E00B5B93C /* UIButtonStyles.swift */; };
@@ -164,6 +165,7 @@
 		A0D8D384203DF78800D68A5A /* ShowExperienceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowExperienceCell.swift; sourceTree = "<group>"; };
 		A0E4B048204FEAAF002D7534 /* BusinessSwipeLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSwipeLocation.swift; sourceTree = "<group>"; };
 		A0E4B04A204FFA53002D7534 /* Bournemouth.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Bournemouth.gpx; sourceTree = "<group>"; };
+		A0E4B04D20502AEB002D7534 /* ViewedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewedManager.swift; sourceTree = "<group>"; };
 		A0F529DF1FD1A1A500B5B93C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0F529E11FD1AFC000B5B93C /* Gotham Rounded Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham Rounded Book.ttf"; sourceTree = "<group>"; };
 		A0F529E31FD1B0CF00B5B93C /* UIViewStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewStyles.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				A0AD071A202DCF6E00B77C61 /* BusinessLiked */,
 				A007486B1F91259A004AF885 /* BusinessSwipe */,
 				A00748551F912189004AF885 /* AppDelegate.swift */,
+				A0E4B04D20502AEB002D7534 /* ViewedManager.swift */,
 				A00748591F912189004AF885 /* Main.storyboard */,
 				A007485C1F912189004AF885 /* Assets.xcassets */,
 				A007485E1F912189004AF885 /* LaunchScreen.storyboard */,
@@ -684,6 +687,7 @@
 				A0AA814D2036205C00858063 /* BusinessSelectViewController.swift in Sources */,
 				A0A6B0FC204983B000AC357F /* Jobs.swift in Sources */,
 				A0A6B0F62049837D00AC357F /* ShowJobsCell.swift in Sources */,
+				A0E4B04E20502AEB002D7534 /* ViewedManager.swift in Sources */,
 				A0AD070E202CC1D400B77C61 /* StudentSideMenuViewController.swift in Sources */,
 				A0A6B0FA204983A100AC357F /* EditJobsViewController.swift in Sources */,
 				A0AD0712202CC66000B77C61 /* StudentMoreInfoViewController.swift in Sources */,
