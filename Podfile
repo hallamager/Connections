@@ -13,6 +13,7 @@ target 'Connections' do
     pod 'Firebase/Auth’
     pod 'Firebase/Database'
     pod 'Firebase/Storage'
+    pod 'Firebase/Messaging'
     pod 'FoldingCell'
     pod 'GeoFire', :git => 'https://github.com/firebase/geofire-objc.git'
 
