@@ -82,7 +82,7 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
                 
             })
             
-            self.presentStudentProfileCreationViewController()
+//            self.presentStudentProfileCreationViewController()
             
         }
         

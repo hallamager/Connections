@@ -545,6 +545,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="registerTapped:" destination="PTA-96-Ryp" eventType="touchUpInside" id="62Y-VX-xiY"/>
+                                    <segue destination="pEx-Yt-kgQ" kind="show" id="2vm-ok-WyI"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5Q-SS-zKL">

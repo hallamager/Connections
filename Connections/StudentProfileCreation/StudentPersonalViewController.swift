@@ -39,12 +39,7 @@ class StudentPersonalViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func confirmBtn(_ sender: Any) {
         
-        ref.updateChildValues(["Address": self.studentAddress.text!, "Headline": self.studentHeadline.text!, "Summary": self.studentSummary.text!, "Selected Radius": 40])
-        
-        // [START log_fcm_reg_token]
-        let token = Messaging.messaging().fcmToken
-        print("FCM token: \(token ?? "")")
-        // [END log_fcm_reg_token]
+        ref.updateChildValues(["Address": self.studentAddress.text!, "Headline": self.studentHeadline.text!, "Summary": self.studentSummary.text!])
         
         presentStudentProfileCreationViewController()
         

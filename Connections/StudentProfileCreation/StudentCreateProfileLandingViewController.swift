@@ -16,6 +16,7 @@ class StudentCreateProfileLandingViewController: UIViewController {
     let geoRefStudent = GeoFire(firebaseRef: Database.database().reference().child("student_locations"))
     let geoRefBusiness = GeoFire(firebaseRef: Database.database().reference().child("business_locations"))
     let locationManager = CLLocationManager()
+    var students = [Student]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,11 +39,37 @@ class StudentCreateProfileLandingViewController: UIViewController {
     }
     
     @IBAction func createProfileBtn(_ sender: Any) {
+        
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         
+        addToken()
+        
+        addSelectedRadius()
+        
         presentBusinessSwipeViewViewController()
+        
+    }
+    
+    func addToken() {
+    
+        let ref = Database.database().reference().child("student").child(Auth.auth().currentUser!.uid)
+
+        // [START log_fcm_reg_token]
+        let token = Messaging.messaging().fcmToken
+        print("FCM token: \(token ?? "")")
+        // [END log_fcm_reg_token]
+
+        ref.updateChildValues(["FCM Token": token!])
+    
+    }
+    
+    func addSelectedRadius() {
+        
+        let ref = Database.database().reference().child("student").child(Auth.auth().currentUser!.uid)
+        
+        ref.updateChildValues(["Selected Radius": 40])
         
     }
     
