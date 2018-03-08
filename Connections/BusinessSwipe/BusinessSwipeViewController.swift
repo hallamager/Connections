@@ -26,6 +26,7 @@ class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate, 
     let refLikes = Database.database().reference()
     let ref = Database.database().reference().child("business")
     var businesses = [Business]()
+    var students = [Student]()
     let geoRefBusiness = GeoFire(firebaseRef: Database.database().reference().child("business_locations"))
     let userViewed = Database.database().reference().child("userViewed/\(Auth.auth().currentUser!.uid)")
     let geoRefStudent = GeoFire(firebaseRef: Database.database().reference().child("student_locations"))
@@ -47,7 +48,7 @@ class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate, 
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
-        
+
         //open menu with tab bar button
         OpenMenuLeft.target = self.revealViewController()
         OpenMenuLeft.action = #selector(SWRevealViewController.revealToggle(_:))

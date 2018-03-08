@@ -41,6 +41,9 @@ class StudentCreateProfileLandingViewController: UIViewController {
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
+        
+        presentBusinessSwipeViewViewController()
+        
     }
     
 }

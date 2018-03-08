@@ -255,7 +255,6 @@
 				A0AD071A202DCF6E00B77C61 /* BusinessLiked */,
 				A007486B1F91259A004AF885 /* BusinessSwipe */,
 				A00748551F912189004AF885 /* AppDelegate.swift */,
-				A0E4B04D20502AEB002D7534 /* ViewedManager.swift */,
 				A00748591F912189004AF885 /* Main.storyboard */,
 				A007485C1F912189004AF885 /* Assets.xcassets */,
 				A007485E1F912189004AF885 /* LaunchScreen.storyboard */,
@@ -304,6 +303,7 @@
 				A09739E22020A4850087F7CE /* BusinessMoreInfoViewController.swift */,
 				A0973A14202503F50087F7CE /* Business.swift */,
 				A0E4B04A204FFA53002D7534 /* Bournemouth.gpx */,
+				A0E4B04D20502AEB002D7534 /* ViewedManager.swift */,
 			);
 			path = BusinessSwipe;
 			sourceTree = "<group>";

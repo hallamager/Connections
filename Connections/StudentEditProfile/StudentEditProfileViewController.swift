@@ -34,6 +34,8 @@ class StudentEditProfileViewController: UIViewController {
         ref.observeSingleEvent(of: .value, with: { snapshot in
             if let student = Student(snapshot: snapshot) {
                 self.userUsername.text = student.username
+                self.slider.value = Float(student.selectedRadius)
+                self.distanceSelected.text = "\(student.selectedRadius)Km"
                 self.students.append(student)
             }
         })
@@ -57,12 +59,13 @@ class StudentEditProfileViewController: UIViewController {
         
     }
     
+    
     @IBAction func sliderDistance(_ sender: UISlider) {
         
         let currentValue = Int(slider.value)
         distanceSelected.text = "\(currentValue)Km"
         delegate?.sliderChanged(text: distanceSelected.text)
-        print(currentValue)
+        ref.updateChildValues(["Selected Radius": self.distanceSelected.text!])
         
     }
     

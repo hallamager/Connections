@@ -15,70 +15,43 @@ extension BusinessSwipeViewController {
         
     func loadNearbyBusinesses(for location: CLLocation) {
         
-        let query = geoRefBusiness.query(at: location, withRadius: 20)
-        
-        guard location.distance(from: queryLocation) > 10 else { return }
-        
-        queryLocation = location
-        query.observe(.keyEntered) { key, location in
-            
-            guard !ViewedManager.shared.uuids.contains(key) else { return }
-            
-//            self.userViewed.child(key).observeSingleEvent(of: .value, with: { snapshot in
-//                
-//                let business = Business(snapshot: snapshot)
-//                business?.uuid = key
-//                self.businesses.removeAll()
-//                self.kolodaView.reloadData()
-////              guard [key].contains(key) else { return }
-//                
-//            })
-            
-            self.businesses.removeAll()
-            
-            self.ref.child(key).observeSingleEvent(of: .value, with: { snapshot in
+        let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)")
+        ref.observeSingleEvent(of: .value, with: { snapshot in
+            if let student = Student(snapshot: snapshot) {
+                let query = self.geoRefBusiness.query(at: location, withRadius: student.selectedRadius)
                 
-                let business = Business(snapshot: snapshot)
-                business?.uuid = key
-                self.businesses.append(business!)
-                print(business!.username)
-                self.kolodaView.reloadData()
                 
-            })
-            
-        }
+                guard location.distance(from: self.queryLocation) > 10 else { return }
+                
+                self.queryLocation = location
+                query.observe(.keyEntered) { key, location in
+                    
+                    guard !ViewedManager.shared.uuids.contains(key) else { return }
+                    
+                    self.businesses.removeAll()
+                    
+                    self.ref.child(key).observeSingleEvent(of: .value, with: { snapshot in
+                        
+                        let business = Business(snapshot: snapshot)
+                        business?.uuid = key
+                        self.businesses.append(business!)
+                        print(business!.username)
+                        self.kolodaView.reloadData()
+                        
+                    })
+                    
+                }
+            }
+        })
         
     }
     
-//    func removefarawayBusinesses(for location: CLLocation) {
-//
-//        let query = geoRefBusiness.query(at: location, withRadius: 20)
-//
-//        guard location.distance(from: queryLocation) > 10 else { return }
-//
-//        queryLocation = location
-//        query.observe(.keyExited) { key, location in
-//
-//            self.ref.child(key).observeSingleEvent(of: .value, with: { snapshot in
-//
-//                let business = Business(snapshot: snapshot)
-//                business?.uuid = key
-//                self.businesses.append(business!)
-//                self.kolodaView.reloadData()
-//                print(business!.username)
-//
-//            })
-//
-//        }
-//
-//    }
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
         guard let location = locations.last else { return }
         geoRefStudent.setLocation(location, forKey: (Auth.auth().currentUser?.uid)!)
         loadNearbyBusinesses(for: location)
-//        removefarawayBusinesses(for: location)
+        
     }
-    
     
 }
