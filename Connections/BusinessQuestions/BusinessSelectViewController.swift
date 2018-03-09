@@ -9,16 +9,20 @@
 import Foundation
 import UIKit
 import Firebase
+import FirebaseStorage
 
-class BusinessSelectViewController: UITableViewController {
+class BusinessSelectViewController: UIViewController {
     
     @IBOutlet var openMenu: UIBarButtonItem!
+    @IBOutlet var tableView: UITableView!
     
     let ref = Database.database().reference().child("business")
     var businesses = [Business]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.isTranslucent = false
         
         loadRelatedBusinesses(for: Auth.auth().currentUser!.uid) { success, businesses in
             self.businesses = businesses
@@ -66,32 +70,55 @@ class BusinessSelectViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+}
+
+extension BusinessSelectViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let Storyboard = UIStoryboard(name: "BusinessMain", bundle: nil)
+        let vc = Storyboard.instantiateViewController(withIdentifier: "BusinessQuestionsListViewController") as! BusinessQuestionsListViewController
+        vc.business = businesses[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    
+}
+
+extension BusinessSelectViewController: UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(businesses.count)
         return businesses.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "businessSelect") as! BusinessSelectCell
         
         let business = businesses[indexPath.row]
         
+        // Create a storage reference from the URL
+        let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(business.uuid)
+        // Download the data, assuming a max size of 1MB (you can change this as necessary)
+        storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+            // Create a UIImage, add it to the array
+            let pic = UIImage(data: data!)
+            cell.businessImg.image = pic
+        }
+        
         cell.businessSelect?.text = business.username
+        cell.businessIndustry?.text = business.industry
         
         print(business.username)
         print(business.industry)
         
         return cell
-        
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let Storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = Storyboard.instantiateViewController(withIdentifier: "BusinessQuestionsListViewController") as! BusinessQuestionsListViewController
-        vc.business = businesses[indexPath.row]
-        self.navigationController?.pushViewController(vc, animated: true)
         
     }
     

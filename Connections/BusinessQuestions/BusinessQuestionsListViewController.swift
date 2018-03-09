@@ -15,7 +15,7 @@ class BusinessQuestionsListViewController: UIViewController {
     var business: Business!
     let ref = Database.database().reference().child("studentResponses")
     
-    @IBOutlet var questionOne: UILabel!
+    @IBOutlet var questionOne: UITextView!
     @IBOutlet var textField: UITextView!
     @IBAction func nextQuestionButton(_ sender: Any) {
         ref.child(business.uuid).child(Auth.auth().currentUser!.uid).updateChildValues(["Question One Answer": self.textField.text!])
@@ -23,6 +23,9 @@ class BusinessQuestionsListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "Avenir Next", size: 17)!]
+
         
         navigationItem.title = business.username
         

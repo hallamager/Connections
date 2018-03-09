@@ -94,7 +94,7 @@ class SelectStudentViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        let Storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let Storyboard = UIStoryboard(name: "StudentMain", bundle: nil)
         let vc = Storyboard.instantiateViewController(withIdentifier: "ViewStudentResponses") as! ViewStudentResponses
         vc.student = students[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)

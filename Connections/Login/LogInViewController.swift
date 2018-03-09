@@ -66,7 +66,7 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
                         case "business":
                             // ...redirect to the student page
                             let storyboard:UIStoryboard = UIStoryboard(name: "StudentMain", bundle: nil)
-                            let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
+                            let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "StudentSWRevealViewController") as! SWRevealViewController
                             self.present(SWRevealViewController, animated: true, completion: nil)
                         // If out user is a regular user...
                         case "student":

@@ -12,5 +12,7 @@ import UIKit
 class BusinessSelectCell: UITableViewCell {
     
     @IBOutlet var businessSelect: UILabel!
+    @IBOutlet var businessIndustry: UILabel!
+    @IBOutlet var businessImg: UIImageView!
     
 }
