@@ -73,13 +73,11 @@ class BusinessSelectViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "businessSelect")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "businessSelect") as! BusinessSelectCell
         
         let business = businesses[indexPath.row]
         
-        cell.textLabel?.text = business.username
-        
-        cell.detailTextLabel?.text = business.industry
+        cell.businessSelect?.text = business.username
         
         print(business.username)
         print(business.industry)

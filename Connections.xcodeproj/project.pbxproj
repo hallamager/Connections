@@ -11,6 +11,7 @@
 		5FBF4258205292CF00B93FED /* BusinessRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF425520528B5E00B93FED /* BusinessRegister.storyboard */; };
 		5FBF425A2052945D00B93FED /* StudentMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF42592052945D00B93FED /* StudentMain.storyboard */; };
 		5FBF425C2052947100B93FED /* BusinessMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF425B2052947100B93FED /* BusinessMain.storyboard */; };
+		5FBF425E2052A48F00B93FED /* BusinessSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBF425D2052A48F00B93FED /* BusinessSelectCell.swift */; };
 		99733C41CF7F4FF50A7A2C54 /* Pods_Connections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599FF97567B39B949FCABD9E /* Pods_Connections.framework */; };
 		A000D43E203077BB0099892D /* StudentLikedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000D43D203077BB0099892D /* StudentLikedViewController.swift */; };
 		A000D440203077E10099892D /* StudentLikedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A000D43F203077E10099892D /* StudentLikedCell.swift */; };
@@ -98,6 +99,7 @@
 		5FBF42562052911B00B93FED /* StudentRegister.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StudentRegister.storyboard; sourceTree = "<group>"; };
 		5FBF42592052945D00B93FED /* StudentMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StudentMain.storyboard; sourceTree = "<group>"; };
 		5FBF425B2052947100B93FED /* BusinessMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BusinessMain.storyboard; sourceTree = "<group>"; };
+		5FBF425D2052A48F00B93FED /* BusinessSelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSelectCell.swift; sourceTree = "<group>"; };
 		84574314C222C8CEEC27E2AC /* Pods-Connections.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connections.release.xcconfig"; path = "Pods/Target Support Files/Pods-Connections/Pods-Connections.release.xcconfig"; sourceTree = "<group>"; };
 		A000D43D203077BB0099892D /* StudentLikedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLikedViewController.swift; sourceTree = "<group>"; };
 		A000D43F203077E10099892D /* StudentLikedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLikedCell.swift; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 			isa = PBXGroup;
 			children = (
 				A0AA814C2036205C00858063 /* BusinessSelectViewController.swift */,
+				5FBF425D2052A48F00B93FED /* BusinessSelectCell.swift */,
 				A0AA81502036D6DF00858063 /* BusinessQuestions.swift */,
 				A0AA81522036D85200858063 /* BusinessQuestionsListViewController.swift */,
 			);
@@ -681,6 +684,7 @@
 				A0D8D377203B39CF00D68A5A /* Experience.swift in Sources */,
 				A07226651F91657F006C60BA /* TabsViewController.swift in Sources */,
 				A0D8D375203B38E400D68A5A /* AddExperienceViewController.swift in Sources */,
+				5FBF425E2052A48F00B93FED /* BusinessSelectCell.swift in Sources */,
 				A0AA81562036FA2300858063 /* SelectStudentViewController.swift in Sources */,
 				A09739EA20210BDB0087F7CE /* StudentCreateProfileLandingViewController.swift in Sources */,
 				A0AA81582036FA3B00858063 /* ViewStudentResponsesViewController.swift in Sources */,

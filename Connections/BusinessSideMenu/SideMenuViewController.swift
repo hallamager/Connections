@@ -79,7 +79,7 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         if cell.lblMenuName.text! == "Home"
         {
             
-            let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainStoryboard:UIStoryboard = UIStoryboard(name: "BusinessMain", bundle: nil)
             let desController = mainStoryboard.instantiateViewController(withIdentifier: "BusinessSwipeViewController") as! BusinessSwipeViewController
             let newFrontViewController = UINavigationController.init(rootViewController:desController)
             
@@ -89,7 +89,7 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         if cell.lblMenuName.text! == "Liked"
         {
 
-            let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainStoryboard:UIStoryboard = UIStoryboard(name: "BusinessMain", bundle: nil)
             let desController = mainStoryboard.instantiateViewController(withIdentifier: "BusinessLikedViewController") as! BusinessLikedViewController
             let newFrontViewController = UINavigationController.init(rootViewController:desController)
 
@@ -99,7 +99,7 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         if cell.lblMenuName.text! == "Questions"
         {
             
-            let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainStoryboard:UIStoryboard = UIStoryboard(name: "BusinessMain", bundle: nil)
             let desController = mainStoryboard.instantiateViewController(withIdentifier: "BusinessSelectViewController") as! BusinessSelectViewController
             let newFrontViewController = UINavigationController.init(rootViewController:desController)
             
@@ -109,7 +109,7 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         if cell.lblMenuName.text! == "Jobs"
         {
             
-            let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainStoryboard:UIStoryboard = UIStoryboard(name: "BusinessMain", bundle: nil)
             let desController = mainStoryboard.instantiateViewController(withIdentifier: "BusinessSelectViewController") as! BusinessSelectViewController
             let newFrontViewController = UINavigationController.init(rootViewController:desController)
             
@@ -119,7 +119,7 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         if cell.lblMenuName.text! == "Profile"
         {
             
-            let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainStoryboard:UIStoryboard = UIStoryboard(name: "BusinessMain", bundle: nil)
             let desController = mainStoryboard.instantiateViewController(withIdentifier: "StudentEditProfileViewController") as! StudentEditProfileViewController
             let newFrontViewController = UINavigationController.init(rootViewController:desController)
             

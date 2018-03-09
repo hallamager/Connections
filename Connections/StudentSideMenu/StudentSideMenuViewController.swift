@@ -70,7 +70,7 @@ class StudentSideMenuViewController: UIViewController, UITableViewDataSource, UI
         if cell.lblMenuName.text! == "Home"
         {
             
-            let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainStoryboard:UIStoryboard = UIStoryboard(name: "StudentMain", bundle: nil)
             let desController = mainStoryboard.instantiateViewController(withIdentifier: "StudentSwipeViewController") as! StudentSwipeViewController
             let newFrontViewController = UINavigationController.init(rootViewController:desController)
             
@@ -80,7 +80,7 @@ class StudentSideMenuViewController: UIViewController, UITableViewDataSource, UI
         if cell.lblMenuName.text! == "Liked"
         {
 
-            let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainStoryboard:UIStoryboard = UIStoryboard(name: "StudentMain", bundle: nil)
             let desController = mainStoryboard.instantiateViewController(withIdentifier: "StudentLikedViewController") as! StudentLikedViewController
             let newFrontViewController = UINavigationController.init(rootViewController:desController)
 
@@ -91,7 +91,7 @@ class StudentSideMenuViewController: UIViewController, UITableViewDataSource, UI
         if cell.lblMenuName.text! == "Questions"
         {
             
-            let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainStoryboard:UIStoryboard = UIStoryboard(name: "StudentMain", bundle: nil)
             let desController = mainStoryboard.instantiateViewController(withIdentifier: "SelectStudentViewController") as! SelectStudentViewController
             let newFrontViewController = UINavigationController.init(rootViewController:desController)
             
@@ -101,7 +101,7 @@ class StudentSideMenuViewController: UIViewController, UITableViewDataSource, UI
         if cell.lblMenuName.text! == "Jobs"
         {
             
-            let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainStoryboard:UIStoryboard = UIStoryboard(name: "StudentMain", bundle: nil)
             let desController = mainStoryboard.instantiateViewController(withIdentifier: "SelectStudentViewController") as! SelectStudentViewController
             let newFrontViewController = UINavigationController.init(rootViewController:desController)
             
@@ -111,7 +111,7 @@ class StudentSideMenuViewController: UIViewController, UITableViewDataSource, UI
         if cell.lblMenuName.text! == "Profile"
         {
             
-            let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainStoryboard:UIStoryboard = UIStoryboard(name: "StudentMain", bundle: nil)
             let desController = mainStoryboard.instantiateViewController(withIdentifier: "SelectStudentViewController") as! SelectStudentViewController
             let newFrontViewController = UINavigationController.init(rootViewController:desController)
             

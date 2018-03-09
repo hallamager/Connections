@@ -65,13 +65,15 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
                         // If our user is admin...
                         case "business":
                             // ...redirect to the student page
-                            let vc = self.storyboard?.instantiateViewController(withIdentifier: "StudentSWRevealViewController")
-                            self.present(vc!, animated: true, completion: nil)
+                            let storyboard:UIStoryboard = UIStoryboard(name: "StudentMain", bundle: nil)
+                            let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
+                            self.present(SWRevealViewController, animated: true, completion: nil)
                         // If out user is a regular user...
                         case "student":
                             // ...redirect to the business page
-                            let vc = self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController")
-                            self.present(vc!, animated: true, completion: nil)
+                            let storyboard:UIStoryboard = UIStoryboard(name: "BusinessMain", bundle: nil)
+                            let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
+                            self.present(SWRevealViewController, animated: true, completion: nil)
                         // If the type wasn't found...
                         default:
                             // ...print an error

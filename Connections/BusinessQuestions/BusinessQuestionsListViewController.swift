@@ -16,7 +16,7 @@ class BusinessQuestionsListViewController: UIViewController {
     let ref = Database.database().reference().child("studentResponses")
     
     @IBOutlet var questionOne: UILabel!
-    @IBOutlet var textField: UITextField!
+    @IBOutlet var textField: UITextView!
     @IBAction func nextQuestionButton(_ sender: Any) {
         ref.child(business.uuid).child(Auth.auth().currentUser!.uid).updateChildValues(["Question One Answer": self.textField.text!])
     }
