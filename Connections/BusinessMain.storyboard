@@ -135,7 +135,7 @@
         <scene sceneID="ldj-Yr-jNW">
             <objects>
                 <navigationController storyboardIdentifier="businessLiked" id="1ZG-Ad-TWs" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0hK-x0-4lZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="0hK-x0-4lZ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -147,12 +147,12 @@
             </objects>
             <point key="canvasLocation" x="15916" y="247"/>
         </scene>
-        <!--Business Liked View Controller-->
+        <!--Liked-->
         <scene sceneID="lG4-5H-Ox2">
             <objects>
                 <tableViewController storyboardIdentifier="BusinessLikedViewController" id="4ce-Nh-rnt" customClass="BusinessLikedViewController" customModule="Connections" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="azW-RA-YFw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -164,32 +164,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVf-Fv-su2" userLabel="Foreground" customClass="RotatedView" customModule="FoldingCell">
-                                            <rect key="frame" x="20" y="21" width="335" height="160"/>
+                                            <rect key="frame" x="20" y="21" width="335" height="146"/>
                                             <subviews>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c13-aN-as1" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="160"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="146"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Headquarters" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cA7-AY-nJj">
-                                                            <rect key="frame" x="170" y="67" width="107" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
-                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student jobs avaible" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLa-qV-nAp">
-                                                            <rect key="frame" x="170" y="123" width="157" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
-                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="companyImage" translatesAutoresizingMaskIntoConstraints="NO" id="b9X-Cu-NwU">
-                                                            <rect key="frame" x="0.0" y="0.0" width="139" height="160"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                        </imageView>
                                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uUD-Gx-dZo" customClass="HorizontalGradient" customModule="Connections" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="157" width="335" height="3"/>
+                                                            <rect key="frame" x="0.0" y="143" width="335" height="3"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <userDefinedRuntimeAttributes>
@@ -201,33 +183,41 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Education" translatesAutoresizingMaskIntoConstraints="NO" id="nCL-ek-bTG">
-                                                            <rect key="frame" x="147" y="47" width="13" height="13"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Company Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ch-2R-atT">
+                                                            <rect key="frame" x="133" y="28" width="177" height="23"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                        </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Interests" translatesAutoresizingMaskIntoConstraints="NO" id="e9T-EC-KWS">
-                                                            <rect key="frame" x="147" y="71" width="13" height="13"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8o-OB-BaC">
-                                                            <rect key="frame" x="147" y="119" width="18" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="25"/>
-                                                            <color key="textColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                                            <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GTS-4T-RDV" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                            <rect key="frame" x="22" y="28" width="90" height="90"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b9X-Cu-NwU">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="45"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Industry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bv2-Ds-Zi9">
-                                                            <rect key="frame" x="170" y="43" width="107" height="21"/>
+                                                            <rect key="frame" x="133" y="72" width="107" height="20"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Company Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ch-2R-atT">
-                                                            <rect key="frame" x="147" y="8" width="177" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="18"/>
-                                                            <color key="textColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Headquarters" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cA7-AY-nJj">
+                                                            <rect key="frame" x="133" y="97" width="107" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -235,14 +225,14 @@
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="8"/>
+                                                            <real key="value" value="10"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="160" id="ba1-ae-Skf"/>
+                                                <constraint firstAttribute="height" constant="146" id="ba1-ae-Skf"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
@@ -252,17 +242,17 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gsv-LV-e5B" userLabel="Container" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                            <rect key="frame" x="20" y="193" width="335" height="450"/>
+                                            <rect key="frame" x="20" y="186" width="335" height="450"/>
                                             <subviews>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OMj-jO-fmk" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="450"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l54-9s-MYc" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="161"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="146"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gGd-QP-3TR" customClass="HorizontalGradient" customModule="Connections" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="38"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MenuWhite" translatesAutoresizingMaskIntoConstraints="NO" id="fMd-HZ-Mnm">
                                                                             <rect key="frame" x="11" y="12" width="17" height="12"/>
@@ -286,20 +276,20 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="companyImage" translatesAutoresizingMaskIntoConstraints="NO" id="pTU-BD-S6N">
-                                                                    <rect key="frame" x="0.0" y="37" width="335" height="124"/>
+                                                                    <rect key="frame" x="0.0" y="37" width="335" height="109"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                                 </imageView>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="161" id="ynw-rR-rAR"/>
+                                                                <constraint firstAttribute="height" constant="146" id="ynw-rR-rAR"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRB-qu-xb8" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="161" width="335" height="75"/>
+                                                            <rect key="frame" x="0.0" y="146" width="335" height="75"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NhT-uL-9iu">
                                                                     <rect key="frame" x="0.0" y="74" width="335" height="1"/>
@@ -331,17 +321,17 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XFA-Xv-b6D" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="311" width="335" height="140"/>
+                                                            <rect key="frame" x="0.0" y="296" width="335" height="146"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="140" id="u8w-jp-O76"/>
+                                                                <constraint firstAttribute="height" constant="146" id="u8w-jp-O76"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jCO-CN-WYd" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="236" width="335" height="75"/>
+                                                            <rect key="frame" x="0.0" y="221" width="335" height="75"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lQQ-sc-00E">
                                                                     <rect key="frame" x="0.0" y="74" width="335" height="1"/>
@@ -376,13 +366,13 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="l54-9s-MYc" firstAttribute="leading" secondItem="OMj-jO-fmk" secondAttribute="leading" id="0LG-R4-GKJ"/>
-                                                        <constraint firstItem="xRB-qu-xb8" firstAttribute="top" secondItem="OMj-jO-fmk" secondAttribute="top" constant="161" id="3fg-BU-4nX"/>
+                                                        <constraint firstItem="xRB-qu-xb8" firstAttribute="top" secondItem="OMj-jO-fmk" secondAttribute="top" constant="146" id="3fg-BU-4nX"/>
                                                         <constraint firstAttribute="trailing" secondItem="XFA-Xv-b6D" secondAttribute="trailing" id="45d-ca-SxR"/>
                                                         <constraint firstItem="l54-9s-MYc" firstAttribute="top" secondItem="OMj-jO-fmk" secondAttribute="top" id="BRt-R7-poU"/>
                                                         <constraint firstItem="xRB-qu-xb8" firstAttribute="leading" secondItem="OMj-jO-fmk" secondAttribute="leading" id="Bx5-Ue-hdc"/>
-                                                        <constraint firstItem="XFA-Xv-b6D" firstAttribute="top" secondItem="OMj-jO-fmk" secondAttribute="top" constant="311" id="IoM-hg-Fgz"/>
+                                                        <constraint firstItem="XFA-Xv-b6D" firstAttribute="top" secondItem="OMj-jO-fmk" secondAttribute="top" constant="296" id="IoM-hg-Fgz"/>
                                                         <constraint firstItem="XFA-Xv-b6D" firstAttribute="leading" secondItem="OMj-jO-fmk" secondAttribute="leading" id="TMx-wg-tJf"/>
-                                                        <constraint firstItem="jCO-CN-WYd" firstAttribute="top" secondItem="OMj-jO-fmk" secondAttribute="top" constant="236" id="cVi-ua-iFV"/>
+                                                        <constraint firstItem="jCO-CN-WYd" firstAttribute="top" secondItem="OMj-jO-fmk" secondAttribute="top" constant="221" id="cVi-ua-iFV"/>
                                                         <constraint firstAttribute="trailing" secondItem="xRB-qu-xb8" secondAttribute="trailing" id="d0J-UH-hbY"/>
                                                         <constraint firstAttribute="trailing" secondItem="jCO-CN-WYd" secondAttribute="trailing" id="gjI-q2-pfp"/>
                                                         <constraint firstAttribute="trailing" secondItem="l54-9s-MYc" secondAttribute="trailing" id="nZd-kg-bV9"/>
@@ -414,8 +404,8 @@
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="wVf-Fv-su2" secondAttribute="trailing" constant="20" id="92d-pH-546"/>
                                         <constraint firstItem="gsv-LV-e5B" firstAttribute="leading" secondItem="QXe-wt-zIe" secondAttribute="leading" constant="20" id="MOK-9a-nKf"/>
-                                        <constraint firstItem="wVf-Fv-su2" firstAttribute="top" secondItem="QXe-wt-zIe" secondAttribute="top" constant="21" id="OA8-J8-l8o"/>
-                                        <constraint firstItem="gsv-LV-e5B" firstAttribute="top" secondItem="QXe-wt-zIe" secondAttribute="topMargin" constant="182" id="UBr-lf-hP1"/>
+                                        <constraint firstItem="wVf-Fv-su2" firstAttribute="top" secondItem="QXe-wt-zIe" secondAttribute="topMargin" constant="10" identifier="ForgroundViewTop" id="OA8-J8-l8o"/>
+                                        <constraint firstItem="gsv-LV-e5B" firstAttribute="top" secondItem="QXe-wt-zIe" secondAttribute="topMargin" constant="175" identifier="ContainerViewTop" id="UBr-lf-hP1"/>
                                         <constraint firstItem="wVf-Fv-su2" firstAttribute="leading" secondItem="QXe-wt-zIe" secondAttribute="leading" constant="20" id="VHD-Q0-MhQ"/>
                                         <constraint firstAttribute="trailing" secondItem="gsv-LV-e5B" secondAttribute="trailing" constant="20" id="wSC-Vc-vQR"/>
                                     </constraints>
@@ -443,7 +433,7 @@
                             <outlet property="delegate" destination="4ce-Nh-rnt" id="Qmd-2N-XK8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="7Eg-Es-PwF">
+                    <navigationItem key="navigationItem" title="Liked" id="7Eg-Es-PwF">
                         <barButtonItem key="leftBarButtonItem" image="OpenMenu" id="irz-4x-pCC">
                             <inset key="imageInsets" minX="-10" minY="0.0" maxX="0.0" maxY="-12"/>
                             <color key="tintColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -993,7 +983,7 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
+                                        <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -1503,8 +1493,6 @@
     <resources>
         <image name="CTA-DirectionGrey" width="131" height="252"/>
         <image name="Edit" width="250" height="250"/>
-        <image name="Education" width="250" height="250"/>
-        <image name="Interests" width="250" height="250"/>
         <image name="MenuWhite" width="250" height="161"/>
         <image name="OpenMenu" width="38" height="31"/>
         <image name="User" width="250" height="250"/>
