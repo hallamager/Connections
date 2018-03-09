@@ -13,7 +13,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-class BusinessLikedViewController: UITableViewController {
+class BusinessLikedViewController: UIViewController {
     
     let kCloseCellHeight: CGFloat = 190
     let kOpenCellHeight: CGFloat = 490
@@ -24,6 +24,7 @@ class BusinessLikedViewController: UITableViewController {
     var counter = 0
 
     @IBOutlet var openMenuLeft: UIBarButtonItem!
+    @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,14 +87,14 @@ class BusinessLikedViewController: UITableViewController {
     
 }
 
-extension BusinessLikedViewController {
+
+extension BusinessLikedViewController: UITableViewDelegate {
     
-    override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        print(businesses.count)
-        return businesses.count
+    func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return cellHeights[indexPath.row]
     }
     
-    override func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard case let cell as BusinessLikedCell = cell else {
             return
         }
@@ -124,24 +125,7 @@ extension BusinessLikedViewController {
         
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! FoldingCell
-        let durations: [TimeInterval] = [0.26, 0.2, 0.2]
-        cell.durationsForExpandedState = durations
-        cell.durationsForCollapsedState = durations
-        
-        let business = businesses[indexPath.row]
-                
-        print(business.username)
-        
-        return cell
-    }
-    
-    override func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return cellHeights[indexPath.row]
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let cell = tableView.cellForRow(at: indexPath) as! FoldingCell
         
@@ -166,4 +150,27 @@ extension BusinessLikedViewController {
             tableView.endUpdates()
         }, completion: nil)
     }
+    
+}
+
+extension BusinessLikedViewController: UITableViewDataSource {
+    
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
+        print(businesses.count)
+        return businesses.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! FoldingCell
+        let durations: [TimeInterval] = [0.26, 0.2, 0.2]
+        cell.durationsForExpandedState = durations
+        cell.durationsForCollapsedState = durations
+        
+        let business = businesses[indexPath.row]
+                
+        print(business.username)
+        
+        return cell
+    }
+    
 }
