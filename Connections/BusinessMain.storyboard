@@ -1,0 +1,1352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Regular</string>
+        </array>
+        <array key="Gotham Rounded Book.ttf">
+            <string>GothamRounded-Book</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Reveal View Controller-->
+        <scene sceneID="I89-IS-9Jt">
+            <objects>
+                <viewController storyboardIdentifier="SWRevealViewController" id="aw2-2K-bbP" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KtR-Hv-8Gz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="9GB-QE-Yyx"/>
+                    </view>
+                    <connections>
+                        <segue destination="eE7-PI-sEK" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="fWZ-Sh-Eus"/>
+                        <segue destination="CXN-kN-OOU" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="lf7-E5-8aP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9DC-dw-o8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="14696" y="-579"/>
+        </scene>
+        <!--Side Menu View Controller-->
+        <scene sceneID="JfF-og-dcG">
+            <objects>
+                <viewController id="CXN-kN-OOU" customClass="SideMenuViewController" customModule="Connections" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mXm-zx-5Wr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emR-lZ-9UD">
+                                <rect key="frame" x="20" y="618.5" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="17"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutTapped:" destination="CXN-kN-OOU" eventType="touchUpInside" id="icy-Sf-cxc"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jGB-Ak-Tgy">
+                                <rect key="frame" x="0.0" y="101" width="375" height="510"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideMenuTableViewCell" rowHeight="159" id="CF7-qv-5vR" customClass="SideMenuTableViewCell" customModule="Connections" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="159"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CF7-qv-5vR" id="L0Q-Xc-6jR">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="159"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7NH-kE-tz7">
+                                                    <rect key="frame" x="94" y="54" width="112" height="51"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4P4-hW-aXc">
+                                                    <rect key="frame" x="35" y="64" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imgMenuIcon" destination="4P4-hW-aXc" id="TSl-oZ-4ZC"/>
+                                            <outlet property="lblMenuName" destination="7NH-kE-tz7" id="Ylt-6z-Vg3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="CXN-kN-OOU" id="vcC-ex-0VE"/>
+                                    <outlet property="delegate" destination="CXN-kN-OOU" id="Rfu-Fx-Ru8"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KZo-fP-Vqu" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                <rect key="frame" x="35" y="41" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oi6-O9-GCG">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="35"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSH-vo-rfg">
+                                <rect key="frame" x="125" y="64" width="122" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="gQj-dp-PPd"/>
+                    </view>
+                    <connections>
+                        <outlet property="SideMenuTableView" destination="jGB-Ak-Tgy" id="jWJ-aE-a82"/>
+                        <outlet property="profilePicture" destination="Oi6-O9-GCG" id="VIU-Op-JLt"/>
+                        <outlet property="usernameLabel" destination="iSH-vo-rfg" id="VAb-R3-NwA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OCm-dR-lFX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="14696" y="247"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ldj-Yr-jNW">
+            <objects>
+                <navigationController storyboardIdentifier="businessLiked" id="1ZG-Ad-TWs" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0hK-x0-4lZ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="4ce-Nh-rnt" kind="relationship" relationship="rootViewController" id="W6J-Ja-yNv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o9q-Kj-oCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="15916" y="247"/>
+        </scene>
+        <!--Business Liked View Controller-->
+        <scene sceneID="lG4-5H-Ox2">
+            <objects>
+                <tableViewController storyboardIdentifier="BusinessLikedViewController" id="4ce-Nh-rnt" customClass="BusinessLikedViewController" customModule="Connections" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="azW-RA-YFw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoldingCell" rowHeight="647" id="o7x-6h-k4J" customClass="BusinessLikedCell" customModule="Connections" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="647"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o7x-6h-k4J" id="QXe-wt-zIe">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVf-Fv-su2" userLabel="Foreground" customClass="RotatedView" customModule="FoldingCell">
+                                            <rect key="frame" x="20" y="21" width="335" height="160"/>
+                                            <subviews>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c13-aN-as1" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="160"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Company Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ch-2R-atT">
+                                                            <rect key="frame" x="168" y="8" width="198" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="18"/>
+                                                            <color key="textColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Industry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bv2-Ds-Zi9">
+                                                            <rect key="frame" x="203" y="43" width="139" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Headquarters" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cA7-AY-nJj">
+                                                            <rect key="frame" x="203" y="67" width="139" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student jobs avaible" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLa-qV-nAp">
+                                                            <rect key="frame" x="203" y="119" width="139" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="companyImage" translatesAutoresizingMaskIntoConstraints="NO" id="b9X-Cu-NwU">
+                                                            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                                        </imageView>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uUD-Gx-dZo" customClass="HorizontalGradient" customModule="Connections" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="157" width="374" height="3"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
+                                                                    <color key="value" red="0.46666666670000001" green="0.78823529410000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
+                                                                    <color key="value" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Education" translatesAutoresizingMaskIntoConstraints="NO" id="nCL-ek-bTG">
+                                                            <rect key="frame" x="168" y="47" width="13" height="13"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Interests" translatesAutoresizingMaskIntoConstraints="NO" id="e9T-EC-KWS">
+                                                            <rect key="frame" x="168" y="71" width="13" height="13"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8o-OB-BaC">
+                                                            <rect key="frame" x="168" y="116" width="15" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="25"/>
+                                                            <color key="textColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="160" id="ba1-ae-Skf"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gsv-LV-e5B" userLabel="Container" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                            <rect key="frame" x="20" y="193" width="335" height="450"/>
+                                            <subviews>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OMj-jO-fmk" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="450"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l54-9s-MYc" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="161"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gGd-QP-3TR" customClass="HorizontalGradient" customModule="Connections" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="38"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20w-HI-hVi">
+                                                                            <rect key="frame" x="101" y="8" width="173" height="21"/>
+                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                            <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="17"/>
+                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MenuWhite" translatesAutoresizingMaskIntoConstraints="NO" id="fMd-HZ-Mnm">
+                                                                            <rect key="frame" x="11" y="12" width="17" height="12"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                                                        </imageView>
+                                                                    </subviews>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
+                                                                            <color key="value" red="0.46666666670000001" green="0.78823529410000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
+                                                                            <color key="value" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="companyImage" translatesAutoresizingMaskIntoConstraints="NO" id="pTU-BD-S6N">
+                                                                    <rect key="frame" x="0.0" y="37" width="335" height="124"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="161" id="ynw-rR-rAR"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRB-qu-xb8" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="161" width="335" height="75"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NhT-uL-9iu">
+                                                                    <rect key="frame" x="0.0" y="74" width="344" height="1"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                    <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </view>
+                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6oO-Za-BIc">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="75"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                </button>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Answer Company Questions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IgW-Ny-B5d">
+                                                                    <rect key="frame" x="13" y="27" width="227" height="21"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="18"/>
+                                                                    <color key="textColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CTA-DirectionGrey" translatesAutoresizingMaskIntoConstraints="NO" id="l93-Et-HAu">
+                                                                    <rect key="frame" x="348" y="27" width="11" height="20"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="75" id="wHO-5y-Bze"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XFA-Xv-b6D" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="311" width="335" height="140"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="140" id="u8w-jp-O76"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jCO-CN-WYd" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="236" width="335" height="75"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lQQ-sc-00E">
+                                                                    <rect key="frame" x="0.0" y="74" width="344" height="1"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                                </view>
+                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfc-pe-Cd6">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="75"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                </button>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3 Jobs Available" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzm-ne-gsr">
+                                                                    <rect key="frame" x="13" y="27" width="227" height="21"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="18"/>
+                                                                    <color key="textColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CTA-DirectionGrey" translatesAutoresizingMaskIntoConstraints="NO" id="eWA-O8-6pV">
+                                                                    <rect key="frame" x="348" y="28" width="11" height="20"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="75" id="cJC-ch-isp"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="l54-9s-MYc" firstAttribute="leading" secondItem="OMj-jO-fmk" secondAttribute="leading" id="0LG-R4-GKJ"/>
+                                                        <constraint firstItem="xRB-qu-xb8" firstAttribute="top" secondItem="OMj-jO-fmk" secondAttribute="top" constant="161" id="3fg-BU-4nX"/>
+                                                        <constraint firstAttribute="trailing" secondItem="XFA-Xv-b6D" secondAttribute="trailing" id="45d-ca-SxR"/>
+                                                        <constraint firstItem="l54-9s-MYc" firstAttribute="top" secondItem="OMj-jO-fmk" secondAttribute="top" id="BRt-R7-poU"/>
+                                                        <constraint firstItem="xRB-qu-xb8" firstAttribute="leading" secondItem="OMj-jO-fmk" secondAttribute="leading" id="Bx5-Ue-hdc"/>
+                                                        <constraint firstItem="XFA-Xv-b6D" firstAttribute="top" secondItem="OMj-jO-fmk" secondAttribute="top" constant="311" id="IoM-hg-Fgz"/>
+                                                        <constraint firstItem="XFA-Xv-b6D" firstAttribute="leading" secondItem="OMj-jO-fmk" secondAttribute="leading" id="TMx-wg-tJf"/>
+                                                        <constraint firstItem="jCO-CN-WYd" firstAttribute="top" secondItem="OMj-jO-fmk" secondAttribute="top" constant="236" id="cVi-ua-iFV"/>
+                                                        <constraint firstAttribute="trailing" secondItem="xRB-qu-xb8" secondAttribute="trailing" id="d0J-UH-hbY"/>
+                                                        <constraint firstAttribute="trailing" secondItem="jCO-CN-WYd" secondAttribute="trailing" id="gjI-q2-pfp"/>
+                                                        <constraint firstAttribute="trailing" secondItem="l54-9s-MYc" secondAttribute="trailing" id="nZd-kg-bV9"/>
+                                                        <constraint firstItem="jCO-CN-WYd" firstAttribute="leading" secondItem="OMj-jO-fmk" secondAttribute="leading" id="scl-0g-r3f"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="450" id="4tm-X0-fDh"/>
+                                                <constraint firstItem="OMj-jO-fmk" firstAttribute="leading" secondItem="gsv-LV-e5B" secondAttribute="leading" id="KHw-dd-WmG"/>
+                                                <constraint firstItem="OMj-jO-fmk" firstAttribute="top" secondItem="gsv-LV-e5B" secondAttribute="top" id="MBw-Mh-Znf"/>
+                                                <constraint firstAttribute="bottom" secondItem="OMj-jO-fmk" secondAttribute="bottom" id="Ylp-hH-dMk"/>
+                                                <constraint firstAttribute="trailing" secondItem="OMj-jO-fmk" secondAttribute="trailing" id="kp9-TG-Ax1"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="8"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="wVf-Fv-su2" secondAttribute="trailing" constant="20" id="92d-pH-546"/>
+                                        <constraint firstItem="gsv-LV-e5B" firstAttribute="leading" secondItem="QXe-wt-zIe" secondAttribute="leading" constant="20" id="MOK-9a-nKf"/>
+                                        <constraint firstItem="wVf-Fv-su2" firstAttribute="top" secondItem="QXe-wt-zIe" secondAttribute="top" constant="21" id="OA8-J8-l8o"/>
+                                        <constraint firstItem="gsv-LV-e5B" firstAttribute="top" secondItem="QXe-wt-zIe" secondAttribute="topMargin" constant="182" id="UBr-lf-hP1"/>
+                                        <constraint firstItem="wVf-Fv-su2" firstAttribute="leading" secondItem="QXe-wt-zIe" secondAttribute="leading" constant="20" id="VHD-Q0-MhQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="gsv-LV-e5B" secondAttribute="trailing" constant="20" id="wSC-Vc-vQR"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="itemCount">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="companyHeadquarters" destination="cA7-AY-nJj" id="bc4-U6-lIp"/>
+                                    <outlet property="companyImg" destination="b9X-Cu-NwU" id="CvK-HI-bvw"/>
+                                    <outlet property="companyIndustry" destination="Bv2-Ds-Zi9" id="qp1-xX-W5k"/>
+                                    <outlet property="companyName" destination="0ch-2R-atT" id="EzO-Pa-lnq"/>
+                                    <outlet property="containerView" destination="gsv-LV-e5B" id="27h-B2-4uU"/>
+                                    <outlet property="containerViewTop" destination="UBr-lf-hP1" id="chS-T6-gje"/>
+                                    <outlet property="foldingNameLabel" destination="20w-HI-hVi" id="Z5q-Jn-CqA"/>
+                                    <outlet property="foregroundView" destination="wVf-Fv-su2" id="Zqq-Cy-ZYc"/>
+                                    <outlet property="foregroundViewTop" destination="OA8-J8-l8o" id="9Vf-23-nYh"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4ce-Nh-rnt" id="DrV-HX-jT7"/>
+                            <outlet property="delegate" destination="4ce-Nh-rnt" id="Qmd-2N-XK8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="7Eg-Es-PwF">
+                        <barButtonItem key="leftBarButtonItem" image="OpenMenu" id="irz-4x-pCC">
+                            <inset key="imageInsets" minX="-10" minY="0.0" maxX="0.0" maxY="-12"/>
+                            <color key="tintColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="openMenuLeft" destination="irz-4x-pCC" id="xyH-mv-llH"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O4R-31-eJs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="17302.89855072464" y="246.19565217391306"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wmT-oq-9G4">
+            <objects>
+                <navigationController id="eE7-PI-sEK" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wj9-MW-Qqk">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="G3j-wP-Ngg" kind="relationship" relationship="rootViewController" id="9Da-a1-BqK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gDg-aj-U8U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="15916" y="-579"/>
+        </scene>
+        <!--Business Swipe View Controller-->
+        <scene sceneID="tab-Y2-idx">
+            <objects>
+                <viewController storyboardIdentifier="BusinessSwipeViewController" automaticallyAdjustsScrollViewInsets="NO" id="G3j-wP-Ngg" customClass="BusinessSwipeViewController" customModule="Connections" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NSf-dp-fV2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MxJ-Nd-3eL" customClass="KolodaView" customModule="Koloda">
+                                <rect key="frame" x="17" y="79" width="341" height="442"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VPY-FY-XwE" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                <rect key="frame" x="67" y="575.5" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29h-kF-G3S">
+                                        <rect key="frame" x="15" y="15" width="31" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="dislike"/>
+                                        <connections>
+                                            <action selector="dislikeButton" destination="G3j-wP-Ngg" eventType="touchUpInside" id="8YO-Wg-56H"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7JX-3S-1tA" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                <rect key="frame" x="248" y="575.5" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foz-g3-xjt">
+                                        <rect key="frame" x="11" y="16" width="38" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="like"/>
+                                        <connections>
+                                            <action selector="likeButton" destination="G3j-wP-Ngg" eventType="touchUpInside" id="P1e-zp-1oi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hMi-Ji-1uN" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                <rect key="frame" x="167" y="585" width="42" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTy-Li-X8H">
+                                        <rect key="frame" x="-3" y="-3" width="46" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="i">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="scale(0.5) translate(200, 0) fade useGlobalCoordinateSpace"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="9mi-DO-qKG" kind="presentation" identifier="MoreInfo" id="h8U-Sl-EuE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="21"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="MxJ-Nd-3eL" firstAttribute="leading" secondItem="NSf-dp-fV2" secondAttribute="leading" constant="17" id="3lk-No-tQJ"/>
+                            <constraint firstItem="YgF-Ap-R41" firstAttribute="bottom" secondItem="MxJ-Nd-3eL" secondAttribute="bottom" constant="146" id="RWg-sA-Yb7"/>
+                            <constraint firstAttribute="trailing" secondItem="MxJ-Nd-3eL" secondAttribute="trailing" constant="17" id="WQF-tm-Aow"/>
+                            <constraint firstItem="MxJ-Nd-3eL" firstAttribute="top" secondItem="YgF-Ap-R41" secondAttribute="top" constant="15" id="moa-Ft-Ogj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YgF-Ap-R41"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cjP-Jj-arA">
+                        <barButtonItem key="leftBarButtonItem" image="OpenMenu" id="6ss-O6-mro">
+                            <inset key="imageInsets" minX="-10" minY="0.0" maxX="0.0" maxY="-12"/>
+                            <color key="tintColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="OpenMenuLeft" destination="6ss-O6-mro" id="qVJ-Gk-8Gc"/>
+                        <outlet property="kolodaView" destination="MxJ-Nd-3eL" id="exS-4p-hqT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G4K-LV-wHt" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="17303" y="-579"/>
+        </scene>
+        <!--MoreInfoViewController-->
+        <scene sceneID="YBL-NK-3Fm">
+            <objects>
+                <viewController storyboardIdentifier="BusinessMoreInfoViewController" automaticallyAdjustsScrollViewInsets="NO" id="9mi-DO-qKG" userLabel="MoreInfoViewController" customClass="BusinessMoreInfoViewController" customModule="Connections" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mil-Ss-4gX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="945"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SDN-hZ-4Hc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="945"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KhH-ZM-i9w" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="945"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7OL-Ri-UuY">
+                                                <rect key="frame" x="0.0" y="435" width="414" height="510"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="hero_dismissViewController" destination="pMn-Se-TQZ" eventType="touchUpInside" id="q96-2V-ZGt"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Greenwood Campbell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jF-BV-YtS">
+                                                <rect key="frame" x="24" y="448" width="376" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="companyName"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Front-End Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvh-Sh-YPT">
+                                                <rect key="frame" x="24" y="484" width="376" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="companyIndustry"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouw-r1-vFg">
+                                                <rect key="frame" x="24" y="567" width="376" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="companyImage" translatesAutoresizingMaskIntoConstraints="NO" id="mM8-hb-Fwj">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="438"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="companyImg"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bournemouth, UK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVx-S6-lCo">
+                                                <rect key="frame" x="24" y="513" width="376" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="companyLocation"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rVD-fm-hbn" customClass="VerticalGradient" customModule="Connections" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="287" width="414" height="159"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
+                                                        <color key="value" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
+                                                        <color key="value" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="ThirdColor">
+                                                        <color key="value" white="1" alpha="0.90140732020000003" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="FourthColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="moreInfoGradient"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dU6-A7-Ye0">
+                                                <rect key="frame" x="24" y="596" width="376" height="67"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <string key="text">Greenwood Campbell is a full service digital agency that focuses on the mantra: “Know Thy User”. We don’t put pen to paper or finger to keyboard until we truly understand you and your users. Working together, we can convert that user into a customer.</string>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="companyIndustry"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Approval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uX9-Fj-X8r">
+                                                <rect key="frame" x="24" y="696" width="376" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="73%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nkd-fE-c98">
+                                                <rect key="frame" x="24" y="725" width="376" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="companyIndustry"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Salary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAl-3V-Ve7">
+                                                <rect key="frame" x="24" y="779" width="376" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Competitive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Of6-ew-f7V">
+                                                <rect key="frame" x="24" y="808" width="376" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="companyIndustry"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Perks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMc-EY-s2c">
+                                                <rect key="frame" x="24" y="863" width="376" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loads of stuff." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gF-z8-9HN">
+                                                <rect key="frame" x="24" y="892" width="376" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="companyIndustry"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="414" id="Anb-qG-t9C"/>
+                                            <constraint firstAttribute="height" constant="945" id="tQm-rp-b7I"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="KhH-ZM-i9w" secondAttribute="bottom" id="8fs-05-Vwz"/>
+                                    <constraint firstItem="KhH-ZM-i9w" firstAttribute="leading" secondItem="SDN-hZ-4Hc" secondAttribute="leading" id="PvD-HJ-Fde"/>
+                                    <constraint firstItem="KhH-ZM-i9w" firstAttribute="top" secondItem="SDN-hZ-4Hc" secondAttribute="top" id="fAV-ZI-2rJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="KhH-ZM-i9w" secondAttribute="trailing" id="jDs-8I-SFA"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SDN-hZ-4Hc" firstAttribute="top" secondItem="mil-Ss-4gX" secondAttribute="top" id="2du-Fh-Ito"/>
+                            <constraint firstItem="SDN-hZ-4Hc" firstAttribute="trailing" secondItem="NDE-0X-egT" secondAttribute="trailing" id="IQ2-fy-6mf"/>
+                            <constraint firstItem="SDN-hZ-4Hc" firstAttribute="bottom" secondItem="NDE-0X-egT" secondAttribute="bottom" id="PFi-bk-OwV"/>
+                            <constraint firstItem="SDN-hZ-4Hc" firstAttribute="leading" secondItem="NDE-0X-egT" secondAttribute="leading" id="qHE-yO-0CI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NDE-0X-egT"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="cardBackground"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <size key="freeformSize" width="414" height="945"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="companyDescription" destination="dU6-A7-Ye0" id="ZvF-t3-qtV"/>
+                        <outlet property="companyIndustry" destination="dvh-Sh-YPT" id="XYV-fU-Zjo"/>
+                        <outlet property="companyName" destination="4jF-BV-YtS" id="ea4-cG-EJs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pMn-Se-TQZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18268" y="-580"/>
+        </scene>
+        <!--Business Select View Controller-->
+        <scene sceneID="VSB-b1-Mx8">
+            <objects>
+                <tableViewController storyboardIdentifier="BusinessSelectViewController" id="7MC-xU-bKy" customClass="BusinessSelectViewController" customModule="Connections" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YmZ-fW-gbH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="businessSelect" textLabel="I0e-gI-G4g" detailTextLabel="FF7-Jz-fzw" rowHeight="91" style="IBUITableViewCellStyleSubtitle" id="YJG-5S-6dp">
+                                <rect key="frame" x="0.0" y="28" width="375" height="91"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YJG-5S-6dp" id="MJq-LJ-zyI">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="I0e-gI-G4g">
+                                            <rect key="frame" x="16" y="25" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FF7-Jz-fzw">
+                                            <rect key="frame" x="16" y="48.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7MC-xU-bKy" id="VhK-Db-2In"/>
+                            <outlet property="delegate" destination="7MC-xU-bKy" id="Ohq-Cb-MeP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="17D-aN-JJc">
+                        <barButtonItem key="leftBarButtonItem" image="OpenMenu" id="cxO-T1-x7k">
+                            <inset key="imageInsets" minX="-10" minY="0.0" maxX="0.0" maxY="-12"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="openMenu" destination="cxO-T1-x7k" id="e52-wb-RYr"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ASM-lK-vbW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="19435" y="247"/>
+        </scene>
+        <!--Business Questions List View Controller-->
+        <scene sceneID="DRJ-Sv-g74">
+            <objects>
+                <viewController storyboardIdentifier="BusinessQuestionsListViewController" id="Mpr-5f-axH" customClass="BusinessQuestionsListViewController" customModule="Connections" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fme-cH-06I">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1y-ci-mRd">
+                                <rect key="frame" x="102" y="323" width="171" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6na-LZ-JkW">
+                                <rect key="frame" x="139" y="420" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpP-E4-dPo">
+                                <rect key="frame" x="133" y="544" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Next Question"/>
+                                <connections>
+                                    <action selector="nextQuestionButton:" destination="Mpr-5f-axH" eventType="touchUpInside" id="nzs-8U-gOS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="z3j-i0-ENo"/>
+                    </view>
+                    <connections>
+                        <outlet property="questionOne" destination="l1y-ci-mRd" id="Klj-Ch-1Mq"/>
+                        <outlet property="textField" destination="6na-LZ-JkW" id="lvU-TJ-TEU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fpp-i6-8xD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20345" y="247"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gzv-Pe-Q7e">
+            <objects>
+                <navigationController storyboardIdentifier="studentEditProfile" automaticallyAdjustsScrollViewInsets="NO" id="QGN-Sv-S2I" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="z7s-va-h4s">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="zc4-Iz-BnY" kind="relationship" relationship="rootViewController" id="oxl-41-AHt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hjz-Xa-oMY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="21480" y="247"/>
+        </scene>
+        <!--Student Edit Profile View Controller-->
+        <scene sceneID="K2s-7c-VGF">
+            <objects>
+                <viewController storyboardIdentifier="StudentEditProfileViewController" id="zc4-Iz-BnY" customClass="StudentEditProfileViewController" customModule="Connections" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aGA-83-3uh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1072"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="writing-notes-idea-conference" translatesAutoresizingMaskIntoConstraints="NO" id="Dme-vX-Bm2">
+                                <rect key="frame" x="0.0" y="15" width="414" height="182"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view alpha="0.55000001192092896" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mcT-za-Zoi" customClass="HorizontalGradient" customModule="Connections" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="185"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
+                                        <color key="value" red="0.46666666670000001" green="0.78823529410000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
+                                        <color key="value" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AZb-Y1-xd9">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1072"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRr-k1-bhq">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1072"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I4u-OR-rNy" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="144" width="398" height="335"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYX-ln-6oP">
+                                                        <rect key="frame" x="370" y="8" width="20" height="20"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="Edit"/>
+                                                        <connections>
+                                                            <segue destination="AP7-0f-hdO" kind="show" id="UsX-Th-MeV">
+                                                                <nil key="action"/>
+                                                            </segue>
+                                                        </connections>
+                                                    </button>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dBI-s1-ncF">
+                                                        <rect key="frame" x="8" y="178" width="382" height="146"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iWv-5b-kRa" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                <rect key="frame" x="147" y="83" width="120" height="120"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="60"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O75-ip-9bm" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                <rect key="frame" x="147" y="83" width="120" height="120"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder-profile" translatesAutoresizingMaskIntoConstraints="NO" id="u0B-cU-Hs6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="60"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hallam Ager" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgo-30-IUm">
+                                                <rect key="frame" x="108" y="238" width="198" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="20"/>
+                                                <color key="textColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Front-End Developer and Digital Designer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pza-oe-ZeT">
+                                                <rect key="frame" x="36" y="267" width="343" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="13"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bournemouth University" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OW3-iD-KjK">
+                                                <rect key="frame" x="36" y="296" width="343" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="12"/>
+                                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OGg-7u-4C1" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="494" width="398" height="95"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maxiumum distance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dym-NC-TRi">
+                                                        <rect key="frame" x="8" y="-1" width="142" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="14"/>
+                                                        <color key="textColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="40Km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHd-e7-0Zh">
+                                                        <rect key="frame" x="158" y="-1" width="142" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="14"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="40" minValue="1" maxValue="170" translatesAutoresizingMaskIntoConstraints="NO" id="wWJ-rm-vhG">
+                                                        <rect key="frame" x="16" y="36" width="367" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="minimumTrackTintColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <action selector="sliderDistance:" destination="zc4-Iz-BnY" eventType="valueChanged" id="mrp-ZD-uc1"/>
+                                                        </connections>
+                                                    </slider>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TD1-NL-I9K">
+                                                <rect key="frame" x="0.0" y="630" width="414" height="232"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="editProfileCell" rowHeight="97" id="hpM-qe-5iW">
+                                                        <rect key="frame" x="0.0" y="28" width="414" height="97"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hpM-qe-5iW" id="jal-nK-qLV">
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="96.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="414" id="k5W-hQ-CZJ"/>
+                                            <constraint firstAttribute="height" constant="1072" id="yfY-zd-TBN"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="uRr-k1-bhq" secondAttribute="bottom" id="9WR-bS-O14"/>
+                                    <constraint firstItem="uRr-k1-bhq" firstAttribute="top" secondItem="AZb-Y1-xd9" secondAttribute="top" id="Cc4-iC-0nZ"/>
+                                    <constraint firstItem="uRr-k1-bhq" firstAttribute="leading" secondItem="AZb-Y1-xd9" secondAttribute="leading" id="D1i-Tx-WWT"/>
+                                    <constraint firstAttribute="trailing" secondItem="uRr-k1-bhq" secondAttribute="trailing" id="Rsq-cQ-Yx6"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AZb-Y1-xd9" firstAttribute="trailing" secondItem="gVI-PW-7Rt" secondAttribute="trailing" id="1T3-Mv-YsX"/>
+                            <constraint firstItem="AZb-Y1-xd9" firstAttribute="leading" secondItem="gVI-PW-7Rt" secondAttribute="leading" id="74H-7L-8E0"/>
+                            <constraint firstItem="AZb-Y1-xd9" firstAttribute="bottom" secondItem="gVI-PW-7Rt" secondAttribute="bottom" id="HZP-FA-m9a"/>
+                            <constraint firstItem="AZb-Y1-xd9" firstAttribute="top" secondItem="gVI-PW-7Rt" secondAttribute="top" id="zpK-7n-ve5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gVI-PW-7Rt"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Mbu-EU-Tu9">
+                        <barButtonItem key="leftBarButtonItem" image="OpenMenu" id="NTU-uv-apm">
+                            <inset key="imageInsets" minX="-10" minY="0.0" maxX="0.0" maxY="-12"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <size key="freeformSize" width="414" height="1136"/>
+                    <connections>
+                        <outlet property="distanceSelected" destination="DHd-e7-0Zh" id="UgH-lN-KOv"/>
+                        <outlet property="openMenu" destination="NTU-uv-apm" id="lci-ar-bVK"/>
+                        <outlet property="profilePic" destination="u0B-cU-Hs6" id="Jgs-Fy-Xci"/>
+                        <outlet property="slider" destination="wWJ-rm-vhG" id="EXq-mj-gPE"/>
+                        <outlet property="userUsername" destination="lgo-30-IUm" id="hJg-3F-5A0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ARu-Gh-TWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="22476.8115942029" y="246.19565217391306"/>
+        </scene>
+        <!--Student Edit About View Controller-->
+        <scene sceneID="Tt5-5z-VPt">
+            <objects>
+                <viewController storyboardIdentifier="StudentEditAboutViewController" id="AP7-0f-hdO" customClass="StudentEditAboutViewController" customModule="Connections" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zig-y5-3w3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1036"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rww-KE-Zhm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1036"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vmg-pW-CCJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1036"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3R8-Tf-Me1" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                <rect key="frame" x="147" y="55" width="120" height="120"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XUg-zR-fXJ" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder-profile" translatesAutoresizingMaskIntoConstraints="NO" id="bgD-x6-5Kh">
+                                                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="60"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="60"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b4v-fk-tyX" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                <rect key="frame" x="47" y="259" width="320" height="45"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="ILh-mh-snx">
+                                                        <rect key="frame" x="23" y="11" width="20" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Norwich" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kWm-Vk-JY8">
+                                                        <rect key="frame" x="77" y="8" width="243" height="31"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="done" textContentType="username"/>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="23"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzK-02-vk0">
+                                                <rect key="frame" x="47" y="230" width="109" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="19"/>
+                                                <color key="textColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HDr-0q-Cf1" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                <rect key="frame" x="47" y="364" width="320" height="45"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="Zsb-lc-Bn2">
+                                                        <rect key="frame" x="23" y="11" width="20" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Norwich" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RsZ-AT-jsC">
+                                                        <rect key="frame" x="77" y="8" width="243" height="31"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="done" textContentType="username"/>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="23"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Headline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nbk-vs-eHF">
+                                                <rect key="frame" x="47" y="335" width="109" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="19"/>
+                                                <color key="textColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Education" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByF-Wk-Mpk">
+                                                <rect key="frame" x="47" y="443" width="109" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="19"/>
+                                                <color key="textColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nLJ-Dr-0sS" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                <rect key="frame" x="47" y="472" width="320" height="45"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="Ahb-2G-DWF">
+                                                        <rect key="frame" x="23" y="11" width="20" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Norwich" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bXp-6h-oRC">
+                                                        <rect key="frame" x="77" y="8" width="243" height="31"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="done" textContentType="username"/>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="23"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfn-0m-5ul" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
+                                                <rect key="frame" x="47" y="967" width="320" height="45"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="17"/>
+                                                <state key="normal" title="Confirm">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="23"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
+                                                        <color key="value" red="0.46666666670000001" green="0.78823529410000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
+                                                        <color key="value" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="confirmBtn:" destination="AP7-0f-hdO" eventType="touchUpInside" id="Rts-1U-1li"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWR-ZO-t16">
+                                                <rect key="frame" x="47" y="554" width="150" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="GothamRounded-Book" family="Gotham Rounded" pointSize="19"/>
+                                                <color key="textColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hXo-SH-i3B" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                <rect key="frame" x="47" y="583" width="320" height="265"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Jx4-aU-x3u">
+                                                        <rect key="frame" x="8" y="8" width="304" height="249"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="AP7-0f-hdO" id="m90-Xb-3wM"/>
+                                                        </connections>
+                                                    </textView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1036" id="3Hz-j0-PHm"/>
+                                            <constraint firstAttribute="width" constant="414" id="cWF-mJ-j0n"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Vmg-pW-CCJ" secondAttribute="bottom" id="5I4-43-Ajz"/>
+                                    <constraint firstItem="Vmg-pW-CCJ" firstAttribute="top" secondItem="Rww-KE-Zhm" secondAttribute="top" id="m6E-Pg-Ong"/>
+                                    <constraint firstItem="Vmg-pW-CCJ" firstAttribute="leading" secondItem="Rww-KE-Zhm" secondAttribute="leading" id="qOC-9g-8e8"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vmg-pW-CCJ" secondAttribute="trailing" id="w5R-i1-DxN"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Rww-KE-Zhm" firstAttribute="leading" secondItem="vuW-36-TQj" secondAttribute="leading" id="1hf-az-Tn9"/>
+                            <constraint firstItem="Rww-KE-Zhm" firstAttribute="trailing" secondItem="vuW-36-TQj" secondAttribute="trailing" id="QE1-D4-ylc"/>
+                            <constraint firstItem="Rww-KE-Zhm" firstAttribute="top" secondItem="vuW-36-TQj" secondAttribute="top" id="Wgh-0m-YUI"/>
+                            <constraint firstItem="Rww-KE-Zhm" firstAttribute="bottom" secondItem="vuW-36-TQj" secondAttribute="bottom" id="wSO-9f-ccW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vuW-36-TQj"/>
+                    </view>
+                    <size key="freeformSize" width="414" height="1100"/>
+                    <connections>
+                        <outlet property="headline" destination="RsZ-AT-jsC" id="YTd-1u-X46"/>
+                        <outlet property="profilePic" destination="bgD-x6-5Kh" id="meL-1i-tvo"/>
+                        <outlet property="summary" destination="Jx4-aU-x3u" id="Ye4-d1-nud"/>
+                        <outlet property="userUsername" destination="kWm-Vk-JY8" id="efe-bl-XuS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3xK-Iq-w3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="23366.666666666668" y="245.38043478260872"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8Ky-1N-pLq">
+            <objects>
+                <navigationController storyboardIdentifier="BusinessQuestions" id="Uzo-u1-y9V" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7e7-m5-wFo">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7MC-xU-bKy" kind="relationship" relationship="rootViewController" id="7wi-yf-Iso"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BGc-aY-elZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18268" y="247"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="CTA-DirectionGrey" width="131" height="252"/>
+        <image name="Edit" width="250" height="250"/>
+        <image name="Education" width="250" height="250"/>
+        <image name="Interests" width="250" height="250"/>
+        <image name="MenuWhite" width="250" height="161"/>
+        <image name="OpenMenu" width="38" height="31"/>
+        <image name="User" width="250" height="250"/>
+        <image name="companyImage" width="545" height="363"/>
+        <image name="dislike" width="250" height="250"/>
+        <image name="like" width="258" height="195"/>
+        <image name="placeholder-profile" width="500" height="500"/>
+        <image name="writing-notes-idea-conference" width="4604" height="2722"/>
+    </resources>
+</document>

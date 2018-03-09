@@ -82,7 +82,7 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
                 
             })
             
-//            self.presentStudentProfileCreationViewController()
+            self.presentStudentProfileCreationViewController()
             
         }
         
@@ -93,8 +93,9 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     func presentStudentProfileCreationViewController() {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "profileCreationNavigation")
-        self.present(vc!, animated: true, completion: nil)
+        let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
+        let StudentCreateProfileLandingViewController:StudentCreateProfileLandingViewController = storyboard.instantiateViewController(withIdentifier: "StudentCreateProfileLandingViewController") as! StudentCreateProfileLandingViewController
+        self.present(StudentCreateProfileLandingViewController, animated: true, completion: nil)
     }
     
 

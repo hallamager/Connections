@@ -33,7 +33,7 @@ class StudentCreateProfileLandingViewController: UIViewController {
     }
     
     func presentBusinessSwipeViewViewController() {
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard:UIStoryboard = UIStoryboard(name: "BusinessMain", bundle: nil)
         let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
         self.present(SWRevealViewController, animated: true, completion: nil)
     }
