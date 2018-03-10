@@ -15,17 +15,17 @@ import FirebaseDatabase
 
 class BusinessLikedViewController: UIViewController {
     
-    let kCloseCellHeight: CGFloat = 165
-    let kOpenCellHeight: CGFloat = 1315
+    let kCloseCellHeight: CGFloat = 160
+    let kOpenCellHeight: CGFloat = 820
     let ref = Database.database().reference().child("business")
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
     var businesses = [Business]()
     var counter = 0
+    var recentMatchesTitle = ["Recent Matches"]
 
     @IBOutlet var openMenuLeft: UIBarButtonItem!
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var matchedTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,6 @@ class BusinessLikedViewController: UIViewController {
         loadRelatedBusinesses(for: Auth.auth().currentUser!.uid) { success, businesses in
             self.businesses = businesses
             self.tableView.reloadData()
-            self.matchedTableView.reloadData()
         }
         
         //open menu with tab bar button
@@ -94,81 +93,117 @@ class BusinessLikedViewController: UIViewController {
 extension BusinessLikedViewController: UITableViewDelegate {
     
     func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return cellHeights[indexPath.row]
+        if tableView == self.tableView {
+            return cellHeights[indexPath.row]
+        } else {
+            return 100
+        }
     }
     
     func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard case let cell as BusinessLikedCell = cell else {
-            return
-        }
         
-        let business = businesses[indexPath.row]
-        
-        cell.backgroundColor = .clear
-        
-        if cellHeights[indexPath.row] == kCloseCellHeight {
-            cell.unfold(false, animated: false, completion: nil)
-        } else {
-            cell.unfold(true, animated: false, completion: nil)
-        }
-        
-        cell.companyName.text! = business.username
-        cell.companyIndustry.text! = business.industry
-        cell.foldingNameLabel.text! = business.username
-        cell.companyHeadquarters.text! = business.businessHeadquarters
-        cell.companyDescription.text! = business.description
-        cell.companyWebsite.text! = business.companyWebsite
-        cell.companyIndustryFolded.text! = business.industry
-        cell.companySize.text! = business.companySize
-        cell.companyHeadquartersFolded.text! = business.businessHeadquarters
-        
-        // Create a storage reference from the URL
-        let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(business.uuid)
-        // Download the data, assuming a max size of 1MB (you can change this as necessary)
-        storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
-            // Create a UIImage, add it to the array
-            let pic = UIImage(data: data!)
-            cell.companyImg.image = pic
-            cell.companyImgFolded.image = pic
+        if tableView == self.tableView {
+            
+            guard case let cell as BusinessLikedCell = cell else {
+                return
+            }
+            
+            let business = businesses[indexPath.row]
+            
+            cell.backgroundColor = .clear
+            
+            if cellHeights[indexPath.row] == kCloseCellHeight {
+                cell.unfold(false, animated: false, completion: nil)
+            } else {
+                cell.unfold(true, animated: false, completion: nil)
+            }
+            
+            cell.companyName.text! = business.username
+            cell.companyIndustry.text! = business.industry
+            cell.foldingNameLabel.text! = business.username
+            cell.companyHeadquarters.text! = business.businessHeadquarters
+            cell.companyDescription.text! = business.description
+            cell.companyWebsite.text! = business.companyWebsite
+            cell.companyIndustryFolded.text! = business.industry
+            cell.companySize.text! = business.companySize
+            cell.companyHeadquartersFolded.text! = business.businessHeadquarters
+            
+            // Create a storage reference from the URL
+            let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(business.uuid)
+            // Download the data, assuming a max size of 1MB (you can change this as necessary)
+            storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+                // Create a UIImage, add it to the array
+                let pic = UIImage(data: data!)
+                cell.companyImg.image = pic
+                cell.companyImgFolded.image = pic
+            }
+            
         }
         
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cell = tableView.cellForRow(at: indexPath) as! FoldingCell
+        if tableView == self.tableView {
         
-        if cell.isAnimating() {
-            return
+            let cell = tableView.cellForRow(at: indexPath) as! FoldingCell
+            
+            if cell.isAnimating() {
+                return
+            }
+            
+            var duration = 0.0
+            let cellIsCollapsed = cellHeights[indexPath.row] == kCloseCellHeight
+            if cellIsCollapsed {
+                cellHeights[indexPath.row] = kOpenCellHeight
+                cell.unfold(true, animated: true, completion: nil)
+                duration = 0.5
+            } else {
+                cellHeights[indexPath.row] = kCloseCellHeight
+                cell.unfold(false, animated: true, completion: nil)
+                duration = 0.8
+            }
+            
+            UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: { () -> Void in
+                tableView.beginUpdates()
+                tableView.endUpdates()
+            }, completion: nil)
+            
         }
         
-        var duration = 0.0
-        let cellIsCollapsed = cellHeights[indexPath.row] == kCloseCellHeight
-        if cellIsCollapsed {
-            cellHeights[indexPath.row] = kOpenCellHeight
-            cell.unfold(true, animated: true, completion: nil)
-            duration = 0.5
-        } else {
-            cellHeights[indexPath.row] = kCloseCellHeight
-            cell.unfold(false, animated: true, completion: nil)
-            duration = 0.8
-        }
-        
-        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: { () -> Void in
-            tableView.beginUpdates()
-            tableView.endUpdates()
-        }, completion: nil)
     }
     
 }
 
 extension BusinessLikedViewController: UITableViewDataSource {
+        
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == self.tableView {
+            
+            print(businesses.count)
+            return businesses.count
+            
+        } else {
+            
+            return 1
+            
+        }
+    }
     
-    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        if tableView == self.tableView {
+            return nil
+        } else {
+            return recentMatchesTitle[section]
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        print("did swipe \(recentMatchesTitle.count)")
 
-        print(businesses.count)
-        return businesses.count
-    
+        return 1
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -189,11 +224,7 @@ extension BusinessLikedViewController: UITableViewDataSource {
             
         } else {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "RecentMatches", for: indexPath) as! BusinessMatchedCell
-            
-            let business = businesses[indexPath.row]
-            
-            print("did like \(business.username)")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "RecentMatches") as! BusinessMatchedCell
             
             return cell
             

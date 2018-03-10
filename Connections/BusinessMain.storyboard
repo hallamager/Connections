@@ -177,12 +177,12 @@
             <objects>
                 <viewController storyboardIdentifier="BusinessLikedViewController" id="YOy-JG-Q7e" customClass="BusinessLikedViewController" customModule="Connections" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Leo-7U-TiU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1236"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1336"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WJ8-Bc-DpI">
-                                <rect key="frame" x="0.0" y="196" width="375" height="1040"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="994" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WJ8-Bc-DpI">
+                                <rect key="frame" x="0.0" y="296" width="375" height="1040"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoldingCell" rowHeight="994" id="w5h-G4-99U" customClass="BusinessLikedCell" customModule="Connections" customModuleProvider="target">
@@ -193,7 +193,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ay7-pT-jcl" userLabel="Foreground" customClass="RotatedView" customModule="FoldingCell">
-                                                    <rect key="frame" x="20" y="21" width="335" height="146"/>
+                                                    <rect key="frame" x="20" y="10" width="335" height="146"/>
                                                     <subviews>
                                                         <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DlT-r5-nob" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="335" height="146"/>
@@ -271,7 +271,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c1Y-eY-Eit" userLabel="Container" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="186" width="335" height="803"/>
+                                                    <rect key="frame" x="20" y="175" width="335" height="803"/>
                                                     <subviews>
                                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="okM-gn-tgo" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="335" height="803"/>
@@ -502,10 +502,10 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="c1Y-eY-Eit" secondAttribute="trailing" constant="5" id="3U6-YV-lQ3"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="ay7-pT-jcl" secondAttribute="trailing" constant="5" id="A4f-OL-lo2"/>
-                                                <constraint firstItem="c1Y-eY-Eit" firstAttribute="top" secondItem="LEh-Kk-OV5" secondAttribute="topMargin" constant="175" identifier="ContainerViewTop" id="TBH-dT-9J1"/>
+                                                <constraint firstItem="c1Y-eY-Eit" firstAttribute="top" secondItem="LEh-Kk-OV5" secondAttribute="top" constant="175" identifier="ContainerViewTop" id="TBH-dT-9J1"/>
                                                 <constraint firstItem="c1Y-eY-Eit" firstAttribute="leading" secondItem="LEh-Kk-OV5" secondAttribute="leadingMargin" constant="5" id="bBW-0u-Qzv"/>
                                                 <constraint firstItem="ay7-pT-jcl" firstAttribute="leading" secondItem="LEh-Kk-OV5" secondAttribute="leadingMargin" constant="5" id="eml-ms-Cnh"/>
-                                                <constraint firstItem="ay7-pT-jcl" firstAttribute="top" secondItem="LEh-Kk-OV5" secondAttribute="topMargin" constant="10" identifier="ForgroundViewTop" id="lCH-cs-uP8"/>
+                                                <constraint firstItem="ay7-pT-jcl" firstAttribute="top" secondItem="LEh-Kk-OV5" secondAttribute="top" constant="10" identifier="ForgroundViewTop" id="lCH-cs-uP8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <userDefinedRuntimeAttributes>
@@ -541,14 +541,14 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Businesses Liked" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zN0-Bm-g8j">
-                                <rect key="frame" x="25" y="146" width="343" height="44"/>
+                                <rect key="frame" x="25" y="246" width="343" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Gb-Y5-HuK" customClass="HorizontalGradient" customModule="Connections" customModuleProvider="target">
-                                <rect key="frame" x="25" y="192" width="64" height="1"/>
+                                <rect key="frame" x="25" y="292" width="64" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
@@ -559,57 +559,49 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ihv-Mj-8PR">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ihv-Mj-8PR">
+                                <rect key="frame" x="0.0" y="55" width="375" height="166"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecentMatches" rowHeight="97" id="Esq-nz-4tL" customClass="BusinessMatchedCell" customModule="Connections" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="97"/>
+                                    <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecentMatches" rowHeight="139" id="Esq-nz-4tL" customClass="BusinessMatchedCell" customModule="Connections" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="139"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Esq-nz-4tL" id="kXI-xP-cyF">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="96.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="138.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3k4-4u-6Mt">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="97"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="139"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="png-lq-WlP">
-                                                        <size key="itemSize" width="50" height="50"/>
+                                                        <size key="itemSize" width="70" height="70"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                        <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                        <inset key="sectionInset" minX="20" minY="10" maxX="5" maxY="10"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="matchedCell" id="gGC-ct-gg8" customClass="MatchedCell" customModule="Connections" customModuleProvider="target">
-                                                            <rect key="frame" x="5" y="23.5" width="50" height="50"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <rect key="frame" x="20" y="34.5" width="70" height="70"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
-                                                                <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lXM-AK-R7q">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                                        <autoresizingMask key="autoresizingMask"/>
-                                                                    </imageView>
-                                                                </subviews>
                                                             </view>
                                                             <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <connections>
-                                                                <outlet property="imageView" destination="lXM-AK-R7q" id="Wei-tf-0Xq"/>
-                                                            </connections>
+                                                            <size key="customSize" width="70" height="70"/>
                                                         </collectionViewCell>
                                                     </cells>
                                                     <connections>
-                                                        <outlet property="dataSource" destination="Esq-nz-4tL" id="RVf-fF-sol"/>
-                                                        <outlet property="delegate" destination="Esq-nz-4tL" id="ovG-ji-PHy"/>
+                                                        <outlet property="dataSource" destination="Esq-nz-4tL" id="0uF-3j-Mdy"/>
+                                                        <outlet property="delegate" destination="Esq-nz-4tL" id="Ejd-RK-WzO"/>
                                                     </connections>
                                                 </collectionView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="collectionView" destination="3k4-4u-6Mt" id="bcx-ff-oM8"/>
+                                            <outlet property="collectionView" destination="3k4-4u-6Mt" id="x4A-NE-oqg"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -618,6 +610,13 @@
                                     <outlet property="delegate" destination="YOy-JG-Q7e" id="ICj-Ma-tjo"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recent Matches" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WxG-Ft-a5G">
+                                <rect key="frame" x="16" y="10" width="343" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="q2w-20-HxM"/>
@@ -628,9 +627,8 @@
                             <color key="tintColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
-                    <size key="freeformSize" width="375" height="1300"/>
+                    <size key="freeformSize" width="375" height="1400"/>
                     <connections>
-                        <outlet property="matchedTableView" destination="ihv-Mj-8PR" id="mzf-XK-c8t"/>
                         <outlet property="openMenuLeft" destination="s88-nt-Uyb" id="ea1-10-zj5"/>
                         <outlet property="tableView" destination="WJ8-Bc-DpI" id="Ee7-rK-AzY"/>
                     </connections>

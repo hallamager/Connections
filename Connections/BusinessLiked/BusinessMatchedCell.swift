@@ -9,11 +9,12 @@
 import Foundation
 import UIKit
 import FoldingCell
-
+import Firebase
+import FirebaseStorage
 
 class BusinessMatchedCell: UITableViewCell {
-    
-    @IBOutlet var collectionView: UICollectionView!
+        
+    @IBOutlet weak var collectionView: UICollectionView!
     
 }
 
@@ -26,6 +27,7 @@ extension BusinessMatchedCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "matchedCell", for: indexPath as IndexPath) as! MatchedCell
+        
         return cell
     }
     
@@ -42,3 +44,4 @@ extension BusinessMatchedCell: UICollectionViewDelegateFlowLayout {
     }
     
 }
+
