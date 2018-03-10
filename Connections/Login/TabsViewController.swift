@@ -21,7 +21,7 @@ class TabsViewController: ButtonBarPagerTabStripViewController {
         // change selected bar color
         settings.style.buttonBarBackgroundColor = .white
         settings.style.buttonBarItemBackgroundColor = .white
-        settings.style.buttonBarItemFont = UIFont(name: "Gotham Rounded", size:20) ?? UIFont.systemFont(ofSize: 14)
+        settings.style.buttonBarItemFont = UIFont(name: "Avenir Next", size:20) ?? UIFont.systemFont(ofSize: 14)
         settings.style.selectedBarBackgroundColor = blueInstagramColor
         settings.style.selectedBarHeight = 2.0
         settings.style.buttonBarMinimumLineSpacing = 0
@@ -48,8 +48,8 @@ class TabsViewController: ButtonBarPagerTabStripViewController {
         super.viewDidLoad()
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return true
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     // MARK: - PagerTabStripDataSource

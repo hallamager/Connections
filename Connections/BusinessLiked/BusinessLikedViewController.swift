@@ -15,8 +15,8 @@ import FirebaseDatabase
 
 class BusinessLikedViewController: UIViewController {
     
-    let kCloseCellHeight: CGFloat = 190
-    let kOpenCellHeight: CGFloat = 490
+    let kCloseCellHeight: CGFloat = 165
+    let kOpenCellHeight: CGFloat = 1315
     let ref = Database.database().reference().child("business")
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
@@ -25,15 +25,18 @@ class BusinessLikedViewController: UIViewController {
 
     @IBOutlet var openMenuLeft: UIBarButtonItem!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var matchedTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "Avenir Next", size: 17)!]
         
+        
         loadRelatedBusinesses(for: Auth.auth().currentUser!.uid) { success, businesses in
             self.businesses = businesses
             self.tableView.reloadData()
+            self.matchedTableView.reloadData()
         }
         
         //open menu with tab bar button
@@ -113,6 +116,11 @@ extension BusinessLikedViewController: UITableViewDelegate {
         cell.companyIndustry.text! = business.industry
         cell.foldingNameLabel.text! = business.username
         cell.companyHeadquarters.text! = business.businessHeadquarters
+        cell.companyDescription.text! = business.description
+        cell.companyWebsite.text! = business.companyWebsite
+        cell.companyIndustryFolded.text! = business.industry
+        cell.companySize.text! = business.companySize
+        cell.companyHeadquartersFolded.text! = business.businessHeadquarters
         
         // Create a storage reference from the URL
         let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(business.uuid)
@@ -121,6 +129,7 @@ extension BusinessLikedViewController: UITableViewDelegate {
             // Create a UIImage, add it to the array
             let pic = UIImage(data: data!)
             cell.companyImg.image = pic
+            cell.companyImgFolded.image = pic
         }
         
     }
@@ -156,21 +165,40 @@ extension BusinessLikedViewController: UITableViewDelegate {
 extension BusinessLikedViewController: UITableViewDataSource {
     
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
+
         print(businesses.count)
         return businesses.count
+    
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! FoldingCell
-        let durations: [TimeInterval] = [0.26, 0.2, 0.2]
-        cell.durationsForExpandedState = durations
-        cell.durationsForCollapsedState = durations
         
-        let business = businesses[indexPath.row]
-                
-        print(business.username)
+        if tableView == self.tableView {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! FoldingCell
+            
+            let durations: [TimeInterval] = [0.26, 0.2, 0.2]
+            cell.durationsForExpandedState = durations
+            cell.durationsForCollapsedState = durations
+            
+            let business = businesses[indexPath.row]
+            
+            print(business.username)
+            
+            return cell
+            
+        } else {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "RecentMatches", for: indexPath) as! BusinessMatchedCell
+            
+            let business = businesses[indexPath.row]
+            
+            print("did like \(business.username)")
+            
+            return cell
+            
+        }
         
-        return cell
     }
     
 }

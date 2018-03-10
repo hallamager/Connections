@@ -18,6 +18,12 @@ class BusinessLikedCell: FoldingCell {
     @IBOutlet var companyIndustry: UILabel!
     @IBOutlet var companyImg: UIImageView!
     @IBOutlet var companyHeadquarters: UILabel!
+    @IBOutlet var companyImgFolded: UIImageView!
+    @IBOutlet var companyDescription: UITextView!
+    @IBOutlet var companyWebsite: UILabel!
+    @IBOutlet var companyIndustryFolded: UILabel!
+    @IBOutlet var companySize: UILabel!
+    @IBOutlet var companyHeadquartersFolded: UILabel!
     
     //Defines sides, shadows and colour of the cells for the viewcontroller.
     override func awakeFromNib() {
@@ -27,6 +33,9 @@ class BusinessLikedCell: FoldingCell {
         foregroundView.layer.shadowRadius = 3.2
         foregroundView.layer.shadowColor = UIColor.lightGray.cgColor
         foregroundView.layer.cornerRadius = 10
+        
+        companyDescription.translatesAutoresizingMaskIntoConstraints = true
+        companyDescription.sizeToFit()
         
         backgroundColor = .clear
         

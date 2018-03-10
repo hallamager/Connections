@@ -15,6 +15,7 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet var profilePicture: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var SideMenuTableView: UITableView!
+    @IBOutlet var studentHeadline: UILabel!
     
     var menuNameArray: Array = [String]()
     var iconImage: Array = [UIImage]()
@@ -35,6 +36,7 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         ref.observeSingleEvent(of: .value, with: { snapshot in
             if let student = Student(snapshot: snapshot) {
                 self.usernameLabel.text = student.username
+                self.studentHeadline.text = student.headline
                 self.students.append(student)
             }
         })

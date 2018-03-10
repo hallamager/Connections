@@ -90,6 +90,8 @@
 		A0F529EB1FD1CD6400B5B93C /* Gotham Rounded Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0F529E11FD1AFC000B5B93C /* Gotham Rounded Book.ttf */; };
 		A0F529ED1FD1E6F600B5B93C /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F529EC1FD1E6F600B5B93C /* SideMenuViewController.swift */; };
 		A0F5A6752039AE5A004E4D3E /* StudentProfilePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F5A6742039AE5A004E4D3E /* StudentProfilePictureViewController.swift */; };
+		A0F94F2120542A1500FECC7A /* BusinessMatchedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F94F2020542A1500FECC7A /* BusinessMatchedCell.swift */; };
+		A0F94F232054347000FECC7A /* MatchedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F94F222054347000FECC7A /* MatchedCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -184,6 +186,8 @@
 		A0F529E91FD1BA3100B5B93C /* VerticalGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalGradient.swift; sourceTree = "<group>"; };
 		A0F529EC1FD1E6F600B5B93C /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		A0F5A6742039AE5A004E4D3E /* StudentProfilePictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfilePictureViewController.swift; sourceTree = "<group>"; };
+		A0F94F2020542A1500FECC7A /* BusinessMatchedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessMatchedCell.swift; sourceTree = "<group>"; };
+		A0F94F222054347000FECC7A /* MatchedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -445,6 +449,8 @@
 			children = (
 				A0AD071B202DCF8C00B77C61 /* BusinessLikedViewController.swift */,
 				A0AD0721202E043000B77C61 /* BusinessLikedCell.swift */,
+				A0F94F2020542A1500FECC7A /* BusinessMatchedCell.swift */,
+				A0F94F222054347000FECC7A /* MatchedCell.swift */,
 			);
 			path = BusinessLiked;
 			sourceTree = "<group>";
@@ -683,6 +689,7 @@
 				A00748741F912B0C004AF885 /* BusinessSwipeView.swift in Sources */,
 				A0D8D377203B39CF00D68A5A /* Experience.swift in Sources */,
 				A07226651F91657F006C60BA /* TabsViewController.swift in Sources */,
+				A0F94F232054347000FECC7A /* MatchedCell.swift in Sources */,
 				A0D8D375203B38E400D68A5A /* AddExperienceViewController.swift in Sources */,
 				5FBF425E2052A48F00B93FED /* BusinessSelectCell.swift in Sources */,
 				A0AA81562036FA2300858063 /* SelectStudentViewController.swift in Sources */,
@@ -723,6 +730,7 @@
 				A049B0D320261EDF00EBD07B /* StudentSwipeViewController.swift in Sources */,
 				A0AA81532036D85200858063 /* BusinessQuestionsListViewController.swift in Sources */,
 				A03D991F1FD305160034AE24 /* SideMenuTableViewCell.swift in Sources */,
+				A0F94F2120542A1500FECC7A /* BusinessMatchedCell.swift in Sources */,
 				A0D67A502040671D0060AD70 /* ShowEducation.swift in Sources */,
 				A0973A15202503F50087F7CE /* Business.swift in Sources */,
 				A0A6B0F42049833D00AC357F /* ShowJobsAddedViewController.swift in Sources */,
