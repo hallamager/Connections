@@ -98,7 +98,7 @@ class StudentEditAboutViewController: UIViewController, UITextFieldDelegate, UII
     
     func presentStudentProfileViewController() {
         let revealViewController:SWRevealViewController = self.revealViewController()
-        let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainStoryboard:UIStoryboard = UIStoryboard(name: "BusinessMain", bundle: nil)
         let desController = mainStoryboard.instantiateViewController(withIdentifier: "StudentEditProfileViewController") as! StudentEditProfileViewController
         let newFrontViewController = UINavigationController.init(rootViewController:desController)
         

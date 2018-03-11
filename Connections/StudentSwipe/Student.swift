@@ -19,7 +19,7 @@ class Student {
     let interestOne: String
     let interestTwo: String
     let interestThree: String
-    let selectedRadius: Double
+    let selectedRadius: Int
     
     init?(snapshot: DataSnapshot) {
         if let snapshotData = snapshot.value as? [String: Any] {
@@ -32,7 +32,7 @@ class Student {
             interestOne = snapshotData["Interest One"] as! String
             interestTwo = snapshotData["Interest Two"] as! String
             interestThree = snapshotData["Interest Three"] as! String
-            selectedRadius = (snapshotData["Selected Radius"] as! NSString).doubleValue
+            selectedRadius = (snapshotData["Selected Radius"] as! NSString).integerValue
         } else {
             return nil
         }

@@ -20,6 +20,8 @@ class StudentEditProfileViewController: UIViewController {
     
     var students = [Student]()
     let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)")
+    let refEducation = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("education")
+    var educations = [Education]()
     weak var delegate: StudentEditProfileViewControllerDelegate?
 
     @IBOutlet var openMenu: UIBarButtonItem!
@@ -27,15 +29,20 @@ class StudentEditProfileViewController: UIViewController {
     @IBOutlet var profilePic: UIImageView!
     @IBOutlet var distanceSelected: UILabel!
     @IBOutlet var slider: UISlider!
+    @IBOutlet weak var summary: UITextView!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.isTranslucent = false
+        
         ref.observeSingleEvent(of: .value, with: { snapshot in
             if let student = Student(snapshot: snapshot) {
                 self.userUsername.text = student.username
-                self.slider.value = Float(student.selectedRadius)
-                self.distanceSelected.text = "\(student.selectedRadius)Km"
+                self.slider.value = Float(Int(student.selectedRadius))
+                self.distanceSelected.text = "\(student.selectedRadius)"
+                self.summary.text = student.summary
                 self.students.append(student)
             }
         })
@@ -48,6 +55,21 @@ class StudentEditProfileViewController: UIViewController {
             let pic = UIImage(data: data!)
             self.profilePic.image = pic
         }
+        
+        refEducation.observeSingleEvent(of: .value, with: { snapshot in
+            for education in snapshot.children {
+                if let data = education as? DataSnapshot {
+                    if let education = Education(snapshot: data) {
+                        self.educations.append(education)
+                    }
+                }
+            }
+            
+            self.tableView.reloadData()
+            
+            print("is\(self.educations.count)")
+            
+        })
         
         //open menu with tab bar button
         openMenu.target = self.revealViewController()
@@ -63,10 +85,45 @@ class StudentEditProfileViewController: UIViewController {
     @IBAction func sliderDistance(_ sender: UISlider) {
         
         let currentValue = Int(slider.value)
-        distanceSelected.text = "\(currentValue)Km"
+        distanceSelected.text = "\(currentValue)"
         delegate?.sliderChanged(text: distanceSelected.text)
         ref.updateChildValues(["Selected Radius": self.distanceSelected.text!])
         
     }
     
 }
+
+extension StudentEditProfileViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 160
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let EditEducationViewController:EditEducationViewController = storyboard.instantiateViewController(withIdentifier: "EditEducationViewController") as! EditEducationViewController
+        EditEducationViewController.education = educations[indexPath.row]
+        self.present(EditEducationViewController, animated: true, completion: nil)
+        
+    }
+    
+}
+
+extension StudentEditProfileViewController: UITableViewDataSource {
+    
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
+        print(educations.count)
+        return educations.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "educationCell") as! EducationCell
+        let education = educations[indexPath.row]
+        cell.school?.text = education.school
+        cell.studied?.text = education.studied
+        return cell
+    }
+    
+}
+

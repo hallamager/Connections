@@ -18,7 +18,7 @@ extension BusinessSwipeViewController {
         let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)")
         ref.observeSingleEvent(of: .value, with: { snapshot in
             if let student = Student(snapshot: snapshot) {
-                let query = self.geoRefBusiness.query(at: location, withRadius: student.selectedRadius)
+                let query = self.geoRefBusiness.query(at: location, withRadius: Double(student.selectedRadius))
                 
                 
                 guard location.distance(from: self.queryLocation) > 10 else { return }
