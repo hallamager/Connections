@@ -12,4 +12,6 @@ import UIKit
 class MatchedCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var companyName: UILabel!
+    
 }

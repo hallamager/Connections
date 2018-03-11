@@ -30,6 +30,8 @@ class BusinessLikedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.isTranslucent = false
+        
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "Avenir Next", size: 17)!]
         
         
@@ -187,15 +189,6 @@ extension BusinessLikedViewController: UITableViewDataSource {
             
             return 1
             
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        if tableView == self.tableView {
-            return nil
-        } else {
-            return recentMatchesTitle[section]
         }
     }
     
