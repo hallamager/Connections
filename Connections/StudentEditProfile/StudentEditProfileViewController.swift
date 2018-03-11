@@ -31,6 +31,9 @@ class StudentEditProfileViewController: UIViewController {
     @IBOutlet var slider: UISlider!
     @IBOutlet weak var summary: UITextView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var interestOne: UILabel!
+    @IBOutlet weak var interestTwo: UILabel!
+    @IBOutlet weak var interestThree: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +46,9 @@ class StudentEditProfileViewController: UIViewController {
                 self.slider.value = Float(Int(student.selectedRadius))
                 self.distanceSelected.text = "\(student.selectedRadius)"
                 self.summary.text = student.summary
+                self.interestOne.text = student.interestOne
+                self.interestTwo.text = student.interestTwo
+                self.interestThree.text = student.interestThree
                 self.students.append(student)
             }
         })
