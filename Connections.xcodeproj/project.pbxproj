@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F2EB8E02056CA7600A087B8 /* BusinessQuestionTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2EB8DF2056CA7600A087B8 /* BusinessQuestionTwoViewController.swift */; };
+		5F2EB8E22056CA8B00A087B8 /* BusinessQuestionThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2EB8E12056CA8B00A087B8 /* BusinessQuestionThreeViewController.swift */; };
 		5FBF42572052911B00B93FED /* StudentRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF42562052911B00B93FED /* StudentRegister.storyboard */; };
 		5FBF4258205292CF00B93FED /* BusinessRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF425520528B5E00B93FED /* BusinessRegister.storyboard */; };
 		5FBF425A2052945D00B93FED /* StudentMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF42592052945D00B93FED /* StudentMain.storyboard */; };
@@ -99,6 +101,8 @@
 /* Begin PBXFileReference section */
 		419B1DC5AA939905FD333D7A /* Pods-Connections.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connections.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Connections/Pods-Connections.debug.xcconfig"; sourceTree = "<group>"; };
 		599FF97567B39B949FCABD9E /* Pods_Connections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Connections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F2EB8DF2056CA7600A087B8 /* BusinessQuestionTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessQuestionTwoViewController.swift; sourceTree = "<group>"; };
+		5F2EB8E12056CA8B00A087B8 /* BusinessQuestionThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessQuestionThreeViewController.swift; sourceTree = "<group>"; };
 		5FBF425520528B5E00B93FED /* BusinessRegister.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BusinessRegister.storyboard; sourceTree = "<group>"; };
 		5FBF42562052911B00B93FED /* StudentRegister.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StudentRegister.storyboard; sourceTree = "<group>"; };
 		5FBF42592052945D00B93FED /* StudentMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StudentMain.storyboard; sourceTree = "<group>"; };
@@ -434,6 +438,8 @@
 				5FBF425D2052A48F00B93FED /* BusinessSelectCell.swift */,
 				A0AA81502036D6DF00858063 /* BusinessQuestions.swift */,
 				A0AA81522036D85200858063 /* BusinessQuestionsListViewController.swift */,
+				5F2EB8DF2056CA7600A087B8 /* BusinessQuestionTwoViewController.swift */,
+				5F2EB8E12056CA8B00A087B8 /* BusinessQuestionThreeViewController.swift */,
 			);
 			path = BusinessQuestions;
 			sourceTree = "<group>";
@@ -696,6 +702,7 @@
 				A0D8D377203B39CF00D68A5A /* Experience.swift in Sources */,
 				A07226651F91657F006C60BA /* TabsViewController.swift in Sources */,
 				A0F94F232054347000FECC7A /* MatchedCell.swift in Sources */,
+				5F2EB8E02056CA7600A087B8 /* BusinessQuestionTwoViewController.swift in Sources */,
 				A0D8D375203B38E400D68A5A /* AddExperienceViewController.swift in Sources */,
 				5FBF425E2052A48F00B93FED /* BusinessSelectCell.swift in Sources */,
 				A0AA81562036FA2300858063 /* SelectStudentViewController.swift in Sources */,
@@ -750,6 +757,7 @@
 				A0A6FFBD2048262D0001D715 /* BusinessDetailsViewController.swift in Sources */,
 				A09F6BA02027512B00D98332 /* StudentPersonalViewController.swift in Sources */,
 				A0AD0722202E043000B77C61 /* BusinessLikedCell.swift in Sources */,
+				5F2EB8E22056CA8B00A087B8 /* BusinessQuestionThreeViewController.swift in Sources */,
 				A0973A132024B52D0087F7CE /* BusinessProfileCreationLandingViewController.swift in Sources */,
 				A0D67A4E204066F30060AD70 /* ShowEducationAddedViewController.swift in Sources */,
 				A0A6FFBB204809940001D715 /* BusinessProfilePictureViewController.swift in Sources */,

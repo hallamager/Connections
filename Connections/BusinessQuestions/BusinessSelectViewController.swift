@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Firebase
 import FirebaseStorage
+import FoldingCell
 
 class BusinessSelectViewController: UIViewController {
     
@@ -18,6 +19,10 @@ class BusinessSelectViewController: UIViewController {
     
     let ref = Database.database().reference().child("business")
     var businesses = [Business]()
+    let kCloseCellHeight: CGFloat = 130
+    let kOpenCellHeight: CGFloat = 340
+    let kRowsCount = 10
+    var cellHeights: [CGFloat] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +41,8 @@ class BusinessSelectViewController: UIViewController {
         
         //open menu with swipe gesture
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
+        setup()
         
     }
     
@@ -70,20 +77,74 @@ class BusinessSelectViewController: UIViewController {
         }
     }
     
+    private func setup() {
+        cellHeights = Array(repeating: kCloseCellHeight, count: kRowsCount)
+        tableView.estimatedRowHeight = kCloseCellHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
 }
 
 extension BusinessSelectViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 135
+        return cellHeights[indexPath.row]
+    }
+    
+    func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        guard case let cell as BusinessSelectCell = cell else {
+            return
+        }
+        
+        let business = businesses[indexPath.row]
+        
+        cell.backgroundColor = .clear
+        
+        if cellHeights[indexPath.row] == kCloseCellHeight {
+            cell.unfold(false, animated: false, completion: nil)
+        } else {
+            cell.unfold(true, animated: false, completion: nil)
+        }
+        
+        cell.businessSelect?.text = business.username
+        cell.businessIndustry?.text = business.industry
+        
+        // Create a storage reference from the URL
+        let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(business.uuid)
+        // Download the data, assuming a max size of 1MB (you can change this as necessary)
+        storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+            // Create a UIImage, add it to the array
+            let pic = UIImage(data: data!)
+            cell.businessImg.image = pic
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let Storyboard = UIStoryboard(name: "BusinessMain", bundle: nil)
-        let vc = Storyboard.instantiateViewController(withIdentifier: "BusinessQuestionsListViewController") as! BusinessQuestionsListViewController
-        vc.business = businesses[indexPath.row]
-        self.navigationController?.pushViewController(vc, animated: true)
+        let cell = tableView.cellForRow(at: indexPath) as! FoldingCell
+        
+        if cell.isAnimating() {
+            return
+        }
+        
+        var duration = 0.0
+        let cellIsCollapsed = cellHeights[indexPath.row] == kCloseCellHeight
+        if cellIsCollapsed {
+            cellHeights[indexPath.row] = kOpenCellHeight
+            cell.unfold(true, animated: true, completion: nil)
+            duration = 0.5
+        } else {
+            cellHeights[indexPath.row] = kCloseCellHeight
+            cell.unfold(false, animated: true, completion: nil)
+            duration = 0.8
+        }
+        
+        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: { () -> Void in
+            tableView.beginUpdates()
+            tableView.endUpdates()
+        }, completion: nil)
         
     }
     
@@ -99,24 +160,15 @@ extension BusinessSelectViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "businessSelect") as! BusinessSelectCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! FoldingCell
+        
+        let durations: [TimeInterval] = [0.26, 0.2, 0.2]
+        cell.durationsForExpandedState = durations
+        cell.durationsForCollapsedState = durations
         
         let business = businesses[indexPath.row]
         
-        // Create a storage reference from the URL
-        let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(business.uuid)
-        // Download the data, assuming a max size of 1MB (you can change this as necessary)
-        storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
-            // Create a UIImage, add it to the array
-            let pic = UIImage(data: data!)
-            cell.businessImg.image = pic
-        }
-        
-        cell.businessSelect?.text = business.username
-        cell.businessIndustry?.text = business.industry
-        
         print(business.username)
-        print(business.industry)
         
         return cell
         

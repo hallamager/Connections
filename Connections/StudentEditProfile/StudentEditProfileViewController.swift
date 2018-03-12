@@ -18,6 +18,8 @@ protocol StudentEditProfileViewControllerDelegate: class {
 
 class StudentEditProfileViewController: UIViewController {
     
+    let sections = ["One", "Two"]
+    
     var students = [Student]()
     let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)")
     let refEducation = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("education")
@@ -36,7 +38,6 @@ class StudentEditProfileViewController: UIViewController {
     @IBOutlet weak var interestOne: UILabel!
     @IBOutlet weak var interestTwo: UILabel!
     @IBOutlet weak var interestThree: UILabel!
-    @IBOutlet weak var experienceTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,7 +90,6 @@ class StudentEditProfileViewController: UIViewController {
                 }
             }
             
-            self.experienceTableView.reloadData()
             
             print("experience \(self.experiences.count)")
             
@@ -127,40 +127,47 @@ extension StudentEditProfileViewController: UITableViewDelegate {
 
 extension StudentEditProfileViewController: UITableViewDataSource {
     
-    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        
-        if tableView == self.experienceTableView {
-            print("row \(self.experiences.count)")
-            return experiences.count
-        } else {
-            print("row \(self.educations.count)")
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
             return educations.count
         }
         
+        return experiences.count
 
+    }
+
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section]
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let image = UIImageView(image: UIImage(named: "studentImg"))
+        return image
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if tableView == self.tableView {
-            
+        if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "educationCell") as! EducationCell
             let education = educations[indexPath.row]
             cell.school?.text = education.school
             cell.studied?.text = education.studied
             return cell
-            
-        } else {
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "experienceCell") as! ExperienceCell
-            let experience = experiences[indexPath.row]
-            cell.company?.text = experience.company
-            cell.title?.text = experience.title
-            print("cell \(self.experiences.count)")
-            return cell
-            
         }
         
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "experienceCell") as! ExperienceCell
+        let experience = experiences[indexPath.row]
+        cell.company?.text = experience.company
+        cell.title?.text = experience.title
+        print("cell \(self.experiences.count)")
+        return cell
+
     }
     
 }
