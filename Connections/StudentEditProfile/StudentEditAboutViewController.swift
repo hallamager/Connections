@@ -27,6 +27,8 @@ class StudentEditAboutViewController: UIViewController, UITextFieldDelegate, UII
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "Avenir Next", size: 17)!]
+        
         userUsername.delegate = self
         headline.delegate = self
         

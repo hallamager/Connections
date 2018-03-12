@@ -21,7 +21,9 @@ class StudentEditProfileViewController: UIViewController {
     var students = [Student]()
     let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)")
     let refEducation = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("education")
+    let refExperience = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("experience")
     var educations = [Education]()
+    var experiences = [Experience]()
     weak var delegate: StudentEditProfileViewControllerDelegate?
 
     @IBOutlet var openMenu: UIBarButtonItem!
@@ -34,6 +36,7 @@ class StudentEditProfileViewController: UIViewController {
     @IBOutlet weak var interestOne: UILabel!
     @IBOutlet weak var interestTwo: UILabel!
     @IBOutlet weak var interestThree: UILabel!
+    @IBOutlet weak var experienceTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +76,22 @@ class StudentEditProfileViewController: UIViewController {
             
             self.tableView.reloadData()
             
-            print("is\(self.educations.count)")
+            print("education \(self.educations.count)")
+            
+        })
+        
+        refExperience.observeSingleEvent(of: .value, with: { snapshot in
+            for experience in snapshot.children {
+                if let data = experience as? DataSnapshot {
+                    if let experience = Experience(snapshot: data) {
+                        self.experiences.append(experience)
+                    }
+                }
+            }
+            
+            self.experienceTableView.reloadData()
+            
+            print("experience \(self.experiences.count)")
             
         })
         
@@ -102,16 +120,7 @@ class StudentEditProfileViewController: UIViewController {
 extension StudentEditProfileViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 160
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let EditEducationViewController:EditEducationViewController = storyboard.instantiateViewController(withIdentifier: "EditEducationViewController") as! EditEducationViewController
-        EditEducationViewController.education = educations[indexPath.row]
-        self.present(EditEducationViewController, animated: true, completion: nil)
-        
+        return 130
     }
     
 }
@@ -119,16 +128,39 @@ extension StudentEditProfileViewController: UITableViewDelegate {
 extension StudentEditProfileViewController: UITableViewDataSource {
     
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        print(educations.count)
-        return educations.count
+        
+        if tableView == self.experienceTableView {
+            print("row \(self.experiences.count)")
+            return experiences.count
+        } else {
+            print("row \(self.educations.count)")
+            return educations.count
+        }
+        
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "educationCell") as! EducationCell
-        let education = educations[indexPath.row]
-        cell.school?.text = education.school
-        cell.studied?.text = education.studied
-        return cell
+        
+        if tableView == self.tableView {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "educationCell") as! EducationCell
+            let education = educations[indexPath.row]
+            cell.school?.text = education.school
+            cell.studied?.text = education.studied
+            return cell
+            
+        } else {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "experienceCell") as! ExperienceCell
+            let experience = experiences[indexPath.row]
+            cell.company?.text = experience.company
+            cell.title?.text = experience.title
+            print("cell \(self.experiences.count)")
+            return cell
+            
+        }
+        
     }
     
 }
