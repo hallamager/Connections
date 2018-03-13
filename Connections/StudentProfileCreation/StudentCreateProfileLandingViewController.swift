@@ -54,14 +54,14 @@ class StudentCreateProfileLandingViewController: UIViewController {
     
     func addToken() {
     
-        let ref = Database.database().reference().child("student").child(Auth.auth().currentUser!.uid)
+        let ref = Database.database().reference().child("student").child(Auth.auth().currentUser!.uid).child("FCM Token")
 
         // [START log_fcm_reg_token]
         let token = Messaging.messaging().fcmToken
         print("FCM token: \(token ?? "")")
         // [END log_fcm_reg_token]
 
-        ref.updateChildValues(["FCM Token": token!])
+        ref.updateChildValues([token!: true])
     
     }
     

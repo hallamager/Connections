@@ -35,6 +35,21 @@ class BusinessCreateProfileLandingViewController: UIViewController {
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         
+        addToken()
+        
+    }
+    
+    func addToken() {
+        
+        let ref = Database.database().reference().child("business").child(Auth.auth().currentUser!.uid).child("FCM Token")
+        
+        // [START log_fcm_reg_token]
+        let token = Messaging.messaging().fcmToken
+        print("FCM token: \(token ?? "")")
+        // [END log_fcm_reg_token]
+        
+        ref.updateChildValues([token!: true])
+        
     }
     
 }

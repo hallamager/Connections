@@ -48,8 +48,8 @@ extension BusinessSwipeViewController {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        guard let location = locations.last else { return }
-        geoRefStudent.setLocation(location, forKey: (Auth.auth().currentUser?.uid)!)
+        guard let location = locations.last, let uid = Auth.auth().currentUser?.uid else { return }
+        geoRefStudent.setLocation(location, forKey: uid)
         loadNearbyBusinesses(for: location)
         
     }

@@ -67,7 +67,7 @@ class BusinessProfilePictureViewController: UIViewController, UIImagePickerContr
     }
     
     func presentBusinessProfileCreationViewController() {
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard:UIStoryboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
         let BusinessCreateProfileLandingViewController:BusinessCreateProfileLandingViewController = storyboard.instantiateViewController(withIdentifier: "BusinessCreateProfileLandingViewController") as! BusinessCreateProfileLandingViewController
         self.present(BusinessCreateProfileLandingViewController, animated: true, completion: nil)
     }

@@ -46,7 +46,7 @@ class AddJobsViewController: UIViewController, UITextFieldDelegate {
         
         let ex = Jobs(data: ["Title": self.jobTitle.text!, "Employment Type": self.employmentType.text!, "Description": self.jobDescription.text!])
         ref.childByAutoId().setValue(ex.toDict())
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard:UIStoryboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
         let ShowJobsAddedViewController:ShowJobsAddedViewController = storyboard.instantiateViewController(withIdentifier: "ShowJobsAddedViewController") as! ShowJobsAddedViewController
         self.present(ShowJobsAddedViewController, animated: true, completion: nil)
         

@@ -39,7 +39,7 @@ open class FoldingCell: UITableViewCell {
     @IBInspectable open var itemCount: NSInteger = 2
 
     /// The color of the back cell
-    @IBInspectable open var backViewColor: UIColor = UIColor.white
+    @IBInspectable open var backViewColor: UIColor = UIColor.brown
 
     var animationItemViews: [RotatedView]?
 
@@ -54,15 +54,7 @@ open class FoldingCell: UITableViewCell {
         case close
     }
 
-    // MARK: life cicle
-
-    public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-    }
-
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+  // MARK: Life Cycle
 
     open override func awakeFromNib() {
         super.awakeFromNib()
@@ -78,12 +70,8 @@ open class FoldingCell: UITableViewCell {
 
         selectionStyle = .none
 
-//        containerView.layer.cornerRadius = foregroundView.layer.cornerRadius
-//        containerView.layer.shadowOpacity = foregroundView.layer.shadowOpacity
-//        containerView.layer.shadowOffset = foregroundView.layer.shadowOffset
-//        containerView.layer.shadowRadius = foregroundView.layer.shadowRadius
-//        containerView.layer.shadowColor = foregroundView.layer.shadowColor
-
+        containerView.layer.cornerRadius = foregroundView.layer.cornerRadius
+        containerView.layer.masksToBounds = true
     }
 
     // MARK: configure
@@ -92,7 +80,7 @@ open class FoldingCell: UITableViewCell {
 
         guard let foregroundViewTop = self.foregroundViewTop,
             let containerViewTop = self.containerViewTop else {
-            fatalError("set constratins outlets")
+            fatalError("set foregroundViewTop or containerViewTop outlets in storyboard")
         }
 
         containerViewTop.constant = foregroundViewTop.constant
@@ -147,15 +135,10 @@ open class FoldingCell: UITableViewCell {
             }
         }
     }
-    
+
     func createAnimationView() {
-        
         animationView = UIView(frame: containerView.frame)
         animationView?.layer.cornerRadius = foregroundView.layer.cornerRadius
-        animationView?.layer.shadowOpacity = foregroundView.layer.shadowOpacity
-        animationView?.layer.shadowOffset = foregroundView.layer.shadowOffset
-        animationView?.layer.shadowRadius = foregroundView.layer.shadowRadius
-        animationView?.layer.shadowColor = foregroundView.layer.shadowColor
         animationView?.backgroundColor = .clear
         animationView?.translatesAutoresizingMaskIntoConstraints = false
         animationView?.alpha = 0
@@ -331,11 +314,7 @@ open class FoldingCell: UITableViewCell {
         removeImageItemsFromAnimationView()
         addImageItemsToAnimationView()
 
-        guard let animationView = self.animationView else {
-            return
-        }
-
-        animationView.alpha = 1
+        animationView?.alpha = 1
         containerView.alpha = 0
 
         let durations = durationSequence(.open)
@@ -363,7 +342,7 @@ open class FoldingCell: UITableViewCell {
             delay += durations[index]
         }
 
-        let firstItemView = animationView.subviews.filter { $0.tag == 0 }.first
+        let firstItemView = animationView?.subviews.filter { $0.tag == 0 }.first
 
         firstItemView?.layer.masksToBounds = true
         DispatchQueue.main.asyncAfter(deadline: .now() + durations[0], execute: {

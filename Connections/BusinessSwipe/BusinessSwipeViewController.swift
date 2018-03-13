@@ -56,6 +56,7 @@ class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate, 
         
         //open menu with swipe gesture
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
     }
     
     

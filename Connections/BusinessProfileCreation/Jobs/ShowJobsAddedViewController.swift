@@ -49,7 +49,7 @@ class ShowJobsAddedViewController: UIViewController {
     }
     
     @IBAction func confirmBtn(_ sender: Any) {
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard:UIStoryboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
         let BusinessCreateProfileLandingViewController:BusinessCreateProfileLandingViewController = storyboard.instantiateViewController(withIdentifier: "BusinessCreateProfileLandingViewController") as! BusinessCreateProfileLandingViewController
         self.present(BusinessCreateProfileLandingViewController, animated: true, completion: nil)
     }
@@ -72,7 +72,7 @@ extension ShowJobsAddedViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard:UIStoryboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
         let EditJobsViewController:EditJobsViewController = storyboard.instantiateViewController(withIdentifier: "EditJobsViewController") as! EditJobsViewController
         EditJobsViewController.job = jobs[indexPath.row]
         self.present(EditJobsViewController, animated: true, completion: nil)
