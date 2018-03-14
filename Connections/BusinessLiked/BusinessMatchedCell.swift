@@ -11,11 +11,13 @@ import UIKit
 import FoldingCell
 import Firebase
 import FirebaseStorage
+import ViewAnimator
 
 class BusinessMatchedCell: UITableViewCell {
     
     var businesses = [Business]()
-    
+    let animations = [AnimationType.zoom(scale: 0.5)]
+
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func awakeFromNib() {
@@ -24,6 +26,9 @@ class BusinessMatchedCell: UITableViewCell {
         loadRelatedBusinesses(for: Auth.auth().currentUser!.uid) { success, businesses in
             self.businesses = businesses
             self.collectionView.reloadData()
+            self.collectionView.performBatchUpdates({
+                self.collectionView?.animateViews(animations: self.animations, delay: 0.3)
+            }, completion: nil)
         }
         
     }

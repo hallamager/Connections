@@ -12,6 +12,7 @@ import FoldingCell
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import ViewAnimator
 
 class BusinessLikedViewController: UIViewController {
     
@@ -23,6 +24,7 @@ class BusinessLikedViewController: UIViewController {
     var businesses = [Business]()
     var counter = 0
     var recentMatchesTitle = ["Recent Matches"]
+    let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
 
     @IBOutlet var openMenuLeft: UIBarButtonItem!
     @IBOutlet var tableView: UITableView!
@@ -38,6 +40,7 @@ class BusinessLikedViewController: UIViewController {
         loadRelatedBusinesses(for: Auth.auth().currentUser!.uid) { success, businesses in
             self.businesses = businesses
             self.tableView.reloadData()
+            self.tableView.animateViews(animations: self.animations, delay: 0.3)
         }
         
         //open menu with tab bar button
