@@ -383,7 +383,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c1Y-eY-Eit" userLabel="Container" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="175" width="335" height="803"/>
                                                     <subviews>
-                                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="okM-gn-tgo" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="okM-gn-tgo" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="335" height="803"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgR-Jr-F0T" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
@@ -1109,7 +1109,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jjX-t2-9oM" userLabel="Container" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
                                                     <rect key="frame" x="22" y="155" width="330" height="321"/>
                                                     <subviews>
-                                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lux-c7-1ir" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lux-c7-1ir" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="330" height="321"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hvx-H1-hC1">

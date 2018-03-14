@@ -18,7 +18,6 @@ class BusinessSelectCell: FoldingCell {
     
     //Defines sides, shadows and colour of the cells for the viewcontroller.
     override func awakeFromNib() {
-        super.awakeFromNib()
         
         foregroundView.layer.shadowOpacity = 0.3
         foregroundView.layer.shadowOffset = CGSize(width: 0, height: 0)
@@ -28,6 +27,7 @@ class BusinessSelectCell: FoldingCell {
         
         backgroundColor = .clear
         
+        super.awakeFromNib()
     }
     
     //Defines times for flipping animation.

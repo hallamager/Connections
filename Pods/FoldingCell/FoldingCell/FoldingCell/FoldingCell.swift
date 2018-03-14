@@ -39,7 +39,7 @@ open class FoldingCell: UITableViewCell {
     @IBInspectable open var itemCount: NSInteger = 2
 
     /// The color of the back cell
-    @IBInspectable open var backViewColor: UIColor = UIColor.brown
+    @IBInspectable open var backViewColor: UIColor = UIColor.white
 
     var animationItemViews: [RotatedView]?
 
@@ -71,7 +71,11 @@ open class FoldingCell: UITableViewCell {
         selectionStyle = .none
 
         containerView.layer.cornerRadius = foregroundView.layer.cornerRadius
-        containerView.layer.masksToBounds = true
+        containerView.layer.shadowOpacity = foregroundView.layer.shadowOpacity
+        containerView.layer.shadowOffset = foregroundView.layer.shadowOffset
+        containerView.layer.shadowRadius = foregroundView.layer.shadowRadius
+        containerView.layer.shadowColor = foregroundView.layer.shadowColor
+//        containerView.layer.masksToBounds = true
     }
 
     // MARK: configure
@@ -139,6 +143,10 @@ open class FoldingCell: UITableViewCell {
     func createAnimationView() {
         animationView = UIView(frame: containerView.frame)
         animationView?.layer.cornerRadius = foregroundView.layer.cornerRadius
+        animationView?.layer.shadowOpacity = foregroundView.layer.shadowOpacity
+        animationView?.layer.shadowOffset = foregroundView.layer.shadowOffset
+        animationView?.layer.shadowRadius = foregroundView.layer.shadowRadius
+        animationView?.layer.shadowColor = foregroundView.layer.shadowColor
         animationView?.backgroundColor = .clear
         animationView?.translatesAutoresizingMaskIntoConstraints = false
         animationView?.alpha = 0
