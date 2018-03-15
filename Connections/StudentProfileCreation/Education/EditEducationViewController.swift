@@ -57,7 +57,7 @@ class EditEducationViewController: UIViewController, UITextFieldDelegate {
         
         ref.updateChildValues(["School": self.school.text!, "Qualification Type": self.qType.text!, "Studied": self.studied.text!, "From Date": self.schoolFromDate.text!, "To Date": self.schoolToDate.text!, "Grades": self.grades.text!])
         
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
         let ShowEducationAddedViewController:ShowEducationAddedViewController = storyboard.instantiateViewController(withIdentifier: "ShowEducationAddedViewController") as! ShowEducationAddedViewController
         self.present(ShowEducationAddedViewController, animated: true, completion: nil)
         

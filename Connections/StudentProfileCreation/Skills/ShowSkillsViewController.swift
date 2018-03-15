@@ -66,7 +66,7 @@ class ShowSkillsViewController: UIViewController, UITextFieldDelegate {
     }
     
     func presentStudentProfileCreationViewController() {
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
         let StudentCreateProfileLandingViewController:StudentCreateProfileLandingViewController = storyboard.instantiateViewController(withIdentifier: "StudentCreateProfileLandingViewController") as! StudentCreateProfileLandingViewController
         self.present(StudentCreateProfileLandingViewController, animated: true, completion: nil)
     }

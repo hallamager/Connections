@@ -49,7 +49,7 @@ class ShowExperienceAddedViewController: UIViewController {
     }
     
     @IBAction func confirmBtn(_ sender: Any) {
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
         let StudentCreateProfileLandingViewController:StudentCreateProfileLandingViewController = storyboard.instantiateViewController(withIdentifier: "StudentCreateProfileLandingViewController") as! StudentCreateProfileLandingViewController
         self.present(StudentCreateProfileLandingViewController, animated: true, completion: nil)
     }
@@ -72,7 +72,7 @@ extension ShowExperienceAddedViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
         let EditExperienceViewController:EditExperienceViewController = storyboard.instantiateViewController(withIdentifier: "EditExperienceViewController") as! EditExperienceViewController
         EditExperienceViewController.experience = experiences[indexPath.row]
         self.present(EditExperienceViewController, animated: true, completion: nil)

@@ -25,7 +25,7 @@ class BusinessCreateProfileLandingViewController: UIViewController {
     
     func presentBusinessSwipeViewViewController() {
         let storyboard:UIStoryboard = UIStoryboard(name: "StudentMain", bundle: nil)
-        let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
+        let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "StudentSWRevealViewController") as! SWRevealViewController
         self.present(SWRevealViewController, animated: true, completion: nil)
     }
     
@@ -34,6 +34,8 @@ class BusinessCreateProfileLandingViewController: UIViewController {
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
+        
+        presentBusinessSwipeViewViewController()
         
         addToken()
         

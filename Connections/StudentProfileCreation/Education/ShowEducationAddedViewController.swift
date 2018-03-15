@@ -49,7 +49,7 @@ class ShowEducationAddedViewController: UIViewController {
     }
     
     @IBAction func confirmBtn(_ sender: Any) {
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
         let StudentCreateProfileLandingViewController:StudentCreateProfileLandingViewController = storyboard.instantiateViewController(withIdentifier: "StudentCreateProfileLandingViewController") as! StudentCreateProfileLandingViewController
         self.present(StudentCreateProfileLandingViewController, animated: true, completion: nil)
     }
@@ -72,7 +72,7 @@ extension ShowEducationAddedViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
         let EditEducationViewController:EditEducationViewController = storyboard.instantiateViewController(withIdentifier: "EditEducationViewController") as! EditEducationViewController
         EditEducationViewController.education = educations[indexPath.row]
         self.present(EditEducationViewController, animated: true, completion: nil)

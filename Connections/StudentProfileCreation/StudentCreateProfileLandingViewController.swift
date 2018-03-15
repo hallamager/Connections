@@ -69,7 +69,7 @@ class StudentCreateProfileLandingViewController: UIViewController {
         
         let ref = Database.database().reference().child("student").child(Auth.auth().currentUser!.uid)
         
-        ref.updateChildValues(["Selected Radius": 40])
+        ref.updateChildValues(["Selected Radius": "40"])
         
     }
     

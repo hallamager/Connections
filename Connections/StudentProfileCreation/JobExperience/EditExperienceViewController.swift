@@ -56,7 +56,7 @@ class EditExperienceViewController: UIViewController, UITextFieldDelegate {
         
         ref.updateChildValues(["Title": self.jobTitle.text!, "Company": self.jobCompany.text!, "Location": self.jobCity.text!, "From Date": self.jobFromDate.text!, "To Date": self.jobToDate.text!, "Description": self.jobDescription.text!])
         
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
         let ShowExperienceAddedViewController:ShowExperienceAddedViewController = storyboard.instantiateViewController(withIdentifier: "ShowExperienceAddedViewController") as! ShowExperienceAddedViewController
         self.present(ShowExperienceAddedViewController, animated: true, completion: nil)
         

@@ -13,27 +13,9 @@ import Firebase
 import FirebaseStorage
 import ViewAnimator
 
-class BusinessMatchedCell: UITableViewCell {
+extension BusinessLikedViewController  {
     
-    var businesses = [Business]()
-    let animations = [AnimationType.zoom(scale: 0.5)]
-
-    @IBOutlet weak var collectionView: UICollectionView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        loadRelatedBusinesses(for: Auth.auth().currentUser!.uid) { success, businesses in
-            self.businesses = businesses
-            self.collectionView.reloadData()
-            self.collectionView.performBatchUpdates({
-                self.collectionView?.animateViews(animations: self.animations, delay: 0.3)
-            }, completion: nil)
-        }
-        
-    }
-    
-    func loadRelatedBusinesses(for studentUID: String, completion: @escaping (Bool, [Business]) -> ()) {
+    func loadMatches(for studentUID: String, completion: @escaping (Bool, [Business]) -> ()) {
         
         let ref = Database.database().reference(withPath: "matches/" + Auth.auth().currentUser!.uid)
         ref.observeSingleEvent(of: .value) { snapshot in
@@ -66,8 +48,11 @@ class BusinessMatchedCell: UITableViewCell {
     
 }
 
-extension BusinessMatchedCell: UICollectionViewDataSource {
+extension BusinessLikedViewController: UICollectionViewDataSource {
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return businesses.count

@@ -25,12 +25,17 @@ class BusinessLikedViewController: UIViewController {
     var counter = 0
     var recentMatchesTitle = ["Recent Matches"]
     let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
+    let animationsZoom = [AnimationType.zoom(scale: 0.5)]
+
 
     @IBOutlet var openMenuLeft: UIBarButtonItem!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.dataSource = self
         
         self.navigationController?.navigationBar.isTranslucent = false
         
@@ -41,6 +46,14 @@ class BusinessLikedViewController: UIViewController {
             self.businesses = businesses
             self.tableView.reloadData()
             self.tableView.animateViews(animations: self.animations, delay: 0.3)
+        }
+        
+        loadMatches(for: Auth.auth().currentUser!.uid) { success, businesses in
+            self.businesses = businesses
+            self.collectionView.reloadData()
+            self.collectionView.performBatchUpdates({
+                self.collectionView.animateViews(animations: self.animationsZoom)
+            }, completion: nil)
         }
         
         //open menu with tab bar button
@@ -107,42 +120,38 @@ extension BusinessLikedViewController: UITableViewDelegate {
     
     func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        if tableView == self.tableView {
-            
-            guard case let cell as BusinessLikedCell = cell else {
-                return
-            }
-            
-            let business = businesses[indexPath.row]
-            
-            cell.backgroundColor = .clear
-            
-            if cellHeights[indexPath.row] == kCloseCellHeight {
-                cell.unfold(false, animated: false, completion: nil)
-            } else {
-                cell.unfold(true, animated: false, completion: nil)
-            }
-            
-            cell.companyName.text! = business.username
-            cell.companyIndustry.text! = business.industry
-            cell.foldingNameLabel.text! = business.username
-            cell.companyHeadquarters.text! = business.businessHeadquarters
-            cell.companyDescription.text! = business.description
-            cell.companyWebsite.text! = business.companyWebsite
-            cell.companyIndustryFolded.text! = business.industry
-            cell.companySize.text! = business.companySize
-            cell.companyHeadquartersFolded.text! = business.businessHeadquarters
-            
-            // Create a storage reference from the URL
-            let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(business.uuid)
-            // Download the data, assuming a max size of 1MB (you can change this as necessary)
-            storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
-                // Create a UIImage, add it to the array
-                let pic = UIImage(data: data!)
-                cell.companyImg.image = pic
-                cell.companyImgFolded.image = pic
-            }
-            
+        guard case let cell as BusinessLikedCell = cell else {
+            return
+        }
+        
+        let business = businesses[indexPath.row]
+        
+        cell.backgroundColor = .clear
+        
+        if cellHeights[indexPath.row] == kCloseCellHeight {
+            cell.unfold(false, animated: false, completion: nil)
+        } else {
+            cell.unfold(true, animated: false, completion: nil)
+        }
+        
+        cell.companyName.text! = business.username
+        cell.companyIndustry.text! = business.industry
+        cell.foldingNameLabel.text! = business.username
+        cell.companyHeadquarters.text! = business.businessHeadquarters
+        cell.companyDescription.text! = business.description
+        cell.companyWebsite.text! = business.companyWebsite
+        cell.companyIndustryFolded.text! = business.industry
+        cell.companySize.text! = business.companySize
+        cell.companyHeadquartersFolded.text! = business.businessHeadquarters
+        
+        // Create a storage reference from the URL
+        let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(business.uuid)
+        // Download the data, assuming a max size of 1MB (you can change this as necessary)
+        storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+            // Create a UIImage, add it to the array
+            let pic = UIImage(data: data!)
+            cell.companyImg.image = pic
+            cell.companyImgFolded.image = pic
         }
         
     }
@@ -183,29 +192,14 @@ extension BusinessLikedViewController: UITableViewDelegate {
 extension BusinessLikedViewController: UITableViewDataSource {
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == self.tableView {
             
             print(businesses.count)
             return businesses.count
-            
-        } else {
-            
-            return 1
-            
-        }
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        print("did swipe \(recentMatchesTitle.count)")
 
-        return 1
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if tableView == self.tableView {
-            
             let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! FoldingCell
             
             let durations: [TimeInterval] = [0.26, 0.2, 0.2]
@@ -217,14 +211,6 @@ extension BusinessLikedViewController: UITableViewDataSource {
             print(business.username)
             
             return cell
-            
-        } else {
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "RecentMatches") as! BusinessMatchedCell
-            
-            return cell
-            
-        }
         
     }
     
