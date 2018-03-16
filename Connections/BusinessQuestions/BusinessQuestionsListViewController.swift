@@ -19,6 +19,7 @@ class BusinessQuestionsListViewController: UIViewController {
     @IBOutlet var textField: UITextView!
     @IBAction func nextQuestionButton(_ sender: Any) {
         ref.child(business.uuid).child(Auth.auth().currentUser!.uid).updateChildValues(["Question One Answer": self.textField.text!])
+        textField.resignFirstResponder()
     }
     
     override func viewDidLoad() {
