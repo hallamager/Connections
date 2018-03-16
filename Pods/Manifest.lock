@@ -68,6 +68,7 @@ PODS:
   - nanopb/encode (0.3.8)
   - pop (1.0.10)
   - Protobuf (3.5.0)
+  - Spring (1.0.5)
   - ViewAnimator (1.0.5)
   - XLPagerTabStrip (8.0.0)
 
@@ -81,6 +82,7 @@ DEPENDENCIES:
   - GeoFire (from `https://github.com/firebase/geofire-objc.git`)
   - Hero
   - Koloda
+  - Spring
   - ViewAnimator
   - XLPagerTabStrip
 
@@ -112,9 +114,10 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
+  Spring: 17901566c8ecf3a1327902b940406c64512f9bb1
   ViewAnimator: d87d691fbcaf994db7ee8fc632afa3073bd3b851
   XLPagerTabStrip: d1ab378af0923320ec0b5eab11d7b2f803d31261
 
-PODFILE CHECKSUM: 2dc08fbc2c38e361c49ef302bf46d463aee1c58d
+PODFILE CHECKSUM: 01883a61b25e68fab7bbf2415572c762cdb7b45e
 
 COCOAPODS: 1.3.1

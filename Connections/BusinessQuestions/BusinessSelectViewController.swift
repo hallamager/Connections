@@ -11,6 +11,7 @@ import UIKit
 import Firebase
 import FirebaseStorage
 import FoldingCell
+import ViewAnimator
 
 class BusinessSelectViewController: UIViewController {
     
@@ -23,6 +24,7 @@ class BusinessSelectViewController: UIViewController {
     let kOpenCellHeight: CGFloat = 340
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
+    let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,7 @@ class BusinessSelectViewController: UIViewController {
         loadRelatedBusinesses(for: Auth.auth().currentUser!.uid) { success, businesses in
             self.businesses = businesses
             self.tableView.reloadData()
+            self.tableView.animateViews(animations: self.animations, delay: 0.3)
         }
                 
         //open menu with tab bar button
@@ -109,6 +112,9 @@ extension BusinessSelectViewController: UITableViewDelegate {
         
         cell.businessSelect?.text = business.username
         cell.businessIndustry?.text = business.industry
+        cell.foldedCompanyName?.text = business.username
+        cell.foldedCompanyIndustry?.text = business.industry
+        cell.questionOne?.text = business.questionOne
         
         // Create a storage reference from the URL
         let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(business.uuid)
@@ -117,6 +123,7 @@ extension BusinessSelectViewController: UITableViewDelegate {
             // Create a UIImage, add it to the array
             let pic = UIImage(data: data!)
             cell.businessImg.image = pic
+            cell.foldedBusinessImg.image = pic
         }
         
     }
@@ -128,6 +135,17 @@ extension BusinessSelectViewController: UITableViewDelegate {
         if cell.isAnimating() {
             return
         }
+        
+        let Storyboard = UIStoryboard(name: "BusinessMain", bundle: nil)
+        let vc = Storyboard.instantiateViewController(withIdentifier: "BusinessQuestionsListViewController") as! BusinessQuestionsListViewController
+        vc.business = businesses[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+//        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//            let business = businesses[indexPath.row]
+//            let vc = segue.destination as! BusinessQuestionsListViewController
+//            vc.business = business
+//        }
         
         var duration = 0.0
         let cellIsCollapsed = cellHeights[indexPath.row] == kCloseCellHeight

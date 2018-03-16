@@ -9,9 +9,8 @@
 import Foundation
 import UIKit
 import Firebase
-import XLPagerTabStrip
 
-class BusinessQuestionsListViewController: UIViewController, IndicatorInfoProvider {
+class BusinessQuestionsListViewController: UIViewController {
     
     var business: Business!
     let ref = Database.database().reference().child("studentResponses")
@@ -32,10 +31,6 @@ class BusinessQuestionsListViewController: UIViewController, IndicatorInfoProvid
         
         questionOne.text = business.questionOne
         
-    }
-    
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "Q1")
     }
     
 }

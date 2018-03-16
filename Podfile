@@ -17,5 +17,6 @@ target 'Connections' do
     pod 'FoldingCell'
     pod 'ViewAnimator'
     pod 'GeoFire', :git => 'https://github.com/firebase/geofire-objc.git'
+    pod 'Spring'
 
 end

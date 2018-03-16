@@ -15,6 +15,10 @@ class BusinessSelectCell: FoldingCell {
     @IBOutlet var businessSelect: UILabel!
     @IBOutlet var businessIndustry: UILabel!
     @IBOutlet var businessImg: UIImageView!
+    @IBOutlet weak var foldedCompanyName: UILabel!
+    @IBOutlet weak var foldedCompanyIndustry: UILabel!
+    @IBOutlet weak var foldedBusinessImg: UIImageView!
+    @IBOutlet weak var questionOne: UILabel!
     
     //Defines sides, shadows and colour of the cells for the viewcontroller.
     override func awakeFromNib() {
