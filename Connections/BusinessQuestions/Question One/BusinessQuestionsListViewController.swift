@@ -35,50 +35,34 @@ class BusinessQuestionsListViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "Avenir Next", size: 17)!]
+        
+        let refAnswer = Database.database().reference().child("studentResponses/\(business.uuid)").child(Auth.auth().currentUser!.uid)
+        
+//        refAnswer.observeSingleEvent(of: .value, with: { snapshot in
+//            self.questionOnes.removeAll()
+//            if let business = QuestionOne(snapshot: snapshot) {
+//                self.questionOnes.append(business)
+//            }
+//            self.tableView.reloadData()
+//            self.tableView.animateViews(animations: self.animations, delay: 0.3)
+//        })
+        
+        refAnswer.observe(.value, with: { snapshot in
+            self.questionOnes.removeAll()
 
-        loadRelatedResponses(for: Auth.auth().currentUser!.uid) { success, questionOnes in
-            self.questionOnes = questionOnes
+            if let questionOne = QuestionOne(snapshot: snapshot) {
+                self.questionOnes.append(questionOne)
+            }
+
             self.tableView.reloadData()
             self.tableView.animateViews(animations: self.animations, delay: 0.3)
-        }
+            print("is\(self.questionOnes.count)")
+        })
         
         navigationItem.title = business.username
         
         questionOne.text = business.questionOne
         
-    }
-    
-    func loadRelatedResponses(for BusinessUID: String, completion: @escaping (Bool, [QuestionOne]) -> ()) {
-        
-        let ref = Database.database().reference().child(business.uuid)
-        ref.observeSingleEvent(of: .value) { snapshot in
-            
-            self.questionOnes.removeAll()
-
-            var uids = [String]()
-            for child in snapshot.children {
-                let userData = child as! DataSnapshot
-                uids.append(userData.key)
-            }
-            
-            let userRef = Database.database().reference(withPath: "studentResponses").child(self.business.uuid).child(Auth.auth().currentUser!.uid)
-            var questionOnes = [QuestionOne]()
-            var count = 0
-            if uids.count != 0 {
-                uids.forEach { uid in
-                    userRef.child(uid).observeSingleEvent(of: .value) { snapshot in
-                        let questionOne = QuestionOne(snapshot: snapshot)
-                        questionOnes.append(questionOne!)
-                        count += 1
-                        if count == uids.count {
-                            completion(true, questionOnes)
-                        }
-                    }
-                }
-            } else {
-                completion(true, questionOnes)
-            }
-        }
     }
     
 }
@@ -94,7 +78,7 @@ extension BusinessQuestionsListViewController: UITableViewDelegate {
 extension BusinessQuestionsListViewController: UITableViewDataSource {
     
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        print(questionOnes.count)
+        print("count \(questionOnes.count)")
         return questionOnes.count
     }
     
