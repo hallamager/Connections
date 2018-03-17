@@ -37,6 +37,8 @@
 		A07226651F91657F006C60BA /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07226641F91657F006C60BA /* TabsViewController.swift */; };
 		A07226671F916EC9006C60BA /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07226661F916EC9006C60BA /* LogInViewController.swift */; };
 		A07226691F916FB4006C60BA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07226681F916FB4006C60BA /* RegisterViewController.swift */; };
+		A07E3C47205DB054004158FE /* SkillsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07E3C46205DB054004158FE /* SkillsCell.swift */; };
+		A07E3C49205DB0F1004158FE /* ShowSkillsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07E3C48205DB0F1004158FE /* ShowSkillsCell.swift */; };
 		A09739E32020A4850087F7CE /* BusinessMoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09739E22020A4850087F7CE /* BusinessMoreInfoViewController.swift */; };
 		A09739E72020E6A10087F7CE /* StudentRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09739E62020E6A10087F7CE /* StudentRegisterViewController.swift */; };
 		A09739EA20210BDB0087F7CE /* StudentCreateProfileLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09739E920210BDB0087F7CE /* StudentCreateProfileLandingViewController.swift */; };
@@ -137,6 +139,8 @@
 		A07226641F91657F006C60BA /* TabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
 		A07226661F916EC9006C60BA /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		A07226681F916FB4006C60BA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A07E3C46205DB054004158FE /* SkillsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsCell.swift; sourceTree = "<group>"; };
+		A07E3C48205DB0F1004158FE /* ShowSkillsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSkillsCell.swift; sourceTree = "<group>"; };
 		A09739E22020A4850087F7CE /* BusinessMoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessMoreInfoViewController.swift; sourceTree = "<group>"; };
 		A09739E62020E6A10087F7CE /* StudentRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRegisterViewController.swift; sourceTree = "<group>"; };
 		A09739E920210BDB0087F7CE /* StudentCreateProfileLandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCreateProfileLandingViewController.swift; sourceTree = "<group>"; };
@@ -508,6 +512,8 @@
 				A0076AB1204AA94500A52500 /* StudentEditAboutViewController.swift */,
 				A03B44BD2055AF4700CFC682 /* EducationCell.swift */,
 				5FDA4C3220567FD000270C54 /* ExperienceCell.swift */,
+				A07E3C48205DB0F1004158FE /* ShowSkillsCell.swift */,
+				A07E3C46205DB054004158FE /* SkillsCell.swift */,
 			);
 			path = StudentEditProfile;
 			sourceTree = "<group>";
@@ -768,6 +774,7 @@
 				A0A6B0F42049833D00AC357F /* ShowJobsAddedViewController.swift in Sources */,
 				A0AD0710202CC1F700B77C61 /* StudentSideMenuTableViewCell.swift in Sources */,
 				A0AA81482036165C00858063 /* BusinessQuestionsViewController.swift in Sources */,
+				A07E3C49205DB0F1004158FE /* ShowSkillsCell.swift in Sources */,
 				A00748561F912189004AF885 /* AppDelegate.swift in Sources */,
 				A09739ED2021D2390087F7CE /* BusinessRegisterViewController.swift in Sources */,
 				A0AA815A20374B4100858063 /* StudentResponses.swift in Sources */,
@@ -790,6 +797,7 @@
 				A0AA81512036D6DF00858063 /* BusinessQuestions.swift in Sources */,
 				A0A6B0ED20487A2E00AC357F /* BusinessSpecialtiesViewController.swift in Sources */,
 				5FDF4FDF205C5E3400ED2A8A /* ShowQuestionOne.swift in Sources */,
+				A07E3C47205DB054004158FE /* SkillsCell.swift in Sources */,
 				5FDF4FDD205C5E2500ED2A8A /* QuestionOne.swift in Sources */,
 				A0E4B049204FEAAF002D7534 /* BusinessSwipeLocation.swift in Sources */,
 			);

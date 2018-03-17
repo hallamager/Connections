@@ -18,14 +18,16 @@ protocol StudentEditProfileViewControllerDelegate: class {
 
 class StudentEditProfileViewController: UIViewController {
     
-    let sections = ["One", "Two"]
+    let sections = ["Education", "Experience"]
     
     var students = [Student]()
     let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)")
     let refEducation = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("education")
     let refExperience = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("experience")
+    let refSkills = Database.database().reference().child("student").child(Auth.auth().currentUser!.uid).child("skills")
     var educations = [Education]()
     var experiences = [Experience]()
+    var skills = [Skills]()
     weak var delegate: StudentEditProfileViewControllerDelegate?
 
     @IBOutlet var openMenu: UIBarButtonItem!
@@ -38,6 +40,7 @@ class StudentEditProfileViewController: UIViewController {
     @IBOutlet weak var interestOne: UILabel!
     @IBOutlet weak var interestTwo: UILabel!
     @IBOutlet weak var interestThree: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +58,23 @@ class StudentEditProfileViewController: UIViewController {
                 self.interestThree.text = student.interestThree
                 self.students.append(student)
             }
+        })
+        
+        refSkills.observe(.value, with: { snapshot in
+            self.skills.removeAll()
+            for skill in snapshot.children {
+                if let data = skill as? DataSnapshot {
+                    if let skill = Skills(snapshot: data) {
+                        
+                        self.skills.append(skill)
+                    }
+                }
+            }
+            
+            self.collectionView.reloadData()
+            
+            print("is\(self.skills.count)")
+            
         })
         
         // Create a storage reference from the URL
@@ -90,6 +110,7 @@ class StudentEditProfileViewController: UIViewController {
                 }
             }
             
+            self.tableView.reloadData()
             
             print("experience \(self.experiences.count)")
             
@@ -145,10 +166,10 @@ extension StudentEditProfileViewController: UITableViewDataSource {
         return sections[section]
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let image = UIImageView(image: UIImage(named: "studentImg"))
-        return image
-    }
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let image = UIImageView(image: UIImage(named: "studentImg"))
+//        return image
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
