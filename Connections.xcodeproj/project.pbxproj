@@ -11,6 +11,8 @@
 		5F2EB8E22056CA8B00A087B8 /* BusinessQuestionThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2EB8E12056CA8B00A087B8 /* BusinessQuestionThreeViewController.swift */; };
 		5F66BED82060105C0002FB8E /* EducationTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F66BED72060105C0002FB8E /* EducationTitle.xib */; };
 		5F66BEDA2060125A0002FB8E /* ExperienceTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F66BED92060125A0002FB8E /* ExperienceTitle.xib */; };
+		5F862DAC20605B9E00008F15 /* QuestionTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F862DAB20605B9E00008F15 /* QuestionTwo.swift */; };
+		5F862DAE20605BAC00008F15 /* QuestionThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F862DAD20605BAC00008F15 /* QuestionThree.swift */; };
 		5FBF42572052911B00B93FED /* StudentRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF42562052911B00B93FED /* StudentRegister.storyboard */; };
 		5FBF4258205292CF00B93FED /* BusinessRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF425520528B5E00B93FED /* BusinessRegister.storyboard */; };
 		5FBF425A2052945D00B93FED /* StudentMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF42592052945D00B93FED /* StudentMain.storyboard */; };
@@ -111,6 +113,8 @@
 		5F2EB8E12056CA8B00A087B8 /* BusinessQuestionThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessQuestionThreeViewController.swift; sourceTree = "<group>"; };
 		5F66BED72060105C0002FB8E /* EducationTitle.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EducationTitle.xib; sourceTree = "<group>"; };
 		5F66BED92060125A0002FB8E /* ExperienceTitle.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceTitle.xib; sourceTree = "<group>"; };
+		5F862DAB20605B9E00008F15 /* QuestionTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTwo.swift; sourceTree = "<group>"; };
+		5F862DAD20605BAC00008F15 /* QuestionThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionThree.swift; sourceTree = "<group>"; };
 		5FBF425520528B5E00B93FED /* BusinessRegister.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BusinessRegister.storyboard; sourceTree = "<group>"; };
 		5FBF42562052911B00B93FED /* StudentRegister.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StudentRegister.storyboard; sourceTree = "<group>"; };
 		5FBF42592052945D00B93FED /* StudentMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StudentMain.storyboard; sourceTree = "<group>"; };
@@ -231,14 +235,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		5FDF4FDB205C5DF400ED2A8A /* Question One */ = {
+		5FDF4FDB205C5DF400ED2A8A /* Question Answers */ = {
 			isa = PBXGroup;
 			children = (
 				A0AA81522036D85200858063 /* BusinessQuestionsListViewController.swift */,
 				5FDF4FDE205C5E3400ED2A8A /* ShowQuestionOne.swift */,
 				5FDF4FDC205C5E2500ED2A8A /* QuestionOne.swift */,
+				5F862DAB20605B9E00008F15 /* QuestionTwo.swift */,
+				5F862DAD20605BAC00008F15 /* QuestionThree.swift */,
 			);
-			path = "Question One";
+			path = "Question Answers";
 			sourceTree = "<group>";
 		};
 		8420B25B5A212FEAFFC61471 /* Frameworks */ = {
@@ -456,7 +462,7 @@
 		A0AA814B2036202B00858063 /* BusinessQuestions */ = {
 			isa = PBXGroup;
 			children = (
-				5FDF4FDB205C5DF400ED2A8A /* Question One */,
+				5FDF4FDB205C5DF400ED2A8A /* Question Answers */,
 				A0AA814C2036205C00858063 /* BusinessSelectViewController.swift */,
 				5FBF425D2052A48F00B93FED /* BusinessSelectCell.swift */,
 				A0AA81502036D6DF00858063 /* BusinessQuestions.swift */,
@@ -795,6 +801,7 @@
 				A0D67A4E204066F30060AD70 /* ShowEducationAddedViewController.swift in Sources */,
 				A0A6FFBB204809940001D715 /* BusinessProfilePictureViewController.swift in Sources */,
 				A0A6B0F82049839300AC357F /* AddJobsViewController.swift in Sources */,
+				5F862DAC20605B9E00008F15 /* QuestionTwo.swift in Sources */,
 				A0D67A562040674C0060AD70 /* Education.swift in Sources */,
 				A03D99221FD313380034AE24 /* Student.swift in Sources */,
 				A0F5A6752039AE5A004E4D3E /* StudentProfilePictureViewController.swift in Sources */,
@@ -802,6 +809,7 @@
 				A0F529E61FD1B10E00B5B93C /* UIButtonStyles.swift in Sources */,
 				A0A6B0EF20487A3A00AC357F /* Specialties.swift in Sources */,
 				5FDA4C3320567FD000270C54 /* ExperienceCell.swift in Sources */,
+				5F862DAE20605BAC00008F15 /* QuestionThree.swift in Sources */,
 				A0AA81512036D6DF00858063 /* BusinessQuestions.swift in Sources */,
 				A0A6B0ED20487A2E00AC357F /* BusinessSpecialtiesViewController.swift in Sources */,
 				5FDF4FDF205C5E3400ED2A8A /* ShowQuestionOne.swift in Sources */,

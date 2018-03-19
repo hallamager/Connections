@@ -1,23 +1,23 @@
 //
-//  QuestionOne.swift
+//  QuestionThree.swift
 //  Connections
 //
-//  Created by Hallam Ager (i7231033) on 16/03/2018.
+//  Created by Hallam Ager (i7231033) on 19/03/2018.
 //  Copyright © 2018 Hallam John Ager. All rights reserved.
 //
 
 import Foundation
 import Firebase
 
-class QuestionOne {
+class QuestionThree {
     
     var uuid: String?
-    let questionOne: String
+    let questionThree: String
     
     init?(snapshot: DataSnapshot) {
         if let snapshotData = snapshot.value as? [String: Any] {
             uuid = snapshot.key
-            questionOne = snapshotData["Question One Answer"] as! String
+            questionThree = snapshotData["Question Three Answer"] as! String
         } else {
             return nil
         }
@@ -25,11 +25,13 @@ class QuestionOne {
     }
     
     init(data: [String: Any]) {
-        questionOne = data["Question One Answer"] as! String
+        questionThree = data["Question Three Answer"] as! String
     }
     
-    func toDict() -> [String: Any] {
-        return ["Question One Answer": questionOne]
+    
+    func toDict3() -> [String: Any] {
+        return ["Question Three Answer": questionThree]
     }
+    
     
 }
