@@ -52,16 +52,25 @@ class BusinessQuestionsListViewController: UIViewController {
     
     func questionText() -> String {
         ///do some if stuff...
-        return business.questionOne
+        if questionNumber == 1 {
+            return business.questionOne
+        }
+        
+        if questionNumber == 2 {
+            return business.questionTwo
+        } else {
+            return business.questionThree
+        }
+        
     }
     
 }
 
 extension BusinessQuestionsListViewController: UITableViewDelegate {
     
-//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UITableViewAutomaticDimension
-//    }
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
     
 }
 
@@ -75,12 +84,12 @@ extension BusinessQuestionsListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "questionOne") as! ShowQuestionOne
         
 //        let questionOne = questionOnes[indexPath.row]
-//        cell.questionOne?.text = questionOne.questionOne
-//
-//        cell.questionOne.translatesAutoresizingMaskIntoConstraints = true
-//        cell.questionOne.sizeToFit()
-//        cell.questionOne.isScrollEnabled = false
-//        cell.questionOne.layer.cornerRadius = 10.0
+        cell.questionOne?.text = questionOne.questionOne
+
+        cell.questionOne.translatesAutoresizingMaskIntoConstraints = true
+        cell.questionOne.sizeToFit()
+        cell.questionOne.isScrollEnabled = false
+        cell.questionOne.layer.cornerRadius = 10.0
         
         return cell
     }
