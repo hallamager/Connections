@@ -10,12 +10,6 @@ import Foundation
 import UIKit
 import Firebase
 
-protocol StudentEditProfileViewControllerDelegate: class {
-    
-    func sliderChanged(text:String?)
-    
-}
-
 class StudentEditProfileViewController: UIViewController {
     
     let sections = ["Education", "Experience"]
@@ -28,7 +22,6 @@ class StudentEditProfileViewController: UIViewController {
     var educations = [Education]()
     var experiences = [Experience]()
     var skills = [Skills]()
-    weak var delegate: StudentEditProfileViewControllerDelegate?
 
     @IBOutlet var openMenu: UIBarButtonItem!
     @IBOutlet var userUsername: UILabel!
@@ -86,7 +79,10 @@ class StudentEditProfileViewController: UIViewController {
             self.profilePic.image = pic
         }
         
-        refEducation.observeSingleEvent(of: .value, with: { snapshot in
+        refEducation.observe(.value, with: { snapshot in
+            
+            self.educations.removeAll()
+            
             for education in snapshot.children {
                 if let data = education as? DataSnapshot {
                     if let education = Education(snapshot: data) {
@@ -101,7 +97,10 @@ class StudentEditProfileViewController: UIViewController {
             
         })
         
-        refExperience.observeSingleEvent(of: .value, with: { snapshot in
+        refExperience.observe(.value, with: { snapshot in
+            
+            self.experiences.removeAll()
+
             for experience in snapshot.children {
                 if let data = experience as? DataSnapshot {
                     if let experience = Experience(snapshot: data) {
@@ -131,9 +130,26 @@ class StudentEditProfileViewController: UIViewController {
         
         let currentValue = Int(slider.value)
         distanceSelected.text = "\(currentValue)"
-        delegate?.sliderChanged(text: distanceSelected.text)
         ref.updateChildValues(["Selected Radius": self.distanceSelected.text!])
         
+    }
+    
+}
+
+extension StudentEditProfileViewController: EditExperienceControllerDelegate {
+    
+    func didEditExperience(_ experience: Experience) {
+        self.experiences.append(experience)
+        self.tableView.reloadData()
+    }
+    
+}
+
+extension StudentEditProfileViewController: EditEducationControllerDelegate {
+    
+    func didEditEducation(_ education: Education) {
+        self.educations.append(education)
+        self.tableView.reloadData()
     }
     
 }
@@ -144,7 +160,27 @@ extension StudentEditProfileViewController: UITableViewDelegate {
         return 130
     }
     
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        if indexPath.section == 0 {
+            let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
+            let EditEducationViewController:EditEducationViewController = storyboard.instantiateViewController(withIdentifier: "EditEducationViewController") as! EditEducationViewController
+            EditEducationViewController.education = educations[indexPath.row]
+            self.present(EditEducationViewController, animated: true, completion: nil)
+        }
+        
+        if indexPath.section == 1 {
+            let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
+            let EditExperienceViewController:EditExperienceViewController = storyboard.instantiateViewController(withIdentifier: "EditExperienceViewController") as! EditExperienceViewController
+            EditExperienceViewController.experience = experiences[indexPath.row]
+            self.present(EditExperienceViewController, animated: true, completion: nil)
+        }
+        
+    }
+
 }
+
 
 extension StudentEditProfileViewController: UITableViewDataSource {
     

@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 import Firebase
 
+protocol EditExperienceControllerDelegate: class {
+    func didEditExperience(_ experience: Experience)
+}
+
 class EditExperienceViewController: UIViewController, UITextFieldDelegate {
     
     var experience: Experience!
@@ -21,6 +25,8 @@ class EditExperienceViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var jobFromDate: UITextField!
     @IBOutlet var jobToDate: UITextField!
     @IBOutlet var jobDescription: UITextView!
+    
+    weak var delegate: EditExperienceControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,11 +60,12 @@ class EditExperienceViewController: UIViewController, UITextFieldDelegate {
         
         let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("experience").child(experience.uuid!)
         
-        ref.updateChildValues(["Title": self.jobTitle.text!, "Company": self.jobCompany.text!, "Location": self.jobCity.text!, "From Date": self.jobFromDate.text!, "To Date": self.jobToDate.text!, "Description": self.jobDescription.text!])
+        let ex = Experience(data: ["Title": self.jobTitle.text!, "Company": self.jobCompany.text!, "Location": self.jobCity.text!, "From Date": self.jobFromDate.text!, "To Date": self.jobToDate.text!, "Description": self.jobDescription.text!])
         
-        let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
-        let ShowExperienceAddedViewController:ShowExperienceAddedViewController = storyboard.instantiateViewController(withIdentifier: "ShowExperienceAddedViewController") as! ShowExperienceAddedViewController
-        self.present(ShowExperienceAddedViewController, animated: true, completion: nil)
+        ref.updateChildValues(ex.toDict())
+        
+        delegate?.didEditExperience(ex)
+        dismiss(animated: true, completion: nil)
         
     }
     

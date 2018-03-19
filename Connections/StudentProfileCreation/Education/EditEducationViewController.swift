@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 import Firebase
 
+protocol EditEducationControllerDelegate: class {
+    func didEditEducation(_ education: Education)
+}
+
 class EditEducationViewController: UIViewController, UITextFieldDelegate {
     
     var education: Education!
@@ -21,6 +25,8 @@ class EditEducationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var schoolFromDate: UITextField!
     @IBOutlet var schoolToDate: UITextField!
     @IBOutlet var grades: UITextField!
+    
+    weak var delegate: EditEducationControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,11 +61,12 @@ class EditEducationViewController: UIViewController, UITextFieldDelegate {
         
         let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("education").child(education.uuid!)
         
-        ref.updateChildValues(["School": self.school.text!, "Qualification Type": self.qType.text!, "Studied": self.studied.text!, "From Date": self.schoolFromDate.text!, "To Date": self.schoolToDate.text!, "Grades": self.grades.text!])
+        let ex = Education(data: ["School": self.school.text!, "Qualification Type": self.qType.text!, "Studied": self.studied.text!, "From Date": self.schoolFromDate.text!, "To Date": self.schoolToDate.text!, "Grades": self.grades.text!])
         
-        let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
-        let ShowEducationAddedViewController:ShowEducationAddedViewController = storyboard.instantiateViewController(withIdentifier: "ShowEducationAddedViewController") as! ShowEducationAddedViewController
-        self.present(ShowEducationAddedViewController, animated: true, completion: nil)
+        ref.updateChildValues(ex.toDict())
+        
+        delegate?.didEditEducation(ex)
+        dismiss(animated: true, completion: nil)
         
     }
     

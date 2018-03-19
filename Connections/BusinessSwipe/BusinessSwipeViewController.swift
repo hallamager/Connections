@@ -13,7 +13,7 @@ import FirebaseAuth
 import FirebaseDatabase
 import GeoFire
 
-class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate, StudentEditProfileViewControllerDelegate {
+class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate {
     
     func sliderChanged(text: String?) {
         print(text!)
