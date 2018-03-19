@@ -1913,8 +1913,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TD1-NL-I9K">
-                                                <rect key="frame" x="0.0" y="898" width="414" height="294"/>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TD1-NL-I9K">
+                                                <rect key="frame" x="0.0" y="898" width="414" height="317"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
@@ -1926,7 +1926,7 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fdm-zb-D2Z" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                                                    <rect key="frame" x="8" y="17" width="398" height="80"/>
+                                                                    <rect key="frame" x="8" y="42" width="398" height="80"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <userDefinedRuntimeAttributes>
@@ -1937,7 +1937,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
                                                                 <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f1S-B5-uve" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                                                    <rect key="frame" x="8" y="17" width="398" height="80"/>
+                                                                    <rect key="frame" x="8" y="42" width="398" height="80"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                     <subviews>
                                                                         <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7yc-0f-Dww">
@@ -1974,6 +1974,39 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
+                                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="imT-Cu-tuy" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                                    <rect key="frame" x="381" y="8" width="25" height="25"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                                                                    <subviews>
+                                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Al2-O2-pKt" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                                            <autoresizingMask key="autoresizingMask"/>
+                                                                            <state key="normal">
+                                                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </state>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                    <real key="value" value="5"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
+                                                                            <connections>
+                                                                                <action selector="addEducation:" destination="zc4-Iz-BnY" eventType="touchUpInside" id="P08-7J-JMF"/>
+                                                                                <action selector="addExperience:" destination="zc4-Iz-BnY" eventType="touchUpInside" id="vje-hk-I8U"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Edit" translatesAutoresizingMaskIntoConstraints="NO" id="GD6-dG-3nn">
+                                                                            <rect key="frame" x="5" y="5" width="15" height="15"/>
+                                                                            <autoresizingMask key="autoresizingMask"/>
+                                                                        </imageView>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
                                                             </subviews>
                                                         </tableViewCellContentView>
                                                         <connections>
@@ -1989,7 +2022,7 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YsC-Fs-t7z" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                                                    <rect key="frame" x="8" y="17" width="398" height="80"/>
+                                                                    <rect key="frame" x="8" y="42" width="398" height="80"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <userDefinedRuntimeAttributes>
@@ -2000,7 +2033,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
                                                                 <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FOu-zL-Iq6" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                                                    <rect key="frame" x="8" y="17" width="398" height="80"/>
+                                                                    <rect key="frame" x="8" y="42" width="398" height="80"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                     <subviews>
                                                                         <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mqm-jg-sAP">
@@ -2037,6 +2070,38 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
+                                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pZM-ih-gty" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                                    <rect key="frame" x="381" y="8" width="25" height="25"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                                                                    <subviews>
+                                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8A-eu-Lq7" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                                            <autoresizingMask key="autoresizingMask"/>
+                                                                            <state key="normal">
+                                                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            </state>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                    <real key="value" value="5"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
+                                                                            <connections>
+                                                                                <action selector="addExperience:" destination="zc4-Iz-BnY" eventType="touchUpInside" id="6TT-at-8FJ"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Edit" translatesAutoresizingMaskIntoConstraints="NO" id="cNy-qj-Xv5">
+                                                                            <rect key="frame" x="5" y="5" width="15" height="15"/>
+                                                                            <autoresizingMask key="autoresizingMask"/>
+                                                                        </imageView>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
                                                             </subviews>
                                                         </tableViewCellContentView>
                                                         <connections>
@@ -2050,8 +2115,15 @@
                                                     <outlet property="delegate" destination="zc4-Iz-BnY" id="dJW-p0-tEU"/>
                                                 </connections>
                                             </tableView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skills" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0f-sC-FHN">
+                                                <rect key="frame" x="26" y="1267" width="158" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="63w-2J-7aF">
-                                                <rect key="frame" x="0.0" y="1231" width="414" height="140"/>
+                                                <rect key="frame" x="0.0" y="1296" width="414" height="140"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="15" minimumInteritemSpacing="15" id="DYS-3s-LnG">
@@ -2112,13 +2184,6 @@
                                                     <outlet property="delegate" destination="zc4-Iz-BnY" id="eNW-RK-VVK"/>
                                                 </connections>
                                             </collectionView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skills" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0f-sC-FHN">
-                                                <rect key="frame" x="26" y="1202" width="158" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="414" id="k5W-hQ-CZJ"/>

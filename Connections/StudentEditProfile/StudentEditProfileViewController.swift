@@ -134,6 +134,22 @@ class StudentEditProfileViewController: UIViewController {
         
     }
     
+    @IBAction func addExperience(_ sender: Any) {
+        
+        let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
+        let AddExperienceViewController:AddExperienceViewController = storyboard.instantiateViewController(withIdentifier: "AddExperienceViewController") as! AddExperienceViewController
+        self.present(AddExperienceViewController, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func addEducation(_ sender: Any) {
+        
+        let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
+        let AddEducationViewController:AddEducationViewController = storyboard.instantiateViewController(withIdentifier: "AddEducationViewController") as! AddEducationViewController
+        self.present(AddEducationViewController, animated: true, completion: nil)
+        
+    }
+    
 }
 
 extension StudentEditProfileViewController: EditExperienceControllerDelegate {
@@ -148,6 +164,24 @@ extension StudentEditProfileViewController: EditExperienceControllerDelegate {
 extension StudentEditProfileViewController: EditEducationControllerDelegate {
     
     func didEditEducation(_ education: Education) {
+        self.educations.append(education)
+        self.tableView.reloadData()
+    }
+    
+}
+
+extension StudentEditProfileViewController: AddExperienceControllerDelegate {
+    
+    func didAddExperience(_ experience: Experience) {
+        self.experiences.append(experience)
+        self.tableView.reloadData()
+    }
+    
+}
+
+extension StudentEditProfileViewController: AddEducationControllerDelegate {
+    
+    func didAddEducation(_ education: Education) {
         self.educations.append(education)
         self.tableView.reloadData()
     }

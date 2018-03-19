@@ -52,12 +52,9 @@ class AddEducationViewController: UIViewController, UITextFieldDelegate {
     @IBAction func confirmBtn(_ sender: Any) {
         
         let ex = Education(data: ["School": self.school.text!, "Qualification Type": self.qType.text!, "Studied": self.studied.text!, "From Date": self.schoolFromDate.text!, "To Date": self.schoolToDate.text!, "Grades": self.grades.text!])
-        //        delegate?.didAddExperience(ex)
-        //        dismiss(animated: true, completion: nil)
+        delegate?.didAddEducation(ex)
+        dismiss(animated: true, completion: nil)
         ref.childByAutoId().setValue(ex.toDict())
-        let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
-        let ShowEducationAddedViewController:ShowEducationAddedViewController = storyboard.instantiateViewController(withIdentifier: "ShowEducationAddedViewController") as! ShowEducationAddedViewController
-        self.present(ShowEducationAddedViewController, animated: true, completion: nil)
         
     }
     
