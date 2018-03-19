@@ -14,8 +14,8 @@ import ViewAnimator
 class BusinessQuestionsListViewController: UIViewController {
     
     var business: Business!
-    var questionOnes = [QuestionOne]()
-    var businesses = [Business]()
+    var questionNumber: Int!
+ 
     let ref = Database.database().reference().child("studentResponses")
     let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
     
@@ -39,24 +39,20 @@ class BusinessQuestionsListViewController: UIViewController {
         
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "Avenir Next", size: 17)!]
         
-        let refAnswer = Database.database().reference().child("studentResponses/\(business.uuid)").child(Auth.auth().currentUser!.uid)
+
         
-        refAnswer.observe(.value, with: { snapshot in
-            self.questionOnes.removeAll()
-
-            if let questionOne = QuestionOne(snapshot: snapshot) {
-                self.questionOnes.append(questionOne)
-            }
-
-            self.tableView.reloadData()
-            self.tableView.animateViews(animations: self.animations, delay: 0.3)
-            print("is\(self.questionOnes.count)")
-        })
+        
+        
         
         navigationItem.title = business.username
         
-        questionOne.text = business.questionOne
+        questionOne.text = questionText()
         
+    }
+    
+    func questionText() -> String {
+        ///do some if stuff...
+        return business.questionOne
     }
     
 }
@@ -72,20 +68,19 @@ extension BusinessQuestionsListViewController: UITableViewDelegate {
 extension BusinessQuestionsListViewController: UITableViewDataSource {
     
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        print("count \(questionOnes.count)")
-        return questionOnes.count
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "questionOne") as! ShowQuestionOne
         
-        let questionOne = questionOnes[indexPath.row]
-        cell.questionOne?.text = questionOne.questionOne
-        
-        cell.questionOne.translatesAutoresizingMaskIntoConstraints = true
-        cell.questionOne.sizeToFit()
-        cell.questionOne.isScrollEnabled = false
-        cell.questionOne.layer.cornerRadius = 10.0
+//        let questionOne = questionOnes[indexPath.row]
+//        cell.questionOne?.text = questionOne.questionOne
+//
+//        cell.questionOne.translatesAutoresizingMaskIntoConstraints = true
+//        cell.questionOne.sizeToFit()
+//        cell.questionOne.isScrollEnabled = false
+//        cell.questionOne.layer.cornerRadius = 10.0
         
         return cell
     }

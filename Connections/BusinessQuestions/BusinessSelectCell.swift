@@ -10,8 +10,16 @@ import Foundation
 import FoldingCell
 import UIKit
 
+
+protocol BusinessSelectCellDelegate: class {
+    func selected(question: Int, for business: Business)
+}
+
+
 class BusinessSelectCell: FoldingCell {
     
+    var business: Business!
+    weak var delegate: BusinessSelectCellDelegate?
     @IBOutlet var businessSelect: UILabel!
     @IBOutlet var businessIndustry: UILabel!
     @IBOutlet var businessImg: UIImageView!
@@ -19,6 +27,8 @@ class BusinessSelectCell: FoldingCell {
     @IBOutlet weak var foldedCompanyIndustry: UILabel!
     @IBOutlet weak var foldedBusinessImg: UIImageView!
     @IBOutlet weak var questionOne: UILabel!
+    
+    @IBOutlet var buttons: [UIButton]!
     
     //Defines sides, shadows and colour of the cells for the viewcontroller.
     override func awakeFromNib() {
@@ -41,6 +51,10 @@ class BusinessSelectCell: FoldingCell {
         // durations count equal it itemCount
         let durations = [0.20, 0.20, 0.20] // timing animation for each view
         return durations[itemIndex]
+    }
+    
+    @IBAction func questionSelected(_ sender: UIButton) {
+        delegate?.selected(question: sender.tag, for: business)
     }
     
 }

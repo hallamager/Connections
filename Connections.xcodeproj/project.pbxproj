@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5F2EB8E02056CA7600A087B8 /* BusinessQuestionTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2EB8DF2056CA7600A087B8 /* BusinessQuestionTwoViewController.swift */; };
 		5F2EB8E22056CA8B00A087B8 /* BusinessQuestionThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2EB8E12056CA8B00A087B8 /* BusinessQuestionThreeViewController.swift */; };
+		5F66BED82060105C0002FB8E /* EducationTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F66BED72060105C0002FB8E /* EducationTitle.xib */; };
+		5F66BEDA2060125A0002FB8E /* ExperienceTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F66BED92060125A0002FB8E /* ExperienceTitle.xib */; };
 		5FBF42572052911B00B93FED /* StudentRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF42562052911B00B93FED /* StudentRegister.storyboard */; };
 		5FBF4258205292CF00B93FED /* BusinessRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF425520528B5E00B93FED /* BusinessRegister.storyboard */; };
 		5FBF425A2052945D00B93FED /* StudentMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FBF42592052945D00B93FED /* StudentMain.storyboard */; };
@@ -107,6 +109,8 @@
 		599FF97567B39B949FCABD9E /* Pods_Connections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Connections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F2EB8DF2056CA7600A087B8 /* BusinessQuestionTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessQuestionTwoViewController.swift; sourceTree = "<group>"; };
 		5F2EB8E12056CA8B00A087B8 /* BusinessQuestionThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessQuestionThreeViewController.swift; sourceTree = "<group>"; };
+		5F66BED72060105C0002FB8E /* EducationTitle.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EducationTitle.xib; sourceTree = "<group>"; };
+		5F66BED92060125A0002FB8E /* ExperienceTitle.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceTitle.xib; sourceTree = "<group>"; };
 		5FBF425520528B5E00B93FED /* BusinessRegister.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BusinessRegister.storyboard; sourceTree = "<group>"; };
 		5FBF42562052911B00B93FED /* StudentRegister.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StudentRegister.storyboard; sourceTree = "<group>"; };
 		5FBF42592052945D00B93FED /* StudentMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StudentMain.storyboard; sourceTree = "<group>"; };
@@ -514,6 +518,8 @@
 				5FDA4C3220567FD000270C54 /* ExperienceCell.swift */,
 				A07E3C48205DB0F1004158FE /* ShowSkillsCell.swift */,
 				A07E3C46205DB054004158FE /* SkillsCell.swift */,
+				5F66BED72060105C0002FB8E /* EducationTitle.xib */,
+				5F66BED92060125A0002FB8E /* ExperienceTitle.xib */,
 			);
 			path = StudentEditProfile;
 			sourceTree = "<group>";
@@ -629,6 +635,8 @@
 				A0F529E01FD1A1A600B5B93C /* GoogleService-Info.plist in Resources */,
 				5FBF42572052911B00B93FED /* StudentRegister.storyboard in Resources */,
 				5FBF425A2052945D00B93FED /* StudentMain.storyboard in Resources */,
+				5F66BEDA2060125A0002FB8E /* ExperienceTitle.xib in Resources */,
+				5F66BED82060105C0002FB8E /* EducationTitle.xib in Resources */,
 				A007485D1F912189004AF885 /* Assets.xcassets in Resources */,
 				A007485B1F912189004AF885 /* Main.storyboard in Resources */,
 			);

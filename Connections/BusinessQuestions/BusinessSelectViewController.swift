@@ -86,6 +86,15 @@ class BusinessSelectViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let sender = sender as? (tag: Int, business: Business) else { return }
+        
+        let vc = segue.destination as! BusinessQuestionsListViewController
+        vc.business = sender.business
+        vc.questionNumber = sender.tag
+        
+    }
+    
 }
 
 extension BusinessSelectViewController: UITableViewDelegate {
@@ -135,17 +144,11 @@ extension BusinessSelectViewController: UITableViewDelegate {
         if cell.isAnimating() {
             return
         }
-        
-        let Storyboard = UIStoryboard(name: "BusinessMain", bundle: nil)
-        let vc = Storyboard.instantiateViewController(withIdentifier: "BusinessQuestionsListViewController") as! BusinessQuestionsListViewController
-        vc.business = businesses[indexPath.row]
-        self.navigationController?.pushViewController(vc, animated: true)
-        
-//        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//            let business = businesses[indexPath.row]
-//            let vc = segue.destination as! BusinessQuestionsListViewController
-//            vc.business = business
-//        }
+//        
+//        let Storyboard = UIStoryboard(name: "BusinessMain", bundle: nil)
+//        let vc = Storyboard.instantiateViewController(withIdentifier: "BusinessQuestionsListViewController") as! BusinessQuestionsListViewController
+//        vc.business = businesses[indexPath.row]
+//        self.navigationController?.pushViewController(vc, animated: true)
         
         var duration = 0.0
         let cellIsCollapsed = cellHeights[indexPath.row] == kCloseCellHeight
@@ -178,14 +181,15 @@ extension BusinessSelectViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! FoldingCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! BusinessSelectCell
         
         let durations: [TimeInterval] = [0.26, 0.2, 0.2]
         cell.durationsForExpandedState = durations
         cell.durationsForCollapsedState = durations
         
         let business = businesses[indexPath.row]
-        
+        cell.business = business
+        cell.delegate = self 
         print(business.username)
         
         return cell
@@ -193,3 +197,15 @@ extension BusinessSelectViewController: UITableViewDataSource{
     }
     
 }
+
+extension BusinessSelectViewController: BusinessSelectCellDelegate {
+    
+    func selected(question: Int, for business: Business) {
+        print(question)
+        print(business)
+        
+        performSegue(withIdentifier: "QuestionSelected", sender: (tag: question, business: business))
+    }
+    
+}
+
