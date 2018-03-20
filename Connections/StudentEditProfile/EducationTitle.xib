@@ -43,7 +43,6 @@
                             </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="addEducation:" destination="-1" eventType="touchUpInside" id="fiI-4z-Gvc"/>
-                                <action selector="addEducationBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="2iA-cx-s9l"/>
                             </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Edit" translatesAutoresizingMaskIntoConstraints="NO" id="uFt-eh-VWq">

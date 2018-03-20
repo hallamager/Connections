@@ -138,7 +138,7 @@ class StudentEditProfileViewController: UIViewController {
         
         let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
         let AddEducationViewController:AddEducationViewController = storyboard.instantiateViewController(withIdentifier: "AddEducationViewController") as! AddEducationViewController
-        self.present(AddEducationViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(AddEducationViewController, animated: true)
         
     }
     
@@ -146,8 +146,16 @@ class StudentEditProfileViewController: UIViewController {
         
         let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
         let AddExperienceViewController:AddExperienceViewController = storyboard.instantiateViewController(withIdentifier: "AddExperienceViewController") as! AddExperienceViewController
-        self.present(AddExperienceViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(AddExperienceViewController, animated: true)
         
+    }
+    
+    @IBAction func addSkills(_ sender: Any) {
+        
+        let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
+        let ShowSkillsViewController:ShowSkillsViewController = storyboard.instantiateViewController(withIdentifier: "ShowSkillsViewController") as! ShowSkillsViewController
+        self.navigationController?.pushViewController(ShowSkillsViewController, animated: true)
+
     }
     
 }
