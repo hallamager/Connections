@@ -124,6 +124,8 @@ extension BusinessSelectViewController: UITableViewDelegate {
         cell.foldedCompanyName?.text = business.username
         cell.foldedCompanyIndustry?.text = business.industry
         cell.questionOne?.text = business.questionOne
+        cell.questionTwo?.text = business.questionTwo
+        cell.questionThree?.text = business.questionThree
         
         // Create a storage reference from the URL
         let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(business.uuid)

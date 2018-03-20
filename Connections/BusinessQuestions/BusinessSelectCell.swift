@@ -27,6 +27,8 @@ class BusinessSelectCell: FoldingCell {
     @IBOutlet weak var foldedCompanyIndustry: UILabel!
     @IBOutlet weak var foldedBusinessImg: UIImageView!
     @IBOutlet weak var questionOne: UILabel!
+    @IBOutlet weak var questionTwo: UILabel!
+    @IBOutlet weak var questionThree: UILabel!
     
     @IBOutlet var buttons: [UIButton]!
     

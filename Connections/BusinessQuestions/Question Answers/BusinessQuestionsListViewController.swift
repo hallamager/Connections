@@ -25,6 +25,7 @@ class BusinessQuestionsListViewController: UIViewController {
     @IBOutlet var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var questionOne: UITextView!
+    @IBOutlet weak var questionTitle: UILabel!
     
     @IBAction func nextQuestionButton(_ sender: Any) {
         
@@ -51,6 +52,18 @@ class BusinessQuestionsListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if questionNumber == 1 {
+            questionTitle.text = "Question One"
+        }
+        
+        if questionNumber == 2 {
+            questionTitle.text = "Question Two"
+        }
+        
+        if questionNumber == 3 {
+            questionTitle.text = "Question Three"
+        }
         
         let refAnswer = Database.database().reference().child("studentResponses/\(business.uuid)").child(Auth.auth().currentUser!.uid)
         
@@ -131,7 +144,17 @@ extension BusinessQuestionsListViewController: UITableViewDelegate {
 extension BusinessQuestionsListViewController: UITableViewDataSource {
 
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return 1
+        
+        if questionNumber == 1 {
+            return questionOnes.count
+        }
+        
+        if questionNumber == 2 {
+            return questionTwos.count
+        } else {
+            return questionThrees.count
+        }
+        
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
