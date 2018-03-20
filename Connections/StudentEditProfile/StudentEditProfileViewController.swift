@@ -134,19 +134,19 @@ class StudentEditProfileViewController: UIViewController {
         
     }
     
-    @IBAction func addExperience(_ sender: Any) {
-        
-        let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
-        let AddExperienceViewController:AddExperienceViewController = storyboard.instantiateViewController(withIdentifier: "AddExperienceViewController") as! AddExperienceViewController
-        self.present(AddExperienceViewController, animated: true, completion: nil)
-        
-    }
-    
     @IBAction func addEducation(_ sender: Any) {
         
         let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
         let AddEducationViewController:AddEducationViewController = storyboard.instantiateViewController(withIdentifier: "AddEducationViewController") as! AddEducationViewController
         self.present(AddEducationViewController, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func addExperience(_ sender: Any) {
+        
+        let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
+        let AddExperienceViewController:AddExperienceViewController = storyboard.instantiateViewController(withIdentifier: "AddExperienceViewController") as! AddExperienceViewController
+        self.present(AddExperienceViewController, animated: true, completion: nil)
         
     }
     
