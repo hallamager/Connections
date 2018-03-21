@@ -21,12 +21,13 @@ class BusinessShowJobsViewController: UIViewController {
     var businesses = [Business]()
     var jobs = [Job]()
     let kCloseCellHeight: CGFloat = 130
-    let kOpenCellHeight: CGFloat = 340
+    let kOpenCellHeight: CGFloat = 405
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
     let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
     
     var business: Business!
+    var job: Job!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,41 +64,20 @@ class BusinessShowJobsViewController: UIViewController {
         
     }
     
-//    func loadRelatedBusinesses(for studentUID: String, completion: @escaping (Bool, [Business]) -> ()) {
-//
-//        let ref = Database.database().reference(withPath: "matches/" + Auth.auth().currentUser!.uid)
-//        ref.observeSingleEvent(of: .value) { snapshot in
-//
-//            var uids = [String]()
-//            for child in snapshot.children {
-//                let userData = child as! DataSnapshot
-//                uids.append(userData.key)
-//            }
-//
-//            let userRef = Database.database().reference(withPath: "business")
-//            var businesses = [Business]()
-//            var count = 0
-//            if uids.count != 0 {
-//                uids.forEach { uid in
-//                    userRef.child(uid).observeSingleEvent(of: .value) { snapshot in
-//                        let business = Business(snapshot: snapshot)
-//                        businesses.append(business!)
-//                        count += 1
-//                        if count == uids.count {
-//                            completion(true, businesses)
-//                        }
-//                    }
-//                }
-//            } else {
-//                completion(true, businesses)
-//            }
-//        }
-//    }
-    
     private func setup() {
         cellHeights = Array(repeating: kCloseCellHeight, count: kRowsCount)
         tableView.estimatedRowHeight = kCloseCellHeight
         tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    @IBAction func applyBtn(_ sender: Any) {
+        
+        let refApply = Database.database().reference().child("jobsApplied").child(Auth.auth().currentUser!.uid).child(business.uuid)
+        
+        let apply = [job.uuid!: true,]
+        
+        refApply.updateChildValues(apply)
+                
     }
     
 }
@@ -125,6 +105,23 @@ extension BusinessShowJobsViewController: UITableViewDelegate {
         }
         
         cell.businessName?.text = job.title
+        cell.employmentType?.text = job.employmentType
+        cell.foldedBusinessName?.text = job.title
+        cell.foldedEmploymentType?.text = job.employmentType
+        cell.jobDescription?.text = job.description
+        cell.jobSalary?.text = job.salary
+        cell.jobLocation?.text = job.location
+        cell.jobSkillsRequired?.text = job.skillsRequired
+        
+        // Create a storage reference from the URL
+        let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(business.uuid)
+        // Download the data, assuming a max size of 1MB (you can change this as necessary)
+        storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+            // Create a UIImage, add it to the array
+            let pic = UIImage(data: data!)
+            cell.businessImg.image = pic
+            cell.foldedBusinessImg.image = pic
+        }
         
     }
     

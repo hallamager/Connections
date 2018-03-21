@@ -14,6 +14,15 @@ import UIKit
 class SelectJobCell: FoldingCell {
     
     @IBOutlet var businessName: UILabel!
+    @IBOutlet weak var businessImg: UIImageView!
+    @IBOutlet weak var employmentType: UILabel!
+    @IBOutlet weak var foldedBusinessImg: UIImageView!
+    @IBOutlet weak var foldedBusinessName: UILabel!
+    @IBOutlet weak var foldedEmploymentType: UILabel!
+    @IBOutlet weak var jobDescription: UILabel!
+    @IBOutlet weak var jobSalary: UILabel!
+    @IBOutlet weak var jobLocation: UILabel!
+    @IBOutlet weak var jobSkillsRequired: UILabel!
     
     //Defines sides, shadows and colour of the cells for the viewcontroller.
     override func awakeFromNib() {

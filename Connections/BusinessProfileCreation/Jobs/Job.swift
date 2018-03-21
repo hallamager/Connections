@@ -15,6 +15,10 @@ class Job {
     let title: String
     let description: String
     let employmentType: String
+    let salary: String
+    let skillsRequired: String
+    let location: String
+    
     //traits+skills
     
     init?(snapshot: DataSnapshot) {
@@ -23,6 +27,9 @@ class Job {
             title = snapshotData["Title"] as! String
             employmentType = snapshotData["Employment Type"] as! String
             description = snapshotData["Description"] as! String
+            salary = snapshotData["Salary"] as! String
+            skillsRequired = snapshotData["Skills Required"] as! String
+            location = snapshotData["Location"] as! String
         } else {
             return nil
         }
@@ -33,10 +40,13 @@ class Job {
         title = data["Title"] as! String
         employmentType = data["Employment Type"] as! String
         description = data["Description"] as! String
+        salary = data["Salary"] as! String
+        skillsRequired = data["Skills Required"] as! String
+        location = data["Location"] as! String
     }
     
     func toDict() -> [String: Any] {
-        return ["Title": title, "Employment Type": employmentType, "Description": description]
+        return ["Title": title, "Employment Type": employmentType, "Description": description, "Salary": salary, "Skills Required": skillsRequired, "Location": location]
     }
     
 }
