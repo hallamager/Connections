@@ -22,6 +22,7 @@ class StudentEditProfileViewController: UIViewController {
     var educations = [Education]()
     var experiences = [Experience]()
     var skills = [Skills]()
+    var cellHeight = [CGFloat]()
 
     @IBOutlet var openMenu: UIBarButtonItem!
     @IBOutlet var userUsername: UILabel!
@@ -34,6 +35,7 @@ class StudentEditProfileViewController: UIViewController {
     @IBOutlet weak var interestTwo: UILabel!
     @IBOutlet weak var interestThree: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,6 +116,9 @@ class StudentEditProfileViewController: UIViewController {
             print("experience \(self.experiences.count)")
             
         })
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140
         
         //open menu with tab bar button
         openMenu.target = self.revealViewController()
@@ -198,8 +203,8 @@ extension StudentEditProfileViewController: AddEducationControllerDelegate {
 
 extension StudentEditProfileViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 130
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
 

@@ -49,6 +49,8 @@
 		A09739ED2021D2390087F7CE /* BusinessRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09739EC2021D2390087F7CE /* BusinessRegisterViewController.swift */; };
 		A0973A132024B52D0087F7CE /* BusinessProfileCreationLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0973A122024B52D0087F7CE /* BusinessProfileCreationLandingViewController.swift */; };
 		A0973A15202503F50087F7CE /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0973A14202503F50087F7CE /* Business.swift */; };
+		A09A82DE206267D20006E44A /* BusinessShowJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09A82DD206267D20006E44A /* BusinessShowJobsViewController.swift */; };
+		A09A82E120626D7B0006E44A /* SelectJobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09A82E020626D7B0006E44A /* SelectJobCell.swift */; };
 		A09F6BA02027512B00D98332 /* StudentPersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09F6B9F2027512B00D98332 /* StudentPersonalViewController.swift */; };
 		A09F6BA22027534F00D98332 /* BusinessAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09F6BA12027534F00D98332 /* BusinessAboutViewController.swift */; };
 		A0A6B0ED20487A2E00AC357F /* BusinessSpecialtiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A6B0EC20487A2E00AC357F /* BusinessSpecialtiesViewController.swift */; };
@@ -94,6 +96,8 @@
 		A0D8D385203DF78800D68A5A /* ShowExperienceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8D384203DF78800D68A5A /* ShowExperienceCell.swift */; };
 		A0E4B049204FEAAF002D7534 /* BusinessSwipeLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E4B048204FEAAF002D7534 /* BusinessSwipeLocation.swift */; };
 		A0E4B04E20502AEB002D7534 /* ViewedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E4B04D20502AEB002D7534 /* ViewedManager.swift */; };
+		A0EFEE582062580800F7C5A9 /* BusinessJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EFEE572062580800F7C5A9 /* BusinessJobsViewController.swift */; };
+		A0EFEE5A20625CEE00F7C5A9 /* BusinessJobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EFEE5920625CEE00F7C5A9 /* BusinessJobCell.swift */; };
 		A0F529E01FD1A1A600B5B93C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0F529DF1FD1A1A500B5B93C /* GoogleService-Info.plist */; };
 		A0F529E41FD1B0CF00B5B93C /* UIViewStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F529E31FD1B0CF00B5B93C /* UIViewStyles.swift */; };
 		A0F529E61FD1B10E00B5B93C /* UIButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F529E51FD1B10E00B5B93C /* UIButtonStyles.swift */; };
@@ -155,6 +159,8 @@
 		A09739EC2021D2390087F7CE /* BusinessRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessRegisterViewController.swift; sourceTree = "<group>"; };
 		A0973A122024B52D0087F7CE /* BusinessProfileCreationLandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessProfileCreationLandingViewController.swift; sourceTree = "<group>"; };
 		A0973A14202503F50087F7CE /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		A09A82DD206267D20006E44A /* BusinessShowJobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessShowJobsViewController.swift; sourceTree = "<group>"; };
+		A09A82E020626D7B0006E44A /* SelectJobCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectJobCell.swift; sourceTree = "<group>"; };
 		A09F6B9F2027512B00D98332 /* StudentPersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentPersonalViewController.swift; sourceTree = "<group>"; };
 		A09F6BA12027534F00D98332 /* BusinessAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessAboutViewController.swift; sourceTree = "<group>"; };
 		A0A6B0EC20487A2E00AC357F /* BusinessSpecialtiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSpecialtiesViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +208,8 @@
 		A0E4B048204FEAAF002D7534 /* BusinessSwipeLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSwipeLocation.swift; sourceTree = "<group>"; };
 		A0E4B04A204FFA53002D7534 /* Bournemouth.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Bournemouth.gpx; sourceTree = "<group>"; };
 		A0E4B04D20502AEB002D7534 /* ViewedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewedManager.swift; sourceTree = "<group>"; };
+		A0EFEE572062580800F7C5A9 /* BusinessJobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessJobsViewController.swift; sourceTree = "<group>"; };
+		A0EFEE5920625CEE00F7C5A9 /* BusinessJobCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessJobCell.swift; sourceTree = "<group>"; };
 		A0F529DF1FD1A1A500B5B93C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0F529E11FD1AFC000B5B93C /* Gotham Rounded Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham Rounded Book.ttf"; sourceTree = "<group>"; };
 		A0F529E31FD1B0CF00B5B93C /* UIViewStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewStyles.swift; sourceTree = "<group>"; };
@@ -301,6 +309,7 @@
 				A0973A112024B4FD0087F7CE /* BusinessProfileCreation */,
 				A09739EB2021D1AB0087F7CE /* BusinessRegister */,
 				A00748681F912570004AF885 /* BusinessSideMenu */,
+				A0EFEE562062555000F7C5A9 /* BusinessJobs */,
 				A0AA814B2036202B00858063 /* BusinessQuestions */,
 				A0AD071A202DCF6E00B77C61 /* BusinessLiked */,
 				A007486B1F91259A004AF885 /* BusinessSwipe */,
@@ -437,6 +446,15 @@
 			path = BusinessProfileCreation;
 			sourceTree = "<group>";
 		};
+		A09A82DF20626D600006E44A /* ShowJob */ = {
+			isa = PBXGroup;
+			children = (
+				A09A82DD206267D20006E44A /* BusinessShowJobsViewController.swift */,
+				A09A82E020626D7B0006E44A /* SelectJobCell.swift */,
+			);
+			path = ShowJob;
+			sourceTree = "<group>";
+		};
 		A0A6B0EB20487A1200AC357F /* Specialties */ = {
 			isa = PBXGroup;
 			children = (
@@ -548,6 +566,16 @@
 				A0D8D380203CAE4500D68A5A /* Location.swift */,
 			);
 			path = Location;
+			sourceTree = "<group>";
+		};
+		A0EFEE562062555000F7C5A9 /* BusinessJobs */ = {
+			isa = PBXGroup;
+			children = (
+				A09A82DF20626D600006E44A /* ShowJob */,
+				A0EFEE572062580800F7C5A9 /* BusinessJobsViewController.swift */,
+				A0EFEE5920625CEE00F7C5A9 /* BusinessJobCell.swift */,
+			);
+			path = BusinessJobs;
 			sourceTree = "<group>";
 		};
 		A0F529E21FD1B07D00B5B93C /* IBDesignables */ = {
@@ -737,6 +765,7 @@
 				A09739E72020E6A10087F7CE /* StudentRegisterViewController.swift in Sources */,
 				A0D67A58204331AD0060AD70 /* StudentInterestsViewController.swift in Sources */,
 				A00748741F912B0C004AF885 /* BusinessSwipeView.swift in Sources */,
+				A0EFEE582062580800F7C5A9 /* BusinessJobsViewController.swift in Sources */,
 				A0D8D377203B39CF00D68A5A /* Experience.swift in Sources */,
 				A07226651F91657F006C60BA /* TabsViewController.swift in Sources */,
 				A0F94F232054347000FECC7A /* MatchedCell.swift in Sources */,
@@ -744,6 +773,7 @@
 				A0D8D375203B38E400D68A5A /* AddExperienceViewController.swift in Sources */,
 				5FBF425E2052A48F00B93FED /* BusinessSelectCell.swift in Sources */,
 				A0AA81562036FA2300858063 /* SelectStudentViewController.swift in Sources */,
+				A09A82E120626D7B0006E44A /* SelectJobCell.swift in Sources */,
 				A09739EA20210BDB0087F7CE /* StudentCreateProfileLandingViewController.swift in Sources */,
 				A0AA81582036FA3B00858063 /* ViewStudentResponsesViewController.swift in Sources */,
 				A0076AB2204AA94500A52500 /* StudentEditAboutViewController.swift in Sources */,
@@ -784,6 +814,7 @@
 				A03D991F1FD305160034AE24 /* SideMenuTableViewCell.swift in Sources */,
 				A0F94F2120542A1500FECC7A /* BusinessMatchedCell.swift in Sources */,
 				A0D67A502040671D0060AD70 /* ShowEducation.swift in Sources */,
+				A0EFEE5A20625CEE00F7C5A9 /* BusinessJobCell.swift in Sources */,
 				A0973A15202503F50087F7CE /* Business.swift in Sources */,
 				A0A6B0F42049833D00AC357F /* ShowJobsAddedViewController.swift in Sources */,
 				A0AD0710202CC1F700B77C61 /* StudentSideMenuTableViewCell.swift in Sources */,
@@ -794,6 +825,7 @@
 				A0AA815A20374B4100858063 /* StudentResponses.swift in Sources */,
 				A0D8D370203ADEB200D68A5A /* StudentEditProfileViewController.swift in Sources */,
 				A0A6FFBD2048262D0001D715 /* BusinessDetailsViewController.swift in Sources */,
+				A09A82DE206267D20006E44A /* BusinessShowJobsViewController.swift in Sources */,
 				A09F6BA02027512B00D98332 /* StudentPersonalViewController.swift in Sources */,
 				A0AD0722202E043000B77C61 /* BusinessLikedCell.swift in Sources */,
 				5F2EB8E22056CA8B00A087B8 /* BusinessQuestionThreeViewController.swift in Sources */,

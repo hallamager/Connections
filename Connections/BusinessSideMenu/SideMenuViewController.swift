@@ -112,7 +112,7 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         {
             
             let mainStoryboard:UIStoryboard = UIStoryboard(name: "BusinessMain", bundle: nil)
-            let desController = mainStoryboard.instantiateViewController(withIdentifier: "BusinessSelectViewController") as! BusinessSelectViewController
+            let desController = mainStoryboard.instantiateViewController(withIdentifier: "BusinessJobsViewController") as! BusinessJobsViewController
             let newFrontViewController = UINavigationController.init(rootViewController:desController)
             
             revealViewController.pushFrontViewController(newFrontViewController, animated: true)
