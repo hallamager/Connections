@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-class Jobs {
+class Job {
     
     var uuid: String?
     let title: String

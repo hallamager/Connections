@@ -20,7 +20,6 @@ class BusinessJobsViewController: UIViewController {
     var business: Business!
     let ref = Database.database().reference().child("business")
     var businesses = [Business]()
-    var jobs = [Jobs]()
     let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
     
     override func viewDidLoad() {
@@ -33,21 +32,6 @@ class BusinessJobsViewController: UIViewController {
             self.tableView.reloadData()
             self.tableView.animateViews(animations: self.animations, delay: 0.3)
         }
-        
-//        let refJobs = Database.database().reference().child("business").child(business.uuid).child("Jobs")
-//
-//        refJobs.observeSingleEvent(of: .value, with: { snapshot in
-//            for job in snapshot.children {
-//                if let data = job as? DataSnapshot {
-//                    if let job = Jobs(snapshot: data) {
-//                        self.jobs.append(job)
-//                    }
-//                }
-//            }
-//            
-//            print("is\(self.jobs.count)")
-//            
-//        })
         
         //open menu with tab bar button
         openMenu.target = self.revealViewController()
@@ -100,7 +84,11 @@ extension BusinessJobsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        
         let business = businesses[indexPath.row]
+        
+        guard business.hasJobs else { return }
+        
         let storyboard:UIStoryboard = UIStoryboard(name: "BusinessMain", bundle: nil)
         let BusinessShowJobsViewController:BusinessShowJobsViewController = storyboard.instantiateViewController(withIdentifier: "BusinessShowJobsViewController") as! BusinessShowJobsViewController
         self.navigationController?.pushViewController(BusinessShowJobsViewController, animated: true)
@@ -124,7 +112,7 @@ extension BusinessJobsViewController: UITableViewDataSource{
         let business = businesses[indexPath.row]
         
         cell.companyName?.text = business.username
-//        cell.jobsPosted?.text = "\(jobs.count) posted"
+        cell.jobsPosted?.text = "\(business.numberOfJobs) posted"
         
         // Create a storage reference from the URL
         let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(business.uuid)

@@ -12,8 +12,8 @@ import Firebase
 
 class EditJobsViewController: UIViewController, UITextFieldDelegate {
     
-    var job: Jobs!
-    var jobs = [Jobs]()
+    var job: Job!
+    var jobs = [Job]()
     
     @IBOutlet var jobTitle: UITextField!
     @IBOutlet var employmentType: UITextField!

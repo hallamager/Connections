@@ -13,7 +13,7 @@ import Firebase
 class ShowJobsAddedViewController: UIViewController {
     
     let ref = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)").child("Jobs")
-    var jobs = [Jobs]()
+    var jobs = [Job]()
     
     @IBOutlet var tableView: UITableView!
     
@@ -23,7 +23,7 @@ class ShowJobsAddedViewController: UIViewController {
         ref.observeSingleEvent(of: .value, with: { snapshot in
             for job in snapshot.children {
                 if let data = job as? DataSnapshot {
-                    if let job = Jobs(snapshot: data) {
+                    if let job = Job(snapshot: data) {
                         self.jobs.append(job)
                     }
                 }
@@ -57,7 +57,7 @@ class ShowJobsAddedViewController: UIViewController {
 
 extension ShowJobsAddedViewController: AddJobsControllerDelegate {
     
-    func didAddJobs(_ job: Jobs) {
+    func didAddJobs(_ job: Job) {
         jobs.append(job)
         tableView.reloadData()
     }

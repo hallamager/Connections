@@ -19,7 +19,7 @@ class BusinessShowJobsViewController: UIViewController {
     
     let ref = Database.database().reference().child("business")
     var businesses = [Business]()
-    var jobs = [Jobs]()
+    var jobs = [Job]()
     let kCloseCellHeight: CGFloat = 130
     let kOpenCellHeight: CGFloat = 340
     let kRowsCount = 10
@@ -46,7 +46,7 @@ class BusinessShowJobsViewController: UIViewController {
         refJobs.observeSingleEvent(of: .value, with: { snapshot in
             for job in snapshot.children {
                 if let data = job as? DataSnapshot {
-                    if let job = Jobs(snapshot: data) {
+                    if let job = Job(snapshot: data) {
                         self.jobs.append(job)
                     }
                 }

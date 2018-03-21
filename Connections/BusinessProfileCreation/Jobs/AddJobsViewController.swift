@@ -11,7 +11,7 @@ import UIKit
 import Firebase
 
 protocol AddJobsControllerDelegate: class {
-    func didAddJobs(_ job: Jobs)
+    func didAddJobs(_ job: Job)
 }
 
 class AddJobsViewController: UIViewController, UITextFieldDelegate {
@@ -44,7 +44,7 @@ class AddJobsViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func confirmBtn(_ sender: Any) {
         
-        let ex = Jobs(data: ["Title": self.jobTitle.text!, "Employment Type": self.employmentType.text!, "Description": self.jobDescription.text!])
+        let ex = Job(data: ["Title": self.jobTitle.text!, "Employment Type": self.employmentType.text!, "Description": self.jobDescription.text!])
         ref.childByAutoId().setValue(ex.toDict())
         let storyboard:UIStoryboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
         let ShowJobsAddedViewController:ShowJobsAddedViewController = storyboard.instantiateViewController(withIdentifier: "ShowJobsAddedViewController") as! ShowJobsAddedViewController
