@@ -19,6 +19,7 @@ class BusinessShowJobsViewController: UIViewController {
     
     let ref = Database.database().reference().child("business")
     var businesses = [Business]()
+    var jobs = [Jobs]()
     let kCloseCellHeight: CGFloat = 130
     let kOpenCellHeight: CGFloat = 340
     let kRowsCount = 10
@@ -34,46 +35,64 @@ class BusinessShowJobsViewController: UIViewController {
         
         navigationItem.title = business.username
         
-        loadRelatedBusinesses(for: Auth.auth().currentUser!.uid) { success, businesses in
-            self.businesses = businesses
+//        loadRelatedBusinesses(for: Auth.auth().currentUser!.uid) { success, businesses in
+//            self.businesses = businesses
+//            self.tableView.reloadData()
+//            self.tableView.animateViews(animations: self.animations, delay: 0.3)
+//        }
+        
+        let refJobs = Database.database().reference().child("business").child(business.uuid).child("Jobs")
+
+        refJobs.observeSingleEvent(of: .value, with: { snapshot in
+            for job in snapshot.children {
+                if let data = job as? DataSnapshot {
+                    if let job = Jobs(snapshot: data) {
+                        self.jobs.append(job)
+                    }
+                }
+            }
+
+            print("is\(self.jobs.count)")
+            
             self.tableView.reloadData()
             self.tableView.animateViews(animations: self.animations, delay: 0.3)
-        }
+
+        })
         
         setup()
         
     }
     
-    func loadRelatedBusinesses(for studentUID: String, completion: @escaping (Bool, [Business]) -> ()) {
-        
-        let ref = Database.database().reference(withPath: "matches/" + Auth.auth().currentUser!.uid)
-        ref.observeSingleEvent(of: .value) { snapshot in
-            
-            var uids = [String]()
-            for child in snapshot.children {
-                let userData = child as! DataSnapshot
-                uids.append(userData.key)
-            }
-            
-            let userRef = Database.database().reference(withPath: "business")
-            var businesses = [Business]()
-            var count = 0
-            if uids.count != 0 {
-                uids.forEach { uid in
-                    userRef.child(uid).observeSingleEvent(of: .value) { snapshot in
-                        let business = Business(snapshot: snapshot)
-                        businesses.append(business!)
-                        count += 1
-                        if count == uids.count {
-                            completion(true, businesses)
-                        }
-                    }
-                }
-            } else {
-                completion(true, businesses)
-            }
-        }
-    }
+//    func loadRelatedBusinesses(for studentUID: String, completion: @escaping (Bool, [Business]) -> ()) {
+//
+//        let ref = Database.database().reference(withPath: "matches/" + Auth.auth().currentUser!.uid)
+//        ref.observeSingleEvent(of: .value) { snapshot in
+//
+//            var uids = [String]()
+//            for child in snapshot.children {
+//                let userData = child as! DataSnapshot
+//                uids.append(userData.key)
+//            }
+//
+//            let userRef = Database.database().reference(withPath: "business")
+//            var businesses = [Business]()
+//            var count = 0
+//            if uids.count != 0 {
+//                uids.forEach { uid in
+//                    userRef.child(uid).observeSingleEvent(of: .value) { snapshot in
+//                        let business = Business(snapshot: snapshot)
+//                        businesses.append(business!)
+//                        count += 1
+//                        if count == uids.count {
+//                            completion(true, businesses)
+//                        }
+//                    }
+//                }
+//            } else {
+//                completion(true, businesses)
+//            }
+//        }
+//    }
     
     private func setup() {
         cellHeights = Array(repeating: kCloseCellHeight, count: kRowsCount)
@@ -95,7 +114,7 @@ extension BusinessShowJobsViewController: UITableViewDelegate {
             return
         }
         
-        let business = businesses[indexPath.row]
+        let job = jobs[indexPath.row]
         
         cell.backgroundColor = .clear
         
@@ -105,7 +124,7 @@ extension BusinessShowJobsViewController: UITableViewDelegate {
             cell.unfold(true, animated: false, completion: nil)
         }
         
-        cell.businessName?.text = business.username
+        cell.businessName?.text = job.title
         
     }
     
@@ -141,8 +160,7 @@ extension BusinessShowJobsViewController: UITableViewDelegate {
 extension BusinessShowJobsViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(businesses.count)
-        return businesses.count
+        return jobs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -153,8 +171,8 @@ extension BusinessShowJobsViewController: UITableViewDataSource{
         cell.durationsForExpandedState = durations
         cell.durationsForCollapsedState = durations
         
-        let business = businesses[indexPath.row]
-        print(business.username)
+        let job = jobs[indexPath.row]
+        print(job.title)
         
         return cell
         
