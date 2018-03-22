@@ -10,7 +10,6 @@ import Foundation
 import FoldingCell
 import UIKit
 
-
 class SelectJobCell: FoldingCell {
     
     @IBOutlet var businessName: UILabel!
@@ -46,6 +45,14 @@ class SelectJobCell: FoldingCell {
         let durations = [0.20, 0.20, 0.20] // timing animation for each view
         return durations[itemIndex]
         
+    }
+    
+}
+
+
+extension SelectJobCell {
+    
+    @IBAction func applyBtn(_ sender: UIButton) {
     }
     
 }

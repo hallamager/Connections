@@ -28,6 +28,7 @@ class BusinessShowJobsViewController: UIViewController {
     
     var business: Business!
     var job: Job!
+    var counter = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,12 +73,18 @@ class BusinessShowJobsViewController: UIViewController {
     
     @IBAction func applyBtn(_ sender: Any) {
         
+        appliedBtn(self.jobs[counter])
+        
+    }
+    
+    func appliedBtn(_ job: Job) {
+        
         let refApply = Database.database().reference().child("jobsApplied").child(Auth.auth().currentUser!.uid).child(business.uuid)
         
         let apply = [job.uuid!: true,]
         
         refApply.updateChildValues(apply)
-                
+        
     }
     
 }
