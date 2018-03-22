@@ -21,7 +21,7 @@ class BusinessShowJobsViewController: UIViewController {
     var businesses = [Business]()
     var jobs = [Job]()
     let kCloseCellHeight: CGFloat = 130
-    let kOpenCellHeight: CGFloat = 405
+    let kOpenCellHeight: CGFloat = 415
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
     let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
