@@ -551,6 +551,7 @@
                                             <outlet property="foldingNameLabel" destination="GPj-B7-8NZ" id="y1J-Qc-I7I"/>
                                             <outlet property="foregroundView" destination="ay7-pT-jcl" id="HwM-O5-DYa"/>
                                             <outlet property="foregroundViewTop" destination="lCH-cs-uP8" id="yQG-dD-6x9"/>
+                                            <outlet property="jobsPosted" destination="6Yu-Ua-I9K" id="Mt8-mM-G5u"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

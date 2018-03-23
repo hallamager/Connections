@@ -13,8 +13,6 @@ import FoldingCell
 
 class StudentLikedCell: FoldingCell {
     
-    @IBOutlet weak var foldingNameLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
     
     //Defines sides, shadows and colour of the cells for the viewcontroller.
     override func awakeFromNib() {
@@ -24,6 +22,7 @@ class StudentLikedCell: FoldingCell {
         foregroundView.layer.shadowOffset = CGSize(width: 0, height: 0)
         foregroundView.layer.shadowRadius = 4.0
         foregroundView.layer.shadowColor = UIColor.lightGray.cgColor
+        foregroundView.layer.cornerRadius = 10
         
         backgroundColor = .clear
         

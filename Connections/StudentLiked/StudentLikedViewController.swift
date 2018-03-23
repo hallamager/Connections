@@ -12,25 +12,32 @@ import FoldingCell
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
+import ViewAnimator
 
-class StudentLikedViewController: UITableViewController {
+class StudentLikedViewController: UIViewController {
     
-    let kCloseCellHeight: CGFloat = 180
-    let kOpenCellHeight: CGFloat = 490
+    let kCloseCellHeight: CGFloat = 160
+    let kOpenCellHeight: CGFloat = 820
     let ref = Database.database().reference().child("student")
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
     var students = [Student]()
+    let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
     
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet var openMenuLeft: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.isTranslucent = false
+        
         loadRelatedStudents(for: Auth.auth().currentUser!.uid) { success, students in
             self.students = students
             self.tableView.reloadData()
+            self.tableView.animateViews(animations: self.animations, delay: 0.3)
         }
         
         //open menu with tab bar button
@@ -84,13 +91,13 @@ class StudentLikedViewController: UITableViewController {
     
 }
 
-extension StudentLikedViewController {
+extension StudentLikedViewController: UITableViewDelegate {
     
-    override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return students.count
+    func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return cellHeights[indexPath.row]
     }
     
-    override func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard case let cell as StudentLikedCell = cell else {
             return
         }
@@ -105,30 +112,9 @@ extension StudentLikedViewController {
             cell.unfold(true, animated: false, completion: nil)
         }
         
-        cell.nameLabel.text! = student.username
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! FoldingCell
-//        let cellContent = tableView.dequeueReusableCell(withIdentifier: "FoldingCell") as! StudentLikedCell
-        let durations: [TimeInterval] = [0.26, 0.2, 0.2]
-        cell.durationsForExpandedState = durations
-        cell.durationsForCollapsedState = durations
-        
-        let student = students[indexPath.row]
-        
-//        cellContent.nameLabel.text! = student.username
-        
-        print(student.username)
-        
-        return cell
-    }
-    
-    override func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return cellHeights[indexPath.row]
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let cell = tableView.cellForRow(at: indexPath) as! FoldingCell
         
@@ -153,4 +139,30 @@ extension StudentLikedViewController {
             tableView.endUpdates()
         }, completion: nil)
     }
+
+}
+
+extension StudentLikedViewController: UITableViewDataSource {
+ 
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
+        print("is\(students.count)")
+        return students.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! FoldingCell
+        //        let cellContent = tableView.dequeueReusableCell(withIdentifier: "FoldingCell") as! StudentLikedCell
+        let durations: [TimeInterval] = [0.26, 0.2, 0.2]
+        cell.durationsForExpandedState = durations
+        cell.durationsForCollapsedState = durations
+        
+        let student = students[indexPath.row]
+        
+        //        cellContent.nameLabel.text! = student.username
+        
+        print(student.username)
+        
+        return cell
+    }
+    
 }

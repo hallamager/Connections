@@ -22,7 +22,6 @@ class BusinessLikedViewController: UIViewController {
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
     var businesses = [Business]()
-    var counter = 0
     var recentMatchesTitle = ["Recent Matches"]
     let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
     let animationsZoom = [AnimationType.zoom(scale: 0.5)]
@@ -143,6 +142,7 @@ extension BusinessLikedViewController: UITableViewDelegate {
         cell.companyIndustryFolded.text! = business.industry
         cell.companySize.text! = business.companySize
         cell.companyHeadquartersFolded.text! = business.businessHeadquarters
+        cell.jobsPosted?.text = "\(business.numberOfJobs) Jobs available"
         
         // Create a storage reference from the URL
         let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(business.uuid)
