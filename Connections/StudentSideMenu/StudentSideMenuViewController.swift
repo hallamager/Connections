@@ -12,8 +12,9 @@ import Firebase
 
 class StudentSideMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    
+    @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var companyIndustry: UILabel!
     @IBOutlet weak var SideMenuTableView: UITableView!
     
     var menuNameArray:Array = [String]()
@@ -35,9 +36,19 @@ class StudentSideMenuViewController: UIViewController, UITableViewDataSource, UI
         ref.observeSingleEvent(of: .value, with: { snapshot in
             if let business = Business(snapshot: snapshot) {
                 self.usernameLabel.text = business.username
+                self.companyIndustry.text = business.industry
                 self.students.append(business)
             }
         })
+        
+        // Create a storage reference from the URL
+        let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child((Auth.auth().currentUser?.uid)!)
+        // Download the data, assuming a max size of 1MB (you can change this as necessary)
+        storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+            // Create a UIImage, add it to the array
+            let pic = UIImage(data: data!)
+            self.profilePicture.image = pic
+        }
         
     }
     

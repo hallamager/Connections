@@ -205,6 +205,8 @@ extension StudentSwipeViewController: KolodaViewDataSource {
         let student = students[index]
         
         StudentSwipeView.studentName.text = student.username
+        StudentSwipeView.studentHeadline.text = student.headline
+        StudentSwipeView.studentLocation.text = student.address
         
         // Create a storage reference from the URL
         let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(student.uuid)

@@ -15,5 +15,7 @@ class StudentSwipeView: UIView {
     @IBOutlet weak var studentCard: UIViewStyles!
     @IBOutlet var studentName: UILabel!
     @IBOutlet var studentProfileImg: UIImageView!
+    @IBOutlet weak var studentHeadline: UILabel!
+    @IBOutlet weak var studentLocation: UILabel!
     
 }
