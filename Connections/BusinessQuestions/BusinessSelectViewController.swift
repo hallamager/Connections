@@ -191,7 +191,7 @@ extension BusinessSelectViewController: UITableViewDataSource{
         
         let business = businesses[indexPath.row]
         cell.business = business
-        cell.delegate = self 
+        cell.delegate = self
         print(business.username)
         
         return cell

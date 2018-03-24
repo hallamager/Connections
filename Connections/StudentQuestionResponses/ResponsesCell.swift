@@ -1,29 +1,38 @@
 //
-//  StudentLikedCell.swift
+//  ResponsesCell.swift
 //  Connections
 //
-//  Created by Hallam John Ager on 11/02/2018.
+//  Created by Hallam John Ager on 24/03/2018.
 //  Copyright © 2018 Hallam John Ager. All rights reserved.
 //
 
 import Foundation
 import UIKit
+import Firebase
 import FoldingCell
 
+protocol StudentSelectCellDelegate: class {
+    func selected(question: Int, for student: Student)
+}
 
-class StudentLikedCell: FoldingCell {
+class ResponsesCell: FoldingCell {
     
+    var student: Student!
+    weak var delegate: StudentSelectCellDelegate?
     @IBOutlet weak var studentImg: UIImageView!
-    @IBOutlet weak var studentName: UILabel!
     @IBOutlet weak var studentHeadline: UILabel!
+    @IBOutlet weak var studentName: UILabel!
+    @IBOutlet weak var foldedStudentName: UILabel!
+    @IBOutlet weak var foldedStudentHeadline: UILabel!
+    @IBOutlet weak var foldedStudentImg: UIImageView!
     
-    //Defines sides, shadows and colour of the cells for the viewcontroller.
+    @IBOutlet var buttons: [UIButton]!
+    
     override func awakeFromNib() {
         
-        foregroundView.layer.cornerRadius = 0
-        foregroundView.layer.shadowOpacity = 0.5
+        foregroundView.layer.shadowOpacity = 0.3
         foregroundView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        foregroundView.layer.shadowRadius = 4.0
+        foregroundView.layer.shadowRadius = 3.2
         foregroundView.layer.shadowColor = UIColor.lightGray.cgColor
         foregroundView.layer.cornerRadius = 10
         
@@ -41,5 +50,8 @@ class StudentLikedCell: FoldingCell {
         return durations[itemIndex]
     }
     
+    @IBAction func answerSelected(_ sender: UIButton) {
+        delegate?.selected(question: sender.tag, for: student)
+    }
     
 }

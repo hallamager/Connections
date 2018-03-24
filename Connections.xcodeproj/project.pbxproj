@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5F2EB8E02056CA7600A087B8 /* BusinessQuestionTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2EB8DF2056CA7600A087B8 /* BusinessQuestionTwoViewController.swift */; };
-		5F2EB8E22056CA8B00A087B8 /* BusinessQuestionThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2EB8E12056CA8B00A087B8 /* BusinessQuestionThreeViewController.swift */; };
 		5F66BED82060105C0002FB8E /* EducationTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F66BED72060105C0002FB8E /* EducationTitle.xib */; };
 		5F66BEDA2060125A0002FB8E /* ExperienceTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F66BED92060125A0002FB8E /* ExperienceTitle.xib */; };
 		5F862DAC20605B9E00008F15 /* QuestionTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F862DAB20605B9E00008F15 /* QuestionTwo.swift */; };
@@ -41,6 +39,7 @@
 		A07226651F91657F006C60BA /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07226641F91657F006C60BA /* TabsViewController.swift */; };
 		A07226671F916EC9006C60BA /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07226661F916EC9006C60BA /* LogInViewController.swift */; };
 		A07226691F916FB4006C60BA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07226681F916FB4006C60BA /* RegisterViewController.swift */; };
+		A07CAF3B20664E6E003EAA9F /* ResponsesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07CAF3A20664E6E003EAA9F /* ResponsesCell.swift */; };
 		A07E3C47205DB054004158FE /* SkillsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07E3C46205DB054004158FE /* SkillsCell.swift */; };
 		A07E3C49205DB0F1004158FE /* ShowSkillsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07E3C48205DB0F1004158FE /* ShowSkillsCell.swift */; };
 		A09739E32020A4850087F7CE /* BusinessMoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09739E22020A4850087F7CE /* BusinessMoreInfoViewController.swift */; };
@@ -113,8 +112,6 @@
 /* Begin PBXFileReference section */
 		419B1DC5AA939905FD333D7A /* Pods-Connections.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Connections.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Connections/Pods-Connections.debug.xcconfig"; sourceTree = "<group>"; };
 		599FF97567B39B949FCABD9E /* Pods_Connections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Connections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F2EB8DF2056CA7600A087B8 /* BusinessQuestionTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessQuestionTwoViewController.swift; sourceTree = "<group>"; };
-		5F2EB8E12056CA8B00A087B8 /* BusinessQuestionThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessQuestionThreeViewController.swift; sourceTree = "<group>"; };
 		5F66BED72060105C0002FB8E /* EducationTitle.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EducationTitle.xib; sourceTree = "<group>"; };
 		5F66BED92060125A0002FB8E /* ExperienceTitle.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceTitle.xib; sourceTree = "<group>"; };
 		5F862DAB20605B9E00008F15 /* QuestionTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTwo.swift; sourceTree = "<group>"; };
@@ -151,6 +148,7 @@
 		A07226641F91657F006C60BA /* TabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
 		A07226661F916EC9006C60BA /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		A07226681F916FB4006C60BA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A07CAF3A20664E6E003EAA9F /* ResponsesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsesCell.swift; sourceTree = "<group>"; };
 		A07E3C46205DB054004158FE /* SkillsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsCell.swift; sourceTree = "<group>"; };
 		A07E3C48205DB0F1004158FE /* ShowSkillsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSkillsCell.swift; sourceTree = "<group>"; };
 		A09739E22020A4850087F7CE /* BusinessMoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessMoreInfoViewController.swift; sourceTree = "<group>"; };
@@ -393,6 +391,14 @@
 			path = StudentSideMenu;
 			sourceTree = "<group>";
 		};
+		A07CAF3C20665B7B003EAA9F /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				A0AA81572036FA3B00858063 /* ViewStudentResponsesViewController.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
 		A09739E42020E64A0087F7CE /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -484,8 +490,6 @@
 				A0AA814C2036205C00858063 /* BusinessSelectViewController.swift */,
 				5FBF425D2052A48F00B93FED /* BusinessSelectCell.swift */,
 				A0AA81502036D6DF00858063 /* BusinessQuestions.swift */,
-				5F2EB8DF2056CA7600A087B8 /* BusinessQuestionTwoViewController.swift */,
-				5F2EB8E12056CA8B00A087B8 /* BusinessQuestionThreeViewController.swift */,
 			);
 			path = BusinessQuestions;
 			sourceTree = "<group>";
@@ -493,8 +497,9 @@
 		A0AA81542036F94000858063 /* StudentQuestionResponses */ = {
 			isa = PBXGroup;
 			children = (
+				A07CAF3C20665B7B003EAA9F /* Responses */,
 				A0AA81552036FA2300858063 /* SelectStudentViewController.swift */,
-				A0AA81572036FA3B00858063 /* ViewStudentResponsesViewController.swift */,
+				A07CAF3A20664E6E003EAA9F /* ResponsesCell.swift */,
 				A0AA815920374B4100858063 /* StudentResponses.swift */,
 			);
 			path = StudentQuestionResponses;
@@ -769,7 +774,6 @@
 				A0D8D377203B39CF00D68A5A /* Experience.swift in Sources */,
 				A07226651F91657F006C60BA /* TabsViewController.swift in Sources */,
 				A0F94F232054347000FECC7A /* MatchedCell.swift in Sources */,
-				5F2EB8E02056CA7600A087B8 /* BusinessQuestionTwoViewController.swift in Sources */,
 				A0D8D375203B38E400D68A5A /* AddExperienceViewController.swift in Sources */,
 				5FBF425E2052A48F00B93FED /* BusinessSelectCell.swift in Sources */,
 				A0AA81562036FA2300858063 /* SelectStudentViewController.swift in Sources */,
@@ -825,10 +829,10 @@
 				A0AA815A20374B4100858063 /* StudentResponses.swift in Sources */,
 				A0D8D370203ADEB200D68A5A /* StudentEditProfileViewController.swift in Sources */,
 				A0A6FFBD2048262D0001D715 /* BusinessDetailsViewController.swift in Sources */,
+				A07CAF3B20664E6E003EAA9F /* ResponsesCell.swift in Sources */,
 				A09A82DE206267D20006E44A /* BusinessShowJobsViewController.swift in Sources */,
 				A09F6BA02027512B00D98332 /* StudentPersonalViewController.swift in Sources */,
 				A0AD0722202E043000B77C61 /* BusinessLikedCell.swift in Sources */,
-				5F2EB8E22056CA8B00A087B8 /* BusinessQuestionThreeViewController.swift in Sources */,
 				A0973A132024B52D0087F7CE /* BusinessProfileCreationLandingViewController.swift in Sources */,
 				A0D67A4E204066F30060AD70 /* ShowEducationAddedViewController.swift in Sources */,
 				A0A6FFBB204809940001D715 /* BusinessProfilePictureViewController.swift in Sources */,

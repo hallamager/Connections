@@ -9,22 +9,34 @@
 import Foundation
 import UIKit
 import Firebase
+import FirebaseStorage
+import FoldingCell
+import ViewAnimator
 
-class SelectStudentViewController: UITableViewController {
+class SelectStudentViewController: UIViewController {
     
     var businesses = [Business]()
     var students = [Student]()
     var student: Student!
     var studentResponses = [StudentResponses]()
+    let kCloseCellHeight: CGFloat = 130
+    let kOpenCellHeight: CGFloat = 340
+    let kRowsCount = 10
+    var cellHeights: [CGFloat] = []
+    let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
     
     @IBOutlet var openMenu: UIBarButtonItem!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.isTranslucent = false
+        
         loadStudentsWhoResponsed(for: Auth.auth().currentUser!.uid) { success, students in
             self.students = students
             self.tableView.reloadData()
+            self.tableView.animateViews(animations: self.animations, delay: 0.3)
         }
         
         //open menu with tab bar button
@@ -34,6 +46,8 @@ class SelectStudentViewController: UITableViewController {
         
         //open menu with swipe gesture
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
+        setup()
         
     }
     
@@ -70,34 +84,120 @@ class SelectStudentViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        print(students.count)
+    private func setup() {
+        cellHeights = Array(repeating: kCloseCellHeight, count: kRowsCount)
+        tableView.estimatedRowHeight = kCloseCellHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let sender = sender as? (tag: Int, student: Student) else { return }
+        
+        let vc = segue.destination as! ViewStudentResponses
+        vc.student = sender.student
+        vc.questionNumber = sender.tag
+        
+    }
+    
+}
+
+extension SelectStudentViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return cellHeights[indexPath.row]
+    }
+    
+    func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        guard case let cell as ResponsesCell = cell else {
+            return
+        }
+        
+        let student = students[indexPath.row]
+        
+        cell.backgroundColor = .clear
+        
+        if cellHeights[indexPath.row] == kCloseCellHeight {
+            cell.unfold(false, animated: false, completion: nil)
+        } else {
+            cell.unfold(true, animated: false, completion: nil)
+        }
+        
+        cell.studentName?.text = student.username
+        cell.studentHeadline?.text = student.headline
+        cell.foldedStudentName?.text = student.username
+        cell.foldedStudentHeadline?.text = student.headline
+        
+        // Create a storage reference from the URL
+        let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(student.uuid)
+        // Download the data, assuming a max size of 1MB (you can change this as necessary)
+        storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+            // Create a UIImage, add it to the array
+            let pic = UIImage(data: data!)
+            cell.studentImg.image = pic
+            cell.foldedStudentImg.image = pic
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath) as! FoldingCell
+        
+        if cell.isAnimating() {
+            return
+        }
+        
+        var duration = 0.0
+        let cellIsCollapsed = cellHeights[indexPath.row] == kCloseCellHeight
+        if cellIsCollapsed {
+            cellHeights[indexPath.row] = kOpenCellHeight
+            cell.unfold(true, animated: true, completion: nil)
+            duration = 0.5
+        } else {
+            cellHeights[indexPath.row] = kCloseCellHeight
+            cell.unfold(false, animated: true, completion: nil)
+            duration = 0.8
+        }
+        
+        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: { () -> Void in
+            tableView.beginUpdates()
+            tableView.endUpdates()
+        }, completion: nil)
+        
+    }
+    
+}
+
+extension SelectStudentViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //        print(students.count)
         return students.count
     }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: "studentSelect")!
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell") as! ResponsesCell
+        
         let student = students[indexPath.row]
-
-        cell.textLabel?.text = student.username
-
-        cell.detailTextLabel?.text = student.headline
-
+        cell.student = student
+        cell.delegate = self
         print(student.username)
-        print(student.headline)
-
+        
         return cell
-
+        
     }
+    
+}
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        let Storyboard = UIStoryboard(name: "StudentMain", bundle: nil)
-        let vc = Storyboard.instantiateViewController(withIdentifier: "ViewStudentResponses") as! ViewStudentResponses
-        vc.student = students[indexPath.row]
-        self.navigationController?.pushViewController(vc, animated: true)
+extension SelectStudentViewController: StudentSelectCellDelegate {
+    
+    func selected(question: Int, for student: Student) {
+        print(question)
+        print(student)
+        
+        performSegue(withIdentifier: "QuestionSelected", sender: (tag: question, student: student))
     }
     
 }
