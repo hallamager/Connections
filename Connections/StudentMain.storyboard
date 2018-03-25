@@ -384,7 +384,7 @@
                     <connections>
                         <outlet property="openMenu" destination="UkT-fQ-Lke" id="keh-TE-cFK"/>
                         <outlet property="tableView" destination="V3G-dx-gw9" id="8Qf-ck-3Lx"/>
-                        <segue destination="Hfq-oe-FE6" kind="show" id="zwn-Wu-0zT"/>
+                        <segue destination="Hfq-oe-FE6" kind="show" identifier="jobsPosted" id="zwn-Wu-0zT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V8y-Ms-ifL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -452,13 +452,6 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TI-vV-EGD">
-                                                            <rect key="frame" x="207" y="15" width="141" height="125"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="100"/>
-                                                            <color key="textColor" white="0.66666666669999997" alpha="0.15092572770000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9c9-5f-rQj" customClass="VerticalGradient" customModule="Connections" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="3" height="111"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -489,6 +482,13 @@
                                                             <rect key="frame" x="275" y="98" width="55" height="14"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="10"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TI-vV-EGD">
+                                                            <rect key="frame" x="197" y="11" width="141" height="137"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="100"/>
+                                                            <color key="textColor" white="0.66666666669999997" alpha="0.15092572770000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
