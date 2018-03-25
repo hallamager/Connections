@@ -15,5 +15,6 @@ class JobsPostedCell: UITableViewCell {
     @IBOutlet weak var jobTitle: UILabel!
     @IBOutlet weak var employmentType: UILabel!
     @IBOutlet weak var applicantCount: UILabel!
+    @IBOutlet weak var applicantsVocab: UILabel!
     
 }

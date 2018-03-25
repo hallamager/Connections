@@ -25,6 +25,10 @@ class JobsPostedViewController: UIViewController {
     var student: Student!
     let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
     
+    var hasApplications: Bool {
+        return students.count > 0
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -68,6 +72,8 @@ extension JobsPostedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let job = jobs[indexPath.row]
+        
+        guard hasApplications else { return }
         
         let storyboard:UIStoryboard = UIStoryboard(name: "StudentMain", bundle: nil)
         let StudentAppliedViewController:StudentAppliedViewController = storyboard.instantiateViewController(withIdentifier: "StudentAppliedViewController") as! StudentAppliedViewController
@@ -125,6 +131,13 @@ extension JobsPostedViewController: UITableViewDataSource {
             self.students = students
             print("hi\(students.count)")
             cell.applicantCount?.text = String(students.count)
+            
+            if students.count == 1 {
+                cell.applicantsVocab?.text = "Applicant"
+            } else {
+                cell.applicantsVocab?.text = "Applicants"
+            }
+            
         }
         
         cell.jobTitle?.text = job.title
