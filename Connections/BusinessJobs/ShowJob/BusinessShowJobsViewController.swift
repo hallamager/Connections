@@ -37,12 +37,6 @@ class BusinessShowJobsViewController: UIViewController {
         
         navigationItem.title = business.username
         
-//        loadRelatedBusinesses(for: Auth.auth().currentUser!.uid) { success, businesses in
-//            self.businesses = businesses
-//            self.tableView.reloadData()
-//            self.tableView.animateViews(animations: self.animations, delay: 0.3)
-//        }
-        
         let refJobs = Database.database().reference().child("business").child(business.uuid).child("Jobs")
 
         refJobs.observeSingleEvent(of: .value, with: { snapshot in
@@ -79,9 +73,9 @@ class BusinessShowJobsViewController: UIViewController {
     
     func appliedBtn(_ job: Job) {
         
-        let refApply = Database.database().reference().child("jobsApplied").child(Auth.auth().currentUser!.uid).child(business.uuid)
+        let refApply = Database.database().reference().child("jobsApplied").child(business.uuid).child(job.uuid!)
         
-        let apply = [job.uuid!: true,]
+        let apply = [Auth.auth().currentUser!.uid: true,]
         
         refApply.updateChildValues(apply)
         
