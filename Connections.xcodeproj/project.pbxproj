@@ -91,6 +91,9 @@
 		A0D67A5D204350990060AD70 /* ShowSkills.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D67A5C204350990060AD70 /* ShowSkills.swift */; };
 		A0D67A5F204350B30060AD70 /* Skills.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D67A5E204350B30060AD70 /* Skills.swift */; };
 		A0D68A2B206AB3D20040BDD1 /* OrganiseChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D68A2A206AB3D20040BDD1 /* OrganiseChatViewController.swift */; };
+		A0D68A31206C22B50040BDD1 /* BusinessInvitesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D68A30206C22B50040BDD1 /* BusinessInvitesViewController.swift */; };
+		A0D68A33206C23190040BDD1 /* BusinessInvitesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D68A32206C23190040BDD1 /* BusinessInvitesCell.swift */; };
+		A0D68A35206C24D70040BDD1 /* ChatInvite.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D68A34206C24D70040BDD1 /* ChatInvite.swift */; };
 		A0D8D370203ADEB200D68A5A /* StudentEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8D36F203ADEB200D68A5A /* StudentEditProfileViewController.swift */; };
 		A0D8D373203B38D000D68A5A /* ShowExperienceAddedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8D372203B38D000D68A5A /* ShowExperienceAddedViewController.swift */; };
 		A0D8D375203B38E400D68A5A /* AddExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8D374203B38E400D68A5A /* AddExperienceViewController.swift */; };
@@ -206,6 +209,9 @@
 		A0D67A5C204350990060AD70 /* ShowSkills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSkills.swift; sourceTree = "<group>"; };
 		A0D67A5E204350B30060AD70 /* Skills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skills.swift; sourceTree = "<group>"; };
 		A0D68A2A206AB3D20040BDD1 /* OrganiseChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganiseChatViewController.swift; sourceTree = "<group>"; };
+		A0D68A30206C22B50040BDD1 /* BusinessInvitesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessInvitesViewController.swift; sourceTree = "<group>"; };
+		A0D68A32206C23190040BDD1 /* BusinessInvitesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessInvitesCell.swift; sourceTree = "<group>"; };
+		A0D68A34206C24D70040BDD1 /* ChatInvite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInvite.swift; sourceTree = "<group>"; };
 		A0D8D36F203ADEB200D68A5A /* StudentEditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentEditProfileViewController.swift; sourceTree = "<group>"; };
 		A0D8D372203B38D000D68A5A /* ShowExperienceAddedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowExperienceAddedViewController.swift; sourceTree = "<group>"; };
 		A0D8D374203B38E400D68A5A /* AddExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExperienceViewController.swift; sourceTree = "<group>"; };
@@ -588,6 +594,7 @@
 		A0D68A2D206B8F970040BDD1 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				A0D68A2F206C227A0040BDD1 /* BusinessInvites */,
 				A0973A112024B4FD0087F7CE /* BusinessProfileCreation */,
 				A09739EB2021D1AB0087F7CE /* BusinessRegister */,
 				A00748681F912570004AF885 /* BusinessSideMenu */,
@@ -607,6 +614,16 @@
 				A0D68A29206AB3B30040BDD1 /* OrganiseChat */,
 			);
 			path = InterviewAndChat;
+			sourceTree = "<group>";
+		};
+		A0D68A2F206C227A0040BDD1 /* BusinessInvites */ = {
+			isa = PBXGroup;
+			children = (
+				A0D68A30206C22B50040BDD1 /* BusinessInvitesViewController.swift */,
+				A0D68A32206C23190040BDD1 /* BusinessInvitesCell.swift */,
+				A0D68A34206C24D70040BDD1 /* ChatInvite.swift */,
+			);
+			path = BusinessInvites;
 			sourceTree = "<group>";
 		};
 		A0D8D36E203ADD7D00D68A5A /* StudentEditProfile */ = {
@@ -846,6 +863,7 @@
 				A07226651F91657F006C60BA /* TabsViewController.swift in Sources */,
 				A0F94F232054347000FECC7A /* MatchedCell.swift in Sources */,
 				A0D8D375203B38E400D68A5A /* AddExperienceViewController.swift in Sources */,
+				A0D68A33206C23190040BDD1 /* BusinessInvitesCell.swift in Sources */,
 				5FBF425E2052A48F00B93FED /* BusinessSelectCell.swift in Sources */,
 				A0AA81562036FA2300858063 /* SelectStudentViewController.swift in Sources */,
 				A09A82E120626D7B0006E44A /* SelectJobCell.swift in Sources */,
@@ -876,6 +894,7 @@
 				A0A6B0F62049837D00AC357F /* ShowJobsCell.swift in Sources */,
 				A0E4B04E20502AEB002D7534 /* ViewedManager.swift in Sources */,
 				A0AD070E202CC1D400B77C61 /* StudentSideMenuViewController.swift in Sources */,
+				A0D68A35206C24D70040BDD1 /* ChatInvite.swift in Sources */,
 				A0A6B0FA204983A100AC357F /* EditJobsViewController.swift in Sources */,
 				A0AD0712202CC66000B77C61 /* StudentMoreInfoViewController.swift in Sources */,
 				A0A6B0F120487A4A00AC357F /* SpecialtiesCell.swift in Sources */,
@@ -884,6 +903,7 @@
 				A07CAF452066D0B8003EAA9F /* JobsPostedViewController.swift in Sources */,
 				A0D67A5B204350050060AD70 /* ShowSkillsViewController.swift in Sources */,
 				A0F529EA1FD1BA3100B5B93C /* VerticalGradient.swift in Sources */,
+				A0D68A31206C22B50040BDD1 /* BusinessInvitesViewController.swift in Sources */,
 				A09F6BA22027534F00D98332 /* BusinessAboutViewController.swift in Sources */,
 				A000D43E203077BB0099892D /* StudentLikedViewController.swift in Sources */,
 				A049B0D320261EDF00EBD07B /* StudentSwipeViewController.swift in Sources */,

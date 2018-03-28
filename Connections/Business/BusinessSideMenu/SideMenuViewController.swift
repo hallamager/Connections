@@ -29,8 +29,8 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         coverView?.backgroundColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 0.5)
         
         // sets menu title and image icon
-        menuNameArray = ["Home", "Liked", "Questions", "Jobs", "Profile"]
-        iconImage = [UIImage(named: "Home-icon")!, UIImage(named: "Liked-icon")!, UIImage(named: "Chats-icon")!, UIImage(named: "News-Feed-icon")!, UIImage(named: "Profile-icon")! ]
+        menuNameArray = ["Home", "Liked", "Questions", "Jobs", "Invites", "Profile"]
+        iconImage = [UIImage(named: "Home-icon")!, UIImage(named: "Liked-icon")!, UIImage(named: "Chats-icon")!, UIImage(named: "News-Feed-icon")!, UIImage(named: "News-Feed-icon")!, UIImage(named: "Profile-icon")! ]
         
         let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)")
         ref.observeSingleEvent(of: .value, with: { snapshot in
@@ -113,6 +113,16 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
             
             let mainStoryboard:UIStoryboard = UIStoryboard(name: "BusinessMain", bundle: nil)
             let desController = mainStoryboard.instantiateViewController(withIdentifier: "BusinessJobsViewController") as! BusinessJobsViewController
+            let newFrontViewController = UINavigationController.init(rootViewController:desController)
+            
+            revealViewController.pushFrontViewController(newFrontViewController, animated: true)
+            
+        }
+        if cell.lblMenuName.text! == "Invites"
+        {
+            
+            let mainStoryboard:UIStoryboard = UIStoryboard(name: "BusinessMain", bundle: nil)
+            let desController = mainStoryboard.instantiateViewController(withIdentifier: "BusinessInvitesViewController") as! BusinessInvitesViewController
             let newFrontViewController = UINavigationController.init(rootViewController:desController)
             
             revealViewController.pushFrontViewController(newFrontViewController, animated: true)
