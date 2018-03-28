@@ -10,12 +10,19 @@ import Foundation
 import UIKit
 import FoldingCell
 
+protocol StudentSelectChatCellDelegate: class {
+    func selected(for student: Student)
+}
 
 class StudentLikedCell: FoldingCell {
     
+    var student: Student!
+    weak var delegate: StudentSelectChatCellDelegate?
+
     @IBOutlet weak var studentImg: UIImageView!
     @IBOutlet weak var studentName: UILabel!
     @IBOutlet weak var studentHeadline: UILabel!
+    @IBOutlet weak var organiseChat: UIButtonStyles!
     
     //Defines sides, shadows and colour of the cells for the viewcontroller.
     override func awakeFromNib() {
@@ -41,5 +48,8 @@ class StudentLikedCell: FoldingCell {
         return durations[itemIndex]
     }
     
+    @IBAction func organiseChatBtn(_ sender: UIButton) {
+        delegate?.selected(for: student)
+    }
     
 }

@@ -89,6 +89,14 @@ class StudentLikedViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let sender = sender as? (tag: Int, student: Student) else { return }
+        
+        let vc = segue.destination as! OrganiseChatViewController
+        vc.student = sender.student
+        
+    }
+    
 }
 
 extension StudentLikedViewController: UITableViewDelegate {
@@ -162,19 +170,30 @@ extension StudentLikedViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! FoldingCell
-        //        let cellContent = tableView.dequeueReusableCell(withIdentifier: "FoldingCell") as! StudentLikedCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! StudentLikedCell
+        
         let durations: [TimeInterval] = [0.26, 0.2, 0.2]
         cell.durationsForExpandedState = durations
         cell.durationsForCollapsedState = durations
         
         let student = students[indexPath.row]
         
-        //        cellContent.nameLabel.text! = student.username
+        cell.student = student
+        cell.delegate = self
         
         print(student.username)
         
         return cell
+    }
+    
+}
+
+extension StudentLikedViewController: StudentSelectChatCellDelegate {
+    
+    func selected(for student: Student) {
+        print(student)
+        
+        performSegue(withIdentifier: "organiseChat", sender: (tag: 2, student: student))
     }
     
 }
