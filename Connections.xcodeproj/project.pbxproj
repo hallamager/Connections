@@ -113,6 +113,8 @@
 		A0F529EB1FD1CD6400B5B93C /* Gotham Rounded Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0F529E11FD1AFC000B5B93C /* Gotham Rounded Book.ttf */; };
 		A0F529ED1FD1E6F600B5B93C /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F529EC1FD1E6F600B5B93C /* SideMenuViewController.swift */; };
 		A0F5A6752039AE5A004E4D3E /* StudentProfilePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F5A6742039AE5A004E4D3E /* StudentProfilePictureViewController.swift */; };
+		A0F5CB12206E6E71005AEEF3 /* StudentInviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F5CB11206E6E71005AEEF3 /* StudentInviteViewController.swift */; };
+		A0F5CB15206E6E97005AEEF3 /* StudentInviteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F5CB14206E6E97005AEEF3 /* StudentInviteCell.swift */; };
 		A0F94F2120542A1500FECC7A /* BusinessMatchedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F94F2020542A1500FECC7A /* BusinessMatchedCell.swift */; };
 		A0F94F232054347000FECC7A /* MatchedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F94F222054347000FECC7A /* MatchedCell.swift */; };
 /* End PBXBuildFile section */
@@ -232,6 +234,8 @@
 		A0F529E91FD1BA3100B5B93C /* VerticalGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalGradient.swift; sourceTree = "<group>"; };
 		A0F529EC1FD1E6F600B5B93C /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		A0F5A6742039AE5A004E4D3E /* StudentProfilePictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProfilePictureViewController.swift; sourceTree = "<group>"; };
+		A0F5CB11206E6E71005AEEF3 /* StudentInviteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInviteViewController.swift; sourceTree = "<group>"; };
+		A0F5CB14206E6E97005AEEF3 /* StudentInviteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInviteCell.swift; sourceTree = "<group>"; };
 		A0F94F2020542A1500FECC7A /* BusinessMatchedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessMatchedCell.swift; sourceTree = "<group>"; };
 		A0F94F222054347000FECC7A /* MatchedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -577,6 +581,7 @@
 		A0D68A2C206B8F660040BDD1 /* Student */ = {
 			isa = PBXGroup;
 			children = (
+				A0F5CB13206E6E7F005AEEF3 /* StudentInvite */,
 				A09739E820210B9B0087F7CE /* StudentProfileCreation */,
 				A00748691F912586004AF885 /* StudentRegister */,
 				A049B0D120261E8200EBD07B /* StudentSideMenu */,
@@ -680,6 +685,15 @@
 				A0F529E91FD1BA3100B5B93C /* VerticalGradient.swift */,
 			);
 			path = IBDesignables;
+			sourceTree = "<group>";
+		};
+		A0F5CB13206E6E7F005AEEF3 /* StudentInvite */ = {
+			isa = PBXGroup;
+			children = (
+				A0F5CB11206E6E71005AEEF3 /* StudentInviteViewController.swift */,
+				A0F5CB14206E6E97005AEEF3 /* StudentInviteCell.swift */,
+			);
+			path = StudentInvite;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -862,6 +876,7 @@
 				A0D8D377203B39CF00D68A5A /* Experience.swift in Sources */,
 				A07226651F91657F006C60BA /* TabsViewController.swift in Sources */,
 				A0F94F232054347000FECC7A /* MatchedCell.swift in Sources */,
+				A0F5CB15206E6E97005AEEF3 /* StudentInviteCell.swift in Sources */,
 				A0D8D375203B38E400D68A5A /* AddExperienceViewController.swift in Sources */,
 				A0D68A33206C23190040BDD1 /* BusinessInvitesCell.swift in Sources */,
 				5FBF425E2052A48F00B93FED /* BusinessSelectCell.swift in Sources */,
@@ -894,6 +909,7 @@
 				A0A6B0F62049837D00AC357F /* ShowJobsCell.swift in Sources */,
 				A0E4B04E20502AEB002D7534 /* ViewedManager.swift in Sources */,
 				A0AD070E202CC1D400B77C61 /* StudentSideMenuViewController.swift in Sources */,
+				A0F5CB12206E6E71005AEEF3 /* StudentInviteViewController.swift in Sources */,
 				A0D68A35206C24D70040BDD1 /* ChatInvite.swift in Sources */,
 				A0A6B0FA204983A100AC357F /* EditJobsViewController.swift in Sources */,
 				A0AD0712202CC66000B77C61 /* StudentMoreInfoViewController.swift in Sources */,

@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="AvenirNext.ttc">
-            <string>AvenirNext-Bold</string>
-            <string>AvenirNext-DemiBold</string>
-            <string>AvenirNext-Medium</string>
-            <string>AvenirNext-Regular</string>
-        </array>
         <array key="Gotham Rounded Book.ttf">
             <string>GothamRounded-Book</string>
         </array>
@@ -1169,6 +1164,357 @@
             </objects>
             <point key="canvasLocation" x="16109" y="-1848"/>
         </scene>
+        <!--Student Invite View Controller-->
+        <scene sceneID="kfX-R3-gGB">
+            <objects>
+                <viewController storyboardIdentifier="StudentInviteViewController" id="bHD-s7-vQX" customClass="StudentInviteViewController" customModule="Connections" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YsJ-2G-rvB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="703"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VdJ-PU-fwT" customClass="HorizontalGradient" customModule="Connections" customModuleProvider="target">
+                                <rect key="frame" x="22" y="65" width="64" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
+                                        <color key="value" red="0.46666666670000001" green="0.78823529410000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
+                                        <color key="value" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Invites Sent" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24w-1z-83u">
+                                <rect key="frame" x="22" y="20" width="343" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jha-zu-djW">
+                                <rect key="frame" x="0.0" y="87" width="375" height="616"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoldingCell" rowHeight="590" id="IZU-kE-58M" customClass="StudentInviteCell" customModule="Connections" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="590"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IZU-kE-58M" id="bcJ-rd-Up3">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="590"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABw-uj-Y0f" customClass="RotatedView" customModule="FoldingCell">
+                                                    <rect key="frame" x="22" y="17" width="330" height="146"/>
+                                                    <subviews>
+                                                        <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Bj-gr-M46" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="330" height="146"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8u2-am-Bhq">
+                                                                    <rect key="frame" x="131" y="28" width="191" height="28"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yF0-hQ-Wyd" customClass="VerticalGradient" customModule="Connections" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="3" height="146"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
+                                                                            <color key="value" red="0.46666666670000001" green="0.78823529410000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
+                                                                            <color key="value" red="0.46666666670000001" green="0.78823529410000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="ThirdColor">
+                                                                            <color key="value" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="FourthColor">
+                                                                            <color key="value" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
+                                                                <view clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A7z-Qr-Wlv" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                                    <rect key="frame" x="22" y="28" width="90" height="90"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                    <subviews>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="companyImage" translatesAutoresizingMaskIntoConstraints="NO" id="V5n-c6-5ir">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                                            <autoresizingMask key="autoresizingMask"/>
+                                                                        </imageView>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="45"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chat Invite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bny-8q-UM4">
+                                                                    <rect key="frame" x="131" y="69" width="87" height="24"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pending Response" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okE-1E-Q89">
+                                                                    <rect key="frame" x="131" y="94" width="137" height="24"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="146" id="cLU-5V-eok"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5T-Ir-3uX" userLabel="Container" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                    <rect key="frame" x="22" y="186" width="330" height="356"/>
+                                                    <subviews>
+                                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7v-z8-v7p" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="330" height="356"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nBn-yp-MHb">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="330" height="146"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chat Invite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pq2-2e-Z9q">
+                                                                            <rect key="frame" x="131" y="69" width="191" height="24"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <view clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nic-4g-R1J" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                                            <rect key="frame" x="22" y="28" width="90" height="90"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                            <subviews>
+                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="companyImage" translatesAutoresizingMaskIntoConstraints="NO" id="ly2-01-D48">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                </imageView>
+                                                                            </subviews>
+                                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                    <real key="value" value="45"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
+                                                                        </view>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUg-FX-IjF">
+                                                                            <rect key="frame" x="131" y="28" width="191" height="28"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pending Response" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fo-wA-gF9">
+                                                                            <rect key="frame" x="131" y="94" width="137" height="24"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="146" id="wLR-pt-Xwo"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zWK-x1-mdI">
+                                                                    <rect key="frame" x="0.0" y="146" width="330" height="70"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gli-Gb-kiy">
+                                                                            <rect key="frame" x="20" y="25" width="43" height="24"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="25/04/18" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7n-SH-Sgf">
+                                                                            <rect key="frame" x="100" y="19" width="208" height="32"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="70" id="z25-y3-Gnj"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kgu-ZJ-hVN">
+                                                                    <rect key="frame" x="0.0" y="222" width="330" height="70"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXE-1M-arf">
+                                                                            <rect key="frame" x="20" y="25" width="44" height="24"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="17:10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hx2-Vg-IWX">
+                                                                            <rect key="frame" x="100" y="19" width="208" height="32"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="70" id="ibH-My-wpY"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6d5-Lq-Uvi">
+                                                                    <rect key="frame" x="0.0" y="286" width="330" height="70"/>
+                                                                    <subviews>
+                                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pph-oI-YEM" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                                            <rect key="frame" x="20" y="8" width="290" height="48"/>
+                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                                                            <subviews>
+                                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v42-pB-GnN" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="290" height="48"/>
+                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                                                    <state key="normal" title="Rearrange">
+                                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    </state>
+                                                                                    <userDefinedRuntimeAttributes>
+                                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                            <real key="value" value="5"/>
+                                                                                        </userDefinedRuntimeAttribute>
+                                                                                        <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
+                                                                                            <color key="value" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                        </userDefinedRuntimeAttribute>
+                                                                                        <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
+                                                                                            <color key="value" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                        </userDefinedRuntimeAttribute>
+                                                                                    </userDefinedRuntimeAttributes>
+                                                                                </button>
+                                                                            </subviews>
+                                                                            <color key="backgroundColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                    <real key="value" value="5"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
+                                                                        </view>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="70" id="kzo-f5-UDm"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstItem="nBn-yp-MHb" firstAttribute="top" secondItem="c7v-z8-v7p" secondAttribute="top" id="0QT-Hv-RaZ"/>
+                                                                <constraint firstAttribute="trailing" secondItem="nBn-yp-MHb" secondAttribute="trailing" id="9Sd-oQ-wpw"/>
+                                                                <constraint firstAttribute="trailing" secondItem="zWK-x1-mdI" secondAttribute="trailing" id="Fep-oU-WkU"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Kgu-ZJ-hVN" secondAttribute="trailing" id="Lpt-F5-LXJ"/>
+                                                                <constraint firstItem="6d5-Lq-Uvi" firstAttribute="leading" secondItem="c7v-z8-v7p" secondAttribute="leading" id="MQl-X9-a7Y"/>
+                                                                <constraint firstItem="6d5-Lq-Uvi" firstAttribute="top" secondItem="c7v-z8-v7p" secondAttribute="top" constant="286" id="MZO-Dh-LaV"/>
+                                                                <constraint firstItem="Kgu-ZJ-hVN" firstAttribute="leading" secondItem="c7v-z8-v7p" secondAttribute="leading" id="Wwq-zu-dVC"/>
+                                                                <constraint firstItem="zWK-x1-mdI" firstAttribute="top" secondItem="c7v-z8-v7p" secondAttribute="top" constant="146" id="avx-05-Vyj"/>
+                                                                <constraint firstItem="Kgu-ZJ-hVN" firstAttribute="top" secondItem="c7v-z8-v7p" secondAttribute="top" constant="222" id="cNA-0Z-Ben"/>
+                                                                <constraint firstAttribute="trailing" secondItem="6d5-Lq-Uvi" secondAttribute="trailing" id="rco-sc-lUN"/>
+                                                                <constraint firstItem="zWK-x1-mdI" firstAttribute="leading" secondItem="c7v-z8-v7p" secondAttribute="leading" id="vKk-4K-2g4"/>
+                                                                <constraint firstItem="nBn-yp-MHb" firstAttribute="leading" secondItem="c7v-z8-v7p" secondAttribute="leading" id="voE-Rx-u0j"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="c7v-z8-v7p" secondAttribute="trailing" id="1G7-hf-uEn"/>
+                                                        <constraint firstItem="c7v-z8-v7p" firstAttribute="top" secondItem="t5T-Ir-3uX" secondAttribute="top" id="1zH-xj-eBB"/>
+                                                        <constraint firstAttribute="bottom" secondItem="c7v-z8-v7p" secondAttribute="bottom" id="kR2-mf-D3e"/>
+                                                        <constraint firstItem="c7v-z8-v7p" firstAttribute="leading" secondItem="t5T-Ir-3uX" secondAttribute="leading" id="ypQ-Ni-9VV"/>
+                                                        <constraint firstAttribute="height" constant="356" id="z3j-en-GTI"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="t5T-Ir-3uX" firstAttribute="leading" secondItem="bcJ-rd-Up3" secondAttribute="leading" constant="22" id="3kg-hO-65J"/>
+                                                <constraint firstItem="ABw-uj-Y0f" firstAttribute="top" secondItem="bcJ-rd-Up3" secondAttribute="top" constant="17" identifier="ForgroundViewTop" id="4u9-pC-Vo5"/>
+                                                <constraint firstItem="t5T-Ir-3uX" firstAttribute="top" secondItem="bcJ-rd-Up3" secondAttribute="top" constant="186" id="D85-Bm-ZqH"/>
+                                                <constraint firstAttribute="trailing" secondItem="ABw-uj-Y0f" secondAttribute="trailing" constant="23" id="EXE-6m-Y0S"/>
+                                                <constraint firstItem="ABw-uj-Y0f" firstAttribute="leading" secondItem="bcJ-rd-Up3" secondAttribute="leading" constant="22" id="GCs-Fs-xjj"/>
+                                                <constraint firstAttribute="trailing" secondItem="t5T-Ir-3uX" secondAttribute="trailing" constant="23" id="db0-T9-fBt"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="itemCount">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="InviteType" destination="Bny-8q-UM4" id="Z9P-bF-8kF"/>
+                                            <outlet property="containerView" destination="t5T-Ir-3uX" id="kcD-bO-eII"/>
+                                            <outlet property="containerViewTop" destination="D85-Bm-ZqH" id="vR8-8D-hec"/>
+                                            <outlet property="date" destination="f7n-SH-Sgf" id="3TD-aq-7P9"/>
+                                            <outlet property="foldedInviteType" destination="pq2-2e-Z9q" id="uZL-sm-HfV"/>
+                                            <outlet property="foldedResponse" destination="2fo-wA-gF9" id="3k3-f5-gjy"/>
+                                            <outlet property="foldedStudentImg" destination="ly2-01-D48" id="Sxk-Dg-mYM"/>
+                                            <outlet property="foldedStudentName" destination="aUg-FX-IjF" id="SXF-0O-gbg"/>
+                                            <outlet property="foregroundView" destination="ABw-uj-Y0f" id="en7-E9-DGl"/>
+                                            <outlet property="foregroundViewTop" destination="4u9-pC-Vo5" id="7SP-gX-zHC"/>
+                                            <outlet property="response" destination="okE-1E-Q89" id="LEe-7r-fqH"/>
+                                            <outlet property="studentImg" destination="V5n-c6-5ir" id="cDN-8W-Xqf"/>
+                                            <outlet property="studentName" destination="8u2-am-Bhq" id="QFA-4F-bNA"/>
+                                            <outlet property="time" destination="hx2-Vg-IWX" id="6gp-zt-ysG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="bHD-s7-vQX" id="Oz5-fL-P7H"/>
+                                    <outlet property="delegate" destination="bHD-s7-vQX" id="TUy-9v-5dy"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="1xL-fM-czo"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bS0-vI-G9p">
+                        <barButtonItem key="leftBarButtonItem" image="OpenMenu" id="8JZ-ch-123">
+                            <inset key="imageInsets" minX="-10" minY="0.0" maxX="0.0" maxY="-12"/>
+                            <color key="tintColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <size key="freeformSize" width="375" height="767"/>
+                    <connections>
+                        <outlet property="openMenu" destination="8JZ-ch-123" id="HWa-7Z-Bp3"/>
+                        <outlet property="tableView" destination="Jha-zu-djW" id="i4G-XA-TNa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fFD-2r-4Su" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="16109.6" y="-949.47526236881572"/>
+        </scene>
         <!--Organise Chat View Controller-->
         <scene sceneID="suS-Iu-waa">
             <objects>
@@ -1398,7 +1744,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wpe-Zu-T32" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="17189.599999999999" y="-858.62068965517244"/>
+            <point key="canvasLocation" x="17190" y="-860"/>
         </scene>
         <!--Student Liked View Controller-->
         <scene sceneID="BLA-4Z-nKM">
@@ -1741,6 +2087,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rRV-Oa-1TD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="22023" y="-1848"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qbt-Nv-CWM">
+            <objects>
+                <navigationController storyboardIdentifier="studentInvite" automaticallyAdjustsScrollViewInsets="NO" id="2pQ-bo-mlG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="4xt-NX-chy">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bHD-s7-vQX" kind="relationship" relationship="rootViewController" id="9k7-OL-kcL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ulA-7c-fDx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="14985" y="-949"/>
         </scene>
     </scenes>
     <resources>

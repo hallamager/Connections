@@ -1,8 +1,8 @@
 //
-//  BusinessInvitesViewController.swift
+//  StudentInviteViewController.swift
 //  Connections
 //
-//  Created by Hallam John Ager on 28/03/2018.
+//  Created by Hallam John Ager on 30/03/2018.
 //  Copyright © 2018 Hallam John Ager. All rights reserved.
 //
 
@@ -13,7 +13,7 @@ import FirebaseStorage
 import ViewAnimator
 import FoldingCell
 
-class BusinessInvitesViewController: UIViewController {
+class StudentInviteViewController: UIViewController {
     
     @IBOutlet var openMenu: UIBarButtonItem!
     @IBOutlet var tableView: UITableView!
@@ -34,8 +34,8 @@ class BusinessInvitesViewController: UIViewController {
         
         self.navigationController?.navigationBar.isTranslucent = false
         
-        loadBusinessesWhoInvited(for: Auth.auth().currentUser!.uid) { success, businesses in
-            self.businesses = businesses
+        loadStudentsWhoGotInvited(for: Auth.auth().currentUser!.uid) { success, students in
+            self.students = students
             self.tableView.reloadData()
             self.tableView.animateViews(animations: self.animations, delay: 0.3)
         }
@@ -52,7 +52,7 @@ class BusinessInvitesViewController: UIViewController {
         
     }
     
-    func loadBusinessesWhoInvited(for studentUID: String, completion: @escaping (Bool, [Business]) -> ()) {
+    func loadStudentsWhoGotInvited(for studentUID: String, completion: @escaping (Bool, [Student]) -> ()) {
         
         let ref = Database.database().reference().child("organisedChats/\(Auth.auth().currentUser!.uid)")
         
@@ -64,22 +64,22 @@ class BusinessInvitesViewController: UIViewController {
                 uids.append(userData.key)
             }
             
-            let userRef = Database.database().reference(withPath: "business")
-            var businesses = [Business]()
+            let userRef = Database.database().reference(withPath: "student")
+            var students = [Student]()
             var count = 0
             if uids.count != 0 {
                 uids.forEach { uid in
                     userRef.child(uid).observeSingleEvent(of: .value) { snapshot in
-                        let business = Business(snapshot: snapshot)
-                        businesses.append(business!)
+                        let student = Student(snapshot: snapshot)
+                        students.append(student!)
                         count += 1
                         if count == uids.count {
-                            completion(true, businesses)
+                            completion(true, students)
                         }
                     }
                 }
             } else {
-                completion(true, businesses)
+                completion(true, students)
             }
             
         }
@@ -93,7 +93,7 @@ class BusinessInvitesViewController: UIViewController {
     
 }
 
-extension BusinessInvitesViewController: UITableViewDelegate {
+extension StudentInviteViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return cellHeights[indexPath.row]
@@ -101,13 +101,13 @@ extension BusinessInvitesViewController: UITableViewDelegate {
     
     func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        guard case let cell as BusinessInvitesCell = cell else {
+        guard case let cell as StudentInviteCell = cell else {
             return
         }
         
-        let business = businesses[indexPath.row]
+        let student = students[indexPath.row]
         
-        let refAnswer = Database.database().reference().child("organisedChats/\(Auth.auth().currentUser!.uid)").child(business.uuid)
+        let refAnswer = Database.database().reference().child("organisedChats/\(Auth.auth().currentUser!.uid)").child(student.uuid)
         
         refAnswer.observe(.value, with: { snapshot in
             if let business = Invites(snapshot: snapshot) {
@@ -146,17 +146,17 @@ extension BusinessInvitesViewController: UITableViewDelegate {
             cell.unfold(true, animated: false, completion: nil)
         }
         
-        cell.companyName?.text = business.username
-        cell.foldedCompanyName?.text = business.username
+        cell.studentName?.text = student.username
+        cell.foldedStudentName?.text = student.username
         
         // Create a storage reference from the URL
-        let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(business.uuid)
+        let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(student.uuid)
         // Download the data, assuming a max size of 1MB (you can change this as necessary)
         storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
             // Create a UIImage, add it to the array
             let pic = UIImage(data: data!)
-            cell.companyImg.image = pic
-            cell.foldedCompanyImg.image = pic
+            cell.studentImg.image = pic
+            cell.foldedStudentImg.image = pic
         }
         
     }
@@ -191,56 +191,26 @@ extension BusinessInvitesViewController: UITableViewDelegate {
     
 }
 
-extension BusinessInvitesViewController: UITableViewDataSource{
+extension StudentInviteViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(businesses.count)
-        return businesses.count
+        print(students.count)
+        return students.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! BusinessInvitesCell
-        
-        cell.delegate = self
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! StudentInviteCell
         
         let durations: [TimeInterval] = [0.26, 0.2, 0.2]
         cell.durationsForExpandedState = durations
         cell.durationsForCollapsedState = durations
         
-        let business = businesses[indexPath.row]
-        print(business.username)
+        let student = students[indexPath.row]
+        print(student.username)
         
         return cell
         
-    }
-    
-}
-
-extension BusinessInvitesViewController: YourCellDelegate {
-    
-    func didTapButton(_ sender: UIButton) {
-        if let indexPath = getCurrentCellIndexPath(sender) {
-            let business = businesses[indexPath.row]
-            print("is\(business.username)")
-            
-            let ref = Database.database().reference().child("organisedChats").child(Auth.auth().currentUser!.uid).child(business.uuid)
-            
-            let refBusiness = Database.database().reference().child("organisedChats").child(business.uuid).child(Auth.auth().currentUser!.uid)
-            
-            ref.updateChildValues(["Response": "Accepted"])
-            
-            refBusiness.updateChildValues(["Response": "Accepted"])
-            
-        }
-    }
-    
-    func getCurrentCellIndexPath(_ sender: UIButton) -> IndexPath? {
-        let buttonPosition = sender.convert(CGPoint.zero, to: tableView)
-        if let indexPath: IndexPath = tableView.indexPathForRow(at: buttonPosition) {
-            return indexPath
-        }
-        return nil
     }
     
 }
