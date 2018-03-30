@@ -183,8 +183,7 @@ extension BusinessInvitesViewController: UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! BusinessInvitesCell
         
-        cell.cellDelegate = self
-        cell.tag = indexPath.row
+        cell.delegate = self
         
         let durations: [TimeInterval] = [0.26, 0.2, 0.2]
         cell.durationsForExpandedState = durations
@@ -201,8 +200,24 @@ extension BusinessInvitesViewController: UITableViewDataSource{
 
 extension BusinessInvitesViewController: YourCellDelegate {
     
-    func didPressButton(_ tag: Int) {
-        print("I have pressed a button with a tag: \(tag)")
+    func didTapButton(_ sender: UIButton) {
+        if let indexPath = getCurrentCellIndexPath(sender) {
+            let business = businesses[indexPath.row]
+            print("is\(business.username)")
+            
+            let ref = Database.database().reference().child("organisedChats").child(Auth.auth().currentUser!.uid).child(business.uuid)
+            
+            ref.updateChildValues(["Response": "Accepted"])
+            
+        }
+    }
+    
+    func getCurrentCellIndexPath(_ sender: UIButton) -> IndexPath? {
+        let buttonPosition = sender.convert(CGPoint.zero, to: tableView)
+        if let indexPath: IndexPath = tableView.indexPathForRow(at: buttonPosition) {
+            return indexPath
+        }
+        return nil
     }
     
 }

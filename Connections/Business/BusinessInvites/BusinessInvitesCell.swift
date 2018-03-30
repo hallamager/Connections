@@ -11,13 +11,13 @@ import UIKit
 import Firebase
 import FoldingCell
 
-protocol YourCellDelegate : class {
-    func didPressButton(_ tag: Int)
+protocol YourCellDelegate: class {
+    func didTapButton(_ sender: UIButton)
 }
 
 class BusinessInvitesCell: FoldingCell {
     
-    weak var cellDelegate: YourCellDelegate?
+    weak var delegate: YourCellDelegate?
     
     @IBOutlet weak var companyImg: UIImageView!
     @IBOutlet weak var foldedCompanyImg: UIImageView!
@@ -53,7 +53,7 @@ class BusinessInvitesCell: FoldingCell {
     }
     
     @IBAction func acceptInviteBtn(_ sender: UIButton) {
-        cellDelegate?.didPressButton(sender.tag)
+        delegate?.didTapButton(sender)
     }
     
 }
