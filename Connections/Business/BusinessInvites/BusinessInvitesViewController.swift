@@ -23,7 +23,7 @@ class BusinessInvitesViewController: UIViewController {
     var student: Student!
     var invite = [Invites]()
     var invites: Invites!
-    let kCloseCellHeight: CGFloat = 160
+    let kCloseCellHeight: CGFloat = 170
     let kOpenCellHeight: CGFloat = 376
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
@@ -118,6 +118,23 @@ extension BusinessInvitesViewController: UITableViewDelegate {
                 cell.foldedInviteType.text = business.inviteType
                 cell.response.text = business.response
                 cell.foldedResponse.text = business.response
+                
+                if cell.foldedResponse.text == "Accepted" {
+                    cell.foldedResponse.textColor = UIColor.green
+                }
+                
+                if cell.response.text == "Accepted" {
+                    cell.response.textColor = UIColor.green
+                }
+                
+                if cell.foldedResponse.text == "Declined" {
+                    cell.foldedResponse.textColor = UIColor.red
+                }
+                
+                if cell.response.text == "Declined" {
+                    cell.response.textColor = UIColor.red
+                }
+                
             }
         })
         
