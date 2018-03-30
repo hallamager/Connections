@@ -11,7 +11,13 @@ import UIKit
 import Firebase
 import FoldingCell
 
+protocol YourCellDelegate : class {
+    func didPressButton(_ tag: Int)
+}
+
 class BusinessInvitesCell: FoldingCell {
+    
+    weak var cellDelegate: YourCellDelegate?
     
     @IBOutlet weak var companyImg: UIImageView!
     @IBOutlet weak var foldedCompanyImg: UIImageView!
@@ -21,6 +27,7 @@ class BusinessInvitesCell: FoldingCell {
     @IBOutlet weak var foldedInviteType: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var acceptInvite: UIButton!
     
     //Defines sides, shadows and colour of the cells for the viewcontroller.
     override func awakeFromNib() {
@@ -43,6 +50,10 @@ class BusinessInvitesCell: FoldingCell {
         // durations count equal it itemCount
         let durations = [0.20, 0.20, 0.20] // timing animation for each view
         return durations[itemIndex]
+    }
+    
+    @IBAction func acceptInviteBtn(_ sender: UIButton) {
+        cellDelegate?.didPressButton(sender.tag)
     }
     
 }

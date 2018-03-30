@@ -183,6 +183,9 @@ extension BusinessInvitesViewController: UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! BusinessInvitesCell
         
+        cell.cellDelegate = self
+        cell.tag = indexPath.row
+        
         let durations: [TimeInterval] = [0.26, 0.2, 0.2]
         cell.durationsForExpandedState = durations
         cell.durationsForCollapsedState = durations
@@ -192,6 +195,14 @@ extension BusinessInvitesViewController: UITableViewDataSource{
         
         return cell
         
+    }
+    
+}
+
+extension BusinessInvitesViewController: YourCellDelegate {
+    
+    func didPressButton(_ tag: Int) {
+        print("I have pressed a button with a tag: \(tag)")
     }
     
 }
