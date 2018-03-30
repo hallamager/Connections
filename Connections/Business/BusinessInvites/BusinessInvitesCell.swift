@@ -27,6 +27,8 @@ class BusinessInvitesCell: FoldingCell {
     @IBOutlet weak var foldedInviteType: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var response: UILabel!
+    @IBOutlet weak var foldedResponse: UILabel!
     @IBOutlet weak var acceptInvite: UIButton!
     
     //Defines sides, shadows and colour of the cells for the viewcontroller.

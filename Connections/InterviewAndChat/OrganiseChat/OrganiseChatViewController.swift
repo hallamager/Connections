@@ -62,7 +62,7 @@ class OrganiseChatViewController: UIViewController {
         
         let ref = Database.database().reference().child("organisedChats").child(student.uuid).child(Auth.auth().currentUser!.uid)
         
-        ref.updateChildValues(["Date": self.dateSelected.text!, "Time": self.timeSelected.text!, "Invite Type": "Chat Invite"])
+        ref.updateChildValues(["Date": self.dateSelected.text!, "Time": self.timeSelected.text!, "Invite Type": "Chat Invite", "Response": "Pending Response"])
         
     }
     

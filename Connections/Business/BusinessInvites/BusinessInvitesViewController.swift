@@ -23,8 +23,8 @@ class BusinessInvitesViewController: UIViewController {
     var student: Student!
     var invite = [Invites]()
     var invites: Invites!
-    let kCloseCellHeight: CGFloat = 130
-    let kOpenCellHeight: CGFloat = 340
+    let kCloseCellHeight: CGFloat = 160
+    let kOpenCellHeight: CGFloat = 376
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
     let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
@@ -109,13 +109,15 @@ extension BusinessInvitesViewController: UITableViewDelegate {
         
         let refAnswer = Database.database().reference().child("organisedChats/\(Auth.auth().currentUser!.uid)").child(business.uuid)
         
-        refAnswer.observeSingleEvent(of: .value, with: { snapshot in
+        refAnswer.observe(.value, with: { snapshot in
             if let business = Invites(snapshot: snapshot) {
                 self.invite.append(business)
                 cell.date.text = business.date
                 cell.time.text = business.time
                 cell.InviteType.text = business.inviteType
                 cell.foldedInviteType.text = business.inviteType
+                cell.response.text = business.response
+                cell.foldedResponse.text = business.response
             }
         })
         
