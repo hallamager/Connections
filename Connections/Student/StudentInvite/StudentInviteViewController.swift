@@ -24,7 +24,7 @@ class StudentInviteViewController: UIViewController {
     var invite = [Invites]()
     var invites: Invites!
     let kCloseCellHeight: CGFloat = 170
-    let kOpenCellHeight: CGFloat = 410
+    let kOpenCellHeight: CGFloat = 415
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
     let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
@@ -120,12 +120,14 @@ extension StudentInviteViewController: UITableViewDelegate {
                 cell.foldedResponse.text = business.response
                 cell.date2.text = business.date2
                 cell.time2.text = business.time2
+                cell.firstDateConfirmed.text = business.responseFirstDate
+                cell.secondDateConfirmed.text = business.responseSecondDate
                 
-                if cell.foldedResponse.text == "Accepted" {
+                if cell.foldedResponse.text == "Date Confirmed" {
                     cell.foldedResponse.textColor = UIColor.green
                 }
                 
-                if cell.response.text == "Accepted" {
+                if cell.response.text == "Date Confirmed" {
                     cell.response.textColor = UIColor.green
                 }
                 
@@ -135,6 +137,18 @@ extension StudentInviteViewController: UITableViewDelegate {
                 
                 if cell.response.text == "Declined" {
                     cell.response.textColor = UIColor.red
+                }
+                
+                if cell.firstDateConfirmed.text == "Date Confirmed" {
+                    cell.firstDateConfirmedImg.alpha = 1
+                } else {
+                    cell.firstDateConfirmedImg.alpha = 0
+                }
+                
+                if cell.secondDateConfirmed.text == "Date Confirmed" {
+                    cell.secondDateConfirmedImg.alpha = 1
+                } else {
+                    cell.secondDateConfirmedImg.alpha = 0
                 }
                 
             }

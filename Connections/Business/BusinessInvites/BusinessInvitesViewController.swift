@@ -23,8 +23,8 @@ class BusinessInvitesViewController: UIViewController {
     var student: Student!
     var invite = [Invites]()
     var invites: Invites!
-    let kCloseCellHeight: CGFloat = 170
-    let kOpenCellHeight: CGFloat = 376
+    let kCloseCellHeight: CGFloat = 165
+    let kOpenCellHeight: CGFloat = 610
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
     let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
@@ -118,12 +118,30 @@ extension BusinessInvitesViewController: UITableViewDelegate {
                 cell.foldedInviteType.text = business.inviteType
                 cell.response.text = business.response
                 cell.foldedResponse.text = business.response
+                cell.firstDateConfirmedLabel.text = business.responseFirstDate
+                cell.secondDateConfirmedLabel.text = business.responseSecondDate
                 
-                if cell.foldedResponse.text == "Accepted" {
+                if cell.foldedResponse.text == "Date Confirmed" {
                     cell.foldedResponse.textColor = UIColor.green
                 }
                 
-                if cell.response.text == "Accepted" {
+                if cell.firstDateConfirmedLabel.text == "Date Confirmed" {
+                    cell.firstDateConfirmed.alpha = 1
+                } else {
+                    cell.firstDateConfirmed.alpha = 0
+                }
+                
+                if cell.secondDateConfirmedLabel.text == "Date Confirmed" {
+                    cell.secondDateConfirmed.alpha = 1
+                } else {
+                    cell.secondDateConfirmed.alpha = 0
+                }
+                
+                if cell.foldedResponse.text == "Date Confirmed" {
+                    cell.foldedResponse.textColor = UIColor.green
+                }
+                
+                if cell.response.text == "Date Confirmed" {
                     cell.response.textColor = UIColor.green
                 }
                 
@@ -191,7 +209,7 @@ extension BusinessInvitesViewController: UITableViewDelegate {
     
 }
 
-extension BusinessInvitesViewController: UITableViewDataSource{
+extension BusinessInvitesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(businesses.count)
@@ -231,9 +249,40 @@ extension BusinessInvitesViewController: InviteCellDelegate {
                 
                 let refBusiness = Database.database().reference().child("organisedChats").child(business.uuid).child(Auth.auth().currentUser!.uid)
                 
-                ref.updateChildValues(["Response": "Accepted"])
+                ref.updateChildValues(["Response": "Date Confirmed"])
                 
-                refBusiness.updateChildValues(["Response": "Accepted"])
+                refBusiness.updateChildValues(["Response": "Date Confirmed"])
+                
+                ref.updateChildValues(["First Date Response": "Date Confirmed"])
+                
+                refBusiness.updateChildValues(["First Date Response": "Date Confirmed"])
+                
+                ref.updateChildValues(["Second Date Response": "Declined"])
+                
+                refBusiness.updateChildValues(["Second Date Response": "Declined"])
+
+            }
+            
+            if sender.tag == 2 {
+                
+                let business = businesses[indexPath.row]
+                print("is\(business.username)")
+                
+                let ref = Database.database().reference().child("organisedChats").child(Auth.auth().currentUser!.uid).child(business.uuid)
+                
+                let refBusiness = Database.database().reference().child("organisedChats").child(business.uuid).child(Auth.auth().currentUser!.uid)
+                
+                ref.updateChildValues(["Response": "Date Confirmed"])
+                
+                refBusiness.updateChildValues(["Response": "Date Confirmed"])
+                
+                ref.updateChildValues(["Second Date Response": "Date Confirmed"])
+                
+                refBusiness.updateChildValues(["Second Date Response": "Date Confirmed"])
+                
+                ref.updateChildValues(["First Date Response": "Declined"])
+                
+                refBusiness.updateChildValues(["First Date Response": "Declined"])
                 
             }
             
@@ -249,6 +298,14 @@ extension BusinessInvitesViewController: InviteCellDelegate {
                 ref.updateChildValues(["Response": "Declined"])
                 
                 refBusiness.updateChildValues(["Response": "Declined"])
+                
+                ref.updateChildValues(["First Date Response": "Declined"])
+                
+                refBusiness.updateChildValues(["First Date Response": "Declined"])
+                
+                ref.updateChildValues(["Second Date Response": "Declined"])
+                
+                refBusiness.updateChildValues(["Second Date Response": "Declined"])
                 
             }
             

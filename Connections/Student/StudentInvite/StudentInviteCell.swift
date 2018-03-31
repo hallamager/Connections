@@ -25,6 +25,10 @@ class StudentInviteCell: FoldingCell {
     @IBOutlet weak var foldedResponse: UILabel!
     @IBOutlet weak var date2: UILabel!
     @IBOutlet weak var time2: UILabel!
+    @IBOutlet weak var firstDateConfirmed: UILabel!
+    @IBOutlet weak var secondDateConfirmed: UILabel!
+    @IBOutlet weak var firstDateConfirmedImg: UIImageView!
+    @IBOutlet weak var secondDateConfirmedImg: UIImageView!
     
     //Defines sides, shadows and colour of the cells for the viewcontroller.
     override func awakeFromNib() {

@@ -1360,6 +1360,17 @@
                                                                             <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yxj-Gt-xxs">
+                                                                            <rect key="frame" x="22" y="35" width="42" height="21"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Ok" translatesAutoresizingMaskIntoConstraints="NO" id="5vd-Gg-bRp">
+                                                                            <rect key="frame" x="171" y="15" width="10" height="10"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                        </imageView>
                                                                     </subviews>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="90" id="z25-y3-Gnj"/>
@@ -1426,6 +1437,17 @@
                                                                             <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEj-9l-fHI">
+                                                                            <rect key="frame" x="22" y="35" width="42" height="21"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Ok" translatesAutoresizingMaskIntoConstraints="NO" id="Z7t-n4-l8O">
+                                                                            <rect key="frame" x="196" y="15" width="10" height="10"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                        </imageView>
                                                                     </subviews>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="90" id="ibH-My-wpY"/>
@@ -1490,6 +1512,8 @@
                                             <outlet property="containerViewTop" destination="D85-Bm-ZqH" id="vR8-8D-hec"/>
                                             <outlet property="date" destination="f7n-SH-Sgf" id="3TD-aq-7P9"/>
                                             <outlet property="date2" destination="tNa-KL-de8" id="0HU-Ek-g5a"/>
+                                            <outlet property="firstDateConfirmed" destination="Yxj-Gt-xxs" id="4u1-f3-x4z"/>
+                                            <outlet property="firstDateConfirmedImg" destination="5vd-Gg-bRp" id="ykX-nQ-wA3"/>
                                             <outlet property="foldedInviteType" destination="pq2-2e-Z9q" id="uZL-sm-HfV"/>
                                             <outlet property="foldedResponse" destination="2fo-wA-gF9" id="3k3-f5-gjy"/>
                                             <outlet property="foldedStudentImg" destination="ly2-01-D48" id="Sxk-Dg-mYM"/>
@@ -1497,6 +1521,8 @@
                                             <outlet property="foregroundView" destination="ABw-uj-Y0f" id="en7-E9-DGl"/>
                                             <outlet property="foregroundViewTop" destination="4u9-pC-Vo5" id="7SP-gX-zHC"/>
                                             <outlet property="response" destination="okE-1E-Q89" id="LEe-7r-fqH"/>
+                                            <outlet property="secondDateConfirmed" destination="FEj-9l-fHI" id="JIN-cG-ijz"/>
+                                            <outlet property="secondDateConfirmedImg" destination="Z7t-n4-l8O" id="ZYu-Wy-yvy"/>
                                             <outlet property="studentImg" destination="V5n-c6-5ir" id="cDN-8W-Xqf"/>
                                             <outlet property="studentName" destination="8u2-am-Bhq" id="QFA-4F-bNA"/>
                                             <outlet property="time" destination="hx2-Vg-IWX" id="6gp-zt-ysG"/>
@@ -2263,6 +2289,7 @@
     </scenes>
     <resources>
         <image name="CTA-Direction" width="131" height="252"/>
+        <image name="Ok" width="250" height="250"/>
         <image name="OpenMenu" width="38" height="31"/>
         <image name="companyImage" width="545" height="363"/>
         <image name="dislike" width="250" height="250"/>

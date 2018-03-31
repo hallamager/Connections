@@ -92,9 +92,9 @@ class OrganiseChatViewController: UIViewController {
         
         let refBusiness = Database.database().reference().child("organisedChats").child(Auth.auth().currentUser!.uid).child(student.uuid)
         
-        ref.updateChildValues(["Date1": self.dateSelected.text!, "Time1": self.timeSelected.text!, "Date2": self.date2.text!, "Time2": self.time2.text!, "Invite Type": "Chat Invite", "Response": "Pending Response"])
+        ref.updateChildValues(["Date1": self.dateSelected.text!, "Time1": self.timeSelected.text!, "Date2": self.date2.text!, "Time2": self.time2.text!, "Invite Type": "Chat Invite", "Response": "Pending Response", "First Date Response": "Pending Response", "Second Date Response": "Pending Response"])
         
-        refBusiness.updateChildValues(["Date1": self.dateSelected.text!, "Time1": self.timeSelected.text!, "Date2": self.date2.text!, "Time2": self.time2.text!, "Invite Type": "Chat Invite", "Response": "Pending Response"])
+        refBusiness.updateChildValues(["Date1": self.dateSelected.text!, "Time1": self.timeSelected.text!, "Date2": self.date2.text!, "Time2": self.time2.text!, "Invite Type": "Chat Invite", "Response": "Pending Response", "First Date Response": "Pending Response", "Second Date Response": "Pending Response"])
         
         let revealViewController:SWRevealViewController = self.revealViewController()
         

@@ -29,6 +29,10 @@ class BusinessInvitesCell: FoldingCell {
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var response: UILabel!
     @IBOutlet weak var foldedResponse: UILabel!
+    @IBOutlet weak var secondDateConfirmed: UIImageView!
+    @IBOutlet weak var firstDateConfirmed: UIImageView!
+    @IBOutlet weak var firstDateConfirmedLabel: UILabel!
+    @IBOutlet weak var secondDateConfirmedLabel: UILabel!
     
     //Defines sides, shadows and colour of the cells for the viewcontroller.
     override func awakeFromNib() {
@@ -54,6 +58,10 @@ class BusinessInvitesCell: FoldingCell {
     }
     
     @IBAction func acceptInviteBtn(_ sender: UIButton) {
+        delegate?.didTapButton(sender)
+    }
+    
+    @IBAction func acceptSecondInviteBtn(_ sender: UIButton) {
         delegate?.didTapButton(sender)
     }
     
