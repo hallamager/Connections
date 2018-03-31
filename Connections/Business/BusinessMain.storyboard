@@ -188,7 +188,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recent Matches" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WxG-Ft-a5G">
-                                <rect key="frame" x="25" y="3" width="343" height="44"/>
+                                <rect key="frame" x="25" y="1" width="343" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
                                 <nil key="textColor"/>
@@ -3266,101 +3266,79 @@
                                                                     <rect key="frame" x="0.0" y="286" width="330" height="70"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yN8-6a-Itm" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                                                            <rect key="frame" x="20" y="8" width="94" height="48"/>
+                                                                            <rect key="frame" x="20" y="8" width="123" height="48"/>
                                                                             <subviews>
-                                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xa9-S8-iMP" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="94" height="48"/>
+                                                                                <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xa9-S8-iMP" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="123" height="48"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                                                    <state key="normal" title="Decline">
+                                                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                    </state>
                                                                                     <userDefinedRuntimeAttributes>
                                                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                                             <real key="value" value="5"/>
                                                                                         </userDefinedRuntimeAttribute>
-                                                                                        <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
-                                                                                            <color key="value" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                        </userDefinedRuntimeAttribute>
-                                                                                        <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
-                                                                                            <color key="value" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                        </userDefinedRuntimeAttribute>
+                                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
                                                                                     </userDefinedRuntimeAttributes>
+                                                                                    <connections>
+                                                                                        <action selector="declineInviteBtn:" destination="PBI-Cc-AtP" eventType="touchUpInside" id="wnH-uC-xJa"/>
+                                                                                    </connections>
                                                                                 </button>
                                                                             </subviews>
                                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                    <real key="value" value="5"/>
+                                                                                    <real key="value" value="24"/>
                                                                                 </userDefinedRuntimeAttribute>
                                                                             </userDefinedRuntimeAttributes>
                                                                         </view>
-                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kzm-4Q-prL" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                                                            <rect key="frame" x="118" y="8" width="94" height="48"/>
+                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="giJ-VW-gTi" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                                            <rect key="frame" x="151" y="8" width="159" height="48"/>
                                                                             <subviews>
-                                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUR-LO-xIi" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="94" height="48"/>
+                                                                                <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BpX-Jw-HHy" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="159" height="48"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                                                    <state key="normal" title="Accept">
+                                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    </state>
                                                                                     <userDefinedRuntimeAttributes>
                                                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                            <real key="value" value="5"/>
+                                                                                            <real key="value" value="25"/>
                                                                                         </userDefinedRuntimeAttribute>
                                                                                         <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
-                                                                                            <color key="value" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                            <color key="value" red="0.59586572650000003" green="0.81522679330000003" blue="0.8588603735" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                         </userDefinedRuntimeAttribute>
                                                                                         <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
                                                                                             <color key="value" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                                         </userDefinedRuntimeAttribute>
                                                                                     </userDefinedRuntimeAttributes>
                                                                                     <connections>
-                                                                                        <action selector="acceptInviteBtn:" destination="PBI-Cc-AtP" eventType="touchUpInside" id="Op4-me-AGA"/>
+                                                                                        <action selector="acceptInviteBtn:" destination="PBI-Cc-AtP" eventType="touchUpInside" id="DTx-9A-u8y"/>
                                                                                     </connections>
                                                                                 </button>
                                                                             </subviews>
                                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                    <real key="value" value="5"/>
-                                                                                </userDefinedRuntimeAttribute>
-                                                                            </userDefinedRuntimeAttributes>
-                                                                        </view>
-                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="giJ-VW-gTi" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                                                            <rect key="frame" x="216" y="8" width="94" height="48"/>
-                                                                            <subviews>
-                                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BpX-Jw-HHy" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="94" height="48"/>
-                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                                    <userDefinedRuntimeAttributes>
-                                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                            <real key="value" value="5"/>
-                                                                                        </userDefinedRuntimeAttribute>
-                                                                                        <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
-                                                                                            <color key="value" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                        </userDefinedRuntimeAttribute>
-                                                                                        <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
-                                                                                            <color key="value" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                        </userDefinedRuntimeAttribute>
-                                                                                    </userDefinedRuntimeAttributes>
-                                                                                </button>
-                                                                            </subviews>
-                                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            <userDefinedRuntimeAttributes>
-                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                    <real key="value" value="5"/>
+                                                                                    <real key="value" value="25"/>
                                                                                 </userDefinedRuntimeAttribute>
                                                                             </userDefinedRuntimeAttributes>
                                                                         </view>
                                                                     </subviews>
                                                                     <constraints>
-                                                                        <constraint firstItem="giJ-VW-gTi" firstAttribute="leading" secondItem="Kzm-4Q-prL" secondAttribute="trailing" constant="4" id="BPo-lO-hE1"/>
-                                                                        <constraint firstItem="Kzm-4Q-prL" firstAttribute="leading" secondItem="cXL-zq-VZL" secondAttribute="leading" constant="118" id="LIA-2S-cEW"/>
-                                                                        <constraint firstItem="yN8-6a-Itm" firstAttribute="top" secondItem="cXL-zq-VZL" secondAttribute="topMargin" id="LQD-Fq-InZ"/>
-                                                                        <constraint firstItem="yN8-6a-Itm" firstAttribute="bottom" secondItem="Kzm-4Q-prL" secondAttribute="bottom" id="V9I-0s-vQz"/>
-                                                                        <constraint firstItem="Kzm-4Q-prL" firstAttribute="bottom" secondItem="giJ-VW-gTi" secondAttribute="bottom" id="VKg-pQ-FZm"/>
-                                                                        <constraint firstItem="yN8-6a-Itm" firstAttribute="leading" secondItem="cXL-zq-VZL" secondAttribute="leading" constant="20" id="gWl-i9-OTL"/>
-                                                                        <constraint firstItem="Kzm-4Q-prL" firstAttribute="leading" secondItem="yN8-6a-Itm" secondAttribute="trailing" constant="4" id="mI6-nU-uSQ"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="yN8-6a-Itm" secondAttribute="bottom" constant="14" id="pRa-WE-hkv"/>
-                                                                        <constraint firstItem="Kzm-4Q-prL" firstAttribute="centerX" secondItem="cXL-zq-VZL" secondAttribute="centerX" id="rEw-Ux-mdT"/>
-                                                                        <constraint firstItem="yN8-6a-Itm" firstAttribute="top" secondItem="Kzm-4Q-prL" secondAttribute="top" id="s0L-yG-xUD"/>
-                                                                        <constraint firstItem="Kzm-4Q-prL" firstAttribute="top" secondItem="giJ-VW-gTi" secondAttribute="top" id="soj-w9-hsm"/>
+                                                                        <constraint firstItem="yN8-6a-Itm" firstAttribute="bottom" secondItem="giJ-VW-gTi" secondAttribute="bottom" id="5o9-Pc-psb"/>
+                                                                        <constraint firstItem="giJ-VW-gTi" firstAttribute="leading" secondItem="cXL-zq-VZL" secondAttribute="leading" constant="151" id="6Ox-iB-JL2"/>
+                                                                        <constraint firstItem="giJ-VW-gTi" firstAttribute="leading" secondItem="yN8-6a-Itm" secondAttribute="trailing" constant="8" symbolic="YES" id="8OV-SI-f9L"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="yN8-6a-Itm" secondAttribute="bottom" constant="14" id="Dp6-KS-G8t"/>
+                                                                        <constraint firstItem="yN8-6a-Itm" firstAttribute="leading" secondItem="cXL-zq-VZL" secondAttribute="leading" constant="20" id="VZH-S4-uUL"/>
+                                                                        <constraint firstItem="yN8-6a-Itm" firstAttribute="top" secondItem="cXL-zq-VZL" secondAttribute="topMargin" id="XTH-LR-Gft"/>
+                                                                        <constraint firstItem="yN8-6a-Itm" firstAttribute="top" secondItem="giJ-VW-gTi" secondAttribute="top" id="qqT-GK-xLH"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="giJ-VW-gTi" secondAttribute="trailing" constant="20" id="tEa-Dn-MT9"/>
                                                                         <constraint firstAttribute="height" constant="70" id="xvW-cB-QSu"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="giJ-VW-gTi" secondAttribute="trailing" constant="20" id="z0i-EY-geD"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSn-1b-alY">
@@ -3439,7 +3417,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="InviteType" destination="tgL-hx-s1o" id="xgj-Zy-lqO"/>
-                                            <outlet property="acceptInvite" destination="TUR-LO-xIi" id="g0k-w2-Tft"/>
                                             <outlet property="companyImg" destination="ANo-qu-rFd" id="eHa-cO-Kjx"/>
                                             <outlet property="companyName" destination="sKV-Ma-mdk" id="wSK-mk-Rpu"/>
                                             <outlet property="containerView" destination="QEz-n8-Io0" id="6AE-kD-KCP"/>

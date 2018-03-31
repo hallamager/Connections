@@ -24,7 +24,7 @@ class StudentInviteViewController: UIViewController {
     var invite = [Invites]()
     var invites: Invites!
     let kCloseCellHeight: CGFloat = 170
-    let kOpenCellHeight: CGFloat = 376
+    let kOpenCellHeight: CGFloat = 410
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
     let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
@@ -118,6 +118,8 @@ extension StudentInviteViewController: UITableViewDelegate {
                 cell.foldedInviteType.text = business.inviteType
                 cell.response.text = business.response
                 cell.foldedResponse.text = business.response
+                cell.date2.text = business.date2
+                cell.time2.text = business.time2
                 
                 if cell.foldedResponse.text == "Accepted" {
                     cell.foldedResponse.textColor = UIColor.green

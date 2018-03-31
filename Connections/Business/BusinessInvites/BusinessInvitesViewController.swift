@@ -217,22 +217,43 @@ extension BusinessInvitesViewController: UITableViewDataSource{
     
 }
 
-extension BusinessInvitesViewController: YourCellDelegate {
+extension BusinessInvitesViewController: InviteCellDelegate {
     
     func didTapButton(_ sender: UIButton) {
         if let indexPath = getCurrentCellIndexPath(sender) {
-            let business = businesses[indexPath.row]
-            print("is\(business.username)")
             
-            let ref = Database.database().reference().child("organisedChats").child(Auth.auth().currentUser!.uid).child(business.uuid)
+            if sender.tag == 3 {
+                
+                let business = businesses[indexPath.row]
+                print("is\(business.username)")
+                
+                let ref = Database.database().reference().child("organisedChats").child(Auth.auth().currentUser!.uid).child(business.uuid)
+                
+                let refBusiness = Database.database().reference().child("organisedChats").child(business.uuid).child(Auth.auth().currentUser!.uid)
+                
+                ref.updateChildValues(["Response": "Accepted"])
+                
+                refBusiness.updateChildValues(["Response": "Accepted"])
+                
+            }
             
-            let refBusiness = Database.database().reference().child("organisedChats").child(business.uuid).child(Auth.auth().currentUser!.uid)
-            
-            ref.updateChildValues(["Response": "Accepted"])
-            
-            refBusiness.updateChildValues(["Response": "Accepted"])
+            if sender.tag == 1 {
+                
+                let business = businesses[indexPath.row]
+                print("is\(business.username)")
+                
+                let ref = Database.database().reference().child("organisedChats").child(Auth.auth().currentUser!.uid).child(business.uuid)
+                
+                let refBusiness = Database.database().reference().child("organisedChats").child(business.uuid).child(Auth.auth().currentUser!.uid)
+                
+                ref.updateChildValues(["Response": "Declined"])
+                
+                refBusiness.updateChildValues(["Response": "Declined"])
+                
+            }
             
         }
+        
     }
     
     func getCurrentCellIndexPath(_ sender: UIButton) -> IndexPath? {
