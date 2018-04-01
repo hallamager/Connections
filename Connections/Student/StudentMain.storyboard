@@ -1260,7 +1260,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pending Response" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okE-1E-Q89">
-                                                                    <rect key="frame" x="131" y="94" width="137" height="24"/>
+                                                                    <rect key="frame" x="131" y="94" width="199" height="24"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1327,7 +1327,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pending Response" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fo-wA-gF9">
-                                                                            <rect key="frame" x="131" y="94" width="137" height="24"/>
+                                                                            <rect key="frame" x="131" y="94" width="199" height="24"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
                                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1383,7 +1383,7 @@
                                                                             <rect key="frame" x="20" y="8" width="290" height="48"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                                             <subviews>
-                                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v42-pB-GnN" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
+                                                                                <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v42-pB-GnN" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="290" height="48"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
@@ -1401,6 +1401,9 @@
                                                                                             <color key="value" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                                         </userDefinedRuntimeAttribute>
                                                                                     </userDefinedRuntimeAttributes>
+                                                                                    <connections>
+                                                                                        <action selector="rearrangeDates:" destination="IZU-kE-58M" eventType="touchUpInside" id="k6d-dk-N81"/>
+                                                                                    </connections>
                                                                                 </button>
                                                                             </subviews>
                                                                             <color key="backgroundColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1549,11 +1552,12 @@
                     <connections>
                         <outlet property="openMenu" destination="8JZ-ch-123" id="HWa-7Z-Bp3"/>
                         <outlet property="tableView" destination="Jha-zu-djW" id="i4G-XA-TNa"/>
+                        <segue destination="CLM-73-VPv" kind="show" identifier="rearrangeChat" id="rzZ-2S-8PH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFD-2r-4Su" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="16109.6" y="-949.47526236881572"/>
+            <point key="canvasLocation" x="16110" y="-774"/>
         </scene>
         <!--Organise Chat View Controller-->
         <scene sceneID="suS-Iu-waa">
@@ -1571,7 +1575,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hrc-nL-1Zo" customClass="HorizontalGradient" customModule="Connections" customModuleProvider="target">
-                                <rect key="frame" x="22" y="151" width="64" height="1"/>
+                                <rect key="frame" x="22" y="150" width="64" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
@@ -2284,7 +2288,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ulA-7c-fDx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="14985" y="-949"/>
+            <point key="canvasLocation" x="14994" y="-774"/>
         </scene>
     </scenes>
     <resources>
@@ -2295,4 +2299,7 @@
         <image name="dislike" width="250" height="250"/>
         <image name="like" width="258" height="195"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="rzZ-2S-8PH"/>
+    </inferredMetricsTieBreakers>
 </document>

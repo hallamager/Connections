@@ -11,8 +11,15 @@ import UIKit
 import Firebase
 import FoldingCell
 
+protocol RearrangeCellDelegate: class {
+    func selected(for student: Student)
+}
+
 class StudentInviteCell: FoldingCell {
-        
+    
+    var student: Student!
+    weak var delegate: RearrangeCellDelegate?
+
     @IBOutlet weak var studentImg: UIImageView!
     @IBOutlet weak var foldedStudentImg: UIImageView!
     @IBOutlet weak var studentName: UILabel!
@@ -51,6 +58,10 @@ class StudentInviteCell: FoldingCell {
         // durations count equal it itemCount
         let durations = [0.20, 0.20, 0.20] // timing animation for each view
         return durations[itemIndex]
+    }
+    
+    @IBAction func rearrangeDates(_ sender: UIButton) {
+        delegate?.selected(for: student)
     }
     
 }

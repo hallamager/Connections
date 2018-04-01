@@ -188,7 +188,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recent Matches" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WxG-Ft-a5G">
-                                <rect key="frame" x="25" y="1" width="343" height="44"/>
+                                <rect key="frame" x="25" y="0.0" width="343" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
                                 <nil key="textColor"/>
@@ -3076,7 +3076,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dpx-aT-bOq" customClass="HorizontalGradient" customModule="Connections" customModuleProvider="target">
-                                <rect key="frame" x="22" y="88" width="64" height="1"/>
+                                <rect key="frame" x="22" y="87" width="64" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
@@ -3163,7 +3163,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pending Response" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Bl-vX-LKx">
-                                                                    <rect key="frame" x="131" y="94" width="137" height="24"/>
+                                                                    <rect key="frame" x="131" y="94" width="199" height="24"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3230,7 +3230,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pending Response" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFp-FN-ZkD">
-                                                                            <rect key="frame" x="131" y="94" width="137" height="24"/>
+                                                                            <rect key="frame" x="131" y="94" width="199" height="24"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
                                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3364,7 +3364,7 @@
                                                                                     <rect key="frame" x="10" y="63" width="289" height="48"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                                                     <subviews>
-                                                                                        <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70l-po-MLo" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
+                                                                                        <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70l-po-MLo" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="289" height="48"/>
                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
@@ -3385,6 +3385,7 @@
                                                                                             </userDefinedRuntimeAttributes>
                                                                                             <connections>
                                                                                                 <action selector="acceptInviteBtn:" destination="PBI-Cc-AtP" eventType="touchUpInside" id="zKd-ZH-aP3"/>
+                                                                                                <action selector="requestDifferentDatesBtn:" destination="PBI-Cc-AtP" eventType="touchUpInside" id="J1Z-Q4-HFc"/>
                                                                                             </connections>
                                                                                         </button>
                                                                                     </subviews>
@@ -3540,6 +3541,7 @@
                                             <outlet property="containerView" destination="QEz-n8-Io0" id="6AE-kD-KCP"/>
                                             <outlet property="containerViewTop" destination="fxg-ha-eqg" id="dKt-Ug-OPf"/>
                                             <outlet property="date" destination="M7m-wz-azF" id="hcQ-RQ-upb"/>
+                                            <outlet property="date2" destination="7MS-jr-vgR" id="DAh-pi-fGh"/>
                                             <outlet property="firstDateConfirmed" destination="mXs-3W-kkC" id="pDY-XF-vQy"/>
                                             <outlet property="firstDateConfirmedLabel" destination="bO6-86-gNh" id="EKR-hf-Yt1"/>
                                             <outlet property="foldedCompanyImg" destination="V0O-aR-eMH" id="NR0-0V-1I3"/>
@@ -3552,6 +3554,7 @@
                                             <outlet property="secondDateConfirmed" destination="YxT-q5-VPZ" id="tUm-bQ-jTj"/>
                                             <outlet property="secondDateConfirmedLabel" destination="9g3-f6-JgM" id="Pna-xH-4AF"/>
                                             <outlet property="time" destination="Iyj-zq-xn6" id="NbH-ck-c6Q"/>
+                                            <outlet property="time2" destination="pIk-BD-xay" id="ohD-fg-H4U"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

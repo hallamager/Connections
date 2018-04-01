@@ -113,7 +113,9 @@ extension BusinessInvitesViewController: UITableViewDelegate {
             if let business = Invites(snapshot: snapshot) {
                 self.invite.append(business)
                 cell.date.text = business.date
+                cell.date2.text = business.date2
                 cell.time.text = business.time
+                cell.time2.text = business.time2
                 cell.InviteType.text = business.inviteType
                 cell.foldedInviteType.text = business.inviteType
                 cell.response.text = business.response
@@ -123,6 +125,26 @@ extension BusinessInvitesViewController: UITableViewDelegate {
                 
                 if cell.foldedResponse.text == "Date Confirmed" {
                     cell.foldedResponse.textColor = UIColor.green
+                }
+                
+                if cell.foldedResponse.text == "Different Dates Requested" {
+                    cell.foldedResponse.textColor = UIColor.darkGray
+                }
+                
+                if cell.response.text == "Different Dates Requested" {
+                    cell.response.textColor = UIColor.darkGray
+                }
+            
+                if cell.response.text == "Date Confirmed" {
+                    cell.response.textColor = UIColor.green
+                }
+                
+                if cell.foldedResponse.text == "Declined" {
+                    cell.foldedResponse.textColor = UIColor.red
+                }
+                
+                if cell.response.text == "Declined" {
+                    cell.response.textColor = UIColor.red
                 }
                 
                 if cell.firstDateConfirmedLabel.text == "Date Confirmed" {
@@ -135,22 +157,6 @@ extension BusinessInvitesViewController: UITableViewDelegate {
                     cell.secondDateConfirmed.alpha = 1
                 } else {
                     cell.secondDateConfirmed.alpha = 0
-                }
-                
-                if cell.foldedResponse.text == "Date Confirmed" {
-                    cell.foldedResponse.textColor = UIColor.green
-                }
-                
-                if cell.response.text == "Date Confirmed" {
-                    cell.response.textColor = UIColor.green
-                }
-                
-                if cell.foldedResponse.text == "Declined" {
-                    cell.foldedResponse.textColor = UIColor.red
-                }
-                
-                if cell.response.text == "Declined" {
-                    cell.response.textColor = UIColor.red
                 }
                 
             }
@@ -240,7 +246,7 @@ extension BusinessInvitesViewController: InviteCellDelegate {
     func didTapButton(_ sender: UIButton) {
         if let indexPath = getCurrentCellIndexPath(sender) {
             
-            if sender.tag == 3 {
+            if sender.tag == 1 {
                 
                 let business = businesses[indexPath.row]
                 print("is\(business.username)")
@@ -249,18 +255,18 @@ extension BusinessInvitesViewController: InviteCellDelegate {
                 
                 let refBusiness = Database.database().reference().child("organisedChats").child(business.uuid).child(Auth.auth().currentUser!.uid)
                 
-                ref.updateChildValues(["Response": "Date Confirmed"])
+                ref.updateChildValues(["Response": "Declined"])
                 
-                refBusiness.updateChildValues(["Response": "Date Confirmed"])
+                refBusiness.updateChildValues(["Response": "Declined"])
                 
-                ref.updateChildValues(["First Date Response": "Date Confirmed"])
+                ref.updateChildValues(["First Date Response": "Declined"])
                 
-                refBusiness.updateChildValues(["First Date Response": "Date Confirmed"])
+                refBusiness.updateChildValues(["First Date Response": "Declined"])
                 
                 ref.updateChildValues(["Second Date Response": "Declined"])
                 
                 refBusiness.updateChildValues(["Second Date Response": "Declined"])
-
+                
             }
             
             if sender.tag == 2 {
@@ -286,7 +292,7 @@ extension BusinessInvitesViewController: InviteCellDelegate {
                 
             }
             
-            if sender.tag == 1 {
+            if sender.tag == 3 {
                 
                 let business = businesses[indexPath.row]
                 print("is\(business.username)")
@@ -295,17 +301,39 @@ extension BusinessInvitesViewController: InviteCellDelegate {
                 
                 let refBusiness = Database.database().reference().child("organisedChats").child(business.uuid).child(Auth.auth().currentUser!.uid)
                 
-                ref.updateChildValues(["Response": "Declined"])
+                ref.updateChildValues(["Response": "Date Confirmed"])
                 
-                refBusiness.updateChildValues(["Response": "Declined"])
+                refBusiness.updateChildValues(["Response": "Date Confirmed"])
                 
-                ref.updateChildValues(["First Date Response": "Declined"])
+                ref.updateChildValues(["First Date Response": "Date Confirmed"])
                 
-                refBusiness.updateChildValues(["First Date Response": "Declined"])
+                refBusiness.updateChildValues(["First Date Response": "Date Confirmed"])
                 
                 ref.updateChildValues(["Second Date Response": "Declined"])
                 
                 refBusiness.updateChildValues(["Second Date Response": "Declined"])
+                
+            }
+            
+            if sender.tag == 4 {
+                
+                let business = businesses[indexPath.row]
+                
+                let ref = Database.database().reference().child("organisedChats").child(Auth.auth().currentUser!.uid).child(business.uuid)
+                
+                let refBusiness = Database.database().reference().child("organisedChats").child(business.uuid).child(Auth.auth().currentUser!.uid)
+                
+                ref.updateChildValues(["Response": "Different Dates Requested"])
+                
+                refBusiness.updateChildValues(["Response": "Different Dates Requested"])
+                
+                ref.updateChildValues(["Second Date Response": "Declined"])
+                
+                refBusiness.updateChildValues(["Second Date Response": "Declined"])
+                
+                ref.updateChildValues(["First Date Response": "Declined"])
+                
+                refBusiness.updateChildValues(["First Date Response": "Declined"])
                 
             }
             

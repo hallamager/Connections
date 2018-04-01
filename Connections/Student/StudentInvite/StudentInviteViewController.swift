@@ -91,6 +91,14 @@ class StudentInviteViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let sender = sender as? (tag: Int, student: Student) else { return }
+        
+        let vc = segue.destination as! OrganiseChatViewController
+        vc.student = sender.student
+        
+    }
+    
 }
 
 extension StudentInviteViewController: UITableViewDelegate {
@@ -125,6 +133,14 @@ extension StudentInviteViewController: UITableViewDelegate {
                 
                 if cell.foldedResponse.text == "Date Confirmed" {
                     cell.foldedResponse.textColor = UIColor.green
+                }
+                
+                if cell.foldedResponse.text == "Different Dates Requested" {
+                    cell.foldedResponse.textColor = UIColor.darkGray
+                }
+                
+                if cell.response.text == "Different Dates Requested" {
+                    cell.response.textColor = UIColor.darkGray
                 }
                 
                 if cell.response.text == "Date Confirmed" {
@@ -225,8 +241,21 @@ extension StudentInviteViewController: UITableViewDataSource{
         let student = students[indexPath.row]
         print(student.username)
         
+        cell.student = student
+        cell.delegate = self
+        
         return cell
         
+    }
+    
+}
+
+extension StudentInviteViewController: RearrangeCellDelegate {
+    
+    func selected(for student: Student) {
+        print(student)
+        
+        performSegue(withIdentifier: "rearrangeChat", sender: (tag: 1, student: student))
     }
     
 }

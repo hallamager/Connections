@@ -26,7 +26,9 @@ class BusinessInvitesCell: FoldingCell {
     @IBOutlet weak var InviteType: UILabel!
     @IBOutlet weak var foldedInviteType: UILabel!
     @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var date2: UILabel!
     @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var time2: UILabel!
     @IBOutlet weak var response: UILabel!
     @IBOutlet weak var foldedResponse: UILabel!
     @IBOutlet weak var secondDateConfirmed: UIImageView!
@@ -66,6 +68,10 @@ class BusinessInvitesCell: FoldingCell {
     }
     
     @IBAction func declineInviteBtn(_ sender: UIButton) {
+        delegate?.didTapButton(sender)
+    }
+    
+    @IBAction func requestDifferentDatesBtn(_ sender: UIButton) {
         delegate?.didTapButton(sender)
     }
     
