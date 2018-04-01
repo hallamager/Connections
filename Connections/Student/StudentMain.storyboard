@@ -376,6 +376,10 @@
                             <inset key="imageInsets" minX="-10" minY="0.0" maxX="0.0" maxY="-12"/>
                             <color key="tintColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="WdJ-7d-768">
+                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-12"/>
+                            <color key="tintColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="openMenu" destination="UkT-fQ-Lke" id="keh-TE-cFK"/>
@@ -385,7 +389,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V8y-Ms-ifL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="23133.599999999999" y="-1848.1259370314845"/>
+            <point key="canvasLocation" x="14966" y="-248"/>
         </scene>
         <!--Student Applied View Controller-->
         <scene sceneID="tqi-Tp-oTt">
@@ -416,18 +420,18 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="giY-0L-LOS">
                                 <rect key="frame" x="0.0" y="85" width="375" height="518"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="studentAppliedCell" rowHeight="148" id="9pX-gA-opy" customClass="StudentAppliedCell" customModule="Connections" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="148"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="studentAppliedCell" rowHeight="205" id="9pX-gA-opy" customClass="StudentAppliedCell" customModule="Connections" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="205"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9pX-gA-opy" id="JmT-1e-3sq">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="148"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="205"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gFr-UZ-4Ar" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                                    <rect key="frame" x="22" y="18" width="330" height="111"/>
+                                                    <rect key="frame" x="22" y="14" width="330" height="180"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <userDefinedRuntimeAttributes>
@@ -438,18 +442,11 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SYg-YF-H6k" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                                    <rect key="frame" x="22" y="18" width="330" height="111"/>
+                                                    <rect key="frame" x="22" y="14" width="330" height="180"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Job Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g78-RI-hS1">
-                                                            <rect key="frame" x="22" y="27" width="191" height="28"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9c9-5f-rQj" customClass="VerticalGradient" customModule="Connections" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="3" height="111"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="3" height="180"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <userDefinedRuntimeAttributes>
@@ -467,11 +464,67 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Employment Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6L-fw-lst">
-                                                            <rect key="frame" x="22" y="59" width="191" height="24"/>
+                                                        <view clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1yJ-zk-6gl" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                            <rect key="frame" x="20" y="23" width="70" height="71"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="companyImage" translatesAutoresizingMaskIntoConstraints="NO" id="WdR-jb-i9n">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="35"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Headline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6L-fw-lst">
+                                                            <rect key="frame" x="105" y="57" width="191" height="28"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ppS-zf-nm3" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                            <rect key="frame" x="8" y="109" width="314" height="62"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                                            <subviews>
+                                                                <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7p3-Sg-nBY" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
+                                                                    <rect key="frame" x="12" y="0.0" width="290" height="55"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                                    <state key="normal" title="Organise Interview">
+                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </state>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="28"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
+                                                                            <color key="value" red="0.59586572650000003" green="0.81522679330000003" blue="0.8588603735" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
+                                                                            <color key="value" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="organiseInterviewBtn:" destination="9pX-gA-opy" eventType="touchUpInside" id="vnz-Ht-Hq5"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g78-RI-hS1">
+                                                            <rect key="frame" x="105" y="23" width="217" height="28"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                                            <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -486,6 +539,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="companyImg" destination="WdR-jb-i9n" id="tYT-Gr-rAV"/>
+                                            <outlet property="studentHeadline" destination="A6L-fw-lst" id="f6d-t2-sPG"/>
                                             <outlet property="studentName" destination="g78-RI-hS1" id="11S-h2-zAI"/>
                                         </connections>
                                     </tableViewCell>
@@ -501,11 +556,12 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="giY-0L-LOS" id="A0j-MW-ddz"/>
+                        <segue destination="CLM-73-VPv" kind="show" identifier="organiseInterview" id="0mE-na-8IA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Des-22-iGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="23981.599999999999" y="-1848.1259370314845"/>
+            <point key="canvasLocation" x="16108" y="-249"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Acy-sT-JjD">
@@ -1557,7 +1613,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFD-2r-4Su" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="16110" y="-774"/>
+            <point key="canvasLocation" x="16108" y="766"/>
         </scene>
         <!--Organise Chat View Controller-->
         <scene sceneID="suS-Iu-waa">
@@ -1927,7 +1983,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wpe-Zu-T32" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="17188.799999999999" y="-774.51274362818594"/>
+            <point key="canvasLocation" x="17189" y="239"/>
         </scene>
         <!--Student Liked View Controller-->
         <scene sceneID="BLA-4Z-nKM">
@@ -2154,7 +2210,7 @@
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                                                     <color key="backgroundColor" white="0.66666666669999997" alpha="0.10025149830000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
-                                                                                    <state key="normal" title="Organise Chat">
+                                                                                    <state key="normal" title="Organise Interview">
                                                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     </state>
                                                                                     <userDefinedRuntimeAttributes>
@@ -2269,7 +2325,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rRV-Oa-1TD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22023" y="-1848"/>
+            <point key="canvasLocation" x="13806" y="-248"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qbt-Nv-CWM">
@@ -2288,7 +2344,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ulA-7c-fDx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="14994" y="-774"/>
+            <point key="canvasLocation" x="14966" y="766"/>
         </scene>
     </scenes>
     <resources>
@@ -2300,6 +2356,6 @@
         <image name="like" width="258" height="195"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rzZ-2S-8PH"/>
+        <segue reference="0mE-na-8IA"/>
     </inferredMetricsTieBreakers>
 </document>

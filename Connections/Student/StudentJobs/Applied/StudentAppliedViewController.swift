@@ -63,12 +63,20 @@ class StudentAppliedViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let sender = sender as? (tag: Int, student: Student) else { return }
+        
+        let vc = segue.destination as! OrganiseChatViewController
+        vc.student = sender.student
+        
+    }
+    
 }
 
 extension StudentAppliedViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 155
+        return 190
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -89,9 +97,33 @@ extension StudentAppliedViewController: UITableViewDataSource {
         
         let student = students[indexPath.row]
         
+        cell.student = student
+        cell.delegate = self
+        
         cell.studentName?.text = student.username
+        cell.studentHeadline?.text = student.headline
+        
+        // Create a storage reference from the URL
+        let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(student.uuid)
+        // Download the data, assuming a max size of 1MB (you can change this as necessary)
+        storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+            // Create a UIImage, add it to the array
+            let pic = UIImage(data: data!)
+            cell.companyImg.image = pic
+        }
         
         return cell
     }
     
 }
+
+extension StudentAppliedViewController: StudentInviteChatCellDelegate {
+    
+    func selected(for student: Student) {
+        print(student)
+        
+        performSegue(withIdentifier: "organiseInterview", sender: (tag: 2, student: student))
+    }
+    
+}
+
