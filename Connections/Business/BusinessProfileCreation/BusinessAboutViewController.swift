@@ -12,6 +12,7 @@ import Firebase
 
 class BusinessAboutViewController: UIViewController, UITextFieldDelegate {
     
+    var business: Business!
     let ref = Database.database().reference().child("business").child(Auth.auth().currentUser!.uid)
 
     @IBOutlet var companyIndustry: UITextField!
@@ -20,6 +21,8 @@ class BusinessAboutViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.isTranslucent = false
         
         companyIndustry.delegate = self
         

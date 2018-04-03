@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Avenir.ttc">
-            <string>Avenir-Light</string>
-        </array>
-        <array key="AvenirNext.ttc">
-            <string>AvenirNext-DemiBold</string>
-            <string>AvenirNext-Regular</string>
-        </array>
         <array key="Gotham Rounded Book.ttf">
             <string>GothamRounded-Book</string>
         </array>
@@ -110,9 +104,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="yu2-f8-49f" kind="show" id="wFj-QR-R2Y">
-                                        <nil key="action"/>
-                                    </segue>
+                                    <segue destination="yu2-f8-49f" kind="show" id="wFj-QR-R2Y"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bgk-N2-5Sx" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
@@ -131,9 +123,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="KuJ-4a-wQ7" kind="show" id="s77-Dh-dZI">
-                                        <nil key="action"/>
-                                    </segue>
+                                    <segue destination="KuJ-4a-wQ7" kind="show" id="s77-Dh-dZI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUw-9c-e5F" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
@@ -152,9 +142,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="w3q-jP-HxX" kind="show" id="ls6-cg-GGX">
-                                        <nil key="action"/>
-                                    </segue>
+                                    <segue destination="w3q-jP-HxX" kind="show" id="ls6-cg-GGX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uc2-nx-nEY" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
@@ -173,9 +161,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="KOW-RD-uqy" kind="show" id="gL5-kN-LPz">
-                                        <nil key="action"/>
-                                    </segue>
+                                    <segue destination="KOW-RD-uqy" kind="show" id="gL5-kN-LPz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTE-Mc-RQf" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
@@ -194,9 +180,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="jcD-HW-NuU" kind="show" id="6i8-LK-uPG">
-                                        <nil key="action"/>
-                                    </segue>
+                                    <segue destination="jcD-HW-NuU" kind="show" id="6i8-LK-uPG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMq-UN-7rM" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
@@ -215,9 +199,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="Nfr-KO-HGQ" kind="show" id="q7r-RO-4vw">
-                                        <nil key="action"/>
-                                    </segue>
+                                    <segue destination="Nfr-KO-HGQ" kind="show" id="q7r-RO-4vw"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile Picture" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnL-yy-pmH">
@@ -719,9 +701,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addNewJob:" destination="w3q-jP-HxX" eventType="touchUpInside" id="kC0-ZP-SS3"/>
-                                    <segue destination="boF-YJ-jS5" kind="show" id="8TB-AI-ell">
-                                        <nil key="action"/>
-                                    </segue>
+                                    <segue destination="boF-YJ-jS5" kind="show" id="8TB-AI-ell"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsK-R1-oki" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
@@ -795,9 +775,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="DbV-3p-u2Y" id="9ti-gE-ZxH"/>
-                        <segue destination="eLJ-pM-faG" kind="show" identifier="EditExperience" id="Q5R-Yr-aKt">
-                            <nil key="action"/>
-                        </segue>
+                        <segue destination="eLJ-pM-faG" kind="show" identifier="EditExperience" id="Q5R-Yr-aKt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4W6-pH-qWq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1520,9 +1498,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addNewJob:" destination="KOW-RD-uqy" eventType="touchUpInside" id="A0D-1u-fGb"/>
-                                    <segue destination="QgA-E1-kLT" kind="show" id="wbl-6p-G2K">
-                                        <nil key="action"/>
-                                    </segue>
+                                    <segue destination="QgA-E1-kLT" kind="show" id="wbl-6p-G2K"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdf-iT-sJf" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
@@ -1596,9 +1572,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="nxc-9g-1Qd" id="BUz-g1-QTQ"/>
-                        <segue destination="8is-lc-EpS" kind="show" identifier="EditEducation" id="GC1-sh-DtV">
-                            <nil key="action"/>
-                        </segue>
+                        <segue destination="8is-lc-EpS" kind="show" identifier="EditEducation" id="GC1-sh-DtV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgk-s4-zJx" userLabel="First Responder" sceneMemberID="firstResponder"/>

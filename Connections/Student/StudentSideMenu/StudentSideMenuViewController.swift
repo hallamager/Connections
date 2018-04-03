@@ -133,7 +133,7 @@ class StudentSideMenuViewController: UIViewController, UITableViewDataSource, UI
         {
             
             let mainStoryboard:UIStoryboard = UIStoryboard(name: "StudentMain", bundle: nil)
-            let desController = mainStoryboard.instantiateViewController(withIdentifier: "SelectStudentViewController") as! SelectStudentViewController
+            let desController = mainStoryboard.instantiateViewController(withIdentifier: "BusinessEditProfileViewController") as! BusinessEditProfileViewController
             let newFrontViewController = UINavigationController.init(rootViewController:desController)
             
             revealViewController.pushFrontViewController(newFrontViewController, animated: true)

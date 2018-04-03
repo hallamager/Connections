@@ -101,6 +101,12 @@
 		A0D8D381203CAE4500D68A5A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8D380203CAE4500D68A5A /* Location.swift */; };
 		A0D8D383203D7F8300D68A5A /* EditExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8D382203D7F8300D68A5A /* EditExperienceViewController.swift */; };
 		A0D8D385203DF78800D68A5A /* ShowExperienceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8D384203DF78800D68A5A /* ShowExperienceCell.swift */; };
+		A0E19D8320739CD800FAFB5F /* BusinessEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E19D8220739CD800FAFB5F /* BusinessEditProfileViewController.swift */; };
+		A0E19D852073A36D00FAFB5F /* JobsTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0E19D842073A36D00FAFB5F /* JobsTitle.xib */; };
+		A0E19D872073A3C600FAFB5F /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E19D862073A3C600FAFB5F /* InfoCell.swift */; };
+		A0E19D892073A3D400FAFB5F /* JobsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E19D882073A3D400FAFB5F /* JobsCell.swift */; };
+		A0E19D8B2073A3EC00FAFB5F /* ShowSpecialtiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E19D8A2073A3EC00FAFB5F /* ShowSpecialtiesCell.swift */; };
+		A0E19D8D2073A3F900FAFB5F /* SpecialtiesEditProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E19D8C2073A3F900FAFB5F /* SpecialtiesEditProfileCell.swift */; };
 		A0E4B049204FEAAF002D7534 /* BusinessSwipeLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E4B048204FEAAF002D7534 /* BusinessSwipeLocation.swift */; };
 		A0E4B04E20502AEB002D7534 /* ViewedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E4B04D20502AEB002D7534 /* ViewedManager.swift */; };
 		A0EFEE582062580800F7C5A9 /* BusinessJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EFEE572062580800F7C5A9 /* BusinessJobsViewController.swift */; };
@@ -221,6 +227,12 @@
 		A0D8D380203CAE4500D68A5A /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		A0D8D382203D7F8300D68A5A /* EditExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExperienceViewController.swift; sourceTree = "<group>"; };
 		A0D8D384203DF78800D68A5A /* ShowExperienceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowExperienceCell.swift; sourceTree = "<group>"; };
+		A0E19D8220739CD800FAFB5F /* BusinessEditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessEditProfileViewController.swift; sourceTree = "<group>"; };
+		A0E19D842073A36D00FAFB5F /* JobsTitle.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobsTitle.xib; sourceTree = "<group>"; };
+		A0E19D862073A3C600FAFB5F /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
+		A0E19D882073A3D400FAFB5F /* JobsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsCell.swift; sourceTree = "<group>"; };
+		A0E19D8A2073A3EC00FAFB5F /* ShowSpecialtiesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSpecialtiesCell.swift; sourceTree = "<group>"; };
+		A0E19D8C2073A3F900FAFB5F /* SpecialtiesEditProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialtiesEditProfileCell.swift; sourceTree = "<group>"; };
 		A0E4B048204FEAAF002D7534 /* BusinessSwipeLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSwipeLocation.swift; sourceTree = "<group>"; };
 		A0E4B04A204FFA53002D7534 /* Bournemouth.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Bournemouth.gpx; sourceTree = "<group>"; };
 		A0E4B04D20502AEB002D7534 /* ViewedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewedManager.swift; sourceTree = "<group>"; };
@@ -317,8 +329,8 @@
 				A0D68A2E206B90090040BDD1 /* InterviewAndChat */,
 				A0D68A2D206B8F970040BDD1 /* Business */,
 				A0D68A2C206B8F660040BDD1 /* Student */,
-				A0D8D37F203CAE2C00D68A5A /* Location */,
 				A09739E42020E64A0087F7CE /* Login */,
+				A0D8D37F203CAE2C00D68A5A /* Location */,
 				A09739E52020E6510087F7CE /* Register */,
 				A00748551F912189004AF885 /* AppDelegate.swift */,
 				A007485C1F912189004AF885 /* Assets.xcassets */,
@@ -599,6 +611,7 @@
 		A0D68A2D206B8F970040BDD1 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				A0E19D8120739CB900FAFB5F /* BusinessEditProfileViewController */,
 				A0D68A2F206C227A0040BDD1 /* BusinessInvites */,
 				A0973A112024B4FD0087F7CE /* BusinessProfileCreation */,
 				A09739EB2021D1AB0087F7CE /* BusinessRegister */,
@@ -664,6 +677,19 @@
 				A0D8D380203CAE4500D68A5A /* Location.swift */,
 			);
 			path = Location;
+			sourceTree = "<group>";
+		};
+		A0E19D8120739CB900FAFB5F /* BusinessEditProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A0E19D8220739CD800FAFB5F /* BusinessEditProfileViewController.swift */,
+				A0E19D862073A3C600FAFB5F /* InfoCell.swift */,
+				A0E19D882073A3D400FAFB5F /* JobsCell.swift */,
+				A0E19D8A2073A3EC00FAFB5F /* ShowSpecialtiesCell.swift */,
+				A0E19D8C2073A3F900FAFB5F /* SpecialtiesEditProfileCell.swift */,
+				A0E19D842073A36D00FAFB5F /* JobsTitle.xib */,
+			);
+			path = BusinessEditProfileViewController;
 			sourceTree = "<group>";
 		};
 		A0EFEE562062555000F7C5A9 /* BusinessJobs */ = {
@@ -767,6 +793,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E19D852073A36D00FAFB5F /* JobsTitle.xib in Resources */,
 				A0AD0718202CC6BA00B77C61 /* StudentSwipeView.xib in Resources */,
 				A00748601F912189004AF885 /* LaunchScreen.storyboard in Resources */,
 				A0F529EB1FD1CD6400B5B93C /* Gotham Rounded Book.ttf in Resources */,
@@ -874,6 +901,7 @@
 				A00748741F912B0C004AF885 /* BusinessSwipeView.swift in Sources */,
 				A0EFEE582062580800F7C5A9 /* BusinessJobsViewController.swift in Sources */,
 				A0D8D377203B39CF00D68A5A /* Experience.swift in Sources */,
+				A0E19D892073A3D400FAFB5F /* JobsCell.swift in Sources */,
 				A07226651F91657F006C60BA /* TabsViewController.swift in Sources */,
 				A0F94F232054347000FECC7A /* MatchedCell.swift in Sources */,
 				A0F5CB15206E6E97005AEEF3 /* StudentInviteCell.swift in Sources */,
@@ -918,6 +946,7 @@
 				A0AD0714202CC66F00B77C61 /* StudentSwipeView.swift in Sources */,
 				A07CAF452066D0B8003EAA9F /* JobsPostedViewController.swift in Sources */,
 				A0D67A5B204350050060AD70 /* ShowSkillsViewController.swift in Sources */,
+				A0E19D8320739CD800FAFB5F /* BusinessEditProfileViewController.swift in Sources */,
 				A0F529EA1FD1BA3100B5B93C /* VerticalGradient.swift in Sources */,
 				A0D68A31206C22B50040BDD1 /* BusinessInvitesViewController.swift in Sources */,
 				A09F6BA22027534F00D98332 /* BusinessAboutViewController.swift in Sources */,
@@ -960,10 +989,13 @@
 				5F862DAE20605BAC00008F15 /* QuestionThree.swift in Sources */,
 				A0AA81512036D6DF00858063 /* BusinessQuestions.swift in Sources */,
 				A0A6B0ED20487A2E00AC357F /* BusinessSpecialtiesViewController.swift in Sources */,
+				A0E19D8D2073A3F900FAFB5F /* SpecialtiesEditProfileCell.swift in Sources */,
 				5FDF4FDF205C5E3400ED2A8A /* ShowQuestionOne.swift in Sources */,
 				A07E3C47205DB054004158FE /* SkillsCell.swift in Sources */,
 				5FDF4FDD205C5E2500ED2A8A /* QuestionOne.swift in Sources */,
 				A0E4B049204FEAAF002D7534 /* BusinessSwipeLocation.swift in Sources */,
+				A0E19D872073A3C600FAFB5F /* InfoCell.swift in Sources */,
+				A0E19D8B2073A3EC00FAFB5F /* ShowSpecialtiesCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

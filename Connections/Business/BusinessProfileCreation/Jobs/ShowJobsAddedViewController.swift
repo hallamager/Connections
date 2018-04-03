@@ -14,6 +14,7 @@ class ShowJobsAddedViewController: UIViewController {
     
     let ref = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)").child("Jobs")
     var jobs = [Job]()
+    var job: Job!
     
     @IBOutlet var tableView: UITableView!
     

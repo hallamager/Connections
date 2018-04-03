@@ -21,6 +21,8 @@ class ShowSkillsViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.isTranslucent = false
+        
         skillInput.delegate = self
         
         ref.observe(.value, with: { snapshot in

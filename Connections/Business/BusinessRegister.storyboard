@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Avenir.ttc">
-            <string>Avenir-Light</string>
-        </array>
-        <array key="AvenirNext.ttc">
-            <string>AvenirNext-Regular</string>
-        </array>
         <array key="Gotham Rounded Book.ttf">
             <string>GothamRounded-Book</string>
         </array>
@@ -79,9 +74,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="wu0-8A-g2e" kind="show" id="erX-Bi-KGS">
-                                        <nil key="action"/>
-                                    </segue>
+                                    <segue destination="wu0-8A-g2e" kind="show" id="erX-Bi-KGS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qnz-8d-7vU" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
@@ -100,9 +93,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="o2q-rn-tH5" kind="show" id="MxL-f0-Rdv">
-                                        <nil key="action"/>
-                                    </segue>
+                                    <segue destination="o2q-rn-tH5" kind="show" id="MxL-f0-Rdv"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Specialities" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFy-cF-BRp">
@@ -132,9 +123,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="HdI-nf-546" kind="show" id="Lko-dD-1U8">
-                                        <nil key="action"/>
-                                    </segue>
+                                    <segue destination="HdI-nf-546" kind="show" id="Lko-dD-1U8"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create Your Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBG-SG-veq">
@@ -164,9 +153,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="qoJ-71-0Vz" kind="show" id="0HJ-6r-gBB">
-                                        <nil key="action"/>
-                                    </segue>
+                                    <segue destination="qoJ-71-0Vz" kind="show" id="0HJ-6r-gBB"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytQ-Sa-dyg">
@@ -192,9 +179,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="Xgm-v4-wVp" kind="show" id="SL7-81-baf">
-                                        <nil key="action"/>
-                                    </segue>
+                                    <segue destination="Xgm-v4-wVp" kind="show" id="SL7-81-baf"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RxA-Zg-yKl">
@@ -220,9 +205,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="R2C-CN-HMP" kind="show" id="Wb0-Sd-fWi">
-                                        <nil key="action"/>
-                                    </segue>
+                                    <segue destination="R2C-CN-HMP" kind="show" id="Wb0-Sd-fWi"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Experience" translatesAutoresizingMaskIntoConstraints="NO" id="NbE-OB-C37">
@@ -1244,9 +1227,7 @@ We help brands create digital strategy, understand and engage their users with U
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addNewJob:" destination="R2C-CN-HMP" eventType="touchUpInside" id="4HA-lq-zKf"/>
-                                    <segue destination="nAt-gr-NG5" kind="show" id="RBk-am-XoZ">
-                                        <nil key="action"/>
-                                    </segue>
+                                    <segue destination="nAt-gr-NG5" kind="show" id="RBk-am-XoZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOs-Ua-5Ix" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
@@ -1320,9 +1301,7 @@ We help brands create digital strategy, understand and engage their users with U
                     </view>
                     <connections>
                         <outlet property="tableView" destination="tYy-Uf-jjC" id="Bwl-3H-Twn"/>
-                        <segue destination="3SF-mm-JG2" kind="show" identifier="EditJobs" id="wLm-2d-BTa">
-                            <nil key="action"/>
-                        </segue>
+                        <segue destination="3SF-mm-JG2" kind="show" identifier="EditJobs" id="wLm-2d-BTa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAv-3t-3Ih" userLabel="First Responder" sceneMemberID="firstResponder"/>

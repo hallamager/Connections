@@ -271,6 +271,9 @@ extension StudentEditProfileViewController: UITableViewDataSource {
             let education = educations[indexPath.row]
             cell.school?.text = education.school
             cell.studied?.text = education.studied
+            cell.backgroundColor = .clear
+            cell.backgroundView = UIView()
+            cell.selectedBackgroundView = UIView()
             return cell
         }
         
@@ -279,6 +282,9 @@ extension StudentEditProfileViewController: UITableViewDataSource {
         let experience = experiences[indexPath.row]
         cell.company?.text = experience.company
         cell.title?.text = experience.title
+        cell.backgroundColor = .clear
+        cell.backgroundView = UIView()
+        cell.selectedBackgroundView = UIView()
         print("cell \(self.experiences.count)")
         return cell
 
