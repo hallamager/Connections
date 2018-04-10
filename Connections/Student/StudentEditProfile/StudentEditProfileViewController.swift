@@ -143,7 +143,7 @@ class StudentEditProfileViewController: UIViewController {
         
         let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
         let AddEducationViewController:AddEducationViewController = storyboard.instantiateViewController(withIdentifier: "AddEducationViewController") as! AddEducationViewController
-        self.navigationController?.pushViewController(AddEducationViewController, animated: true)
+        self.navigationController?.present(AddEducationViewController, animated: true)
         
     }
     
@@ -151,7 +151,7 @@ class StudentEditProfileViewController: UIViewController {
         
         let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
         let AddExperienceViewController:AddExperienceViewController = storyboard.instantiateViewController(withIdentifier: "AddExperienceViewController") as! AddExperienceViewController
-        self.navigationController?.pushViewController(AddExperienceViewController, animated: true)
+        self.navigationController?.present(AddExperienceViewController, animated: true)
         
     }
     
@@ -159,8 +159,16 @@ class StudentEditProfileViewController: UIViewController {
         
         let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
         let ShowSkillsViewController:ShowSkillsViewController = storyboard.instantiateViewController(withIdentifier: "ShowSkillsViewController") as! ShowSkillsViewController
-        self.navigationController?.pushViewController(ShowSkillsViewController, animated: true)
+        self.navigationController?.present(ShowSkillsViewController, animated: true)
 
+    }
+    
+    @IBAction func editInterests(_ sender: Any) {
+        
+        let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
+        let StudentInterestsViewController:StudentInterestsViewController = storyboard.instantiateViewController(withIdentifier: "StudentInterestsViewController") as! StudentInterestsViewController
+        self.navigationController?.present(StudentInterestsViewController, animated: true)
+        
     }
     
 }

@@ -54,9 +54,6 @@ class AddExperienceViewController: UIViewController, UITextFieldDelegate {
         delegate?.didAddExperience(ex)
         dismiss(animated: true, completion: nil)
         ref.childByAutoId().setValue(ex.toDict())
-//        let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
-//        let ShowExperienceAddedViewController:ShowExperienceAddedViewController = storyboard.instantiateViewController(withIdentifier: "ShowExperienceAddedViewController") as! ShowExperienceAddedViewController
-//        self.present(ShowExperienceAddedViewController, animated: true, completion: nil)
         
     }
     

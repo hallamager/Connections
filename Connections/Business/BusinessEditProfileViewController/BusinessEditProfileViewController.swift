@@ -20,6 +20,7 @@ class BusinessEditProfileViewController: UIViewController {
     @IBOutlet weak var questionTwo: UILabel!
     @IBOutlet weak var questionThree: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     
     let sections = ["Info", "Jobs"]
     
@@ -33,10 +34,11 @@ class BusinessEditProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         self.navigationController?.navigationBar.isTranslucent = false
         
         ref.observe(.value, with: { snapshot in
+            self.businesses.removeAll()
             if let business = Business(snapshot: snapshot) {
                 self.questionOne.text = business.questionOne
                 self.questionTwo.text = business.questionTwo
@@ -59,6 +61,7 @@ class BusinessEditProfileViewController: UIViewController {
         refJobs.observe(.value, with: { snapshot in
             
             self.jobs.removeAll()
+            self.businesses.removeAll()
             
             for job in snapshot.children {
                 if let data = job as? DataSnapshot {
@@ -90,9 +93,6 @@ class BusinessEditProfileViewController: UIViewController {
             print("is\(self.specialties.count)")
             
         })
-//
-//        tableView.rowHeight = UITableViewAutomaticDimension
-//        tableView.estimatedRowHeight = 440
         
         //open menu with tab bar button
         openMenu.target = self.revealViewController()
@@ -108,7 +108,7 @@ class BusinessEditProfileViewController: UIViewController {
         
         let storyboard:UIStoryboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
         let AddJobsViewController:AddJobsViewController = storyboard.instantiateViewController(withIdentifier: "AddJobsViewController") as! AddJobsViewController
-        self.navigationController?.pushViewController(AddJobsViewController, animated: true)
+        self.navigationController?.present(AddJobsViewController, animated: true)
         
     }
     
@@ -116,7 +116,7 @@ class BusinessEditProfileViewController: UIViewController {
         
         let storyboard:UIStoryboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
         let BusinessSpecialtiesViewController:BusinessSpecialtiesViewController = storyboard.instantiateViewController(withIdentifier: "BusinessSpecialtiesViewController") as! BusinessSpecialtiesViewController
-        self.navigationController?.pushViewController(BusinessSpecialtiesViewController, animated: true)
+        self.navigationController?.present(BusinessSpecialtiesViewController, animated: true)
         
     }
     
@@ -124,7 +124,7 @@ class BusinessEditProfileViewController: UIViewController {
         
         let storyboard:UIStoryboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
         let BusinessQuestionsViewController:BusinessQuestionsViewController = storyboard.instantiateViewController(withIdentifier: "BusinessQuestionsViewController") as! BusinessQuestionsViewController
-        self.navigationController?.pushViewController(BusinessQuestionsViewController, animated: true)
+        self.navigationController?.present(BusinessQuestionsViewController, animated: true)
         
     }
     
@@ -132,8 +132,14 @@ class BusinessEditProfileViewController: UIViewController {
 
 extension BusinessEditProfileViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 400
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+
+        if indexPath.section == 0 {
+            return 365
+        }
+
+        return 100
+
     }
     
 }
@@ -153,22 +159,21 @@ extension BusinessEditProfileViewController: UITableViewDataSource {
         
     }
     
-    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
             return nil
         }
         return sections[section]
     }
-    
+
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
             return nil
         }
-        
+
         let image = (Bundle.main.loadNibNamed("JobsTitle", owner: self, options: nil)![0] as? UIView)
         return image
-        
+
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -231,7 +236,7 @@ extension BusinessEditProfileViewController: EditInfoCellDelegate, EditJobCellDe
                 let storyboard:UIStoryboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
                 let BusinessAboutViewController:BusinessAboutViewController = storyboard.instantiateViewController(withIdentifier: "BusinessAboutViewController") as! BusinessAboutViewController
                 BusinessAboutViewController.business = businesses[indexPath.row]
-                self.navigationController?.pushViewController(BusinessAboutViewController, animated: true)
+                self.navigationController?.present(BusinessAboutViewController, animated: true)
 
                 
             }
@@ -241,7 +246,7 @@ extension BusinessEditProfileViewController: EditInfoCellDelegate, EditJobCellDe
                 let storyboard:UIStoryboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
                 let EditJobsViewController:EditJobsViewController = storyboard.instantiateViewController(withIdentifier: "EditJobsViewController") as! EditJobsViewController
                 EditJobsViewController.job = jobs[indexPath.row]
-                self.navigationController?.pushViewController(EditJobsViewController, animated: true)
+                self.navigationController?.present(EditJobsViewController, animated:true, completion: nil)
                 
             }
             

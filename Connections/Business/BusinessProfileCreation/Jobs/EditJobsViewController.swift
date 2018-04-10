@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 import Firebase
 
+protocol EditJobControllerDelegate: class {
+    func didEditJob(_ job: Job)
+}
+
 class EditJobsViewController: UIViewController, UITextFieldDelegate {
     
     var job: Job!
@@ -19,8 +23,12 @@ class EditJobsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var employmentType: UITextField!
     @IBOutlet var jobDescription: UITextView!
     
+    weak var delegate: EditJobControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.isTranslucent = false
         
         jobTitle.delegate = self
         employmentType.delegate = self
@@ -45,11 +53,13 @@ class EditJobsViewController: UIViewController, UITextFieldDelegate {
         
         let ref = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!)
         
-        ref.updateChildValues(["Title": self.jobTitle.text!, "Employment Type": self.employmentType.text!, "Description": self.jobDescription.text!])
+        let ex = Job(data: ["Title": self.jobTitle.text!, "Employment Type": self.employmentType.text!, "Description": self.jobDescription.text!])
         
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let ShowJobsAddedViewController:ShowJobsAddedViewController = storyboard.instantiateViewController(withIdentifier: "ShowJobsAddedViewController") as! ShowJobsAddedViewController
-        self.present(ShowJobsAddedViewController, animated: true, completion: nil)
+        ref.updateChildValues(ex.toDict())
+        
+        delegate?.didEditJob(ex)
+        
+        dismiss(animated: true, completion: nil)
         
     }
     

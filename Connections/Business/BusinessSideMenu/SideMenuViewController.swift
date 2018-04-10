@@ -171,14 +171,9 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     @IBAction func logoutTapped(_ sender: Any) {
-        do {
-            try Auth.auth().signOut()
             
-            dismiss(animated: true, completion: nil)
-            
-        } catch {
-            print("There was a problem loggin out")
-        }
+        AppManager.shared.logout()
+
     }
     
 }

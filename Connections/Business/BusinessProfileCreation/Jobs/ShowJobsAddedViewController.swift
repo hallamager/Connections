@@ -21,7 +21,10 @@ class ShowJobsAddedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ref.observeSingleEvent(of: .value, with: { snapshot in
+        self.navigationController?.navigationBar.isTranslucent = false
+        
+        ref.observe(.value, with: { snapshot in
+            self.jobs.removeAll()
             for job in snapshot.children {
                 if let data = job as? DataSnapshot {
                     if let job = Job(snapshot: data) {

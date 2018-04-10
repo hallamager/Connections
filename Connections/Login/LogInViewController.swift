@@ -25,6 +25,13 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        AppManager.shared.appContainer = self
+        
+    }
+    
     // check if user has logged in thus not showing logging in page
 //    override func viewDidAppear(_ animated: Bool) {
 //        
@@ -43,7 +50,7 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
     @IBAction func loginTapped(_ sender: Any) {
         
         if let email = emailTextField.text, let password = passwordTextField.text {
-            
+                        
             Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
                 
 //                if let firebaseError = error {
@@ -58,8 +65,6 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
                         (snapshot) in
                         
                         ViewedManager.shared.configure(uuid: user!.uid)
-                        
-                        
                         
                         switch snapshot.value as! String {
                         // If our user is admin...

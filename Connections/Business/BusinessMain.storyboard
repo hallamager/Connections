@@ -1857,6 +1857,9 @@
                                                         <rect key="frame" x="370" y="8" width="20" height="20"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" image="Edit"/>
+                                                        <connections>
+                                                            <action selector="addExperience:" destination="zc4-Iz-BnY" eventType="touchUpInside" id="5rI-8f-YDX"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Interest One" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zd1-iq-y9I">
                                                         <rect key="frame" x="100" y="33" width="164" height="21"/>

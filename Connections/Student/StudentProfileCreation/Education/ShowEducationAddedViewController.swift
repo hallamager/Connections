@@ -20,7 +20,8 @@ class ShowEducationAddedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ref.observeSingleEvent(of: .value, with: { snapshot in
+        ref.observe(.value, with: { snapshot in
+            self.educations.removeAll()
             for education in snapshot.children {
                 if let data = education as? DataSnapshot {
                     if let education = Education(snapshot: data) {

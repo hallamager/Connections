@@ -27,6 +27,8 @@ class AddJobsViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.isTranslucent = false
+        
         jobTitle.delegate = self
         employmentType.delegate = self
         
@@ -45,10 +47,9 @@ class AddJobsViewController: UIViewController, UITextFieldDelegate {
     @IBAction func confirmBtn(_ sender: Any) {
         
         let ex = Job(data: ["Title": self.jobTitle.text!, "Employment Type": self.employmentType.text!, "Description": self.jobDescription.text!])
+        delegate?.didAddJobs(ex)
         ref.childByAutoId().setValue(ex.toDict())
-        let storyboard:UIStoryboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
-        let ShowJobsAddedViewController:ShowJobsAddedViewController = storyboard.instantiateViewController(withIdentifier: "ShowJobsAddedViewController") as! ShowJobsAddedViewController
-        self.present(ShowJobsAddedViewController, animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
         
     }
     

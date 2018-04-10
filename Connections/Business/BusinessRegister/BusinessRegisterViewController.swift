@@ -66,15 +66,6 @@ class BusinessRegisterViewController: UIViewController, UITextFieldDelegate {
                     ref.child("users").child(user!.uid).setValue(["type": "business"])
 
                     self.presentBusinessProfileCreationViewController()
-                    
-//                    guard let userLocation = self.userLocation else { return }
-//
-//                    let data: [String: Any] = [
-//                        "lat": userLocation.coordinate.latitude,
-//                        "lng": userLocation.coordinate.longitude
-//                    ]
-//
-//                    ref.child("business").child(user!.uid).updateChildValues(data)
 
                 }
                 

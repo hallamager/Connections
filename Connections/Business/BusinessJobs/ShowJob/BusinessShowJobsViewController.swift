@@ -110,9 +110,9 @@ extension BusinessShowJobsViewController: UITableViewDelegate {
         cell.foldedBusinessName?.text = job.title
         cell.foldedEmploymentType?.text = job.employmentType
         cell.jobDescription?.text = job.description
-        cell.jobSalary?.text = job.salary
-        cell.jobLocation?.text = job.location
-        cell.jobSkillsRequired?.text = job.skillsRequired
+//        cell.jobSalary?.text = job.salary
+//        cell.jobLocation?.text = job.location
+//        cell.jobSkillsRequired?.text = job.skillsRequired
         
         // Create a storage reference from the URL
         let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(business.uuid)

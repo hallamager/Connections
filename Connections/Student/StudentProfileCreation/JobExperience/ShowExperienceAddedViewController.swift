@@ -20,7 +20,8 @@ class ShowExperienceAddedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        ref.observeSingleEvent(of: .value, with: { snapshot in
+        ref.observe(.value, with: { snapshot in
+            self.experiences.removeAll()
             for experience in snapshot.children {
                 if let data = experience as? DataSnapshot {
                     if let experience = Experience(snapshot: data) {
