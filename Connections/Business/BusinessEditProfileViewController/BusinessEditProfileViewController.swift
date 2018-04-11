@@ -108,7 +108,7 @@ class BusinessEditProfileViewController: UIViewController {
         
         let storyboard:UIStoryboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
         let AddJobsViewController:AddJobsViewController = storyboard.instantiateViewController(withIdentifier: "AddJobsViewController") as! AddJobsViewController
-        self.navigationController?.present(AddJobsViewController, animated: true)
+        self.navigationController?.pushViewController(AddJobsViewController, animated: true)
         
     }
     
@@ -116,7 +116,7 @@ class BusinessEditProfileViewController: UIViewController {
         
         let storyboard:UIStoryboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
         let BusinessSpecialtiesViewController:BusinessSpecialtiesViewController = storyboard.instantiateViewController(withIdentifier: "BusinessSpecialtiesViewController") as! BusinessSpecialtiesViewController
-        self.navigationController?.present(BusinessSpecialtiesViewController, animated: true)
+        self.navigationController?.pushViewController(BusinessSpecialtiesViewController, animated: true)
         
     }
     
@@ -124,7 +124,7 @@ class BusinessEditProfileViewController: UIViewController {
         
         let storyboard:UIStoryboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
         let BusinessQuestionsViewController:BusinessQuestionsViewController = storyboard.instantiateViewController(withIdentifier: "BusinessQuestionsViewController") as! BusinessQuestionsViewController
-        self.navigationController?.present(BusinessQuestionsViewController, animated: true)
+        self.navigationController?.pushViewController(BusinessQuestionsViewController, animated: true)
         
     }
     
@@ -236,7 +236,7 @@ extension BusinessEditProfileViewController: EditInfoCellDelegate, EditJobCellDe
                 let storyboard:UIStoryboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
                 let BusinessAboutViewController:BusinessAboutViewController = storyboard.instantiateViewController(withIdentifier: "BusinessAboutViewController") as! BusinessAboutViewController
                 BusinessAboutViewController.business = businesses[indexPath.row]
-                self.navigationController?.present(BusinessAboutViewController, animated: true)
+                self.navigationController?.pushViewController(BusinessAboutViewController, animated: true)
 
                 
             }
@@ -246,7 +246,7 @@ extension BusinessEditProfileViewController: EditInfoCellDelegate, EditJobCellDe
                 let storyboard:UIStoryboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
                 let EditJobsViewController:EditJobsViewController = storyboard.instantiateViewController(withIdentifier: "EditJobsViewController") as! EditJobsViewController
                 EditJobsViewController.job = jobs[indexPath.row]
-                self.navigationController?.present(EditJobsViewController, animated:true, completion: nil)
+                self.navigationController?.pushViewController(EditJobsViewController, animated: true)
                 
             }
             

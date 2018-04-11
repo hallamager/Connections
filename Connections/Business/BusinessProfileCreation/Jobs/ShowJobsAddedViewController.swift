@@ -53,9 +53,7 @@ class ShowJobsAddedViewController: UIViewController {
     }
     
     @IBAction func confirmBtn(_ sender: Any) {
-        let storyboard:UIStoryboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
-        let BusinessCreateProfileLandingViewController:BusinessCreateProfileLandingViewController = storyboard.instantiateViewController(withIdentifier: "BusinessCreateProfileLandingViewController") as! BusinessCreateProfileLandingViewController
-        self.present(BusinessCreateProfileLandingViewController, animated: true, completion: nil)
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }
 

@@ -16,6 +16,7 @@ class StudentCreateProfileLandingViewController: UIViewController {
     let geoRefStudent = GeoFire(firebaseRef: Database.database().reference().child("student_locations"))
     let geoRefBusiness = GeoFire(firebaseRef: Database.database().reference().child("business_locations"))
     let locationManager = CLLocationManager()
+    var appContainer: SWRevealViewController!
     var students = [Student]()
     
     override func viewDidLoad() {
@@ -33,9 +34,11 @@ class StudentCreateProfileLandingViewController: UIViewController {
     }
     
     func presentBusinessSwipeViewViewController() {
+        
         let storyboard:UIStoryboard = UIStoryboard(name: "BusinessMain", bundle: nil)
         let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
         self.present(SWRevealViewController, animated: true, completion: nil)
+        
     }
     
     @IBAction func createProfileBtn(_ sender: Any) {

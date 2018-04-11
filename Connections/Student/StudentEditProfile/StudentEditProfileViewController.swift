@@ -143,7 +143,7 @@ class StudentEditProfileViewController: UIViewController {
         
         let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
         let AddEducationViewController:AddEducationViewController = storyboard.instantiateViewController(withIdentifier: "AddEducationViewController") as! AddEducationViewController
-        self.navigationController?.present(AddEducationViewController, animated: true)
+        self.navigationController?.pushViewController(AddEducationViewController, animated: true)
         
     }
     
@@ -151,7 +151,7 @@ class StudentEditProfileViewController: UIViewController {
         
         let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
         let AddExperienceViewController:AddExperienceViewController = storyboard.instantiateViewController(withIdentifier: "AddExperienceViewController") as! AddExperienceViewController
-        self.navigationController?.present(AddExperienceViewController, animated: true)
+        self.navigationController?.pushViewController(AddExperienceViewController, animated: true)
         
     }
     
@@ -159,7 +159,7 @@ class StudentEditProfileViewController: UIViewController {
         
         let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
         let ShowSkillsViewController:ShowSkillsViewController = storyboard.instantiateViewController(withIdentifier: "ShowSkillsViewController") as! ShowSkillsViewController
-        self.navigationController?.present(ShowSkillsViewController, animated: true)
+        self.navigationController?.pushViewController(ShowSkillsViewController, animated: true)
 
     }
     
@@ -167,7 +167,7 @@ class StudentEditProfileViewController: UIViewController {
         
         let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
         let StudentInterestsViewController:StudentInterestsViewController = storyboard.instantiateViewController(withIdentifier: "StudentInterestsViewController") as! StudentInterestsViewController
-        self.navigationController?.present(StudentInterestsViewController, animated: true)
+        self.navigationController?.pushViewController(StudentInterestsViewController, animated: true)
         
     }
     
@@ -222,14 +222,14 @@ extension StudentEditProfileViewController: UITableViewDelegate {
             let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
             let EditEducationViewController:EditEducationViewController = storyboard.instantiateViewController(withIdentifier: "EditEducationViewController") as! EditEducationViewController
             EditEducationViewController.education = educations[indexPath.row]
-            self.present(EditEducationViewController, animated: true, completion: nil)
+            self.navigationController?.pushViewController(EditEducationViewController, animated: true)
         }
         
         if indexPath.section == 1 {
             let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
             let EditExperienceViewController:EditExperienceViewController = storyboard.instantiateViewController(withIdentifier: "EditExperienceViewController") as! EditExperienceViewController
             EditExperienceViewController.experience = experiences[indexPath.row]
-            self.present(EditExperienceViewController, animated: true, completion: nil)
+            self.navigationController?.pushViewController(EditExperienceViewController, animated: true)
         }
         
     }

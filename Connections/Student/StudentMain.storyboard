@@ -1631,7 +1631,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hrc-nL-1Zo" customClass="HorizontalGradient" customModule="Connections" customModuleProvider="target">
-                                <rect key="frame" x="22" y="143" width="64" height="1"/>
+                                <rect key="frame" x="22" y="142" width="64" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">

@@ -46,7 +46,7 @@ class BusinessQuestionsViewController: UIViewController, UITextFieldDelegate {
     }
     
     func presentBusinessProfileCreationViewController() {
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
 }

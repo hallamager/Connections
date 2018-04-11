@@ -49,7 +49,7 @@ class AddJobsViewController: UIViewController, UITextFieldDelegate {
         let ex = Job(data: ["Title": self.jobTitle.text!, "Employment Type": self.employmentType.text!, "Description": self.jobDescription.text!])
         delegate?.didAddJobs(ex)
         ref.childByAutoId().setValue(ex.toDict())
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
         
     }
     

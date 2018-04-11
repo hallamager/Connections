@@ -52,7 +52,7 @@ class AddExperienceViewController: UIViewController, UITextFieldDelegate {
         
         let ex = Experience(data: ["Title": self.jobTitle.text!, "Company": self.jobCompany.text!, "Location": self.jobCity.text!, "From Date": self.jobFromDate.text!, "To Date": self.jobToDate.text!, "Description": self.jobDescription.text!])
         delegate?.didAddExperience(ex)
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
         ref.childByAutoId().setValue(ex.toDict())
         
     }

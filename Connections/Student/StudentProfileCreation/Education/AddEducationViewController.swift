@@ -53,7 +53,7 @@ class AddEducationViewController: UIViewController, UITextFieldDelegate {
         
         let ex = Education(data: ["School": self.school.text!, "Qualification Type": self.qType.text!, "Studied": self.studied.text!, "From Date": self.schoolFromDate.text!, "To Date": self.schoolToDate.text!, "Grades": self.grades.text!])
         delegate?.didAddEducation(ex)
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
         ref.childByAutoId().setValue(ex.toDict())
         
     }

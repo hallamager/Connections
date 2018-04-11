@@ -68,7 +68,7 @@ class ShowSkillsViewController: UIViewController, UITextFieldDelegate {
     }
     
     func presentStudentProfileCreationViewController() {
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
 }

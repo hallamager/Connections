@@ -66,8 +66,8 @@ class EditEducationViewController: UIViewController, UITextFieldDelegate {
         ref.updateChildValues(ex.toDict())
         
         delegate?.didEditEducation(ex)
-        dismiss(animated: true, completion: nil)
-        
+        self.navigationController?.popViewController(animated: true)
+
     }
     
 }

@@ -59,7 +59,7 @@ class EditJobsViewController: UIViewController, UITextFieldDelegate {
         
         delegate?.didEditJob(ex)
         
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
         
     }
     

@@ -60,31 +60,28 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
             
         }
         
-        // checking if the fields are not nil
-        if let email = emailTextField.text, let password = passwordTextField.text {
+        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
             
-            let ref = Database.database().reference()
-            Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
-                
-                if let firebaseError = error {
-                    
-                    print(firebaseError.localizedDescription)
-                    return
-                    
-                } else {
-                    
-                    // following method is a add user's more details
-                    ref.child("student").child(user!.uid).updateChildValues(["Username": self.usernameTextField.text!, "type": "student"])
-                    
-                    ref.child("users").child(user!.uid).setValue(["type": "student"])
-                    
-                }
-                
-            })
+        let ref = Database.database().reference()
+        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             
-            self.presentStudentProfileCreationViewController()
+            if let firebaseError = error {
+                
+                print(firebaseError.localizedDescription)
+                return
+                
+            } else {
+                
+                // following method is a add user's more details
+                ref.child("student").child(user!.uid).updateChildValues(["Username": self.usernameTextField.text!, "type": "student"])
+                
+                ref.child("users").child(user!.uid).setValue(["type": "student"])
+                
+            }
             
         }
+        
+        self.presentStudentProfileCreationViewController()
         
     }
     
@@ -93,9 +90,11 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     func presentStudentProfileCreationViewController() {
-        let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
-        let StudentCreateProfileLandingViewController:StudentCreateProfileLandingViewController = storyboard.instantiateViewController(withIdentifier: "StudentCreateProfileLandingViewController") as! StudentCreateProfileLandingViewController
-        self.present(StudentCreateProfileLandingViewController, animated: true, completion: nil)
+        
+        let storyboard = UIStoryboard(name: "StudentRegister", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "profileCreationNavigation")
+        self.present(viewController, animated: true)
+        
     }
     
 

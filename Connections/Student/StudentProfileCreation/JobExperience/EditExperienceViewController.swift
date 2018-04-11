@@ -65,8 +65,8 @@ class EditExperienceViewController: UIViewController, UITextFieldDelegate {
         ref.updateChildValues(ex.toDict())
         
         delegate?.didEditExperience(ex)
-        dismiss(animated: true, completion: nil)
-        
+        self.navigationController?.popViewController(animated: true)
+
     }
     
 }
