@@ -24,4 +24,9 @@ class JobsCell: UITableViewCell {
         print("tapped")
     }
     
+    @IBAction func deleteJobBtn(_ sender: UIButton) {
+        delegate?.didTapButton(sender)
+        print("tapped")
+    }
+    
 }

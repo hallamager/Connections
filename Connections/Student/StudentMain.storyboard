@@ -2505,15 +2505,15 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SuP-8K-nSl">
-                                                                            <rect key="frame" x="316" y="0.0" width="82" height="80"/>
+                                                                            <rect key="frame" x="358" y="0.0" width="40" height="40"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                                                                             <subviews>
                                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Add" translatesAutoresizingMaskIntoConstraints="NO" id="3pr-Mg-X3e">
-                                                                                    <rect key="frame" x="31" y="30" width="20" height="20"/>
+                                                                                    <rect key="frame" x="10" y="10" width="20" height="20"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                 </imageView>
                                                                                 <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDV-db-BIs">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="82" height="80"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <connections>
                                                                                         <action selector="editJobsBtn:" destination="WHz-xX-gUE" eventType="touchUpInside" id="EiZ-TN-DR3"/>
@@ -2521,6 +2521,24 @@
                                                                                 </button>
                                                                             </subviews>
                                                                             <color key="backgroundColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </view>
+                                                                        <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c1B-0i-mrl">
+                                                                            <rect key="frame" x="358" y="40" width="40" height="40"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
+                                                                            <subviews>
+                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Add" translatesAutoresizingMaskIntoConstraints="NO" id="XuJ-V1-XoT">
+                                                                                    <rect key="frame" x="10" y="10" width="20" height="20"/>
+                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                </imageView>
+                                                                                <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwF-gk-M6b">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                                    <connections>
+                                                                                        <action selector="deleteJobBtn:" destination="WHz-xX-gUE" eventType="touchUpInside" id="HPL-NA-bdg"/>
+                                                                                    </connections>
+                                                                                </button>
+                                                                            </subviews>
+                                                                            <color key="backgroundColor" red="0.78139215709999998" green="0.06931648403" blue="0.18148905039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </view>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

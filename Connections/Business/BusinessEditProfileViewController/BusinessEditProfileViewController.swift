@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Firebase
 import ViewAnimator
+import FirebaseDatabase
 
 class BusinessEditProfileViewController: UIViewController {
     
@@ -247,6 +248,16 @@ extension BusinessEditProfileViewController: EditInfoCellDelegate, EditJobCellDe
                 let EditJobsViewController:EditJobsViewController = storyboard.instantiateViewController(withIdentifier: "EditJobsViewController") as! EditJobsViewController
                 EditJobsViewController.job = jobs[indexPath.row]
                 self.navigationController?.pushViewController(EditJobsViewController, animated: true)
+                
+            }
+            
+            if sender.tag == 3 {
+                
+                let job = jobs[indexPath.row]
+                
+                let refDeleteJobs = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!)
+                
+                refDeleteJobs.removeValue()
                 
             }
             
