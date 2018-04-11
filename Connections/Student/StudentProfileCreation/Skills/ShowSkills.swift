@@ -8,8 +8,19 @@
 
 import Foundation
 
+protocol DeleteSkillsCellDelegate: class {
+    func didTapButton(_ sender: UIButton)
+}
+
 class ShowSkillCell: UITableViewCell {
     
+    weak var delegate: DeleteSkillsCellDelegate?
+    
     @IBOutlet var skill: UILabel!
+    
+    @IBAction func deleteSkillBtn(_ sender: UIButton) {
+        delegate?.didTapButton(sender)
+        print("tapped")
+    }
     
 }

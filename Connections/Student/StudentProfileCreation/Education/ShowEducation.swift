@@ -8,10 +8,25 @@
 
 import Foundation
 
+protocol EducationProfileCellDelegate: class {
+    func didTapButton(_ sender: UIButton)
+}
+
 class ShowEducationCell: UITableViewCell {
+    
+    weak var delegate: EducationProfileCellDelegate?
     
     @IBOutlet var school: UILabel!
     @IBOutlet var studied: UILabel!
-    @IBOutlet var grades: UILabel!
+    
+    @IBAction func editEducationBtn(_ sender: UIButton) {
+        delegate?.didTapButton(sender)
+        print("tapped")
+    }
+    
+    @IBAction func deleteEducationBtn(_ sender: UIButton) {
+        delegate?.didTapButton(sender)
+        print("tapped")
+    }
     
 }

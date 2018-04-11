@@ -8,9 +8,25 @@
 
 import Foundation
 
+protocol ExperienceCellDelegate: class {
+    func didTapButton(_ sender: UIButton)
+}
+
 class ExperienceCell: UITableViewCell {
+    
+    weak var delegate: ExperienceCellDelegate?
     
     @IBOutlet var company: UILabel!
     @IBOutlet var title: UILabel!
+    
+    @IBAction func editExperienceBtn(_ sender: UIButton) {
+        delegate?.didTapButton(sender)
+        print("tapped")
+    }
+    
+    @IBAction func deleteExperienceBtn(_ sender: UIButton) {
+        delegate?.didTapButton(sender)
+        print("tapped")
+    }
     
 }

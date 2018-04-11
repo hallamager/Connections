@@ -9,8 +9,19 @@
 import Foundation
 import UIKit
 
+protocol DeleteSpecaltiesCellDelegate: class {
+    func didTapButton(_ sender: UIButton)
+}
+
 class SpecialtiesEditProfileCell: UICollectionViewCell {
     
+    weak var delegate: DeleteSpecaltiesCellDelegate?
+    
     @IBOutlet weak var specialties: UILabel!
+    
+    @IBAction func deleteSpecaltiesBtn(_ sender: UIButton) {
+        delegate?.didTapButton(sender)
+        print("tapped")
+    }
     
 }

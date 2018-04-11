@@ -9,9 +9,25 @@
 import Foundation
 import UIKit
 
+protocol JobCellDelegate: class {
+    func didTapButton(_ sender: UIButton)
+}
+
 class ShowJobsCell: UITableViewCell {
+    
+    weak var delegate: JobCellDelegate?
     
     @IBOutlet var jobTitle: UILabel!
     @IBOutlet var employmentType: UILabel!
+    
+    @IBAction func editJobBtn(_ sender: UIButton) {
+        delegate?.didTapButton(sender)
+        print("tapped")
+    }
+    
+    @IBAction func deleteJobBtn(_ sender: UIButton) {
+        delegate?.didTapButton(sender)
+        print("tapped")
+    }
     
 }

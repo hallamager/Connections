@@ -72,15 +72,6 @@ extension ShowJobsAddedViewController: UITableViewDelegate {
         return 140
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let storyboard:UIStoryboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
-        let EditJobsViewController:EditJobsViewController = storyboard.instantiateViewController(withIdentifier: "EditJobsViewController") as! EditJobsViewController
-        EditJobsViewController.job = jobs[indexPath.row]
-        self.present(EditJobsViewController, animated: true, completion: nil)
-        
-    }
-    
 }
 
 extension ShowJobsAddedViewController: UITableViewDataSource {
@@ -95,7 +86,42 @@ extension ShowJobsAddedViewController: UITableViewDataSource {
         let job = jobs[indexPath.row]
         cell.jobTitle?.text = job.title
         cell.employmentType?.text = job.employmentType
+        cell.delegate = self
         return cell
+    }
+    
+}
+
+extension ShowJobsAddedViewController: JobCellDelegate {
+    
+    func didTapButton(_ sender: UIButton) {
+        if let indexPath = getCurrentCellIndexPath(sender) {
+            
+            if sender.tag == 1 {
+                let storyboard:UIStoryboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
+                let EditJobsViewController:EditJobsViewController = storyboard.instantiateViewController(withIdentifier: "EditJobsViewController") as! EditJobsViewController
+                EditJobsViewController.job = jobs[indexPath.row]
+                self.navigationController?.pushViewController(EditJobsViewController, animated: true)
+            }
+            
+            if sender.tag == 2 {
+                let job = jobs[indexPath.row]
+                
+                let refDeleteJobs = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!)
+                
+                refDeleteJobs.removeValue()
+            }
+            
+        }
+        
+    }
+    
+    func getCurrentCellIndexPath(_ sender: UIButton) -> IndexPath? {
+        let buttonPosition = sender.convert(CGPoint.zero, to: tableView)
+        if let indexPath: IndexPath = tableView.indexPathForRow(at: buttonPosition) {
+            return indexPath
+        }
+        return nil
     }
     
 }

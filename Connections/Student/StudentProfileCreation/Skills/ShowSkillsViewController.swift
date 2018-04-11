@@ -92,7 +92,37 @@ extension ShowSkillsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShowSkillCell") as! ShowSkillCell
         let skill = skills[indexPath.row]
         cell.skill?.text = skill.skill
+        cell.delegate = self
         return cell
+    }
+    
+}
+
+extension ShowSkillsViewController: DeleteSkillsCellDelegate {
+    
+    func didTapButton(_ sender: UIButton) {
+        if let indexPath = getCurrentCellIndexPath(sender) {
+            
+            if sender.tag == 1 {
+            
+                let skill = skills[indexPath.row]
+                
+                let refDeleteSkills = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("skills").child(skill.uuid!)
+                
+                refDeleteSkills.removeValue()
+                
+            }
+            
+        }
+        
+    }
+    
+    func getCurrentCellIndexPath(_ sender: UIButton) -> IndexPath? {
+        let buttonPosition = sender.convert(CGPoint.zero, to: tableView)
+        if let indexPath: IndexPath = tableView.indexPathForRow(at: buttonPosition) {
+            return indexPath
+        }
+        return nil
     }
     
 }

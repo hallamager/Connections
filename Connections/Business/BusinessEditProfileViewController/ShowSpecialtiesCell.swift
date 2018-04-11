@@ -27,9 +27,11 @@ extension BusinessEditProfileViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "specialtiesCell", for: indexPath as IndexPath) as! SpecialtiesEditProfileCell
         
         let specialtie = specialties[indexPath.row]
-        
+                
         cell.specialties?.text = specialtie.specialties
         
+        cell.delegate = self
+                
         return cell
     }
     

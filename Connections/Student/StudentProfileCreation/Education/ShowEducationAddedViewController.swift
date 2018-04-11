@@ -69,15 +69,6 @@ extension ShowEducationAddedViewController: UITableViewDelegate {
         return 140
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
-        let EditEducationViewController:EditEducationViewController = storyboard.instantiateViewController(withIdentifier: "EditEducationViewController") as! EditEducationViewController
-        EditEducationViewController.education = educations[indexPath.row]
-        self.present(EditEducationViewController, animated: true, completion: nil)
-        
-    }
-    
 }
 
 extension ShowEducationAddedViewController: UITableViewDataSource {
@@ -92,8 +83,42 @@ extension ShowEducationAddedViewController: UITableViewDataSource {
         let education = educations[indexPath.row]
         cell.school?.text = education.school
         cell.studied?.text = education.studied
-        cell.grades?.text = education.grades
+        cell.delegate = self
         return cell
+    }
+    
+}
+
+extension ShowEducationAddedViewController: EducationProfileCellDelegate {
+    
+    func didTapButton(_ sender: UIButton) {
+        if let indexPath = getCurrentCellIndexPath(sender) {
+            
+            if sender.tag == 1 {
+                let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
+                let EditEducationViewController:EditEducationViewController = storyboard.instantiateViewController(withIdentifier: "EditEducationViewController") as! EditEducationViewController
+                EditEducationViewController.education = educations[indexPath.row]
+                self.navigationController?.pushViewController(EditEducationViewController, animated: true)
+            }
+            
+            if sender.tag == 2 {
+                let education = educations[indexPath.row]
+                
+                let refDeleteEducation = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("education").child(education.uuid!)
+                
+                refDeleteEducation.removeValue()
+            }
+        
+        }
+
+    }
+    
+    func getCurrentCellIndexPath(_ sender: UIButton) -> IndexPath? {
+        let buttonPosition = sender.convert(CGPoint.zero, to: tableView)
+        if let indexPath: IndexPath = tableView.indexPathForRow(at: buttonPosition) {
+            return indexPath
+        }
+        return nil
     }
     
 }

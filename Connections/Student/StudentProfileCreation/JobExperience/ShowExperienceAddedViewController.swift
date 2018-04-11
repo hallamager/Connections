@@ -92,8 +92,42 @@ extension ShowExperienceAddedViewController: UITableViewDataSource {
         let experience = experiences[indexPath.row]
         cell.jobTitle?.text = experience.title
         cell.jobCompany?.text = experience.company
-        cell.jobDate?.text = experience.fromDate
+        cell.delegate = self
         return cell
+    }
+    
+}
+
+extension ShowExperienceAddedViewController: ExperienceProfileCellDelegate {
+    
+    func didTapButton(_ sender: UIButton) {
+        if let indexPath = getCurrentCellIndexPath(sender) {
+            
+            if sender.tag == 1 {
+                let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
+                let EditExperienceViewController:EditExperienceViewController = storyboard.instantiateViewController(withIdentifier: "EditExperienceViewController") as! EditExperienceViewController
+                EditExperienceViewController.experience = experiences[indexPath.row]
+                self.navigationController?.pushViewController(EditExperienceViewController, animated: true)
+            }
+            
+            if sender.tag == 2 {
+                let experience = experiences[indexPath.row]
+                
+                let refDeleteEducation = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("experience").child(experience.uuid!)
+                
+                refDeleteEducation.removeValue()
+            }
+            
+        }
+        
+    }
+    
+    func getCurrentCellIndexPath(_ sender: UIButton) -> IndexPath? {
+        let buttonPosition = sender.convert(CGPoint.zero, to: tableView)
+        if let indexPath: IndexPath = tableView.indexPathForRow(at: buttonPosition) {
+            return indexPath
+        }
+        return nil
     }
     
 }

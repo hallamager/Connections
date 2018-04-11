@@ -8,8 +8,19 @@
 
 import Foundation
 
+protocol SpecialtiesCellDelegate: class {
+    func didTapButton(_ sender: UIButton)
+}
+
 class SpecialtiesCell: UITableViewCell {
     
+    weak var delegate: SpecialtiesCellDelegate?
+    
     @IBOutlet var specialties: UILabel!
+    
+    @IBAction func deleteSpecaltiesBtn(_ sender: UIButton) {
+        delegate?.didTapButton(sender)
+        print("tapped")
+    }
     
 }

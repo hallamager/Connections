@@ -90,7 +90,35 @@ extension BusinessSpecialtiesViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SpecialtiesCell") as! SpecialtiesCell
         let specialty = specialties[indexPath.row]
         cell.specialties?.text = specialty.specialties
+        cell.delegate = self
         return cell
+    }
+    
+}
+
+extension BusinessSpecialtiesViewController: SpecialtiesCellDelegate {
+    
+    func didTapButton(_ sender: UIButton) {
+        if let indexPath = getCurrentCellIndexPath(sender) {
+            
+            if sender.tag == 1 {
+                let specialtie = specialties[indexPath.row]
+                
+                let refDeleteJobs = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)").child("specialties").child(specialtie.uuid!)
+                
+                refDeleteJobs.removeValue()
+            }
+            
+        }
+        
+    }
+    
+    func getCurrentCellIndexPath(_ sender: UIButton) -> IndexPath? {
+        let buttonPosition = sender.convert(CGPoint.zero, to: tableView)
+        if let indexPath: IndexPath = tableView.indexPathForRow(at: buttonPosition) {
+            return indexPath
+        }
+        return nil
     }
     
 }

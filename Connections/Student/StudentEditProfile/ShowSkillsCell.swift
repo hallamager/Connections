@@ -30,6 +30,8 @@ extension StudentEditProfileViewController: UICollectionViewDataSource {
         
         cell.skill?.text = skill.skill
         
+        cell.delegate = self
+        
         return cell
     }
     

@@ -227,7 +227,7 @@ extension BusinessEditProfileViewController: UITableViewDataSource {
     
 }
 
-extension BusinessEditProfileViewController: EditInfoCellDelegate, EditJobCellDelegate {
+extension BusinessEditProfileViewController: EditInfoCellDelegate, EditJobCellDelegate, DeleteSpecaltiesCellDelegate {
     
     func didTapButton(_ sender: UIButton) {
         if let indexPath = getCurrentCellIndexPath(sender) {
@@ -263,11 +263,33 @@ extension BusinessEditProfileViewController: EditInfoCellDelegate, EditJobCellDe
             
         }
         
+        if let indexPath = getCurrentCollectionCellIndexPath(sender) {
+            
+            if sender.tag == 4 {
+                
+                let specialtie = specialties[indexPath.row]
+                
+                let refDeleteSpecalties = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)").child("specialties").child(specialtie.uuid!)
+                
+                refDeleteSpecalties.removeValue()
+                
+            }
+            
+        }
+        
     }
     
     func getCurrentCellIndexPath(_ sender: UIButton) -> IndexPath? {
         let buttonPosition = sender.convert(CGPoint.zero, to: tableView)
         if let indexPath: IndexPath = tableView.indexPathForRow(at: buttonPosition) {
+            return indexPath
+        }
+        return nil
+    }
+    
+    func getCurrentCollectionCellIndexPath(_ sender: UIButton) -> IndexPath? {
+        let buttonPosition = sender.convert(CGPoint.zero, to: collectionView)
+        if let indexPath: IndexPath = collectionView.indexPathForItem(at: buttonPosition) {
             return indexPath
         }
         return nil

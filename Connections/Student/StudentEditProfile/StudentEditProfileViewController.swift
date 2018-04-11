@@ -214,25 +214,6 @@ extension StudentEditProfileViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
-    
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        if indexPath.section == 0 {
-            let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
-            let EditEducationViewController:EditEducationViewController = storyboard.instantiateViewController(withIdentifier: "EditEducationViewController") as! EditEducationViewController
-            EditEducationViewController.education = educations[indexPath.row]
-            self.navigationController?.pushViewController(EditEducationViewController, animated: true)
-        }
-        
-        if indexPath.section == 1 {
-            let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
-            let EditExperienceViewController:EditExperienceViewController = storyboard.instantiateViewController(withIdentifier: "EditExperienceViewController") as! EditExperienceViewController
-            EditExperienceViewController.experience = experiences[indexPath.row]
-            self.navigationController?.pushViewController(EditExperienceViewController, animated: true)
-        }
-        
-    }
 
 }
 
@@ -282,6 +263,7 @@ extension StudentEditProfileViewController: UITableViewDataSource {
             cell.backgroundColor = .clear
             cell.backgroundView = UIView()
             cell.selectedBackgroundView = UIView()
+            cell.delegate = self
             return cell
         }
         
@@ -294,9 +276,79 @@ extension StudentEditProfileViewController: UITableViewDataSource {
         cell.backgroundView = UIView()
         cell.selectedBackgroundView = UIView()
         print("cell \(self.experiences.count)")
+        cell.delegate = self
         return cell
 
     }
     
+}
+
+extension StudentEditProfileViewController: EducationCellDelegate, ExperienceCellDelegate, SkillsCellDelegate {
+    
+    func didTapButton(_ sender: UIButton) {
+        if let indexPath = getCurrentCellIndexPath(sender) {
+            
+            if sender.tag == 1 {
+                let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
+                let EditEducationViewController:EditEducationViewController = storyboard.instantiateViewController(withIdentifier: "EditEducationViewController") as! EditEducationViewController
+                EditEducationViewController.education = educations[indexPath.row]
+                self.navigationController?.pushViewController(EditEducationViewController, animated: true)
+            }
+            
+            if sender.tag == 2 {
+                let education = educations[indexPath.row]
+                
+                let refDeleteEducation = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("education").child(education.uuid!)
+                
+                refDeleteEducation.removeValue()
+            }
+            
+            if sender.tag == 3 {
+                let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
+                let EditExperienceViewController:EditExperienceViewController = storyboard.instantiateViewController(withIdentifier: "EditExperienceViewController") as! EditExperienceViewController
+                EditExperienceViewController.experience = experiences[indexPath.row]
+                self.navigationController?.pushViewController(EditExperienceViewController, animated: true)
+            }
+            
+            if sender.tag == 4 {
+                let experience = experiences[indexPath.row]
+                
+                let refDeleteExperience = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("experience").child(experience.uuid!)
+                
+                refDeleteExperience.removeValue()
+            }
+            
+        }
+        
+        if let indexPath = getCurrentCollectionCellIndexPath(sender) {
+            
+            if sender.tag == 5 {
+                let skill = skills[indexPath.row]
+                
+                let refDeleteSkills = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("skills").child(skill.uuid!)
+                
+                refDeleteSkills.removeValue()
+            }
+            
+        }
+        
+    }
+    
+    func getCurrentCellIndexPath(_ sender: UIButton) -> IndexPath? {
+        let buttonPosition = sender.convert(CGPoint.zero, to: tableView)
+        if let indexPath: IndexPath = tableView.indexPathForRow(at: buttonPosition) {
+            return indexPath
+        }
+        return nil
+    }
+    
+    func getCurrentCollectionCellIndexPath(_ sender: UIButton) -> IndexPath? {
+        let buttonPosition = sender.convert(CGPoint.zero, to: collectionView)
+        if let indexPath: IndexPath = collectionView.indexPathForItem(at: buttonPosition) {
+            return indexPath
+        }
+        return nil
+    }
+        
 }
 
