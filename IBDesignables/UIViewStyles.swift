@@ -46,6 +46,54 @@ class UIViewStyles: UIView {
         layer.shadowOpacity = shadowOpacity
         layer.shadowRadius = shadowRadius
     }
+    
+    
+    @IBInspectable var FirstColor: UIColor = UIColor.clear {
+        
+        didSet {
+            
+            updateView()
+            
+        }
+        
+    }
+    
+    @IBInspectable var SecondColor: UIColor = UIColor.clear {
+        
+        didSet {
+            
+            updateView()
+            
+        }
+        
+    }
+    
+    
+    
+    override class var layerClass: AnyClass {
+        
+        get {
+            
+            return CAGradientLayer.self
+            
+        }
+        
+    }
+    
+    
+    func updateView() {
+        
+        let layer = self.layer as! CAGradientLayer
+        
+        layer.colors = [ FirstColor.cgColor, SecondColor.cgColor ]
+        
+        layer.startPoint = CGPoint(x: 0, y: 0) // Upper left corner
+        
+        
+        
+        layer.endPoint = CGPoint(x: 1, y: 0) // Upper right corner
+        
+    }
 
 }
 
