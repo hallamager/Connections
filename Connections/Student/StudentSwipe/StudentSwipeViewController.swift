@@ -69,11 +69,14 @@ class StudentSwipeViewController: UIViewController, CLLocationManagerDelegate {
         newLike.updateChildValues(dict)
         
         let newBusinessLike = refLikes.child("matchesBusiness/\(Auth.auth().currentUser!.uid)")
+        let newView = refLikes.child("userViewed/\(Auth.auth().currentUser!.uid)")
+        
         let dictBusiness = [
             student.uuid: true,
             ]
         
         newBusinessLike.updateChildValues(dictBusiness)
+        newView.updateChildValues(dictBusiness)
         
         self.counter += 1
         
@@ -82,11 +85,18 @@ class StudentSwipeViewController: UIViewController, CLLocationManagerDelegate {
     func addDisliked(_ student: Student) {
         
         let newLike = refLikes.child("studentsDisliked").child(student.uuid)
+        let newView = refLikes.child("userViewed/\(Auth.auth().currentUser!.uid)")
+        
         let dict = [
             Auth.auth().currentUser!.uid: true,
             ]
         
+        let dictBusiness = [
+            student.uuid: true,
+            ]
+        
         newLike.updateChildValues(dict)
+        newView.updateChildValues(dictBusiness)
         
         self.counter += 1
         
@@ -106,9 +116,13 @@ class StudentSwipeViewController: UIViewController, CLLocationManagerDelegate {
             let userRef = Database.database().reference(withPath: "student")
             var students = [Student]()
             var count = 0
+            
             if uids.count != 0 {
                 uids.forEach { uid in
                     userRef.child(uid).observeSingleEvent(of: .value) { snapshot in
+                        
+                        guard !ViewedManager.shared.uuids.contains(uid) else { return }
+                        
                         let student = Student(snapshot: snapshot)
                         students.append(student!)
                         count += 1
