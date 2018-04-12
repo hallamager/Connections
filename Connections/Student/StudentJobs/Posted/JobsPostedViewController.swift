@@ -34,7 +34,10 @@ class JobsPostedViewController: UIViewController {
         
         self.navigationController?.navigationBar.isTranslucent = false
         
-        ref.observeSingleEvent(of: .value, with: { snapshot in
+        ref.observe(.value, with: { snapshot in
+            
+            self.jobs.removeAll()
+            
             for job in snapshot.children {
                 if let data = job as? DataSnapshot {
                     if let job = Job(snapshot: data) {
@@ -57,6 +60,14 @@ class JobsPostedViewController: UIViewController {
         
         //open menu with swipe gesture
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
+    }
+    
+    @IBAction func addJobs(_ sender: Any) {
+        
+        let storyboard:UIStoryboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
+        let AddJobsViewController:AddJobsViewController = storyboard.instantiateViewController(withIdentifier: "AddJobsViewController") as! AddJobsViewController
+        self.navigationController?.pushViewController(AddJobsViewController, animated: true)
         
     }
     
