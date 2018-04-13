@@ -25,6 +25,8 @@ class StudentInterestsViewController: UIViewController, UITextFieldDelegate {
         interestTwo.delegate = self
         interestThree.delegate = self
         
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
     }
     
     //text field goes away when done is pressed

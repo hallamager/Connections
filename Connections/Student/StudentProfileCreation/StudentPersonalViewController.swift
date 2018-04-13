@@ -25,10 +25,12 @@ class StudentPersonalViewController: UIViewController, UITextFieldDelegate {
         studentHeadline.delegate = self
         studentSummary.delegate = self
         
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+                
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return true
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     //text field goes away when done is pressed

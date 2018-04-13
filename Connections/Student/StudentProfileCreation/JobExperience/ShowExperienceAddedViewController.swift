@@ -39,6 +39,8 @@ class ShowExperienceAddedViewController: UIViewController {
             
         })
         
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

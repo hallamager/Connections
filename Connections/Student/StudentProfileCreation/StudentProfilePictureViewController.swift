@@ -26,6 +26,12 @@ class StudentProfilePictureViewController: UIViewController, UIImagePickerContro
         profileImg.addGestureRecognizer(tapGesture)
         profileImg.isUserInteractionEnabled = true
         
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     @objc func handleSelectProfileImageView() {
@@ -68,10 +74,6 @@ class StudentProfilePictureViewController: UIViewController, UIImagePickerContro
     
     func presentStudentProfileCreationViewController() {
         self.navigationController?.popToRootViewController(animated: true)
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
     
 }

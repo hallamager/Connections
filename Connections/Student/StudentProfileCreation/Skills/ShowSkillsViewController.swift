@@ -42,6 +42,8 @@ class ShowSkillsViewController: UIViewController, UITextFieldDelegate {
             
         })
         
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
     }
     
     //text field goes away when done is pressed
