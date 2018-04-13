@@ -1122,7 +1122,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vdL-BL-P2D" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                <rect key="frame" x="167" y="523" width="42" height="42"/>
+                                <rect key="frame" x="167" y="522" width="42" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOT-kk-bnG">
@@ -1220,7 +1220,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VdJ-PU-fwT" customClass="HorizontalGradient" customModule="Connections" customModuleProvider="target">
-                                <rect key="frame" x="22" y="63" width="64" height="1"/>
+                                <rect key="frame" x="22" y="62" width="64" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
@@ -1622,7 +1622,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hrc-nL-1Zo" customClass="HorizontalGradient" customModule="Connections" customModuleProvider="target">
-                                <rect key="frame" x="22" y="138" width="64" height="1"/>
+                                <rect key="frame" x="22" y="136" width="64" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
