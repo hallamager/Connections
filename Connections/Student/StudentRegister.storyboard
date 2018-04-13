@@ -3767,6 +3767,14 @@
                         <viewLayoutGuide key="safeArea" id="9fg-Aa-px9"/>
                     </view>
                     <size key="freeformSize" width="414" height="1010"/>
+                    <connections>
+                        <outlet property="grades" destination="Kmc-lc-hgW" id="zCR-WI-98Q"/>
+                        <outlet property="qType" destination="g7m-xy-YGU" id="4V5-L6-3fb"/>
+                        <outlet property="school" destination="Yxn-Yv-2p4" id="1EI-6X-0Ri"/>
+                        <outlet property="schoolFromDate" destination="wVy-7i-pX3" id="B4c-dE-i9I"/>
+                        <outlet property="schoolToDate" destination="Ckv-Ee-C19" id="Vky-Du-Acu"/>
+                        <outlet property="studied" destination="82l-LC-znq" id="PXF-Cv-XEW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jG4-iV-aqK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
