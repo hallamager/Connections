@@ -22,6 +22,8 @@ class EditJobsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var jobTitle: UITextField!
     @IBOutlet var employmentType: UITextField!
     @IBOutlet var jobDescription: UITextView!
+    @IBOutlet var jobLocation: UITextField!
+    @IBOutlet var jobSalary: UITextField!
     
     weak var delegate: EditJobControllerDelegate?
     
@@ -53,7 +55,7 @@ class EditJobsViewController: UIViewController, UITextFieldDelegate {
         
         let ref = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!)
         
-        let ex = Job(data: ["Title": self.jobTitle.text!, "Employment Type": self.employmentType.text!, "Description": self.jobDescription.text!])
+        let ex = Job(data: ["Title": self.jobTitle.text!, "Employment Type": self.employmentType.text!, "Description": self.jobDescription.text!, "Location": self.jobLocation.text!, "Salary": self.jobSalary.text!])
         
         ref.updateChildValues(ex.toDict())
         

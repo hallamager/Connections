@@ -16,6 +16,8 @@ class BusinessRegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var companyNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var confirmPasswordImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +28,15 @@ class BusinessRegisterViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    //    override func viewWillAppear(_ animated: Bool) {
-    //        UIApplication.shared.statusBarStyle = .lightContent
-    //    }
-    //
-    //    override func viewWillDisappear(_ animated: Bool) {
-    //        super.viewWillDisappear(animated)
-    //        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
-    //    }
+    @IBAction func passwordDidChange(_ sender: Any) {
+        
+        if confirmPasswordTextField.text == passwordTextField.text {
+            confirmPasswordImage.image = #imageLiteral(resourceName: "Ok")
+        } else {
+            confirmPasswordImage.image = #imageLiteral(resourceName: "NotOk")
+        }
+        
+    }
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -47,32 +50,38 @@ class BusinessRegisterViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func registerTapped(_ sender: Any) {
         
-        // checking if the fields are not nil
-        if let email = emailTextField.text, let password = passwordTextField.text {
+        guard passwordTextField.text! == confirmPasswordTextField.text! else {
             
-            let ref = Database.database().reference()
-            Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
-                
-                if let firebaseError = error {
-                    
-                    print(firebaseError.localizedDescription)
-                    return
-                    
-                } else {
-                    
-                    // following method is a add user's more details
-                    ref.child("business").child(user!.uid).updateChildValues(["Company Name": self.companyNameTextField.text!, "type": "business"])
-                    
-                    ref.child("users").child(user!.uid).setValue(["type": "business"])
-
-                    self.presentBusinessProfileCreationViewController()
-
-                }
-                
-            })
+            print("Passwords dont match")
+            
+            return
             
         }
         
+        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        
+            
+        let ref = Database.database().reference()
+        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+            
+            if let firebaseError = error {
+                
+                print(firebaseError.localizedDescription)
+                return
+                
+            } else {
+                
+                // following method is a add user's more details
+                ref.child("business").child(user!.uid).updateChildValues(["Company Name": self.companyNameTextField.text!, "type": "business"])
+                
+                ref.child("users").child(user!.uid).setValue(["type": "business"])
+
+                self.presentBusinessProfileCreationViewController()
+
+            }
+            
+        })
+            
     }
     
     @IBAction func back(_ sender: Any) {

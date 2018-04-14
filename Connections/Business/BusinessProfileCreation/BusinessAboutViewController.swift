@@ -17,6 +17,9 @@ class BusinessAboutViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var companyIndustry: UITextField!
     @IBOutlet var companyDescription: UITextView!
+    @IBOutlet weak var headquarters: UITextField!
+    @IBOutlet weak var companySize: UITextField!
+    @IBOutlet weak var companyWebsite: UITextField!
     
     
     override func viewDidLoad() {
@@ -40,7 +43,7 @@ class BusinessAboutViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func confirmAbout(_ sender: Any) {
         
-        ref.updateChildValues(["Industry": self.companyIndustry.text!, "Description": self.companyDescription.text!])
+        ref.updateChildValues(["Industry": self.companyIndustry.text!, "Description": self.companyDescription.text!, "Headquarters": self.headquarters.text!, "Company Size": self.companySize.text!, "Website": self.companyWebsite.text!,])
         
         self.presentBusinessProfileCreationViewController()
         

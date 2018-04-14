@@ -21,6 +21,8 @@ class AddJobsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var jobTitle: UITextField!
     @IBOutlet var employmentType: UITextField!
     @IBOutlet var jobDescription: UITextView!
+    @IBOutlet var jobLocation: UITextField!
+    @IBOutlet var jobSalary: UITextField!
     
     weak var delegate: AddJobsControllerDelegate?
     
@@ -46,7 +48,7 @@ class AddJobsViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func confirmBtn(_ sender: Any) {
         
-        let ex = Job(data: ["Title": self.jobTitle.text!, "Employment Type": self.employmentType.text!, "Description": self.jobDescription.text!])
+        let ex = Job(data: ["Title": self.jobTitle.text!, "Employment Type": self.employmentType.text!, "Description": self.jobDescription.text!, "Location": self.jobLocation.text!, "Salary": self.jobSalary.text!,])
         delegate?.didAddJobs(ex)
         ref.childByAutoId().setValue(ex.toDict())
         self.navigationController?.popViewController(animated: true)
