@@ -18,6 +18,7 @@ class StudentSwipeViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var kolodaView: KolodaView!
     @IBOutlet weak var OpenMenuLeft: UIBarButtonItem!
+    @IBOutlet weak var noCardsAlert: UILabel!
     
     
     let refLikes = Database.database().reference()
@@ -209,6 +210,11 @@ extension StudentSwipeViewController: KolodaViewDataSource {
     
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
         print(students.count)
+        
+        if students.count == 0 {
+            noCardsAlert.text = "Your Out of Cards! We'll alert when theres more to swipe."
+        }
+        
         return students.count
     }
     

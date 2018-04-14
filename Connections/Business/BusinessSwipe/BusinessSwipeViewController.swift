@@ -21,6 +21,7 @@ class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var kolodaView: KolodaView!
     @IBOutlet weak var OpenMenuLeft: UIBarButtonItem!
+    @IBOutlet weak var noCardsAlert: UILabel!
     
     
     let refLikes = Database.database().reference()
@@ -171,6 +172,11 @@ extension BusinessSwipeViewController: KolodaViewDelegate {
 extension BusinessSwipeViewController: KolodaViewDataSource {
     
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
+        
+        if businesses.count == 0 {
+            noCardsAlert.text = "Your Out of Cards! Change your radius to discover new businesses."
+        }
+        
         return businesses.count
     }
     
