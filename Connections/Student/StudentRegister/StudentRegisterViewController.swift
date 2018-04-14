@@ -44,6 +44,10 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
         return .lightContent
     }
     
+    @IBAction func alreadyHaveAnAccountBtn(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     //text field goes away when done is pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
