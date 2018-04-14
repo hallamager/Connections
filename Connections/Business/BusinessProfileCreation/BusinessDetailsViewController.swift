@@ -14,16 +14,16 @@ class BusinessDetailsViewController: UIViewController, UITextFieldDelegate {
     
     let ref = Database.database().reference().child("business").child(Auth.auth().currentUser!.uid)
     
-    @IBOutlet var companyWebsite: UITextField!
-    @IBOutlet var companySize: UITextField!
-    @IBOutlet var companyHeadquaters: UITextField!
+    @IBOutlet var cultureOne: UITextField!
+    @IBOutlet var cultureTwo: UITextField!
+    @IBOutlet var cultureThree: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        companyWebsite.delegate = self
-        companySize.delegate = self
-        companyHeadquaters.delegate = self
+        cultureOne.delegate = self
+        cultureTwo.delegate = self
+        cultureThree.delegate = self
         
     }
     
@@ -39,7 +39,7 @@ class BusinessDetailsViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func confirmBtn(_ sender: Any) {
         
-        ref.updateChildValues(["Website": self.companyWebsite.text!, "Company Size": self.companySize.text!, "Headquarters": self.companyHeadquaters.text!])
+        ref.updateChildValues(["CultureOne": self.cultureOne.text!, "cultureTwo": self.cultureTwo.text!, "cultureTwo": self.cultureThree.text!])
         
         self.presentBusinessProfileCreationViewController()
         

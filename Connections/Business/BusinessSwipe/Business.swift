@@ -22,6 +22,9 @@ class Business {
     let businessHeadquarters: String
     let companyWebsite: String
     let companySize: String
+    let cultureOne: String
+    let cultureTwo: String
+    let cultureThree: String
     var jobs = [Job]()
     
     var numberOfJobs: Int {
@@ -45,6 +48,9 @@ class Business {
             businessHeadquarters = snapshotData["Headquarters"] as! String
             companyWebsite = snapshotData["Website"] as! String
             companySize = snapshotData["Company Size"] as! String
+            cultureOne = snapshotData["cultureOne"] as! String
+            cultureTwo = snapshotData["cultureOne"] as! String
+            cultureThree = snapshotData["cultureOne"] as! String
             
             buildJobs(snapshot: snapshot.childSnapshot(forPath: "Jobs"))
             
