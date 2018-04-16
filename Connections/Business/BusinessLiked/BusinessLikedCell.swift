@@ -10,8 +10,13 @@ import Foundation
 import UIKit
 import FoldingCell
 
+protocol ViewJobCellDelegate: class {
+    func didTapButton(_ sender: UIButton)
+}
 
 class BusinessLikedCell: FoldingCell {
+    
+    weak var delegate: ViewJobCellDelegate?
     
     @IBOutlet weak var foldingNameLabel: UILabel!
     @IBOutlet weak var companyName: UILabel!
@@ -52,5 +57,14 @@ class BusinessLikedCell: FoldingCell {
         return durations[itemIndex]
     }
     
+    @IBAction func viewJobsBtn(_ sender: UIButton) {
+        delegate?.didTapButton(sender)
+        print("tapped")
+    }
+    
+    @IBAction func answerCompanyQuestionsBtn(_ sender: UIButton) {
+        delegate?.didTapButton(sender)
+        print("tapped")
+    }
     
 }

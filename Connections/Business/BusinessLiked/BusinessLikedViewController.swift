@@ -144,6 +144,10 @@ extension BusinessLikedViewController: UITableViewDelegate {
         cell.companyHeadquartersFolded.text! = business.businessHeadquarters
         cell.jobsPosted?.text = "\(business.numberOfJobs) Jobs available"
         
+        if business.jobs.count == 1 {
+            cell.jobsPosted?.text = "\(business.numberOfJobs) Job available"
+        }
+        
         // Create a storage reference from the URL
         let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(business.uuid)
         // Download the data, assuming a max size of 1MB (you can change this as necessary)
@@ -200,18 +204,64 @@ extension BusinessLikedViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! FoldingCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FoldingCell", for: indexPath) as! BusinessLikedCell
             
             let durations: [TimeInterval] = [0.26, 0.2, 0.2]
             cell.durationsForExpandedState = durations
             cell.durationsForCollapsedState = durations
             
             let business = businesses[indexPath.row]
+        
+            cell.delegate = self
             
             print(business.username)
             
             return cell
         
+    }
+    
+}
+
+extension BusinessLikedViewController: ViewJobCellDelegate {
+    
+    func didTapButton(_ sender: UIButton) {
+        if let indexPath = getCurrentCellIndexPath(sender) {
+            
+            if sender.tag == 1 {
+                
+                let revealViewController:SWRevealViewController = self.revealViewController()
+                
+                let mainStoryboard:UIStoryboard = UIStoryboard(name: "BusinessMain", bundle: nil)
+                let desController = mainStoryboard.instantiateViewController(withIdentifier: "BusinessSelectViewController") as! BusinessSelectViewController
+                let newFrontViewController = UINavigationController.init(rootViewController:desController)
+                
+                revealViewController.pushFrontViewController(newFrontViewController, animated: true)
+                
+            }
+            
+            if sender.tag == 2 {
+                
+                let business = businesses[indexPath.row]
+                
+                guard business.hasJobs else { return }
+                
+                let storyboard:UIStoryboard = UIStoryboard(name: "BusinessMain", bundle: nil)
+                let BusinessShowJobsViewController:BusinessShowJobsViewController = storyboard.instantiateViewController(withIdentifier: "BusinessShowJobsViewController") as! BusinessShowJobsViewController
+                self.navigationController?.pushViewController(BusinessShowJobsViewController, animated: true)
+                BusinessShowJobsViewController.business = business
+                
+            }
+            
+        }
+        
+    }
+    
+    func getCurrentCellIndexPath(_ sender: UIButton) -> IndexPath? {
+        let buttonPosition = sender.convert(CGPoint.zero, to: tableView)
+        if let indexPath: IndexPath = tableView.indexPathForRow(at: buttonPosition) {
+            return indexPath
+        }
+        return nil
     }
     
 }

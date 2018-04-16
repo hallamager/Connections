@@ -12,6 +12,8 @@ import FoldingCell
 
 protocol StudentSelectChatCellDelegate: class {
     func selected(for student: Student)
+    
+    func didTapButton(_ sender: UIButton)
 }
 
 class StudentLikedCell: FoldingCell {
@@ -50,6 +52,11 @@ class StudentLikedCell: FoldingCell {
     
     @IBAction func organiseChatBtn(_ sender: UIButton) {
         delegate?.selected(for: student)
+    }
+    
+    @IBAction func questionAnswersBtn(_ sender: UIButton) {
+        delegate?.didTapButton(sender)
+        print("tapped")
     }
     
 }

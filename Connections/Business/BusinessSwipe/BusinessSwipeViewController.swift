@@ -102,11 +102,16 @@ class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         let business = businesses[counter]
+        
         let vc = segue.destination as! BusinessMoreInfoViewController
         vc.business = business
     }
     
+    @IBAction func moreInfoBtn(_ sender: Any) {
+        performSegue(withIdentifier: "MoreInfo", sender: nil)
+    }
     
 }
 
@@ -114,6 +119,9 @@ extension BusinessSwipeViewController: KolodaViewDelegate {
     
     //what happens when user runs out of cards
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
+        
+        noCardsAlert.text = "Your Out of Cards! Change your radius to discover new businesses."
+        
         print("Out of cards")
     }
     
@@ -172,11 +180,6 @@ extension BusinessSwipeViewController: KolodaViewDelegate {
 extension BusinessSwipeViewController: KolodaViewDataSource {
     
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
-        
-        if businesses.count == 0 {
-            noCardsAlert.text = "Your Out of Cards! Change your radius to discover new businesses."
-        }
-        
         return businesses.count
     }
     

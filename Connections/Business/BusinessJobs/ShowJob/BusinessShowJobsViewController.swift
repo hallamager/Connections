@@ -155,7 +155,7 @@ extension BusinessShowJobsViewController: UITableViewDelegate {
     
 }
 
-extension BusinessShowJobsViewController: UITableViewDataSource{
+extension BusinessShowJobsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return jobs.count

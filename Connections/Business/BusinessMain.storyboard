@@ -319,9 +319,12 @@
                                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                             <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </view>
-                                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxe-FH-J0G">
+                                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxe-FH-J0G">
                                                                             <rect key="frame" x="0.0" y="0.0" width="335" height="75"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
+                                                                            <connections>
+                                                                                <action selector="answerCompanyQuestionsBtn:" destination="w5h-G4-99U" eventType="touchUpInside" id="X5h-8c-SyL"/>
+                                                                            </connections>
                                                                         </button>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Answer Company Questions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbe-kj-gds">
                                                                             <rect key="frame" x="13" y="27" width="314" height="21"/>
@@ -439,9 +442,12 @@
                                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                                         </view>
-                                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C94-t1-447">
+                                                                        <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C94-t1-447">
                                                                             <rect key="frame" x="0.0" y="0.0" width="335" height="75"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
+                                                                            <connections>
+                                                                                <action selector="viewJobsBtn:" destination="w5h-G4-99U" eventType="touchUpInside" id="92c-MM-azd"/>
+                                                                            </connections>
                                                                         </button>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3 Jobs Available" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Yu-Ua-I9K">
                                                                             <rect key="frame" x="13" y="27" width="314" height="21"/>
@@ -727,7 +733,7 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="scale(0.5) translate(200, 0) fade useGlobalCoordinateSpace"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="9mi-DO-qKG" kind="presentation" identifier="MoreInfo" id="h8U-Sl-EuE"/>
+                                            <action selector="moreInfoBtn:" destination="G3j-wP-Ngg" eventType="touchUpInside" id="3Ct-mo-qvp"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -763,6 +769,7 @@
                         <outlet property="OpenMenuLeft" destination="6ss-O6-mro" id="qVJ-Gk-8Gc"/>
                         <outlet property="kolodaView" destination="MxJ-Nd-3eL" id="exS-4p-hqT"/>
                         <outlet property="noCardsAlert" destination="c2X-2B-Qps" id="lrD-kI-swf"/>
+                        <segue destination="9mi-DO-qKG" kind="presentation" identifier="MoreInfo" id="lGz-7h-sgM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G4K-LV-wHt" sceneMemberID="firstResponder"/>

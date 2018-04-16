@@ -190,6 +190,33 @@ extension StudentLikedViewController: UITableViewDataSource {
 
 extension StudentLikedViewController: StudentSelectChatCellDelegate {
     
+    func didTapButton(_ sender: UIButton) {
+        if getCurrentCellIndexPath(sender) != nil {
+            
+            if sender.tag == 1 {
+                
+                let revealViewController:SWRevealViewController = self.revealViewController()
+                
+                let mainStoryboard:UIStoryboard = UIStoryboard(name: "StudentMain", bundle: nil)
+                let desController = mainStoryboard.instantiateViewController(withIdentifier: "SelectStudentViewController") as! SelectStudentViewController
+                let newFrontViewController = UINavigationController.init(rootViewController:desController)
+                
+                revealViewController.pushFrontViewController(newFrontViewController, animated: true)
+                
+            }
+            
+        }
+        
+    }
+    
+    func getCurrentCellIndexPath(_ sender: UIButton) -> IndexPath? {
+        let buttonPosition = sender.convert(CGPoint.zero, to: tableView)
+        if let indexPath: IndexPath = tableView.indexPathForRow(at: buttonPosition) {
+            return indexPath
+        }
+        return nil
+    }
+    
     func selected(for student: Student) {
         print(student)
         
