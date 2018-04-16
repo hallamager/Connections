@@ -28,8 +28,6 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        AppManager.shared.appContainer = self
-        
     }
     
     // check if user has logged in thus not showing logging in page
@@ -53,52 +51,18 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
                         
             Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
                 
+                AppManager.shared.appContainer.dismiss(animated: true, completion: nil)
+                
 //                if let firebaseError = error {
 //                    print(firebaseError.localizedDescription)
 //                    return
 //                }
-                
-                if error == nil {
-                    // Get the type from the database. It's path is users/<userId>/type.
-                    // Notice "observeSingleEvent", so we don't register for getting an update every time it changes.
-                    Database.database().reference().child("users/\(user!.uid)/type").observeSingleEvent(of: .value, with: {
-                        (snapshot) in
-                        
-                        ViewedManager.shared.configure(uuid: user!.uid)
-                        
-                        switch snapshot.value as! String {
-                        // If our user is admin...
-                        case "business":
-                            // ...redirect to the student page
-                            let storyboard:UIStoryboard = UIStoryboard(name: "StudentMain", bundle: nil)
-                            let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "StudentSWRevealViewController") as! SWRevealViewController
-                            self.present(SWRevealViewController, animated: true, completion: nil)
-                        // If out user is a regular user...
-                        case "student":
-                            // ...redirect to the business page
-                            let storyboard:UIStoryboard = UIStoryboard(name: "BusinessMain", bundle: nil)
-                            let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
-                            self.present(SWRevealViewController, animated: true, completion: nil)
-                        // If the type wasn't found...
-                        default:
-                            // ...print an error
-                            print("Error: Couldn't find type for user \(user!.uid)")
-                        }
-                    })
-                }
                                 
             })
             
         }
         
     }
-    
-    // if already logged take user to swipe view controller
-//    func presentSwipeViewController() {
-//        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
-//        self.present(SWRevealViewController, animated: true, completion: nil)
-//    }
     
     // MARK: - IndicatorInfoProvider
     

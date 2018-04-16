@@ -36,7 +36,7 @@ class TabsViewController: ButtonBarPagerTabStripViewController {
         tabsView.layer.shadowColor = UIColor.lightGray.cgColor
         tabsView.clipsToBounds = false
         tabsView.layer.masksToBounds = false
-        
+    
         
         gradient.colors = [UIColor(red: 37/255.0, green: 111/255.0, blue: 206/255.0, alpha: 1.0), UIColor(red: 37/255.0, green: 111/255.0, blue: 206/255.0, alpha: 1.0)]
         

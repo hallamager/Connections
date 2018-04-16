@@ -88,10 +88,6 @@ class BusinessRegisterViewController: UIViewController, UITextFieldDelegate {
             
     }
     
-    @IBAction func back(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
     func presentBusinessProfileCreationViewController() {
         let storyboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "BusinessCreateProfile")

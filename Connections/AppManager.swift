@@ -15,7 +15,7 @@ class AppManager {
     static let shared = AppManager()
     
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    var appContainer: LogInViewController!
+    var appContainer: AppContainerViewController!
     
     private init() { }
     
