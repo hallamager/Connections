@@ -10,6 +10,7 @@ import Foundation
 
 protocol StudentInviteChatCellDelegate: class {
     func selected(for student: Student)
+    func didTapButton(_ sender: UIButton)
 }
 
 class StudentAppliedCell: UITableViewCell {
@@ -23,6 +24,11 @@ class StudentAppliedCell: UITableViewCell {
     
     @IBAction func organiseInterviewBtn(_ sender: UIButton) {
         delegate?.selected(for: student)
+    }
+    
+    @IBAction func viewProfileBtn(_ sender: UIButton) {
+        delegate?.didTapButton(sender)
+        print("tapped")
     }
     
 }

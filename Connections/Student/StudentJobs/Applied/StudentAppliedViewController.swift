@@ -76,7 +76,7 @@ class StudentAppliedViewController: UIViewController {
 extension StudentAppliedViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 190
+        return 165
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -118,6 +118,33 @@ extension StudentAppliedViewController: UITableViewDataSource {
 }
 
 extension StudentAppliedViewController: StudentInviteChatCellDelegate {
+    
+    func didTapButton(_ sender: UIButton) {
+        if getCurrentCellIndexPath(sender) != nil {
+            
+            if sender.tag == 1 {
+                
+                let revealViewController:SWRevealViewController = self.revealViewController()
+                
+                let mainStoryboard:UIStoryboard = UIStoryboard(name: "StudentMain", bundle: nil)
+                let desController = mainStoryboard.instantiateViewController(withIdentifier: "StudentLikedViewController") as! StudentLikedViewController
+                let newFrontViewController = UINavigationController.init(rootViewController:desController)
+                
+                revealViewController.pushFrontViewController(newFrontViewController, animated: true)
+                
+            }
+            
+        }
+        
+    }
+    
+    func getCurrentCellIndexPath(_ sender: UIButton) -> IndexPath? {
+        let buttonPosition = sender.convert(CGPoint.zero, to: tableView)
+        if let indexPath: IndexPath = tableView.indexPathForRow(at: buttonPosition) {
+            return indexPath
+        }
+        return nil
+    }
     
     func selected(for student: Student) {
         print(student)
