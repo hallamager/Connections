@@ -128,11 +128,35 @@ extension StudentInviteViewController: UITableViewDelegate {
                 cell.foldedResponse.text = business.response
                 cell.date2.text = business.date2
                 cell.time2.text = business.time2
-                cell.firstDateConfirmed.text = business.responseFirstDate
-                cell.secondDateConfirmed.text = business.responseSecondDate
+                cell.firstDateResponse.text = business.responseFirstDate
+                cell.secondDateResponse.text = business.responseSecondDate
                 
-                if cell.foldedResponse.text == "Date Confirmed" {
+                if cell.foldedResponse.text == "Date Accepted" {
                     cell.foldedResponse.textColor = UIColor.green
+                }
+                
+                if cell.firstDateResponse.text == "Date Accepted" {
+                    cell.firstDateResponse.textColor = UIColor.green
+                }
+                
+                if cell.firstDateResponse.text == "Declined" {
+                    cell.firstDateResponse.textColor = UIColor.red
+                }
+                
+                if cell.firstDateResponse.text == "Cancelled" {
+                    cell.firstDateResponse.textColor = UIColor.red
+                }
+                
+                if cell.secondDateResponse.text == "Date Accepted" {
+                    cell.secondDateResponse.textColor = UIColor.green
+                }
+                
+                if cell.secondDateResponse.text == "Declined" {
+                    cell.secondDateResponse.textColor = UIColor.red
+                }
+                
+                if cell.secondDateResponse.text == "Cancelled" {
+                    cell.secondDateResponse.textColor = UIColor.red
                 }
                 
                 if cell.foldedResponse.text == "Different Dates Requested" {
@@ -143,7 +167,7 @@ extension StudentInviteViewController: UITableViewDelegate {
                     cell.response.textColor = UIColor.darkGray
                 }
                 
-                if cell.response.text == "Date Confirmed" {
+                if cell.response.text == "Date Accepted" {
                     cell.response.textColor = UIColor.green
                 }
                 
@@ -151,20 +175,16 @@ extension StudentInviteViewController: UITableViewDelegate {
                     cell.foldedResponse.textColor = UIColor.red
                 }
                 
+                if cell.foldedResponse.text == "Cancelled" {
+                    cell.foldedResponse.textColor = UIColor.red
+                }
+                
                 if cell.response.text == "Declined" {
                     cell.response.textColor = UIColor.red
                 }
                 
-                if cell.firstDateConfirmed.text == "Date Confirmed" {
-                    cell.firstDateConfirmedImg.alpha = 1
-                } else {
-                    cell.firstDateConfirmedImg.alpha = 0
-                }
-                
-                if cell.secondDateConfirmed.text == "Date Confirmed" {
-                    cell.secondDateConfirmedImg.alpha = 1
-                } else {
-                    cell.secondDateConfirmedImg.alpha = 0
+                if cell.response.text == "Cancelled" {
+                    cell.response.textColor = UIColor.red
                 }
                 
             }
@@ -251,6 +271,35 @@ extension StudentInviteViewController: UITableViewDataSource{
 }
 
 extension StudentInviteViewController: RearrangeCellDelegate {
+    
+    func didTapButton(_ sender: UIButton) {
+        if let indexPath = getCurrentCellIndexPath(sender) {
+            
+            if sender.tag == 2 {
+                
+                let student = students[indexPath.row]
+                
+                let ref = Database.database().reference().child("organisedChats").child(student.uuid).child(Auth.auth().currentUser!.uid)
+                
+                let refBusiness = Database.database().reference().child("organisedChats").child(Auth.auth().currentUser!.uid).child(student.uuid)
+                
+                ref.updateChildValues(["Response": "Cancelled", "First Date Response": "Cancelled", "Second Date Response": "Cancelled"])
+                
+                refBusiness.updateChildValues(["Response": "Cancelled", "First Date Response": "Cancelled", "Second Date Response": "Cancelled"])
+                
+            }
+            
+        }
+        
+    }
+    
+    func getCurrentCellIndexPath(_ sender: UIButton) -> IndexPath? {
+        let buttonPosition = sender.convert(CGPoint.zero, to: tableView)
+        if let indexPath: IndexPath = tableView.indexPathForRow(at: buttonPosition) {
+            return indexPath
+        }
+        return nil
+    }
     
     func selected(for student: Student) {
         print(student)

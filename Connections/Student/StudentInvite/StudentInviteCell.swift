@@ -13,6 +13,7 @@ import FoldingCell
 
 protocol RearrangeCellDelegate: class {
     func selected(for student: Student)
+    func didTapButton(_ sender: UIButton)
 }
 
 class StudentInviteCell: FoldingCell {
@@ -32,10 +33,8 @@ class StudentInviteCell: FoldingCell {
     @IBOutlet weak var foldedResponse: UILabel!
     @IBOutlet weak var date2: UILabel!
     @IBOutlet weak var time2: UILabel!
-    @IBOutlet weak var firstDateConfirmed: UILabel!
-    @IBOutlet weak var secondDateConfirmed: UILabel!
-    @IBOutlet weak var firstDateConfirmedImg: UIImageView!
-    @IBOutlet weak var secondDateConfirmedImg: UIImageView!
+    @IBOutlet weak var firstDateResponse: UILabel!
+    @IBOutlet weak var secondDateResponse: UILabel!
     
     //Defines sides, shadows and colour of the cells for the viewcontroller.
     override func awakeFromNib() {
@@ -62,6 +61,11 @@ class StudentInviteCell: FoldingCell {
     
     @IBAction func rearrangeDates(_ sender: UIButton) {
         delegate?.selected(for: student)
+    }
+    
+    @IBAction func cancelInvite(_ sender: UIButton) {
+        delegate?.didTapButton(sender)
+        print("tapped")
     }
     
 }

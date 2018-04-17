@@ -123,7 +123,7 @@ extension BusinessInvitesViewController: UITableViewDelegate {
                 cell.firstDateConfirmedLabel.text = business.responseFirstDate
                 cell.secondDateConfirmedLabel.text = business.responseSecondDate
                 
-                if cell.foldedResponse.text == "Date Confirmed" {
+                if cell.foldedResponse.text == "Date Accepted" {
                     cell.foldedResponse.textColor = UIColor.green
                 }
                 
@@ -135,7 +135,7 @@ extension BusinessInvitesViewController: UITableViewDelegate {
                     cell.response.textColor = UIColor.darkGray
                 }
             
-                if cell.response.text == "Date Confirmed" {
+                if cell.response.text == "Date Accepted" {
                     cell.response.textColor = UIColor.green
                 }
                 
@@ -143,17 +143,25 @@ extension BusinessInvitesViewController: UITableViewDelegate {
                     cell.foldedResponse.textColor = UIColor.red
                 }
                 
+                if cell.foldedResponse.text == "Cancelled" {
+                    cell.foldedResponse.textColor = UIColor.red
+                }
+                
                 if cell.response.text == "Declined" {
                     cell.response.textColor = UIColor.red
                 }
                 
-                if cell.firstDateConfirmedLabel.text == "Date Confirmed" {
+                if cell.response.text == "Cancelled" {
+                    cell.response.textColor = UIColor.red
+                }
+                
+                if cell.firstDateConfirmedLabel.text == "Date Accepted" {
                     cell.firstDateConfirmed.alpha = 1
                 } else {
                     cell.firstDateConfirmed.alpha = 0
                 }
                 
-                if cell.secondDateConfirmedLabel.text == "Date Confirmed" {
+                if cell.secondDateConfirmedLabel.text == "Date Accepted" {
                     cell.secondDateConfirmed.alpha = 1
                 } else {
                     cell.secondDateConfirmed.alpha = 0
@@ -278,13 +286,13 @@ extension BusinessInvitesViewController: InviteCellDelegate {
                 
                 let refBusiness = Database.database().reference().child("organisedChats").child(business.uuid).child(Auth.auth().currentUser!.uid)
                 
-                ref.updateChildValues(["Response": "Date Confirmed"])
+                ref.updateChildValues(["Response": "Date Accepted"])
                 
-                refBusiness.updateChildValues(["Response": "Date Confirmed"])
+                refBusiness.updateChildValues(["Response": "Date Accepted"])
                 
-                ref.updateChildValues(["Second Date Response": "Date Confirmed"])
+                ref.updateChildValues(["Second Date Response": "Date Accepted"])
                 
-                refBusiness.updateChildValues(["Second Date Response": "Date Confirmed"])
+                refBusiness.updateChildValues(["Second Date Response": "Date Accepted"])
                 
                 ref.updateChildValues(["First Date Response": "Declined"])
                 
@@ -301,13 +309,13 @@ extension BusinessInvitesViewController: InviteCellDelegate {
                 
                 let refBusiness = Database.database().reference().child("organisedChats").child(business.uuid).child(Auth.auth().currentUser!.uid)
                 
-                ref.updateChildValues(["Response": "Date Confirmed"])
+                ref.updateChildValues(["Response": "Date Accepted"])
                 
-                refBusiness.updateChildValues(["Response": "Date Confirmed"])
+                refBusiness.updateChildValues(["Response": "Date Accepted"])
                 
-                ref.updateChildValues(["First Date Response": "Date Confirmed"])
+                ref.updateChildValues(["First Date Response": "Date Accepted"])
                 
-                refBusiness.updateChildValues(["First Date Response": "Date Confirmed"])
+                refBusiness.updateChildValues(["First Date Response": "Date Accepted"])
                 
                 ref.updateChildValues(["Second Date Response": "Declined"])
                 
