@@ -769,6 +769,7 @@
                         <outlet property="OpenMenuLeft" destination="6ss-O6-mro" id="qVJ-Gk-8Gc"/>
                         <outlet property="kolodaView" destination="MxJ-Nd-3eL" id="exS-4p-hqT"/>
                         <outlet property="noCardsAlert" destination="c2X-2B-Qps" id="lrD-kI-swf"/>
+                        <outlet property="openMoreInfo" destination="PTy-Li-X8H" id="RZC-92-rED"/>
                         <segue destination="9mi-DO-qKG" kind="presentation" identifier="MoreInfo" id="lGz-7h-sgM"/>
                     </connections>
                 </viewController>

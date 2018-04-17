@@ -1194,6 +1194,7 @@
                         <outlet property="OpenMenuLeft" destination="f8e-Zx-w1h" id="b1b-QL-tE2"/>
                         <outlet property="kolodaView" destination="bxa-8t-0S5" id="vDI-M7-YCg"/>
                         <outlet property="noCardsAlert" destination="G4E-bz-fnH" id="Xoq-9Z-6oL"/>
+                        <outlet property="openMoreInfo" destination="nOT-kk-bnG" id="L3V-eD-FWk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YZ1-ne-ygg" sceneMemberID="firstResponder"/>
@@ -1705,7 +1706,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hrc-nL-1Zo" customClass="HorizontalGradient" customModule="Connections" customModuleProvider="target">
-                                <rect key="frame" x="22" y="132" width="64" height="1"/>
+                                <rect key="frame" x="22" y="131" width="64" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">

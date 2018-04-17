@@ -51,12 +51,12 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
                         
             Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
                 
-                AppManager.shared.appContainer.dismiss(animated: true, completion: nil)
+                if let firebaseError = error {
+                    print(firebaseError.localizedDescription)
+                    return
+                }
                 
-//                if let firebaseError = error {
-//                    print(firebaseError.localizedDescription)
-//                    return
-//                }
+                AppManager.shared.appContainer.dismiss(animated: true, completion: nil)
                                 
             })
             

@@ -13,6 +13,9 @@ import GeoFire
 
 class BusinessCreateProfileLandingViewController: UIViewController {
     
+    @IBOutlet weak var createButton: UIButtonStyles!
+    
+    let ref = Database.database().reference().child("business").child(Auth.auth().currentUser!.uid)
     let geoRefBusiness = GeoFire(firebaseRef: Database.database().reference().child("business_locations"))
     let geoRefStudent = GeoFire(firebaseRef: Database.database().reference().child("student_locations"))
     let locationManager = CLLocationManager()
@@ -20,6 +23,11 @@ class BusinessCreateProfileLandingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("check database...")
         
     }
     

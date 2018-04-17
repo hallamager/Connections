@@ -19,6 +19,7 @@ class StudentSwipeViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var kolodaView: KolodaView!
     @IBOutlet weak var OpenMenuLeft: UIBarButtonItem!
     @IBOutlet weak var noCardsAlert: UILabel!
+    @IBOutlet weak var openMoreInfo: UIButton!
     
     
     let refLikes = Database.database().reference()
@@ -151,6 +152,7 @@ extension StudentSwipeViewController: KolodaViewDelegate {
     
     //what happens when user runs out of cards
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
+        openMoreInfo.isEnabled = false
         print("Out of cards")
     }
     
