@@ -181,6 +181,7 @@ extension BusinessSwipeViewController: KolodaViewDataSource {
     func kolodaNumberOfCards(_ koloda: KolodaView) -> Int {
         
         if businesses.count == 0 {
+            openMoreInfo.isEnabled = false
             noCardsAlert.text = "Your Out of Cards! Change your radius to discover new businesses."
         } else {
             noCardsAlert.text = ""

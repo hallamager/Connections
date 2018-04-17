@@ -14,6 +14,10 @@ import GeoFire
 class BusinessCreateProfileLandingViewController: UIViewController {
     
     @IBOutlet weak var createButton: UIButtonStyles!
+    @IBOutlet weak var profileImgEntered: UIImageView!
+    @IBOutlet weak var detailsEntered: UIImageView!
+    @IBOutlet weak var questionsEntered: UIImageView!
+    @IBOutlet weak var cultureEntered: UIImageView!
     
     let ref = Database.database().reference().child("business").child(Auth.auth().currentUser!.uid)
     let geoRefBusiness = GeoFire(firebaseRef: Database.database().reference().child("business_locations"))
@@ -23,11 +27,60 @@ class BusinessCreateProfileLandingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = UIColor.clear
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("check database...")
+        
+        ref.observe(.value, with: { (snapshot) in
+            
+            if snapshot.hasChild("Industry") && snapshot.hasChild("Website") && snapshot.hasChild("profileImageURL") && snapshot.hasChild("Description") && snapshot.hasChild("Company Size") && snapshot.hasChild("Headquarters") && snapshot.hasChild("Question One") && snapshot.hasChild("Question Two") && snapshot.hasChild("Question Three") && snapshot.hasChild("CultureOne") && snapshot.hasChild("cultureTwo") && snapshot.hasChild("cultureThree"){
+                
+                self.createButton.isEnabled = true
+                
+                print("All info entered")
+                
+            } else {
+                
+                self.createButton.isEnabled = false
+                
+                print("Missing info")
+            }
+            
+            if snapshot.hasChild("profileImageURL") {
+                self.profileImgEntered.image = #imageLiteral(resourceName: "Ok")
+                print("Image entered")
+            }
+            
+            if snapshot.hasChild("Industry") && snapshot.hasChild("Website") && snapshot.hasChild("Description") && snapshot.hasChild("Headquarters") && snapshot.hasChild("Company Size"){
+                
+                self.detailsEntered.image = #imageLiteral(resourceName: "Ok")
+                print("Details entered")
+                
+            }
+            
+            if snapshot.hasChild("Question One") && snapshot.hasChild("Question Two") && snapshot.hasChild("Question Three"){
+                
+                self.questionsEntered.image = #imageLiteral(resourceName: "Ok")
+                print("Questions entered")
+                
+            }
+            
+            if snapshot.hasChild("CultureOne") && snapshot.hasChild("cultureTwo") && snapshot.hasChild("cultureThree"){
+                
+                self.cultureEntered.image = #imageLiteral(resourceName: "Ok")
+                print("Culture entered")
+                
+            }
+            
+        })
         
     }
     

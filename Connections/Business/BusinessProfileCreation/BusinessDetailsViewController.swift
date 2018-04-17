@@ -39,7 +39,7 @@ class BusinessDetailsViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func confirmBtn(_ sender: Any) {
         
-        ref.updateChildValues(["CultureOne": self.cultureOne.text!, "cultureTwo": self.cultureTwo.text!, "cultureTwo": self.cultureThree.text!])
+        ref.updateChildValues(["CultureOne": self.cultureOne.text!, "cultureTwo": self.cultureTwo.text!, "cultureThree": self.cultureThree.text!])
         
         self.presentBusinessProfileCreationViewController()
         
