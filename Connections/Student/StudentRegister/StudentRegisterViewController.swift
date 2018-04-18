@@ -81,11 +81,11 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
                 
                 ref.child("users").child(user!.uid).setValue(["type": "student"])
                 
+                self.presentStudentProfileCreationViewController()
+                
             }
             
         }
-        
-        self.presentStudentProfileCreationViewController()
         
     }
     

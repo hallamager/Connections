@@ -13,6 +13,12 @@ import GeoFire
 
 class StudentCreateProfileLandingViewController: UIViewController {
     
+    @IBOutlet weak var createButton: UIButtonStyles!
+    @IBOutlet weak var profilePictureEntered: UIImageView!
+    @IBOutlet weak var personalEntered: UIImageView!
+    @IBOutlet weak var interestsEntered: UIImageView!
+    
+    let ref = Database.database().reference().child("student").child(Auth.auth().currentUser!.uid)
     let geoRefStudent = GeoFire(firebaseRef: Database.database().reference().child("student_locations"))
     let geoRefBusiness = GeoFire(firebaseRef: Database.database().reference().child("business_locations"))
     let locationManager = CLLocationManager()
@@ -31,6 +37,48 @@ class StudentCreateProfileLandingViewController: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("check database...")
+        
+        ref.observe(.value, with: { (snapshot) in
+            
+            if snapshot.hasChild("Address") && snapshot.hasChild("Headline") && snapshot.hasChild("profileImageURL") && snapshot.hasChild("Summary") && snapshot.hasChild("Interest One") && snapshot.hasChild("Interest Two") && snapshot.hasChild("Interest Three"){
+                
+                self.createButton.isEnabled = true
+                
+                print("All info entered")
+                
+            } else {
+                
+                self.createButton.isEnabled = false
+                
+                print("Missing info")
+            }
+            
+            if snapshot.hasChild("profileImageURL") {
+                self.profilePictureEntered.image = #imageLiteral(resourceName: "Ok")
+                print("Image entered")
+            }
+            
+            if snapshot.hasChild("Address") && snapshot.hasChild("Headline") && snapshot.hasChild("Summary"){
+                
+                self.personalEntered.image = #imageLiteral(resourceName: "Ok")
+                print("Details entered")
+                
+            }
+            
+            if snapshot.hasChild("Interest One") && snapshot.hasChild("Interest Two") && snapshot.hasChild("Interest Three"){
+                
+                self.interestsEntered.image = #imageLiteral(resourceName: "Ok")
+                print("Questions entered")
+                
+            }
+            
+        })
+        
     }
     
     func presentBusinessSwipeViewViewController() {
