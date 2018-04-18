@@ -19,7 +19,9 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet var confirmPasswordTextField: UITextField!
     @IBOutlet var confirmPasswordImage: UIImageView!
+    @IBOutlet weak var errorValidation: UILabel!
     
+    @IBOutlet weak var passwordValidation: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +36,7 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
         
         if confirmPasswordTextField.text == passwordTextField.text {
             confirmPasswordImage.image = #imageLiteral(resourceName: "Ok")
+            passwordValidation.text = ""
         } else {
             confirmPasswordImage.image = #imageLiteral(resourceName: "NotOk")
         }
@@ -60,18 +63,22 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
             
             print("Passwords dont match")
             
+            passwordValidation.text = "- Passwords don't match"
+            
             return
             
         }
         
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
-            
+        
         let ref = Database.database().reference()
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             
             if let firebaseError = error {
                 
                 print(firebaseError.localizedDescription)
+                self.errorValidation.text = "- This email address already exists"
+
                 return
                 
             } else {
@@ -80,6 +87,8 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
                 ref.child("student").child(user!.uid).updateChildValues(["Username": self.usernameTextField.text!, "type": "student"])
                 
                 ref.child("users").child(user!.uid).setValue(["type": "student"])
+                
+                self.errorValidation.text = ""
                 
                 self.presentStudentProfileCreationViewController()
                 

@@ -14,7 +14,8 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-        
+    @IBOutlet weak var errorValidation: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,6 +54,7 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
                 
                 if let firebaseError = error {
                     print(firebaseError.localizedDescription)
+                    self.errorValidation.text = "Username or password are invalid"
                     return
                 }
                 

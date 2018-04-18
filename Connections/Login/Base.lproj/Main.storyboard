@@ -249,12 +249,20 @@
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLY-4q-8CL">
+                                <rect key="frame" x="48" y="537" width="319" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="10"/>
+                                <color key="textColor" red="0.78139215709999998" green="0.06931648403" blue="0.18148905039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="uTP-mb-qT5"/>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="Pmq-eH-Na9" id="p2n-Om-6ei"/>
+                        <outlet property="errorValidation" destination="FLY-4q-8CL" id="RFa-Xn-AnW"/>
                         <outlet property="passwordTextField" destination="sOP-mn-e6g" id="x0D-QW-9Ci"/>
                     </connections>
                 </viewController>
@@ -636,7 +644,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0M-XQ-Jnn">
-                                        <rect key="frame" x="12" y="11" width="110" height="22"/>
+                                        <rect key="frame" x="12" y="11" width="69" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
                                         <nil key="textColor"/>
@@ -680,6 +688,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tY-gf-kYf">
+                                        <rect key="frame" x="75" y="10" width="211" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="10"/>
+                                        <color key="textColor" red="0.78139215709999998" green="0.06931648403" blue="0.18148905039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -742,6 +757,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EkS-3A-Ttz">
+                                        <rect key="frame" x="115" y="10" width="189" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="10"/>
+                                        <color key="textColor" red="0.78139215709999998" green="0.06931648403" blue="0.18148905039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -828,7 +850,9 @@
                         <outlet property="confirmPasswordImage" destination="yrK-h7-FsD" id="ocJ-fY-1P3"/>
                         <outlet property="confirmPasswordTextField" destination="ipg-Lc-U6w" id="pxK-1h-6E7"/>
                         <outlet property="emailTextField" destination="Xge-Wi-E2W" id="u6x-WG-8aT"/>
+                        <outlet property="errorValidation" destination="3tY-gf-kYf" id="y09-1f-Gcn"/>
                         <outlet property="passwordTextField" destination="0bq-Vo-9u8" id="cLK-bX-FaW"/>
+                        <outlet property="passwordValidation" destination="EkS-3A-Ttz" id="sJZ-6n-o21"/>
                         <outlet property="usernameTextField" destination="GdI-gB-4OG" id="gTG-hU-vzX"/>
                     </connections>
                 </viewController>
@@ -1044,6 +1068,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SyJ-8K-I25">
+                                        <rect key="frame" x="75" y="10" width="211" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="10"/>
+                                        <color key="textColor" red="0.78139215709999998" green="0.06931648403" blue="0.18148905039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -1117,6 +1148,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3c-41-Bv7">
+                                        <rect key="frame" x="115" y="10" width="189" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="10"/>
+                                        <color key="textColor" red="0.78139215709999998" green="0.06931648403" blue="0.18148905039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -1215,12 +1253,14 @@
                         <outlet property="confirmPasswordImage" destination="PEg-d5-K0c" id="0dl-ct-oxh"/>
                         <outlet property="confirmPasswordTextField" destination="eBV-uk-12W" id="AY0-yy-WuI"/>
                         <outlet property="emailTextField" destination="P78-4n-hmu" id="2Wq-dq-XnQ"/>
+                        <outlet property="errorValidation" destination="SyJ-8K-I25" id="oGR-4x-HCh"/>
                         <outlet property="passwordTextField" destination="Jqz-Ex-89b" id="ogN-31-GLT"/>
+                        <outlet property="passwordValidation" destination="N3c-41-Bv7" id="iap-Sl-hBQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2c4-mD-DFW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1732" y="-3494"/>
+            <point key="canvasLocation" x="1731.8840579710147" y="-3494.021739130435"/>
         </scene>
     </scenes>
     <resources>
