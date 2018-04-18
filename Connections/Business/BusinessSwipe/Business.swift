@@ -48,7 +48,7 @@ class Business {
             businessHeadquarters = snapshotData["Headquarters"] as! String
             companyWebsite = snapshotData["Website"] as! String
             companySize = snapshotData["Company Size"] as! String
-            cultureOne = snapshotData["CultureOne"] as! String
+            cultureOne = snapshotData["cultureOne"] as! String
             cultureTwo = snapshotData["cultureTwo"] as! String
             cultureThree = snapshotData["cultureThree"] as! String
             

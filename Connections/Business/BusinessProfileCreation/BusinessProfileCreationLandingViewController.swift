@@ -41,7 +41,7 @@ class BusinessCreateProfileLandingViewController: UIViewController {
         
         ref.observe(.value, with: { (snapshot) in
             
-            if snapshot.hasChild("Industry") && snapshot.hasChild("Website") && snapshot.hasChild("profileImageURL") && snapshot.hasChild("Description") && snapshot.hasChild("Company Size") && snapshot.hasChild("Headquarters") && snapshot.hasChild("Question One") && snapshot.hasChild("Question Two") && snapshot.hasChild("Question Three") && snapshot.hasChild("CultureOne") && snapshot.hasChild("cultureTwo") && snapshot.hasChild("cultureThree"){
+            if snapshot.hasChild("Industry") && snapshot.hasChild("Website") && snapshot.hasChild("profileImageURL") && snapshot.hasChild("Description") && snapshot.hasChild("Company Size") && snapshot.hasChild("Headquarters") && snapshot.hasChild("Question One") && snapshot.hasChild("Question Two") && snapshot.hasChild("Question Three") && snapshot.hasChild("cultureOne") && snapshot.hasChild("cultureTwo") && snapshot.hasChild("cultureThree"){
                 
                 self.createButton.isEnabled = true
                 
@@ -73,7 +73,7 @@ class BusinessCreateProfileLandingViewController: UIViewController {
                 
             }
             
-            if snapshot.hasChild("CultureOne") && snapshot.hasChild("cultureTwo") && snapshot.hasChild("cultureThree"){
+            if snapshot.hasChild("cultureOne") && snapshot.hasChild("cultureTwo") && snapshot.hasChild("cultureThree"){
                 
                 self.cultureEntered.image = #imageLiteral(resourceName: "Ok")
                 print("Culture entered")

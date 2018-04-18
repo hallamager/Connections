@@ -20,6 +20,9 @@ class BusinessEditProfileViewController: UIViewController {
     @IBOutlet weak var questionOne: UILabel!
     @IBOutlet weak var questionTwo: UILabel!
     @IBOutlet weak var questionThree: UILabel!
+    @IBOutlet weak var cultureOne: UILabel!
+    @IBOutlet weak var cultureTwo: UILabel!
+    @IBOutlet weak var cultureThree: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     
@@ -44,6 +47,9 @@ class BusinessEditProfileViewController: UIViewController {
                 self.questionOne.text = business.questionOne
                 self.questionTwo.text = business.questionTwo
                 self.questionThree.text = business.questionThree
+                self.cultureOne.text = business.cultureOne
+                self.cultureTwo.text = business.cultureTwo
+                self.cultureThree.text = business.cultureThree
                 self.businesses.append(business)
                 self.tableView.reloadData()
                 print("business \(self.businesses.count)")
@@ -129,6 +135,13 @@ class BusinessEditProfileViewController: UIViewController {
         
     }
     
+    @IBAction func editCultureBtn(_ sender: Any) {
+        
+        let storyboard:UIStoryboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
+        let BusinessDetailsViewController:BusinessDetailsViewController = storyboard.instantiateViewController(withIdentifier: "BusinessDetailsViewController") as! BusinessDetailsViewController
+        self.navigationController?.pushViewController(BusinessDetailsViewController, animated: true)
+        
+    }
 }
 
 extension BusinessEditProfileViewController: UITableViewDelegate {
