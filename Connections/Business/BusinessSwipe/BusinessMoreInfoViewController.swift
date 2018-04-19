@@ -12,12 +12,16 @@ import Firebase
 import Koloda
 
 class BusinessMoreInfoViewController: UIViewController {
-    
-    var business: Business!
         
     @IBOutlet var companyName: UILabel!
     @IBOutlet var companyIndustry: UILabel!
-    @IBOutlet var companyDescription: UILabel!
+    @IBOutlet var companyDescription: UITextView!
+    @IBOutlet weak var companyHeadquarters: UILabel!
+    @IBOutlet weak var companyImage: UIImageView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var business: Business!
+    var specialties = [Specialties]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +30,70 @@ class BusinessMoreInfoViewController: UIViewController {
         companyName.text = business.username
         companyDescription.text = business.description
         
+        // Create a storage reference from the URL
+        let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(business.uuid)
+        // Download the data, assuming a max size of 1MB (you can change this as necessary)
+        storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+            // Create a UIImage, add it to the array
+            let pic = UIImage(data: data!)
+            self.companyImage.image = pic
+        }
+        
+        companyDescription.translatesAutoresizingMaskIntoConstraints = true
+        companyDescription.sizeToFit()
+        companyDescription.isScrollEnabled = false
+        
+        let refSpecialties = Database.database().reference().child("business").child(business.uuid).child("specialties")
+        
+        refSpecialties.observe(.value, with: { snapshot in
+            self.specialties.removeAll()
+            for specialties in snapshot.children {
+                if let data = specialties as? DataSnapshot {
+                    if let specialties = Specialties(snapshot: data) {
+                        
+                        self.specialties.append(specialties)
+                    }
+                }
+            }
+            
+            self.collectionView.reloadData()
+            
+            print("is\(self.specialties.count)")
+            
+        })
+        
     }
     
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+}
+
+class SpecialtiesMoreInfoCell: UICollectionViewCell {
+
+    @IBOutlet weak var specialties: UILabel!
+    
+}
+
+extension BusinessMoreInfoViewController: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return specialties.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "specialtiesCell", for: indexPath as IndexPath) as! SpecialtiesMoreInfoCell
+        
+        let specialtie = specialties[indexPath.row]
+        
+        cell.specialties?.text = specialtie.specialties
+                
+        return cell
     }
     
 }
