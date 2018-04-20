@@ -145,6 +145,9 @@ class StudentSwipeViewController: UIViewController, CLLocationManagerDelegate {
         vc.student = student
     }
     
+    @IBAction func moreInfoBtn(_ sender: Any) {
+        performSegue(withIdentifier: "StudentMoreInfo", sender: nil)
+    }
     
 }
 

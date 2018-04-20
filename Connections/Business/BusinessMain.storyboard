@@ -2205,7 +2205,7 @@
                                                                                         <action selector="deleteSkillsBtn:" destination="gu5-u5-RbK" eventType="touchUpInside" id="oAB-MM-KIC"/>
                                                                                     </connections>
                                                                                 </button>
-                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Add" translatesAutoresizingMaskIntoConstraints="NO" id="e1R-WQ-iqx">
+                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Trash" translatesAutoresizingMaskIntoConstraints="NO" id="e1R-WQ-iqx">
                                                                                     <rect key="frame" x="9" y="9" width="10" height="10"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 </imageView>
@@ -2317,16 +2317,16 @@
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7yc-0f-Dww">
-                                                                            <rect key="frame" x="358" y="0.0" width="40" height="40"/>
+                                                                        <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7yc-0f-Dww" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                                            <rect key="frame" x="360" y="5" width="32" height="32"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                                                                             <subviews>
-                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Add" translatesAutoresizingMaskIntoConstraints="NO" id="uec-vG-uXb">
-                                                                                    <rect key="frame" x="10" y="10" width="20" height="20"/>
+                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Edit-1" translatesAutoresizingMaskIntoConstraints="NO" id="uec-vG-uXb">
+                                                                                    <rect key="frame" x="9" y="9" width="15" height="15"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                 </imageView>
                                                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Kf-b9-DDS">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <connections>
                                                                                         <action selector="editEducationBtn:" destination="hpM-qe-5iW" eventType="touchUpInside" id="ZFx-Cf-H3c"/>
@@ -2334,17 +2334,22 @@
                                                                                 </button>
                                                                             </subviews>
                                                                             <color key="backgroundColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                    <real key="value" value="5"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
                                                                         </view>
-                                                                        <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9NG-Is-dko">
-                                                                            <rect key="frame" x="358" y="40" width="40" height="40"/>
+                                                                        <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9NG-Is-dko" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                                            <rect key="frame" x="360" y="43" width="32" height="32"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                                                                             <subviews>
-                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Add" translatesAutoresizingMaskIntoConstraints="NO" id="ZGE-kb-WBU">
-                                                                                    <rect key="frame" x="10" y="10" width="20" height="20"/>
+                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Trash" translatesAutoresizingMaskIntoConstraints="NO" id="ZGE-kb-WBU">
+                                                                                    <rect key="frame" x="9" y="9" width="15" height="15"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                 </imageView>
                                                                                 <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEk-WC-aT2">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <connections>
                                                                                         <action selector="deleteEducationBtn:" destination="hpM-qe-5iW" eventType="touchUpInside" id="Y0A-OA-KnG"/>
@@ -2352,6 +2357,11 @@
                                                                                 </button>
                                                                             </subviews>
                                                                             <color key="backgroundColor" red="0.78139215709999998" green="0.06931648403" blue="0.18148905039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                    <real key="value" value="5"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
                                                                         </view>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2421,16 +2431,16 @@
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BqP-Hx-JY8">
-                                                                            <rect key="frame" x="358" y="0.0" width="40" height="40"/>
+                                                                        <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BqP-Hx-JY8" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                                            <rect key="frame" x="360" y="5" width="32" height="32"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                                                                             <subviews>
-                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Add" translatesAutoresizingMaskIntoConstraints="NO" id="5nC-Fl-bv2">
-                                                                                    <rect key="frame" x="10" y="10" width="20" height="20"/>
+                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Edit-1" translatesAutoresizingMaskIntoConstraints="NO" id="5nC-Fl-bv2">
+                                                                                    <rect key="frame" x="9" y="9" width="15" height="15"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                 </imageView>
                                                                                 <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pan-gH-ztP">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <connections>
                                                                                         <action selector="editExperienceBtn:" destination="Z7x-I0-KvX" eventType="touchUpInside" id="a0L-Rq-zbC"/>
@@ -2438,17 +2448,22 @@
                                                                                 </button>
                                                                             </subviews>
                                                                             <color key="backgroundColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                    <real key="value" value="5"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
                                                                         </view>
-                                                                        <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FQt-cq-v8R">
-                                                                            <rect key="frame" x="358" y="40" width="40" height="40"/>
+                                                                        <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FQt-cq-v8R" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                                            <rect key="frame" x="360" y="43" width="32" height="32"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                                                                             <subviews>
-                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Add" translatesAutoresizingMaskIntoConstraints="NO" id="Zvu-fu-0hN">
-                                                                                    <rect key="frame" x="10" y="10" width="20" height="20"/>
+                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Trash" translatesAutoresizingMaskIntoConstraints="NO" id="Zvu-fu-0hN">
+                                                                                    <rect key="frame" x="9" y="9" width="15" height="15"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                 </imageView>
                                                                                 <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXq-gi-952">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <connections>
                                                                                         <action selector="deleteExperienceBtn:" destination="Z7x-I0-KvX" eventType="touchUpInside" id="oTs-70-8kp"/>
@@ -2456,6 +2471,11 @@
                                                                                 </button>
                                                                             </subviews>
                                                                             <color key="backgroundColor" red="0.78139215709999998" green="0.06931648403" blue="0.18148905039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                    <real key="value" value="5"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
                                                                         </view>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3934,8 +3954,10 @@
         <image name="CTA-DirectionGrey" width="131" height="252"/>
         <image name="Close" width="250" height="250"/>
         <image name="Edit" width="250" height="250"/>
+        <image name="Edit-1" width="250" height="250"/>
         <image name="Ok" width="250" height="250"/>
         <image name="OpenMenu" width="38" height="31"/>
+        <image name="Trash" width="250" height="250"/>
         <image name="User" width="250" height="250"/>
         <image name="companyImage" width="545" height="363"/>
         <image name="dislike" width="250" height="250"/>

@@ -20,6 +20,8 @@ class InfoCell: UITableViewCell {
     @IBOutlet var companyIndustry: UILabel!
     @IBOutlet var companyHeadquarters: UILabel!
     @IBOutlet var companyDecription: UITextView!
+    @IBOutlet var companySize: UILabel!
+    @IBOutlet var companyWebsite: UILabel!
     
     @IBAction func editInfoBtn(_ sender: UIButton) {
         delegate?.didTapButton(sender)

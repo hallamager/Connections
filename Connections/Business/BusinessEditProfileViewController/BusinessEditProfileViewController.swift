@@ -149,7 +149,7 @@ extension BusinessEditProfileViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
         if indexPath.section == 0 {
-            return 365
+            return 410
         }
 
         return 100
@@ -208,6 +208,8 @@ extension BusinessEditProfileViewController: UITableViewDataSource {
             cell.companyIndustry?.text = business.industry
             cell.companyHeadquarters?.text = business.businessHeadquarters
             cell.companyDecription?.text = business.description
+            cell.companySize?.text = business.companySize
+            cell.companyWebsite?.text = business.companyWebsite
             cell.backgroundColor = .clear
             cell.backgroundView = UIView()
             cell.selectedBackgroundView = UIView()

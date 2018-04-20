@@ -22,6 +22,7 @@ class StudentMoreInfoViewController: UIViewController {
     @IBOutlet var companyName: UILabel!
     @IBOutlet var companyIndustry: UILabel!
     @IBOutlet var companyDescription: UITextView!
+    @IBOutlet weak var studentAddress: UILabel!
     @IBOutlet weak var companyImage: UIImageView!
     @IBOutlet weak var interestOne: UILabel!
     @IBOutlet weak var interestTwo: UILabel!
@@ -32,9 +33,10 @@ class StudentMoreInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        companyIndustry.text = student.address
+        companyIndustry.text = student.headline
         companyName.text = student.username
-        companyDescription.text = student.headline
+        companyDescription.text = student.summary
+        studentAddress.text = student.address
         interestOne.text = student.interestOne
         interestTwo.text = student.interestTwo
         interestThree.text = student.interestThree
@@ -193,17 +195,17 @@ extension StudentMoreInfoViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
-            let image = (Bundle.main.loadNibNamed("EducationTitle", owner: self, options: nil)![0] as? UIView)
+            let image = (Bundle.main.loadNibNamed("EducationMoreInfoTitle", owner: self, options: nil)![0] as? UIView)
             return image
         }
         
-        let image = (Bundle.main.loadNibNamed("ExperienceTitle", owner: self, options: nil)![0] as? UIView)
+        let image = (Bundle.main.loadNibNamed("ExperienceMoreInfoTitle", owner: self, options: nil)![0] as? UIView)
         return image
         
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 60
+        return 40
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

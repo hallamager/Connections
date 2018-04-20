@@ -46,6 +46,8 @@
 		A07CAF4D2066D224003EAA9F /* StudentAppliedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07CAF4C2066D224003EAA9F /* StudentAppliedCell.swift */; };
 		A07E3C47205DB054004158FE /* SkillsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07E3C46205DB054004158FE /* SkillsCell.swift */; };
 		A07E3C49205DB0F1004158FE /* ShowSkillsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07E3C48205DB0F1004158FE /* ShowSkillsCell.swift */; };
+		A0929C942089E51700E680B9 /* EducationMoreInfoTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0929C932089E51700E680B9 /* EducationMoreInfoTitle.xib */; };
+		A0929C962089E52800E680B9 /* ExperienceMoreInfoTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0929C952089E52800E680B9 /* ExperienceMoreInfoTitle.xib */; };
 		A09739E32020A4850087F7CE /* BusinessMoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09739E22020A4850087F7CE /* BusinessMoreInfoViewController.swift */; };
 		A09739E72020E6A10087F7CE /* StudentRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09739E62020E6A10087F7CE /* StudentRegisterViewController.swift */; };
 		A09739EA20210BDB0087F7CE /* StudentCreateProfileLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09739E920210BDB0087F7CE /* StudentCreateProfileLandingViewController.swift */; };
@@ -173,6 +175,8 @@
 		A07CAF4C2066D224003EAA9F /* StudentAppliedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAppliedCell.swift; sourceTree = "<group>"; };
 		A07E3C46205DB054004158FE /* SkillsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsCell.swift; sourceTree = "<group>"; };
 		A07E3C48205DB0F1004158FE /* ShowSkillsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSkillsCell.swift; sourceTree = "<group>"; };
+		A0929C932089E51700E680B9 /* EducationMoreInfoTitle.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EducationMoreInfoTitle.xib; sourceTree = "<group>"; };
+		A0929C952089E52800E680B9 /* ExperienceMoreInfoTitle.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceMoreInfoTitle.xib; sourceTree = "<group>"; };
 		A09739E22020A4850087F7CE /* BusinessMoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessMoreInfoViewController.swift; sourceTree = "<group>"; };
 		A09739E62020E6A10087F7CE /* StudentRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRegisterViewController.swift; sourceTree = "<group>"; };
 		A09739E920210BDB0087F7CE /* StudentCreateProfileLandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCreateProfileLandingViewController.swift; sourceTree = "<group>"; };
@@ -400,6 +404,8 @@
 				A049B0D220261EDF00EBD07B /* StudentSwipeViewController.swift */,
 				A0AD0711202CC66000B77C61 /* StudentMoreInfoViewController.swift */,
 				A03D99211FD313380034AE24 /* Student.swift */,
+				A0929C932089E51700E680B9 /* EducationMoreInfoTitle.xib */,
+				A0929C952089E52800E680B9 /* ExperienceMoreInfoTitle.xib */,
 			);
 			path = StudentSwipe;
 			sourceTree = "<group>";
@@ -804,12 +810,14 @@
 				A00748601F912189004AF885 /* LaunchScreen.storyboard in Resources */,
 				A0F529EB1FD1CD6400B5B93C /* Gotham Rounded Book.ttf in Resources */,
 				5FBF425C2052947100B93FED /* BusinessMain.storyboard in Resources */,
+				A0929C962089E52800E680B9 /* ExperienceMoreInfoTitle.xib in Resources */,
 				A00748721F912AA7004AF885 /* BusinessSwipeView.xib in Resources */,
 				5FBF4258205292CF00B93FED /* BusinessRegister.storyboard in Resources */,
 				A0F529E01FD1A1A600B5B93C /* GoogleService-Info.plist in Resources */,
 				5FBF42572052911B00B93FED /* StudentRegister.storyboard in Resources */,
 				5FBF425A2052945D00B93FED /* StudentMain.storyboard in Resources */,
 				5F66BEDA2060125A0002FB8E /* ExperienceTitle.xib in Resources */,
+				A0929C942089E51700E680B9 /* EducationMoreInfoTitle.xib in Resources */,
 				5F66BED82060105C0002FB8E /* EducationTitle.xib in Resources */,
 				A007485D1F912189004AF885 /* Assets.xcassets in Resources */,
 				A007485B1F912189004AF885 /* Main.storyboard in Resources */,
