@@ -30,6 +30,7 @@ class BusinessLikedCell: FoldingCell {
     @IBOutlet var companySize: UILabel!
     @IBOutlet var companyHeadquartersFolded: UILabel!
     @IBOutlet weak var jobsPosted: UILabel!
+    @IBOutlet weak var specialtiesCollectionView: UICollectionView!
     
     //Defines sides, shadows and colour of the cells for the viewcontroller.
     override func awakeFromNib() {

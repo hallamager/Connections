@@ -35,6 +35,8 @@
 		A03B44BE2055AF4700CFC682 /* EducationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03B44BD2055AF4700CFC682 /* EducationCell.swift */; };
 		A03D991F1FD305160034AE24 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03D991E1FD305160034AE24 /* SideMenuTableViewCell.swift */; };
 		A03D99221FD313380034AE24 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03D99211FD313380034AE24 /* Student.swift */; };
+		A041D282208BE1EB003A97F7 /* BusinessLikedSpecialtiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A041D281208BE1EB003A97F7 /* BusinessLikedSpecialtiesCell.swift */; };
+		A041D284208BE20E003A97F7 /* BusinessLikedShowSpecialties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A041D283208BE20E003A97F7 /* BusinessLikedShowSpecialties.swift */; };
 		A049B0D320261EDF00EBD07B /* StudentSwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A049B0D220261EDF00EBD07B /* StudentSwipeViewController.swift */; };
 		A07226631F9148FB006C60BA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07226611F914641006C60BA /* SWRevealViewController.m */; };
 		A07226651F91657F006C60BA /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07226641F91657F006C60BA /* TabsViewController.swift */; };
@@ -166,6 +168,8 @@
 		A03B44BD2055AF4700CFC682 /* EducationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationCell.swift; sourceTree = "<group>"; };
 		A03D991E1FD305160034AE24 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		A03D99211FD313380034AE24 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		A041D281208BE1EB003A97F7 /* BusinessLikedSpecialtiesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessLikedSpecialtiesCell.swift; sourceTree = "<group>"; };
+		A041D283208BE20E003A97F7 /* BusinessLikedShowSpecialties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessLikedShowSpecialties.swift; sourceTree = "<group>"; };
 		A049B0D220261EDF00EBD07B /* StudentSwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSwipeViewController.swift; sourceTree = "<group>"; };
 		A072265F1F91463F006C60BA /* Connections-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Connections-Bridging-Header.h"; sourceTree = "<group>"; };
 		A07226601F914640006C60BA /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -580,6 +584,8 @@
 				A0AD0721202E043000B77C61 /* BusinessLikedCell.swift */,
 				A0F94F2020542A1500FECC7A /* BusinessMatchedCell.swift */,
 				A0F94F222054347000FECC7A /* MatchedCell.swift */,
+				A041D281208BE1EB003A97F7 /* BusinessLikedSpecialtiesCell.swift */,
+				A041D283208BE20E003A97F7 /* BusinessLikedShowSpecialties.swift */,
 			);
 			path = BusinessLiked;
 			sourceTree = "<group>";
@@ -965,6 +971,7 @@
 				A0A6B0F62049837D00AC357F /* ShowJobsCell.swift in Sources */,
 				A0E4B04E20502AEB002D7534 /* ViewedManager.swift in Sources */,
 				A0AD070E202CC1D400B77C61 /* StudentSideMenuViewController.swift in Sources */,
+				A041D282208BE1EB003A97F7 /* BusinessLikedSpecialtiesCell.swift in Sources */,
 				A0F5CB12206E6E71005AEEF3 /* StudentInviteViewController.swift in Sources */,
 				A0D68A35206C24D70040BDD1 /* ChatInvite.swift in Sources */,
 				A0A6B0FA204983A100AC357F /* EditJobsViewController.swift in Sources */,
@@ -1009,6 +1016,7 @@
 				A0A6FFBB204809940001D715 /* BusinessProfilePictureViewController.swift in Sources */,
 				A0A6B0F82049839300AC357F /* AddJobsViewController.swift in Sources */,
 				5F862DAC20605B9E00008F15 /* QuestionTwo.swift in Sources */,
+				A041D284208BE20E003A97F7 /* BusinessLikedShowSpecialties.swift in Sources */,
 				A0D67A562040674C0060AD70 /* Education.swift in Sources */,
 				A02E7F39208BA72400AEED43 /* StudentLikedEducationCell.swift in Sources */,
 				A03D99221FD313380034AE24 /* Student.swift in Sources */,

@@ -22,6 +22,7 @@ class BusinessLikedViewController: UIViewController {
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
     var businesses = [Business]()
+    var specialties = [Specialties]()
     var recentMatchesTitle = ["Recent Matches"]
     let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
     let animationsZoom = [AnimationType.zoom(scale: 0.5)]
@@ -212,6 +213,25 @@ extension BusinessLikedViewController: UITableViewDataSource {
             
             let business = businesses[indexPath.row]
         
+            let refSpecialties = Database.database().reference().child("business").child(business.uuid).child("specialties")
+
+            refSpecialties.observe(.value, with: { snapshot in
+                self.specialties.removeAll()
+                for specialties in snapshot.children {
+                    if let data = specialties as? DataSnapshot {
+                        if let specialties = Specialties(snapshot: data) {
+                            
+                            self.specialties.append(specialties)
+                        }
+                    }
+                }
+                
+                cell.specialtiesCollectionView.reloadData()
+                
+                print("is\(self.specialties.count)")
+                
+            })
+            
             cell.delegate = self
             
             print(business.username)
