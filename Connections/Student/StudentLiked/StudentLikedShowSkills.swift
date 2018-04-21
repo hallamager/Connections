@@ -33,6 +33,19 @@ extension StudentLikedViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        if collectionView.tag == 1 {
+            
+            let experiencecell = collectionView.dequeueReusableCell(withReuseIdentifier: "likedExperienceCell", for: indexPath as IndexPath) as! StudentLikedExperienceCell
+            
+            let experience = experiences[indexPath.row]
+            
+            experiencecell.company?.text = experience.company
+            experiencecell.title?.text = experience.title
+            
+            return experiencecell
+            
+        }
+        
         if collectionView.tag == 2 {
             
             let educationcell = collectionView.dequeueReusableCell(withReuseIdentifier: "likedEducationCell", for: indexPath as IndexPath) as! StudentLikedEducationCell

@@ -250,7 +250,7 @@ extension StudentLikedViewController: UITableViewDataSource {
                 }
             }
             
-            cell.collectionView.reloadData()
+            cell.experienceCollectionView.reloadData()
             
             print("experience \(self.experiences.count)")
             

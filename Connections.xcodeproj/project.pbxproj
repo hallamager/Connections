@@ -47,6 +47,7 @@
 		A07CAF4D2066D224003EAA9F /* StudentAppliedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07CAF4C2066D224003EAA9F /* StudentAppliedCell.swift */; };
 		A07E3C47205DB054004158FE /* SkillsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07E3C46205DB054004158FE /* SkillsCell.swift */; };
 		A07E3C49205DB0F1004158FE /* ShowSkillsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07E3C48205DB0F1004158FE /* ShowSkillsCell.swift */; };
+		A082CCA7208BD63D004F370B /* StudentLikedExperienceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A082CCA6208BD63D004F370B /* StudentLikedExperienceCell.swift */; };
 		A0929C942089E51700E680B9 /* EducationMoreInfoTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0929C932089E51700E680B9 /* EducationMoreInfoTitle.xib */; };
 		A0929C962089E52800E680B9 /* ExperienceMoreInfoTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0929C952089E52800E680B9 /* ExperienceMoreInfoTitle.xib */; };
 		A09739E32020A4850087F7CE /* BusinessMoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09739E22020A4850087F7CE /* BusinessMoreInfoViewController.swift */; };
@@ -179,6 +180,7 @@
 		A07CAF4C2066D224003EAA9F /* StudentAppliedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAppliedCell.swift; sourceTree = "<group>"; };
 		A07E3C46205DB054004158FE /* SkillsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsCell.swift; sourceTree = "<group>"; };
 		A07E3C48205DB0F1004158FE /* ShowSkillsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSkillsCell.swift; sourceTree = "<group>"; };
+		A082CCA6208BD63D004F370B /* StudentLikedExperienceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLikedExperienceCell.swift; sourceTree = "<group>"; };
 		A0929C932089E51700E680B9 /* EducationMoreInfoTitle.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EducationMoreInfoTitle.xib; sourceTree = "<group>"; };
 		A0929C952089E52800E680B9 /* ExperienceMoreInfoTitle.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceMoreInfoTitle.xib; sourceTree = "<group>"; };
 		A09739E22020A4850087F7CE /* BusinessMoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessMoreInfoViewController.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				A09AE9E7208B44A40081D45A /* StudentLikedShowSkills.swift */,
 				A09AE9E9208B44DB0081D45A /* StudentLikedSkillCell.swift */,
 				A02E7F38208BA72400AEED43 /* StudentLikedEducationCell.swift */,
+				A082CCA6208BD63D004F370B /* StudentLikedExperienceCell.swift */,
 			);
 			path = StudentLiked;
 			sourceTree = "<group>";
@@ -948,6 +951,7 @@
 				A0D8D381203CAE4500D68A5A /* Location.swift in Sources */,
 				A0F529E81FD1B18100B5B93C /* HorizontalGradient.swift in Sources */,
 				A00748581F912189004AF885 /* BusinessSwipeViewController.swift in Sources */,
+				A082CCA7208BD63D004F370B /* StudentLikedExperienceCell.swift in Sources */,
 				A00748761F912E3F004AF885 /* LikeDislikeInfo.swift in Sources */,
 				A0D8D383203D7F8300D68A5A /* EditExperienceViewController.swift in Sources */,
 				A0D67A5D204350990060AD70 /* ShowSkills.swift in Sources */,
