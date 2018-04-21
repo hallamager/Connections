@@ -16,17 +16,43 @@ extension StudentLikedViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("skills is\(skills.count)")
-        return skills.count
+        
+        if collectionView.tag == 2 {
+            print("education is\(educations.count)")
+            return educations.count
+        }
+        
+        if collectionView.tag == 3 {
+            print("skills is\(skills.count)")
+            return skills.count
+        } else {
+            return experiences.count
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if collectionView.tag == 2 {
+            
+            let educationcell = collectionView.dequeueReusableCell(withReuseIdentifier: "likedEducationCell", for: indexPath as IndexPath) as! StudentLikedEducationCell
+            
+            let education = educations[indexPath.row]
+            
+            educationcell.school?.text = education.school
+            educationcell.studied?.text = education.studied
+            educationcell.grades?.text = education.grades
+            
+            return educationcell
+            
+        }
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "likedSkillsCell", for: indexPath as IndexPath) as! StudentLikedSkillsCell
         
         let skill = skills[indexPath.row]
         
         cell.skill?.text = skill.skill
-                
+
         return cell
     }
     

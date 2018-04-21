@@ -18,12 +18,15 @@ import ViewAnimator
 class StudentLikedViewController: UIViewController {
     
     let kCloseCellHeight: CGFloat = 160
-    let kOpenCellHeight: CGFloat = 670
+    let kOpenCellHeight: CGFloat = 865
     let ref = Database.database().reference().child("student")
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
     var students = [Student]()
     var skills = [Skills]()
+    var educations = [Education]()
+    var experiences = [Experience]()
+    
     var student: Student!
     let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
     
@@ -210,6 +213,46 @@ extension StudentLikedViewController: UITableViewDataSource {
             cell.collectionView.reloadData()
             
             print("is skill\(self.skills.count)")
+            
+        })
+        
+        let refEducation = Database.database().reference().child("student").child(student.uuid).child("education")
+        
+        refEducation.observe(.value, with: { snapshot in
+            
+            self.educations.removeAll()
+            
+            for education in snapshot.children {
+                if let data = education as? DataSnapshot {
+                    if let education = Education(snapshot: data) {
+                        self.educations.append(education)
+                    }
+                }
+            }
+            
+            cell.educationCollectionView.reloadData()
+            
+            print("education \(self.educations.count)")
+            
+        })
+        
+        let refExperience = Database.database().reference().child("student").child(student.uuid).child("experience")
+        
+        refExperience.observe(.value, with: { snapshot in
+            
+            self.experiences.removeAll()
+            
+            for experience in snapshot.children {
+                if let data = experience as? DataSnapshot {
+                    if let experience = Experience(snapshot: data) {
+                        self.experiences.append(experience)
+                    }
+                }
+            }
+            
+            cell.collectionView.reloadData()
+            
+            print("experience \(self.experiences.count)")
             
         })
         

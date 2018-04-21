@@ -37,6 +37,7 @@ class StudentLikedCell: FoldingCell {
     @IBOutlet weak var interestThree: UILabel!
     @IBOutlet weak var organiseChat: UIButtonStyles!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var educationCollectionView: UICollectionView!
     
     //Defines sides, shadows and colour of the cells for the viewcontroller.
     override func awakeFromNib() {

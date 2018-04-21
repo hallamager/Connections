@@ -31,6 +31,7 @@
 		A00748741F912B0C004AF885 /* BusinessSwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00748731F912B0C004AF885 /* BusinessSwipeView.swift */; };
 		A00748761F912E3F004AF885 /* LikeDislikeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00748751F912E3F004AF885 /* LikeDislikeInfo.swift */; };
 		A0076AB2204AA94500A52500 /* StudentEditAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0076AB1204AA94500A52500 /* StudentEditAboutViewController.swift */; };
+		A02E7F39208BA72400AEED43 /* StudentLikedEducationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E7F38208BA72400AEED43 /* StudentLikedEducationCell.swift */; };
 		A03B44BE2055AF4700CFC682 /* EducationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03B44BD2055AF4700CFC682 /* EducationCell.swift */; };
 		A03D991F1FD305160034AE24 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03D991E1FD305160034AE24 /* SideMenuTableViewCell.swift */; };
 		A03D99221FD313380034AE24 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03D99211FD313380034AE24 /* Student.swift */; };
@@ -160,6 +161,7 @@
 		A00748731F912B0C004AF885 /* BusinessSwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSwipeView.swift; sourceTree = "<group>"; };
 		A00748751F912E3F004AF885 /* LikeDislikeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeDislikeInfo.swift; sourceTree = "<group>"; };
 		A0076AB1204AA94500A52500 /* StudentEditAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentEditAboutViewController.swift; sourceTree = "<group>"; };
+		A02E7F38208BA72400AEED43 /* StudentLikedEducationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLikedEducationCell.swift; sourceTree = "<group>"; };
 		A03B44BD2055AF4700CFC682 /* EducationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationCell.swift; sourceTree = "<group>"; };
 		A03D991E1FD305160034AE24 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		A03D99211FD313380034AE24 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				A000D43F203077E10099892D /* StudentLikedCell.swift */,
 				A09AE9E7208B44A40081D45A /* StudentLikedShowSkills.swift */,
 				A09AE9E9208B44DB0081D45A /* StudentLikedSkillCell.swift */,
+				A02E7F38208BA72400AEED43 /* StudentLikedEducationCell.swift */,
 			);
 			path = StudentLiked;
 			sourceTree = "<group>";
@@ -1003,6 +1006,7 @@
 				A0A6B0F82049839300AC357F /* AddJobsViewController.swift in Sources */,
 				5F862DAC20605B9E00008F15 /* QuestionTwo.swift in Sources */,
 				A0D67A562040674C0060AD70 /* Education.swift in Sources */,
+				A02E7F39208BA72400AEED43 /* StudentLikedEducationCell.swift in Sources */,
 				A03D99221FD313380034AE24 /* Student.swift in Sources */,
 				A0F5A6752039AE5A004E4D3E /* StudentProfilePictureViewController.swift in Sources */,
 				A07CAF4B2066D213003EAA9F /* StudentAppliedViewController.swift in Sources */,

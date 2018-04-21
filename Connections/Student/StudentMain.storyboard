@@ -2051,7 +2051,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hrc-nL-1Zo" customClass="HorizontalGradient" customModule="Connections" customModuleProvider="target">
-                                <rect key="frame" x="22" y="125" width="64" height="1"/>
+                                <rect key="frame" x="22" y="124" width="64" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
@@ -2410,7 +2410,7 @@
             <objects>
                 <viewController storyboardIdentifier="StudentLikedViewController" id="EEE-yI-f19" customClass="StudentLikedViewController" customModule="Connections" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yqv-su-Bkg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="936"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1136"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Students Matched" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lo4-8m-cTr">
@@ -2421,15 +2421,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r1r-0n-nyc">
-                                <rect key="frame" x="0.0" y="87" width="414" height="849"/>
+                                <rect key="frame" x="0.0" y="87" width="414" height="1049"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoldingCell" rowHeight="823" id="eOy-Dh-mPP" customClass="StudentLikedCell" customModule="Connections" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="823"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoldingCell" rowHeight="1017" id="eOy-Dh-mPP" customClass="StudentLikedCell" customModule="Connections" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="1017"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eOy-Dh-mPP" id="E9e-cN-Ssy">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="823"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="1017"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1tP-ke-QWa" userLabel="Foreground" customClass="RotatedView" customModule="FoldingCell">
@@ -2504,10 +2504,10 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cjY-81-6oc" userLabel="Container" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                                    <rect key="frame" x="22" y="155" width="369" height="657"/>
+                                                    <rect key="frame" x="22" y="155" width="369" height="851"/>
                                                     <subviews>
                                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rqp-r6-80R" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="369" height="657"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="369" height="851"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rz6-gC-b3S">
                                                                     <rect key="frame" x="0.0" y="0.0" width="369" height="111"/>
@@ -2545,8 +2545,17 @@
                                                                         </view>
                                                                     </subviews>
                                                                 </view>
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5L-tB-cgp">
+                                                                    <rect key="frame" x="20" y="99" width="329" height="152"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                </textView>
                                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="srF-eg-QZx">
-                                                                    <rect key="frame" x="0.0" y="507" width="369" height="70"/>
+                                                                    <rect key="frame" x="0.0" y="701" width="369" height="70"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                                     <subviews>
                                                                         <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="je2-az-eOO" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
@@ -2581,7 +2590,7 @@
                                                                     </subviews>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R4Y-kz-H1j">
-                                                                    <rect key="frame" x="0.0" y="577" width="369" height="70"/>
+                                                                    <rect key="frame" x="0.0" y="771" width="369" height="70"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                                     <subviews>
                                                                         <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pYe-TM-khu" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
@@ -2616,77 +2625,68 @@
                                                                     </subviews>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Interests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aX5-8Y-Nvp">
-                                                                    <rect key="frame" x="20" y="267" width="203" height="21"/>
+                                                                    <rect key="frame" x="20" y="265" width="203" height="21"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFO-Tn-A1P">
-                                                                    <rect key="frame" x="20" y="309" width="14" height="21"/>
+                                                                    <rect key="frame" x="20" y="307" width="14" height="21"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Interest One" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpJ-cM-9cH">
-                                                                    <rect key="frame" x="35" y="312" width="93" height="21"/>
+                                                                    <rect key="frame" x="35" y="310" width="93" height="21"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="10"/>
                                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cS1-94-blJ">
-                                                                    <rect key="frame" x="20" y="296" width="329" height="1"/>
+                                                                    <rect key="frame" x="20" y="294" width="329" height="1"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <color key="backgroundColor" white="0.94761827259999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPj-hQ-bJD">
-                                                                    <rect key="frame" x="142" y="306" width="14" height="28"/>
+                                                                    <rect key="frame" x="142" y="304" width="14" height="28"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Interest Two" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jh3-fT-d5f">
-                                                                    <rect key="frame" x="160" y="312" width="93" height="21"/>
+                                                                    <rect key="frame" x="160" y="310" width="93" height="21"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="10"/>
                                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leg-ft-hFg">
-                                                                    <rect key="frame" x="256" y="306" width="14" height="28"/>
+                                                                    <rect key="frame" x="256" y="304" width="14" height="28"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Interest Three" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRf-3A-gNL">
-                                                                    <rect key="frame" x="274" y="312" width="85" height="21"/>
+                                                                    <rect key="frame" x="274" y="310" width="85" height="21"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="10"/>
                                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5L-tB-cgp">
-                                                                    <rect key="frame" x="20" y="99" width="329" height="152"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
-                                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                                </textView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1NX-SM-Xsp">
-                                                                    <rect key="frame" x="20" y="398" width="301" height="21"/>
+                                                                    <rect key="frame" x="20" y="592" width="301" height="21"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="j48-vc-aI7">
-                                                                    <rect key="frame" x="0.0" y="427" width="369" height="72"/>
+                                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="3" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="j48-vc-aI7">
+                                                                    <rect key="frame" x="0.0" y="621" width="369" height="72"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="15" minimumInteritemSpacing="15" id="Gvk-uu-nlP">
@@ -2727,7 +2727,7 @@
                                                                             </view>
                                                                             <size key="customSize" width="121" height="48"/>
                                                                             <connections>
-                                                                                <outlet property="skill" destination="d22-Pv-wnf" id="j3s-EY-x5e"/>
+                                                                                <outlet property="skill" destination="d22-Pv-wnf" id="Hmt-0P-MzC"/>
                                                                             </connections>
                                                                         </collectionViewCell>
                                                                     </cells>
@@ -2737,7 +2737,98 @@
                                                                     </connections>
                                                                 </collectionView>
                                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TfD-Ka-043">
-                                                                    <rect key="frame" x="20" y="427" width="329" height="1"/>
+                                                                    <rect key="frame" x="20" y="621" width="329" height="1"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <color key="backgroundColor" white="0.94761827259999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </view>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Education" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="912-G3-YCO">
+                                                                    <rect key="frame" x="20" y="476" width="301" height="21"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rJJ-H7-UCo">
+                                                                    <rect key="frame" x="0.0" y="505" width="369" height="72"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="15" minimumInteritemSpacing="15" id="vYM-Tf-bks">
+                                                                        <size key="itemSize" width="329" height="52"/>
+                                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                                        <inset key="sectionInset" minX="20" minY="10" maxX="30" maxY="10"/>
+                                                                    </collectionViewFlowLayout>
+                                                                    <cells>
+                                                                        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="likedEducationCell" id="8V5-9Z-73b" customClass="StudentLikedEducationCell" customModule="Connections" customModuleProvider="target">
+                                                                            <rect key="frame" x="20" y="10" width="329" height="52"/>
+                                                                            <autoresizingMask key="autoresizingMask"/>
+                                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="329" height="52"/>
+                                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                                <subviews>
+                                                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H6y-y9-FDU" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="329" height="52"/>
+                                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                                        <subviews>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Studied" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHA-TQ-6s6">
+                                                                                                <rect key="frame" x="12" y="8" width="223" height="17"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                                                                                <nil key="textColor"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="School" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OO-6R-lc0">
+                                                                                                <rect key="frame" x="12" y="29" width="223" height="15"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="10"/>
+                                                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cbf-Pg-A4x">
+                                                                                                <rect key="frame" x="234" y="0.0" width="1" height="52"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                                                <color key="backgroundColor" white="0.94761827259999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                            </view>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Grades" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cb7-dO-65W">
+                                                                                                <rect key="frame" x="243" y="8" width="62" height="17"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                                                                                <nil key="textColor"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2:1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DsF-FC-3IC">
+                                                                                                <rect key="frame" x="243" y="29" width="82" height="15"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                                                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="10"/>
+                                                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                        </subviews>
+                                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <userDefinedRuntimeAttributes>
+                                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                                <real key="value" value="10"/>
+                                                                                            </userDefinedRuntimeAttribute>
+                                                                                        </userDefinedRuntimeAttributes>
+                                                                                    </view>
+                                                                                </subviews>
+                                                                            </view>
+                                                                            <size key="customSize" width="329" height="52"/>
+                                                                            <connections>
+                                                                                <outlet property="grades" destination="DsF-FC-3IC" id="3LK-0v-Qdv"/>
+                                                                                <outlet property="school" destination="2OO-6R-lc0" id="USx-CS-U4I"/>
+                                                                                <outlet property="studied" destination="fHA-TQ-6s6" id="9en-Ph-Fha"/>
+                                                                            </connections>
+                                                                        </collectionViewCell>
+                                                                    </cells>
+                                                                    <connections>
+                                                                        <outlet property="dataSource" destination="EEE-yI-f19" id="LLm-u6-aeC"/>
+                                                                        <outlet property="delegate" destination="EEE-yI-f19" id="n42-rG-rtP"/>
+                                                                    </connections>
+                                                                </collectionView>
+                                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Be-1i-fxX">
+                                                                    <rect key="frame" x="20" y="505" width="329" height="1"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <color key="backgroundColor" white="0.94761827259999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </view>
@@ -2752,7 +2843,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="657" id="9K9-cZ-sys"/>
+                                                        <constraint firstAttribute="height" constant="851" id="9K9-cZ-sys"/>
                                                         <constraint firstAttribute="bottom" secondItem="Rqp-r6-80R" secondAttribute="bottom" id="aUq-Gp-Jhb"/>
                                                         <constraint firstItem="Rqp-r6-80R" firstAttribute="leading" secondItem="cjY-81-6oc" secondAttribute="leading" id="eK5-gt-wmy"/>
                                                         <constraint firstItem="Rqp-r6-80R" firstAttribute="top" secondItem="cjY-81-6oc" secondAttribute="top" id="f4C-bF-UFR"/>
@@ -2784,6 +2875,7 @@
                                             <outlet property="collectionView" destination="j48-vc-aI7" id="2bR-rv-e5o"/>
                                             <outlet property="containerView" destination="cjY-81-6oc" id="dCh-ZE-JyM"/>
                                             <outlet property="containerViewTop" destination="et4-ji-UYb" id="5Hl-nh-7wC"/>
+                                            <outlet property="educationCollectionView" destination="rJJ-H7-UCo" id="Bgl-8n-fWl"/>
                                             <outlet property="foregroundView" destination="1tP-ke-QWa" id="DVg-Ty-V8q"/>
                                             <outlet property="foregroundViewTop" destination="lSK-tf-SjX" id="2Ec-FV-ipA"/>
                                             <outlet property="interestOne" destination="cpJ-cM-9cH" id="33h-9B-Ypo"/>
@@ -2815,7 +2907,7 @@
                             <color key="tintColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
-                    <size key="freeformSize" width="414" height="1000"/>
+                    <size key="freeformSize" width="414" height="1200"/>
                     <connections>
                         <outlet property="openMenuLeft" destination="3lB-Rn-XYO" id="eGa-GK-qkB"/>
                         <outlet property="tableView" destination="r1r-0n-nyc" id="7e2-yH-cB0"/>
