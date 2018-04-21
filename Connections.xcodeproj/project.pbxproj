@@ -56,6 +56,8 @@
 		A0973A15202503F50087F7CE /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0973A14202503F50087F7CE /* Business.swift */; };
 		A09A82DE206267D20006E44A /* BusinessShowJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09A82DD206267D20006E44A /* BusinessShowJobsViewController.swift */; };
 		A09A82E120626D7B0006E44A /* SelectJobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09A82E020626D7B0006E44A /* SelectJobCell.swift */; };
+		A09AE9E8208B44A40081D45A /* StudentLikedShowSkills.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09AE9E7208B44A40081D45A /* StudentLikedShowSkills.swift */; };
+		A09AE9EA208B44DB0081D45A /* StudentLikedSkillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09AE9E9208B44DB0081D45A /* StudentLikedSkillCell.swift */; };
 		A09F6BA02027512B00D98332 /* StudentPersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09F6B9F2027512B00D98332 /* StudentPersonalViewController.swift */; };
 		A09F6BA22027534F00D98332 /* BusinessAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09F6BA12027534F00D98332 /* BusinessAboutViewController.swift */; };
 		A0A6B0ED20487A2E00AC357F /* BusinessSpecialtiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A6B0EC20487A2E00AC357F /* BusinessSpecialtiesViewController.swift */; };
@@ -185,6 +187,8 @@
 		A0973A14202503F50087F7CE /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		A09A82DD206267D20006E44A /* BusinessShowJobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessShowJobsViewController.swift; sourceTree = "<group>"; };
 		A09A82E020626D7B0006E44A /* SelectJobCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectJobCell.swift; sourceTree = "<group>"; };
+		A09AE9E7208B44A40081D45A /* StudentLikedShowSkills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLikedShowSkills.swift; sourceTree = "<group>"; };
+		A09AE9E9208B44DB0081D45A /* StudentLikedSkillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLikedSkillCell.swift; sourceTree = "<group>"; };
 		A09F6B9F2027512B00D98332 /* StudentPersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentPersonalViewController.swift; sourceTree = "<group>"; };
 		A09F6BA12027534F00D98332 /* BusinessAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessAboutViewController.swift; sourceTree = "<group>"; };
 		A0A6B0EC20487A2E00AC357F /* BusinessSpecialtiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSpecialtiesViewController.swift; sourceTree = "<group>"; };
@@ -306,6 +310,8 @@
 			children = (
 				A000D43D203077BB0099892D /* StudentLikedViewController.swift */,
 				A000D43F203077E10099892D /* StudentLikedCell.swift */,
+				A09AE9E7208B44A40081D45A /* StudentLikedShowSkills.swift */,
+				A09AE9E9208B44DB0081D45A /* StudentLikedSkillCell.swift */,
 			);
 			path = StudentLiked;
 			sourceTree = "<group>";
@@ -911,6 +917,7 @@
 			files = (
 				A07226631F9148FB006C60BA /* SWRevealViewController.m in Sources */,
 				A09739E72020E6A10087F7CE /* StudentRegisterViewController.swift in Sources */,
+				A09AE9E8208B44A40081D45A /* StudentLikedShowSkills.swift in Sources */,
 				A0D67A58204331AD0060AD70 /* StudentInterestsViewController.swift in Sources */,
 				A00748741F912B0C004AF885 /* BusinessSwipeView.swift in Sources */,
 				A0EFEE582062580800F7C5A9 /* BusinessJobsViewController.swift in Sources */,
@@ -955,6 +962,7 @@
 				A0D68A35206C24D70040BDD1 /* ChatInvite.swift in Sources */,
 				A0A6B0FA204983A100AC357F /* EditJobsViewController.swift in Sources */,
 				A0D7F66F20791E9C00129594 /* AppManager.swift in Sources */,
+				A09AE9EA208B44DB0081D45A /* StudentLikedSkillCell.swift in Sources */,
 				A0AD0712202CC66000B77C61 /* StudentMoreInfoViewController.swift in Sources */,
 				A0A6B0F120487A4A00AC357F /* SpecialtiesCell.swift in Sources */,
 				A0D67A52204067300060AD70 /* AddEducationViewController.swift in Sources */,

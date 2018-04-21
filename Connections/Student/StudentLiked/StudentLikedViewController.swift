@@ -18,11 +18,13 @@ import ViewAnimator
 class StudentLikedViewController: UIViewController {
     
     let kCloseCellHeight: CGFloat = 160
-    let kOpenCellHeight: CGFloat = 820
+    let kOpenCellHeight: CGFloat = 670
     let ref = Database.database().reference().child("student")
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
     var students = [Student]()
+    var skills = [Skills]()
+    var student: Student!
     let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
     
     
@@ -80,6 +82,7 @@ class StudentLikedViewController: UIViewController {
             } else {
                 completion(true, students)
             }
+            
         }
     }
     
@@ -114,6 +117,16 @@ extension StudentLikedViewController: UITableViewDelegate {
         
         cell.studentName.text! = student.username
         cell.studentHeadline.text! = student.headline
+        cell.studentFoldedName.text! = student.username
+        cell.studentFoldedHeadline.text! = student.headline
+        cell.studentSummary.text! = student.summary
+        cell.interestOne.text! = student.interestOne
+        cell.interestTwo.text! = student.interestTwo
+        cell.interestThree.text! = student.interestThree
+        
+        cell.studentSummary.translatesAutoresizingMaskIntoConstraints = true
+        cell.studentSummary.sizeToFit()
+        cell.studentSummary.isScrollEnabled = false
         
         // Create a storage reference from the URL
         let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(student.uuid)
@@ -122,6 +135,7 @@ extension StudentLikedViewController: UITableViewDelegate {
             // Create a UIImage, add it to the array
             let pic = UIImage(data: data!)
             cell.studentImg.image = pic
+            cell.studentFoldedImg.image = pic
         }
         
         cell.backgroundColor = .clear
@@ -177,6 +191,27 @@ extension StudentLikedViewController: UITableViewDataSource {
         cell.durationsForCollapsedState = durations
         
         let student = students[indexPath.row]
+        
+        let refSkills = Database.database().reference().child("student").child(student.uuid).child("skills")
+        
+        refSkills.observe(.value, with: { snapshot in
+            self.skills.removeAll()
+            for skill in snapshot.children {
+                if let data = skill as? DataSnapshot {
+                    if let skill = Skills(snapshot: data) {
+                        
+                        self.skills.append(skill)
+                        
+                        print("hello\(self.skills.count)")
+                    }
+                }
+            }
+            
+            cell.collectionView.reloadData()
+            
+            print("is skill\(self.skills.count)")
+            
+        })
         
         cell.student = student
         cell.delegate = self
