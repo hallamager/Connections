@@ -27,6 +27,7 @@ class SelectStudentViewController: UIViewController {
     
     @IBOutlet var openMenu: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noStudentAnswers: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,14 @@ class SelectStudentViewController: UIViewController {
             self.students = students
             self.tableView.reloadData()
             self.tableView.animateViews(animations: self.animations, delay: 0.3)
+            
+            if students.count == 0 {
+                self.noStudentAnswers.text! = "No students have answered your questions yet. We'll alert you when they do!"
+                print("true")
+            } else {
+                self.noStudentAnswers.text! = ""
+            }
+            
         }
         
         //open menu with tab bar button

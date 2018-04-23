@@ -33,6 +33,7 @@ class StudentLikedViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var openMenuLeft: UIBarButtonItem!
+    @IBOutlet weak var noStudentsMatched: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,14 @@ class StudentLikedViewController: UIViewController {
             self.students = students
             self.tableView.reloadData()
             self.tableView.animateViews(animations: self.animations, delay: 0.3)
+            
+            if students.count == 0 {
+                self.noStudentsMatched.text! = "You haven't matched with any students yet. Get swiping!"
+                print("true")
+            } else {
+                self.noStudentsMatched.text! = ""
+            }
+            
         }
         
         //open menu with tab bar button

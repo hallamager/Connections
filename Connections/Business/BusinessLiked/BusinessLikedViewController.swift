@@ -31,6 +31,8 @@ class BusinessLikedViewController: UIViewController {
     @IBOutlet var openMenuLeft: UIBarButtonItem!
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var noRecentMatches: UILabel!
+    @IBOutlet weak var noBusinessesLiked: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +48,14 @@ class BusinessLikedViewController: UIViewController {
             self.businesses = businesses
             self.tableView.reloadData()
             self.tableView.animateViews(animations: self.animations, delay: 0.3)
+            
+            if businesses.count == 0 {
+                self.noBusinessesLiked.text! = "You haven't liked any businesses yet. Get swiping!"
+                print("true")
+            } else {
+                self.noBusinessesLiked.text! = ""
+            }
+            
         }
         
         loadMatches(for: Auth.auth().currentUser!.uid) { success, businesses in
@@ -54,6 +64,14 @@ class BusinessLikedViewController: UIViewController {
             self.collectionView.performBatchUpdates({
                 self.collectionView.animateViews(animations: self.animationsZoom)
             }, completion: nil)
+            
+            if businesses.count == 0 {
+                self.noRecentMatches.text! = "You have no recent matches. Get swiping!"
+                print("true")
+            } else {
+                self.noRecentMatches.text! = ""
+            }
+            
         }
         
         //open menu with tab bar button

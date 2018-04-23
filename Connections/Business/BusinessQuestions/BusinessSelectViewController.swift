@@ -17,6 +17,7 @@ class BusinessSelectViewController: UIViewController {
     
     @IBOutlet var openMenu: UIBarButtonItem!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var noBusinessQuestions: UILabel!
     
     let ref = Database.database().reference().child("business")
     var businesses = [Business]()
@@ -35,6 +36,14 @@ class BusinessSelectViewController: UIViewController {
             self.businesses = businesses
             self.tableView.reloadData()
             self.tableView.animateViews(animations: self.animations, delay: 0.3)
+            
+            if businesses.count == 0 {
+                self.noBusinessQuestions.text! = "You have to match with businesses before answering their questions. Get swiping!"
+                print("true")
+            } else {
+                self.noBusinessQuestions.text! = ""
+            }
+            
         }
                 
         //open menu with tab bar button
