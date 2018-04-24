@@ -23,11 +23,8 @@ extension AddJobsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "skillsRequiredCell", for: indexPath as IndexPath) as! SkillsRequiredCell
-//
-//        let business = businesses[indexPath.row]
-//
-//
-//        cell.companyName?.text = business.username
+
+        cell.skillRequired?.text = skillRequired[indexPath.row]
 
         return cell
         

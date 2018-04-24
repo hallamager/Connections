@@ -16,7 +16,6 @@ protocol AddJobsControllerDelegate: class {
 
 class AddJobsViewController: UIViewController, UITextFieldDelegate {
     
-    var skillRequired = [SkillsRequired]()
     let ref = Database.database().reference().child("business").child(Auth.auth().currentUser!.uid).child("Jobs")
     
     @IBOutlet var jobTitle: UITextField!
@@ -26,6 +25,8 @@ class AddJobsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var jobSalary: UITextField!
     @IBOutlet var skillsRequired: UITextField!
     @IBOutlet var collectionView: UICollectionView!
+    
+    var skillRequired = [String]()
     
     weak var delegate: AddJobsControllerDelegate?
     
@@ -50,16 +51,24 @@ class AddJobsViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func addSkillsRequired(_ sender: Any) {
-        
+        skillRequired.append(skillsRequired.text!)
+        print(skillRequired)
+        collectionView.reloadData()
     }
     
     @IBAction func confirmBtn(_ sender: Any) {
         
-        let ex = Job(data: ["Title": self.jobTitle.text!, "Employment Type": self.employmentType.text!, "Description": self.jobDescription.text!, "Location": self.jobLocation.text!, "Salary": self.jobSalary.text!, "skillsRequired": ["test": true, "demo": true]])
-        delegate?.didAddJobs(ex)
-        ref.childByAutoId().setValue(ex.toDict())
+        ref.childByAutoId().setValue(["Title": self.jobTitle.text!, "Employment Type": self.employmentType.text!, "Description": self.jobDescription.text!, "Location": self.jobLocation.text!, "Salary": self.jobSalary.text!, "skillsRequired": arrayToDict(array: skillRequired)])
         self.navigationController?.popViewController(animated: true)
         
+    }
+    
+    func arrayToDict(array: [String]) -> [String: Bool] {
+        var dict = [String: Bool]()
+        for item in array {
+            dict[item] = true
+        }
+        return dict
     }
     
 }

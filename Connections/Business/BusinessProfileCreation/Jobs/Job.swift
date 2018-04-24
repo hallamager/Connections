@@ -17,7 +17,8 @@ class Job {
     let employmentType: String
     let salary: String
     let location: String
-    var skillsRequired = [SkillsRequired]()
+    var skillRequired = [String]()
+
         
     init?(snapshot: DataSnapshot) {
         if let snapshotData = snapshot.value as? [String: Any] {
@@ -42,7 +43,15 @@ class Job {
     }
     
     func toDict() -> [String: Any] {
-        return ["Title": title, "Employment Type": employmentType, "Description": description, "Salary": salary, "Location": location, "skillsRequired": ["test": true, "demo": true]]
+        return ["Title": title, "Employment Type": employmentType, "Description": description, "Salary": salary, "Location": location, "skillsRequired": arrayToDict(array: skillRequired)]
+    }
+    
+    func arrayToDict(array: [String]) -> [String: Bool] {
+        var dict = [String: Bool]()
+        for item in array {
+            dict[item] = true
+        }
+        return dict
     }
     
 }
