@@ -17,6 +17,7 @@ class Job {
     let employmentType: String
     let salary: String
     let location: String
+    var skillsRequired = [SkillsRequired]()
         
     init?(snapshot: DataSnapshot) {
         if let snapshotData = snapshot.value as? [String: Any] {
@@ -41,7 +42,7 @@ class Job {
     }
     
     func toDict() -> [String: Any] {
-        return ["Title": title, "Employment Type": employmentType, "Description": description, "Salary": salary, "Location": location,]
+        return ["Title": title, "Employment Type": employmentType, "Description": description, "Salary": salary, "Location": location, "skillsRequired": ["test": true, "demo": true]]
     }
     
 }

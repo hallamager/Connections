@@ -54,32 +54,6 @@ class BusinessCreateProfileLandingViewController: UIViewController {
                 print("Missing info")
             }
             
-            if snapshot.hasChild("profileImageURL") {
-                self.profileImgEntered.image = #imageLiteral(resourceName: "Ok")
-                print("Image entered")
-            }
-            
-            if snapshot.hasChild("Industry") && snapshot.hasChild("Website") && snapshot.hasChild("Description") && snapshot.hasChild("Headquarters") && snapshot.hasChild("Company Size"){
-                
-                self.detailsEntered.image = #imageLiteral(resourceName: "Ok")
-                print("Details entered")
-                
-            }
-            
-            if snapshot.hasChild("Question One") && snapshot.hasChild("Question Two") && snapshot.hasChild("Question Three"){
-                
-                self.questionsEntered.image = #imageLiteral(resourceName: "Ok")
-                print("Questions entered")
-                
-            }
-            
-            if snapshot.hasChild("cultureOne") && snapshot.hasChild("cultureTwo") && snapshot.hasChild("cultureThree"){
-                
-                self.cultureEntered.image = #imageLiteral(resourceName: "Ok")
-                print("Culture entered")
-                
-            }
-            
         })
         
     }
