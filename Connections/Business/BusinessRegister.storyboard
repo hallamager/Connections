@@ -215,25 +215,25 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SK8-fP-jHg" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                <rect key="frame" x="43" y="344" width="135" height="67"/>
+                                <rect key="frame" x="43" y="344" width="135" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Questions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="en3-1k-Wfx">
-                                        <rect key="frame" x="52" y="20" width="80" height="21"/>
+                                        <rect key="frame" x="52" y="19" width="80" height="21"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="9"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="*" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psr-98-vfQ">
-                                        <rect key="frame" x="116" y="20" width="6" height="21"/>
+                                        <rect key="frame" x="116" y="19" width="6" height="21"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="9"/>
                                         <color key="textColor" red="0.78139215709999998" green="0.06931648403" blue="0.18148905039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZzO-SE-3FV" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="14" width="34" height="35"/>
+                                        <rect key="frame" x="15" y="13" width="34" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Camera-1" translatesAutoresizingMaskIntoConstraints="NO" id="bne-ps-gE0">
@@ -256,7 +256,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlF-hJ-mOv" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="135" height="68"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="135" height="67"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
@@ -278,11 +278,11 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jao-qt-6NX" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                <rect key="frame" x="197" y="344" width="135" height="67"/>
+                                <rect key="frame" x="197" y="344" width="135" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bpb-Fv-GK8" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
-                                        <rect key="frame" x="-1" y="-4" width="136" height="71"/>
+                                        <rect key="frame" x="-1" y="-5" width="136" height="71"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
@@ -301,14 +301,14 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jobs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Os3-b3-eyJ">
-                                        <rect key="frame" x="45" y="20" width="82" height="21"/>
+                                        <rect key="frame" x="45" y="19" width="82" height="21"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="9"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DmB-xy-Unn" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="14" width="35" height="35"/>
+                                        <rect key="frame" x="15" y="13" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Camera-1" translatesAutoresizingMaskIntoConstraints="NO" id="7af-rf-96t">
@@ -340,25 +340,25 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ld1-cx-7jr" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                <rect key="frame" x="43" y="438" width="135" height="67"/>
+                                <rect key="frame" x="43" y="438" width="135" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Culture" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fm-RM-N8X">
-                                        <rect key="frame" x="52" y="20" width="80" height="21"/>
+                                        <rect key="frame" x="52" y="19" width="80" height="21"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="9"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="*" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ES-IR-9rd">
-                                        <rect key="frame" x="111" y="20" width="4" height="21"/>
+                                        <rect key="frame" x="111" y="19" width="4" height="21"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="9"/>
                                         <color key="textColor" red="0.78139215709999998" green="0.06931648403" blue="0.18148905039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FRe-qA-9wq" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="14" width="34" height="35"/>
+                                        <rect key="frame" x="15" y="13" width="34" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Camera-1" translatesAutoresizingMaskIntoConstraints="NO" id="JOO-I1-XQc">
@@ -381,7 +381,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkb-aF-H5S" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="135" height="68"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="135" height="67"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
@@ -403,11 +403,11 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ddk-CT-Xzp" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                <rect key="frame" x="197" y="438" width="135" height="67"/>
+                                <rect key="frame" x="197" y="438" width="135" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9GF-jN-Sl8" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
-                                        <rect key="frame" x="-1" y="-4" width="136" height="71"/>
+                                        <rect key="frame" x="-1" y="-5" width="136" height="71"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
@@ -426,14 +426,14 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Specialties" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8z-mh-eGr">
-                                        <rect key="frame" x="51" y="20" width="80" height="21"/>
+                                        <rect key="frame" x="51" y="19" width="80" height="21"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="9"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GT6-v3-0nS" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="14" width="35" height="35"/>
+                                        <rect key="frame" x="15" y="13" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Camera-1" translatesAutoresizingMaskIntoConstraints="NO" id="m3y-ce-Rvl">
@@ -2006,7 +2006,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set three words which best describe your culture." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLV-rd-p9w">
-                                <rect key="frame" x="0.0" y="245" width="374" height="25"/>
+                                <rect key="frame" x="40" y="245" width="374" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2898,54 +2898,23 @@
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="15" minimumInteritemSpacing="15" id="E4r-4f-tj4">
-                                                            <size key="itemSize" width="141" height="48"/>
+                                                            <size key="itemSize" width="109" height="48"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                             <inset key="sectionInset" minX="10" minY="10" maxX="30" maxY="10"/>
                                                         </collectionViewFlowLayout>
                                                         <cells>
                                                             <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="skillsRequiredCell" id="ac6-y0-YZY" customClass="SkillsRequiredCell" customModule="Connections" customModuleProvider="target">
-                                                                <rect key="frame" x="10" y="12" width="141" height="48"/>
+                                                                <rect key="frame" x="10" y="12" width="109" height="48"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="141" height="48"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="109" height="48"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AR9-QT-1l4" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                                                            <rect key="frame" x="3" y="2" width="138" height="35"/>
+                                                                            <rect key="frame" x="3" y="2" width="106" height="35"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <subviews>
-                                                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uhv-71-MVq" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                                                                    <rect key="frame" x="105" y="3" width="28" height="28"/>
-                                                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
-                                                                                    <subviews>
-                                                                                        <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7U5-JJ-F79" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
-                                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                                            <userDefinedRuntimeAttributes>
-                                                                                                <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
-                                                                                                    <color key="value" red="0.78139215709999998" green="0.06931648403" blue="0.18148905039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                                </userDefinedRuntimeAttribute>
-                                                                                                <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
-                                                                                                    <color key="value" red="0.78139215709999998" green="0.06931648403" blue="0.18148905039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                                </userDefinedRuntimeAttribute>
-                                                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                                    <real key="value" value="14"/>
-                                                                                                </userDefinedRuntimeAttribute>
-                                                                                            </userDefinedRuntimeAttributes>
-                                                                                        </button>
-                                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Trash" translatesAutoresizingMaskIntoConstraints="NO" id="vCZ-ms-QnD">
-                                                                                            <rect key="frame" x="9" y="9" width="10" height="10"/>
-                                                                                            <autoresizingMask key="autoresizingMask"/>
-                                                                                        </imageView>
-                                                                                    </subviews>
-                                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                    <userDefinedRuntimeAttributes>
-                                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                            <real key="value" value="14"/>
-                                                                                        </userDefinedRuntimeAttribute>
-                                                                                    </userDefinedRuntimeAttributes>
-                                                                                </view>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQO-iD-udR">
                                                                                     <rect key="frame" x="8" y="7" width="89" height="21"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
@@ -2964,7 +2933,7 @@
                                                                         </view>
                                                                     </subviews>
                                                                 </view>
-                                                                <size key="customSize" width="141" height="48"/>
+                                                                <size key="customSize" width="109" height="48"/>
                                                                 <connections>
                                                                     <outlet property="skillRequired" destination="wQO-iD-udR" id="qmO-gR-vIA"/>
                                                                 </connections>
@@ -3496,6 +3465,9 @@
                                                                                 <color key="value" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="editRequiredSkillBtn:" destination="3SF-mm-JG2" eventType="touchUpInside" id="kVN-vO-ot4"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Add" translatesAutoresizingMaskIntoConstraints="NO" id="mzV-On-E67">
                                                                         <rect key="frame" x="10" y="10" width="20" height="20"/>
@@ -3528,7 +3500,7 @@
                                                             <inset key="sectionInset" minX="10" minY="10" maxX="30" maxY="10"/>
                                                         </collectionViewFlowLayout>
                                                         <cells>
-                                                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="skillsCell" id="JcS-OL-Hpw">
+                                                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="editSkillsRequiredCell" id="JcS-OL-Hpw" customClass="EditSkillsRequiredCell" customModule="Connections" customModuleProvider="target">
                                                                 <rect key="frame" x="10" y="12" width="141" height="48"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -3543,7 +3515,7 @@
                                                                                     <rect key="frame" x="105" y="3" width="28" height="28"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                                                                     <subviews>
-                                                                                        <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMs-gN-kzP" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
+                                                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMs-gN-kzP" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
                                                                                             <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
                                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                             <userDefinedRuntimeAttributes>
@@ -3557,6 +3529,9 @@
                                                                                                     <real key="value" value="14"/>
                                                                                                 </userDefinedRuntimeAttribute>
                                                                                             </userDefinedRuntimeAttributes>
+                                                                                            <connections>
+                                                                                                <action selector="deleteSkillRequiredBtn:" destination="JcS-OL-Hpw" eventType="touchUpInside" id="zBQ-3O-283"/>
+                                                                                            </connections>
                                                                                         </button>
                                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Trash" translatesAutoresizingMaskIntoConstraints="NO" id="ucl-56-q80">
                                                                                             <rect key="frame" x="9" y="9" width="10" height="10"/>
@@ -3589,8 +3564,15 @@
                                                                     </subviews>
                                                                 </view>
                                                                 <size key="customSize" width="141" height="48"/>
+                                                                <connections>
+                                                                    <outlet property="editSkillRequired" destination="pru-Cs-05Q" id="cDJ-h9-XaH"/>
+                                                                </connections>
                                                             </collectionViewCell>
                                                         </cells>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="3SF-mm-JG2" id="RqG-Lx-Tyz"/>
+                                                            <outlet property="delegate" destination="3SF-mm-JG2" id="2hJ-bm-Y0H"/>
+                                                        </connections>
                                                     </collectionView>
                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vW9-ny-Q2O" customClass="VerticalGradient" customModule="Connections" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="3" height="183"/>
@@ -3650,7 +3632,7 @@
                                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                                         <connections>
-                                                            <outlet property="delegate" destination="nAt-gr-NG5" id="rRX-ld-MzO"/>
+                                                            <outlet property="delegate" destination="3SF-mm-JG2" id="nUs-HW-BbX"/>
                                                         </connections>
                                                     </textView>
                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K9H-bl-6Ec" customClass="VerticalGradient" customModule="Connections" customModuleProvider="target">
@@ -3708,9 +3690,11 @@
                     </view>
                     <size key="freeformSize" width="414" height="1450"/>
                     <connections>
+                        <outlet property="collectionView" destination="2pY-mT-m9h" id="OwN-vZ-V5I"/>
+                        <outlet property="editRequiredSkill" destination="TM8-Ff-1tn" id="Dvh-IO-xff"/>
                         <outlet property="employmentType" destination="Y5f-Ak-R6H" id="PaR-xf-TXu"/>
                         <outlet property="jobDescription" destination="awH-sv-TaQ" id="YGM-33-lBy"/>
-                        <outlet property="jobLocation" destination="Ty8-ne-yei" id="g1E-7h-KVp"/>
+                        <outlet property="jobLocation" destination="28P-Sb-sek" id="U6q-dp-j5j"/>
                         <outlet property="jobSalary" destination="cpi-th-B9a" id="Ou4-uB-DTk"/>
                         <outlet property="jobTitle" destination="swH-OT-klA" id="C6V-ma-m0n"/>
                     </connections>

@@ -51,9 +51,13 @@ class AddJobsViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func addSkillsRequired(_ sender: Any) {
+        
         skillRequired.append(skillsRequired.text!)
         print(skillRequired)
         collectionView.reloadData()
+        
+        skillsRequired.text! = ""
+        
     }
     
     @IBAction func confirmBtn(_ sender: Any) {

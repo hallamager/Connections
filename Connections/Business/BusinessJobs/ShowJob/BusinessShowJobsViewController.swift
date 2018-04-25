@@ -21,7 +21,7 @@ class BusinessShowJobsViewController: UIViewController {
     var businesses = [Business]()
     var jobs = [Job]()
     let kCloseCellHeight: CGFloat = 130
-    let kOpenCellHeight: CGFloat = 415
+    let kOpenCellHeight: CGFloat = 540
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
     let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
@@ -29,6 +29,7 @@ class BusinessShowJobsViewController: UIViewController {
     var business: Business!
     var job: Job!
     var counter = 0
+    var skillRequired = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,8 @@ class BusinessShowJobsViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false
         
         navigationItem.title = business.username
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "Avenir Next", size: 17)!]
         
         let refJobs = Database.database().reference().child("business").child(business.uuid).child("Jobs")
 
@@ -110,9 +113,8 @@ extension BusinessShowJobsViewController: UITableViewDelegate {
         cell.foldedBusinessName?.text = job.title
         cell.foldedEmploymentType?.text = job.employmentType
         cell.jobDescription?.text = job.description
-//        cell.jobSalary?.text = job.salary
-//        cell.jobLocation?.text = job.location
-//        cell.jobSkillsRequired?.text = job.skillsRequired
+        cell.jobSalary?.text = job.salary
+        cell.jobLocation?.text = job.location
         
         // Create a storage reference from the URL
         let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(business.uuid)
@@ -170,6 +172,22 @@ extension BusinessShowJobsViewController: UITableViewDataSource {
         cell.durationsForCollapsedState = durations
         
         let job = jobs[indexPath.row]
+        
+        let ref = Database.database().reference().child("business").child(business.uuid).child("Jobs").child(job.uuid!).child("skillsRequired")
+        
+        ref.observe(.value, with: { snapshot in
+            
+            self.skillRequired.removeAll()
+            
+            for group in snapshot.children {
+                self.skillRequired.append((group as AnyObject).key)
+            }
+            print(self.skillRequired)
+            
+            cell.skillsRequiredCollectionView.reloadData()
+            
+        })
+        
         print(job.title)
         
         return cell

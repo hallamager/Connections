@@ -216,8 +216,8 @@ extension BusinessLikedViewController: UITableViewDataSource {
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             
-            print(businesses.count)
-            return businesses.count
+        print(businesses.count)
+        return businesses.count
 
     }
     
