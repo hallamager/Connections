@@ -8,7 +8,7 @@ class AppContainerViewController: UIViewController{
         
         AppManager.shared.appContainer = self
         
-//        try! Auth.auth().signOut()
+        try! Auth.auth().signOut()
         
         guard let user = Auth.auth().currentUser else  {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)

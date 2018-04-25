@@ -57,6 +57,8 @@ class ShowSkillsViewController: UIViewController, UITextFieldDelegate {
         let ex = Skills(data: ["Skill": self.skillInput.text!])
         ref.childByAutoId().setValue(ex.toDict())
         
+        skillInput.text! = ""
+
     }
     
     @IBAction func confirmBtn(_ sender: Any) {

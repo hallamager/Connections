@@ -53,6 +53,8 @@ class BusinessSpecialtiesViewController: UIViewController, UITextFieldDelegate {
         let ex = Specialties(data: ["Specialties": self.specialtiesInput.text!])
         ref.childByAutoId().setValue(ex.toDict())
         
+        specialtiesInput.text! = ""
+        
     }
     
     @IBAction func confirmBtn(_ sender: Any) {

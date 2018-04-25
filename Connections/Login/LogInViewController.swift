@@ -31,15 +31,6 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
         
     }
     
-    // check if user has logged in thus not showing logging in page
-//    override func viewDidAppear(_ animated: Bool) {
-//        
-//        if Auth.auth().currentUser != nil {
-//            self.presentSwipeViewController()
-//        }
-//        
-//    }
-    
     //text field goes away when done is pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
