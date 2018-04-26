@@ -20,6 +20,7 @@ class BusinessAboutViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var headquarters: UITextField!
     @IBOutlet weak var companySize: UITextField!
     @IBOutlet weak var companyWebsite: UITextField!
+    @IBOutlet weak var validationAlert: UILabel!
     
     
     override func viewDidLoad() {
@@ -42,6 +43,14 @@ class BusinessAboutViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func confirmAbout(_ sender: Any) {
+        
+        guard let companyIndustry = companyIndustry.text, !companyIndustry.isEmpty, let companyDescription = companyDescription.text, !companyDescription.isEmpty, let headquarters = headquarters.text, !headquarters.isEmpty, let companySize = companySize.text, !companySize.isEmpty, let companyWebsite = companyWebsite.text, !companyWebsite.isEmpty else {
+            
+            self.validationAlert.text! = "You must enter every text field to continue."
+            
+            return
+            
+        }
         
         ref.updateChildValues(["Industry": self.companyIndustry.text!, "Description": self.companyDescription.text!, "Headquarters": self.headquarters.text!, "Company Size": self.companySize.text!, "Website": self.companyWebsite.text!,])
         

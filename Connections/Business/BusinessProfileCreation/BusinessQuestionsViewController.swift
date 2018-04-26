@@ -17,6 +17,7 @@ class BusinessQuestionsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var questionOne: UITextField!
     @IBOutlet var questionTwo: UITextField!
     @IBOutlet var questionThree: UITextField!
+    @IBOutlet weak var validationAlert: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,16 @@ class BusinessQuestionsViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func confirmButtom(_ sender: Any) {
+        
+        guard let questionOne = questionOne.text, !questionOne.isEmpty, let questionTwo = questionTwo.text, !questionTwo.isEmpty, let questionThree = questionThree.text, !questionThree.isEmpty else {
+            
+            self.validationAlert.text! = "You must enter every text field to continue."
+            
+            self.validationAlert.textColor = UIColor.red
+            
+            return
+            
+        }
         
         ref.updateChildValues(["Question One": self.questionOne.text!, "Question Two": self.questionTwo.text!, "Question Three": self.questionThree.text!])
         

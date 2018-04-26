@@ -27,6 +27,7 @@ class EditJobsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var jobSalary: UITextField!
     @IBOutlet weak var editRequiredSkill: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var validationAlert: UILabel!
     
     weak var delegate: EditJobControllerDelegate?
     
@@ -80,6 +81,14 @@ class EditJobsViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func confirmBtn(_ sender: Any) {
+        
+        guard let jobTitle = jobTitle.text, !jobTitle.isEmpty, let employmentType = employmentType.text, !employmentType.isEmpty, let jobDescription = jobDescription.text, jobDescription.isEmpty, let jobLocation = jobLocation.text, !jobLocation.isEmpty, let jobSalary = jobSalary.text, !jobSalary.isEmpty else {
+            
+            self.validationAlert.text! = "You must enter every text field to continue."
+            
+            return
+            
+        }
         
         let ref = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!)
         

@@ -25,6 +25,7 @@ class AddJobsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var jobSalary: UITextField!
     @IBOutlet var skillsRequired: UITextField!
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet weak var validationAlert: UILabel!
     
     var skillRequired = [String]()
     
@@ -61,6 +62,14 @@ class AddJobsViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func confirmBtn(_ sender: Any) {
+        
+        guard let jobTitle = jobTitle.text, !jobTitle.isEmpty, let employmentType = employmentType.text, !employmentType.isEmpty, let jobDescription = jobDescription.text, jobDescription.isEmpty, let jobLocation = jobLocation.text, !jobLocation.isEmpty, let jobSalary = jobSalary.text, !jobSalary.isEmpty else {
+            
+            self.validationAlert.text! = "You must enter every text field to continue."
+            
+            return
+            
+        }
         
         ref.childByAutoId().setValue(["Title": self.jobTitle.text!, "Employment Type": self.employmentType.text!, "Description": self.jobDescription.text!, "Location": self.jobLocation.text!, "Salary": self.jobSalary.text!, "skillsRequired": arrayToDict(array: skillRequired)])
         self.navigationController?.popViewController(animated: true)

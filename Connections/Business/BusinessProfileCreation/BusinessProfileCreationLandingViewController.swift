@@ -14,10 +14,7 @@ import GeoFire
 class BusinessCreateProfileLandingViewController: UIViewController {
     
     @IBOutlet weak var createButton: UIButtonStyles!
-    @IBOutlet weak var profileImgEntered: UIImageView!
-    @IBOutlet weak var detailsEntered: UIImageView!
-    @IBOutlet weak var questionsEntered: UIImageView!
-    @IBOutlet weak var cultureEntered: UIImageView!
+    @IBOutlet weak var validationAlert: UILabel!
     
     let ref = Database.database().reference().child("business").child(Auth.auth().currentUser!.uid)
     let geoRefBusiness = GeoFire(firebaseRef: Database.database().reference().child("business_locations"))
@@ -50,6 +47,7 @@ class BusinessCreateProfileLandingViewController: UIViewController {
             } else {
                 
                 self.createButton.isEnabled = false
+                self.validationAlert.text = "Not all sections have been completed."
                 
                 print("Missing info")
             }
