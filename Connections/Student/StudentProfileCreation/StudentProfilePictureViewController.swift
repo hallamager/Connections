@@ -18,6 +18,7 @@ class StudentProfilePictureViewController: UIViewController, UIImagePickerContro
     let ref = Database.database().reference().child("student").child(Auth.auth().currentUser!.uid)
     
     @IBOutlet var profileImg: UIImageView!
+    @IBOutlet weak var noImgEntered: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +56,14 @@ class StudentProfilePictureViewController: UIViewController, UIImagePickerContro
     }
     
     @IBAction func comfirmBtn(_ sender: Any) {
+        
+        guard let _ = profileImg.image else {
+            
+            noImgEntered.text! = "You must enter at least one image."
+            
+            return
+            
+        }
         
         if let profileImg = self.selectedImage, let imageData = UIImageJPEGRepresentation(profileImg, 0.1) {
             storageRef.putData(imageData, metadata: nil, completion: { (metadata, error) in

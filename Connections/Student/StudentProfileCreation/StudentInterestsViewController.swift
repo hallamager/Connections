@@ -17,6 +17,7 @@ class StudentInterestsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var interestOne: UITextField!
     @IBOutlet var interestTwo: UITextField!
     @IBOutlet var interestThree: UITextField!
+    @IBOutlet weak var validationAlert: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,16 @@ class StudentInterestsViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func confirmBtn(_ sender: Any) {
+        
+        guard let interestOne = interestOne.text, !interestOne.isEmpty, let interestTwo = interestTwo.text, !interestTwo.isEmpty, let interestThree = interestThree.text, !interestThree.isEmpty else {
+            
+            self.validationAlert.text! = "You must enter every text field to continue."
+            
+            self.validationAlert.textColor = UIColor.red
+            
+            return
+            
+        }
    
         ref.updateChildValues(["Interest One": self.interestOne.text!, "Interest Two": self.interestTwo.text!, "Interest Three": self.interestThree.text!])
         

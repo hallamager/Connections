@@ -24,6 +24,7 @@ class AddExperienceViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var jobFromDate: UITextField!
     @IBOutlet var jobToDate: UITextField!
     @IBOutlet var jobDescription: UITextView!
+    @IBOutlet weak var validationAlert: UILabel!
     
     weak var delegate: AddExperienceControllerDelegate?
     
@@ -49,6 +50,14 @@ class AddExperienceViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func confirmBtn(_ sender: Any) {
+        
+        guard let jobTitle = jobTitle.text, !jobTitle.isEmpty, let jobCompany = jobCompany.text, !jobCompany.isEmpty, let jobCity = jobCity.text, !jobCity.isEmpty, let jobFromDate = jobFromDate.text, !jobFromDate.isEmpty, let jobToDate = jobToDate.text, !jobToDate.isEmpty, let jobDescription = jobDescription.text, !jobDescription.isEmpty else {
+            
+            self.validationAlert.text! = "You must enter every text field to continue."
+            
+            return
+            
+        }
         
         let ex = Experience(data: ["Title": self.jobTitle.text!, "Company": self.jobCompany.text!, "Location": self.jobCity.text!, "From Date": self.jobFromDate.text!, "To Date": self.jobToDate.text!, "Description": self.jobDescription.text!])
         delegate?.didAddExperience(ex)

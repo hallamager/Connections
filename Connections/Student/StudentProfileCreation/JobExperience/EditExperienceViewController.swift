@@ -25,6 +25,7 @@ class EditExperienceViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var jobFromDate: UITextField!
     @IBOutlet var jobToDate: UITextField!
     @IBOutlet var jobDescription: UITextView!
+    @IBOutlet weak var validationAlert: UILabel!
     
     weak var delegate: EditExperienceControllerDelegate?
     
@@ -57,6 +58,14 @@ class EditExperienceViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func confirmBtn(_ sender: Any) {
+        
+        guard let jobTitle = jobTitle.text, !jobTitle.isEmpty, let jobCompany = jobCompany.text, !jobCompany.isEmpty, let jobCity = jobCity.text, !jobCity.isEmpty, let jobFromDate = jobFromDate.text, !jobFromDate.isEmpty, let jobToDate = jobToDate.text, !jobToDate.isEmpty, let jobDescription = jobDescription.text, !jobDescription.isEmpty else {
+            
+            self.validationAlert.text! = "You must enter every text field to continue."
+            
+            return
+            
+        }
         
         let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("experience").child(experience.uuid!)
         

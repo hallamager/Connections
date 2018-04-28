@@ -25,6 +25,7 @@ class EditEducationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var schoolFromDate: UITextField!
     @IBOutlet var schoolToDate: UITextField!
     @IBOutlet var grades: UITextField!
+    @IBOutlet weak var validationAlert: UILabel!
     
     weak var delegate: EditEducationControllerDelegate?
     
@@ -58,6 +59,14 @@ class EditEducationViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func confirmBtn(_ sender: Any) {
+        
+        guard let school = school.text, !school.isEmpty, let qType = qType.text, !qType.isEmpty, let studied = studied.text, !studied.isEmpty, let schoolFromDate = schoolFromDate.text, !schoolFromDate.isEmpty, let schoolToDate = schoolToDate.text, !schoolToDate.isEmpty, let grades = grades.text, !grades.isEmpty else {
+            
+            self.validationAlert.text! = "You must enter every text field to continue."
+            
+            return
+            
+        }
         
         let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("education").child(education.uuid!)
         

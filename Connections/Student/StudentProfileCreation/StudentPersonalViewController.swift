@@ -17,6 +17,7 @@ class StudentPersonalViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var studentAddress: UITextField!
     @IBOutlet var studentHeadline: UITextField!
     @IBOutlet var studentSummary: UITextField!
+    @IBOutlet weak var validationAlert: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,14 @@ class StudentPersonalViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func confirmBtn(_ sender: Any) {
+        
+        guard let studentAddress = studentAddress.text, !studentAddress.isEmpty, let studentHeadline = studentHeadline.text, !studentHeadline.isEmpty, let studentSummary = studentSummary.text, !studentSummary.isEmpty else {
+            
+            self.validationAlert.text! = "You must enter every text field to continue."
+            
+            return
+            
+        }
         
         ref.updateChildValues(["Address": self.studentAddress.text!, "Headline": self.studentHeadline.text!, "Summary": self.studentSummary.text!])
         
