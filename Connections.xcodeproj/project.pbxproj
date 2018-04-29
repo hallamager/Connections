@@ -44,6 +44,7 @@
 		A0676136208FBA6E00AA2E22 /* EditSkillsRequiredCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0676135208FBA6E00AA2E22 /* EditSkillsRequiredCell.swift */; };
 		A067613A2090DA5800AA2E22 /* ShowJobSkillRequired.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06761392090DA5800AA2E22 /* ShowJobSkillRequired.swift */; };
 		A067613C2090DA7300AA2E22 /* ShowJobSkillRequiredCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A067613B2090DA7300AA2E22 /* ShowJobSkillRequiredCell.swift */; };
+		A067613E2094ADAD00AA2E22 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A067613D2094ADAD00AA2E22 /* PickerViewController.swift */; };
 		A07226631F9148FB006C60BA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07226611F914641006C60BA /* SWRevealViewController.m */; };
 		A07226651F91657F006C60BA /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07226641F91657F006C60BA /* TabsViewController.swift */; };
 		A07226671F916EC9006C60BA /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07226661F916EC9006C60BA /* LogInViewController.swift */; };
@@ -183,6 +184,7 @@
 		A0676135208FBA6E00AA2E22 /* EditSkillsRequiredCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSkillsRequiredCell.swift; sourceTree = "<group>"; };
 		A06761392090DA5800AA2E22 /* ShowJobSkillRequired.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowJobSkillRequired.swift; sourceTree = "<group>"; };
 		A067613B2090DA7300AA2E22 /* ShowJobSkillRequiredCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowJobSkillRequiredCell.swift; sourceTree = "<group>"; };
+		A067613D2094ADAD00AA2E22 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		A072265F1F91463F006C60BA /* Connections-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Connections-Bridging-Header.h"; sourceTree = "<group>"; };
 		A07226601F914640006C60BA /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		A07226611F914641006C60BA /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -650,6 +652,7 @@
 			isa = PBXGroup;
 			children = (
 				A0D68A2A206AB3D20040BDD1 /* OrganiseChatViewController.swift */,
+				A067613D2094ADAD00AA2E22 /* PickerViewController.swift */,
 			);
 			path = OrganiseChat;
 			sourceTree = "<group>";
@@ -1055,6 +1058,7 @@
 				A0A6FFBB204809940001D715 /* BusinessProfilePictureViewController.swift in Sources */,
 				A0A6B0F82049839300AC357F /* AddJobsViewController.swift in Sources */,
 				5F862DAC20605B9E00008F15 /* QuestionTwo.swift in Sources */,
+				A067613E2094ADAD00AA2E22 /* PickerViewController.swift in Sources */,
 				A041D284208BE20E003A97F7 /* BusinessLikedShowSpecialties.swift in Sources */,
 				A0D67A562040674C0060AD70 /* Education.swift in Sources */,
 				A02E7F39208BA72400AEED43 /* StudentLikedEducationCell.swift in Sources */,
