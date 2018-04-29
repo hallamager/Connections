@@ -45,6 +45,7 @@
 		A067613A2090DA5800AA2E22 /* ShowJobSkillRequired.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06761392090DA5800AA2E22 /* ShowJobSkillRequired.swift */; };
 		A067613C2090DA7300AA2E22 /* ShowJobSkillRequiredCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A067613B2090DA7300AA2E22 /* ShowJobSkillRequiredCell.swift */; };
 		A067613E2094ADAD00AA2E22 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A067613D2094ADAD00AA2E22 /* PickerViewController.swift */; };
+		A06761402096580900AA2E22 /* NotificationNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A067613F2096580900AA2E22 /* NotificationNameExtension.swift */; };
 		A07226631F9148FB006C60BA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A07226611F914641006C60BA /* SWRevealViewController.m */; };
 		A07226651F91657F006C60BA /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07226641F91657F006C60BA /* TabsViewController.swift */; };
 		A07226671F916EC9006C60BA /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07226661F916EC9006C60BA /* LogInViewController.swift */; };
@@ -185,6 +186,7 @@
 		A06761392090DA5800AA2E22 /* ShowJobSkillRequired.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowJobSkillRequired.swift; sourceTree = "<group>"; };
 		A067613B2090DA7300AA2E22 /* ShowJobSkillRequiredCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowJobSkillRequiredCell.swift; sourceTree = "<group>"; };
 		A067613D2094ADAD00AA2E22 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		A067613F2096580900AA2E22 /* NotificationNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExtension.swift; sourceTree = "<group>"; };
 		A072265F1F91463F006C60BA /* Connections-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Connections-Bridging-Header.h"; sourceTree = "<group>"; };
 		A07226601F914640006C60BA /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		A07226611F914641006C60BA /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -653,6 +655,7 @@
 			children = (
 				A0D68A2A206AB3D20040BDD1 /* OrganiseChatViewController.swift */,
 				A067613D2094ADAD00AA2E22 /* PickerViewController.swift */,
+				A067613F2096580900AA2E22 /* NotificationNameExtension.swift */,
 			);
 			path = OrganiseChat;
 			sourceTree = "<group>";
@@ -973,6 +976,7 @@
 				A0D8D377203B39CF00D68A5A /* Experience.swift in Sources */,
 				A0E19D892073A3D400FAFB5F /* JobsCell.swift in Sources */,
 				A07226651F91657F006C60BA /* TabsViewController.swift in Sources */,
+				A06761402096580900AA2E22 /* NotificationNameExtension.swift in Sources */,
 				A0F94F232054347000FECC7A /* MatchedCell.swift in Sources */,
 				A0F5CB15206E6E97005AEEF3 /* StudentInviteCell.swift in Sources */,
 				A0D8D375203B38E400D68A5A /* AddExperienceViewController.swift in Sources */,
