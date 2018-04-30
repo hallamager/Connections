@@ -31,10 +31,10 @@ class BusinessInvitesCell: FoldingCell {
     @IBOutlet weak var time2: UILabel!
     @IBOutlet weak var response: UILabel!
     @IBOutlet weak var foldedResponse: UILabel!
-    @IBOutlet weak var secondDateConfirmed: UIImageView!
-    @IBOutlet weak var firstDateConfirmed: UIImageView!
     @IBOutlet weak var firstDateConfirmedLabel: UILabel!
     @IBOutlet weak var secondDateConfirmedLabel: UILabel!
+    @IBOutlet weak var inviteLocation: UILabel!
+    @IBOutlet weak var moreInfo: UITextView!
     
     //Defines sides, shadows and colour of the cells for the viewcontroller.
     override func awakeFromNib() {
@@ -55,7 +55,7 @@ class BusinessInvitesCell: FoldingCell {
     override func animationDuration(_ itemIndex:NSInteger, type:AnimationType)-> TimeInterval {
         
         // durations count equal it itemCount
-        let durations = [0.20, 0.20, 0.20] // timing animation for each view
+        let durations = [0.20, 0.20, 0.20, 0.20] // timing animation for each view
         return durations[itemIndex]
     }
     

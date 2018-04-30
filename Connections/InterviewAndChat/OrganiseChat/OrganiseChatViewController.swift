@@ -19,6 +19,8 @@ class OrganiseChatViewController: UIViewController {
     @IBOutlet weak var time1: UILabel!
     @IBOutlet weak var date2: UILabel!
     @IBOutlet weak var time2: UILabel! 
+    @IBOutlet weak var interviewLocation: UITextField!
+    @IBOutlet weak var moreInfo: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,9 +83,9 @@ class OrganiseChatViewController: UIViewController {
 
         let refBusiness = Database.database().reference().child("organisedChats").child(Auth.auth().currentUser!.uid).child(student.uuid)
 
-        ref.updateChildValues(["Date1": self.date1.text!, "Time1": self.time1.text!, "Date2": self.date2.text!, "Time2": self.time2.text!, "Invite Type": "Interview Invite", "Response": "Pending Response", "First Date Response": "Pending Response", "Second Date Response": "Pending Response"])
+        ref.updateChildValues(["Date1": self.date1.text!, "Time1": self.time1.text!, "Date2": self.date2.text!, "Time2": self.time2.text!, "Location": self.interviewLocation.text!, "MoreInfo": self.moreInfo.text!, "Invite Type": "Interview Invite", "Response": "Pending Response", "First Date Response": "Pending Response", "Second Date Response": "Pending Response"])
 
-        refBusiness.updateChildValues(["Date1": self.date1.text!, "Time1": self.time1.text!, "Date2": self.date2.text!, "Time2": self.time2.text!, "Invite Type": "Interview Invite", "Response": "Pending Response", "First Date Response": "Pending Response", "Second Date Response": "Pending Response"])
+        refBusiness.updateChildValues(["Date1": self.date1.text!, "Time1": self.time1.text!, "Date2": self.date2.text!, "Time2": self.time2.text!, "Location": self.interviewLocation.text!, "MoreInfo": self.moreInfo.text!, "Invite Type": "Interview Invite", "Response": "Pending Response", "First Date Response": "Pending Response", "Second Date Response": "Pending Response"])
 
         let revealViewController:SWRevealViewController = self.revealViewController()
 

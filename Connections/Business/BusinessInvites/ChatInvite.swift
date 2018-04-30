@@ -20,6 +20,8 @@ class Invites {
     let response: String
     let responseFirstDate: String
     let responseSecondDate: String
+    let location: String
+    let moreInfo: String
     
     init?(snapshot: DataSnapshot) {
         if let snapshotData = snapshot.value as? [String: Any] {
@@ -32,6 +34,8 @@ class Invites {
             response = snapshotData["Response"] as! String
             responseFirstDate = snapshotData["First Date Response"] as! String
             responseSecondDate = snapshotData["Second Date Response"] as! String
+            location = snapshotData["Location"] as! String
+            moreInfo = snapshotData["MoreInfo"] as! String
         } else {
             return nil
         }
@@ -47,10 +51,12 @@ class Invites {
         response = data["Response"] as! String
         responseFirstDate = data["First Date Response"] as! String
         responseSecondDate = data["Second Date Response"] as! String
+        location = data["Location"] as! String
+        moreInfo = data["MoreInfo"] as! String
     }
     
     func toDict() -> [String: Any] {
-        return ["Date1": date, "Time1": time, "Date2": date2, "Time2": time2, "Invite Type": inviteType, "Response": response, "First Date Response": responseFirstDate, "Second Date Response": responseSecondDate]
+        return ["Date1": date, "Time1": time, "Date2": date2, "Time2": time2, "Invite Type": inviteType, "Response": response, "First Date Response": responseFirstDate, "Second Date Response": responseSecondDate, "Location": location, "MoreInfo": moreInfo]
     }
     
 }

@@ -2456,6 +2456,9 @@
                                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="CLM-73-VPv" id="WYf-94-UXc"/>
+                                                        </connections>
                                                     </textView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="More Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyL-3J-fTN">
                                                         <rect key="frame" x="13" y="19" width="240" height="28"/>
@@ -2533,6 +2536,8 @@
                     <connections>
                         <outlet property="date1" destination="Ml6-Ep-zCb" id="MjQ-9g-q7s"/>
                         <outlet property="date2" destination="rr8-sU-1ah" id="7ug-DK-2Lq"/>
+                        <outlet property="interviewLocation" destination="da4-5v-jqD" id="wUL-gU-qTr"/>
+                        <outlet property="moreInfo" destination="9iR-GH-uoS" id="rQF-Ag-g8g"/>
                         <outlet property="time1" destination="zNX-An-qGI" id="KnI-lZ-W7t"/>
                         <outlet property="time2" destination="lhk-Qp-Xmx" id="54n-DS-0j4"/>
                         <segue destination="QXB-US-lFg" kind="presentation" identifier="pickerModal" id="8XJ-08-e37"/>
@@ -4080,6 +4085,6 @@
         <image name="writing-notes-idea-conference" width="4604" height="2722"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Z6c-pc-qc6"/>
+        <segue reference="rzZ-2S-8PH"/>
     </inferredMetricsTieBreakers>
 </document>

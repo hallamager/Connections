@@ -24,7 +24,7 @@ class BusinessInvitesViewController: UIViewController {
     var invite = [Invites]()
     var invites: Invites!
     let kCloseCellHeight: CGFloat = 165
-    let kOpenCellHeight: CGFloat = 610
+    let kOpenCellHeight: CGFloat = 850
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
     let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
@@ -122,6 +122,8 @@ extension BusinessInvitesViewController: UITableViewDelegate {
                 cell.foldedResponse.text = business.response
                 cell.firstDateConfirmedLabel.text = business.responseFirstDate
                 cell.secondDateConfirmedLabel.text = business.responseSecondDate
+                cell.inviteLocation.text = business.location
+                cell.moreInfo.text = business.moreInfo
                 
                 if cell.foldedResponse.text == "Date Accepted" {
                     cell.foldedResponse.textColor = UIColor.green
@@ -156,15 +158,27 @@ extension BusinessInvitesViewController: UITableViewDelegate {
                 }
                 
                 if cell.firstDateConfirmedLabel.text == "Date Accepted" {
-                    cell.firstDateConfirmed.alpha = 1
-                } else {
-                    cell.firstDateConfirmed.alpha = 0
+                    cell.firstDateConfirmedLabel.textColor = UIColor.green
+                }
+                
+                if cell.firstDateConfirmedLabel.text == "Declined" {
+                    cell.firstDateConfirmedLabel.textColor = UIColor.red
+                }
+                
+                if cell.firstDateConfirmedLabel.text == "Cancelled" {
+                    cell.firstDateConfirmedLabel.textColor = UIColor.red
                 }
                 
                 if cell.secondDateConfirmedLabel.text == "Date Accepted" {
-                    cell.secondDateConfirmed.alpha = 1
-                } else {
-                    cell.secondDateConfirmed.alpha = 0
+                    cell.secondDateConfirmedLabel.textColor = UIColor.green
+                }
+                
+                if cell.secondDateConfirmedLabel.text == "Declined" {
+                    cell.secondDateConfirmedLabel.textColor = UIColor.red
+                }
+                
+                if cell.secondDateConfirmedLabel.text == "Cancelled" {
+                    cell.secondDateConfirmedLabel.textColor = UIColor.red
                 }
                 
             }
