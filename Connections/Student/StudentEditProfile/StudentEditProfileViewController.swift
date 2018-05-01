@@ -40,6 +40,9 @@ class StudentEditProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.rowHeight = 115
+        tableView.sectionHeaderHeight = 60
+        
         self.navigationController?.navigationBar.isTranslucent = false
         
         ref.observeSingleEvent(of: .value, with: { snapshot in
@@ -93,7 +96,9 @@ class StudentEditProfileViewController: UIViewController {
                 }
             }
             
+            
             self.tableView.reloadData()
+            self.caclculateTableViewHeight()
             
             print("education \(self.educations.count)")
             
@@ -112,13 +117,11 @@ class StudentEditProfileViewController: UIViewController {
             }
             
             self.tableView.reloadData()
+            self.caclculateTableViewHeight()
             
             print("experience \(self.experiences.count)")
             
         })
-        
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 140
         
         //open menu with tab bar button
         openMenu.target = self.revealViewController()
@@ -127,6 +130,20 @@ class StudentEditProfileViewController: UIViewController {
         
         //open menu with swipe gesture
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
+    }
+    
+    func caclculateTableViewHeight() {
+        
+        print("section header: \(tableView.sectionHeaderHeight)")
+        print("row header: \(tableView.rowHeight)")
+        
+        let newHeight: CGFloat = (tableView.sectionHeaderHeight * 2) + (CGFloat(tableView.numberOfRows(inSection: 0) + tableView.numberOfRows(inSection: 1))) * (tableView.rowHeight)
+            //(section header height * 2) + (number of rows * row height)
+
+        tableView.frame = CGRect(x: tableView.frame.minX, y: tableView.frame.minY, width: tableView.frame.width, height: newHeight)
+        
+        print(newHeight)
         
     }
     
@@ -173,46 +190,11 @@ class StudentEditProfileViewController: UIViewController {
     
 }
 
-extension StudentEditProfileViewController: EditExperienceControllerDelegate {
-    
-    func didEditExperience(_ experience: Experience) {
-        self.experiences.append(experience)
-        self.tableView.reloadData()
-    }
-    
-}
-
-extension StudentEditProfileViewController: EditEducationControllerDelegate {
-    
-    func didEditEducation(_ education: Education) {
-        self.educations.append(education)
-        self.tableView.reloadData()
-    }
-    
-}
-
-extension StudentEditProfileViewController: AddExperienceControllerDelegate {
-    
-    func didAddExperience(_ experience: Experience) {
-        self.experiences.append(experience)
-        self.tableView.reloadData()
-    }
-    
-}
-
-extension StudentEditProfileViewController: AddEducationControllerDelegate {
-    
-    func didAddEducation(_ education: Education) {
-        self.educations.append(education)
-        self.tableView.reloadData()
-    }
-    
-}
 
 extension StudentEditProfileViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 115
     }
 
 }
@@ -279,6 +261,43 @@ extension StudentEditProfileViewController: UITableViewDataSource {
         cell.delegate = self
         return cell
 
+    }
+    
+}
+
+
+extension StudentEditProfileViewController: EditExperienceControllerDelegate {
+    
+    func didEditExperience(_ experience: Experience) {
+        self.experiences.append(experience)
+        self.tableView.reloadData()
+    }
+    
+}
+
+extension StudentEditProfileViewController: EditEducationControllerDelegate {
+    
+    func didEditEducation(_ education: Education) {
+        self.educations.append(education)
+        self.tableView.reloadData()
+    }
+    
+}
+
+extension StudentEditProfileViewController: AddExperienceControllerDelegate {
+    
+    func didAddExperience(_ experience: Experience) {
+        self.experiences.append(experience)
+        self.tableView.reloadData()
+    }
+    
+}
+
+extension StudentEditProfileViewController: AddEducationControllerDelegate {
+    
+    func didAddEducation(_ education: Education) {
+        self.educations.append(education)
+        self.tableView.reloadData()
     }
     
 }

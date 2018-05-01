@@ -169,6 +169,10 @@ extension BusinessInvitesViewController: UITableViewDelegate {
                     cell.firstDateConfirmedLabel.textColor = UIColor.red
                 }
                 
+                if cell.firstDateConfirmedLabel.text == "Pending Response" {
+                    cell.firstDateConfirmedLabel.textColor = UIColor.darkGray
+                }
+                
                 if cell.secondDateConfirmedLabel.text == "Date Accepted" {
                     cell.secondDateConfirmedLabel.textColor = UIColor.green
                 }
@@ -179,6 +183,10 @@ extension BusinessInvitesViewController: UITableViewDelegate {
                 
                 if cell.secondDateConfirmedLabel.text == "Cancelled" {
                     cell.secondDateConfirmedLabel.textColor = UIColor.red
+                }
+                
+                if cell.secondDateConfirmedLabel.text == "Pending Response" {
+                    cell.secondDateConfirmedLabel.textColor = UIColor.darkGray
                 }
                 
             }
