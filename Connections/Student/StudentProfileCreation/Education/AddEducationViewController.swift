@@ -16,6 +16,7 @@ protocol AddEducationControllerDelegate: class {
 
 class AddEducationViewController: UIViewController, UITextFieldDelegate {
     
+    let editProfile = StudentEditProfileViewController()
     let ref = Database.database().reference().child("student").child(Auth.auth().currentUser!.uid).child("education")
     
     @IBOutlet var school: UITextField!
@@ -51,7 +52,7 @@ class AddEducationViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func confirmBtn(_ sender: Any) {
-        
+                
         guard let school = school.text, !school.isEmpty, let qType = qType.text, !qType.isEmpty, let studied = studied.text, !studied.isEmpty, let schoolFromDate = schoolFromDate.text, !schoolFromDate.isEmpty, let schoolToDate = schoolToDate.text, !schoolToDate.isEmpty, let grades = grades.text, !grades.isEmpty else {
             
             self.validationAlert.text! = "You must enter every text field to continue."

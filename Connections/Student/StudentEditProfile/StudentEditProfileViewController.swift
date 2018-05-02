@@ -24,6 +24,7 @@ class StudentEditProfileViewController: UIViewController {
     var skills = [Skills]()
     var cellHeight = [CGFloat]()
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var openMenu: UIBarButtonItem!
     @IBOutlet var userUsername: UILabel!
     @IBOutlet var profilePic: UIImageView!
@@ -35,10 +36,12 @@ class StudentEditProfileViewController: UIViewController {
     @IBOutlet weak var interestTwo: UILabel!
     @IBOutlet weak var interestThree: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var contentView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("viewDidLoad")
         
         tableView.rowHeight = 115
         tableView.sectionHeaderHeight = 60
@@ -71,7 +74,7 @@ class StudentEditProfileViewController: UIViewController {
             
             self.collectionView.reloadData()
             
-            print("is\(self.skills.count)")
+            print("skills \(self.skills.count)")
             
         })
         
@@ -84,7 +87,7 @@ class StudentEditProfileViewController: UIViewController {
             self.profilePic.image = pic
         }
         
-        refEducation.observe(.value, with: { snapshot in
+        refEducation.observeSingleEvent(of: .value) { snapshot in
             
             self.educations.removeAll()
             
@@ -96,15 +99,18 @@ class StudentEditProfileViewController: UIViewController {
                 }
             }
             
-            
             self.tableView.reloadData()
             self.caclculateTableViewHeight()
             
-            print("education \(self.educations.count)")
+            let newHeight: CGFloat = (self.tableView.sectionHeaderHeight) + (CGFloat(self.tableView.numberOfRows(inSection: 0))) * (self.tableView.rowHeight)
             
-        })
+            self.scrollView.contentSize.height += newHeight
+            
+            print("scroll view height\(self.scrollView.contentSize.height)")
+            
+        }
         
-        refExperience.observe(.value, with: { snapshot in
+        refExperience.observeSingleEvent(of: .value) { snapshot in
             
             self.experiences.removeAll()
 
@@ -119,9 +125,13 @@ class StudentEditProfileViewController: UIViewController {
             self.tableView.reloadData()
             self.caclculateTableViewHeight()
             
-            print("experience \(self.experiences.count)")
+            let newHeight: CGFloat = (self.tableView.sectionHeaderHeight) + (CGFloat(self.tableView.numberOfRows(inSection: 1))) * (self.tableView.rowHeight)
             
-        })
+            self.scrollView.contentSize.height += newHeight
+            
+            print("scroll view height\(self.scrollView.contentSize.height)")
+            
+        }
         
         //open menu with tab bar button
         openMenu.target = self.revealViewController()
@@ -139,14 +149,12 @@ class StudentEditProfileViewController: UIViewController {
         print("row header: \(tableView.rowHeight)")
         
         let newHeight: CGFloat = (tableView.sectionHeaderHeight * 2) + (CGFloat(tableView.numberOfRows(inSection: 0) + tableView.numberOfRows(inSection: 1))) * (tableView.rowHeight)
-            //(section header height * 2) + (number of rows * row height)
 
         tableView.frame = CGRect(x: tableView.frame.minX, y: tableView.frame.minY, width: tableView.frame.width, height: newHeight)
-        
-        print(newHeight)
+                
+        print("tableView height is \(newHeight)")
         
     }
-    
     
     @IBAction func sliderDistance(_ sender: UISlider) {
         
@@ -189,7 +197,6 @@ class StudentEditProfileViewController: UIViewController {
     }
     
 }
-
 
 extension StudentEditProfileViewController: UITableViewDelegate {
     
@@ -245,6 +252,7 @@ extension StudentEditProfileViewController: UITableViewDataSource {
             cell.backgroundColor = .clear
             cell.backgroundView = UIView()
             cell.selectedBackgroundView = UIView()
+            print("education \(self.educations.count)")
             cell.delegate = self
             return cell
         }
@@ -257,47 +265,10 @@ extension StudentEditProfileViewController: UITableViewDataSource {
         cell.backgroundColor = .clear
         cell.backgroundView = UIView()
         cell.selectedBackgroundView = UIView()
-        print("cell \(self.experiences.count)")
+        print("experience \(self.experiences.count)")
         cell.delegate = self
         return cell
 
-    }
-    
-}
-
-
-extension StudentEditProfileViewController: EditExperienceControllerDelegate {
-    
-    func didEditExperience(_ experience: Experience) {
-        self.experiences.append(experience)
-        self.tableView.reloadData()
-    }
-    
-}
-
-extension StudentEditProfileViewController: EditEducationControllerDelegate {
-    
-    func didEditEducation(_ education: Education) {
-        self.educations.append(education)
-        self.tableView.reloadData()
-    }
-    
-}
-
-extension StudentEditProfileViewController: AddExperienceControllerDelegate {
-    
-    func didAddExperience(_ experience: Experience) {
-        self.experiences.append(experience)
-        self.tableView.reloadData()
-    }
-    
-}
-
-extension StudentEditProfileViewController: AddEducationControllerDelegate {
-    
-    func didAddEducation(_ education: Education) {
-        self.educations.append(education)
-        self.tableView.reloadData()
     }
     
 }
@@ -335,6 +306,7 @@ extension StudentEditProfileViewController: EducationCellDelegate, ExperienceCel
                 let refDeleteExperience = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("experience").child(experience.uuid!)
                 
                 refDeleteExperience.removeValue()
+                
             }
             
         }
@@ -347,6 +319,7 @@ extension StudentEditProfileViewController: EducationCellDelegate, ExperienceCel
                 let refDeleteSkills = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("skills").child(skill.uuid!)
                 
                 refDeleteSkills.removeValue()
+                
             }
             
         }
