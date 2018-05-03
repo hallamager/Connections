@@ -34,10 +34,12 @@ class AddJobsViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.isTranslucent = false
-        
         jobTitle.delegate = self
         employmentType.delegate = self
+        jobLocation.delegate = self
+        jobSalary.delegate = self
+        
+        self.navigationController?.navigationBar.isTranslucent = false
         
     }
     
@@ -63,7 +65,7 @@ class AddJobsViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func confirmBtn(_ sender: Any) {
         
-        guard let jobTitle = jobTitle.text, !jobTitle.isEmpty, let employmentType = employmentType.text, !employmentType.isEmpty, let jobDescription = jobDescription.text, jobDescription.isEmpty, let jobLocation = jobLocation.text, !jobLocation.isEmpty, let jobSalary = jobSalary.text, !jobSalary.isEmpty else {
+        guard let jobTitle = jobTitle.text, !jobTitle.isEmpty, let jobDescription = jobDescription.text, !jobDescription.isEmpty, let employmentType = employmentType.text, !employmentType.isEmpty, let jobLocation = jobLocation.text, !jobLocation.isEmpty, let jobSalary = jobSalary.text, !jobSalary.isEmpty else {
             
             self.validationAlert.text! = "You must enter every text field to continue."
             

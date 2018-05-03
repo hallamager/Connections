@@ -2277,7 +2277,7 @@
                                                             <action selector="addSkills:" destination="zc4-Iz-BnY" eventType="touchUpInside" id="NdD-Ao-uGA"/>
                                                         </connections>
                                                     </button>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Edit-1" translatesAutoresizingMaskIntoConstraints="NO" id="LTk-oz-Emv">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Add-1" translatesAutoresizingMaskIntoConstraints="NO" id="LTk-oz-Emv">
                                                         <rect key="frame" x="5" y="5" width="15" height="15"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </imageView>
@@ -4221,6 +4221,7 @@
     </scenes>
     <resources>
         <image name="Add" width="250" height="250"/>
+        <image name="Add-1" width="250" height="250"/>
         <image name="CTA-Direction" width="131" height="252"/>
         <image name="CTA-DirectionGrey" width="131" height="252"/>
         <image name="Close" width="250" height="250"/>

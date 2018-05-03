@@ -41,7 +41,7 @@
                                 <action selector="addExperience:" destination="-1" eventType="touchUpInside" id="yep-vx-M4Q"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Edit" translatesAutoresizingMaskIntoConstraints="NO" id="QAK-ZB-fBt">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Add-1" translatesAutoresizingMaskIntoConstraints="NO" id="QAK-ZB-fBt">
                             <rect key="frame" x="5" y="5" width="15" height="15"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </imageView>
@@ -61,6 +61,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Edit" width="250" height="250"/>
+        <image name="Add-1" width="250" height="250"/>
     </resources>
 </document>
