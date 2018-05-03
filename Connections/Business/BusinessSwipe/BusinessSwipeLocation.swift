@@ -21,7 +21,7 @@ extension BusinessSwipeViewController {
                 
                 let query = self.geoRefBusiness.query(at: location, withRadius: Double(student.selectedRadius))
                 
-                guard location.distance(from: self.queryLocation) > 10 else { return }
+                guard location.distance(from: self.queryLocation) > 50 else { return }
                 
                 self.queryLocation = location
                 query.observe(.keyEntered) { key, location in

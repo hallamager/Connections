@@ -110,10 +110,6 @@ class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate {
         vc.business = business
     }
     
-    @IBAction func moreInfoBtn(_ sender: Any) {
-        performSegue(withIdentifier: "MoreInfo", sender: nil)
-    }
-    
 }
 
 extension BusinessSwipeViewController: KolodaViewDelegate {
@@ -121,6 +117,7 @@ extension BusinessSwipeViewController: KolodaViewDelegate {
     //what happens when user runs out of cards
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
         openMoreInfo.isEnabled = false
+        noCardsAlert.text = "Your Out of Cards! Change your radius to discover new businesses."
         print("Out of cards")
     }
     
@@ -184,6 +181,7 @@ extension BusinessSwipeViewController: KolodaViewDataSource {
             openMoreInfo.isEnabled = false
             noCardsAlert.text = "Your Out of Cards! Change your radius to discover new businesses."
         } else {
+            openMoreInfo.isEnabled = true
             noCardsAlert.text = ""
         }
         

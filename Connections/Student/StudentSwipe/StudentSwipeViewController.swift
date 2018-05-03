@@ -219,6 +219,9 @@ extension StudentSwipeViewController: KolodaViewDataSource {
         if students.count == 0 {
             noCardsAlert.text = "Your Out of Cards! We'll alert when theres more to swipe."
             openMoreInfo.isEnabled = false
+        } else {
+            noCardsAlert.text = ""
+            openMoreInfo.isEnabled = true
         }
         
         return students.count

@@ -811,33 +811,24 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hMi-Ji-1uN" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTy-Li-X8H" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
                                 <rect key="frame" x="166" y="522" width="42" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTy-Li-X8H">
-                                        <rect key="frame" x="-3" y="-3" width="46" height="47"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="i">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="scale(0.5) translate(200, 0) fade useGlobalCoordinateSpace"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="moreInfoBtn:" destination="G3j-wP-Ngg" eventType="touchUpInside" id="3Ct-mo-qvp"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="i">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="21"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="fade"/>
                                 </userDefinedRuntimeAttributes>
-                            </view>
+                                <connections>
+                                    <segue destination="9mi-DO-qKG" kind="presentation" identifier="MoreInfo" id="7FJ-W3-bbj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -862,7 +853,6 @@
                         <outlet property="kolodaView" destination="MxJ-Nd-3eL" id="exS-4p-hqT"/>
                         <outlet property="noCardsAlert" destination="c2X-2B-Qps" id="lrD-kI-swf"/>
                         <outlet property="openMoreInfo" destination="PTy-Li-X8H" id="RZC-92-rED"/>
-                        <segue destination="9mi-DO-qKG" kind="presentation" identifier="MoreInfo" id="lGz-7h-sgM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G4K-LV-wHt" sceneMemberID="firstResponder"/>
@@ -944,7 +934,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fb2-fo-wJ4" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
-                                        <rect key="frame" x="370" y="16" width="30" height="30"/>
+                                        <rect key="frame" x="370" y="23" width="30" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmE-my-Iz6" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -1256,19 +1246,19 @@
                                     <constraint firstAttribute="bottom" secondItem="7OL-Ri-UuY" secondAttribute="bottom" id="5ji-Sa-Sec"/>
                                     <constraint firstAttribute="trailing" secondItem="4jF-BV-YtS" secondAttribute="trailing" constant="14" id="5uY-7x-olF"/>
                                     <constraint firstAttribute="trailing" secondItem="mM8-hb-Fwj" secondAttribute="trailing" id="6MN-CQ-pSx"/>
-                                    <constraint firstItem="7OL-Ri-UuY" firstAttribute="top" secondItem="fb2-fo-wJ4" secondAttribute="bottom" constant="398" id="7f6-iK-PmQ"/>
+                                    <constraint firstItem="7OL-Ri-UuY" firstAttribute="top" secondItem="fb2-fo-wJ4" secondAttribute="bottom" constant="391" id="7f6-iK-PmQ"/>
                                     <constraint firstItem="mM8-hb-Fwj" firstAttribute="leading" secondItem="SDN-hZ-4Hc" secondAttribute="leading" id="AC8-bp-jqR"/>
                                     <constraint firstItem="7OL-Ri-UuY" firstAttribute="leading" secondItem="SDN-hZ-4Hc" secondAttribute="leading" id="BjG-u9-lsA"/>
                                     <constraint firstItem="dvh-Sh-YPT" firstAttribute="top" secondItem="mM8-hb-Fwj" secondAttribute="bottom" constant="38" id="CWK-c2-OON"/>
                                     <constraint firstAttribute="trailing" secondItem="9Yi-zU-lOf" secondAttribute="trailing" constant="16" id="Hkb-Ma-1vv"/>
-                                    <constraint firstItem="fb2-fo-wJ4" firstAttribute="top" secondItem="SDN-hZ-4Hc" secondAttribute="top" constant="16" id="Igg-dx-wmE"/>
+                                    <constraint firstItem="fb2-fo-wJ4" firstAttribute="top" secondItem="SDN-hZ-4Hc" secondAttribute="top" constant="23" id="Igg-dx-wmE"/>
                                     <constraint firstItem="yVx-S6-lCo" firstAttribute="top" secondItem="dvh-Sh-YPT" secondAttribute="bottom" constant="8" id="JDF-wW-9xm"/>
                                     <constraint firstItem="9Yi-zU-lOf" firstAttribute="top" secondItem="Lud-eC-HRg" secondAttribute="bottom" constant="23" id="Kt6-ef-uNx"/>
                                     <constraint firstItem="9Yi-zU-lOf" firstAttribute="leading" secondItem="SDN-hZ-4Hc" secondAttribute="leading" constant="24" id="N27-k9-QSz"/>
-                                    <constraint firstItem="4jF-BV-YtS" firstAttribute="top" secondItem="fb2-fo-wJ4" secondAttribute="bottom" constant="397" id="Nbb-Qt-gid"/>
+                                    <constraint firstItem="4jF-BV-YtS" firstAttribute="top" secondItem="fb2-fo-wJ4" secondAttribute="bottom" constant="390" id="Nbb-Qt-gid"/>
                                     <constraint firstAttribute="bottom" secondItem="tRa-09-BRC" secondAttribute="bottom" constant="22" id="QQR-xF-7is"/>
                                     <constraint firstAttribute="trailing" secondItem="fb2-fo-wJ4" secondAttribute="trailing" constant="14" id="R5r-bC-75R"/>
-                                    <constraint firstItem="rVD-fm-hbn" firstAttribute="top" secondItem="fb2-fo-wJ4" secondAttribute="bottom" constant="241" id="WG9-Bh-lN2"/>
+                                    <constraint firstItem="rVD-fm-hbn" firstAttribute="top" secondItem="fb2-fo-wJ4" secondAttribute="bottom" constant="234" id="WG9-Bh-lN2"/>
                                     <constraint firstAttribute="bottom" secondItem="9Yi-zU-lOf" secondAttribute="bottom" constant="22" id="Wix-t6-jdB"/>
                                     <constraint firstAttribute="trailing" secondItem="tRa-09-BRC" secondAttribute="trailing" constant="16" id="a8Q-tN-dyt"/>
                                     <constraint firstItem="fb2-fo-wJ4" firstAttribute="leading" secondItem="SDN-hZ-4Hc" secondAttribute="leading" constant="370" id="bhF-5e-oZL"/>

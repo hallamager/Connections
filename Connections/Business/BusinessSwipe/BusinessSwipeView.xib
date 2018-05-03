@@ -14,7 +14,7 @@
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BusinessSwipeView" customModule="Connections" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="413" height="561"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0rj-5U-LDL" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="413" height="561"/>
@@ -32,7 +32,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="companyImage" translatesAutoresizingMaskIntoConstraints="NO" id="vnD-XV-CtU">
-                            <rect key="frame" x="-1" y="0.0" width="414" height="438"/>
+                            <rect key="frame" x="0.0" y="0.0" width="413" height="438"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="companyImg"/>
@@ -103,20 +103,17 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="cardBackground"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                             <real key="value" value="7"/>
                         </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="cardBackground"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="fade"/>
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <userDefinedRuntimeAttributes>
-                <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
-                <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="businessCard" destination="890-db-LLu" id="cvB-C1-4ta"/>
                 <outlet property="businessHeadquarters" destination="0X5-hv-e03" id="8Pa-jJ-Nk1"/>

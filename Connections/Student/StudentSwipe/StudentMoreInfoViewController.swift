@@ -117,10 +117,6 @@ class StudentMoreInfoViewController: UIViewController {
         
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-    
 }
 
 class SkillsMoreInfoCell: UICollectionViewCell {

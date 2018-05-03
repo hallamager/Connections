@@ -29,6 +29,7 @@ class BusinessMoreInfoViewController: UIViewController {
         companyIndustry.text = business.industry
         companyName.text = business.username
         companyDescription.text = business.description
+        companyHeadquarters.text = business.businessHeadquarters
         
         // Create a storage reference from the URL
         let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(business.uuid)
@@ -62,10 +63,6 @@ class BusinessMoreInfoViewController: UIViewController {
             
         })
         
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
     }
     
 }
