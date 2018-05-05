@@ -14,6 +14,7 @@ import ViewAnimator
 class BusinessQuestionsListViewController: UIViewController {
     
     var business: Business!
+    var businesses = [Business]()
     var questionNumber: Int!
     var questionOnes = [QuestionOne]()
     var questionTwos = [QuestionTwo]()
@@ -22,12 +23,17 @@ class BusinessQuestionsListViewController: UIViewController {
     let ref = Database.database().reference().child("studentResponses")
     let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
     
+    let sections = ["Questions", "Answers"]
+    
     @IBOutlet var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var questionOne: UITextView!
     @IBOutlet weak var questionTitle: UILabel!
     
     @IBAction func nextQuestionButton(_ sender: Any) {
+        
+        guard let textField = textField.text, !textField.isEmpty else {
+            return
+        }
         
         if questionNumber == 1 {
             let refQuestion = Database.database().reference().child("studentResponses").child(business.uuid).child(Auth.auth().currentUser!.uid)
@@ -47,11 +53,22 @@ class BusinessQuestionsListViewController: UIViewController {
             refQuestion.updateChildValues(ex.toDict3())
         }
 
-        textField.resignFirstResponder()
+        self.textField.text! = ""
+        self.textField.resignFirstResponder()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let ref = Database.database().reference().child("business").child(business.uuid)
+        
+        ref.observe(.value, with: { snapshot in
+            if let business = Business(snapshot: snapshot) {
+                self.businesses.append(business)
+                self.tableView.reloadData()
+                print("business \(self.businesses.count)")
+            }
+        })
         
         if questionNumber == 1 {
             questionTitle.text = "Question One"
@@ -113,8 +130,8 @@ class BusinessQuestionsListViewController: UIViewController {
 
         navigationItem.title = business.username
         
-//        questionOne.text = questionText()
-        
+        tableView.transform = CGAffineTransform(rotationAngle: -(CGFloat)(Double.pi));
+
     }
     
     func questionText() -> String {
@@ -136,51 +153,160 @@ class BusinessQuestionsListViewController: UIViewController {
 extension BusinessQuestionsListViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.section == 0 {
+            return UITableViewAutomaticDimension
+        }
+        
         return UITableViewAutomaticDimension
+        
     }
 
 }
 
 extension BusinessQuestionsListViewController: UITableViewDataSource {
 
-    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
+    }
+    
+    func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if questionNumber == 1 {
-            return questionOnes.count
+        if section == 0 {
+
+            if questionNumber == 1 {
+                return questionOnes.count
+            }
+            
+            if questionNumber == 2 {
+                return questionTwos.count
+            } else {
+                return questionThrees.count
+            }
+            
         }
         
-        if questionNumber == 2 {
-            return questionTwos.count
-        } else {
-            return questionThrees.count
-        }
+        return businesses.count
         
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "questionOne") as! ShowQuestionOne
+        
+        if indexPath.section == 0 {
 
+            let cell = tableView.dequeueReusableCell(withIdentifier: "answer") as! ShowAnswer
+
+            if questionNumber == 1 {
+                let questionOne = questionOnes[indexPath.row]
+                cell.answer?.text = questionOne.questionOne
+                
+                let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(Auth.auth().currentUser!.uid)
+                // Download the data, assuming a max size of 1MB (you can change this as necessary)
+                storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+                    // Create a UIImage, add it to the array
+                    let pic = UIImage(data: data!)
+                    cell.studentImg.image = pic
+                }
+                
+                cell.answer.translatesAutoresizingMaskIntoConstraints = true
+                cell.answer.sizeToFit()
+                cell.answer.isScrollEnabled = false
+                cell.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi));
+                return cell
+            }
+            
+            if questionNumber == 2 {
+                let questionTwo = questionTwos[indexPath.row]
+                cell.answer?.text = questionTwo.questionTwo
+                
+                let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(Auth.auth().currentUser!.uid)
+                // Download the data, assuming a max size of 1MB (you can change this as necessary)
+                storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+                    // Create a UIImage, add it to the array
+                    let pic = UIImage(data: data!)
+                    cell.studentImg.image = pic
+                }
+                
+                cell.answer.translatesAutoresizingMaskIntoConstraints = true
+                cell.answer.sizeToFit()
+                cell.answer.isScrollEnabled = false
+                return cell
+            } else {
+                let questionThree = questionThrees[indexPath.row]
+                cell.answer?.text = questionThree.questionThree
+                
+                let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(Auth.auth().currentUser!.uid)
+                // Download the data, assuming a max size of 1MB (you can change this as necessary)
+                storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+                    // Create a UIImage, add it to the array
+                    let pic = UIImage(data: data!)
+                    cell.studentImg.image = pic
+                }
+                
+                cell.answer.translatesAutoresizingMaskIntoConstraints = true
+                cell.answer.sizeToFit()
+                cell.answer.isScrollEnabled = false
+                return cell
+            }
+
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "question") as! ShowQuestion
+        
         if questionNumber == 1 {
-            let questionOne = questionOnes[indexPath.row]
-            cell.questionOne?.text = questionOne.questionOne
+            cell.question.text = business.questionOne
+            
+            let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(business.uuid)
+            // Download the data, assuming a max size of 1MB (you can change this as necessary)
+            storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+                // Create a UIImage, add it to the array
+                let pic = UIImage(data: data!)
+                cell.companyImg.image = pic
+            }
+            
+            cell.question.translatesAutoresizingMaskIntoConstraints = true
+            cell.question.sizeToFit()
+            cell.question.isScrollEnabled = false
+            cell.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi));
             return cell
         }
         
         if questionNumber == 2 {
-            let questionTwo = questionTwos[indexPath.row]
-            cell.questionOne?.text = questionTwo.questionTwo
-            return cell
-        } else {
-            let questionThree = questionThrees[indexPath.row]
-            cell.questionOne?.text = questionThree.questionThree
+            cell.question.text = business.questionTwo
+            
+            let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(business.uuid)
+            // Download the data, assuming a max size of 1MB (you can change this as necessary)
+            storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+                // Create a UIImage, add it to the array
+                let pic = UIImage(data: data!)
+                cell.companyImg.image = pic
+            }
+            
+            cell.question.translatesAutoresizingMaskIntoConstraints = true
+            cell.question.sizeToFit()
+            cell.question.isScrollEnabled = false
             return cell
         }
-//
-//        cell.questionOne.translatesAutoresizingMaskIntoConstraints = true
-//        cell.questionOne.sizeToFit()
-//        cell.questionOne.isScrollEnabled = false
-//        cell.questionOne.layer.cornerRadius = 10.0
-
+        
+        if questionNumber == 3 {
+            cell.question.text = business.questionThree
+            
+            let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(business.uuid)
+            // Download the data, assuming a max size of 1MB (you can change this as necessary)
+            storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+                // Create a UIImage, add it to the array
+                let pic = UIImage(data: data!)
+                cell.companyImg.image = pic
+            }
+            
+            cell.question.translatesAutoresizingMaskIntoConstraints = true
+            cell.question.sizeToFit()
+            cell.question.isScrollEnabled = false
+            return cell
+        }
+    
+        return cell
+        
     }
 
 }

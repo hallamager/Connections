@@ -12,12 +12,12 @@ import Firebase
 class QuestionTwo {
     
     var uuid: String?
-    let questionTwo: String
+    let questionTwo: String?
     
     init?(snapshot: DataSnapshot) {
         if let snapshotData = snapshot.value as? [String: Any] {
             uuid = snapshot.key
-            questionTwo = snapshotData["Question Two Answer"] as! String
+            questionTwo = snapshotData["Question Two Answer"] as? String
         } else {
             return nil
         }
@@ -25,12 +25,12 @@ class QuestionTwo {
     }
     
     init(data: [String: Any]) {
-        questionTwo = data["Question Two Answer"] as! String
+        questionTwo = data["Question Two Answer"] as? String
     }
 
     
     func toDict2() -> [String: Any] {
-        return ["Question Two Answer": questionTwo]
+        return ["Question Two Answer": questionTwo!]
     }
 
     

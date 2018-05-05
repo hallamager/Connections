@@ -8,8 +8,9 @@
 
 import Foundation
 
-class ShowQuestionOne: UITableViewCell {
+class ShowAnswer: UITableViewCell {
     
-    @IBOutlet var questionOne: UITextView!
+    @IBOutlet weak var answer: UITextView!
+    @IBOutlet weak var studentImg: UIImageView!
     
 }
