@@ -161,7 +161,6 @@ class BusinessQuestionsListViewController: UIViewController, UITextFieldDelegate
         if questionNumber == 1 {
             return business.questionOne
         }
-        
         if questionNumber == 2 {
             return business.questionTwo
         } else {

@@ -17,11 +17,17 @@ class ShowAnswer: UITableViewCell {
     weak var delegate: RemoveAnswerCellDelegate?
     
     @IBOutlet weak var answer: UITextView!
+    @IBOutlet weak var studentAnswer: UITextView!
     @IBOutlet weak var studentImg: UIImageView!
+    @IBOutlet weak var studentProfilePic: UIImageView!
     
     @IBAction func removeAnswerBtn(_ sender: UIButton) {
         delegate?.didTapButton(sender)
         print("tapped")
+    }
+    
+    @IBAction func likeBtn(_ sender: UIButton) {
+        
     }
     
 }

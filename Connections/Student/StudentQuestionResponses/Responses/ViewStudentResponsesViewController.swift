@@ -9,62 +9,103 @@
 import Foundation
 import UIKit
 import Firebase
+import ViewAnimator
 
 class ViewStudentResponses: UIViewController {
     
     var businesses = [Business]()
     var student: Student!
+    var business: Business!
     var questionNumber: Int!
     var studentResponses = [StudentResponses]()
     var studentResponse: StudentResponses!
     
     let ref = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)")
+    let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
     
-    @IBOutlet var businessQuestion: UILabel!
-    @IBOutlet var studentAnswer: UILabel!
+    let sections = ["Questions", "Answers"]
+    
+    @IBOutlet weak var questionTitle: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = student.username
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "Avenir Next", size: 17)!]
+        
+        if questionNumber == 1 {
+            questionTitle.text = "Question One"
+        }
+        
+        if questionNumber == 2 {
+            questionTitle.text = "Question Two"
+        }
+        
+        if questionNumber == 3 {
+            questionTitle.text = "Question Three"
+        }
+        
+        ref.observe(.value, with: { snapshot in
+            self.businesses.removeAll()
+            if let business = Business(snapshot: snapshot) {
+                self.businesses.append(business)
+                self.tableView.reloadData()
+                print("business \(self.businesses.count)")
+            }
+        })
         
         let refAnswer = Database.database().reference().child("studentResponses/\(Auth.auth().currentUser!.uid)").child(student.uuid)
         
-        ref.observeSingleEvent(of: .value, with: { snapshot in
-            if let business = Business(snapshot: snapshot) {
-                if self.questionNumber == 1 {
-                    self.businessQuestion.text = business.questionOne
-                    self.businesses.append(business)
+        if self.questionNumber == 1 {
+            refAnswer.child("Answer One").observe(.value, with: { snapshot in
+                self.studentResponses.removeAll()
+                if let business = StudentResponses(snapshot: snapshot) {
+                    
+                    self.studentResponses.append(business)
+                    
+                    self.tableView.rowHeight = UITableViewAutomaticDimension
+                    self.tableView.estimatedRowHeight = 140
+                    self.tableView.reloadData()
+                    self.tableView.animateViews(animations: self.animations, delay: 0.3)
+                    
                 }
-                if self.questionNumber == 2 {
-                    self.businessQuestion.text = business.questionTwo
-                    self.businesses.append(business)
-                }
-                if self.questionNumber == 3 {
-                    self.businessQuestion.text = business.questionThree
-                    self.businesses.append(business)
-                }
-                
-            }
-        })
+            })
+        }
         
-        refAnswer.observeSingleEvent(of: .value, with: { snapshot in
-            if let business = StudentResponses(snapshot: snapshot) {
-                if self.questionNumber == 1 {
+        if self.questionNumber == 2 {
+            refAnswer.child("Answer Two").observe(.value, with: { snapshot in
+                self.studentResponses.removeAll()
+                if let business = StudentResponses(snapshot: snapshot) {
+
                     self.studentResponses.append(business)
-                    self.studentAnswer.text = business.questionOne
+                    
+                    self.tableView.rowHeight = UITableViewAutomaticDimension
+                    self.tableView.estimatedRowHeight = 140
+                    self.tableView.reloadData()
+                    self.tableView.animateViews(animations: self.animations, delay: 0.3)
+                    
                 }
-                if self.questionNumber == 2 {
+            })
+        }
+        
+        if self.questionNumber == 3 {
+            refAnswer.child("Answer Three").observe(.value, with: { snapshot in
+                self.studentResponses.removeAll()
+                if let business = StudentResponses(snapshot: snapshot) {
+
                     self.studentResponses.append(business)
-                    self.studentAnswer.text = business.questionTwo
+                    
+                    self.tableView.rowHeight = UITableViewAutomaticDimension
+                    self.tableView.estimatedRowHeight = 140
+                    self.tableView.reloadData()
+                    self.tableView.animateViews(animations: self.animations, delay: 0.3)
+                    
                 }
-                if self.questionNumber == 3 {
-                    self.studentResponses.append(business)
-                    self.studentAnswer.text = business.questionThree
-                }
-                
-            }
-        })
+            })
+        }
+        
+        tableView.transform = CGAffineTransform(rotationAngle: -(CGFloat)(Double.pi));
         
     }
     

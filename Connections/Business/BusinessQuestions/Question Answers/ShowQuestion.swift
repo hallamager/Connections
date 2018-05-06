@@ -11,7 +11,9 @@ import Foundation
 class ShowQuestion: UITableViewCell {
     
     @IBOutlet weak var question: UITextView!
+    @IBOutlet weak var businessQuestion: UITextView!
     @IBOutlet weak var questionBackground: UIViewStyles!
     @IBOutlet weak var companyImg: UIImageView!
+    @IBOutlet weak var businessImg: UIImageView!
     
 }
