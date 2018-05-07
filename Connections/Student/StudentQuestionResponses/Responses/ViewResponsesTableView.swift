@@ -198,18 +198,29 @@ extension ViewStudentResponses: RemoveAnswerCellDelegate {
                 
                 if questionNumber == 1 {
                     
-
+                    let ref = Database.database().reference().child("studentResponses").child(Auth.auth().currentUser!.uid).child(student.uuid).child("Answer One")
                     
+                    ref.updateChildValues(["Status" : "Liked"])
+                    
+                    print("tapped")
                 }
                 
                 if questionNumber == 2 {
                     
+                    let ref = Database.database().reference().child("studentResponses").child(Auth.auth().currentUser!.uid).child(student.uuid).child("Answer Two")
                     
+                    ref.updateChildValues(["Status" : "Liked"])
+                    
+                    print("tapped")
                 }
                 
                 if questionNumber == 3 {
 
+                    let ref = Database.database().reference().child("studentResponses").child(Auth.auth().currentUser!.uid).child(student.uuid).child("Answer Three")
                     
+                    ref.updateChildValues(["Status" : "Liked"])
+                    
+                    print("tapped")
                 }
                 
             }

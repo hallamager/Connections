@@ -38,19 +38,19 @@ class BusinessQuestionsListViewController: UIViewController, UITextFieldDelegate
         
         if questionNumber == 1 {
             let refQuestion = Database.database().reference().child("studentResponses").child(business.uuid).child(Auth.auth().currentUser!.uid).child("Answer One")
-            let ex = QuestionOne(data: ["Question One Answer": self.textField.text!])
+            let ex = QuestionOne(data: ["Question One Answer": self.textField.text!, "Status": "Sent"])
             refQuestion.updateChildValues(ex.toDict1())
         }
         
         if questionNumber == 2 {
             let refQuestion = Database.database().reference().child("studentResponses").child(business.uuid).child(Auth.auth().currentUser!.uid).child("Answer Two")
-            let ex = QuestionTwo(data: ["Question Two Answer": self.textField.text!])
+            let ex = QuestionTwo(data: ["Question Two Answer": self.textField.text!, "Status": "Sent"])
             refQuestion.updateChildValues(ex.toDict2())
         }
         
         if questionNumber == 3 {
             let refQuestion = Database.database().reference().child("studentResponses").child(business.uuid).child(Auth.auth().currentUser!.uid).child("Answer Three")
-            let ex = QuestionThree(data: ["Question Three Answer": self.textField.text!])
+            let ex = QuestionThree(data: ["Question Three Answer": self.textField.text!, "Status": "Sent"])
             refQuestion.updateChildValues(ex.toDict3())
         }
 

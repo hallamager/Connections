@@ -20,6 +20,9 @@ class ShowAnswer: UITableViewCell {
     @IBOutlet weak var studentAnswer: UITextView!
     @IBOutlet weak var studentImg: UIImageView!
     @IBOutlet weak var studentProfilePic: UIImageView!
+    @IBOutlet weak var status: UILabel!
+    @IBOutlet weak var likedBtn: UIButtonStyles!
+    @IBOutlet weak var likedImg: UIImageView!
     
     @IBAction func removeAnswerBtn(_ sender: UIButton) {
         delegate?.didTapButton(sender)
@@ -27,7 +30,12 @@ class ShowAnswer: UITableViewCell {
     }
     
     @IBAction func likeBtn(_ sender: UIButton) {
+        delegate?.didTapButton(sender)
         
+        likedBtn.backgroundColor = UIColor(red: 8/255, green: 80/255, blue: 120/255, alpha: 1.0)
+        likedImg.image = #imageLiteral(resourceName: "ThumbsUpWhite")
+        
+        print("tapped")
     }
     
 }

@@ -263,6 +263,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="Pmq-eH-Na9" id="p2n-Om-6ei"/>
                         <outlet property="errorValidation" destination="FLY-4q-8CL" id="RFa-Xn-AnW"/>
+                        <outlet property="loginBtn" destination="ZZI-IA-oBW" id="B6y-XV-Zaz"/>
                         <outlet property="passwordTextField" destination="sOP-mn-e6g" id="x0D-QW-9Ci"/>
                     </connections>
                 </viewController>

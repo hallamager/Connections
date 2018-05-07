@@ -27,6 +27,7 @@ class ViewStudentResponses: UIViewController {
     
     @IBOutlet weak var questionTitle: UILabel!
     @IBOutlet weak var tableView: UITableView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,14 +36,29 @@ class ViewStudentResponses: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "Avenir Next", size: 17)!]
         
         if questionNumber == 1 {
+            
+            let ref = Database.database().reference().child("studentResponses").child(Auth.auth().currentUser!.uid).child(student.uuid).child("Answer One")
+
+            ref.updateChildValues(["Status" : "Read"])
+            
             questionTitle.text = "Question One"
         }
         
         if questionNumber == 2 {
+            
+            let ref = Database.database().reference().child("studentResponses").child(Auth.auth().currentUser!.uid).child(student.uuid).child("Answer Two")
+            
+            ref.updateChildValues(["Status" : "Read"])
+            
             questionTitle.text = "Question Two"
         }
         
         if questionNumber == 3 {
+            
+            let ref = Database.database().reference().child("studentResponses").child(Auth.auth().currentUser!.uid).child(student.uuid).child("Answer Three")
+            
+            ref.updateChildValues(["Status" : "Read"])
+            
             questionTitle.text = "Question Three"
         }
         
@@ -107,6 +123,10 @@ class ViewStudentResponses: UIViewController {
         
         tableView.transform = CGAffineTransform(rotationAngle: -(CGFloat)(Double.pi));
         
+    }
+    
+    @IBAction func nextAnswerBtn(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

@@ -62,6 +62,7 @@ extension BusinessQuestionsListViewController: UITableViewDataSource {
             if questionNumber == 1 {
                 let questionOne = questionOnes[indexPath.row]
                 cell.answer?.text = questionOne.questionOne
+                cell.status?.text = questionOne.status
                 
                 let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(Auth.auth().currentUser!.uid)
                 // Download the data, assuming a max size of 1MB (you can change this as necessary)
@@ -187,7 +188,7 @@ extension BusinessQuestionsListViewController: RemoveAnswerCellDelegate {
                     
                     let refDeleteAnswer = Database.database().reference().child("studentResponses").child(business.uuid).child(Auth.auth().currentUser!.uid).child("Answer One")
                     
-                    refDeleteAnswer.child("Question One Answer").removeValue()
+                    refDeleteAnswer.removeValue()
                     
                 }
                 
@@ -195,7 +196,7 @@ extension BusinessQuestionsListViewController: RemoveAnswerCellDelegate {
                     
                     let refDeleteAnswer = Database.database().reference().child("studentResponses").child(business.uuid).child(Auth.auth().currentUser!.uid).child("Answer Two")
                     
-                    refDeleteAnswer.child("Question Two Answer").removeValue()
+                    refDeleteAnswer.removeValue()
                     
                 }
                 
@@ -203,7 +204,7 @@ extension BusinessQuestionsListViewController: RemoveAnswerCellDelegate {
                                         
                     let refDeleteAnswer = Database.database().reference().child("studentResponses").child(business.uuid).child(Auth.auth().currentUser!.uid).child("Answer Three")
                     
-                    refDeleteAnswer.child("Question Three Answer").removeValue()
+                    refDeleteAnswer.removeValue()
                     
                 }
                 
