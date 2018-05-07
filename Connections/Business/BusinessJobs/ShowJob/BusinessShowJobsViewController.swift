@@ -68,7 +68,20 @@ class BusinessShowJobsViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
-    @IBAction func applyBtn(_ sender: Any) {
+    @IBAction func applyBtn(_ sender: UIButton) {
+        
+        sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        
+        UIView.animate(withDuration: 1.5,
+                       delay: 0,
+                       usingSpringWithDamping: CGFloat(0.25),
+                       initialSpringVelocity: CGFloat(8.0),
+                       options: UIViewAnimationOptions.allowUserInteraction,
+                       animations: {
+                        sender.transform = CGAffineTransform.identity
+        },
+                       completion: { Void in()  }
+        )
         
         appliedBtn(self.jobs[counter])
         

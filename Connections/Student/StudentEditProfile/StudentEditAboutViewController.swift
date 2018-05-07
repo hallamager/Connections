@@ -78,7 +78,7 @@ class StudentEditAboutViewController: UIViewController, UITextFieldDelegate, UII
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func confirmBtn(_ sender: Any) {
+    @IBAction func confirmBtn(_ sender: UIButton) {
         
         ref.updateChildValues(["Username": self.userUsername.text!, "Headline": self.headline.text!, "Summary": self.summary.text!])
         
@@ -93,6 +93,19 @@ class StudentEditAboutViewController: UIViewController, UITextFieldDelegate, UII
                 
             })
         }
+        
+        sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        
+        UIView.animate(withDuration: 1.5,
+                       delay: 0,
+                       usingSpringWithDamping: CGFloat(0.25),
+                       initialSpringVelocity: CGFloat(8.0),
+                       options: UIViewAnimationOptions.allowUserInteraction,
+                       animations: {
+                        sender.transform = CGAffineTransform.identity
+        },
+                       completion: { Void in()  }
+        )
         
         presentStudentProfileViewController()
         
