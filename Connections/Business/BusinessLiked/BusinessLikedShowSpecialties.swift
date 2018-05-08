@@ -21,7 +21,7 @@ extension BusinessLikedViewController: UICollectionViewDataSource {
             print("specialties is\(specialties.count)")
             return specialties.count
         } else {
-            return businesses.count
+            return matchedBusinesses.count
         }
 
     
@@ -41,7 +41,7 @@ extension BusinessLikedViewController: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "matchedCell", for: indexPath as IndexPath) as! MatchedCell
         
-        let business = businesses[indexPath.row]
+        let business = matchedBusinesses[indexPath.row]
         
         // Create a storage reference from the URL
         let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(business.uuid)

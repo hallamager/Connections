@@ -54,7 +54,7 @@ class BusinessLikedCell: FoldingCell {
     override func animationDuration(_ itemIndex:NSInteger, type:AnimationType)-> TimeInterval {
         
         // durations count equal it itemCount
-        let durations = [0.20, 0.20, 0.20] // timing animation for each view
+        let durations = [0.20, 0.20, 0.20, 0.20] // timing animation for each view
         return durations[itemIndex]
     }
     

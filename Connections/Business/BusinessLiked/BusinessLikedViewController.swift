@@ -22,6 +22,7 @@ class BusinessLikedViewController: UIViewController {
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
     var businesses = [Business]()
+    var matchedBusinesses = [Business]()
     var specialties = [Specialties]()
     var recentMatchesTitle = ["Recent Matches"]
     let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
@@ -44,12 +45,12 @@ class BusinessLikedViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "Avenir Next", size: 17)!]
         
         
-        loadRelatedBusinesses(for: Auth.auth().currentUser!.uid) { success, businesses in
-            self.businesses = businesses
+        loadRelatedBusinesses(for: Auth.auth().currentUser!.uid) { success, likedBusinesses in
+            self.businesses = likedBusinesses
             self.tableView.reloadData()
             self.tableView.animateViews(animations: self.animations, delay: 0.3)
             
-            if businesses.count == 0 {
+            if likedBusinesses.count == 0 {
                 self.noBusinessesLiked.text! = "You haven't liked any businesses yet. Get swiping!"
                 print("true")
             } else {
@@ -58,14 +59,14 @@ class BusinessLikedViewController: UIViewController {
             
         }
         
-        loadMatches(for: Auth.auth().currentUser!.uid) { success, businesses in
-            self.businesses = businesses
+        loadMatches(for: Auth.auth().currentUser!.uid) { success, matchedBusinesses in
+            self.matchedBusinesses = matchedBusinesses
             self.collectionView.reloadData()
             self.collectionView.performBatchUpdates({
                 self.collectionView.animateViews(animations: self.animationsZoom)
             }, completion: nil)
             
-            if businesses.count == 0 {
+            if matchedBusinesses.count == 0 {
                 self.noRecentMatches.text! = "You have no recent matches. Get swiping!"
                 print("true")
             } else {
@@ -181,8 +182,6 @@ extension BusinessLikedViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if tableView == self.tableView {
-        
             let cell = tableView.cellForRow(at: indexPath) as! FoldingCell
             
             if cell.isAnimating() {
@@ -205,8 +204,6 @@ extension BusinessLikedViewController: UITableViewDelegate {
                 tableView.beginUpdates()
                 tableView.endUpdates()
             }, completion: nil)
-            
-        }
         
     }
     
@@ -216,7 +213,7 @@ extension BusinessLikedViewController: UITableViewDataSource {
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             
-        print(businesses.count)
+        print("business \(businesses.count)")
         return businesses.count
 
     }

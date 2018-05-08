@@ -27,21 +27,21 @@ extension BusinessLikedViewController  {
             }
             
             let userRef = Database.database().reference(withPath: "business")
-            var businesses = [Business]()
+            var matchedBusinesses = [Business]()
             var count = 0
             if uids.count != 0 {
                 uids.forEach { uid in
                     userRef.child(uid).observeSingleEvent(of: .value) { snapshot in
                         let business = Business(snapshot: snapshot)
-                        businesses.append(business!)
+                        matchedBusinesses.append(business!)
                         count += 1
                         if count == uids.count {
-                            completion(true, businesses)
+                            completion(true, matchedBusinesses)
                         }
                     }
                 }
             } else {
-                completion(true, businesses)
+                completion(true, matchedBusinesses)
             }
         }
     }
