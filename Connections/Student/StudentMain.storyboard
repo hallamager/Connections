@@ -577,13 +577,10 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Aej-VM-coM">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Aej-VM-coM">
                                                 <rect key="frame" x="0.0" y="60" width="375" height="459"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="459" id="ABS-h2-qR8"/>
-                                                    <constraint firstAttribute="width" constant="375" id="Q9F-nz-rNn"/>
-                                                </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="answer" rowHeight="110" id="6zW-pj-2m2" customClass="ShowAnswer" customModule="Connections" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="375" height="110"/>
@@ -871,10 +868,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="Aej-VM-coM" secondAttribute="bottom" constant="15" id="93S-yR-szb"/>
-                                            <constraint firstAttribute="trailing" secondItem="Aej-VM-coM" secondAttribute="trailing" id="CSL-0z-CU4"/>
                                             <constraint firstAttribute="trailing" secondItem="Us6-wM-sRd" secondAttribute="trailing" constant="16" id="Er5-Lw-qAj"/>
-                                            <constraint firstItem="Aej-VM-coM" firstAttribute="leading" secondItem="w09-Mf-fzG" secondAttribute="leading" id="VTl-TS-LB0"/>
                                             <constraint firstItem="Us6-wM-sRd" firstAttribute="leading" secondItem="w09-Mf-fzG" secondAttribute="leading" constant="16" id="cRH-Ve-MX1"/>
                                             <constraint firstItem="Us6-wM-sRd" firstAttribute="top" secondItem="w09-Mf-fzG" secondAttribute="top" constant="8" id="ycc-dw-2dQ"/>
                                         </constraints>

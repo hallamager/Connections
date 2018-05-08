@@ -51,6 +51,15 @@ class StudentCreateProfileLandingViewController: UIViewController {
                 
             } else {
                 
+                let animation = CABasicAnimation(keyPath: "position")
+                animation.duration = 0.07
+                animation.repeatCount = 4
+                animation.autoreverses = true
+                animation.fromValue = NSValue(cgPoint: CGPoint(x: self.validationAlert.center.x - 10, y: self.validationAlert.center.y))
+                animation.toValue = NSValue(cgPoint: CGPoint(x: self.validationAlert.center.x + 10, y: self.validationAlert.center.y))
+                
+                self.validationAlert.layer.add(animation, forKey: "position")
+                
                 self.createButton.isEnabled = false
                 self.validationAlert.text = "Not all sections have been completed."
                 
@@ -69,7 +78,20 @@ class StudentCreateProfileLandingViewController: UIViewController {
         
     }
     
-    @IBAction func createProfileBtn(_ sender: Any) {
+    @IBAction func createProfileBtn(_ sender: UIButton) {
+        
+        sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        
+        UIView.animate(withDuration: 1.5,
+                       delay: 0,
+                       usingSpringWithDamping: CGFloat(0.25),
+                       initialSpringVelocity: CGFloat(8.0),
+                       options: UIViewAnimationOptions.allowUserInteraction,
+                       animations: {
+                        sender.transform = CGAffineTransform.identity
+        },
+                       completion: { Void in()  }
+        )
         
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()

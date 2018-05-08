@@ -42,9 +42,31 @@ class BusinessAboutViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    @IBAction func confirmAbout(_ sender: Any) {
+    @IBAction func confirmAbout(_ sender: UIButton) {
+        
+        sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        
+        UIView.animate(withDuration: 1.5,
+                       delay: 0,
+                       usingSpringWithDamping: CGFloat(0.25),
+                       initialSpringVelocity: CGFloat(8.0),
+                       options: UIViewAnimationOptions.allowUserInteraction,
+                       animations: {
+                        sender.transform = CGAffineTransform.identity
+        },
+                       completion: { Void in()  }
+        )
         
         guard let companyIndustry = companyIndustry.text, !companyIndustry.isEmpty, let companyDescription = companyDescription.text, !companyDescription.isEmpty, let headquarters = headquarters.text, !headquarters.isEmpty, let companySize = companySize.text, !companySize.isEmpty, let companyWebsite = companyWebsite.text, !companyWebsite.isEmpty else {
+            
+            let animation = CABasicAnimation(keyPath: "position")
+            animation.duration = 0.07
+            animation.repeatCount = 4
+            animation.autoreverses = true
+            animation.fromValue = NSValue(cgPoint: CGPoint(x: self.validationAlert.center.x - 10, y: self.validationAlert.center.y))
+            animation.toValue = NSValue(cgPoint: CGPoint(x: self.validationAlert.center.x + 10, y: self.validationAlert.center.y))
+            
+            self.validationAlert.layer.add(animation, forKey: "position")
             
             self.validationAlert.text! = "You must enter every text field to continue."
             
