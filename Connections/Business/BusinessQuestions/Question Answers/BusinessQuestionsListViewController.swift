@@ -27,7 +27,6 @@ class BusinessQuestionsListViewController: UIViewController, UITextFieldDelegate
     
     @IBOutlet var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var questionTitle: UILabel!
     @IBOutlet weak var sendAnswer: UIButtonStyles!
     
     @IBAction func nextQuestionButton(_ sender: UIButton) {
@@ -83,18 +82,6 @@ class BusinessQuestionsListViewController: UIViewController, UITextFieldDelegate
                 print("business \(self.businesses.count)")
             }
         })
-        
-        if questionNumber == 1 {
-            questionTitle.text = "Question One"
-        }
-        
-        if questionNumber == 2 {
-            questionTitle.text = "Question Two"
-        }
-        
-        if questionNumber == 3 {
-            questionTitle.text = "Question Three"
-        }
         
         let refAnswer = Database.database().reference().child("studentResponses/\(business.uuid)").child(Auth.auth().currentUser!.uid)
         
