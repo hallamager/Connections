@@ -14,7 +14,7 @@ import FirebaseAuth
 import FirebaseDatabase
 import GeoFire
 
-class StudentSwipeViewController: UIViewController, CLLocationManagerDelegate {
+class StudentSwipeViewController: UIViewController {
     
     @IBOutlet weak var kolodaView: KolodaView!
     @IBOutlet weak var OpenMenuLeft: UIBarButtonItem!
@@ -26,17 +26,12 @@ class StudentSwipeViewController: UIViewController, CLLocationManagerDelegate {
     let ref = Database.database().reference().child("student")
     var businesses = [Business]()
     var students = [Student]()
-    let locationManager = CLLocationManager()
     let geoRefBusiness = GeoFire(firebaseRef: Database.database().reference().child("business_locations"))
     
     var counter = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
-        locationManager.startUpdatingLocation()
         
         kolodaView.dataSource = self
         kolodaView.delegate = self

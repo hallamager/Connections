@@ -3669,14 +3669,14 @@
             <objects>
                 <viewController storyboardIdentifier="BusinessEditProfileViewController" id="GBY-az-XeF" customClass="BusinessEditProfileViewController" customModule="Connections" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2hy-Ud-sho">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1436"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1606"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n6f-zU-zcm">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="1436"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1606"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jiX-Rb-Hdh">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1436"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1606"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="writing-notes-idea-conference" translatesAutoresizingMaskIntoConstraints="NO" id="JJQ-Ho-qq1">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="182"/>
@@ -3716,7 +3716,7 @@
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fof-F6-Ij0">
                                                 <rect key="frame" x="0.0" y="158" width="414" height="605"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
                                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationLevel="1" indentationWidth="10" reuseIdentifier="infoCell" rowHeight="404" id="6NN-ah-FH2" customClass="InfoCell" customModule="Connections" customModuleProvider="target">
@@ -4342,11 +4342,60 @@
                                                     <outlet property="delegate" destination="GBY-az-XeF" id="18b-G5-Eqn"/>
                                                 </connections>
                                             </collectionView>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xYe-L8-frQ" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="1495" width="397" height="68"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Update your location to match your current location." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4v-Bz-QFj">
+                                                        <rect key="frame" x="20" y="2" width="222" height="64"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zj8-TB-Zpu" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
+                                                        <rect key="frame" x="266" y="8" width="123" height="52"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                        <state key="normal" title="Update">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
+                                                                <color key="value" red="0.59607843140000005" green="0.81568627449999997" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
+                                                                <color key="value" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="UpdateLocationBtn:" destination="GBY-az-XeF" eventType="touchUpInside" id="oqg-kA-CcR"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Update Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOo-xo-npT">
+                                                <rect key="frame" x="22" y="1455" width="158" height="32"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="414" id="DFQ-Q1-EpE"/>
-                                            <constraint firstAttribute="height" constant="1436" id="Qfy-Xq-Me1"/>
+                                            <constraint firstAttribute="height" constant="1606" id="Qfy-Xq-Me1"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -4373,7 +4422,7 @@
                             <color key="tintColor" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
-                    <size key="freeformSize" width="414" height="1500"/>
+                    <size key="freeformSize" width="414" height="1670"/>
                     <connections>
                         <outlet property="collectionView" destination="2wZ-7y-X2Y" id="5Op-ji-JXx"/>
                         <outlet property="cultureOne" destination="QaZ-r7-MUU" id="CmT-fn-PvT"/>
@@ -4385,6 +4434,7 @@
                         <outlet property="questionThree" destination="O0Q-5b-cVi" id="xiS-xH-MYE"/>
                         <outlet property="questionTwo" destination="MAc-wW-ebt" id="hN3-Rs-D6k"/>
                         <outlet property="tableView" destination="fof-F6-Ij0" id="gnd-Ha-cgI"/>
+                        <outlet property="updateLocationLabel" destination="i4v-Bz-QFj" id="xCK-RM-XDn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7x5-BV-CAF" userLabel="First Responder" sceneMemberID="firstResponder"/>

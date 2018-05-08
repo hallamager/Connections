@@ -11,8 +11,9 @@ import UIKit
 import Firebase
 import ViewAnimator
 import FirebaseDatabase
+import GeoFire
 
-class BusinessEditProfileViewController: UIViewController {
+class BusinessEditProfileViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet var openMenu: UIBarButtonItem!
     @IBOutlet var profilePic: UIImageView!
@@ -23,8 +24,8 @@ class BusinessEditProfileViewController: UIViewController {
     @IBOutlet weak var cultureOne: UILabel!
     @IBOutlet weak var cultureTwo: UILabel!
     @IBOutlet weak var cultureThree: UILabel!
+    @IBOutlet weak var updateLocationLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     
     let sections = ["Info", "Jobs"]
     
@@ -32,9 +33,10 @@ class BusinessEditProfileViewController: UIViewController {
     let ref = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)")
     let refJobs = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)").child("Jobs")
     let refSpecialties = Database.database().reference().child("business").child(Auth.auth().currentUser!.uid).child("specialties")
+    let geoRefBusiness = GeoFire(firebaseRef: Database.database().reference().child("business_locations"))
     var jobs = [Job]()
     var specialties = [Specialties]()
-    
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,6 +113,10 @@ class BusinessEditProfileViewController: UIViewController {
         
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        locationManager.stopUpdatingLocation()
+    }
+    
     @IBAction func addJobs(_ sender: Any) {
         
         let storyboard:UIStoryboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
@@ -142,6 +148,35 @@ class BusinessEditProfileViewController: UIViewController {
         self.navigationController?.pushViewController(BusinessDetailsViewController, animated: true)
         
     }
+    
+    @IBAction func UpdateLocationBtn(_ sender: UIButton) {
+        
+        sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        
+        UIView.animate(withDuration: 1.5,
+                       delay: 0,
+                       usingSpringWithDamping: CGFloat(0.25),
+                       initialSpringVelocity: CGFloat(8.0),
+                       options: UIViewAnimationOptions.allowUserInteraction,
+                       animations: {
+                        sender.transform = CGAffineTransform.identity
+        },
+                       completion: { Void in()  }
+        )
+        
+        self.updateLocationLabel.text = "Your location has been updated!"
+        
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return }
+        geoRefBusiness.setLocation(location, forKey: (Auth.auth().currentUser?.uid)!)
+    }
+    
 }
 
 extension BusinessEditProfileViewController: UITableViewDelegate {
