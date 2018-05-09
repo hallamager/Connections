@@ -31,6 +31,8 @@
 		A00748741F912B0C004AF885 /* BusinessSwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00748731F912B0C004AF885 /* BusinessSwipeView.swift */; };
 		A00748761F912E3F004AF885 /* LikeDislikeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00748751F912E3F004AF885 /* LikeDislikeInfo.swift */; };
 		A0076AB2204AA94500A52500 /* StudentEditAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0076AB1204AA94500A52500 /* StudentEditAboutViewController.swift */; };
+		A01E644220A383D5003AC93A /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01E644120A383D5003AC93A /* CustomOverlayView.swift */; };
+		A01E644420A38450003AC93A /* CustomOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01E644320A38450003AC93A /* CustomOverlayView.xib */; };
 		A02E7F39208BA72400AEED43 /* StudentLikedEducationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E7F38208BA72400AEED43 /* StudentLikedEducationCell.swift */; };
 		A03B44BE2055AF4700CFC682 /* EducationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03B44BD2055AF4700CFC682 /* EducationCell.swift */; };
 		A03D991F1FD305160034AE24 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03D991E1FD305160034AE24 /* SideMenuTableViewCell.swift */; };
@@ -175,6 +177,8 @@
 		A00748731F912B0C004AF885 /* BusinessSwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSwipeView.swift; sourceTree = "<group>"; };
 		A00748751F912E3F004AF885 /* LikeDislikeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeDislikeInfo.swift; sourceTree = "<group>"; };
 		A0076AB1204AA94500A52500 /* StudentEditAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentEditAboutViewController.swift; sourceTree = "<group>"; };
+		A01E644120A383D5003AC93A /* CustomOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
+		A01E644320A38450003AC93A /* CustomOverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomOverlayView.xib; sourceTree = "<group>"; };
 		A02E7F38208BA72400AEED43 /* StudentLikedEducationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLikedEducationCell.swift; sourceTree = "<group>"; };
 		A03B44BD2055AF4700CFC682 /* EducationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationCell.swift; sourceTree = "<group>"; };
 		A03D991E1FD305160034AE24 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -428,6 +432,8 @@
 				A00748571F912189004AF885 /* BusinessSwipeViewController.swift */,
 				A0E4B048204FEAAF002D7534 /* BusinessSwipeLocation.swift */,
 				A09739E22020A4850087F7CE /* BusinessMoreInfoViewController.swift */,
+				A01E644120A383D5003AC93A /* CustomOverlayView.swift */,
+				A01E644320A38450003AC93A /* CustomOverlayView.xib */,
 				A0973A14202503F50087F7CE /* Business.swift */,
 				A0E4B04A204FFA53002D7534 /* Bournemouth.gpx */,
 				A0E4B04D20502AEB002D7534 /* ViewedManager.swift */,
@@ -884,6 +890,7 @@
 				5FBF42572052911B00B93FED /* StudentRegister.storyboard in Resources */,
 				5FBF425A2052945D00B93FED /* StudentMain.storyboard in Resources */,
 				5F66BEDA2060125A0002FB8E /* ExperienceTitle.xib in Resources */,
+				A01E644420A38450003AC93A /* CustomOverlayView.xib in Resources */,
 				A0929C942089E51700E680B9 /* EducationMoreInfoTitle.xib in Resources */,
 				5F66BED82060105C0002FB8E /* EducationTitle.xib in Resources */,
 				A007485D1F912189004AF885 /* Assets.xcassets in Resources */,
@@ -942,6 +949,7 @@
 				"${BUILT_PRODUCTS_DIR}/Koloda/Koloda.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
+				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
 				"${BUILT_PRODUCTS_DIR}/ViewAnimator/ViewAnimator.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -958,6 +966,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Koloda.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewAnimator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -1027,6 +1036,7 @@
 				A041D282208BE1EB003A97F7 /* BusinessLikedSpecialtiesCell.swift in Sources */,
 				A0F5CB12206E6E71005AEEF3 /* StudentInviteViewController.swift in Sources */,
 				A0D68A35206C24D70040BDD1 /* ChatInvite.swift in Sources */,
+				A01E644220A383D5003AC93A /* CustomOverlayView.swift in Sources */,
 				A0A6B0FA204983A100AC357F /* EditJobsViewController.swift in Sources */,
 				A0D7F66F20791E9C00129594 /* AppManager.swift in Sources */,
 				A09AE9EA208B44DB0081D45A /* StudentLikedSkillCell.swift in Sources */,

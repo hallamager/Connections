@@ -78,15 +78,6 @@ class StudentEditProfileViewController: UIViewController {
             
         })
         
-        // Create a storage reference from the URL
-        let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child((Auth.auth().currentUser?.uid)!)
-        // Download the data, assuming a max size of 1MB (you can change this as necessary)
-        storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
-            // Create a UIImage, add it to the array
-            let pic = UIImage(data: data!)
-            self.profilePic.image = pic
-        }
-        
         refEducation.observeSingleEvent(of: .value) { snapshot in
             
             self.educations.removeAll()
@@ -106,14 +97,14 @@ class StudentEditProfileViewController: UIViewController {
             
             self.scrollView.contentSize.height += newHeight
             
-            print("scroll view height\(self.scrollView.contentSize.height)")
+            print("education scroll view height\(self.scrollView.contentSize.height)")
             
         }
         
         refExperience.observeSingleEvent(of: .value) { snapshot in
             
             self.experiences.removeAll()
-
+            
             for experience in snapshot.children {
                 if let data = experience as? DataSnapshot {
                     if let experience = Experience(snapshot: data) {
@@ -129,8 +120,17 @@ class StudentEditProfileViewController: UIViewController {
             
             self.scrollView.contentSize.height += newHeight
             
-            print("scroll view height\(self.scrollView.contentSize.height)")
+            print("experience scroll view height\(self.scrollView.contentSize.height)")
             
+        }
+        
+        // Create a storage reference from the URL
+        let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child((Auth.auth().currentUser?.uid)!)
+        // Download the data, assuming a max size of 1MB (you can change this as necessary)
+        storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+            // Create a UIImage, add it to the array
+            let pic = UIImage(data: data!)
+            self.profilePic.image = pic
         }
         
         //open menu with tab bar button
@@ -143,16 +143,34 @@ class StudentEditProfileViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+        refEducation.observe(.childAdded, with: { (snapshot) in
+            
+            for education in snapshot.children {
+                if let data = education as? DataSnapshot {
+                    if let education = Education(snapshot: data) {
+                        self.educations.append(education)
+                    }
+                }
+            }
+            
+            self.tableView.reloadData()
+            
+        })
+        
+    }
+    
     func caclculateTableViewHeight() {
         
         print("section header: \(tableView.sectionHeaderHeight)")
-        print("row header: \(tableView.rowHeight)")
+        print("row height: \(tableView.rowHeight)")
         
         let newHeight: CGFloat = (tableView.sectionHeaderHeight * 2) + (CGFloat(tableView.numberOfRows(inSection: 0) + tableView.numberOfRows(inSection: 1))) * (tableView.rowHeight)
-
+        
         tableView.frame = CGRect(x: tableView.frame.minX, y: tableView.frame.minY, width: tableView.frame.width, height: newHeight)
-                
-        print("tableView height is \(newHeight)")
+        
+        print("func tableView height is \(newHeight)")
         
     }
     
@@ -166,6 +184,8 @@ class StudentEditProfileViewController: UIViewController {
     
     @IBAction func addEducation(_ sender: Any) {
         
+        print("tapped")
+        
         let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
         let AddEducationViewController:AddEducationViewController = storyboard.instantiateViewController(withIdentifier: "AddEducationViewController") as! AddEducationViewController
         self.navigationController?.pushViewController(AddEducationViewController, animated: true)
@@ -173,6 +193,8 @@ class StudentEditProfileViewController: UIViewController {
     }
     
     @IBAction func addExperience(_ sender: Any) {
+        
+        print("tapped")
         
         let storyboard:UIStoryboard = UIStoryboard(name: "StudentRegister", bundle: nil)
         let AddExperienceViewController:AddExperienceViewController = storyboard.instantiateViewController(withIdentifier: "AddExperienceViewController") as! AddExperienceViewController

@@ -81,6 +81,7 @@ extension BusinessQuestionsListViewController: UITableViewDataSource {
             if questionNumber == 2 {
                 let questionTwo = questionTwos[indexPath.row]
                 cell.answer?.text = questionTwo.questionTwo
+                cell.status?.text = questionTwo.status
                 
                 let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(Auth.auth().currentUser!.uid)
                 // Download the data, assuming a max size of 1MB (you can change this as necessary)
@@ -99,6 +100,7 @@ extension BusinessQuestionsListViewController: UITableViewDataSource {
             } else {
                 let questionThree = questionThrees[indexPath.row]
                 cell.answer?.text = questionThree.questionThree
+                cell.status?.text = questionThree.status
                 
                 let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(Auth.auth().currentUser!.uid)
                 // Download the data, assuming a max size of 1MB (you can change this as necessary)

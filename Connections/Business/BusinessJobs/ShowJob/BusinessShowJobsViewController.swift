@@ -70,18 +70,7 @@ class BusinessShowJobsViewController: UIViewController {
     
     @IBAction func applyBtn(_ sender: UIButton) {
         
-        sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-        
-        UIView.animate(withDuration: 1.5,
-                       delay: 0,
-                       usingSpringWithDamping: CGFloat(0.25),
-                       initialSpringVelocity: CGFloat(8.0),
-                       options: UIViewAnimationOptions.allowUserInteraction,
-                       animations: {
-                        sender.transform = CGAffineTransform.identity
-        },
-                       completion: { Void in()  }
-        )
+
         
         appliedBtn(self.jobs[counter])
         
@@ -91,10 +80,10 @@ class BusinessShowJobsViewController: UIViewController {
         
         let refApply = Database.database().reference().child("jobsApplied").child(business.uuid).child(job.uuid!)
         
-        let apply = [Auth.auth().currentUser!.uid: true,]
+        let apply = [Auth.auth().currentUser!.uid: true]
         
         refApply.updateChildValues(apply)
-        
+                
     }
     
 }

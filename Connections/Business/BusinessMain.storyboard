@@ -2608,7 +2608,7 @@
                                                     <constraint firstAttribute="height" constant="1" placeholder="YES" id="W3b-0G-V0E"/>
                                                 </constraints>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="educationCell" rowHeight="115" id="hpM-qe-5iW" customClass="EducationCell" customModule="Connections" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="educationCell" rowHeight="115" id="hpM-qe-5iW" customClass="EducationCell" customModule="Connections" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="414" height="115"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hpM-qe-5iW" id="jal-nK-qLV">
@@ -2706,7 +2706,7 @@
                                                             <outlet property="studied" destination="ZBd-5S-HcD" id="7Ll-sj-tcU"/>
                                                         </connections>
                                                     </tableViewCell>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="experienceCell" rowHeight="115" id="Z7x-I0-KvX" customClass="ExperienceCell" customModule="Connections" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="experienceCell" rowHeight="115" id="Z7x-I0-KvX" customClass="ExperienceCell" customModule="Connections" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="143" width="414" height="115"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z7x-I0-KvX" id="TfB-QV-469">
@@ -3753,6 +3753,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <outlet property="applyBtn" destination="JOQ-Ia-e3u" id="N4M-rb-bK5"/>
                                             <outlet property="businessImg" destination="Kdj-jV-j4x" id="uXT-Xr-iCT"/>
                                             <outlet property="businessName" destination="8E0-xM-bgt" id="McA-sZ-Ynl"/>
                                             <outlet property="containerView" destination="lEN-Yx-I4G" id="dBi-9P-yeT"/>

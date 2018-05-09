@@ -26,6 +26,10 @@
                     <rect key="frame" x="341" y="17" width="25" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                     <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Add-1" translatesAutoresizingMaskIntoConstraints="NO" id="QAK-ZB-fBt">
+                            <rect key="frame" x="5" y="5" width="15" height="15"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </imageView>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOu-jk-VFk" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,10 +45,6 @@
                                 <action selector="addExperience:" destination="-1" eventType="touchUpInside" id="yep-vx-M4Q"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Add-1" translatesAutoresizingMaskIntoConstraints="NO" id="QAK-ZB-fBt">
-                            <rect key="frame" x="5" y="5" width="15" height="15"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <userDefinedRuntimeAttributes>

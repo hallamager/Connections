@@ -22,6 +22,7 @@ class SelectJobCell: FoldingCell {
     @IBOutlet weak var jobSalary: UILabel!
     @IBOutlet weak var jobLocation: UILabel!
     @IBOutlet weak var skillsRequiredCollectionView: UICollectionView!
+    @IBOutlet weak var applyBtn: UIButton!
     
     //Defines sides, shadows and colour of the cells for the viewcontroller.
     override func awakeFromNib() {

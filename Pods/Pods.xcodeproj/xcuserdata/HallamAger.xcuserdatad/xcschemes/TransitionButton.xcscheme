@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5E0E53EE09ABFE975E94A9B1385E884F"
-               BuildableName = "Pods_Connections.framework"
-               BlueprintName = "Pods-Connections"
+               BlueprintIdentifier = "82BD172501579BFC857926AA33AF5FC4"
+               BuildableName = "TransitionButton.framework"
+               BlueprintName = "TransitionButton"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5E0E53EE09ABFE975E94A9B1385E884F"
-            BuildableName = "Pods_Connections.framework"
-            BlueprintName = "Pods-Connections"
+            BlueprintIdentifier = "82BD172501579BFC857926AA33AF5FC4"
+            BuildableName = "TransitionButton.framework"
+            BlueprintName = "TransitionButton"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

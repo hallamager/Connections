@@ -13,11 +13,13 @@ class QuestionThree {
     
     var uuid: String?
     let questionThree: String?
+    let status: String?
     
     init?(snapshot: DataSnapshot) {
         if let snapshotData = snapshot.value as? [String: Any] {
             uuid = snapshot.key
             questionThree = snapshotData["Question Three Answer"] as? String
+            status = snapshotData["Status"] as? String
         } else {
             return nil
         }
@@ -26,6 +28,7 @@ class QuestionThree {
     
     init(data: [String: Any]) {
         questionThree = data["Question Three Answer"] as? String
+        status = data["Status"] as? String
     }
     
     
