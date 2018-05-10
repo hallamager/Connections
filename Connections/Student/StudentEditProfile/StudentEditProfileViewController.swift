@@ -23,6 +23,8 @@ class StudentEditProfileViewController: UIViewController {
     var experiences = [Experience]()
     var skills = [Skills]()
     var cellHeight = [CGFloat]()
+    var scrollViewDefaultContenetHeight: CGFloat = 1056
+    var contentViewDefaultContenetHeight: CGFloat = 1056
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var openMenu: UIBarButtonItem!
@@ -37,6 +39,7 @@ class StudentEditProfileViewController: UIViewController {
     @IBOutlet weak var interestThree: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,7 +81,7 @@ class StudentEditProfileViewController: UIViewController {
             
         })
         
-        refEducation.observeSingleEvent(of: .value) { snapshot in
+        refEducation.observe(.value, with: { snapshot in
             
             self.educations.removeAll()
             
@@ -93,15 +96,9 @@ class StudentEditProfileViewController: UIViewController {
             self.tableView.reloadData()
             self.caclculateTableViewHeight()
             
-            let newHeight: CGFloat = (self.tableView.sectionHeaderHeight) + (CGFloat(self.tableView.numberOfRows(inSection: 0))) * (self.tableView.rowHeight)
-            
-            self.scrollView.contentSize.height += newHeight
-            
-            print("education scroll view height\(self.scrollView.contentSize.height)")
-            
-        }
+        })
         
-        refExperience.observeSingleEvent(of: .value) { snapshot in
+        refExperience.observe(.value, with: { snapshot in
             
             self.experiences.removeAll()
             
@@ -116,13 +113,7 @@ class StudentEditProfileViewController: UIViewController {
             self.tableView.reloadData()
             self.caclculateTableViewHeight()
             
-            let newHeight: CGFloat = (self.tableView.sectionHeaderHeight) + (CGFloat(self.tableView.numberOfRows(inSection: 1))) * (self.tableView.rowHeight)
-            
-            self.scrollView.contentSize.height += newHeight
-            
-            print("experience scroll view height\(self.scrollView.contentSize.height)")
-            
-        }
+        })
         
         // Create a storage reference from the URL
         let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child((Auth.auth().currentUser?.uid)!)
@@ -143,24 +134,6 @@ class StudentEditProfileViewController: UIViewController {
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-        refEducation.observe(.childAdded, with: { (snapshot) in
-            
-            for education in snapshot.children {
-                if let data = education as? DataSnapshot {
-                    if let education = Education(snapshot: data) {
-                        self.educations.append(education)
-                    }
-                }
-            }
-            
-            self.tableView.reloadData()
-            
-        })
-        
-    }
-    
     func caclculateTableViewHeight() {
         
         print("section header: \(tableView.sectionHeaderHeight)")
@@ -170,6 +143,9 @@ class StudentEditProfileViewController: UIViewController {
         
         tableView.frame = CGRect(x: tableView.frame.minX, y: tableView.frame.minY, width: tableView.frame.width, height: newHeight)
         
+        self.scrollView.contentSize.height = scrollViewDefaultContenetHeight + newHeight
+        
+        print("scrollView\(scrollViewDefaultContenetHeight + newHeight)")
         print("func tableView height is \(newHeight)")
         
     }
@@ -224,6 +200,14 @@ extension StudentEditProfileViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 115
+    }
+    
+    func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("selected")
     }
 
 }
