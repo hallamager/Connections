@@ -51,6 +51,15 @@ class PickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor.clear
+        
+        let blurEffect = UIBlurEffect(style: .extraLight)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.alpha = 0.95
+        blurEffectView.frame = self.view.frame
+        
+        self.view.insertSubview(blurEffectView, at: 0)
+        
         if showTimePicker == true {
             titleLabel.text = "Select Time"
             datePicker.datePickerMode = .time
