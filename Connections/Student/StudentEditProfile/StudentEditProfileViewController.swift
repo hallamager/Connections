@@ -135,7 +135,7 @@ class StudentEditProfileViewController: UIViewController {
     }
     
     func caclculateTableViewHeight() {
-        
+                
         print("section header: \(tableView.sectionHeaderHeight)")
         print("row height: \(tableView.rowHeight)")
         

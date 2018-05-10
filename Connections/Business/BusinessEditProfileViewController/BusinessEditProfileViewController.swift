@@ -18,6 +18,7 @@ class BusinessEditProfileViewController: UIViewController, CLLocationManagerDele
     @IBOutlet var openMenu: UIBarButtonItem!
     @IBOutlet var profilePic: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var questionOne: UILabel!
     @IBOutlet weak var questionTwo: UILabel!
     @IBOutlet weak var questionThree: UILabel!
@@ -26,6 +27,7 @@ class BusinessEditProfileViewController: UIViewController, CLLocationManagerDele
     @IBOutlet weak var cultureThree: UILabel!
     @IBOutlet weak var updateLocationLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var contentView: UIView!
     
     let sections = ["Info", "Jobs"]
     
@@ -38,8 +40,13 @@ class BusinessEditProfileViewController: UIViewController, CLLocationManagerDele
     var specialties = [Specialties]()
     let locationManager = CLLocationManager()
     
+    var scrollViewDefaultContenetHeight: CGFloat = 1406
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.rowHeight = 100
+        tableView.sectionHeaderHeight = 40
                 
         self.navigationController?.navigationBar.isTranslucent = false
         
@@ -81,6 +88,7 @@ class BusinessEditProfileViewController: UIViewController, CLLocationManagerDele
             }
             
             self.tableView.reloadData()
+            self.caclculateTableViewHeight()
             
             print("job \(self.jobs.count)")
             
@@ -110,6 +118,30 @@ class BusinessEditProfileViewController: UIViewController, CLLocationManagerDele
         
         //open menu with swipe gesture
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
+    }
+    
+    func caclculateTableViewHeight() {
+        
+        print("section header: \(tableView.sectionHeaderHeight)")
+        print("row height: \(tableView.rowHeight)")
+        
+        let newHeight: CGFloat = (tableView.sectionHeaderHeight) + (CGFloat(tableView.numberOfRows(inSection: 1))) * (tableView.rowHeight)
+        
+        tableView.frame = CGRect(x: tableView.frame.minX, y: tableView.frame.minY, width: tableView.frame.width, height: 410 + newHeight)
+        
+        self.scrollView.contentSize.height = scrollViewDefaultContenetHeight + newHeight
+        
+        for constraint in self.contentView.constraints {
+            if constraint.identifier == "tableViewBottom" {
+                print("hello")
+                constraint.constant = newHeight + 435
+            }
+        }
+        contentView.layoutIfNeeded()
+                
+        print("scrollView\(scrollViewDefaultContenetHeight + newHeight)")
+        print("func tableView height is \(newHeight)")
         
     }
     
