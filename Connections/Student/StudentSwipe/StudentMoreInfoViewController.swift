@@ -18,6 +18,7 @@ class StudentMoreInfoViewController: UIViewController {
     var experiences = [Experience]()
     var skills = [Skills]()
     let sections = ["Education", "Experience"]
+    var scrollViewDefaultContenetHeight: CGFloat = 880
     
     @IBOutlet var companyName: UILabel!
     @IBOutlet var companyIndustry: UILabel!
@@ -29,9 +30,13 @@ class StudentMoreInfoViewController: UIViewController {
     @IBOutlet weak var interestThree: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.rowHeight = 130
+        tableView.sectionHeaderHeight = 40
         
         companyIndustry.text = student.headline
         companyName.text = student.username
@@ -44,9 +49,6 @@ class StudentMoreInfoViewController: UIViewController {
         companyDescription.translatesAutoresizingMaskIntoConstraints = true
         companyDescription.sizeToFit()
         companyDescription.isScrollEnabled = false
-        
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 140
         
         // Create a storage reference from the URL
         let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(student.uuid)
@@ -92,6 +94,7 @@ class StudentMoreInfoViewController: UIViewController {
             }
             
             self.tableView.reloadData()
+            self.caclculateTableViewHeight()
             
             print("education \(self.educations.count)")
             
@@ -110,10 +113,27 @@ class StudentMoreInfoViewController: UIViewController {
             }
             
             self.tableView.reloadData()
+            self.caclculateTableViewHeight()
             
             print("experience \(self.experiences.count)")
             
         })
+        
+    }
+    
+    func caclculateTableViewHeight() {
+        
+        print("section header: \(tableView.sectionHeaderHeight)")
+        print("row height: \(tableView.rowHeight)")
+        
+        let newHeight: CGFloat = (tableView.sectionHeaderHeight * 2) + (CGFloat(tableView.numberOfRows(inSection: 0) + tableView.numberOfRows(inSection: 1))) * (tableView.rowHeight)
+        
+        tableView.frame = CGRect(x: tableView.frame.minX, y: tableView.frame.minY, width: tableView.frame.width, height: newHeight)
+        
+        self.scrollView.contentSize.height = scrollViewDefaultContenetHeight + newHeight
+        
+        print("scrollView\(scrollViewDefaultContenetHeight + newHeight)")
+        print("func tableView height is \(newHeight)")
         
     }
     
@@ -141,8 +161,8 @@ class EducationMoreInfoCell: UITableViewCell {
 
 extension StudentMoreInfoViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 130
     }
     
 }
