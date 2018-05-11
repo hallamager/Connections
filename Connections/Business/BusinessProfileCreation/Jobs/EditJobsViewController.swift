@@ -82,6 +82,22 @@ class EditJobsViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func confirmBtn(_ sender: UIButton) {
         
+        if skillRequired.isEmpty {
+            
+            let animation = CABasicAnimation(keyPath: "position")
+            animation.duration = 0.07
+            animation.repeatCount = 4
+            animation.autoreverses = true
+            animation.fromValue = NSValue(cgPoint: CGPoint(x: self.validationAlert.center.x - 10, y: self.validationAlert.center.y))
+            animation.toValue = NSValue(cgPoint: CGPoint(x: self.validationAlert.center.x + 10, y: self.validationAlert.center.y))
+            
+            self.validationAlert.layer.add(animation, forKey: "position")
+            
+            self.validationAlert.text! = "You must enter at least one skill required"
+            
+            return
+        }
+        
         sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
         
         UIView.animate(withDuration: 1.5,
