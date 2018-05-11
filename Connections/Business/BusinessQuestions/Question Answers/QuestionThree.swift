@@ -14,12 +14,14 @@ class QuestionThree {
     var uuid: String?
     let questionThree: String?
     let status: String?
+    let liked: String?
     
     init?(snapshot: DataSnapshot) {
         if let snapshotData = snapshot.value as? [String: Any] {
             uuid = snapshot.key
             questionThree = snapshotData["Question Three Answer"] as? String
             status = snapshotData["Status"] as? String
+            liked = snapshotData["Liked"] as? String
         } else {
             return nil
         }
@@ -29,11 +31,12 @@ class QuestionThree {
     init(data: [String: Any]) {
         questionThree = data["Question Three Answer"] as? String
         status = data["Status"] as? String
+        liked = data["Liked"] as? String
     }
     
     
     func toDict3() -> [String: Any] {
-        return ["Question Three Answer": questionThree!]
+        return ["Question Three Answer": questionThree!, "Status": "Sent"]
     }
     
     

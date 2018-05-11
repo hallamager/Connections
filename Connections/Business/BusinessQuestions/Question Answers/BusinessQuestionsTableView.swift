@@ -63,6 +63,11 @@ extension BusinessQuestionsListViewController: UITableViewDataSource {
                 let questionOne = questionOnes[indexPath.row]
                 cell.answer?.text = questionOne.questionOne
                 cell.status?.text = questionOne.status
+                cell.likedStatus?.text = questionOne.liked
+                
+                if cell.likedStatus?.text == "Liked" {
+                    cell.status?.text = "Liked"
+                }
                 
                 let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(Auth.auth().currentUser!.uid)
                 // Download the data, assuming a max size of 1MB (you can change this as necessary)
@@ -82,6 +87,11 @@ extension BusinessQuestionsListViewController: UITableViewDataSource {
                 let questionTwo = questionTwos[indexPath.row]
                 cell.answer?.text = questionTwo.questionTwo
                 cell.status?.text = questionTwo.status
+                cell.likedStatus?.text = questionTwo.liked
+                
+                if cell.likedStatus?.text == "Liked" {
+                    cell.status?.text = "Liked"
+                }
                 
                 let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(Auth.auth().currentUser!.uid)
                 // Download the data, assuming a max size of 1MB (you can change this as necessary)
@@ -101,6 +111,11 @@ extension BusinessQuestionsListViewController: UITableViewDataSource {
                 let questionThree = questionThrees[indexPath.row]
                 cell.answer?.text = questionThree.questionThree
                 cell.status?.text = questionThree.status
+                cell.likedStatus?.text = questionThree.liked
+                
+                if cell.likedStatus?.text == "Liked" {
+                    cell.status?.text = "Liked"
+                }
                 
                 let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(Auth.auth().currentUser!.uid)
                 // Download the data, assuming a max size of 1MB (you can change this as necessary)

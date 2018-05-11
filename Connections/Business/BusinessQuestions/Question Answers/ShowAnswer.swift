@@ -23,6 +23,7 @@ class ShowAnswer: UITableViewCell {
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var likedBtn: UIButtonStyles!
     @IBOutlet weak var likedImg: UIImageView!
+    @IBOutlet weak var likedStatus: UILabel!
     
     @IBAction func removeAnswerBtn(_ sender: UIButton) {
         delegate?.didTapButton(sender)

@@ -200,7 +200,7 @@ extension ViewStudentResponses: RemoveAnswerCellDelegate {
                     
                     let ref = Database.database().reference().child("studentResponses").child(Auth.auth().currentUser!.uid).child(student.uuid).child("Answer One")
                     
-                    ref.updateChildValues(["Status" : "Liked"])
+                    ref.updateChildValues(["Liked" : "Liked"])
                     
                     print("tapped")
                 }
@@ -209,7 +209,7 @@ extension ViewStudentResponses: RemoveAnswerCellDelegate {
                     
                     let ref = Database.database().reference().child("studentResponses").child(Auth.auth().currentUser!.uid).child(student.uuid).child("Answer Two")
                     
-                    ref.updateChildValues(["Status" : "Liked"])
+                    ref.updateChildValues(["Liked" : "Liked"])
                     
                     print("tapped")
                 }
@@ -218,7 +218,7 @@ extension ViewStudentResponses: RemoveAnswerCellDelegate {
 
                     let ref = Database.database().reference().child("studentResponses").child(Auth.auth().currentUser!.uid).child(student.uuid).child("Answer Three")
                     
-                    ref.updateChildValues(["Status" : "Liked"])
+                    ref.updateChildValues(["Liked" : "Liked"])
                     
                     print("tapped")
                 }
