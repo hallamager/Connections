@@ -27,9 +27,22 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
 
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    func moveTextField(textfield: UITextField, moveDistance: Int, up: Bool) {
+        let moveDuration = 0.3
+        let movement: CGFloat = CGFloat(up ? moveDistance: -moveDistance)
+        UIView.beginAnimations("animateTextField", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(moveDuration)
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
+    }
+    
+    @IBAction func password(_ textField: UITextField) {
+        moveTextField(textfield: textField, moveDistance: -90, up: true)
+    }
+    
+    @IBAction func passwordLeave(_ textField: UITextField) {
+        moveTextField(textfield: textField, moveDistance: -90, up: false)
     }
     
     //text field goes away when done is pressed
