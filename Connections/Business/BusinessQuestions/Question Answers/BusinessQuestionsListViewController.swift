@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Firebase
 import ViewAnimator
+import IQKeyboardManagerSwift
 
 class BusinessQuestionsListViewController: UIViewController, UITextFieldDelegate {
     
@@ -72,8 +73,11 @@ class BusinessQuestionsListViewController: UIViewController, UITextFieldDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         let ref = Database.database().reference().child("business").child(business.uuid)
+        
+        IQKeyboardManager.sharedManager().disabledToolbarClasses = [BusinessQuestionsListViewController.self]
+        IQKeyboardManager.sharedManager().disabledDistanceHandlingClasses.append(BusinessQuestionsListViewController.self)
         
         ref.observe(.value, with: { snapshot in
             if let business = Business(snapshot: snapshot) {

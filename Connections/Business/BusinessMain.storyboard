@@ -2928,7 +2928,7 @@
         <scene sceneID="Tt5-5z-VPt">
             <objects>
                 <viewController storyboardIdentifier="StudentEditAboutViewController" title="Details" id="AP7-0f-hdO" customClass="StudentEditAboutViewController" customModule="Connections" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zig-y5-3w3">
+                    <view key="view" contentMode="scaleToFill" id="zig-y5-3w3" customClass="IQPreviousNextView" customModule="IQKeyboardManagerSwift">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1036"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import Firebase
 import GeoFire
-import Spring
 
 class BusinessRegisterViewController: UIViewController, UITextFieldDelegate {
     
@@ -32,32 +31,6 @@ class BusinessRegisterViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.delegate = self
         confirmPasswordTextField.delegate = self
         
-    }
-    
-    func moveTextField(textfield: UITextField, moveDistance: Int, up: Bool) {
-        let moveDuration = 0.3
-        let movement: CGFloat = CGFloat(up ? moveDistance: -moveDistance)
-        UIView.beginAnimations("animateTextField", context: nil)
-        UIView.setAnimationBeginsFromCurrentState(true)
-        UIView.setAnimationDuration(moveDuration)
-        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
-        UIView.commitAnimations()
-    }
-    
-    @IBAction func password(_ textField: UITextField) {
-        moveTextField(textfield: textField, moveDistance: -60, up: true)
-    }
-    
-    @IBAction func passwordLeave(_ textField: UITextField) {
-        moveTextField(textfield: textField, moveDistance: -60, up: false)
-    }
-
-    @IBAction func ConfirmPassword(_ textField: UITextField) {
-        moveTextField(textfield: textField, moveDistance: -170, up: true)
-    }
-    
-    @IBAction func confirmPasswordLeave(_ textField: UITextField) {
-        moveTextField(textfield: textField, moveDistance: -170, up: false)
     }
     
     @IBAction func passwordDidChange(_ sender: Any) {

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Firebase
+import IQKeyboardManagerSwift
 
 protocol AddJobsControllerDelegate: class {
     func didAddJobs(_ job: Job)
@@ -38,6 +39,8 @@ class AddJobsViewController: UIViewController, UITextFieldDelegate {
         employmentType.delegate = self
         jobLocation.delegate = self
         jobSalary.delegate = self
+        
+        skillsRequired.keyboardDistanceFromTextField = 105
         
         self.navigationController?.navigationBar.isTranslucent = false
         

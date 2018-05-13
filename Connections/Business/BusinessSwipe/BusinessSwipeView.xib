@@ -31,7 +31,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="413" height="561"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="companyImage" translatesAutoresizingMaskIntoConstraints="NO" id="vnD-XV-CtU">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vnD-XV-CtU">
                             <rect key="frame" x="0.0" y="0.0" width="413" height="438"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <userDefinedRuntimeAttributes>
@@ -124,7 +124,4 @@
             <point key="canvasLocation" x="33.5" y="124.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="companyImage" width="545" height="363"/>
-    </resources>
 </document>

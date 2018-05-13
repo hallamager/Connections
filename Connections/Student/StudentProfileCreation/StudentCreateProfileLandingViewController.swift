@@ -135,7 +135,9 @@ extension StudentCreateProfileLandingViewController: CLLocationManagerDelegate {
             print(string)
         }
         
-        geoRefStudent.setLocation(location, forKey: (Auth.auth().currentUser?.uid)!)
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        geoRefStudent.setLocation(location, forKey: uid)
         
     }
     

@@ -36,6 +36,8 @@ class EditJobsViewController: UIViewController, UITextFieldDelegate {
         
         self.navigationController?.navigationBar.isTranslucent = false
         
+        editRequiredSkill.keyboardDistanceFromTextField = 105
+        
         jobTitle.delegate = self
         employmentType.delegate = self
         jobLocation.delegate = self

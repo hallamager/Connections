@@ -114,7 +114,10 @@ extension BusinessCreateProfileLandingViewController: CLLocationManagerDelegate 
         query.observe(.keyEntered) { string, location in
             print(string)
         }
-        geoRefBusiness.setLocation(location, forKey: (Auth.auth().currentUser?.uid)!)
+        
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        geoRefBusiness.setLocation(location, forKey: uid)
         userLocation = location
         
     }

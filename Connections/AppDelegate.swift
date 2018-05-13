@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import UserNotifications
 import FirebaseMessaging
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,10 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-//        let backImage = UIImage(named: "backBtn")?.withRenderingMode(.alwaysOriginal)
-//        UINavigationBar.appearance().backIndicatorImage = backImage
-//        UINavigationBar.appearance().backIndicatorTransitionMaskImage = backImage
-//        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(300, -80.0), for: .default)
+        IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.sharedManager().shouldResignOnTouchOutside = true
+        IQKeyboardManager.sharedManager().shouldShowToolbarPlaceholder = true
+        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 25
         
         // [START set_messaging_delegate]
         Messaging.messaging().delegate = self

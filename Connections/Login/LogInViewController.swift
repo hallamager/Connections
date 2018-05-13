@@ -9,6 +9,7 @@
 import Foundation
 import XLPagerTabStrip
 import Firebase
+import IQKeyboardManagerSwift
 
 class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldDelegate {
     
@@ -24,7 +25,7 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
-
+                        
     }
     
     func moveTextField(textfield: UITextField, moveDistance: Int, up: Bool) {
@@ -38,11 +39,11 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
     }
     
     @IBAction func password(_ textField: UITextField) {
-        moveTextField(textfield: textField, moveDistance: -90, up: true)
+//        moveTextField(textfield: textField, moveDistance: -90, up: true)
     }
     
     @IBAction func passwordLeave(_ textField: UITextField) {
-        moveTextField(textfield: textField, moveDistance: -90, up: false)
+//        moveTextField(textfield: textField, moveDistance: -90, up: false)
     }
     
     //text field goes away when done is pressed
