@@ -32,39 +32,6 @@ class BusinessCreateProfileLandingViewController: UIViewController {
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print("check database...")
-        
-        ref.observe(.value, with: { (snapshot) in
-            
-            if snapshot.hasChild("Industry") && snapshot.hasChild("Website") && snapshot.hasChild("profileImageURL") && snapshot.hasChild("Description") && snapshot.hasChild("Company Size") && snapshot.hasChild("Headquarters") && snapshot.hasChild("Question One") && snapshot.hasChild("Question Two") && snapshot.hasChild("Question Three") && snapshot.hasChild("cultureOne") && snapshot.hasChild("cultureTwo") && snapshot.hasChild("cultureThree"){
-                
-                self.createButton.isEnabled = true
-                
-                print("All info entered")
-                
-            } else {
-                
-                let animation = CABasicAnimation(keyPath: "position")
-                animation.duration = 0.07
-                animation.repeatCount = 4
-                animation.autoreverses = true
-                animation.fromValue = NSValue(cgPoint: CGPoint(x: self.validationAlert.center.x - 10, y: self.validationAlert.center.y))
-                animation.toValue = NSValue(cgPoint: CGPoint(x: self.validationAlert.center.x + 10, y: self.validationAlert.center.y))
-                
-                self.validationAlert.layer.add(animation, forKey: "position")
-                
-                self.createButton.isEnabled = false
-                self.validationAlert.text = "Not all sections have been completed."
-                
-                print("Missing info")
-            }
-            
-        })
-        
-    }
-    
     func presentBusinessSwipeViewViewController() {
         let storyboard:UIStoryboard = UIStoryboard(name: "StudentMain", bundle: nil)
         let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "StudentSWRevealViewController") as! SWRevealViewController
@@ -86,13 +53,40 @@ class BusinessCreateProfileLandingViewController: UIViewController {
                        completion: { Void in()  }
         )
         
-        locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
-        locationManager.startUpdatingLocation()
-        
-        presentBusinessSwipeViewViewController()
-        
-        addToken()
+        ref.observe(.value, with: { (snapshot) in
+            
+            if snapshot.hasChild("Industry") && snapshot.hasChild("Website") && snapshot.hasChild("profileImageURL") && snapshot.hasChild("Description") && snapshot.hasChild("Company Size") && snapshot.hasChild("Headquarters") && snapshot.hasChild("Question One") && snapshot.hasChild("Question Two") && snapshot.hasChild("Question Three") && snapshot.hasChild("cultureOne") && snapshot.hasChild("cultureTwo") && snapshot.hasChild("cultureThree"){
+                
+                self.createButton.isEnabled = true
+                
+                self.locationManager.delegate = self
+                self.locationManager.requestAlwaysAuthorization()
+                self.locationManager.startUpdatingLocation()
+                
+                self.presentBusinessSwipeViewViewController()
+                
+                self.addToken()
+                
+                print("All info entered")
+                
+            } else {
+                
+                let animation = CABasicAnimation(keyPath: "position")
+                animation.duration = 0.07
+                animation.repeatCount = 4
+                animation.autoreverses = true
+                animation.fromValue = NSValue(cgPoint: CGPoint(x: self.validationAlert.center.x - 10, y: self.validationAlert.center.y))
+                animation.toValue = NSValue(cgPoint: CGPoint(x: self.validationAlert.center.x + 10, y: self.validationAlert.center.y))
+                
+                self.validationAlert.layer.add(animation, forKey: "position")
+                
+                self.createButton.isEnabled = false
+                self.validationAlert.text = "Not all sections have been completed."
+                
+                print("Missing info")
+            }
+            
+        })
         
     }
     

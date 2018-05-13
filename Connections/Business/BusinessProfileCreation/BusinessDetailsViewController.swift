@@ -38,6 +38,32 @@ class BusinessDetailsViewController: UIViewController, UITextFieldDelegate {
         return .lightContent
     }
     
+    func moveTextField(textfield: UITextField, moveDistance: Int, up: Bool) {
+        let moveDuration = 0.3
+        let movement: CGFloat = CGFloat(up ? moveDistance: -moveDistance)
+        UIView.beginAnimations("animateTextField", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(moveDuration)
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
+    }
+    
+    @IBAction func cultureOne(_ textField: UITextField) {
+        moveTextField(textfield: textField, moveDistance: -65, up: true)
+    }
+    
+    @IBAction func cultureOneLeave(_ textField: UITextField) {
+        moveTextField(textfield: textField, moveDistance: -65, up: false)
+    }
+    
+    @IBAction func cultureTwo(_ textField: UITextField) {
+        moveTextField(textfield: textField, moveDistance: -185, up: true)
+    }
+    
+    @IBAction func cultureTwoLeave(_ textField: UITextField) {
+        moveTextField(textfield: textField, moveDistance: -185, up: false)
+    }
+    
     @IBAction func confirmBtn(_ sender: UIButton) {
         
         sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)

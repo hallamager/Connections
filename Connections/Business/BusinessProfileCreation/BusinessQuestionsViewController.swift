@@ -38,6 +38,32 @@ class BusinessQuestionsViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    func moveTextField(textfield: UITextField, moveDistance: Int, up: Bool) {
+        let moveDuration = 0.3
+        let movement: CGFloat = CGFloat(up ? moveDistance: -moveDistance)
+        UIView.beginAnimations("animateTextField", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(moveDuration)
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
+    }
+    
+    @IBAction func questionOne(_ textField: UITextField) {
+        moveTextField(textfield: textField, moveDistance: -60, up: true)
+    }
+    
+    @IBAction func questionOneLeave(_ textField: UITextField) {
+        moveTextField(textfield: textField, moveDistance: -60, up: false)
+    }
+    
+    @IBAction func questionTwo(_ textField: UITextField) {
+        moveTextField(textfield: textField, moveDistance: -180, up: true)
+    }
+    
+    @IBAction func questionTwoLeave(_ textField: UITextField) {
+        moveTextField(textfield: textField, moveDistance: -180, up: false)
+    }
+    
     @IBAction func confirmButtom(_ sender: UIButton) {
         
         sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
