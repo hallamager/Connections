@@ -37,39 +37,6 @@ class StudentCreateProfileLandingViewController: UIViewController {
         return .lightContent
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print("check database...")
-        
-        ref.observe(.value, with: { (snapshot) in
-            
-            if snapshot.hasChild("Address") && snapshot.hasChild("Headline") && snapshot.hasChild("profileImageURL") && snapshot.hasChild("Summary") && snapshot.hasChild("Interest One") && snapshot.hasChild("Interest Two") && snapshot.hasChild("Interest Three"){
-                
-                self.createButton.isEnabled = true
-                
-                print("All info entered")
-                
-            } else {
-                
-                let animation = CABasicAnimation(keyPath: "position")
-                animation.duration = 0.07
-                animation.repeatCount = 4
-                animation.autoreverses = true
-                animation.fromValue = NSValue(cgPoint: CGPoint(x: self.validationAlert.center.x - 10, y: self.validationAlert.center.y))
-                animation.toValue = NSValue(cgPoint: CGPoint(x: self.validationAlert.center.x + 10, y: self.validationAlert.center.y))
-                
-                self.validationAlert.layer.add(animation, forKey: "position")
-                
-                self.createButton.isEnabled = false
-                self.validationAlert.text = "Not all sections have been completed."
-                
-                print("Missing info")
-            }
-            
-        })
-        
-    }
-    
     func presentBusinessSwipeViewViewController() {
         
         let storyboard:UIStoryboard = UIStoryboard(name: "BusinessMain", bundle: nil)
@@ -93,15 +60,44 @@ class StudentCreateProfileLandingViewController: UIViewController {
                        completion: { Void in()  }
         )
         
-        locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
-        locationManager.startUpdatingLocation()
-        
-        addToken()
-        
-        addSelectedRadius()
-        
-        presentBusinessSwipeViewViewController()
+        ref.observe(.value, with: { (snapshot) in
+            
+            if snapshot.hasChild("Address") && snapshot.hasChild("Headline") && snapshot.hasChild("profileImageURL") && snapshot.hasChild("Summary") && snapshot.hasChild("Interest One") && snapshot.hasChild("Interest Two") && snapshot.hasChild("Interest Three"){
+                
+                self.createButton.isEnabled = true
+                
+                self.presentBusinessSwipeViewViewController()
+                
+                self.locationManager.delegate = self
+                self.locationManager.requestAlwaysAuthorization()
+                self.locationManager.startUpdatingLocation()
+                
+                self.addToken()
+                
+                self.addSelectedRadius()
+                
+                print("All info entered")
+                
+            } else {
+                
+                let animation = CABasicAnimation(keyPath: "position")
+                animation.duration = 0.07
+                animation.repeatCount = 4
+                animation.autoreverses = true
+                animation.fromValue = NSValue(cgPoint: CGPoint(x: self.validationAlert.center.x - 10, y: self.validationAlert.center.y))
+                animation.toValue = NSValue(cgPoint: CGPoint(x: self.validationAlert.center.x + 10, y: self.validationAlert.center.y))
+                
+                self.validationAlert.layer.add(animation, forKey: "position")
+                
+                self.createButton.isEnabled = false
+                self.validationAlert.text = "Not all sections have been completed."
+                
+                print("Missing info")
+                
+                return
+            }
+            
+        })
         
     }
     

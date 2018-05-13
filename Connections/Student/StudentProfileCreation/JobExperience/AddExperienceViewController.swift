@@ -14,7 +14,7 @@ protocol AddExperienceControllerDelegate: class {
     func didAddExperience(_ experience: Experience)
 }
 
-class AddExperienceViewController: UIViewController, UITextFieldDelegate {
+class AddExperienceViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     
     let editProfile = StudentEditProfileViewController()
@@ -38,7 +38,10 @@ class AddExperienceViewController: UIViewController, UITextFieldDelegate {
         jobCity.delegate = self
         jobFromDate.delegate = self
         jobToDate.delegate = self
+        jobDescription.delegate = self
 
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -48,6 +51,15 @@ class AddExperienceViewController: UIViewController, UITextFieldDelegate {
     //text field goes away when done is pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        return true
+    }
+    
+    /* Updated for Swift 4 */
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
         return true
     }
     

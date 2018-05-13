@@ -40,6 +40,32 @@ class StudentPersonalViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    func moveTextField(textfield: UITextField, moveDistance: Int, up: Bool) {
+        let moveDuration = 0.3
+        let movement: CGFloat = CGFloat(up ? moveDistance: -moveDistance)
+        UIView.beginAnimations("animateTextField", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(moveDuration)
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
+    }
+    
+    @IBAction func headline(_ textField: UITextField) {
+        moveTextField(textfield: textField, moveDistance: -40, up: true)
+    }
+    
+    @IBAction func headlineLeave(_ textField: UITextField) {
+        moveTextField(textfield: textField, moveDistance: -40, up: false)
+    }
+    
+    @IBAction func summary(_ textField: UITextField) {
+        moveTextField(textfield: textField, moveDistance: -180, up: true)
+    }
+    
+    @IBAction func summaryLeave(_ textField: UITextField) {
+        moveTextField(textfield: textField, moveDistance: -180, up: false)
+    }
+    
     @IBAction func confirmBtn(_ sender: UIButton) {
         
         sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)

@@ -39,6 +39,32 @@ class StudentInterestsViewController: UIViewController, UITextFieldDelegate {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
+    func moveTextField(textfield: UITextField, moveDistance: Int, up: Bool) {
+        let moveDuration = 0.3
+        let movement: CGFloat = CGFloat(up ? moveDistance: -moveDistance)
+        UIView.beginAnimations("animateTextField", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(moveDuration)
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
+    }
+    
+    @IBAction func interestOne(_ textField: UITextField) {
+        moveTextField(textfield: textField, moveDistance: -55, up: true)
+    }
+    
+    @IBAction func interestOneLeave(_ textField: UITextField) {
+        moveTextField(textfield: textField, moveDistance: -55, up: false)
+    }
+    
+    @IBAction func interestTwo(_ textField: UITextField) {
+        moveTextField(textfield: textField, moveDistance: -180, up: true)
+    }
+    
+    @IBAction func interestTwoLeave(_ textField: UITextField) {
+        moveTextField(textfield: textField, moveDistance: -180, up: false)
+    }
 
     @IBAction func confirmBtn(_ sender: UIButton) {
         

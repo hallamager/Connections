@@ -52,6 +52,24 @@ class ShowSkillsViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    func moveTextField(textfield: UITextField, moveDistance: Int, up: Bool) {
+        let moveDuration = 0.3
+        let movement: CGFloat = CGFloat(up ? moveDistance: -moveDistance)
+        UIView.beginAnimations("animateTextField", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(moveDuration)
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
+    }
+    
+    @IBAction func skill(_ textField: UITextField) {
+        moveTextField(textfield: textField, moveDistance: -180, up: true)
+    }
+    
+    @IBAction func skillLeave(_ textField: UITextField) {
+        moveTextField(textfield: textField, moveDistance: -180, up: false)
+    }
+    
     @IBAction func addSkillBtn(_ sender: Any) {
         
         let ex = Skills(data: ["Skill": self.skillInput.text!])
