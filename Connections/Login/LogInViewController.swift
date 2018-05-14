@@ -56,7 +56,51 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
         textField.resignFirstResponder()
         return true
     }
+    
+    @IBAction func forgotPasswordBtn(_ sender: UIButton) {
+        
+        sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        
+        UIView.animate(withDuration: 1.5,
+                       delay: 0,
+                       usingSpringWithDamping: CGFloat(0.25),
+                       initialSpringVelocity: CGFloat(8.0),
+                       options: UIViewAnimationOptions.allowUserInteraction,
+                       animations: {
+                        sender.transform = CGAffineTransform.identity
+        },
+                       completion: { Void in()  }
+        )
+        
+        let email = self.emailTextField.text
+        Auth.auth().sendPasswordReset(withEmail: email!) { error in
+            if let firebaseError = error {
+                
+                self.errorValidation.text = "You haven't enetered an email address."
+                
+                let animation = CABasicAnimation(keyPath: "position")
+                animation.duration = 0.07
+                animation.repeatCount = 4
+                animation.autoreverses = true
+                animation.fromValue = NSValue(cgPoint: CGPoint(x: self.errorValidation.center.x - 10, y: self.errorValidation.center.y))
+                animation.toValue = NSValue(cgPoint: CGPoint(x: self.errorValidation.center.x + 10, y: self.errorValidation.center.y))
+                
+                self.errorValidation.layer.add(animation, forKey: "position")
+                
+                print(firebaseError.localizedDescription)
+                
+            } else {
+                
+                self.errorValidation.text = "A reset password link has been sent to your email."
+                self.errorValidation.textColor = UIColor.green
+                
+                print("Reset password email sent")
 
+            }
+        }
+        
+    }
+    
     @IBAction func loginTapped(_ sender: UIButton) {
         
         if let email = emailTextField.text, let password = passwordTextField.text {
