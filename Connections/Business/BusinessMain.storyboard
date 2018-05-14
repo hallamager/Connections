@@ -3440,6 +3440,10 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nZl-OW-OL3">
+                                                                    <rect key="frame" x="309" y="0.0" width="60" height="60"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                                </imageView>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <userDefinedRuntimeAttributes>
@@ -3475,7 +3479,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="369" height="526"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vrm-5T-Dfo">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="330" height="111"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="369" height="111"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="40 week placement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aY-bZ-qgd">
@@ -3508,6 +3512,10 @@
                                                                                 </userDefinedRuntimeAttribute>
                                                                             </userDefinedRuntimeAttributes>
                                                                         </view>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eeF-14-TKn">
+                                                                            <rect key="frame" x="309" y="0.0" width="60" height="60"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                                        </imageView>
                                                                     </subviews>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bEa-iy-z1r">
@@ -3643,7 +3651,7 @@
                                                                                 </userDefinedRuntimeAttribute>
                                                                             </userDefinedRuntimeAttributes>
                                                                             <connections>
-                                                                                <action selector="applyBtn:" destination="TEC-M9-L45" eventType="touchUpInside" id="rG2-mj-vTl"/>
+                                                                                <action selector="applyBtn:" destination="TEC-M9-L45" eventType="touchUpInside" id="ixU-iN-90S"/>
                                                                             </connections>
                                                                         </button>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skills Required" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdf-ka-4e9">
@@ -3699,12 +3707,14 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <outlet property="appliedImg" destination="nZl-OW-OL3" id="uAD-dc-PTa"/>
                                             <outlet property="applyBtn" destination="JOQ-Ia-e3u" id="N4M-rb-bK5"/>
                                             <outlet property="businessImg" destination="Kdj-jV-j4x" id="uXT-Xr-iCT"/>
                                             <outlet property="businessName" destination="8E0-xM-bgt" id="McA-sZ-Ynl"/>
                                             <outlet property="containerView" destination="lEN-Yx-I4G" id="dBi-9P-yeT"/>
                                             <outlet property="containerViewTop" destination="qXM-rL-r6a" id="uM5-ow-E81"/>
                                             <outlet property="employmentType" destination="Fpt-0l-Ud2" id="1YU-jS-iv6"/>
+                                            <outlet property="foldedAppliedImg" destination="eeF-14-TKn" id="91i-pp-hBK"/>
                                             <outlet property="foldedBusinessImg" destination="Vc0-RS-go3" id="PXQ-SP-v7c"/>
                                             <outlet property="foldedBusinessName" destination="v2s-KZ-P6e" id="wmJ-on-IUm"/>
                                             <outlet property="foldedEmploymentType" destination="6aY-bZ-qgd" id="Jcx-Jp-AXS"/>
@@ -3733,7 +3743,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zvh-JY-qB9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="26944" y="247"/>
+            <point key="canvasLocation" x="26944" y="246.9265367316342"/>
         </scene>
         <!--Business Invites View Controller-->
         <scene sceneID="Afx-wi-mBU">

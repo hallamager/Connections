@@ -70,7 +70,18 @@ class BusinessShowJobsViewController: UIViewController {
     
     @IBAction func applyBtn(_ sender: UIButton) {
         
-
+        sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        
+        UIView.animate(withDuration: 1.5,
+                       delay: 0,
+                       usingSpringWithDamping: CGFloat(0.25),
+                       initialSpringVelocity: CGFloat(8.0),
+                       options: UIViewAnimationOptions.allowUserInteraction,
+                       animations: {
+                        sender.transform = CGAffineTransform.identity
+        },
+                       completion: { Void in()  }
+        )
         
         appliedBtn(self.jobs[counter])
         
@@ -187,6 +198,21 @@ extension BusinessShowJobsViewController: UITableViewDataSource {
             print(self.skillRequired)
             
             cell.skillsRequiredCollectionView.reloadData()
+            
+        })
+        
+        let refHasApplied = Database.database().reference().child("jobsApplied").child(business.uuid).child(job.uuid!)
+        
+        refHasApplied.observe(.value, with: { (snapshot) in
+            
+            if snapshot.hasChild(Auth.auth().currentUser!.uid) {
+                cell.applyBtn.setTitle("Succesfully Applied", for: .normal)
+                cell.applyBtn.isEnabled = false
+                
+                cell.foldedAppliedImg.image = UIImage(named: "appliedImg")
+                cell.appliedImg.image = UIImage(named: "appliedImg")
+                
+            }
             
         })
         
