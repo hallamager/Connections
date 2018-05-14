@@ -128,13 +128,13 @@ extension StudentLikedViewController: UITableViewDelegate {
         let student = students[indexPath.row]
         
         cell.studentName.text! = student.username
-        cell.studentHeadline.text! = student.headline
+        cell.studentHeadline.text! = student.headline!
         cell.studentFoldedName.text! = student.username
-        cell.studentFoldedHeadline.text! = student.headline
-        cell.studentSummary.text! = student.summary
-        cell.interestOne.text! = student.interestOne
-        cell.interestTwo.text! = student.interestTwo
-        cell.interestThree.text! = student.interestThree
+        cell.studentFoldedHeadline.text! = student.headline!
+        cell.studentSummary.text! = student.summary!
+        cell.interestOne.text! = student.interestOne!
+        cell.interestTwo.text! = student.interestTwo!
+        cell.interestThree.text! = student.interestThree!
         
         cell.studentSummary.translatesAutoresizingMaskIntoConstraints = true
         cell.studentSummary.sizeToFit()

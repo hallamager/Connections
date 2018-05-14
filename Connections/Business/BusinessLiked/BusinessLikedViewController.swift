@@ -154,14 +154,14 @@ extension BusinessLikedViewController: UITableViewDelegate {
         }
         
         cell.companyName.text! = business.username
-        cell.companyIndustry.text! = business.industry
+        cell.companyIndustry.text! = business.industry!
         cell.foldingNameLabel.text! = business.username
-        cell.companyHeadquarters.text! = business.businessHeadquarters
-        cell.companyDescription.text! = business.description
-        cell.companyWebsite.text! = business.companyWebsite
-        cell.companyIndustryFolded.text! = business.industry
-        cell.companySize.text! = business.companySize
-        cell.companyHeadquartersFolded.text! = business.businessHeadquarters
+        cell.companyHeadquarters.text! = business.businessHeadquarters!
+        cell.companyDescription.text! = business.description!
+        cell.companyWebsite.text! = business.companyWebsite!
+        cell.companyIndustryFolded.text! = business.industry!
+        cell.companySize.text! = business.companySize!
+        cell.companyHeadquartersFolded.text! = business.businessHeadquarters!
         cell.jobsPosted?.text = "\(business.numberOfJobs) Jobs available"
         
         if business.jobs.count == 1 {

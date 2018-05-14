@@ -27,18 +27,17 @@ class BusinessQuestionsViewController: UIViewController, UITextFieldDelegate {
         questionTwo.delegate = self
         questionThree.delegate = self
         
-        ref.observe(.value, with: { snapshot in
+        ref.observeSingleEvent(of: .value) { snapshot in
             if snapshot.hasChild("Question One") && snapshot.hasChild("Question Two") && snapshot.hasChild("Question Three"){
                 
                 if let business = Business(snapshot: snapshot) {
                     self.questionOne.text = business.questionOne
                     self.questionTwo.text = business.questionTwo
                     self.questionThree.text = business.questionThree
-                    
                 }
                 
             }
-        })
+        }
         
     }
     

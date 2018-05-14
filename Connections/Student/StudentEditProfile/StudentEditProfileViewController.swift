@@ -55,8 +55,8 @@ class StudentEditProfileViewController: UIViewController {
         ref.observeSingleEvent(of: .value, with: { snapshot in
             if let student = Student(snapshot: snapshot) {
                 self.userUsername.text = student.username
-                self.slider.value = Float(Int(student.selectedRadius))
-                self.distanceSelected.text = "\(student.selectedRadius)"
+                self.slider.value = Float(Int?(student.selectedRadius!)!)
+                self.distanceSelected.text = "\(student.selectedRadius ?? 40)"
                 self.summary.text = student.summary
                 self.interestOne.text = student.interestOne
                 self.interestTwo.text = student.interestTwo

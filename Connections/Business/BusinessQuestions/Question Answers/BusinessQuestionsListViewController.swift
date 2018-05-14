@@ -163,12 +163,12 @@ class BusinessQuestionsListViewController: UIViewController, UITextFieldDelegate
     func questionText() -> String {
         ///do some if stuff...
         if questionNumber == 1 {
-            return business.questionOne
+            return business.questionOne!
         }
         if questionNumber == 2 {
-            return business.questionTwo
+            return business.questionTwo!
         } else {
-            return business.questionThree
+            return business.questionThree!
         }
         
     }
