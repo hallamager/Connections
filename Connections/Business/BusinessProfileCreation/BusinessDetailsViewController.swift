@@ -26,6 +26,18 @@ class BusinessDetailsViewController: UIViewController, UITextFieldDelegate {
         cultureTwo.delegate = self
         cultureThree.delegate = self
         
+        ref.observe(.value, with: { snapshot in
+            if snapshot.hasChild("cultureOne") && snapshot.hasChild("cultureTwo") && snapshot.hasChild("cultureThree"){
+                
+                if let business = Business(snapshot: snapshot) {
+                    self.cultureOne.text = business.cultureOne
+                    self.cultureTwo.text = business.cultureTwo
+                    self.cultureThree.text = business.cultureThree
+                }
+                
+            }
+        })
+        
     }
     
     //text field goes away when done is pressed

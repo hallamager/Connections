@@ -12,6 +12,7 @@ import Firebase
 
 class StudentInterestsViewController: UIViewController, UITextFieldDelegate {
     
+    var students = [Student]()
     let ref = Database.database().reference().child("student").child(Auth.auth().currentUser!.uid)
     
     @IBOutlet var interestOne: UITextField!
@@ -25,6 +26,20 @@ class StudentInterestsViewController: UIViewController, UITextFieldDelegate {
         interestOne.delegate = self
         interestTwo.delegate = self
         interestThree.delegate = self
+        
+        ref.observe(.value, with: { (snapshot) in
+            
+            if snapshot.hasChild("Interest One") && snapshot.hasChild("Interest Two") && snapshot.hasChild("Interest Three"){
+                
+                if let student = Student(snapshot: snapshot) {
+                    self.interestOne.text = student.interestOne
+                    self.interestTwo.text = student.interestTwo
+                    self.interestThree.text = student.interestThree
+                }
+                
+            }
+            
+        })
         
         self.navigationController?.navigationBar.tintColor = UIColor.white
         

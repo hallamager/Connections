@@ -12,6 +12,7 @@ import Firebase
 
 class BusinessAboutViewController: UIViewController, UITextFieldDelegate {
     
+    var businesses = [Business]()
     var business: Business!
     let ref = Database.database().reference().child("business").child(Auth.auth().currentUser!.uid)
 
@@ -29,6 +30,20 @@ class BusinessAboutViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.navigationBar.isTranslucent = false
         
         companyIndustry.delegate = self
+        
+        ref.observe(.value, with: { snapshot in
+            if snapshot.hasChild("Company Size") && snapshot.hasChild("Headquarters") && snapshot.hasChild("Website") && snapshot.hasChild("Description") && snapshot.hasChild("Industry"){
+                
+                if let business = Business(snapshot: snapshot) {
+                    self.companyIndustry.text = business.industry
+                    self.companyDescription.text = business.description
+                    self.headquarters.text = business.businessHeadquarters
+                    self.companySize.text = business.companySize
+                    self.companyWebsite.text = business.companyWebsite
+                }
+                
+            }
+        })
         
     }
     

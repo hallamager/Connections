@@ -12,6 +12,7 @@ import Firebase
 
 class BusinessQuestionsViewController: UIViewController, UITextFieldDelegate {
     
+    var businesses = [Business]()
     let ref = Database.database().reference().child("business").child(Auth.auth().currentUser!.uid)
     
     @IBOutlet var questionOne: UITextField!
@@ -25,6 +26,19 @@ class BusinessQuestionsViewController: UIViewController, UITextFieldDelegate {
         questionOne.delegate = self
         questionTwo.delegate = self
         questionThree.delegate = self
+        
+        ref.observe(.value, with: { snapshot in
+            if snapshot.hasChild("Question One") && snapshot.hasChild("Question Two") && snapshot.hasChild("Question Three"){
+                
+                if let business = Business(snapshot: snapshot) {
+                    self.questionOne.text = business.questionOne
+                    self.questionTwo.text = business.questionTwo
+                    self.questionThree.text = business.questionThree
+                    
+                }
+                
+            }
+        })
         
     }
     

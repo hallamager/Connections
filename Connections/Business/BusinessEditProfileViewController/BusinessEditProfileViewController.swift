@@ -149,6 +149,14 @@ class BusinessEditProfileViewController: UIViewController, CLLocationManagerDele
         locationManager.stopUpdatingLocation()
     }
     
+    @IBAction func editProfilePic(_ sender: Any) {
+        
+        let storyboard:UIStoryboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
+        let BusinessProfilePictureViewController:BusinessProfilePictureViewController = storyboard.instantiateViewController(withIdentifier: "BusinessProfilePictureViewController") as! BusinessProfilePictureViewController
+        self.navigationController?.pushViewController(BusinessProfilePictureViewController, animated: true)
+        
+    }
+    
     @IBAction func addJobs(_ sender: Any) {
         
         let storyboard:UIStoryboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
