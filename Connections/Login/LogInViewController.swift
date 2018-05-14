@@ -25,8 +25,13 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        
+        IQKeyboardManager.sharedManager().disabledToolbarClasses = [LogInViewController.self]
+        IQKeyboardManager.sharedManager().disabledDistanceHandlingClasses.append(LogInViewController.self)
                         
     }
+    
+    
     
     func moveTextField(textfield: UITextField, moveDistance: Int, up: Bool) {
         let moveDuration = 0.3
@@ -39,11 +44,11 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
     }
     
     @IBAction func password(_ textField: UITextField) {
-//        moveTextField(textfield: textField, moveDistance: -90, up: true)
+        moveTextField(textfield: textField, moveDistance: -90, up: true)
     }
     
     @IBAction func passwordLeave(_ textField: UITextField) {
-//        moveTextField(textfield: textField, moveDistance: -90, up: false)
+        moveTextField(textfield: textField, moveDistance: -90, up: false)
     }
     
     //text field goes away when done is pressed

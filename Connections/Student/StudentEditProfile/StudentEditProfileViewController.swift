@@ -29,6 +29,7 @@ class StudentEditProfileViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var openMenu: UIBarButtonItem!
     @IBOutlet var userUsername: UILabel!
+    @IBOutlet weak var headline: UILabel!
     @IBOutlet var profilePic: UIImageView!
     @IBOutlet var distanceSelected: UILabel!
     @IBOutlet var slider: UISlider!
@@ -60,6 +61,7 @@ class StudentEditProfileViewController: UIViewController {
                 self.interestOne.text = student.interestOne
                 self.interestTwo.text = student.interestTwo
                 self.interestThree.text = student.interestThree
+                self.headline.text = student.headline
                 self.students.append(student)
             }
         })
