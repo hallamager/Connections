@@ -12,6 +12,7 @@ import Firebase
 import FirebaseStorage
 import FoldingCell
 import ViewAnimator
+import Spring
 
 class SelectStudentViewController: UIViewController {
     
@@ -193,6 +194,83 @@ extension SelectStudentViewController: UITableViewDataSource {
         cell.student = student
         cell.delegate = self
         print(student.username)
+        
+        let refHasAnswered = Database.database().reference().child("studentResponses").child(Auth.auth().currentUser!.uid).child(student.uuid)
+        
+        refHasAnswered.observe(.value, with: { (snapshot) in
+            
+            if snapshot.hasChild("Answer One") {
+                cell.answerOne.isEnabled = true
+                
+                cell.answerOneImg.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+                
+                UIView.animate(withDuration: 1,
+                               delay: 0,
+                               usingSpringWithDamping: CGFloat(0.20),
+                               initialSpringVelocity: CGFloat(1.0),
+                               options: [.repeat, .autoreverse],
+                               animations: {
+                                cell.answerOneImg.transform = CGAffineTransform.identity
+                },
+                               completion: { Void in()  }
+                )
+                
+            } else {
+                cell.answerOne.isEnabled = false
+                cell.answerOneImg.isHidden = true
+            }
+            
+        })
+        
+        refHasAnswered.observe(.value, with: { (snapshot) in
+            
+            if snapshot.hasChild("Answer Two") {
+                cell.answerTwo.isEnabled = true
+                
+                cell.answerTwoImg.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+                
+                UIView.animate(withDuration: 1,
+                               delay: 0,
+                               usingSpringWithDamping: CGFloat(0.20),
+                               initialSpringVelocity: CGFloat(1.0),
+                               options: [.repeat, .autoreverse],
+                               animations: {
+                                cell.answerTwoImg.transform = CGAffineTransform.identity
+                },
+                               completion: { Void in()  }
+                )
+                
+            } else {
+                cell.answerTwo.isEnabled = false
+                cell.answerTwoImg.isHidden = true
+            }
+            
+        })
+        
+        refHasAnswered.observe(.value, with: { (snapshot) in
+            
+            if snapshot.hasChild("Answer Three") {
+                cell.answerThree.isEnabled = true
+                
+                cell.answerThreeImg.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+                
+                UIView.animate(withDuration: 1,
+                               delay: 0,
+                               usingSpringWithDamping: CGFloat(0.20),
+                               initialSpringVelocity: CGFloat(1.0),
+                               options: [.repeat, .autoreverse],
+                               animations: {
+                                cell.answerThreeImg.transform = CGAffineTransform.identity
+                },
+                               completion: { Void in()  }
+                )
+                
+            } else {
+                cell.answerThree.isEnabled = false
+                cell.answerThreeImg.isHidden = true
+            }
+            
+        })
         
         return cell
         

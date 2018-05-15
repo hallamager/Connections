@@ -92,7 +92,6 @@ class ViewStudentResponses: UIViewController {
                     self.tableView.rowHeight = UITableViewAutomaticDimension
                     self.tableView.estimatedRowHeight = 140
                     self.tableView.reloadData()
-                    self.tableView.animateViews(animations: self.animations, delay: 0.3)
                     
                 }
                 
@@ -118,7 +117,6 @@ class ViewStudentResponses: UIViewController {
                     self.tableView.rowHeight = UITableViewAutomaticDimension
                     self.tableView.estimatedRowHeight = 140
                     self.tableView.reloadData()
-                    self.tableView.animateViews(animations: self.animations, delay: 0.3)
                     
                 }
                 
@@ -144,7 +142,6 @@ class ViewStudentResponses: UIViewController {
                     self.tableView.rowHeight = UITableViewAutomaticDimension
                     self.tableView.estimatedRowHeight = 140
                     self.tableView.reloadData()
-                    self.tableView.animateViews(animations: self.animations, delay: 0.3)
                     
                 }
                 

@@ -25,6 +25,12 @@ class ResponsesCell: FoldingCell {
     @IBOutlet weak var foldedStudentName: UILabel!
     @IBOutlet weak var foldedStudentHeadline: UILabel!
     @IBOutlet weak var foldedStudentImg: UIImageView!
+    @IBOutlet weak var answerOne: UIButtonStyles!
+    @IBOutlet weak var answerOneImg: UIImageView!
+    @IBOutlet weak var answerTwo: UIButtonStyles!
+    @IBOutlet weak var answerTwoImg: UIImageView!
+    @IBOutlet weak var answerThree: UIButtonStyles!
+    @IBOutlet weak var answerThreeImg: UIImageView!
     
     @IBOutlet var buttons: [UIButton]!
     

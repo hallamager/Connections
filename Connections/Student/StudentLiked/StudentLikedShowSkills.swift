@@ -54,7 +54,6 @@ extension StudentLikedViewController: UICollectionViewDataSource {
             
             educationcell.school?.text = education.school
             educationcell.studied?.text = education.studied
-            educationcell.grades?.text = education.grades
             
             return educationcell
             

@@ -10,6 +10,12 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-DemiBold</string>
+            <string>AvenirNext-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--MoreInfoViewController-->
         <scene sceneID="p6e-0e-5Mi">
@@ -1456,6 +1462,17 @@
                                                                             <rect key="frame" x="8" y="0.0" width="314" height="62"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                                             <subviews>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question One Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYt-kf-sI8">
+                                                                                    <rect key="frame" x="16" y="19" width="191" height="24"/>
+                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                                                                    <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
+                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CTA-DirectionBlack" translatesAutoresizingMaskIntoConstraints="NO" id="XND-WW-U1o">
+                                                                                    <rect key="frame" x="286" y="21" width="13" height="21"/>
+                                                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                                </imageView>
                                                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLx-kt-Tv2" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="314" height="62"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
@@ -1469,17 +1486,6 @@
                                                                                         <action selector="answerSelected:" destination="7Cr-Zj-WxU" eventType="touchUpInside" id="GjI-hF-Wif"/>
                                                                                     </connections>
                                                                                 </button>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question One Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYt-kf-sI8">
-                                                                                    <rect key="frame" x="16" y="19" width="191" height="24"/>
-                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
-                                                                                    <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                                                                    <nil key="highlightedColor"/>
-                                                                                </label>
-                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CTA-Direction" translatesAutoresizingMaskIntoConstraints="NO" id="XND-WW-U1o">
-                                                                                    <rect key="frame" x="286" y="21" width="13" height="21"/>
-                                                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                                </imageView>
                                                                             </subviews>
                                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <userDefinedRuntimeAttributes>
@@ -1498,6 +1504,17 @@
                                                                             <rect key="frame" x="8" y="0.0" width="314" height="62"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                                             <subviews>
+                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CTA-DirectionBlack" translatesAutoresizingMaskIntoConstraints="NO" id="H9S-Kc-RGT">
+                                                                                    <rect key="frame" x="286" y="21" width="13" height="21"/>
+                                                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                                </imageView>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question Two Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spU-Re-0L7">
+                                                                                    <rect key="frame" x="16" y="19" width="191" height="24"/>
+                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                                                                    <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
                                                                                 <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZ7-ti-Vr5" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="314" height="62"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
@@ -1511,17 +1528,6 @@
                                                                                         <action selector="answerSelected:" destination="7Cr-Zj-WxU" eventType="touchUpInside" id="6Q9-Pu-6rk"/>
                                                                                     </connections>
                                                                                 </button>
-                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CTA-Direction" translatesAutoresizingMaskIntoConstraints="NO" id="H9S-Kc-RGT">
-                                                                                    <rect key="frame" x="286" y="21" width="13" height="21"/>
-                                                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                                </imageView>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question Two Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spU-Re-0L7">
-                                                                                    <rect key="frame" x="16" y="19" width="191" height="24"/>
-                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
-                                                                                    <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                                                                    <nil key="highlightedColor"/>
-                                                                                </label>
                                                                             </subviews>
                                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <userDefinedRuntimeAttributes>
@@ -1540,6 +1546,17 @@
                                                                             <rect key="frame" x="8" y="0.0" width="314" height="62"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                                             <subviews>
+                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CTA-DirectionBlack" translatesAutoresizingMaskIntoConstraints="NO" id="iRB-wb-Zmw">
+                                                                                    <rect key="frame" x="286" y="21" width="13" height="21"/>
+                                                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                                </imageView>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question Three Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3UW-E0-cPa">
+                                                                                    <rect key="frame" x="16" y="19" width="193" height="24"/>
+                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                                                                    <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
                                                                                 <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHN-cv-efs" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="314" height="62"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
@@ -1553,17 +1570,6 @@
                                                                                         <action selector="answerSelected:" destination="7Cr-Zj-WxU" eventType="touchUpInside" id="EUe-4I-r4x"/>
                                                                                     </connections>
                                                                                 </button>
-                                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CTA-Direction" translatesAutoresizingMaskIntoConstraints="NO" id="iRB-wb-Zmw">
-                                                                                    <rect key="frame" x="286" y="21" width="13" height="21"/>
-                                                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                                                </imageView>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question Three Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3UW-E0-cPa">
-                                                                                    <rect key="frame" x="16" y="19" width="193" height="24"/>
-                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
-                                                                                    <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                                                                    <nil key="highlightedColor"/>
-                                                                                </label>
                                                                             </subviews>
                                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <userDefinedRuntimeAttributes>
@@ -1614,6 +1620,12 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <outlet property="answerOne" destination="SLx-kt-Tv2" id="oWH-Q9-bHv"/>
+                                            <outlet property="answerOneImg" destination="XND-WW-U1o" id="3gh-WJ-GBi"/>
+                                            <outlet property="answerThree" destination="jHN-cv-efs" id="l5J-GW-aeW"/>
+                                            <outlet property="answerThreeImg" destination="iRB-wb-Zmw" id="m69-T1-eJ0"/>
+                                            <outlet property="answerTwo" destination="xZ7-ti-Vr5" id="mkd-Mr-RsV"/>
+                                            <outlet property="answerTwoImg" destination="H9S-Kc-RGT" id="zFa-58-XCC"/>
                                             <outlet property="containerView" destination="3gn-hJ-EgQ" id="j1i-YY-KHc"/>
                                             <outlet property="containerViewTop" destination="Yf9-73-CkP" id="mOJ-VI-Qb8"/>
                                             <outlet property="foldedStudentHeadline" destination="a8O-uT-jaB" id="wWG-d4-6Cu"/>
@@ -4588,7 +4600,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CTA-Direction" width="131" height="252"/>
+        <image name="CTA-DirectionBlack" width="131" height="252"/>
         <image name="CTA-DirectionGrey" width="131" height="252"/>
         <image name="Close" width="250" height="250"/>
         <image name="Edit" width="250" height="250"/>
