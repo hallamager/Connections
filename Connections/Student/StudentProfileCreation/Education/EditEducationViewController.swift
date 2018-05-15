@@ -22,9 +22,6 @@ class EditEducationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var school: UITextField!
     @IBOutlet var qType: UITextField!
     @IBOutlet var studied: UITextField!
-    @IBOutlet var schoolFromDate: UITextField!
-    @IBOutlet var schoolToDate: UITextField!
-    @IBOutlet var grades: UITextField!
     @IBOutlet weak var validationAlert: UILabel!
     
     weak var delegate: EditEducationControllerDelegate?
@@ -35,16 +32,10 @@ class EditEducationViewController: UIViewController, UITextFieldDelegate {
         school.delegate = self
         qType.delegate = self
         studied.delegate = self
-        schoolFromDate.delegate = self
-        schoolToDate.delegate = self
-        grades.delegate = self
         
         school.text = education.school
         qType.text = education.qType
         studied.text = education.studied
-        schoolFromDate.text = education.fromDate
-        schoolToDate.text = education.toDate
-        grades.text = education.grades
         
     }
     
@@ -73,7 +64,7 @@ class EditEducationViewController: UIViewController, UITextFieldDelegate {
                        completion: { Void in()  }
         )
         
-        guard let school = school.text, !school.isEmpty, let qType = qType.text, !qType.isEmpty, let studied = studied.text, !studied.isEmpty, let schoolFromDate = schoolFromDate.text, !schoolFromDate.isEmpty, let schoolToDate = schoolToDate.text, !schoolToDate.isEmpty, let grades = grades.text, !grades.isEmpty else {
+        guard let school = school.text, !school.isEmpty, let qType = qType.text, !qType.isEmpty, let studied = studied.text, !studied.isEmpty else {
             
             let animation = CABasicAnimation(keyPath: "position")
             animation.duration = 0.07
@@ -92,7 +83,7 @@ class EditEducationViewController: UIViewController, UITextFieldDelegate {
         
         let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("education").child(education.uuid!)
         
-        let ex = Education(data: ["School": self.school.text!, "Qualification Type": self.qType.text!, "Studied": self.studied.text!, "From Date": self.schoolFromDate.text!, "To Date": self.schoolToDate.text!, "Grades": self.grades.text!])
+        let ex = Education(data: ["School": self.school.text!, "Qualification Type": self.qType.text!, "Studied": self.studied.text!])
         
         ref.updateChildValues(ex.toDict())
         

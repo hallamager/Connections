@@ -21,10 +21,8 @@ class EditExperienceViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var jobTitle: UITextField!
     @IBOutlet var jobCompany: UITextField!
-    @IBOutlet var jobCity: UITextField!
     @IBOutlet var jobFromDate: UITextField!
     @IBOutlet var jobToDate: UITextField!
-    @IBOutlet var jobDescription: UITextView!
     @IBOutlet weak var validationAlert: UILabel!
     
     weak var delegate: EditExperienceControllerDelegate?
@@ -34,16 +32,13 @@ class EditExperienceViewController: UIViewController, UITextFieldDelegate {
         
         jobTitle.delegate = self
         jobCompany.delegate = self
-        jobCity.delegate = self
         jobFromDate.delegate = self
         jobToDate.delegate = self
         
         jobTitle.text = experience.title
         jobCompany.text = experience.company
-        jobCity.text = experience.location
         jobFromDate.text = experience.fromDate
         jobToDate.text = experience.toDate
-        jobDescription.text = experience.description
         
     }
     
@@ -72,7 +67,7 @@ class EditExperienceViewController: UIViewController, UITextFieldDelegate {
                        completion: { Void in()  }
         )
         
-        guard let jobTitle = jobTitle.text, !jobTitle.isEmpty, let jobCompany = jobCompany.text, !jobCompany.isEmpty, let jobCity = jobCity.text, !jobCity.isEmpty, let jobFromDate = jobFromDate.text, !jobFromDate.isEmpty, let jobToDate = jobToDate.text, !jobToDate.isEmpty, let jobDescription = jobDescription.text, !jobDescription.isEmpty else {
+        guard let jobTitle = jobTitle.text, !jobTitle.isEmpty, let jobCompany = jobCompany.text, !jobCompany.isEmpty, let jobFromDate = jobFromDate.text, !jobFromDate.isEmpty, let jobToDate = jobToDate.text, !jobToDate.isEmpty else {
             
             let animation = CABasicAnimation(keyPath: "position")
             animation.duration = 0.07
@@ -91,7 +86,7 @@ class EditExperienceViewController: UIViewController, UITextFieldDelegate {
         
         let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("experience").child(experience.uuid!)
         
-        let ex = Experience(data: ["Title": self.jobTitle.text!, "Company": self.jobCompany.text!, "Location": self.jobCity.text!, "From Date": self.jobFromDate.text!, "To Date": self.jobToDate.text!, "Description": self.jobDescription.text!])
+        let ex = Experience(data: ["Title": self.jobTitle.text!, "Company": self.jobCompany.text!, "From Date": self.jobFromDate.text!, "To Date": self.jobToDate.text!])
         
         ref.updateChildValues(ex.toDict())
         

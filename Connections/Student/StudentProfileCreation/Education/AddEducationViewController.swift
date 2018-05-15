@@ -22,9 +22,6 @@ class AddEducationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var school: UITextField!
     @IBOutlet var qType: UITextField!
     @IBOutlet var studied: UITextField!
-    @IBOutlet var schoolFromDate: UITextField!
-    @IBOutlet var schoolToDate: UITextField!
-    @IBOutlet var grades: UITextField!
     @IBOutlet weak var validationAlert: UILabel!
     
     weak var delegate: AddEducationControllerDelegate?
@@ -35,9 +32,6 @@ class AddEducationViewController: UIViewController, UITextFieldDelegate {
         school.delegate = self
         qType.delegate = self
         studied.delegate = self
-        schoolFromDate.delegate = self
-        schoolToDate.delegate = self
-        grades.delegate = self
         
     }
     
@@ -66,7 +60,7 @@ class AddEducationViewController: UIViewController, UITextFieldDelegate {
                        completion: { Void in()  }
         )
                 
-        guard let school = school.text, !school.isEmpty, let qType = qType.text, !qType.isEmpty, let studied = studied.text, !studied.isEmpty, let schoolFromDate = schoolFromDate.text, !schoolFromDate.isEmpty, let schoolToDate = schoolToDate.text, !schoolToDate.isEmpty, let grades = grades.text, !grades.isEmpty else {
+        guard let school = school.text, !school.isEmpty, let qType = qType.text, !qType.isEmpty, let studied = studied.text, !studied.isEmpty else {
             
             let animation = CABasicAnimation(keyPath: "position")
             animation.duration = 0.07
@@ -83,7 +77,7 @@ class AddEducationViewController: UIViewController, UITextFieldDelegate {
             
         }
         
-        let ex = Education(data: ["School": self.school.text!, "Qualification Type": self.qType.text!, "Studied": self.studied.text!, "From Date": self.schoolFromDate.text!, "To Date": self.schoolToDate.text!, "Grades": self.grades.text!])
+        let ex = Education(data: ["School": self.school.text!, "Qualification Type": self.qType.text!, "Studied": self.studied.text!])
         delegate?.didAddEducation(ex)
         self.navigationController?.popViewController(animated: true)
         ref.childByAutoId().setValue(ex.toDict())

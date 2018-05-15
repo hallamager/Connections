@@ -15,9 +15,6 @@ class Education {
     let school: String
     let qType: String
     let studied: String
-    let fromDate: String
-    let toDate: String
-    let grades: String
     
     init?(snapshot: DataSnapshot) {
         if let snapshotData = snapshot.value as? [String: Any] {
@@ -25,9 +22,6 @@ class Education {
             school = snapshotData["School"] as! String
             qType = snapshotData["Qualification Type"] as! String
             studied = snapshotData["Studied"] as! String
-            fromDate = snapshotData["From Date"] as! String
-            toDate = snapshotData["To Date"] as! String
-            grades = snapshotData["Grades"] as! String
         } else {
             return nil
         }
@@ -38,13 +32,10 @@ class Education {
         school = data["School"] as! String
         qType = data["Qualification Type"] as! String
         studied = data["Studied"] as! String
-        fromDate = data["From Date"] as! String
-        toDate = data["To Date"] as! String
-        grades = data["Grades"] as! String
     }
     
     func toDict() -> [String: Any] {
-        return ["School": school, "Qualification Type": qType, "Studied": studied, "From Date": fromDate, "To Date": toDate, "Grades": grades]
+        return ["School": school, "Qualification Type": qType, "Studied": studied]
     }
     
 }
