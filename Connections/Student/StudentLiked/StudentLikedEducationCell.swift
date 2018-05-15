@@ -12,6 +12,5 @@ class StudentLikedEducationCell: UICollectionViewCell {
     
     @IBOutlet weak var studied: UILabel!
     @IBOutlet weak var school: UILabel!
-    @IBOutlet weak var grades: UILabel!
-    
+    @IBOutlet weak var qType: UILabel!
 }

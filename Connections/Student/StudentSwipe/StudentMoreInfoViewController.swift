@@ -149,6 +149,7 @@ class ExperienceMoreInfoCell: UITableViewCell {
     
     @IBOutlet weak var company: UILabel!
     @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var duration: UILabel!
     
 }
 
@@ -156,6 +157,7 @@ class EducationMoreInfoCell: UITableViewCell {
     
     @IBOutlet var company: UILabel!
     @IBOutlet var title: UILabel!
+    @IBOutlet weak var qtype: UILabel!
     
 }
 
@@ -231,6 +233,7 @@ extension StudentMoreInfoViewController: UITableViewDataSource {
             let education = educations[indexPath.row]
             cell.company?.text = education.school
             cell.title?.text = education.studied
+            cell.qtype?.text = education.qType
             cell.backgroundColor = .clear
             cell.backgroundView = UIView()
             cell.selectedBackgroundView = UIView()
@@ -242,6 +245,7 @@ extension StudentMoreInfoViewController: UITableViewDataSource {
         let experience = experiences[indexPath.row]
         cell.company?.text = experience.company
         cell.title?.text = experience.title
+        cell.duration?.text = "\(experience.fromDate) - \(experience.toDate)"
         cell.backgroundColor = .clear
         cell.backgroundView = UIView()
         cell.selectedBackgroundView = UIView()

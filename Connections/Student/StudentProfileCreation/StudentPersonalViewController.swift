@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 import Firebase
 
-class StudentPersonalViewController: UIViewController, UITextFieldDelegate {
+class StudentPersonalViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     let ref = Database.database().reference().child("student").child(Auth.auth().currentUser!.uid)
     
     @IBOutlet var studentAddress: UITextField!
     @IBOutlet var studentHeadline: UITextField!
-    @IBOutlet var studentSummary: UITextField!
+    @IBOutlet var studentSummary: UITextView!
     @IBOutlet weak var validationAlert: UILabel!
     
     override func viewDidLoad() {

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Firebase
+import FirebaseDatabase
 import GeoFire
 
 class StudentCreateProfileLandingViewController: UIViewController {
@@ -17,6 +18,7 @@ class StudentCreateProfileLandingViewController: UIViewController {
     @IBOutlet weak var validationAlert: UILabel!
     
     let ref = Database.database().reference().child("student").child(Auth.auth().currentUser!.uid)
+    let refValidUser = Database.database().reference().child("validStudents")
     let geoRefStudent = GeoFire(firebaseRef: Database.database().reference().child("student_locations"))
     let geoRefBusiness = GeoFire(firebaseRef: Database.database().reference().child("business_locations"))
     let locationManager = CLLocationManager()
@@ -65,6 +67,24 @@ class StudentCreateProfileLandingViewController: UIViewController {
             if snapshot.hasChild("Address") && snapshot.hasChild("Headline") && snapshot.hasChild("profileImageURL") && snapshot.hasChild("Summary") && snapshot.hasChild("Interest One") && snapshot.hasChild("Interest Two") && snapshot.hasChild("Interest Three"){
                 
                 self.createButton.isEnabled = true
+                
+                let rootRef = Database.database().reference(fromURL: "https://connections-bd790.firebaseio.com/")
+                let studentRef = rootRef.child("student").child(Auth.auth().currentUser!.uid)
+                
+                //get each child node of businessRef
+                studentRef.observe(.value, with: { snapshot in
+                        
+                        //set up a student node and write the snapshot.value to it
+                        // using the key as the node name and the value as the value.
+                        let validNode = rootRef.child("student").child("valid")
+                        let thisValidNode = validNode.child(snapshot.key)
+                        thisValidNode.setValue(snapshot.value) //write to the new node
+                        
+                        //get a reference to the data we just read and remove it
+                        let nodeToRemove = studentRef.child(snapshot.key)
+                        nodeToRemove.removeValue();
+                        
+                    })
                 
                 self.presentBusinessSwipeViewViewController()
                 

@@ -20,6 +20,7 @@ class StudentLikedViewController: UIViewController {
     let kCloseCellHeight: CGFloat = 160
     let kOpenCellHeight: CGFloat = 865
     let ref = Database.database().reference().child("student")
+    let refValid = Database.database().reference().child("validStudents")
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
     var students = [Student]()

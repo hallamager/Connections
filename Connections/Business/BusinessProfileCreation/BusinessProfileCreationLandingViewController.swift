@@ -17,6 +17,7 @@ class BusinessCreateProfileLandingViewController: UIViewController {
     @IBOutlet weak var validationAlert: UILabel!
     
     let ref = Database.database().reference().child("business").child(Auth.auth().currentUser!.uid)
+    let refValidUser = Database.database().reference().child("validBusinesses")
     let geoRefBusiness = GeoFire(firebaseRef: Database.database().reference().child("business_locations"))
     let geoRefStudent = GeoFire(firebaseRef: Database.database().reference().child("student_locations"))
     let locationManager = CLLocationManager()
@@ -58,6 +59,24 @@ class BusinessCreateProfileLandingViewController: UIViewController {
             if snapshot.hasChild("Industry") && snapshot.hasChild("Website") && snapshot.hasChild("profileImageURL") && snapshot.hasChild("Description") && snapshot.hasChild("Company Size") && snapshot.hasChild("Headquarters") && snapshot.hasChild("Question One") && snapshot.hasChild("Question Two") && snapshot.hasChild("Question Three") && snapshot.hasChild("cultureOne") && snapshot.hasChild("cultureTwo") && snapshot.hasChild("cultureThree"){
                 
                 self.createButton.isEnabled = true
+                
+                let rootRef = Database.database().reference(fromURL: "https://connections-bd790.firebaseio.com/")
+                let businessRef = rootRef.child("business").child(Auth.auth().currentUser!.uid)
+                
+                //get each child node of businessRef
+                businessRef.observe(.value, with: { snapshot in
+                    
+                    //set up a  node and write the snapshot.value to it
+                    // using the key as the node name and the value as the value.
+                    let validNode = rootRef.child("business").child("valid")
+                    let thisValidNode = validNode.child(snapshot.key)
+                    thisValidNode.setValue(snapshot.value) //write to the new node
+                    
+                    //get a reference to the data we just read and remove it
+                    let nodeToRemove = businessRef.child(snapshot.key)
+                    nodeToRemove.removeValue();
+                    
+                })
                 
                 self.locationManager.delegate = self
                 self.locationManager.requestAlwaysAuthorization()

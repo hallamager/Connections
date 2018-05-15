@@ -22,10 +22,8 @@ class AddExperienceViewController: UIViewController, UITextFieldDelegate, UIText
     
     @IBOutlet var jobTitle: UITextField!
     @IBOutlet var jobCompany: UITextField!
-    @IBOutlet var jobCity: UITextField!
     @IBOutlet var jobFromDate: UITextField!
     @IBOutlet var jobToDate: UITextField!
-    @IBOutlet var jobDescription: UITextView!
     @IBOutlet weak var validationAlert: UILabel!
     
     weak var delegate: AddExperienceControllerDelegate?
@@ -35,10 +33,8 @@ class AddExperienceViewController: UIViewController, UITextFieldDelegate, UIText
         
         jobTitle.delegate = self
         jobCompany.delegate = self
-        jobCity.delegate = self
         jobFromDate.delegate = self
         jobToDate.delegate = self
-        jobDescription.delegate = self
 
         self.navigationController?.navigationBar.tintColor = UIColor.black
         
@@ -78,7 +74,7 @@ class AddExperienceViewController: UIViewController, UITextFieldDelegate, UIText
                        completion: { Void in()  }
         )
         
-        guard let jobTitle = jobTitle.text, !jobTitle.isEmpty, let jobCompany = jobCompany.text, !jobCompany.isEmpty, let jobCity = jobCity.text, !jobCity.isEmpty, let jobFromDate = jobFromDate.text, !jobFromDate.isEmpty, let jobToDate = jobToDate.text, !jobToDate.isEmpty, let jobDescription = jobDescription.text, !jobDescription.isEmpty else {
+        guard let jobTitle = jobTitle.text, !jobTitle.isEmpty, let jobCompany = jobCompany.text, !jobCompany.isEmpty, let jobFromDate = jobFromDate.text, !jobFromDate.isEmpty, let jobToDate = jobToDate.text, !jobToDate.isEmpty else {
             
             let animation = CABasicAnimation(keyPath: "position")
             animation.duration = 0.07
@@ -95,7 +91,7 @@ class AddExperienceViewController: UIViewController, UITextFieldDelegate, UIText
             
         }
         
-        let ex = Experience(data: ["Title": self.jobTitle.text!, "Company": self.jobCompany.text!, "Location": self.jobCity.text!, "From Date": self.jobFromDate.text!, "To Date": self.jobToDate.text!, "Description": self.jobDescription.text!])
+        let ex = Experience(data: ["Title": self.jobTitle.text!, "Company": self.jobCompany.text!, "From Date": self.jobFromDate.text!, "To Date": self.jobToDate.text!])
         delegate?.didAddExperience(ex)
         self.navigationController?.popViewController(animated: true)
         ref.childByAutoId().setValue(ex.toDict())

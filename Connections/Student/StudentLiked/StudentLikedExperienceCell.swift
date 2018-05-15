@@ -12,5 +12,6 @@ class StudentLikedExperienceCell: UICollectionViewCell {
     
     @IBOutlet weak var company: UILabel!
     @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var duration: UILabel!
     
 }

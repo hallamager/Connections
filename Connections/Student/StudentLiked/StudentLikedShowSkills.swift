@@ -41,6 +41,7 @@ extension StudentLikedViewController: UICollectionViewDataSource {
             
             experiencecell.company?.text = experience.company
             experiencecell.title?.text = experience.title
+            experiencecell.duration?.text = "\(experience.fromDate) - \(experience.toDate)"
             
             return experiencecell
             
@@ -54,6 +55,7 @@ extension StudentLikedViewController: UICollectionViewDataSource {
             
             educationcell.school?.text = education.school
             educationcell.studied?.text = education.studied
+            educationcell.qType?.text = education.qType
             
             return educationcell
             
