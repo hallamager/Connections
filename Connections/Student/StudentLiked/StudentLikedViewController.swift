@@ -19,7 +19,7 @@ class StudentLikedViewController: UIViewController {
     
     let kCloseCellHeight: CGFloat = 160
     let kOpenCellHeight: CGFloat = 865
-    let ref = Database.database().reference().child("student")
+    let ref = Database.database().reference().child("student").child("valid")
     let refValid = Database.database().reference().child("validStudents")
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
@@ -78,7 +78,7 @@ class StudentLikedViewController: UIViewController {
                 uids.append(userData.key)
             }
             
-            let userRef = Database.database().reference(withPath: "student")
+            let userRef = Database.database().reference(withPath: "student").child("valid")
             var students = [Student]()
             var count = 0
             if uids.count != 0 {
@@ -205,7 +205,7 @@ extension StudentLikedViewController: UITableViewDataSource {
         
         let student = students[indexPath.row]
         
-        let refSkills = Database.database().reference().child("student").child(student.uuid).child("skills")
+        let refSkills = Database.database().reference().child("student").child("valid").child(student.uuid).child("skills")
         
         refSkills.observe(.value, with: { snapshot in
             self.skills.removeAll()
@@ -226,7 +226,7 @@ extension StudentLikedViewController: UITableViewDataSource {
             
         })
         
-        let refEducation = Database.database().reference().child("student").child(student.uuid).child("education")
+        let refEducation = Database.database().reference().child("student").child("valid").child(student.uuid).child("education")
         
         refEducation.observe(.value, with: { snapshot in
             
@@ -246,7 +246,7 @@ extension StudentLikedViewController: UITableViewDataSource {
             
         })
         
-        let refExperience = Database.database().reference().child("student").child(student.uuid).child("experience")
+        let refExperience = Database.database().reference().child("student").child("valid").child(student.uuid).child("experience")
         
         refExperience.observe(.value, with: { snapshot in
             

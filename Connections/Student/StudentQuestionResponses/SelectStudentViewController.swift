@@ -73,7 +73,7 @@ class SelectStudentViewController: UIViewController {
                 uids.append(userData.key)
             }
             
-            let userRef = Database.database().reference(withPath: "student")
+            let userRef = Database.database().reference(withPath: "student").child("valid")
             var students = [Student]()
             var count = 0
             if uids.count != 0 {

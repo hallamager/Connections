@@ -33,6 +33,10 @@ class BusinessCreateProfileLandingViewController: UIViewController {
         
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        locationManager.stopUpdatingLocation()
+    }
+    
     func presentBusinessSwipeViewViewController() {
         let storyboard:UIStoryboard = UIStoryboard(name: "StudentMain", bundle: nil)
         let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "StudentSWRevealViewController") as! SWRevealViewController
@@ -129,7 +133,7 @@ extension BusinessCreateProfileLandingViewController: CLLocationManagerDelegate 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         guard let location = locations.last else { return }
-        let query = geoRefStudent.query(at: location, withRadius: 1)
+        let query = geoRefBusiness.query(at: location, withRadius: 1)
         query.observe(.keyEntered) { string, location in
             print(string)
         }

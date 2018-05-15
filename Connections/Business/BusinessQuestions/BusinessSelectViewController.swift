@@ -19,7 +19,7 @@ class BusinessSelectViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var noBusinessQuestions: UILabel!
     
-    let ref = Database.database().reference().child("business")
+    let ref = Database.database().reference().child("business").child("valid")
     var businesses = [Business]()
     let kCloseCellHeight: CGFloat = 130
     let kOpenCellHeight: CGFloat = 340
@@ -69,7 +69,7 @@ class BusinessSelectViewController: UIViewController {
                 uids.append(userData.key)
             }
             
-            let userRef = Database.database().reference(withPath: "business")
+            let userRef = Database.database().reference(withPath: "business").child("valid")
             var businesses = [Business]()
             var count = 0
             if uids.count != 0 {

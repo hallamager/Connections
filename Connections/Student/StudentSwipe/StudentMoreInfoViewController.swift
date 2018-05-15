@@ -59,7 +59,7 @@ class StudentMoreInfoViewController: UIViewController {
             self.companyImage.image = pic
         }
         
-        let refSkills = Database.database().reference().child("student").child(student.uuid).child("skills")
+        let refSkills = Database.database().reference().child("student").child("valid").child(student.uuid).child("skills")
         
         refSkills.observe(.value, with: { snapshot in
             self.skills.removeAll()
@@ -78,8 +78,8 @@ class StudentMoreInfoViewController: UIViewController {
             
         })
         
-        let refEducation = Database.database().reference().child("student").child(student.uuid).child("education")
-        let refExperience = Database.database().reference().child("student").child(student.uuid).child("experience")
+        let refEducation = Database.database().reference().child("student").child("valid").child(student.uuid).child("education")
+        let refExperience = Database.database().reference().child("student").child("valid").child(student.uuid).child("experience")
         
         refEducation.observe(.value, with: { snapshot in
             

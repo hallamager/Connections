@@ -12,7 +12,7 @@ import Firebase
 
 class ShowEducationAddedViewController: UIViewController {
     
-    let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("education")
+    let ref = Database.database().reference().child("student/valid/\(Auth.auth().currentUser!.uid)").child("education")
     var educations = [Education]()
     
     @IBOutlet var tableView: UITableView!
@@ -121,7 +121,7 @@ extension ShowEducationAddedViewController: EducationProfileCellDelegate {
             if sender.tag == 2 {
                 let education = educations[indexPath.row]
                 
-                let refDeleteEducation = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("education").child(education.uuid!)
+                let refDeleteEducation = Database.database().reference().child("student/valid/\(Auth.auth().currentUser!.uid)").child("education").child(education.uuid!)
                 
                 refDeleteEducation.removeValue()
             }

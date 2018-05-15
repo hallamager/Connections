@@ -23,7 +23,7 @@ class StudentSwipeViewController: UIViewController {
     
     
     let refLikes = Database.database().reference()
-    let ref = Database.database().reference().child("student")
+    let ref = Database.database().reference().child("student").child("valid")
     var businesses = [Business]()
     var students = [Student]()
     let geoRefBusiness = GeoFire(firebaseRef: Database.database().reference().child("business_locations"))
@@ -110,7 +110,7 @@ class StudentSwipeViewController: UIViewController {
                 uids.append(userData.key)
             }
             
-            let userRef = Database.database().reference(withPath: "student")
+            let userRef = Database.database().reference(withPath: "student").child("valid")
             var students = [Student]()
             var count = 0
             

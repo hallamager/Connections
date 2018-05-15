@@ -81,7 +81,7 @@ class EditEducationViewController: UIViewController, UITextFieldDelegate {
             
         }
         
-        let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("education").child(education.uuid!)
+        let ref = Database.database().reference().child("student/valid/\(Auth.auth().currentUser!.uid)").child("education").child(education.uuid!)
         
         let ex = Education(data: ["School": self.school.text!, "Qualification Type": self.qType.text!, "Studied": self.studied.text!])
         

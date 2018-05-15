@@ -32,7 +32,7 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         menuNameArray = ["Home", "Liked", "Questions", "Jobs", "Invites", "Profile"]
         iconImage = [UIImage(named: "Home-icon")!, UIImage(named: "Liked-icon")!, UIImage(named: "Chats-icon")!, UIImage(named: "News-Feed-icon")!, UIImage(named: "News-Feed-icon")!, UIImage(named: "Profile-icon")! ]
         
-        let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)")
+        let ref = Database.database().reference().child("student/valid/\(Auth.auth().currentUser!.uid)")
         ref.observeSingleEvent(of: .value, with: { snapshot in
             if let student = Student(snapshot: snapshot) {
                 self.usernameLabel.text = student.username

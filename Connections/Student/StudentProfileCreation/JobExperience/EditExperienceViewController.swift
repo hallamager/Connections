@@ -84,7 +84,7 @@ class EditExperienceViewController: UIViewController, UITextFieldDelegate {
             
         }
         
-        let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("experience").child(experience.uuid!)
+        let ref = Database.database().reference().child("student/valid/\(Auth.auth().currentUser!.uid)").child("experience").child(experience.uuid!)
         
         let ex = Experience(data: ["Title": self.jobTitle.text!, "Company": self.jobCompany.text!, "From Date": self.jobFromDate.text!, "To Date": self.jobToDate.text!])
         

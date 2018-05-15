@@ -26,7 +26,7 @@ class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate {
     
     
     let refLikes = Database.database().reference()
-    let ref = Database.database().reference().child("business")
+    let ref = Database.database().reference().child("business").child("valid")
     var businesses = [Business]()
     var students = [Student]()
     let geoRefBusiness = GeoFire(firebaseRef: Database.database().reference().child("business_locations"))

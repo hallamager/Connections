@@ -15,7 +15,7 @@ extension BusinessSwipeViewController {
         
     func loadNearbyBusinesses(for location: CLLocation) {
         
-        let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)")
+        let ref = Database.database().reference().child("student/valid/\(Auth.auth().currentUser!.uid)")
         ref.observeSingleEvent(of: .value, with: { snapshot in
             if let student = Student(snapshot: snapshot) {
                 

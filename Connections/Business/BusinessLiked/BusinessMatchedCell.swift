@@ -26,7 +26,7 @@ extension BusinessLikedViewController  {
                 uids.append(userData.key)
             }
             
-            let userRef = Database.database().reference(withPath: "business")
+            let userRef = Database.database().reference(withPath: "business").child("valid")
             var matchedBusinesses = [Business]()
             var count = 0
             if uids.count != 0 {

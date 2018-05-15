@@ -124,7 +124,7 @@ extension ShowSkillsViewController: DeleteSkillsCellDelegate {
             
                 let skill = skills[indexPath.row]
                 
-                let refDeleteSkills = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("skills").child(skill.uuid!)
+                let refDeleteSkills = Database.database().reference().child("student/valid/\(Auth.auth().currentUser!.uid)").child("skills").child(skill.uuid!)
                 
                 refDeleteSkills.removeValue()
                 

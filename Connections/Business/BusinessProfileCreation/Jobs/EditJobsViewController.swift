@@ -49,7 +49,7 @@ class EditJobsViewController: UIViewController, UITextFieldDelegate {
         jobLocation.text = job.location
         jobSalary.text = job.salary
         
-        let refSkillsRequired = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!).child("skillsRequired")
+        let refSkillsRequired = Database.database().reference().child("business/valid/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!).child("skillsRequired")
         
         refSkillsRequired.observe(.value, with: { snapshot in
             
@@ -74,7 +74,7 @@ class EditJobsViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func editRequiredSkillBtn(_ sender: Any) {
         
-        let refSkillsRequired = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!).child("skillsRequired")
+        let refSkillsRequired = Database.database().reference().child("business/valid/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!).child("skillsRequired")
 
         refSkillsRequired.updateChildValues([self.editRequiredSkill.text! : true])
         
@@ -130,7 +130,7 @@ class EditJobsViewController: UIViewController, UITextFieldDelegate {
             
         }
         
-        let ref = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!)
+        let ref = Database.database().reference().child("business/valid/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!)
         
         ref.updateChildValues(["Title": self.jobTitle.text!, "Employment Type": self.employmentType.text!, "Description": self.jobDescription.text!, "Location": self.jobLocation.text!, "Salary": self.jobSalary.text!])
         
@@ -150,7 +150,7 @@ extension EditJobsViewController: DeleteSkillRequiredCellDelegate {
                 
                 let skillsRequired = skillRequired[indexPath.row]
                 
-                let refDeleteSkillsRequired = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!).child("skillsRequired").child(skillsRequired)
+                let refDeleteSkillsRequired = Database.database().reference().child("business/valid/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!).child("skillsRequired").child(skillsRequired)
                 
                 refDeleteSkillsRequired.removeValue()
                 

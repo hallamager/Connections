@@ -64,7 +64,7 @@ class BusinessInvitesViewController: UIViewController {
                 uids.append(userData.key)
             }
             
-            let userRef = Database.database().reference(withPath: "business")
+            let userRef = Database.database().reference(withPath: "business").child("valid")
             var businesses = [Business]()
             var count = 0
             if uids.count != 0 {

@@ -32,9 +32,9 @@ class BusinessEditProfileViewController: UIViewController, CLLocationManagerDele
     let sections = ["Info", "Jobs"]
     
     var businesses = [Business]()
-    let ref = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)")
-    let refJobs = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)").child("Jobs")
-    let refSpecialties = Database.database().reference().child("business").child(Auth.auth().currentUser!.uid).child("specialties")
+    let ref = Database.database().reference().child("business/valid/\(Auth.auth().currentUser!.uid)")
+    let refJobs = Database.database().reference().child("business/valid/\(Auth.auth().currentUser!.uid)").child("Jobs")
+    let refSpecialties = Database.database().reference().child("business").child("valid").child(Auth.auth().currentUser!.uid).child("specialties")
     let geoRefBusiness = GeoFire(firebaseRef: Database.database().reference().child("business_locations"))
     var jobs = [Job]()
     var specialties = [Specialties]()
@@ -345,7 +345,7 @@ extension BusinessEditProfileViewController: EditInfoCellDelegate, EditJobCellDe
                 
                 let job = jobs[indexPath.row]
                 
-                let refDeleteJobs = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!)
+                let refDeleteJobs = Database.database().reference().child("business/valid/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!)
                 
                 refDeleteJobs.removeValue()
                 
@@ -359,7 +359,7 @@ extension BusinessEditProfileViewController: EditInfoCellDelegate, EditJobCellDe
                 
                 let specialtie = specialties[indexPath.row]
                 
-                let refDeleteSpecalties = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)").child("specialties").child(specialtie.uuid!)
+                let refDeleteSpecalties = Database.database().reference().child("business/valid/\(Auth.auth().currentUser!.uid)").child("specialties").child(specialtie.uuid!)
                 
                 refDeleteSpecalties.removeValue()
                 

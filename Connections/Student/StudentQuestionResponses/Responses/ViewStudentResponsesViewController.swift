@@ -23,7 +23,7 @@ class ViewStudentResponses: UIViewController {
     var questionTwos = [QuestionTwo]()
     var questionThrees = [QuestionThree]()
     
-    let ref = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)")
+    let ref = Database.database().reference().child("business/valid/\(Auth.auth().currentUser!.uid)")
     let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
     
     let sections = ["Questions", "Answers"]

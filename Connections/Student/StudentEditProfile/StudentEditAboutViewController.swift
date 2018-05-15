@@ -15,7 +15,7 @@ import FirebaseStorage
 class StudentEditAboutViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var students = [Student]()
-    let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)")
+    let ref = Database.database().reference().child("student/valid/\(Auth.auth().currentUser!.uid)")
     var selectedImage: UIImage?
     let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(Auth.auth().currentUser!.uid)
     

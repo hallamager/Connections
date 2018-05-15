@@ -18,7 +18,7 @@ class BusinessJobsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var business: Business!
-    let ref = Database.database().reference().child("business")
+    let ref = Database.database().reference().child("business").child("valid")
     var businesses = [Business]()
     let animations = [AnimationType.from(direction: .bottom, offset: 30.0)]
     
@@ -54,7 +54,7 @@ class BusinessJobsViewController: UIViewController {
                 uids.append(userData.key)
             }
             
-            let userRef = Database.database().reference(withPath: "business")
+            let userRef = Database.database().reference(withPath: "business").child("valid")
             var businesses = [Business]()
             var count = 0
             if uids.count != 0 {

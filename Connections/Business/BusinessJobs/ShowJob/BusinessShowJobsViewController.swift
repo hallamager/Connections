@@ -17,7 +17,7 @@ class BusinessShowJobsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let ref = Database.database().reference().child("business")
+    let ref = Database.database().reference().child("business").child("valid")
     var businesses = [Business]()
     var jobs = [Job]()
     let kCloseCellHeight: CGFloat = 130
@@ -40,7 +40,7 @@ class BusinessShowJobsViewController: UIViewController {
         
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "Avenir Next", size: 17)!]
         
-        let refJobs = Database.database().reference().child("business").child(business.uuid).child("Jobs")
+        let refJobs = Database.database().reference().child("business").child("valid").child(business.uuid).child("Jobs")
 
         refJobs.observeSingleEvent(of: .value, with: { snapshot in
             for job in snapshot.children {
@@ -186,7 +186,7 @@ extension BusinessShowJobsViewController: UITableViewDataSource {
         
         let job = jobs[indexPath.row]
         
-        let ref = Database.database().reference().child("business").child(business.uuid).child("Jobs").child(job.uuid!).child("skillsRequired")
+        let ref = Database.database().reference().child("business").child("valid").child(business.uuid).child("Jobs").child(job.uuid!).child("skillsRequired")
         
         ref.observe(.value, with: { snapshot in
             

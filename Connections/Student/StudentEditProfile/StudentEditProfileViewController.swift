@@ -15,10 +15,10 @@ class StudentEditProfileViewController: UIViewController {
     let sections = ["Education", "Experience"]
     
     var students = [Student]()
-    let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)")
-    let refEducation = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("education")
-    let refExperience = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("experience")
-    let refSkills = Database.database().reference().child("student").child(Auth.auth().currentUser!.uid).child("skills")
+    let ref = Database.database().reference().child("student/valid/\(Auth.auth().currentUser!.uid)")
+    let refEducation = Database.database().reference().child("student/valid/\(Auth.auth().currentUser!.uid)").child("education")
+    let refExperience = Database.database().reference().child("student/valid/\(Auth.auth().currentUser!.uid)").child("experience")
+    let refSkills = Database.database().reference().child("student").child("valid").child(Auth.auth().currentUser!.uid).child("skills")
     var educations = [Education]()
     var experiences = [Experience]()
     var skills = [Skills]()
@@ -296,7 +296,7 @@ extension StudentEditProfileViewController: EducationCellDelegate, ExperienceCel
             if sender.tag == 2 {
                 let education = educations[indexPath.row]
                 
-                let refDeleteEducation = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("education").child(education.uuid!)
+                let refDeleteEducation = Database.database().reference().child("student/valid/\(Auth.auth().currentUser!.uid)").child("education").child(education.uuid!)
                 
                 refDeleteEducation.removeValue()
             }
@@ -311,7 +311,7 @@ extension StudentEditProfileViewController: EducationCellDelegate, ExperienceCel
             if sender.tag == 4 {
                 let experience = experiences[indexPath.row]
                 
-                let refDeleteExperience = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("experience").child(experience.uuid!)
+                let refDeleteExperience = Database.database().reference().child("student/valid/\(Auth.auth().currentUser!.uid)").child("experience").child(experience.uuid!)
                 
                 refDeleteExperience.removeValue()
                 
@@ -324,7 +324,7 @@ extension StudentEditProfileViewController: EducationCellDelegate, ExperienceCel
             if sender.tag == 5 {
                 let skill = skills[indexPath.row]
                 
-                let refDeleteSkills = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("skills").child(skill.uuid!)
+                let refDeleteSkills = Database.database().reference().child("student/valid/\(Auth.auth().currentUser!.uid)").child("skills").child(skill.uuid!)
                 
                 refDeleteSkills.removeValue()
                 

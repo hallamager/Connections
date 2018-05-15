@@ -12,7 +12,7 @@ import Firebase
 
 class ShowExperienceAddedViewController: UIViewController {
     
-    let ref = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("experience")
+    let ref = Database.database().reference().child("student/valid/\(Auth.auth().currentUser!.uid)").child("experience")
     var experiences = [Experience]()
     
     @IBOutlet var tableView: UITableView!
@@ -130,7 +130,7 @@ extension ShowExperienceAddedViewController: ExperienceProfileCellDelegate {
             if sender.tag == 2 {
                 let experience = experiences[indexPath.row]
                 
-                let refDeleteEducation = Database.database().reference().child("student/\(Auth.auth().currentUser!.uid)").child("experience").child(experience.uuid!)
+                let refDeleteEducation = Database.database().reference().child("student/valid/\(Auth.auth().currentUser!.uid)").child("experience").child(experience.uuid!)
                 
                 refDeleteEducation.removeValue()
             }

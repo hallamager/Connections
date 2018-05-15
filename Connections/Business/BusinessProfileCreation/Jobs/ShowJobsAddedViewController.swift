@@ -12,7 +12,7 @@ import Firebase
 
 class ShowJobsAddedViewController: UIViewController {
     
-    let ref = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)").child("Jobs")
+    let ref = Database.database().reference().child("business/valid/\(Auth.auth().currentUser!.uid)").child("Jobs")
     var jobs = [Job]()
     var job: Job!
     
@@ -122,7 +122,7 @@ extension ShowJobsAddedViewController: JobCellDelegate {
             if sender.tag == 2 {
                 let job = jobs[indexPath.row]
                 
-                let refDeleteJobs = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!)
+                let refDeleteJobs = Database.database().reference().child("business/valid/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!)
                 
                 refDeleteJobs.removeValue()
             }

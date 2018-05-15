@@ -119,7 +119,7 @@ extension BusinessSpecialtiesViewController: SpecialtiesCellDelegate {
             if sender.tag == 1 {
                 let specialtie = specialties[indexPath.row]
                 
-                let refDeleteJobs = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)").child("specialties").child(specialtie.uuid!)
+                let refDeleteJobs = Database.database().reference().child("business/valid/\(Auth.auth().currentUser!.uid)").child("specialties").child(specialtie.uuid!)
                 
                 refDeleteJobs.removeValue()
             }

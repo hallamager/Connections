@@ -44,7 +44,7 @@ class BusinessMoreInfoViewController: UIViewController {
         companyDescription.sizeToFit()
         companyDescription.isScrollEnabled = false
         
-        let refSpecialties = Database.database().reference().child("business").child(business.uuid).child("specialties")
+        let refSpecialties = Database.database().reference().child("business").child("valid").child(business.uuid).child("specialties")
         
         refSpecialties.observe(.value, with: { snapshot in
             self.specialties.removeAll()

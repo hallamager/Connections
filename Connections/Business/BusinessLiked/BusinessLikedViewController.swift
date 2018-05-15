@@ -18,7 +18,7 @@ class BusinessLikedViewController: UIViewController {
     
     let kCloseCellHeight: CGFloat = 160
     let kOpenCellHeight: CGFloat = 820
-    let ref = Database.database().reference().child("business")
+    let ref = Database.database().reference().child("business").child("valid")
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
     var businesses = [Business]()
@@ -98,7 +98,7 @@ class BusinessLikedViewController: UIViewController {
                 uids.append(userData.key)
             }
             
-            let userRef = Database.database().reference(withPath: "business")
+            let userRef = Database.database().reference().child("business").child("valid")
             var businesses = [Business]()
             var count = 0
             if uids.count != 0 {
@@ -228,7 +228,7 @@ extension BusinessLikedViewController: UITableViewDataSource {
             
             let business = businesses[indexPath.row]
         
-            let refSpecialties = Database.database().reference().child("business").child(business.uuid).child("specialties")
+            let refSpecialties = Database.database().reference().child("business").child("valid").child(business.uuid).child("specialties")
 
             refSpecialties.observe(.value, with: { snapshot in
                 self.specialties.removeAll()

@@ -17,7 +17,7 @@ class JobsPostedViewController: UIViewController {
     @IBOutlet var openMenu: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     
-    let ref = Database.database().reference().child("business/\(Auth.auth().currentUser!.uid)").child("Jobs")
+    let ref = Database.database().reference().child("business/valid/\(Auth.auth().currentUser!.uid)").child("Jobs")
     var jobs = [Job]()
     var students = [Student]()
     var business: Business!
@@ -118,7 +118,7 @@ extension JobsPostedViewController: UITableViewDataSource {
                     uids.append(userData.key)
                 }
                 
-                let userRef = Database.database().reference(withPath: "student")
+                let userRef = Database.database().reference(withPath: "student").child("valid")
                 var students = [Student]()
                 var count = 0
                 if uids.count != 0 {
