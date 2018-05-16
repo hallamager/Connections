@@ -17,7 +17,7 @@ protocol AddJobsControllerDelegate: class {
 
 class AddJobsViewController: UIViewController, UITextFieldDelegate {
     
-    let ref = Database.database().reference().child("business").child(Auth.auth().currentUser!.uid).child("Jobs")
+    let ref = Database.database().reference().child("business").child("pending").child(Auth.auth().currentUser!.uid).child("Jobs")
     
     @IBOutlet var jobTitle: UITextField!
     @IBOutlet var employmentType: UITextField!
@@ -42,12 +42,8 @@ class AddJobsViewController: UIViewController, UITextFieldDelegate {
         
         skillsRequired.keyboardDistanceFromTextField = 105
         
-        self.navigationController?.navigationBar.isTranslucent = false
-        
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+
     }
     
     //text field goes away when done is pressed

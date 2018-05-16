@@ -12,7 +12,7 @@ import Firebase
 
 class ShowExperienceAddedViewController: UIViewController {
     
-    let ref = Database.database().reference().child("student/valid/\(Auth.auth().currentUser!.uid)").child("experience")
+    let ref = Database.database().reference().child("student/pending/\(Auth.auth().currentUser!.uid)").child("experience")
     var experiences = [Experience]()
     
     @IBOutlet var tableView: UITableView!
@@ -39,12 +39,8 @@ class ShowExperienceAddedViewController: UIViewController {
             
         })
         
-        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.tintColor = UIColor.black
         
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
     
     @IBAction func addNewJob(_ sender: Any) {
@@ -130,7 +126,7 @@ extension ShowExperienceAddedViewController: ExperienceProfileCellDelegate {
             if sender.tag == 2 {
                 let experience = experiences[indexPath.row]
                 
-                let refDeleteEducation = Database.database().reference().child("student/valid/\(Auth.auth().currentUser!.uid)").child("experience").child(experience.uuid!)
+                let refDeleteEducation = Database.database().reference().child("student/pending/\(Auth.auth().currentUser!.uid)").child("experience").child(experience.uuid!)
                 
                 refDeleteEducation.removeValue()
             }

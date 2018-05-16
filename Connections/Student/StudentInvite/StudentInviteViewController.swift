@@ -132,31 +132,31 @@ extension StudentInviteViewController: UITableViewDelegate {
                 cell.secondDateResponse.text = business.responseSecondDate
                 
                 if cell.foldedResponse.text == "Date Accepted" {
-                    cell.foldedResponse.textColor = UIColor.green
+                    cell.foldedResponse.textColor = UIColor(red: 13/255, green: 97/255, blue: 40/255, alpha: 1.0)
                 }
                 
                 if cell.firstDateResponse.text == "Date Accepted" {
-                    cell.firstDateResponse.textColor = UIColor.green
+                    cell.firstDateResponse.textColor = UIColor(red: 13/255, green: 97/255, blue: 40/255, alpha: 1.0)
                 }
                 
                 if cell.firstDateResponse.text == "Declined" {
-                    cell.firstDateResponse.textColor = UIColor.red
+                    cell.firstDateResponse.textColor = UIColor(red: 199/255, green: 18/255, blue: 46/255, alpha: 1.0)
                 }
                 
                 if cell.firstDateResponse.text == "Cancelled" {
-                    cell.firstDateResponse.textColor = UIColor.red
+                    cell.firstDateResponse.textColor = UIColor(red: 199/255, green: 18/255, blue: 46/255, alpha: 1.0)
                 }
                 
                 if cell.secondDateResponse.text == "Date Accepted" {
-                    cell.secondDateResponse.textColor = UIColor.green
+                    cell.secondDateResponse.textColor = UIColor(red: 13/255, green: 97/255, blue: 40/255, alpha: 1.0)
                 }
                 
                 if cell.secondDateResponse.text == "Declined" {
-                    cell.secondDateResponse.textColor = UIColor.red
+                    cell.secondDateResponse.textColor = UIColor(red: 199/255, green: 18/255, blue: 46/255, alpha: 1.0)
                 }
                 
                 if cell.secondDateResponse.text == "Cancelled" {
-                    cell.secondDateResponse.textColor = UIColor.red
+                    cell.secondDateResponse.textColor = UIColor(red: 199/255, green: 18/255, blue: 46/255, alpha: 1.0)
                 }
                 
                 if cell.foldedResponse.text == "Different Dates Requested" {
@@ -168,23 +168,23 @@ extension StudentInviteViewController: UITableViewDelegate {
                 }
                 
                 if cell.response.text == "Date Accepted" {
-                    cell.response.textColor = UIColor.green
+                    cell.response.textColor = UIColor(red: 13/255, green: 97/255, blue: 40/255, alpha: 1.0)
                 }
                 
                 if cell.foldedResponse.text == "Declined" {
-                    cell.foldedResponse.textColor = UIColor.red
+                    cell.foldedResponse.textColor = UIColor(red: 199/255, green: 18/255, blue: 46/255, alpha: 1.0)
                 }
                 
                 if cell.foldedResponse.text == "Cancelled" {
-                    cell.foldedResponse.textColor = UIColor.red
+                    cell.foldedResponse.textColor = UIColor(red: 199/255, green: 18/255, blue: 46/255, alpha: 1.0)
                 }
                 
                 if cell.response.text == "Declined" {
-                    cell.response.textColor = UIColor.red
+                    cell.response.textColor = UIColor(red: 199/255, green: 18/255, blue: 46/255, alpha: 1.0)
                 }
                 
                 if cell.response.text == "Cancelled" {
-                    cell.response.textColor = UIColor.red
+                    cell.response.textColor = UIColor(red: 199/255, green: 18/255, blue: 46/255, alpha: 1.0)
                 }
                 
             }

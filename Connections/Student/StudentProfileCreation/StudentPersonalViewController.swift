@@ -12,7 +12,7 @@ import Firebase
 
 class StudentPersonalViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
-    let ref = Database.database().reference().child("student").child(Auth.auth().currentUser!.uid)
+    let ref = Database.database().reference().child("student").child("pending").child(Auth.auth().currentUser!.uid)
     
     @IBOutlet var studentAddress: UITextField!
     @IBOutlet var studentHeadline: UITextField!
@@ -26,12 +26,20 @@ class StudentPersonalViewController: UIViewController, UITextFieldDelegate, UITe
         studentHeadline.delegate = self
         studentSummary.delegate = self
         
-        self.navigationController?.navigationBar.tintColor = UIColor.white
+        ref.observeSingleEvent(of: .value) { snapshot in
+            if snapshot.hasChild("Summary") && snapshot.hasChild("Headline") && snapshot.hasChild("Address"){
                 
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+                if let student = Student(snapshot: snapshot) {
+                    self.studentAddress.text = student.address
+                    self.studentHeadline.text = student.headline
+                    self.studentSummary.text = student.summary
+                }
+                
+            }
+        }
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+                
     }
     
     //text field goes away when done is pressed

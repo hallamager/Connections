@@ -12,7 +12,7 @@ import Firebase
 
 class ShowJobsAddedViewController: UIViewController {
     
-    let ref = Database.database().reference().child("business/valid/\(Auth.auth().currentUser!.uid)").child("Jobs")
+    let ref = Database.database().reference().child("business/pending/\(Auth.auth().currentUser!.uid)").child("Jobs")
     var jobs = [Job]()
     var job: Job!
     
@@ -21,7 +21,7 @@ class ShowJobsAddedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.tintColor = UIColor.black
         
         ref.observe(.value, with: { snapshot in
             self.jobs.removeAll()
@@ -122,7 +122,7 @@ extension ShowJobsAddedViewController: JobCellDelegate {
             if sender.tag == 2 {
                 let job = jobs[indexPath.row]
                 
-                let refDeleteJobs = Database.database().reference().child("business/valid/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!)
+                let refDeleteJobs = Database.database().reference().child("business/pending/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!)
                 
                 refDeleteJobs.removeValue()
             }

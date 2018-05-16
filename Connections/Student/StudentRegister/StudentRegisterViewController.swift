@@ -43,10 +43,6 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     @IBAction func alreadyHaveAnAccountBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -84,7 +80,7 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
             } else {
                 
                 // following method is a add user's more details
-                ref.child("student").child(user!.uid).updateChildValues(["Username": self.usernameTextField.text!, "type": "student"])
+                ref.child("student").child("pending").child(user!.uid).updateChildValues(["Username": self.usernameTextField.text!, "type": "student"])
                 
                 ref.child("users").child(user!.uid).setValue(["type": "student"])
                 

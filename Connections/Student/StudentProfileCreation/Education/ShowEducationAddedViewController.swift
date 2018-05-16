@@ -12,7 +12,7 @@ import Firebase
 
 class ShowEducationAddedViewController: UIViewController {
     
-    let ref = Database.database().reference().child("student/valid/\(Auth.auth().currentUser!.uid)").child("education")
+    let ref = Database.database().reference().child("student/pending/\(Auth.auth().currentUser!.uid)").child("education")
     var educations = [Education]()
     
     @IBOutlet var tableView: UITableView!
@@ -39,12 +39,8 @@ class ShowEducationAddedViewController: UIViewController {
             
         })
         
-        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.tintColor = UIColor.black
         
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
     
     @IBAction func addNewJob(_ sender: Any) {
@@ -121,7 +117,7 @@ extension ShowEducationAddedViewController: EducationProfileCellDelegate {
             if sender.tag == 2 {
                 let education = educations[indexPath.row]
                 
-                let refDeleteEducation = Database.database().reference().child("student/valid/\(Auth.auth().currentUser!.uid)").child("education").child(education.uuid!)
+                let refDeleteEducation = Database.database().reference().child("student/pending/\(Auth.auth().currentUser!.uid)").child("education").child(education.uuid!)
                 
                 refDeleteEducation.removeValue()
             }

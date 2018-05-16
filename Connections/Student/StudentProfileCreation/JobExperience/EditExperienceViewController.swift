@@ -40,10 +40,8 @@ class EditExperienceViewController: UIViewController, UITextFieldDelegate {
         jobFromDate.text = experience.fromDate
         jobToDate.text = experience.toDate
         
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        
     }
     
     //text field goes away when done is pressed
@@ -84,7 +82,7 @@ class EditExperienceViewController: UIViewController, UITextFieldDelegate {
             
         }
         
-        let ref = Database.database().reference().child("student/valid/\(Auth.auth().currentUser!.uid)").child("experience").child(experience.uuid!)
+        let ref = Database.database().reference().child("student/pending/\(Auth.auth().currentUser!.uid)").child("experience").child(experience.uuid!)
         
         let ex = Experience(data: ["Title": self.jobTitle.text!, "Company": self.jobCompany.text!, "From Date": self.jobFromDate.text!, "To Date": self.jobToDate.text!])
         

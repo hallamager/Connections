@@ -15,7 +15,7 @@ class StudentProfilePictureViewController: UIViewController, UIImagePickerContro
     
     var selectedImage: UIImage?
     let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(Auth.auth().currentUser!.uid)
-    let ref = Database.database().reference().child("student").child(Auth.auth().currentUser!.uid)
+    let ref = Database.database().reference().child("student").child("pending").child(Auth.auth().currentUser!.uid)
     
     @IBOutlet var profileImg: UIImageView!
     @IBOutlet weak var noImgEntered: UILabel!
@@ -27,12 +27,23 @@ class StudentProfilePictureViewController: UIViewController, UIImagePickerContro
         profileImg.addGestureRecognizer(tapGesture)
         profileImg.isUserInteractionEnabled = true
         
-        self.navigationController?.navigationBar.tintColor = UIColor.white
+        ref.observe(.value, with: { snapshot in
+            if snapshot.hasChild("profileImageURL"){
+                
+                // Create a storage reference from the URL
+                let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child((Auth.auth().currentUser?.uid)!)
+                // Download the data, assuming a max size of 1MB (you can change this as necessary)
+                storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+                    // Create a UIImage, add it to the array
+                    let pic = UIImage(data: data!)
+                    self.profileImg?.image = pic
+                }
+                
+            }
+        })
         
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        
     }
     
     @objc func handleSelectProfileImageView() {

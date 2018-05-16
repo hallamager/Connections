@@ -48,10 +48,6 @@ class TabsViewController: ButtonBarPagerTabStripViewController {
         super.viewDidLoad()
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     // MARK: - PagerTabStripDataSource
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {

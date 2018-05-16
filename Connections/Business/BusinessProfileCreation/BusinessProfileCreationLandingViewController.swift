@@ -16,7 +16,7 @@ class BusinessCreateProfileLandingViewController: UIViewController {
     @IBOutlet weak var createButton: UIButtonStyles!
     @IBOutlet weak var validationAlert: UILabel!
     
-    let ref = Database.database().reference().child("business").child(Auth.auth().currentUser!.uid)
+    let ref = Database.database().reference().child("business").child("pending").child(Auth.auth().currentUser!.uid)
     let refValidUser = Database.database().reference().child("validBusinesses")
     let geoRefBusiness = GeoFire(firebaseRef: Database.database().reference().child("business_locations"))
     let geoRefStudent = GeoFire(firebaseRef: Database.database().reference().child("student_locations"))
@@ -45,6 +45,8 @@ class BusinessCreateProfileLandingViewController: UIViewController {
     
     @IBAction func confirmProfileBtn(_ sender: UIButton) {
         
+        
+        
         sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
         
         UIView.animate(withDuration: 1.5,
@@ -65,7 +67,7 @@ class BusinessCreateProfileLandingViewController: UIViewController {
                 self.createButton.isEnabled = true
                 
                 let rootRef = Database.database().reference(fromURL: "https://connections-bd790.firebaseio.com/")
-                let businessRef = rootRef.child("business").child(Auth.auth().currentUser!.uid)
+                let businessRef = rootRef.child("business").child("pending").child(Auth.auth().currentUser!.uid)
                 
                 //get each child node of businessRef
                 businessRef.observe(.value, with: { snapshot in
@@ -78,7 +80,10 @@ class BusinessCreateProfileLandingViewController: UIViewController {
                     
                     //get a reference to the data we just read and remove it
                     let nodeToRemove = businessRef.child(snapshot.key)
-                    nodeToRemove.removeValue();
+                    nodeToRemove.removeValue()
+                    
+                    let defaults = UserDefaults.standard
+                    defaults.set(true, forKey: "CreatedProfile")
                     
                 })
                 
@@ -105,6 +110,7 @@ class BusinessCreateProfileLandingViewController: UIViewController {
                 
                 self.createButton.isEnabled = false
                 self.validationAlert.text = "Not all sections have been completed."
+                self.validationAlert.textColor = UIColor(red: 199/255, green: 18/255, blue: 46/255, alpha: 1.0)
                 
                 print("Missing info")
             }
@@ -115,7 +121,7 @@ class BusinessCreateProfileLandingViewController: UIViewController {
     
     func addToken() {
         
-        let ref = Database.database().reference().child("business").child(Auth.auth().currentUser!.uid).child("FCM Token")
+        let ref = Database.database().reference().child("business").child("pending").child(Auth.auth().currentUser!.uid).child("FCM Token")
         
         // [START log_fcm_reg_token]
         let token = Messaging.messaging().fcmToken

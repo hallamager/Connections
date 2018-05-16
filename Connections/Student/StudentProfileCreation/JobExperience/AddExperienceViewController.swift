@@ -18,7 +18,7 @@ class AddExperienceViewController: UIViewController, UITextFieldDelegate, UIText
     
     
     let editProfile = StudentEditProfileViewController()
-    let ref = Database.database().reference().child("student").child(Auth.auth().currentUser!.uid).child("experience")
+    let ref = Database.database().reference().child("student").child("pending").child(Auth.auth().currentUser!.uid).child("experience")
     
     @IBOutlet var jobTitle: UITextField!
     @IBOutlet var jobCompany: UITextField!
@@ -38,10 +38,6 @@ class AddExperienceViewController: UIViewController, UITextFieldDelegate, UIText
 
         self.navigationController?.navigationBar.tintColor = UIColor.black
         
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
     
     //text field goes away when done is pressed

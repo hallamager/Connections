@@ -12,7 +12,7 @@ import Firebase
 
 class BusinessSpecialtiesViewController: UIViewController, UITextFieldDelegate {
     
-    let ref = Database.database().reference().child("business").child(Auth.auth().currentUser!.uid).child("specialties")
+    let ref = Database.database().reference().child("business").child("pending").child(Auth.auth().currentUser!.uid).child("specialties")
     var specialties = [Specialties]()
     
     @IBOutlet var tableView: UITableView!
@@ -39,6 +39,8 @@ class BusinessSpecialtiesViewController: UIViewController, UITextFieldDelegate {
             print("is\(self.specialties.count)")
             
         })
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.black
         
     }
     
@@ -119,7 +121,7 @@ extension BusinessSpecialtiesViewController: SpecialtiesCellDelegate {
             if sender.tag == 1 {
                 let specialtie = specialties[indexPath.row]
                 
-                let refDeleteJobs = Database.database().reference().child("business/valid/\(Auth.auth().currentUser!.uid)").child("specialties").child(specialtie.uuid!)
+                let refDeleteJobs = Database.database().reference().child("business/pending/\(Auth.auth().currentUser!.uid)").child("specialties").child(specialtie.uuid!)
                 
                 refDeleteJobs.removeValue()
             }

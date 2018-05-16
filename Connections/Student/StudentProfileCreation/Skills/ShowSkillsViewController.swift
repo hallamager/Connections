@@ -12,7 +12,7 @@ import Firebase
 
 class ShowSkillsViewController: UIViewController, UITextFieldDelegate {
     
-    let ref = Database.database().reference().child("student").child(Auth.auth().currentUser!.uid).child("skills")
+    let ref = Database.database().reference().child("student").child("pending").child(Auth.auth().currentUser!.uid).child("skills")
     var skills = [Skills]()
     
     @IBOutlet var tableView: UITableView!
@@ -20,9 +20,7 @@ class ShowSkillsViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationController?.navigationBar.isTranslucent = false
-        
+                
         skillInput.delegate = self
         
         ref.observe(.value, with: { snapshot in
@@ -42,7 +40,7 @@ class ShowSkillsViewController: UIViewController, UITextFieldDelegate {
             
         })
         
-        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.tintColor = UIColor.black
         
     }
     
@@ -78,10 +76,6 @@ class ShowSkillsViewController: UIViewController, UITextFieldDelegate {
         
         presentStudentProfileCreationViewController()
         
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
     
     func presentStudentProfileCreationViewController() {
@@ -124,7 +118,7 @@ extension ShowSkillsViewController: DeleteSkillsCellDelegate {
             
                 let skill = skills[indexPath.row]
                 
-                let refDeleteSkills = Database.database().reference().child("student/valid/\(Auth.auth().currentUser!.uid)").child("skills").child(skill.uuid!)
+                let refDeleteSkills = Database.database().reference().child("student/pending/\(Auth.auth().currentUser!.uid)").child("skills").child(skill.uuid!)
                 
                 refDeleteSkills.removeValue()
                 

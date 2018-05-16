@@ -37,10 +37,8 @@ class EditEducationViewController: UIViewController, UITextFieldDelegate {
         qType.text = education.qType
         studied.text = education.studied
         
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        
     }
     
     //text field goes away when done is pressed
@@ -81,7 +79,7 @@ class EditEducationViewController: UIViewController, UITextFieldDelegate {
             
         }
         
-        let ref = Database.database().reference().child("student/valid/\(Auth.auth().currentUser!.uid)").child("education").child(education.uuid!)
+        let ref = Database.database().reference().child("student/pending/\(Auth.auth().currentUser!.uid)").child("education").child(education.uuid!)
         
         let ex = Education(data: ["School": self.school.text!, "Qualification Type": self.qType.text!, "Studied": self.studied.text!])
         

@@ -12,7 +12,7 @@ import Firebase
 
 class BusinessDetailsViewController: UIViewController, UITextFieldDelegate {
     
-    let ref = Database.database().reference().child("business").child(Auth.auth().currentUser!.uid)
+    let ref = Database.database().reference().child("business").child("pending").child(Auth.auth().currentUser!.uid)
     
     @IBOutlet var cultureOne: UITextField!
     @IBOutlet var cultureTwo: UITextField!
@@ -38,16 +38,14 @@ class BusinessDetailsViewController: UIViewController, UITextFieldDelegate {
             }
         })
         
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        
     }
     
     //text field goes away when done is pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
     
     @IBAction func confirmBtn(_ sender: UIButton) {
@@ -78,7 +76,7 @@ class BusinessDetailsViewController: UIViewController, UITextFieldDelegate {
             
             self.validationAlert.text! = "You must enter every text field to continue."
             
-            self.validationAlert.textColor = UIColor.red
+            self.validationAlert.textColor = UIColor(red: 199/255, green: 18/255, blue: 46/255, alpha: 1.0)
             
             return
             

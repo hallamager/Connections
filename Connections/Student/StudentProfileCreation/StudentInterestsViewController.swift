@@ -13,7 +13,7 @@ import Firebase
 class StudentInterestsViewController: UIViewController, UITextFieldDelegate {
     
     var students = [Student]()
-    let ref = Database.database().reference().child("student").child(Auth.auth().currentUser!.uid)
+    let ref = Database.database().reference().child("student").child("pending").child(Auth.auth().currentUser!.uid)
     
     @IBOutlet var interestOne: UITextField!
     @IBOutlet var interestTwo: UITextField!
@@ -41,7 +41,7 @@ class StudentInterestsViewController: UIViewController, UITextFieldDelegate {
             
         })
         
-        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.tintColor = UIColor.black
         
     }
     
@@ -49,10 +49,6 @@ class StudentInterestsViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
-    }
-
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
 
     @IBAction func confirmBtn(_ sender: UIButton) {
@@ -83,7 +79,7 @@ class StudentInterestsViewController: UIViewController, UITextFieldDelegate {
             
             self.validationAlert.text! = "You must enter every text field to continue."
             
-            self.validationAlert.textColor = UIColor.red
+            self.validationAlert.textColor = UIColor(red: 199/255, green: 18/255, blue: 46/255, alpha: 1.0)
             
             return
             

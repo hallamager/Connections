@@ -13,7 +13,7 @@ import Firebase
 class BusinessQuestionsViewController: UIViewController, UITextFieldDelegate {
     
     var businesses = [Business]()
-    let ref = Database.database().reference().child("business").child(Auth.auth().currentUser!.uid)
+    let ref = Database.database().reference().child("business").child("pending").child(Auth.auth().currentUser!.uid)
     
     @IBOutlet var questionOne: UITextField!
     @IBOutlet var questionTwo: UITextField!
@@ -39,10 +39,8 @@ class BusinessQuestionsViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        
     }
     
     //text field goes away when done is pressed
@@ -79,7 +77,7 @@ class BusinessQuestionsViewController: UIViewController, UITextFieldDelegate {
             
             self.validationAlert.text! = "You must enter every text field to continue."
             
-            self.validationAlert.textColor = UIColor.red
+            self.validationAlert.textColor = UIColor(red: 199/255, green: 18/255, blue: 46/255, alpha: 1.0)
             
             return
             

@@ -126,7 +126,7 @@ extension BusinessInvitesViewController: UITableViewDelegate {
                 cell.moreInfo.text = business.moreInfo
                 
                 if cell.foldedResponse.text == "Date Accepted" {
-                    cell.foldedResponse.textColor = UIColor.green
+                    cell.foldedResponse.textColor = UIColor(red: 13/255, green: 97/255, blue: 40/255, alpha: 1.0)
                 }
                 
                 if cell.foldedResponse.text == "Different Dates Requested" {
@@ -138,35 +138,35 @@ extension BusinessInvitesViewController: UITableViewDelegate {
                 }
             
                 if cell.response.text == "Date Accepted" {
-                    cell.response.textColor = UIColor.green
+                    cell.response.textColor = UIColor(red: 13/255, green: 97/255, blue: 40/255, alpha: 1.0)
                 }
                 
                 if cell.foldedResponse.text == "Declined" {
-                    cell.foldedResponse.textColor = UIColor.red
+                    cell.foldedResponse.textColor = UIColor(red: 199/255, green: 18/255, blue: 46/255, alpha: 1.0)
                 }
                 
                 if cell.foldedResponse.text == "Cancelled" {
-                    cell.foldedResponse.textColor = UIColor.red
+                    cell.foldedResponse.textColor = UIColor(red: 199/255, green: 18/255, blue: 46/255, alpha: 1.0)
                 }
                 
                 if cell.response.text == "Declined" {
-                    cell.response.textColor = UIColor.red
+                    cell.response.textColor = UIColor(red: 199/255, green: 18/255, blue: 46/255, alpha: 1.0)
                 }
                 
                 if cell.response.text == "Cancelled" {
-                    cell.response.textColor = UIColor.red
+                    cell.response.textColor = UIColor(red: 199/255, green: 18/255, blue: 46/255, alpha: 1.0)
                 }
                 
                 if cell.firstDateConfirmedLabel.text == "Date Accepted" {
-                    cell.firstDateConfirmedLabel.textColor = UIColor.green
+                    cell.firstDateConfirmedLabel.textColor = UIColor(red: 13/255, green: 97/255, blue: 40/255, alpha: 1.0)
                 }
                 
                 if cell.firstDateConfirmedLabel.text == "Declined" {
-                    cell.firstDateConfirmedLabel.textColor = UIColor.red
+                    cell.firstDateConfirmedLabel.textColor = UIColor(red: 199/255, green: 18/255, blue: 46/255, alpha: 1.0)
                 }
                 
                 if cell.firstDateConfirmedLabel.text == "Cancelled" {
-                    cell.firstDateConfirmedLabel.textColor = UIColor.red
+                    cell.firstDateConfirmedLabel.textColor = UIColor(red: 199/255, green: 18/255, blue: 46/255, alpha: 1.0)
                 }
                 
                 if cell.firstDateConfirmedLabel.text == "Pending Response" {
@@ -174,15 +174,15 @@ extension BusinessInvitesViewController: UITableViewDelegate {
                 }
                 
                 if cell.secondDateConfirmedLabel.text == "Date Accepted" {
-                    cell.secondDateConfirmedLabel.textColor = UIColor.green
+                    cell.secondDateConfirmedLabel.textColor = UIColor(red: 13/255, green: 97/255, blue: 40/255, alpha: 1.0)
                 }
                 
                 if cell.secondDateConfirmedLabel.text == "Declined" {
-                    cell.secondDateConfirmedLabel.textColor = UIColor.red
+                    cell.secondDateConfirmedLabel.textColor = UIColor(red: 199/255, green: 18/255, blue: 46/255, alpha: 1.0)
                 }
                 
                 if cell.secondDateConfirmedLabel.text == "Cancelled" {
-                    cell.secondDateConfirmedLabel.textColor = UIColor.red
+                    cell.secondDateConfirmedLabel.textColor = UIColor(red: 199/255, green: 18/255, blue: 46/255, alpha: 1.0)
                 }
                 
                 if cell.secondDateConfirmedLabel.text == "Pending Response" {

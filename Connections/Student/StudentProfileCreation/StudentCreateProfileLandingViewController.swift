@@ -17,7 +17,7 @@ class StudentCreateProfileLandingViewController: UIViewController {
     @IBOutlet weak var createButton: UIButtonStyles!
     @IBOutlet weak var validationAlert: UILabel!
     
-    let ref = Database.database().reference().child("student").child(Auth.auth().currentUser!.uid)
+    let ref = Database.database().reference().child("student").child("pending").child(Auth.auth().currentUser!.uid)
     let refValidUser = Database.database().reference().child("validStudents")
     let geoRefStudent = GeoFire(firebaseRef: Database.database().reference().child("student_locations"))
     let geoRefBusiness = GeoFire(firebaseRef: Database.database().reference().child("business_locations"))
@@ -33,10 +33,6 @@ class StudentCreateProfileLandingViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = UIColor.clear
         
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
     
     func presentBusinessSwipeViewViewController() {
@@ -69,7 +65,7 @@ class StudentCreateProfileLandingViewController: UIViewController {
                 self.createButton.isEnabled = true
                 
                 let rootRef = Database.database().reference(fromURL: "https://connections-bd790.firebaseio.com/")
-                let studentRef = rootRef.child("student").child(Auth.auth().currentUser!.uid)
+                let studentRef = rootRef.child("student").child("pending").child(Auth.auth().currentUser!.uid)
                 
                 //get each child node of businessRef
                 studentRef.observe(.value, with: { snapshot in
@@ -83,7 +79,10 @@ class StudentCreateProfileLandingViewController: UIViewController {
                         //get a reference to the data we just read and remove it
                         let nodeToRemove = studentRef.child(snapshot.key)
                         nodeToRemove.removeValue();
-                        
+                    
+                        let defaults = UserDefaults.standard
+                        defaults.set(true, forKey: "CreatedProfile")
+                    
                     })
                 
                 self.presentBusinessSwipeViewViewController()
@@ -111,6 +110,7 @@ class StudentCreateProfileLandingViewController: UIViewController {
                 
                 self.createButton.isEnabled = false
                 self.validationAlert.text = "Not all sections have been completed."
+                self.validationAlert.textColor = UIColor(red: 199/255, green: 18/255, blue: 46/255, alpha: 1.0)
                 
                 print("Missing info")
                 
@@ -123,7 +123,7 @@ class StudentCreateProfileLandingViewController: UIViewController {
     
     func addToken() {
     
-        let ref = Database.database().reference().child("student").child(Auth.auth().currentUser!.uid).child("FCM Token")
+        let ref = Database.database().reference().child("student").child("pending").child(Auth.auth().currentUser!.uid).child("FCM Token")
 
         // [START log_fcm_reg_token]
         let token = Messaging.messaging().fcmToken
@@ -136,7 +136,7 @@ class StudentCreateProfileLandingViewController: UIViewController {
     
     func addSelectedRadius() {
         
-        let ref = Database.database().reference().child("student").child(Auth.auth().currentUser!.uid)
+        let ref = Database.database().reference().child("student").child("pending").child(Auth.auth().currentUser!.uid)
         
         ref.updateChildValues(["Selected Radius": "40"])
         

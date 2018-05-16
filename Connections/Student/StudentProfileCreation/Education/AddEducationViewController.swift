@@ -17,7 +17,7 @@ protocol AddEducationControllerDelegate: class {
 class AddEducationViewController: UIViewController, UITextFieldDelegate {
     
     let editProfile = StudentEditProfileViewController()
-    let ref = Database.database().reference().child("student").child(Auth.auth().currentUser!.uid).child("education")
+    let ref = Database.database().reference().child("student").child("pending").child(Auth.auth().currentUser!.uid).child("education")
     
     @IBOutlet var school: UITextField!
     @IBOutlet var qType: UITextField!
@@ -33,10 +33,8 @@ class AddEducationViewController: UIViewController, UITextFieldDelegate {
         qType.delegate = self
         studied.delegate = self
         
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        
     }
     
     //text field goes away when done is pressed

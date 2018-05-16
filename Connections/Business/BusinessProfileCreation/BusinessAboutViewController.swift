@@ -14,7 +14,7 @@ class BusinessAboutViewController: UIViewController, UITextFieldDelegate {
     
     var businesses = [Business]()
     var business: Business!
-    let ref = Database.database().reference().child("business").child(Auth.auth().currentUser!.uid)
+    let ref = Database.database().reference().child("business").child("pending").child(Auth.auth().currentUser!.uid)
 
     @IBOutlet var companyIndustry: UITextField!
     @IBOutlet var companyDescription: UITextView!
@@ -26,8 +26,6 @@ class BusinessAboutViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationController?.navigationBar.isTranslucent = false
         
         companyIndustry.delegate = self
         
@@ -45,12 +43,10 @@ class BusinessAboutViewController: UIViewController, UITextFieldDelegate {
             }
         })
         
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        
     }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
+
     //text field goes away when done is pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

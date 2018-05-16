@@ -15,7 +15,7 @@ class BusinessProfilePictureViewController: UIViewController, UIImagePickerContr
     
     var selectedImage: UIImage?
     let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(Auth.auth().currentUser!.uid)
-    let ref = Database.database().reference().child("business").child(Auth.auth().currentUser!.uid)
+    let ref = Database.database().reference().child("business").child("pending").child(Auth.auth().currentUser!.uid)
     
     @IBOutlet var profileImg: UIImageView!
     @IBOutlet weak var noImgEntered: UILabel!
@@ -41,6 +41,8 @@ class BusinessProfilePictureViewController: UIViewController, UIImagePickerContr
                 
             }
         })
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.black
         
     }
     
@@ -114,10 +116,6 @@ class BusinessProfilePictureViewController: UIViewController, UIImagePickerContr
     
     func presentBusinessProfileCreationViewController() {
         self.navigationController?.popToRootViewController(animated: true)
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
     
 }

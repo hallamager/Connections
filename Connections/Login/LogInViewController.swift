@@ -92,7 +92,7 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
             } else {
                 
                 self.errorValidation.text = "A reset password link has been sent to your email."
-                self.errorValidation.textColor = UIColor.green
+                self.errorValidation.textColor = UIColor(red: 13/255, green: 97/255, blue: 40/255, alpha: 1.0)
                 
                 print("Reset password email sent")
 
