@@ -19,6 +19,7 @@ class EditJobsViewController: UIViewController, UITextFieldDelegate {
     var job: Job!
     var jobs = [Job]()
     var skillRequired = [String]()
+    let refCheckValid = Database.database().reference().child("business").child("valid")
     
     @IBOutlet var jobTitle: UITextField!
     @IBOutlet var employmentType: UITextField!
@@ -48,19 +49,44 @@ class EditJobsViewController: UIViewController, UITextFieldDelegate {
         jobSalary.text = job.salary
         
         let refSkillsRequired = Database.database().reference().child("business/pending/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!).child("skillsRequired")
+        let refValidSkillsRequired = Database.database().reference().child("business/valid/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!).child("skillsRequired")
         
-        refSkillsRequired.observe(.value, with: { snapshot in
+        refCheckValid.observeSingleEvent(of: .value) { snapshot in
             
-            self.skillRequired.removeAll()
-            
-            for group in snapshot.children {
-                self.skillRequired.append((group as AnyObject).key)
+            if snapshot.hasChild(Auth.auth().currentUser!.uid) {
+                
+                refValidSkillsRequired.observe(.value, with: { snapshot in
+                    
+                    self.skillRequired.removeAll()
+                    
+                    for group in snapshot.children {
+                        self.skillRequired.append((group as AnyObject).key)
+                    }
+                    print(self.skillRequired)
+                    
+                    self.collectionView.reloadData()
+                    
+                })
+                
+            } else {
+                
+                refSkillsRequired.observe(.value, with: { snapshot in
+                    
+                    self.skillRequired.removeAll()
+                    
+                    for group in snapshot.children {
+                        self.skillRequired.append((group as AnyObject).key)
+                    }
+                    print(self.skillRequired)
+                    
+                    self.collectionView.reloadData()
+                    
+                })
+                
             }
-            print(self.skillRequired)
             
-            self.collectionView.reloadData()
-            
-        })
+        }
+        
         
         self.navigationController?.navigationBar.tintColor = UIColor.black
         
@@ -75,8 +101,21 @@ class EditJobsViewController: UIViewController, UITextFieldDelegate {
     @IBAction func editRequiredSkillBtn(_ sender: Any) {
         
         let refSkillsRequired = Database.database().reference().child("business/pending/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!).child("skillsRequired")
+        let refValidSkillsRequired = Database.database().reference().child("business/valid/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!).child("skillsRequired")
 
-        refSkillsRequired.updateChildValues([self.editRequiredSkill.text! : true])
+        refCheckValid.observeSingleEvent(of: .value) { snapshot in
+            
+            if snapshot.hasChild(Auth.auth().currentUser!.uid) {
+                
+                refValidSkillsRequired.updateChildValues([self.editRequiredSkill.text! : true])
+                
+            } else {
+                
+                refSkillsRequired.updateChildValues([self.editRequiredSkill.text! : true])
+                
+            }
+            
+        }
         
         editRequiredSkill.text! = ""
         
@@ -131,8 +170,21 @@ class EditJobsViewController: UIViewController, UITextFieldDelegate {
         }
         
         let ref = Database.database().reference().child("business/pending/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!)
+        let refValid = Database.database().reference().child("business/valid/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!)
         
-        ref.updateChildValues(["Title": self.jobTitle.text!, "Employment Type": self.employmentType.text!, "Description": self.jobDescription.text!, "Location": self.jobLocation.text!, "Salary": self.jobSalary.text!])
+        refCheckValid.observeSingleEvent(of: .value) { snapshot in
+            
+            if snapshot.hasChild(Auth.auth().currentUser!.uid) {
+                
+                refValid.updateChildValues(["Title": self.jobTitle.text!, "Employment Type": self.employmentType.text!, "Description": self.jobDescription.text!, "Location": self.jobLocation.text!, "Salary": self.jobSalary.text!])
+                
+            } else {
+                
+                ref.updateChildValues(["Title": self.jobTitle.text!, "Employment Type": self.employmentType.text!, "Description": self.jobDescription.text!, "Location": self.jobLocation.text!, "Salary": self.jobSalary.text!])
+                
+            }
+            
+        }
         
         self.navigationController?.popViewController(animated: true)
         

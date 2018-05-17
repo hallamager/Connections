@@ -17,7 +17,9 @@ protocol AddJobsControllerDelegate: class {
 
 class AddJobsViewController: UIViewController, UITextFieldDelegate {
     
-    let ref = Database.database().reference().child("business").child("pending").child(Auth.auth().currentUser!.uid).child("Jobs")
+    let refPending = Database.database().reference().child("business").child("pending").child(Auth.auth().currentUser!.uid).child("Jobs")
+    let refValid = Database.database().reference().child("business").child("valid").child(Auth.auth().currentUser!.uid).child("Jobs")
+    let refCheckValid = Database.database().reference().child("business").child("valid")
     
     @IBOutlet var jobTitle: UITextField!
     @IBOutlet var employmentType: UITextField!
@@ -111,7 +113,20 @@ class AddJobsViewController: UIViewController, UITextFieldDelegate {
             
         }
         
-        ref.childByAutoId().setValue(["Title": self.jobTitle.text!, "Employment Type": self.employmentType.text!, "Description": self.jobDescription.text!, "Location": self.jobLocation.text!, "Salary": self.jobSalary.text!, "skillsRequired": arrayToDict(array: skillRequired)])
+        refCheckValid.observeSingleEvent(of: .value) { snapshot in
+            
+            if snapshot.hasChild(Auth.auth().currentUser!.uid) {
+                
+                self.refValid.childByAutoId().setValue(["Title": self.jobTitle.text!, "Employment Type": self.employmentType.text!, "Description": self.jobDescription.text!, "Location": self.jobLocation.text!, "Salary": self.jobSalary.text!, "skillsRequired": self.arrayToDict(array: self.skillRequired)])
+                
+            } else {
+                
+                self.refPending.childByAutoId().setValue(["Title": self.jobTitle.text!, "Employment Type": self.employmentType.text!, "Description": self.jobDescription.text!, "Location": self.jobLocation.text!, "Salary": self.jobSalary.text!, "skillsRequired": self.arrayToDict(array: self.skillRequired)])
+                
+            }
+            
+        }
+        
         self.navigationController?.popViewController(animated: true)
         
     }

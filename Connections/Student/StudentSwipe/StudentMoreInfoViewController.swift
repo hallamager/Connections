@@ -35,6 +35,8 @@ class StudentMoreInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("more info view loaded")
+        
         tableView.rowHeight = 130
         tableView.sectionHeaderHeight = 40
         
@@ -81,9 +83,7 @@ class StudentMoreInfoViewController: UIViewController {
         let refEducation = Database.database().reference().child("student").child("valid").child(student.uuid).child("education")
         let refExperience = Database.database().reference().child("student").child("valid").child(student.uuid).child("experience")
         
-        refEducation.observe(.value, with: { snapshot in
-            
-            self.educations.removeAll()
+        refEducation.observeSingleEvent(of: .value) { snapshot in
             
             for education in snapshot.children {
                 if let data = education as? DataSnapshot {
@@ -98,11 +98,9 @@ class StudentMoreInfoViewController: UIViewController {
             
             print("education \(self.educations.count)")
             
-        })
+        }
         
-        refExperience.observe(.value, with: { snapshot in
-            
-            self.experiences.removeAll()
+        refExperience.observeSingleEvent(of: .value) { snapshot in
             
             for experience in snapshot.children {
                 if let data = experience as? DataSnapshot {
@@ -117,7 +115,7 @@ class StudentMoreInfoViewController: UIViewController {
             
             print("experience \(self.experiences.count)")
             
-        })
+        }
         
     }
     
