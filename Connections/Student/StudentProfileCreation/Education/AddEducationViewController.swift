@@ -17,7 +17,9 @@ protocol AddEducationControllerDelegate: class {
 class AddEducationViewController: UIViewController, UITextFieldDelegate {
     
     let editProfile = StudentEditProfileViewController()
-    let ref = Database.database().reference().child("student").child("pending").child(Auth.auth().currentUser!.uid).child("education")
+    let refPending = Database.database().reference().child("student").child("pending").child(Auth.auth().currentUser!.uid).child("education")
+    let refValid = Database.database().reference().child("student").child("valid").child(Auth.auth().currentUser!.uid).child("education")
+    let refCheckValid = Database.database().reference().child("student").child("valid")
     
     @IBOutlet var school: UITextField!
     @IBOutlet var qType: UITextField!
@@ -78,7 +80,20 @@ class AddEducationViewController: UIViewController, UITextFieldDelegate {
         let ex = Education(data: ["School": self.school.text!, "Qualification Type": self.qType.text!, "Studied": self.studied.text!])
         delegate?.didAddEducation(ex)
         self.navigationController?.popViewController(animated: true)
-        ref.childByAutoId().setValue(ex.toDict())
+        
+        refCheckValid.observeSingleEvent(of: .value) { snapshot in
+            
+            if snapshot.hasChild(Auth.auth().currentUser!.uid) {
+                
+                self.refValid.childByAutoId().setValue(ex.toDict())
+                
+            } else {
+                
+                self.refPending.childByAutoId().setValue(ex.toDict())
+                
+            }
+            
+        }
         
     }
     

@@ -12,7 +12,9 @@ import Firebase
 
 class ShowSkillsViewController: UIViewController, UITextFieldDelegate {
     
-    let ref = Database.database().reference().child("student").child("pending").child(Auth.auth().currentUser!.uid).child("skills")
+    let refPending = Database.database().reference().child("student").child("pending").child(Auth.auth().currentUser!.uid).child("skills")
+    let refValid = Database.database().reference().child("student").child("valid").child(Auth.auth().currentUser!.uid).child("skills")
+    let refCheckValid = Database.database().reference().child("student").child("valid")
     var skills = [Skills]()
     
     @IBOutlet var tableView: UITableView!
@@ -23,22 +25,49 @@ class ShowSkillsViewController: UIViewController, UITextFieldDelegate {
                 
         skillInput.delegate = self
         
-        ref.observe(.value, with: { snapshot in
-            self.skills.removeAll()
-            for skill in snapshot.children {
-                if let data = skill as? DataSnapshot {
-                    if let skill = Skills(snapshot: data) {
-                        
-                        self.skills.append(skill)
+        refCheckValid.observeSingleEvent(of: .value) { snapshot in
+            
+            if snapshot.hasChild(Auth.auth().currentUser!.uid) {
+                
+                self.refValid.observe(.value, with: { snapshot in
+                    self.skills.removeAll()
+                    for skill in snapshot.children {
+                        if let data = skill as? DataSnapshot {
+                            if let skill = Skills(snapshot: data) {
+                                
+                                self.skills.append(skill)
+                            }
+                        }
                     }
-                }
+                    
+                    self.tableView.reloadData()
+                    
+                    print("is\(self.skills.count)")
+                    
+                })
+                
+            } else {
+                
+                self.refPending.observe(.value, with: { snapshot in
+                    self.skills.removeAll()
+                    for skill in snapshot.children {
+                        if let data = skill as? DataSnapshot {
+                            if let skill = Skills(snapshot: data) {
+                                
+                                self.skills.append(skill)
+                            }
+                        }
+                    }
+                    
+                    self.tableView.reloadData()
+                    
+                    print("is\(self.skills.count)")
+                    
+                })
+                
             }
             
-            self.tableView.reloadData()
-            
-            print("is\(self.skills.count)")
-            
-        })
+        }
         
         self.navigationController?.navigationBar.tintColor = UIColor.black
         
@@ -53,7 +82,20 @@ class ShowSkillsViewController: UIViewController, UITextFieldDelegate {
     @IBAction func addSkillBtn(_ sender: Any) {
         
         let ex = Skills(data: ["Skill": self.skillInput.text!])
-        ref.childByAutoId().setValue(ex.toDict())
+        
+        refCheckValid.observeSingleEvent(of: .value) { snapshot in
+            
+            if snapshot.hasChild(Auth.auth().currentUser!.uid) {
+                
+                self.refValid.childByAutoId().setValue(ex.toDict())
+                
+            } else {
+                
+                self.refPending.childByAutoId().setValue(ex.toDict())
+                
+            }
+            
+        }
         
         skillInput.text! = ""
 
@@ -118,9 +160,23 @@ extension ShowSkillsViewController: DeleteSkillsCellDelegate {
             
                 let skill = skills[indexPath.row]
                 
-                let refDeleteSkills = Database.database().reference().child("student/pending/\(Auth.auth().currentUser!.uid)").child("skills").child(skill.uuid!)
-                
-                refDeleteSkills.removeValue()
+                refCheckValid.observeSingleEvent(of: .value) { snapshot in
+                    
+                    if snapshot.hasChild(Auth.auth().currentUser!.uid) {
+                        
+                        let refDeleteSkill = Database.database().reference().child("student/valid/\(Auth.auth().currentUser!.uid)").child("skills").child(skill.uuid!)
+                        
+                        refDeleteSkill.removeValue()
+                        
+                    } else {
+                        
+                        let refDeleteSkill = Database.database().reference().child("student/pending/\(Auth.auth().currentUser!.uid)").child("skills").child(skill.uuid!)
+                        
+                        refDeleteSkill.removeValue()
+                        
+                    }
+                    
+                }
                 
             }
             

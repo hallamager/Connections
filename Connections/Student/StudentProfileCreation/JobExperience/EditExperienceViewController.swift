@@ -82,11 +82,25 @@ class EditExperienceViewController: UIViewController, UITextFieldDelegate {
             
         }
         
-        let ref = Database.database().reference().child("student/pending/\(Auth.auth().currentUser!.uid)").child("experience").child(experience.uuid!)
+        let refPending = Database.database().reference().child("student").child("pending").child(Auth.auth().currentUser!.uid).child("experience").child(experience.uuid!)
+        let refValid = Database.database().reference().child("student").child("valid").child(Auth.auth().currentUser!.uid).child("experience").child(experience.uuid!)
+        let refCheckValid = Database.database().reference().child("student").child("valid")
         
         let ex = Experience(data: ["Title": self.jobTitle.text!, "Company": self.jobCompany.text!, "From Date": self.jobFromDate.text!, "To Date": self.jobToDate.text!])
         
-        ref.updateChildValues(ex.toDict())
+        refCheckValid.observeSingleEvent(of: .value) { snapshot in
+            
+            if snapshot.hasChild(Auth.auth().currentUser!.uid) {
+                
+                refValid.updateChildValues(ex.toDict())
+                
+            } else {
+                
+                refPending.updateChildValues(ex.toDict())
+                
+            }
+            
+        }
         
         delegate?.didEditExperience(ex)
         self.navigationController?.popViewController(animated: true)

@@ -16,9 +16,10 @@ protocol AddExperienceControllerDelegate: class {
 
 class AddExperienceViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
-    
     let editProfile = StudentEditProfileViewController()
-    let ref = Database.database().reference().child("student").child("pending").child(Auth.auth().currentUser!.uid).child("experience")
+    let refPending = Database.database().reference().child("student").child("pending").child(Auth.auth().currentUser!.uid).child("experience")
+    let refValid = Database.database().reference().child("student").child("valid").child(Auth.auth().currentUser!.uid).child("experience")
+    let refCheckValid = Database.database().reference().child("student").child("valid")
     
     @IBOutlet var jobTitle: UITextField!
     @IBOutlet var jobCompany: UITextField!
@@ -90,7 +91,20 @@ class AddExperienceViewController: UIViewController, UITextFieldDelegate, UIText
         let ex = Experience(data: ["Title": self.jobTitle.text!, "Company": self.jobCompany.text!, "From Date": self.jobFromDate.text!, "To Date": self.jobToDate.text!])
         delegate?.didAddExperience(ex)
         self.navigationController?.popViewController(animated: true)
-        ref.childByAutoId().setValue(ex.toDict())
+        
+        refCheckValid.observeSingleEvent(of: .value) { snapshot in
+            
+            if snapshot.hasChild(Auth.auth().currentUser!.uid) {
+                
+                self.refValid.childByAutoId().setValue(ex.toDict())
+                
+            } else {
+                
+                self.refPending.childByAutoId().setValue(ex.toDict())
+                
+            }
+            
+        }
         
     }
     

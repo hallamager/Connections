@@ -79,11 +79,25 @@ class EditEducationViewController: UIViewController, UITextFieldDelegate {
             
         }
         
-        let ref = Database.database().reference().child("student/pending/\(Auth.auth().currentUser!.uid)").child("education").child(education.uuid!)
+        let refPending = Database.database().reference().child("student").child("pending").child(Auth.auth().currentUser!.uid).child("education").child(education.uuid!)
+        let refValid = Database.database().reference().child("student").child("valid").child(Auth.auth().currentUser!.uid).child("education").child(education.uuid!)
+        let refCheckValid = Database.database().reference().child("student").child("valid")
         
         let ex = Education(data: ["School": self.school.text!, "Qualification Type": self.qType.text!, "Studied": self.studied.text!])
         
-        ref.updateChildValues(ex.toDict())
+        refCheckValid.observeSingleEvent(of: .value) { snapshot in
+            
+            if snapshot.hasChild(Auth.auth().currentUser!.uid) {
+                
+                refValid.updateChildValues(ex.toDict())
+                
+            } else {
+                
+                refPending.updateChildValues(ex.toDict())
+                
+            }
+            
+        }
         
         delegate?.didEditEducation(ex)
         self.navigationController?.popViewController(animated: true)
