@@ -12,7 +12,9 @@ import Firebase
 
 class StudentPersonalViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
-    let ref = Database.database().reference().child("student").child("pending").child(Auth.auth().currentUser!.uid)
+    let refPending = Database.database().reference().child("student").child("pending").child(Auth.auth().currentUser!.uid)
+    let refValid = Database.database().reference().child("student").child("valid").child(Auth.auth().currentUser!.uid)
+    let refCheckValid = Database.database().reference().child("student").child("valid")
     
     @IBOutlet var studentAddress: UITextField!
     @IBOutlet var studentHeadline: UITextField!
@@ -26,17 +28,43 @@ class StudentPersonalViewController: UIViewController, UITextFieldDelegate, UITe
         studentHeadline.delegate = self
         studentSummary.delegate = self
         
-        ref.observeSingleEvent(of: .value) { snapshot in
-            if snapshot.hasChild("Summary") && snapshot.hasChild("Headline") && snapshot.hasChild("Address"){
+        refCheckValid.observe(.value, with: { (snapshot) in
+            
+            if snapshot.hasChild(Auth.auth().currentUser!.uid) {
                 
-                if let student = Student(snapshot: snapshot) {
-                    self.studentAddress.text = student.address
-                    self.studentHeadline.text = student.headline
-                    self.studentSummary.text = student.summary
+                print("hello valid")
+                
+                self.refValid.observeSingleEvent(of: .value) { snapshot in
+                    if snapshot.hasChild("Summary") && snapshot.hasChild("Headline") && snapshot.hasChild("Address"){
+                        
+                        if let student = Student(snapshot: snapshot) {
+                            self.studentAddress.text = student.address
+                            self.studentHeadline.text = student.headline
+                            self.studentSummary.text = student.summary
+                        }
+                        
+                    }
+                }
+                
+            } else {
+                
+                print("hello pending")
+                
+                self.refPending.observeSingleEvent(of: .value) { snapshot in
+                    if snapshot.hasChild("Summary") && snapshot.hasChild("Headline") && snapshot.hasChild("Address"){
+                        
+                        if let student = Student(snapshot: snapshot) {
+                            self.studentAddress.text = student.address
+                            self.studentHeadline.text = student.headline
+                            self.studentSummary.text = student.summary
+                        }
+                        
+                    }
                 }
                 
             }
-        }
+            
+        })
         
         self.navigationController?.navigationBar.tintColor = UIColor.black
                 
@@ -80,7 +108,23 @@ class StudentPersonalViewController: UIViewController, UITextFieldDelegate, UITe
             
         }
         
-        ref.updateChildValues(["Address": self.studentAddress.text!, "Headline": self.studentHeadline.text!, "Summary": self.studentSummary.text!])
+        refCheckValid.observe(.value, with: { (snapshot) in
+            
+            if snapshot.hasChild(Auth.auth().currentUser!.uid) {
+                
+                print("hello valid")
+                
+                self.refValid.updateChildValues(["Address": self.studentAddress.text!, "Headline": self.studentHeadline.text!, "Summary": self.studentSummary.text!])
+                
+            } else {
+                
+                print("hello pending")
+                
+                self.refPending.updateChildValues(["Address": self.studentAddress.text!, "Headline": self.studentHeadline.text!, "Summary": self.studentSummary.text!])
+                
+            }
+            
+        })
         
         presentStudentProfileCreationViewController()
         

@@ -8,10 +8,13 @@
 
 import Foundation
 import XLPagerTabStrip
-import Firebase
+import Firebase 
 import IQKeyboardManagerSwift
+import GeoFire
 
 class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldDelegate {
+    
+    let locationManager = CLLocationManager()
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -22,6 +25,8 @@ class LogInViewController: UIViewController, IndicatorInfoProvider, UITextFieldD
         super.viewDidLoad()
         
         view.backgroundColor = .white
+        
+        self.locationManager.requestAlwaysAuthorization()
         
         emailTextField.delegate = self
         passwordTextField.delegate = self

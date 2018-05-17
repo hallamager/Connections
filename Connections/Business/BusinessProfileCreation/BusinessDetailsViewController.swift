@@ -12,7 +12,9 @@ import Firebase
 
 class BusinessDetailsViewController: UIViewController, UITextFieldDelegate {
     
-    let ref = Database.database().reference().child("business").child("pending").child(Auth.auth().currentUser!.uid)
+    let refPending = Database.database().reference().child("business").child("pending").child(Auth.auth().currentUser!.uid)
+    let refValid = Database.database().reference().child("business").child("valid").child(Auth.auth().currentUser!.uid)
+    let refCheckValid = Database.database().reference().child("business").child("valid")
     
     @IBOutlet var cultureOne: UITextField!
     @IBOutlet var cultureTwo: UITextField!
@@ -26,16 +28,42 @@ class BusinessDetailsViewController: UIViewController, UITextFieldDelegate {
         cultureTwo.delegate = self
         cultureThree.delegate = self
         
-        ref.observe(.value, with: { snapshot in
-            if snapshot.hasChild("cultureOne") && snapshot.hasChild("cultureTwo") && snapshot.hasChild("cultureThree"){
+        refCheckValid.observe(.value, with: { (snapshot) in
+            
+            if snapshot.hasChild(Auth.auth().currentUser!.uid) {
                 
-                if let business = Business(snapshot: snapshot) {
-                    self.cultureOne.text = business.cultureOne
-                    self.cultureTwo.text = business.cultureTwo
-                    self.cultureThree.text = business.cultureThree
-                }
+                print("hello valid")
+                
+                self.refValid.observe(.value, with: { snapshot in
+                    if snapshot.hasChild("cultureOne") && snapshot.hasChild("cultureTwo") && snapshot.hasChild("cultureThree"){
+                        
+                        if let business = Business(snapshot: snapshot) {
+                            self.cultureOne.text = business.cultureOne
+                            self.cultureTwo.text = business.cultureTwo
+                            self.cultureThree.text = business.cultureThree
+                        }
+                        
+                    }
+                })
+                
+            } else {
+                
+                print("hello pending")
+                
+                self.refPending.observe(.value, with: { snapshot in
+                    if snapshot.hasChild("cultureOne") && snapshot.hasChild("cultureTwo") && snapshot.hasChild("cultureThree"){
+                        
+                        if let business = Business(snapshot: snapshot) {
+                            self.cultureOne.text = business.cultureOne
+                            self.cultureTwo.text = business.cultureTwo
+                            self.cultureThree.text = business.cultureThree
+                        }
+                        
+                    }
+                })
                 
             }
+            
         })
         
         self.navigationController?.navigationBar.tintColor = UIColor.black
@@ -82,7 +110,23 @@ class BusinessDetailsViewController: UIViewController, UITextFieldDelegate {
             
         }
         
-        ref.updateChildValues(["cultureOne": self.cultureOne.text!, "cultureTwo": self.cultureTwo.text!, "cultureThree": self.cultureThree.text!])
+        refCheckValid.observe(.value, with: { (snapshot) in
+            
+            if snapshot.hasChild(Auth.auth().currentUser!.uid) {
+                
+                print("hello valid")
+                
+                self.refValid.updateChildValues(["cultureOne": self.cultureOne.text!, "cultureTwo": self.cultureTwo.text!, "cultureThree": self.cultureThree.text!])
+                
+            } else {
+                
+                print("hello pending")
+                
+                self.refPending.updateChildValues(["cultureOne": self.cultureOne.text!, "cultureTwo": self.cultureTwo.text!, "cultureThree": self.cultureThree.text!])
+                
+            }
+            
+        })
         
         self.presentBusinessProfileCreationViewController()
         

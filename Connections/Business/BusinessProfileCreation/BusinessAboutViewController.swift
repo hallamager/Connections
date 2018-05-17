@@ -14,7 +14,9 @@ class BusinessAboutViewController: UIViewController, UITextFieldDelegate {
     
     var businesses = [Business]()
     var business: Business!
-    let ref = Database.database().reference().child("business").child("pending").child(Auth.auth().currentUser!.uid)
+    let refPending = Database.database().reference().child("business").child("pending").child(Auth.auth().currentUser!.uid)
+    let refValid = Database.database().reference().child("business").child("valid").child(Auth.auth().currentUser!.uid)
+    let refCheckValid = Database.database().reference().child("business").child("valid")
 
     @IBOutlet var companyIndustry: UITextField!
     @IBOutlet var companyDescription: UITextView!
@@ -23,24 +25,51 @@ class BusinessAboutViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var companyWebsite: UITextField!
     @IBOutlet weak var validationAlert: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         companyIndustry.delegate = self
         
-        ref.observe(.value, with: { snapshot in
-            if snapshot.hasChild("Company Size") && snapshot.hasChild("Headquarters") && snapshot.hasChild("Website") && snapshot.hasChild("Description") && snapshot.hasChild("Industry"){
+        refCheckValid.observe(.value, with: { (snapshot) in
+            
+            if snapshot.hasChild(Auth.auth().currentUser!.uid) {
+               
+                print("hello valid")
                 
-                if let business = Business(snapshot: snapshot) {
-                    self.companyIndustry.text = business.industry
-                    self.companyDescription.text = business.description
-                    self.headquarters.text = business.businessHeadquarters
-                    self.companySize.text = business.companySize
-                    self.companyWebsite.text = business.companyWebsite
-                }
+                self.refValid.observe(.value, with: { snapshot in
+                    if snapshot.hasChild("Company Size") && snapshot.hasChild("Headquarters") && snapshot.hasChild("Website") && snapshot.hasChild("Description") && snapshot.hasChild("Industry"){
+                        
+                        if let business = Business(snapshot: snapshot) {
+                            self.companyIndustry.text = business.industry
+                            self.companyDescription.text = business.description
+                            self.headquarters.text = business.businessHeadquarters
+                            self.companySize.text = business.companySize
+                            self.companyWebsite.text = business.companyWebsite
+                        }
+                        
+                    }
+                })
+                
+            } else {
+                
+                print("hello pending")
+                
+                self.refPending.observe(.value, with: { snapshot in
+                    if snapshot.hasChild("Company Size") && snapshot.hasChild("Headquarters") && snapshot.hasChild("Website") && snapshot.hasChild("Description") && snapshot.hasChild("Industry"){
+                        
+                        if let business = Business(snapshot: snapshot) {
+                            self.companyIndustry.text = business.industry
+                            self.companyDescription.text = business.description
+                            self.headquarters.text = business.businessHeadquarters
+                            self.companySize.text = business.companySize
+                            self.companyWebsite.text = business.companyWebsite
+                        }
+                        
+                    }
+                })
                 
             }
+            
         })
         
         self.navigationController?.navigationBar.tintColor = UIColor.black
@@ -85,7 +114,23 @@ class BusinessAboutViewController: UIViewController, UITextFieldDelegate {
             
         }
         
-        ref.updateChildValues(["Industry": self.companyIndustry.text!, "Description": self.companyDescription.text!, "Headquarters": self.headquarters.text!, "Company Size": self.companySize.text!, "Website": self.companyWebsite.text!,])
+        refCheckValid.observe(.value, with: { (snapshot) in
+            
+            if snapshot.hasChild(Auth.auth().currentUser!.uid) {
+                
+                print("hello valid")
+                
+                        self.refValid.updateChildValues(["Industry": self.companyIndustry.text!, "Description": self.companyDescription.text!, "Headquarters": self.headquarters.text!, "Company Size": self.companySize.text!, "Website": self.companyWebsite.text!,])
+                
+            } else {
+                
+                print("hello pending")
+                
+                        self.refPending.updateChildValues(["Industry": self.companyIndustry.text!, "Description": self.companyDescription.text!, "Headquarters": self.headquarters.text!, "Company Size": self.companySize.text!, "Website": self.companyWebsite.text!,])
+                
+            }
+            
+        })
         
         self.presentBusinessProfileCreationViewController()
         

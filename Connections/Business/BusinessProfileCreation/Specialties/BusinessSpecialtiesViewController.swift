@@ -12,7 +12,9 @@ import Firebase
 
 class BusinessSpecialtiesViewController: UIViewController, UITextFieldDelegate {
     
-    let ref = Database.database().reference().child("business").child("pending").child(Auth.auth().currentUser!.uid).child("specialties")
+    let refPending = Database.database().reference().child("business").child("pending").child(Auth.auth().currentUser!.uid).child("specialties")
+    let refValid = Database.database().reference().child("business").child("valid").child(Auth.auth().currentUser!.uid).child("specialties")
+    let refCheckValid = Database.database().reference().child("business").child("valid")
     var specialties = [Specialties]()
     
     @IBOutlet var tableView: UITableView!
@@ -23,20 +25,51 @@ class BusinessSpecialtiesViewController: UIViewController, UITextFieldDelegate {
         
         specialtiesInput.delegate = self
         
-        ref.observe(.value, with: { snapshot in
-            self.specialties.removeAll()
-            for specialties in snapshot.children {
-                if let data = specialties as? DataSnapshot {
-                    if let specialties = Specialties(snapshot: data) {
-                        
-                        self.specialties.append(specialties)
+        refCheckValid.observe(.value, with: { (snapshot) in
+            
+            if snapshot.hasChild(Auth.auth().currentUser!.uid) {
+                
+                print("hello valid")
+                
+                self.refValid.observe(.value, with: { snapshot in
+                    self.specialties.removeAll()
+                    for specialties in snapshot.children {
+                        if let data = specialties as? DataSnapshot {
+                            if let specialties = Specialties(snapshot: data) {
+                                
+                                self.specialties.append(specialties)
+                            }
+                        }
                     }
-                }
+                    
+                    self.tableView.reloadData()
+                    
+                    print("is\(self.specialties.count)")
+                    
+                })
+                
+            } else {
+                
+                print("hello pending")
+                
+                self.refPending.observe(.value, with: { snapshot in
+                    self.specialties.removeAll()
+                    for specialties in snapshot.children {
+                        if let data = specialties as? DataSnapshot {
+                            if let specialties = Specialties(snapshot: data) {
+                                
+                                self.specialties.append(specialties)
+                            }
+                        }
+                    }
+                    
+                    self.tableView.reloadData()
+                    
+                    print("is\(self.specialties.count)")
+                    
+                })
+                
             }
-            
-            self.tableView.reloadData()
-            
-            print("is\(self.specialties.count)")
             
         })
         
@@ -52,10 +85,23 @@ class BusinessSpecialtiesViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func addSkillBtn(_ sender: Any) {
         
-        let ex = Specialties(data: ["Specialties": self.specialtiesInput.text!])
-        ref.childByAutoId().setValue(ex.toDict())
-        
-        specialtiesInput.text! = ""
+        refCheckValid.observeSingleEvent(of: .value) { snapshot in
+            
+            if snapshot.hasChild(Auth.auth().currentUser!.uid) {
+                
+                let ex = Specialties(data: ["Specialties": self.specialtiesInput.text!])
+                self.refValid.childByAutoId().setValue(ex.toDict())
+                self.specialtiesInput.text! = ""
+                
+            } else {
+                
+                let ex = Specialties(data: ["Specialties": self.specialtiesInput.text!])
+                self.refPending.childByAutoId().setValue(ex.toDict())
+                self.specialtiesInput.text! = ""
+                
+            }
+            
+        }
         
     }
     
@@ -121,9 +167,24 @@ extension BusinessSpecialtiesViewController: SpecialtiesCellDelegate {
             if sender.tag == 1 {
                 let specialtie = specialties[indexPath.row]
                 
-                let refDeleteJobs = Database.database().reference().child("business/pending/\(Auth.auth().currentUser!.uid)").child("specialties").child(specialtie.uuid!)
+                refCheckValid.observeSingleEvent(of: .value) { snapshot in
+                    
+                    if snapshot.hasChild(Auth.auth().currentUser!.uid) {
+                        
+                        let refDeleteJobs = Database.database().reference().child("business/valid/\(Auth.auth().currentUser!.uid)").child("specialties").child(specialtie.uuid!)
+                        
+                        refDeleteJobs.removeValue()
+                        
+                    } else {
+                        
+                        let refDeleteJobs = Database.database().reference().child("business/pending/\(Auth.auth().currentUser!.uid)").child("specialties").child(specialtie.uuid!)
+                        
+                        refDeleteJobs.removeValue()
+                        
+                    }
+                    
+                }
                 
-                refDeleteJobs.removeValue()
             }
             
         }

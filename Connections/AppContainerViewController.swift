@@ -16,64 +16,33 @@ class AppContainerViewController: UIViewController{
             present(vc, animated: true, completion: nil)
             return
         }
-        
-        let defaults = UserDefaults.standard
-        if let _ = defaults.value(forKey: "CreatedProfile") as? Bool {
-            
-            Database.database().reference().child("users/\(user.uid)/type").observeSingleEvent(of: .value, with: {
-                (snapshot) in
-                
-                ViewedManager.shared.configure(uuid: user.uid)
-                
-                switch snapshot.value as! String {
-                // If our user is admin...
-                case "business":
-                    // ...redirect to the student page
-                    let storyboard:UIStoryboard = UIStoryboard(name: "StudentMain", bundle: nil)
-                    let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "StudentSWRevealViewController") as! SWRevealViewController
-                    self.present(SWRevealViewController, animated: true, completion: nil)
-                // If out user is a regular user...
-                case "student":
-                    // ...redirect to the business page
-                    let storyboard:UIStoryboard = UIStoryboard(name: "BusinessMain", bundle: nil)
-                    let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
-                    self.present(SWRevealViewController, animated: true, completion: nil)
-                // If the type wasn't found...
-                default:
-                    // ...print an error
-                    print("Error: Couldn't find type for user \(user.uid)")
-                }
-            })
-            
-        } else {
-            
-            Database.database().reference().child("users/\(user.uid)/type").observeSingleEvent(of: .value, with: {
-                (snapshot) in
-                
-                ViewedManager.shared.configure(uuid: user.uid)
-                
-                switch snapshot.value as! String {
-                // If our user is admin...
-                case "business":
-                    // ...redirect to the student page
-                    let storyboard = UIStoryboard(name: "BusinessRegister", bundle: nil)
-                    let viewController = storyboard.instantiateViewController(withIdentifier: "BusinessCreateProfile")
-                    self.present(viewController, animated: true)
-                // If out user is a regular user...
-                case "student":
-                    // ...redirect to the business page
-                    let storyboard = UIStoryboard(name: "StudentRegister", bundle: nil)
-                    let viewController = storyboard.instantiateViewController(withIdentifier: "profileCreationNavigation")
-                    self.present(viewController, animated: true)
-                // If the type wasn't found...
-                default:
-                    // ...print an error
-                    print("Error: Couldn't find type for user \(user.uid)")
-                }
-            })
-            
-        }
 
+            
+        Database.database().reference().child("users/\(user.uid)/type").observeSingleEvent(of: .value, with: {
+            (snapshot) in
+            
+            ViewedManager.shared.configure(uuid: user.uid)
+            
+            switch snapshot.value as! String {
+            // If our user is admin...
+            case "business":
+                // ...redirect to the student page
+                let storyboard:UIStoryboard = UIStoryboard(name: "StudentMain", bundle: nil)
+                let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "StudentSWRevealViewController") as! SWRevealViewController
+                self.present(SWRevealViewController, animated: true, completion: nil)
+            // If out user is a regular user...
+            case "student":
+                // ...redirect to the business page
+                let storyboard:UIStoryboard = UIStoryboard(name: "BusinessMain", bundle: nil)
+                let SWRevealViewController:SWRevealViewController = storyboard.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
+                self.present(SWRevealViewController, animated: true, completion: nil)
+            // If the type wasn't found...
+            default:
+                // ...print an error
+                print("Error: Couldn't find type for user \(user.uid)")
+            }
+        })
+        
         
     }
     

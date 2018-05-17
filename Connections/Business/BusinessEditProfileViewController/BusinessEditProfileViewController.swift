@@ -60,9 +60,9 @@ class BusinessEditProfileViewController: UIViewController, CLLocationManagerDele
                 self.cultureTwo.text = business.cultureTwo
                 self.cultureThree.text = business.cultureThree
                 self.businesses.append(business)
-                self.tableView.reloadData()
                 print("business \(self.businesses.count)")
             }
+            self.tableView.reloadData()
         })
         
         // Create a storage reference from the URL
@@ -77,7 +77,6 @@ class BusinessEditProfileViewController: UIViewController, CLLocationManagerDele
         refJobs.observe(.value, with: { snapshot in
             
             self.jobs.removeAll()
-            self.businesses.removeAll()
             
             for job in snapshot.children {
                 if let data = job as? DataSnapshot {
@@ -121,6 +120,21 @@ class BusinessEditProfileViewController: UIViewController, CLLocationManagerDele
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        print("hello view appear")
+        
+        // Create a storage reference from the URL
+        let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child((Auth.auth().currentUser?.uid)!)
+        // Download the data, assuming a max size of 1MB (you can change this as necessary)
+        storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+            // Create a UIImage, add it to the array
+            let pic = UIImage(data: data!)
+            self.profilePic.image = pic
+        }
+        
+    }
+    
     func caclculateTableViewHeight() {
         
         print("section header: \(tableView.sectionHeaderHeight)")
@@ -135,7 +149,7 @@ class BusinessEditProfileViewController: UIViewController, CLLocationManagerDele
         for constraint in self.contentView.constraints {
             if constraint.identifier == "tableViewBottom" {
                 print("hello")
-                constraint.constant = newHeight + 435
+                constraint.constant = 435 + newHeight
             }
         }
         contentView.layoutIfNeeded()

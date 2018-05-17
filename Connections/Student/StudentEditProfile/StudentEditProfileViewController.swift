@@ -38,6 +38,7 @@ class StudentEditProfileViewController: UIViewController {
     @IBOutlet weak var interestOne: UILabel!
     @IBOutlet weak var interestTwo: UILabel!
     @IBOutlet weak var interestThree: UILabel!
+    @IBOutlet weak var studentLocation: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
@@ -62,6 +63,7 @@ class StudentEditProfileViewController: UIViewController {
                 self.interestTwo.text = student.interestTwo
                 self.interestThree.text = student.interestThree
                 self.headline.text = student.headline
+                self.studentLocation.text = student.address
                 self.students.append(student)
             }
         })
@@ -133,6 +135,21 @@ class StudentEditProfileViewController: UIViewController {
         
         //open menu with swipe gesture
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        print("hello view appear")
+        
+        // Create a storage reference from the URL
+        let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child((Auth.auth().currentUser?.uid)!)
+        // Download the data, assuming a max size of 1MB (you can change this as necessary)
+        storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+            // Create a UIImage, add it to the array
+            let pic = UIImage(data: data!)
+            self.profilePic.image = pic
+        }
         
     }
     

@@ -13,7 +13,9 @@ import Firebase
 class BusinessQuestionsViewController: UIViewController, UITextFieldDelegate {
     
     var businesses = [Business]()
-    let ref = Database.database().reference().child("business").child("pending").child(Auth.auth().currentUser!.uid)
+    let refPending = Database.database().reference().child("business").child("pending").child(Auth.auth().currentUser!.uid)
+    let refValid = Database.database().reference().child("business").child("valid").child(Auth.auth().currentUser!.uid)
+    let refCheckValid = Database.database().reference().child("business").child("valid")
     
     @IBOutlet var questionOne: UITextField!
     @IBOutlet var questionTwo: UITextField!
@@ -27,17 +29,43 @@ class BusinessQuestionsViewController: UIViewController, UITextFieldDelegate {
         questionTwo.delegate = self
         questionThree.delegate = self
         
-        ref.observeSingleEvent(of: .value) { snapshot in
-            if snapshot.hasChild("Question One") && snapshot.hasChild("Question Two") && snapshot.hasChild("Question Three"){
+        refCheckValid.observe(.value, with: { (snapshot) in
+            
+            if snapshot.hasChild(Auth.auth().currentUser!.uid) {
                 
-                if let business = Business(snapshot: snapshot) {
-                    self.questionOne.text = business.questionOne
-                    self.questionTwo.text = business.questionTwo
-                    self.questionThree.text = business.questionThree
+                print("hello valid")
+                
+                self.refValid.observeSingleEvent(of: .value) { snapshot in
+                    if snapshot.hasChild("Question One") && snapshot.hasChild("Question Two") && snapshot.hasChild("Question Three"){
+                        
+                        if let business = Business(snapshot: snapshot) {
+                            self.questionOne.text = business.questionOne
+                            self.questionTwo.text = business.questionTwo
+                            self.questionThree.text = business.questionThree
+                        }
+                        
+                    }
+                }
+                
+            } else {
+                
+                print("hello pending")
+                
+                self.refPending.observeSingleEvent(of: .value) { snapshot in
+                    if snapshot.hasChild("Question One") && snapshot.hasChild("Question Two") && snapshot.hasChild("Question Three"){
+                        
+                        if let business = Business(snapshot: snapshot) {
+                            self.questionOne.text = business.questionOne
+                            self.questionTwo.text = business.questionTwo
+                            self.questionThree.text = business.questionThree
+                        }
+                        
+                    }
                 }
                 
             }
-        }
+            
+        })
         
         self.navigationController?.navigationBar.tintColor = UIColor.black
         
@@ -83,7 +111,19 @@ class BusinessQuestionsViewController: UIViewController, UITextFieldDelegate {
             
         }
         
-        ref.updateChildValues(["Question One": self.questionOne.text!, "Question Two": self.questionTwo.text!, "Question Three": self.questionThree.text!])
+        refCheckValid.observe(.value, with: { (snapshot) in
+            
+            if snapshot.hasChild(Auth.auth().currentUser!.uid) {
+                
+                self.refValid.updateChildValues(["Question One": self.questionOne.text!, "Question Two": self.questionTwo.text!, "Question Three": self.questionThree.text!])
+                
+            } else {
+                
+                self.refPending.updateChildValues(["Question One": self.questionOne.text!, "Question Two": self.questionTwo.text!, "Question Three": self.questionThree.text!])
+                
+            }
+            
+        })
         
         self.presentBusinessProfileCreationViewController()
 

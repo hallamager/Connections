@@ -13,7 +13,9 @@ import Firebase
 class StudentInterestsViewController: UIViewController, UITextFieldDelegate {
     
     var students = [Student]()
-    let ref = Database.database().reference().child("student").child("pending").child(Auth.auth().currentUser!.uid)
+    let refPending = Database.database().reference().child("student").child("pending").child(Auth.auth().currentUser!.uid)
+    let refValid = Database.database().reference().child("student").child("valid").child(Auth.auth().currentUser!.uid)
+    let refCheckValid = Database.database().reference().child("student").child("valid")
     
     @IBOutlet var interestOne: UITextField!
     @IBOutlet var interestTwo: UITextField!
@@ -27,15 +29,43 @@ class StudentInterestsViewController: UIViewController, UITextFieldDelegate {
         interestTwo.delegate = self
         interestThree.delegate = self
         
-        ref.observe(.value, with: { (snapshot) in
+        refCheckValid.observe(.value, with: { (snapshot) in
             
-            if snapshot.hasChild("Interest One") && snapshot.hasChild("Interest Two") && snapshot.hasChild("Interest Three"){
+            if snapshot.hasChild(Auth.auth().currentUser!.uid) {
                 
-                if let student = Student(snapshot: snapshot) {
-                    self.interestOne.text = student.interestOne
-                    self.interestTwo.text = student.interestTwo
-                    self.interestThree.text = student.interestThree
-                }
+                print("hello valid")
+                
+                self.refValid.observe(.value, with: { (snapshot) in
+                    
+                    if snapshot.hasChild("Interest One") && snapshot.hasChild("Interest Two") && snapshot.hasChild("Interest Three"){
+                        
+                        if let student = Student(snapshot: snapshot) {
+                            self.interestOne.text = student.interestOne
+                            self.interestTwo.text = student.interestTwo
+                            self.interestThree.text = student.interestThree
+                        }
+                        
+                    }
+                    
+                })
+                
+            } else {
+                
+                print("hello pending")
+                
+                self.refPending.observe(.value, with: { (snapshot) in
+                    
+                    if snapshot.hasChild("Interest One") && snapshot.hasChild("Interest Two") && snapshot.hasChild("Interest Three"){
+                        
+                        if let student = Student(snapshot: snapshot) {
+                            self.interestOne.text = student.interestOne
+                            self.interestTwo.text = student.interestTwo
+                            self.interestThree.text = student.interestThree
+                        }
+                        
+                    }
+                    
+                })
                 
             }
             
@@ -84,8 +114,24 @@ class StudentInterestsViewController: UIViewController, UITextFieldDelegate {
             return
             
         }
-   
-        ref.updateChildValues(["Interest One": self.interestOne.text!, "Interest Two": self.interestTwo.text!, "Interest Three": self.interestThree.text!])
+        
+        refCheckValid.observe(.value, with: { (snapshot) in
+            
+            if snapshot.hasChild(Auth.auth().currentUser!.uid) {
+                
+                print("hello valid")
+                
+                self.refValid.updateChildValues(["Interest One": self.interestOne.text!, "Interest Two": self.interestTwo.text!, "Interest Three": self.interestThree.text!])
+                
+            } else {
+                
+                print("hello pending")
+                
+                self.refPending.updateChildValues(["Interest One": self.interestOne.text!, "Interest Two": self.interestTwo.text!, "Interest Three": self.interestThree.text!])
+                
+            }
+            
+        })
         
         presentStudentProfileCreationViewController()
         

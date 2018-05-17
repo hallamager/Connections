@@ -15,7 +15,9 @@ class StudentProfilePictureViewController: UIViewController, UIImagePickerContro
     
     var selectedImage: UIImage?
     let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(Auth.auth().currentUser!.uid)
-    let ref = Database.database().reference().child("student").child("pending").child(Auth.auth().currentUser!.uid)
+    let refPending = Database.database().reference().child("student").child("pending").child(Auth.auth().currentUser!.uid)
+    let refValid = Database.database().reference().child("student").child("valid").child(Auth.auth().currentUser!.uid)
+    let refCheckValid = Database.database().reference().child("student").child("valid")
     
     @IBOutlet var profileImg: UIImageView!
     @IBOutlet weak var noImgEntered: UILabel!
@@ -27,19 +29,44 @@ class StudentProfilePictureViewController: UIViewController, UIImagePickerContro
         profileImg.addGestureRecognizer(tapGesture)
         profileImg.isUserInteractionEnabled = true
         
-        ref.observe(.value, with: { snapshot in
-            if snapshot.hasChild("profileImageURL"){
+        refCheckValid.observe(.value, with: { (snapshot) in
+            
+            if snapshot.hasChild(Auth.auth().currentUser!.uid) {
                 
-                // Create a storage reference from the URL
-                let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child((Auth.auth().currentUser?.uid)!)
-                // Download the data, assuming a max size of 1MB (you can change this as necessary)
-                storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
-                    // Create a UIImage, add it to the array
-                    let pic = UIImage(data: data!)
-                    self.profileImg?.image = pic
-                }
+                self.refValid.observe(.value, with: { snapshot in
+                    if snapshot.hasChild("profileImageURL"){
+                        
+                        // Create a storage reference from the URL
+                        let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child((Auth.auth().currentUser?.uid)!)
+                        // Download the data, assuming a max size of 1MB (you can change this as necessary)
+                        storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+                            // Create a UIImage, add it to the array
+                            let pic = UIImage(data: data!)
+                            self.profileImg?.image = pic
+                        }
+                        
+                    }
+                })
+                
+            } else {
+                
+                self.refPending.observe(.value, with: { snapshot in
+                    if snapshot.hasChild("profileImageURL"){
+                        
+                        // Create a storage reference from the URL
+                        let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child((Auth.auth().currentUser?.uid)!)
+                        // Download the data, assuming a max size of 1MB (you can change this as necessary)
+                        storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+                            // Create a UIImage, add it to the array
+                            let pic = UIImage(data: data!)
+                            self.profileImg?.image = pic
+                        }
+                        
+                    }
+                })
                 
             }
+            
         })
         
         self.navigationController?.navigationBar.tintColor = UIColor.black
@@ -105,7 +132,25 @@ class StudentProfilePictureViewController: UIViewController, UIImagePickerContro
                 }
                 
                 let profileImageURl = metadata?.downloadURL()?.absoluteString
-                self.ref.updateChildValues(["profileImageURL": profileImageURl!])
+                
+                self.refCheckValid.observe(.value, with: { (snapshot) in
+                    
+                    if snapshot.hasChild(Auth.auth().currentUser!.uid) {
+                        
+                        print("hello valid")
+                        
+                        self.refValid.updateChildValues(["profileImageURL": profileImageURl!])
+                        
+                        
+                    } else {
+                        
+                        print("hello pending")
+                        
+                        self.refPending.updateChildValues(["profileImageURL": profileImageURl!])
+                        
+                    }
+                    
+                })
                 
             })
         }

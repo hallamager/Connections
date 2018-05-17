@@ -17,7 +17,6 @@ class BusinessCreateProfileLandingViewController: UIViewController {
     @IBOutlet weak var validationAlert: UILabel!
     
     let ref = Database.database().reference().child("business").child("pending").child(Auth.auth().currentUser!.uid)
-    let refValidUser = Database.database().reference().child("validBusinesses")
     let geoRefBusiness = GeoFire(firebaseRef: Database.database().reference().child("business_locations"))
     let geoRefStudent = GeoFire(firebaseRef: Database.database().reference().child("student_locations"))
     let locationManager = CLLocationManager()
