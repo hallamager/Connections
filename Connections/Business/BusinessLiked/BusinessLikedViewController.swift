@@ -42,7 +42,7 @@ class BusinessLikedViewController: UIViewController {
         
         self.navigationController?.navigationBar.isTranslucent = false
         
-        self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "Avenir Next", size: 17)!]
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "AvenirNext-DemiBold", size: 17)!]
         
         
         loadRelatedBusinesses(for: Auth.auth().currentUser!.uid) { success, likedBusinesses in

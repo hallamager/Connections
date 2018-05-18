@@ -152,7 +152,7 @@ class BusinessQuestionsListViewController: UIViewController, UITextFieldDelegate
             
         }
         
-        self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "Avenir Next", size: 17)!]
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "AvenirNext-DemiBold", size: 17)!]
 
         navigationItem.title = business.username
         

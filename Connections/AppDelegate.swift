@@ -28,13 +28,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             print("not on boarding")
             
-            vc = storyboard.instantiateViewController(withIdentifier: "AppContainerViewController")
+            vc = storyboard.instantiateViewController(withIdentifier: "OnBoardingViewController")
             
         } else {
             
             print("on boarding")
             
-            vc = storyboard.instantiateViewController(withIdentifier: "OnBoardingViewController")
+            vc = storyboard.instantiateViewController(withIdentifier: "AppContainerViewController")
             
         }
         

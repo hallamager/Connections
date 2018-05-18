@@ -2193,7 +2193,7 @@
                             <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AZb-Y1-xd9">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1056"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRr-k1-bhq" userLabel="Content View">
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRr-k1-bhq" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="5000"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="writing-notes-idea-conference" translatesAutoresizingMaskIntoConstraints="NO" id="Dme-vX-Bm2">

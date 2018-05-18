@@ -38,7 +38,7 @@ class BusinessShowJobsViewController: UIViewController {
         
         navigationItem.title = business.username
         
-        self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "Avenir Next", size: 17)!]
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "AvenirNext-DemiBold", size: 17)!]
         
         let refJobs = Database.database().reference().child("business").child("valid").child(business.uuid).child("Jobs")
 
