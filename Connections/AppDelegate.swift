@@ -19,6 +19,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var vc: UIViewController
+        
+        let defaults = UserDefaults.standard
+        if let _ = defaults.value(forKey: "CreatedProfile") as? Bool {
+            
+            print("not on boarding")
+            
+            vc = storyboard.instantiateViewController(withIdentifier: "AppContainerViewController")
+            
+        } else {
+            
+            print("on boarding")
+            
+            vc = storyboard.instantiateViewController(withIdentifier: "OnBoardingViewController")
+            
+        }
+        
+        self.window?.rootViewController = vc
+        self.window?.makeKeyAndVisible()
+        
         IQKeyboardManager.sharedManager().enable = true
         IQKeyboardManager.sharedManager().shouldResignOnTouchOutside = true
         IQKeyboardManager.sharedManager().shouldShowToolbarPlaceholder = true

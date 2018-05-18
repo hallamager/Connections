@@ -62,6 +62,7 @@
 		A082CCA7208BD63D004F370B /* StudentLikedExperienceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A082CCA6208BD63D004F370B /* StudentLikedExperienceCell.swift */; };
 		A0929C942089E51700E680B9 /* EducationMoreInfoTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0929C932089E51700E680B9 /* EducationMoreInfoTitle.xib */; };
 		A0929C962089E52800E680B9 /* ExperienceMoreInfoTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0929C952089E52800E680B9 /* ExperienceMoreInfoTitle.xib */; };
+		A097055A20AEF88200F4DE0C /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A097055920AEF88200F4DE0C /* OnBoardingViewController.swift */; };
 		A09739E32020A4850087F7CE /* BusinessMoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09739E22020A4850087F7CE /* BusinessMoreInfoViewController.swift */; };
 		A09739E72020E6A10087F7CE /* StudentRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09739E62020E6A10087F7CE /* StudentRegisterViewController.swift */; };
 		A09739EA20210BDB0087F7CE /* StudentCreateProfileLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09739E920210BDB0087F7CE /* StudentCreateProfileLandingViewController.swift */; };
@@ -210,6 +211,7 @@
 		A082CCA6208BD63D004F370B /* StudentLikedExperienceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLikedExperienceCell.swift; sourceTree = "<group>"; };
 		A0929C932089E51700E680B9 /* EducationMoreInfoTitle.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EducationMoreInfoTitle.xib; sourceTree = "<group>"; };
 		A0929C952089E52800E680B9 /* ExperienceMoreInfoTitle.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceMoreInfoTitle.xib; sourceTree = "<group>"; };
+		A097055920AEF88200F4DE0C /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		A09739E22020A4850087F7CE /* BusinessMoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessMoreInfoViewController.swift; sourceTree = "<group>"; };
 		A09739E62020E6A10087F7CE /* StudentRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRegisterViewController.swift; sourceTree = "<group>"; };
 		A09739E920210BDB0087F7CE /* StudentCreateProfileLandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCreateProfileLandingViewController.swift; sourceTree = "<group>"; };
@@ -525,6 +527,7 @@
 				A00748591F912189004AF885 /* Main.storyboard */,
 				A07226641F91657F006C60BA /* TabsViewController.swift */,
 				A07226661F916EC9006C60BA /* LogInViewController.swift */,
+				A097055920AEF88200F4DE0C /* OnBoardingViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -954,6 +957,7 @@
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/paper-onboarding/paper_onboarding.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -971,6 +975,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/paper_onboarding.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1036,6 +1041,7 @@
 				A041D282208BE1EB003A97F7 /* BusinessLikedSpecialtiesCell.swift in Sources */,
 				A0F5CB12206E6E71005AEEF3 /* StudentInviteViewController.swift in Sources */,
 				A0D68A35206C24D70040BDD1 /* ChatInvite.swift in Sources */,
+				A097055A20AEF88200F4DE0C /* OnBoardingViewController.swift in Sources */,
 				A01E644220A383D5003AC93A /* CustomOverlayView.swift in Sources */,
 				A0A6B0FA204983A100AC357F /* EditJobsViewController.swift in Sources */,
 				A0D7F66F20791E9C00129594 /* AppManager.swift in Sources */,

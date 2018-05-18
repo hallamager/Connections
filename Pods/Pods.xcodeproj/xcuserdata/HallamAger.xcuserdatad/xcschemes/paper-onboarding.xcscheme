@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BCAB5B16BA8702F73B80288708C8C3F3"
-               BuildableName = "ViewAnimator.framework"
-               BlueprintName = "ViewAnimator"
+               BlueprintIdentifier = "738B2050D3EE6CEF2F8FC5020EAB44A1"
+               BuildableName = "paper_onboarding.framework"
+               BlueprintName = "paper-onboarding"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BCAB5B16BA8702F73B80288708C8C3F3"
-            BuildableName = "ViewAnimator.framework"
-            BlueprintName = "ViewAnimator"
+            BlueprintIdentifier = "738B2050D3EE6CEF2F8FC5020EAB44A1"
+            BuildableName = "paper_onboarding.framework"
+            BlueprintName = "paper-onboarding"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

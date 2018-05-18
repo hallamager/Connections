@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D76C89A04AB824E05A930A3DF335EEC3"
+               BlueprintIdentifier = "A6CD0E20A6F20FC4B4B5B678C8DD7FBE"
                BuildableName = "XLPagerTabStrip.bundle"
                BlueprintName = "XLPagerTabStrip-XLPagerTabStrip"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D76C89A04AB824E05A930A3DF335EEC3"
+            BlueprintIdentifier = "A6CD0E20A6F20FC4B4B5B678C8DD7FBE"
             BuildableName = "XLPagerTabStrip.bundle"
             BlueprintName = "XLPagerTabStrip-XLPagerTabStrip"
             ReferencedContainer = "container:Pods.xcodeproj">

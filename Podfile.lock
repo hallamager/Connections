@@ -67,6 +67,7 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - paper-onboarding (4.0.1)
   - pop (1.0.10)
   - Protobuf (3.5.0)
   - Spring (1.0.5)
@@ -84,6 +85,7 @@ DEPENDENCIES:
   - Hero
   - IQKeyboardManagerSwift
   - Koloda
+  - paper-onboarding
   - Spring
   - ViewAnimator
   - XLPagerTabStrip
@@ -115,12 +117,13 @@ SPEC CHECKSUMS:
   Koloda: 0d39b2aa188ccd1fac48d752acaf9802e683c625
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  paper-onboarding: ecb43c83e4e4f90137f228b8e9d87ca5aee591ee
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   Spring: 17901566c8ecf3a1327902b940406c64512f9bb1
   ViewAnimator: d87d691fbcaf994db7ee8fc632afa3073bd3b851
   XLPagerTabStrip: d1ab378af0923320ec0b5eab11d7b2f803d31261
 
-PODFILE CHECKSUM: 030d3da581fc54e0874c781de1c2e13d144c2178
+PODFILE CHECKSUM: fbc381be618aabb2af47d1164b24973547d23348
 
 COCOAPODS: 1.3.1

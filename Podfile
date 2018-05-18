@@ -19,5 +19,6 @@ target 'Connections' do
     pod 'GeoFire', :git => 'https://github.com/firebase/geofire-objc.git'
     pod 'IQKeyboardManagerSwift'
     pod 'Spring'
+    pod 'paper-onboarding'
     
 end
