@@ -85,6 +85,10 @@ class StudentCreateProfileLandingViewController: UIViewController {
                     
                     })
                 
+                let refUsers = Database.database().reference()
+                
+                refUsers.child("users").child(Auth.auth().currentUser!.uid).setValue(["type": "student"])
+                
                 self.presentBusinessSwipeViewViewController()
                 
                 self.locationManager.delegate = self

@@ -82,7 +82,7 @@ class StudentRegisterViewController: UIViewController, UITextFieldDelegate {
                 // following method is a add user's more details
                 ref.child("student").child("pending").child(user!.uid).updateChildValues(["Username": self.usernameTextField.text!, "type": "student"])
                 
-                ref.child("users").child(user!.uid).setValue(["type": "student"])
+//                ref.child("users").child(user!.uid).setValue(["type": "student"])
                 
                 self.errorValidation.text = ""
                 

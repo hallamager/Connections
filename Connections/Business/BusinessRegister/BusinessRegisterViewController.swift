@@ -82,7 +82,7 @@ class BusinessRegisterViewController: UIViewController, UITextFieldDelegate {
                 // following method is a add user's more details
                 ref.child("business").child("pending").child(user!.uid).updateChildValues(["Company Name": self.companyNameTextField.text!, "type": "business"])
                 
-                ref.child("users").child(user!.uid).setValue(["type": "business"])
+//                ref.child("users").child(user!.uid).setValue(["type": "business"])
                 
                 self.errorValidation.text = ""
 

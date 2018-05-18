@@ -86,6 +86,10 @@ class BusinessCreateProfileLandingViewController: UIViewController {
                     
                 })
                 
+                let refUsers = Database.database().reference()
+
+                refUsers.child("users").child(Auth.auth().currentUser!.uid).setValue(["type": "business"])
+                
                 self.locationManager.delegate = self
                 self.locationManager.requestAlwaysAuthorization()
                 self.locationManager.startUpdatingLocation()
