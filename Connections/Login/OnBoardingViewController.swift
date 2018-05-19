@@ -16,27 +16,34 @@ class OnBoardingViewController: UIViewController {
     
     fileprivate let items = [
         OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "logo"),
-                           title: "Welcome !",
-                           description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                           pageIcon: #imageLiteral(resourceName: "icon-right"),
+                           title: "Welcome",
+                           description: "Welcome to connections. The chance to find the perfect business or employee is now right at your fingertips.",
+                           pageIcon: #imageLiteral(resourceName: "onBoardingIndicator"),
                            color: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1),
                            titleColor: UIColor.black, descriptionColor: UIColor.black, titleFont: titleFont, descriptionFont: descriptionFont),
         
-        OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "NotOk"),
-                           title: "Banks",
-                           description: "We carefully verify all banks before add them into the app",
-                           pageIcon: #imageLiteral(resourceName: "Ok"),
-                           color: UIColor(red: 246/255, green: 247/255, blue: 249/255, alpha: 1),
+        OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "CardExample"),
+                           title: "Liking & Matching",
+                           description: "Swipe right to like or left to pass. If you need more information, just give the card a tap. Keep in mind, businesses will only see students that have liked them.",
+                           pageIcon: #imageLiteral(resourceName: "onBoardingIndicator"),
+                           color: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1),
                            titleColor: UIColor.black, descriptionColor: UIColor.black, titleFont: titleFont, descriptionFont: descriptionFont),
         
-        OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "NotOk"),
-                           title: "Stores",
-                           description: "All local stores are categorized for your convenience",
-                           pageIcon: #imageLiteral(resourceName: "Ok"),
+        OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "Answers"),
+                           title: "Questions",
+                           description: "As businesses you have the chance to ask students three questions. Pick carfully as this is a great opportunity to get to know your future employees better. As students this is a chance to give businesses a better insight into who you really are, only increasing the chances of creating the best possible connections.",
+                           pageIcon: #imageLiteral(resourceName: "onBoardingIndicator"),
+                           color: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1),
+                           titleColor: UIColor.black, descriptionColor: UIColor.black, titleFont: titleFont, descriptionFont: descriptionFont),
+        OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "Jobs"),
+                           title: "Jobs and Interviews",
+                           description: "Hassle free apply for jobs and organise interviews with matched students and businessses.",
+                           pageIcon: #imageLiteral(resourceName: "onBoardingIndicator"),
                            color: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1),
                            titleColor: UIColor.black, descriptionColor: UIColor.black, titleFont: titleFont, descriptionFont: descriptionFont),
         
         ]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,7 +97,7 @@ extension OnBoardingViewController {
 extension OnBoardingViewController: PaperOnboardingDelegate {
     
     func onboardingWillTransitonToIndex(_ index: Int) {
-        skipButton.isHidden = index == 2 ? false : true
+        skipButton.isHidden = index == 3 ? false : true
     }
     
     func onboardingDidTransitonToIndex(_: Int) {
@@ -112,18 +119,18 @@ extension OnBoardingViewController: PaperOnboardingDataSource {
     }
     
     func onboardingItemsCount() -> Int {
-        return 3
+        return 4
     }
     
-    //    func onboardinPageItemRadius() -> CGFloat {
-    //        return 2
-    //    }
-    //
-    //    func onboardingPageItemSelectedRadius() -> CGFloat {
-    //        return 10
-    //    }
+        func onboardinPageItemRadius() -> CGFloat {
+            return 1
+        }
+    
+        func onboardingPageItemSelectedRadius() -> CGFloat {
+            return 1
+        }
     func onboardingPageItemColor(at index: Int) -> UIColor {
-        return [UIColor(red: 8/255, green: 51/255, blue: 78/255, alpha: 1), UIColor.red, UIColor.green][index]
+        return [UIColor(red: 8/255, green: 51/255, blue: 78/255, alpha: 1), UIColor(red: 8/255, green: 51/255, blue: 78/255, alpha: 1), UIColor(red: 8/255, green: 51/255, blue: 78/255, alpha: 1), UIColor(red: 8/255, green: 51/255, blue: 78/255, alpha: 1)][index]
     }
     
 }

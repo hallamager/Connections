@@ -63,7 +63,7 @@ extension PageView {
                                 selectedRadius: selectedRadius,
                                 itemColor: itemColor)
         pageView.translatesAutoresizingMaskIntoConstraints = false
-        pageView.alpha = 0.4
+        pageView.alpha = 1
         view.addSubview(pageView)
 
       let layoutAttribs:[(NSLayoutAttribute, Int)] =  [(NSLayoutAttribute.left, 0), (NSLayoutAttribute.right, 0), (NSLayoutAttribute.bottom, Int(bottomConstant))]

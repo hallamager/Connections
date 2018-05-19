@@ -87,7 +87,7 @@ private extension OnboardingContentViewItem {
         (self, descriptionLabel, titleLabel) >>>- {
             $0.attribute = .top
             $0.secondAttribute = .bottom
-            $0.constant = 10
+            $0.constant = 30
             return
         }
 
@@ -168,13 +168,13 @@ private extension OnboardingContentViewItem {
         // add constratints
         informationImageWidthConstraint = imageView >>>- {
             $0.attribute = NSLayoutAttribute.width
-            $0.constant = 188
+            $0.constant = 300
             return
         }
         
         informationImageHeightConstraint = imageView >>>- {
             $0.attribute = NSLayoutAttribute.height
-            $0.constant = 188
+            $0.constant = 300
             return
         }
 
