@@ -44,12 +44,6 @@ class EditExperienceViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    //text field goes away when done is pressed
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
     @IBAction func confirmBtn(_ sender: UIButton) {
         
         sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)

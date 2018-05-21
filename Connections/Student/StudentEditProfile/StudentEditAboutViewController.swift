@@ -56,12 +56,6 @@ class StudentEditAboutViewController: UIViewController, UITextFieldDelegate, UII
         
     }
     
-    //text field goes away when done is pressed
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
     @objc func handleSelectProfileImageView() {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self

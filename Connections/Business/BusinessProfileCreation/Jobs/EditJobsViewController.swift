@@ -91,12 +91,6 @@ class EditJobsViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.navigationBar.tintColor = UIColor.black
         
     }
-    
-    //text field goes away when done is pressed
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
 
     @IBAction func editRequiredSkillBtn(_ sender: Any) {
         
@@ -107,17 +101,23 @@ class EditJobsViewController: UIViewController, UITextFieldDelegate {
             
             if snapshot.hasChild(Auth.auth().currentUser!.uid) {
                 
-                refValidSkillsRequired.updateChildValues([self.editRequiredSkill.text! : true])
+                print("hellos")
                 
+                refValidSkillsRequired.updateChildValues([self.editRequiredSkill.text!: true])
+                
+                self.editRequiredSkill.text! = ""
+
             } else {
                 
                 refSkillsRequired.updateChildValues([self.editRequiredSkill.text! : true])
+                
+                self.editRequiredSkill.text! = ""
                 
             }
             
         }
         
-        editRequiredSkill.text! = ""
+        collectionView.reloadData()
         
     }
     
@@ -202,7 +202,7 @@ extension EditJobsViewController: DeleteSkillRequiredCellDelegate {
                 
                 let skillsRequired = skillRequired[indexPath.row]
                 
-                let refDeleteSkillsRequired = Database.database().reference().child("business/pending/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!).child("skillsRequired").child(skillsRequired)
+                let refDeleteSkillsRequired = Database.database().reference().child("business/valid/\(Auth.auth().currentUser!.uid)").child("Jobs").child(job.uuid!).child("skillsRequired").child(skillsRequired)
                 
                 refDeleteSkillsRequired.removeValue()
                 

@@ -73,12 +73,6 @@ class ShowSkillsViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    //text field goes away when done is pressed
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
     @IBAction func addSkillBtn(_ sender: Any) {
         
         let ex = Skills(data: ["Skill": self.skillInput.text!])

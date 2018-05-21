@@ -53,21 +53,6 @@ class StudentEditProfileViewController: UIViewController {
         
         self.navigationController?.navigationBar.isTranslucent = false
         
-        ref.observeSingleEvent(of: .value, with: { snapshot in
-            if let student = Student(snapshot: snapshot) {
-                self.userUsername.text = student.username
-                self.slider.value = Float(Int?(student.selectedRadius!)!)
-                self.distanceSelected.text = "\(student.selectedRadius ?? 40)"
-                self.summary.text = student.summary
-                self.interestOne.text = student.interestOne
-                self.interestTwo.text = student.interestTwo
-                self.interestThree.text = student.interestThree
-                self.headline.text = student.headline
-                self.studentLocation.text = student.address
-                self.students.append(student)
-            }
-        })
-        
         refSkills.observe(.value, with: { snapshot in
             self.skills.removeAll()
             for skill in snapshot.children {
@@ -141,6 +126,21 @@ class StudentEditProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         print("hello view appear")
+        
+        ref.observeSingleEvent(of: .value, with: { snapshot in
+            if let student = Student(snapshot: snapshot) {
+                self.userUsername.text = student.username
+                self.slider.value = Float(Int?(student.selectedRadius!)!)
+                self.distanceSelected.text = "\(student.selectedRadius ?? 40)"
+                self.summary.text = student.summary
+                self.interestOne.text = student.interestOne
+                self.interestTwo.text = student.interestTwo
+                self.interestThree.text = student.interestThree
+                self.headline.text = student.headline
+                self.studentLocation.text = student.address
+                self.students.append(student)
+            }
+        })
         
         // Create a storage reference from the URL
         let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child((Auth.auth().currentUser?.uid)!)

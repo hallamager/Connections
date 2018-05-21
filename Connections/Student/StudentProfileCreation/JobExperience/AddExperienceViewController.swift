@@ -41,12 +41,6 @@ class AddExperienceViewController: UIViewController, UITextFieldDelegate, UIText
         
     }
     
-    //text field goes away when done is pressed
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
     /* Updated for Swift 4 */
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if(text == "\n") {
