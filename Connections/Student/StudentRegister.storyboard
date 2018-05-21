@@ -733,12 +733,12 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="950" id="PCG-7j-0KQ"/>
-                                            <constraint firstAttribute="width" constant="414" id="V1F-E3-CI4"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="iCi-5m-6OT" firstAttribute="leading" secondItem="2fW-Nb-hOd" secondAttribute="leading" id="4jN-IB-rJF"/>
+                                    <constraint firstItem="iCi-5m-6OT" firstAttribute="width" secondItem="2fW-Nb-hOd" secondAttribute="width" id="A4l-f8-hNe"/>
                                     <constraint firstAttribute="bottom" secondItem="iCi-5m-6OT" secondAttribute="bottom" id="jfe-8X-dSM"/>
                                     <constraint firstItem="iCi-5m-6OT" firstAttribute="top" secondItem="2fW-Nb-hOd" secondAttribute="top" constant="-64" id="pOb-N7-6ZN"/>
                                     <constraint firstAttribute="trailing" secondItem="iCi-5m-6OT" secondAttribute="trailing" id="rSC-BX-heg"/>
@@ -747,9 +747,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="2fW-Nb-hOd" firstAttribute="trailing" secondItem="5nJ-cD-xVl" secondAttribute="trailing" id="03U-9n-jn4"/>
+                            <constraint firstItem="2fW-Nb-hOd" firstAttribute="trailing" secondItem="FUA-DC-X44" secondAttribute="trailing" id="03U-9n-jn4"/>
                             <constraint firstItem="2fW-Nb-hOd" firstAttribute="bottom" secondItem="FUA-DC-X44" secondAttribute="bottom" id="EkN-8x-qX6"/>
-                            <constraint firstItem="2fW-Nb-hOd" firstAttribute="leading" secondItem="5nJ-cD-xVl" secondAttribute="leading" id="eta-Ly-jfQ"/>
+                            <constraint firstItem="2fW-Nb-hOd" firstAttribute="leading" secondItem="FUA-DC-X44" secondAttribute="leading" id="eta-Ly-jfQ"/>
                             <constraint firstItem="2fW-Nb-hOd" firstAttribute="top" secondItem="FUA-DC-X44" secondAttribute="top" id="ity-TB-efG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5nJ-cD-xVl"/>
@@ -1191,7 +1191,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit Experience" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2W-IE-Z6L">
-                                                <rect key="frame" x="107" y="208" width="200" height="38"/>
+                                                <rect key="frame" x="63" y="208" width="288" height="38"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
                                                 <nil key="textColor"/>
@@ -1502,7 +1502,6 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="770" id="7He-Y2-C4R"/>
-                                            <constraint firstAttribute="width" constant="414" id="TW8-bt-3tB"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1510,6 +1509,7 @@
                                     <constraint firstAttribute="bottom" secondItem="hec-pd-JVp" secondAttribute="bottom" id="IKv-bg-PBG"/>
                                     <constraint firstAttribute="trailing" secondItem="hec-pd-JVp" secondAttribute="trailing" id="Uma-a6-P68"/>
                                     <constraint firstItem="hec-pd-JVp" firstAttribute="leading" secondItem="PfS-c0-Cyl" secondAttribute="leading" id="Uyx-Zr-7uZ"/>
+                                    <constraint firstItem="hec-pd-JVp" firstAttribute="width" secondItem="PfS-c0-Cyl" secondAttribute="width" id="iqW-v6-8Po"/>
                                     <constraint firstItem="hec-pd-JVp" firstAttribute="top" secondItem="PfS-c0-Cyl" secondAttribute="top" constant="-64" id="rKI-V7-y4Y"/>
                                 </constraints>
                             </scrollView>
@@ -1586,7 +1586,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Experience" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6D-s8-Pfv">
-                                                <rect key="frame" x="106" y="208" width="201" height="30"/>
+                                                <rect key="frame" x="65" y="208" width="283" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
                                                 <nil key="textColor"/>
@@ -1896,13 +1896,13 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="414" id="GFy-Th-ah3"/>
                                             <constraint firstAttribute="height" constant="770" id="jjK-zb-XVr"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Ngy-7o-6dl" firstAttribute="leading" secondItem="o0k-xX-fOr" secondAttribute="leading" id="7Bj-a4-cMZ"/>
+                                    <constraint firstItem="Ngy-7o-6dl" firstAttribute="width" secondItem="o0k-xX-fOr" secondAttribute="width" id="Cvo-Xi-Nbq"/>
                                     <constraint firstItem="Ngy-7o-6dl" firstAttribute="top" secondItem="o0k-xX-fOr" secondAttribute="top" constant="-64" id="FAs-7k-Sof"/>
                                     <constraint firstAttribute="trailing" secondItem="Ngy-7o-6dl" secondAttribute="trailing" id="duY-hj-rvG"/>
                                     <constraint firstAttribute="bottom" secondItem="Ngy-7o-6dl" secondAttribute="bottom" id="g3F-Zx-wJc"/>
@@ -2465,11 +2465,11 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="760" id="8d0-th-SdA"/>
-                                            <constraint firstAttribute="width" constant="414" id="ZdS-ik-nfW"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="vrg-1j-tJL" firstAttribute="width" secondItem="6vI-3v-mTa" secondAttribute="width" id="36U-EC-Eqm"/>
                                     <constraint firstAttribute="trailing" secondItem="vrg-1j-tJL" secondAttribute="trailing" id="AFC-uh-ExR"/>
                                     <constraint firstAttribute="bottom" secondItem="vrg-1j-tJL" secondAttribute="bottom" id="NeR-uT-ihQ"/>
                                     <constraint firstItem="vrg-1j-tJL" firstAttribute="leading" secondItem="6vI-3v-mTa" secondAttribute="leading" id="W5W-l8-eFv"/>
@@ -2794,12 +2794,12 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="760" id="0Ck-MT-Qwa"/>
-                                            <constraint firstAttribute="width" constant="414" id="7OI-4x-w3y"/>
+                                            <constraint firstAttribute="height" constant="760" id="j3f-Ba-lEu"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="oxY-TI-27p" firstAttribute="width" secondItem="zJy-wd-a5t" secondAttribute="width" id="7Iq-A4-Zan"/>
                                     <constraint firstAttribute="trailing" secondItem="oxY-TI-27p" secondAttribute="trailing" id="Ydm-qn-ihu"/>
                                     <constraint firstItem="oxY-TI-27p" firstAttribute="leading" secondItem="zJy-wd-a5t" secondAttribute="leading" id="Yrx-A1-dwp"/>
                                     <constraint firstAttribute="bottom" secondItem="oxY-TI-27p" secondAttribute="bottom" id="abu-bR-SVv"/>
@@ -2873,45 +2873,21 @@
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Interests" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0X5-2t-cyG">
                                 <rect key="frame" x="59" y="200" width="298" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set your top 3 interests in life outside of work or education." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDu-hs-loL">
                                 <rect key="frame" x="19" y="230" width="373" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NxZ-ye-zsS" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
-                                <rect key="frame" x="42" y="684" width="325" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
-                                <state key="normal" title="Confirm">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="23"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
-                                        <color key="value" red="0.46666666670000001" green="0.78823529410000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
-                                        <color key="value" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="confirmBtn:" destination="Nfr-KO-HGQ" eventType="touchUpInside" id="F4b-e0-UO8"/>
-                                    <action selector="confirmBtn:" destination="yu2-f8-49f" eventType="touchUpInside" id="Pjv-oP-Q28"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MKD-7E-hFR" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
                                 <rect key="frame" x="42" y="298" width="325" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
@@ -2922,7 +2898,7 @@
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PQA-0Z-L0R" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
                                 <rect key="frame" x="42" y="425" width="325" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
@@ -2933,7 +2909,7 @@
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QQd-UE-NM6" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
                                 <rect key="frame" x="42" y="553" width="325" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
@@ -2944,7 +2920,7 @@
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aJz-Pi-qxr" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
                                 <rect key="frame" x="42" y="298" width="326" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Interests 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2l-fZ-Eac">
                                         <rect key="frame" x="14" y="13" width="109" height="21"/>
@@ -2955,7 +2931,7 @@
                                     </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w1E-l6-3Q7">
                                         <rect key="frame" x="10" y="46" width="305" height="46"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Interest" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vOf-UY-ced">
                                                 <rect key="frame" x="7" y="10" width="287" height="27"/>
@@ -2997,7 +2973,7 @@
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iJK-2u-YQe" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
                                 <rect key="frame" x="42" y="425" width="326" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Interests 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acF-Zm-V65">
                                         <rect key="frame" x="14" y="13" width="109" height="21"/>
@@ -3008,7 +2984,7 @@
                                     </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WIT-ej-TLt">
                                         <rect key="frame" x="10" y="46" width="305" height="46"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Interest" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="erP-GM-RVI">
                                                 <rect key="frame" x="7" y="10" width="287" height="27"/>
@@ -3050,7 +3026,7 @@
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d9H-zq-eSz" customClass="UIViewStyles" customModule="Connections" customModuleProvider="target">
                                 <rect key="frame" x="42" y="553" width="326" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Interests 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="los-ia-tqE">
                                         <rect key="frame" x="14" y="13" width="109" height="21"/>
@@ -3061,7 +3037,7 @@
                                     </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Zp-qU-lyb">
                                         <rect key="frame" x="10" y="46" width="305" height="46"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Interest" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jdB-Lg-DL3">
                                                 <rect key="frame" x="7" y="10" width="287" height="27"/>
@@ -3101,6 +3077,30 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NxZ-ye-zsS" customClass="UIButtonStyles" customModule="Connections" customModuleProvider="target">
+                                <rect key="frame" x="42" y="684" width="325" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                <state key="normal" title="Confirm">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="23"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
+                                        <color key="value" red="0.46666666670000001" green="0.78823529410000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
+                                        <color key="value" red="0.031372549020000001" green="0.31372549020000001" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="confirmBtn:" destination="Nfr-KO-HGQ" eventType="touchUpInside" id="F4b-e0-UO8"/>
+                                    <action selector="confirmBtn:" destination="yu2-f8-49f" eventType="touchUpInside" id="Pjv-oP-Q28"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="hOY-Nl-35L"/>

@@ -31,7 +31,7 @@ class OnBoardingViewController: UIViewController {
         
         OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "Answers"),
                            title: "Questions",
-                           description: "As businesses you have the chance to ask students three questions. Pick carfully as this is a great opportunity to get to know your future employees better. As students this is a chance to give businesses a better insight into who you really are, only increasing the chances of creating the best possible connections.",
+                           description: "As businesses you have the chance to ask students three questions. Pick carfully as this is a great opportunity to get to know your future employees better. As students, this is a chance to give businesses a better insight into who you really are, only increasing the chances of creating the best possible connections.",
                            pageIcon: #imageLiteral(resourceName: "onBoardingIndicator"),
                            color: UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1),
                            titleColor: UIColor.black, descriptionColor: UIColor.black, titleFont: titleFont, descriptionFont: descriptionFont),
