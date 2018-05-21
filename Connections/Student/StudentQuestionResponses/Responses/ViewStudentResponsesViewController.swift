@@ -55,10 +55,6 @@ class ViewStudentResponses: UIViewController {
             
             print("question two\(questionTwos.count)")
             
-//                let ref = Database.database().reference().child("studentResponses").child(Auth.auth().currentUser!.uid).child(student.uuid).child("Answer Two")
-//
-//                ref.updateChildValues(["Status" : "Read"])
-            
             print(studentResponses.count)
             
             questionTitle.text = "Question Two"

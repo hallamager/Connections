@@ -71,6 +71,19 @@ extension ViewStudentResponses: UITableViewDataSource {
                     cell.studentProfilePic.image = pic
                 }
                 
+                let refLiked = Database.database().reference().child("studentResponses").child(Auth.auth().currentUser!.uid).child(student.uuid).child("Answer One")
+                
+                refLiked.observe(.value, with: { (snapshot) in
+                    
+                    if snapshot.hasChild("Liked") {
+                        
+                        cell.likedBtn.backgroundColor = UIColor(red: 8/255, green: 80/255, blue: 120/255, alpha: 1.0)
+                        cell.likedImg.image = #imageLiteral(resourceName: "ThumbsUpWhite")
+                        
+                    }
+                    
+                })
+                
                 cell.studentAnswer.translatesAutoresizingMaskIntoConstraints = true
                 cell.studentAnswer.sizeToFit()
                 cell.studentAnswer.isScrollEnabled = false
@@ -91,6 +104,19 @@ extension ViewStudentResponses: UITableViewDataSource {
                     cell.studentProfilePic.image = pic
                 }
                 
+                let refLiked = Database.database().reference().child("studentResponses").child(Auth.auth().currentUser!.uid).child(student.uuid).child("Answer Two")
+                
+                refLiked.observe(.value, with: { (snapshot) in
+                    
+                    if snapshot.hasChild("Liked") {
+                        
+                        cell.likedBtn.backgroundColor = UIColor(red: 8/255, green: 80/255, blue: 120/255, alpha: 1.0)
+                        cell.likedImg.image = #imageLiteral(resourceName: "ThumbsUpWhite")
+                        
+                    }
+                    
+                })
+                
                 cell.studentAnswer.translatesAutoresizingMaskIntoConstraints = true
                 cell.studentAnswer.sizeToFit()
                 cell.studentAnswer.isScrollEnabled = false
@@ -109,6 +135,19 @@ extension ViewStudentResponses: UITableViewDataSource {
                     let pic = UIImage(data: data!)
                     cell.studentProfilePic.image = pic
                 }
+                
+                let refLiked = Database.database().reference().child("studentResponses").child(Auth.auth().currentUser!.uid).child(student.uuid).child("Answer Three")
+                
+                refLiked.observe(.value, with: { (snapshot) in
+                    
+                    if snapshot.hasChild("Liked") {
+                        
+                        cell.likedBtn.backgroundColor = UIColor(red: 8/255, green: 80/255, blue: 120/255, alpha: 1.0)
+                        cell.likedImg.image = #imageLiteral(resourceName: "ThumbsUpWhite")
+                        
+                    }
+                    
+                })
                 
                 cell.studentAnswer.translatesAutoresizingMaskIntoConstraints = true
                 cell.studentAnswer.sizeToFit()
