@@ -19,6 +19,7 @@ class BusinessSpecialtiesViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var specialtiesInput: UITextField!
+    @IBOutlet weak var submitBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +79,11 @@ class BusinessSpecialtiesViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func addSkillBtn(_ sender: Any) {
+        
+        if specialtiesInput.text == "" {
+            print("nil")
+            return
+        }
         
         refCheckValid.observeSingleEvent(of: .value) { snapshot in
             

@@ -1894,6 +1894,7 @@
                     </view>
                     <connections>
                         <outlet property="specialtiesInput" destination="VB4-A7-4B9" id="Dwx-XW-Ikc"/>
+                        <outlet property="submitBtn" destination="dOs-AX-WLb" id="92T-mD-jcz"/>
                         <outlet property="tableView" destination="pZX-Sf-bAR" id="9fS-Xm-xsR"/>
                     </connections>
                 </viewController>

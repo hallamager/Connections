@@ -19,6 +19,7 @@ class ShowSkillsViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var skillInput: UITextField!
+    @IBOutlet weak var submitBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +75,11 @@ class ShowSkillsViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func addSkillBtn(_ sender: Any) {
+                
+        if skillInput.text == "" {
+            print("nil")
+            return
+        }
         
         let ex = Skills(data: ["Skill": self.skillInput.text!])
         
@@ -83,16 +89,18 @@ class ShowSkillsViewController: UIViewController, UITextFieldDelegate {
                 
                 self.refValid.childByAutoId().setValue(ex.toDict())
                 
+                self.skillInput.text = nil
+                
             } else {
                 
                 self.refPending.childByAutoId().setValue(ex.toDict())
+                
+                self.skillInput.text = nil
                 
             }
             
         }
         
-        skillInput.text! = ""
-
     }
     
     @IBAction func confirmBtn(_ sender: UIButton) {

@@ -105,7 +105,6 @@ class BusinessSwipeViewController: UIViewController, CLLocationManagerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let business = businesses[counter]
-        
         let vc = segue.destination as! BusinessMoreInfoViewController
         vc.business = business
     }
