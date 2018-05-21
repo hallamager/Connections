@@ -17,7 +17,7 @@ import ViewAnimator
 class BusinessLikedViewController: UIViewController {
     
     let kCloseCellHeight: CGFloat = 160
-    let kOpenCellHeight: CGFloat = 820
+    let kOpenCellHeight: CGFloat = 760
     let ref = Database.database().reference().child("business").child("valid")
     let kRowsCount = 10
     var cellHeights: [CGFloat] = []
@@ -162,11 +162,9 @@ extension BusinessLikedViewController: UITableViewDelegate {
         cell.companyIndustryFolded.text! = business.industry!
         cell.companySize.text! = business.companySize!
         cell.companyHeadquartersFolded.text! = business.businessHeadquarters!
-        cell.jobsPosted?.text = "\(business.numberOfJobs) Jobs available"
-        
-        if business.jobs.count == 1 {
-            cell.jobsPosted?.text = "\(business.numberOfJobs) Job available"
-        }
+        cell.cultureOne.text! = business.cultureOne!
+        cell.cultureTwo.text! = business.cultureTwo!
+        cell.cultureThree.text! = business.cultureThree!
         
         // Create a storage reference from the URL
         let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(business.uuid)
@@ -246,57 +244,11 @@ extension BusinessLikedViewController: UITableViewDataSource {
                 print("is\(self.specialties.count)")
                 
             })
-            
-            cell.delegate = self
-            
+        
             print(business.username)
             
             return cell
         
-    }
-    
-}
-
-extension BusinessLikedViewController: ViewJobCellDelegate {
-    
-    func didTapButton(_ sender: UIButton) {
-        if let indexPath = getCurrentCellIndexPath(sender) {
-            
-            if sender.tag == 1 {
-                
-                let revealViewController:SWRevealViewController = self.revealViewController()
-                
-                let mainStoryboard:UIStoryboard = UIStoryboard(name: "BusinessMain", bundle: nil)
-                let desController = mainStoryboard.instantiateViewController(withIdentifier: "BusinessSelectViewController") as! BusinessSelectViewController
-                let newFrontViewController = UINavigationController.init(rootViewController:desController)
-                
-                revealViewController.pushFrontViewController(newFrontViewController, animated: true)
-                
-            }
-            
-            if sender.tag == 2 {
-                
-                let business = businesses[indexPath.row]
-                
-                guard business.hasJobs else { return }
-                
-                let storyboard:UIStoryboard = UIStoryboard(name: "BusinessMain", bundle: nil)
-                let BusinessShowJobsViewController:BusinessShowJobsViewController = storyboard.instantiateViewController(withIdentifier: "BusinessShowJobsViewController") as! BusinessShowJobsViewController
-                self.navigationController?.pushViewController(BusinessShowJobsViewController, animated: true)
-                BusinessShowJobsViewController.business = business
-                
-            }
-            
-        }
-        
-    }
-    
-    func getCurrentCellIndexPath(_ sender: UIButton) -> IndexPath? {
-        let buttonPosition = sender.convert(CGPoint.zero, to: tableView)
-        if let indexPath: IndexPath = tableView.indexPathForRow(at: buttonPosition) {
-            return indexPath
-        }
-        return nil
     }
     
 }

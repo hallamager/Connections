@@ -16,6 +16,10 @@ class BusinessMoreInfoViewController: UIViewController {
     @IBOutlet var companyName: UILabel!
     @IBOutlet var companyIndustry: UILabel!
     @IBOutlet var companyDescription: UITextView!
+    @IBOutlet weak var cultureOne: UILabel!
+    @IBOutlet weak var cultureTwo: UILabel!
+    @IBOutlet weak var cultureThree: UILabel!
+    @IBOutlet weak var companySize: UILabel!
     @IBOutlet weak var companyHeadquarters: UILabel!
     @IBOutlet weak var companyImage: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -30,6 +34,10 @@ class BusinessMoreInfoViewController: UIViewController {
         companyName.text = business.username
         companyDescription.text = business.description
         companyHeadquarters.text = business.businessHeadquarters
+        cultureOne.text = business.cultureOne
+        cultureTwo.text = business.cultureTwo
+        cultureThree.text = business.cultureThree
+        companySize.text = business.companySize
         
         // Create a storage reference from the URL
         let storageRef = Storage.storage().reference(forURL: "gs://connections-bd790.appspot.com").child("Profile Image").child(business.uuid)

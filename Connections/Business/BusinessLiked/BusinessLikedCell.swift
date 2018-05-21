@@ -10,13 +10,7 @@ import Foundation
 import UIKit
 import FoldingCell
 
-protocol ViewJobCellDelegate: class {
-    func didTapButton(_ sender: UIButton)
-}
-
 class BusinessLikedCell: FoldingCell {
-    
-    weak var delegate: ViewJobCellDelegate?
     
     @IBOutlet weak var foldingNameLabel: UILabel!
     @IBOutlet weak var companyName: UILabel!
@@ -29,7 +23,9 @@ class BusinessLikedCell: FoldingCell {
     @IBOutlet var companyIndustryFolded: UILabel!
     @IBOutlet var companySize: UILabel!
     @IBOutlet var companyHeadquartersFolded: UILabel!
-    @IBOutlet weak var jobsPosted: UILabel!
+    @IBOutlet weak var cultureOne: UILabel!
+    @IBOutlet weak var cultureTwo: UILabel!
+    @IBOutlet weak var cultureThree: UILabel!
     @IBOutlet weak var specialtiesCollectionView: UICollectionView!
     
     //Defines sides, shadows and colour of the cells for the viewcontroller.
@@ -56,16 +52,6 @@ class BusinessLikedCell: FoldingCell {
         // durations count equal it itemCount
         let durations = [0.20, 0.20, 0.20, 0.20] // timing animation for each view
         return durations[itemIndex]
-    }
-    
-    @IBAction func viewJobsBtn(_ sender: UIButton) {
-        delegate?.didTapButton(sender)
-        print("tapped")
-    }
-    
-    @IBAction func answerCompanyQuestionsBtn(_ sender: UIButton) {
-        delegate?.didTapButton(sender)
-        print("tapped")
     }
     
 }
