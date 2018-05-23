@@ -16,6 +16,7 @@ class JobsPostedViewController: UIViewController {
     
     @IBOutlet var openMenu: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noJobsAlert: UILabel!
     
     let ref = Database.database().reference().child("business/valid/\(Auth.auth().currentUser!.uid)").child("Jobs")
     var jobs = [Job]()
@@ -44,6 +45,13 @@ class JobsPostedViewController: UIViewController {
                         self.jobs.append(job)
                     }
                 }
+            }
+            
+            if self.jobs.count == 0 {
+                self.noJobsAlert.text! = "You haven't entered any jobs yet. To do so tap the add button in the top right hand corner."
+                print("true")
+            } else {
+                self.noJobsAlert.text! = ""
             }
             
             self.tableView.reloadData()

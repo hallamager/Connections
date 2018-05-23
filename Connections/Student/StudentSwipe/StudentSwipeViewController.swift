@@ -55,6 +55,46 @@ class StudentSwipeViewController: UIViewController {
         geoRefBusiness.setLocation(location, forKey: (Auth.auth().currentUser?.uid)!)
     }
     
+    func loadRelatedStudents(for businessUID: String, completion: @escaping (Bool, [Student]) -> ()) {
+        
+        let ref = Database.database().reference().child("businessesLiked").child(Auth.auth().currentUser!.uid)
+        
+        ref.observeSingleEvent(of: .value) { snapshot in
+            
+            var uids = [String]()
+            for child in snapshot.children {
+                let userData = child as! DataSnapshot
+                uids.append(userData.key)
+            }
+            
+            let userRef = Database.database().reference(withPath: "student").child("valid")
+            var students = [Student]()
+            var count = 0
+            
+            
+            if uids.count != 0 {
+                uids.forEach { uid in
+                    
+                    userRef.child(uid).observeSingleEvent(of: .value) { snapshot in
+                        
+                        let student = Student(snapshot: snapshot)
+                        students.append(student!)
+                        
+                        count += 1
+                        if count == uids.count {
+                            completion(true, students)
+                        }
+                        
+                    }
+                }
+            } else {
+                completion(true, students)
+            }
+            
+        }
+        
+    }
+    
     func addLiked(_ student: Student) {
         
         
@@ -77,6 +117,10 @@ class StudentSwipeViewController: UIViewController {
         
         self.counter += 1
         
+        let refDeleteSeen = Database.database().reference().child("businessesLiked").child(Auth.auth().currentUser!.uid).child(student.uuid)
+        
+        refDeleteSeen.removeValue()
+        
     }
     
     func addDisliked(_ student: Student) {
@@ -95,43 +139,12 @@ class StudentSwipeViewController: UIViewController {
         newLike.updateChildValues(dict)
         newView.updateChildValues(dictBusiness)
         
+        let refDeleteSeen = Database.database().reference().child("businessesLiked").child(Auth.auth().currentUser!.uid).child(student.uuid)
+        
+        refDeleteSeen.removeValue()
+        
         self.counter += 1
         
-    }
-    
-    func loadRelatedStudents(for businessUID: String, completion: @escaping (Bool, [Student]) -> ()) {
-        
-        let ref = Database.database().reference(withPath: "businessesLiked/" + Auth.auth().currentUser!.uid)
-        ref.observeSingleEvent(of: .value) { snapshot in
-            
-            var uids = [String]()
-            for child in snapshot.children {
-                let userData = child as! DataSnapshot
-                uids.append(userData.key)
-            }
-            
-            let userRef = Database.database().reference(withPath: "student").child("valid")
-            var students = [Student]()
-            var count = 0
-            
-            if uids.count != 0 {
-                uids.forEach { uid in
-                    userRef.child(uid).observeSingleEvent(of: .value) { snapshot in
-                        
-                        guard !ViewedManager.shared.uuids.contains(uid) else { return }
-                        
-                        let student = Student(snapshot: snapshot)
-                        students.append(student!)
-                        count += 1
-                        if count == uids.count {
-                            completion(true, students)
-                        }
-                    }
-                }
-            } else {
-                completion(true, students)
-            }
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -165,6 +178,7 @@ extension StudentSwipeViewController: KolodaViewDelegate {
     //what happens when user runs out of cards
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
         openMoreInfo.isEnabled = false
+        noCardsAlert.text = "Your Out of Cards! We'll alert when theres more to swipe."
         print("Out of cards")
     }
     
@@ -200,21 +214,6 @@ extension StudentSwipeViewController: KolodaViewDelegate {
         }
         
         print("did swipe \(student) in direction: \(direction)")
-        
-    }
-    
-    func koloda(_ koloda: KolodaView, draggedCardWithPercentage finishPercentage: CGFloat, in direction: SwipeResultDirection) {
-        //        print("being swiped \(direction)")
-        
-        //        if direction == SwipeResultDirection.right {
-        //            // implement your functions or whatever here
-        //            print("user swiping right")
-        //
-        //
-        //        } else if direction == .left {
-        //            // implement your functions or whatever here
-        //            print("user swiping left")
-        //        }
         
     }
     

@@ -17,6 +17,7 @@ class BusinessInvitesViewController: UIViewController {
     
     @IBOutlet var openMenu: UIBarButtonItem!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var noInvitesAlert: UILabel!
     
     var businesses = [Business]()
     var students = [Student]()
@@ -33,6 +34,13 @@ class BusinessInvitesViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.isTranslucent = false
+        
+        if businesses.count == 0 {
+            self.noInvitesAlert.text! = "No businesses have sent you any invites quite yet. Stay patient!"
+            print("true")
+        } else {
+            self.noInvitesAlert.text! = ""
+        }
         
         loadBusinessesWhoInvited(for: Auth.auth().currentUser!.uid) { success, businesses in
             self.businesses = businesses

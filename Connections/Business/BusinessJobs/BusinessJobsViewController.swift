@@ -16,6 +16,7 @@ class BusinessJobsViewController: UIViewController {
     
     @IBOutlet var openMenu: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noJobsAlert: UILabel!
     
     var business: Business!
     let ref = Database.database().reference().child("business").child("valid")
@@ -26,6 +27,13 @@ class BusinessJobsViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.isTranslucent = false
+        
+        if businesses.count == 0 {
+            self.noJobsAlert.text! = "You haven't matched with any businesses yet. Get swiping to be able to view business jobs."
+            print("true")
+        } else {
+            self.noJobsAlert.text! = ""
+        }
         
         loadRelatedBusinesses(for: Auth.auth().currentUser!.uid) { success, businesses in
             self.businesses = businesses

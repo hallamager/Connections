@@ -17,6 +17,7 @@ class StudentInviteViewController: UIViewController {
     
     @IBOutlet var openMenu: UIBarButtonItem!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var noInvitesAlert: UILabel!
     
     var businesses = [Business]()
     var students = [Student]()
@@ -33,6 +34,13 @@ class StudentInviteViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.isTranslucent = false
+        
+        if students.count == 0 {
+            self.noInvitesAlert.text! = "You haven't sent any invites yet. To do so, view the students you've liked and organise an interview."
+            print("true")
+        } else {
+            self.noInvitesAlert.text! = ""
+        }
         
         loadStudentsWhoGotInvited(for: Auth.auth().currentUser!.uid) { success, students in
             self.students = students

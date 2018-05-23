@@ -10,7 +10,7 @@ import Firebase
 
 class Student {
     
-    let uuid: String
+    var uuid: String
     let username: String
     let address: String?
     let summary: String?

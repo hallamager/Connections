@@ -17,7 +17,7 @@ import ViewAnimator
 
 class StudentLikedViewController: UIViewController {
     
-    let kCloseCellHeight: CGFloat = 160
+    let kCloseCellHeight: CGFloat = 130
     let kOpenCellHeight: CGFloat = 865
     let ref = Database.database().reference().child("student").child("valid")
     let refValid = Database.database().reference().child("validStudents")
